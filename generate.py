@@ -1,40 +1,40 @@
 #!/usr/bin/env python3
 """
-Bestiflokkurinn.is — генератор 800 страниц казино-портала
-Сначала на русском, потом переведём на исландский
+Bestiflokkurinn.is — BF Casino site generator
+All content in English
 """
 import os
 import json
 
 # ============================================================
-# ДАННЫЕ СТРАНИЦ
+# PAGE DATA
 # ============================================================
 
-# 150 казино обзоров
+# 150 casino reviews
 casinos = [
-    {"slug": "bitstarz", "name": "BitStarz", "rating": 9.8, "bonus": "5 BTC + 200 FS", "type": "crypto", "desc": "Лучшее крипто-казино с мгновенными выплатами. Более 3000 игр от топовых провайдеров."},
-    {"slug": "stake", "name": "Stake", "rating": 9.6, "bonus": "200% + VIP", "type": "crypto", "desc": "Популярное крипто-казино с VIP программой и эксклюзивными играми."},
-    {"slug": "bc-game", "name": "BC.Game", "rating": 9.4, "bonus": "300% до 1 BTC", "type": "crypto", "desc": "Инновационное казино с собственными играми и криптовалютными бонусами."},
-    {"slug": "tonybet", "name": "TonyBet", "rating": 9.2, "bonus": "150% + 100 FS", "type": "classic", "desc": "Надёжное казино с широким выбором слотов и live-игр."},
-    {"slug": "epicbet", "name": "Epicbet", "rating": 9.0, "bonus": "100% до €500", "type": "classic", "desc": "Современное казино с быстрыми выплатами и отличной поддержкой."},
-    {"slug": "respin", "name": "Respin Casino", "rating": 8.9, "bonus": "200% + 50 FS", "type": "classic", "desc": "Казино с огромной библиотекой слотов и щедрыми бонусами."},
-    {"slug": "vegazone", "name": "VegaZone", "rating": 8.8, "bonus": "150% до €300", "type": "classic", "desc": "Стильное казино с эксклюзивными турнирами и акциями."},
-    {"slug": "wildcoins", "name": "WildCoins", "rating": 8.7, "bonus": "250% + 100 FS", "type": "crypto", "desc": "Крипто-казино с дикими бонусами и быстрым выводом."},
-    {"slug": "katsubet", "name": "KatsuBet", "rating": 8.6, "bonus": "100% + 100 FS", "type": "crypto", "desc": "Японская тематика, криптовалюты и тысячи слотов."},
-    {"slug": "winz", "name": "Winz.io", "rating": 8.5, "bonus": "300 FS без вейджера", "type": "crypto", "desc": "Уникальные бонусы без требований к отыгрышу."},
-    {"slug": "7bit", "name": "7Bit Casino", "rating": 8.5, "bonus": "200% + 100 FS", "type": "crypto", "desc": "Ретро-стиль с современными крипто-функциями."},
-    {"slug": "mbitcasino", "name": "mBit Casino", "rating": 8.4, "bonus": "175% + 300 FS", "type": "crypto", "desc": "Одно из старейших крипто-казино с проверенной репутацией."},
-    {"slug": "cloudbet", "name": "Cloudbet", "rating": 8.4, "bonus": "100% до 5 BTC", "type": "crypto", "desc": "Премиальное крипто-казино с высокими лимитами."},
-    {"slug": "casinonic", "name": "Casinonic", "rating": 8.3, "bonus": "100% + 100 FS", "type": "classic", "desc": "Простое и удобное казино для новичков."},
-    {"slug": "national-casino", "name": "National Casino", "rating": 8.3, "bonus": "100% + 100 FS", "type": "classic", "desc": "Казино с отличной коллекцией live-игр."},
-    {"slug": "20bet", "name": "20Bet", "rating": 8.2, "bonus": "100% до €120", "type": "classic", "desc": "Универсальная платформа с казино и ставками."},
-    {"slug": "rocketplay", "name": "RocketPlay", "rating": 8.2, "bonus": "150% + 100 FS", "type": "crypto", "desc": "Космическая тематика и быстрые крипто-выплаты."},
-    {"slug": "hellspin", "name": "HellSpin", "rating": 8.1, "bonus": "150% + 50 FS", "type": "crypto", "desc": "Дерзкое казино с агрессивными бонусами."},
-    {"slug": "neospin", "name": "NeoSpin", "rating": 8.1, "bonus": "100% + 100 FS", "type": "crypto", "desc": "Футуристическое казино нового поколения."},
-    {"slug": "betpanda", "name": "BetPanda", "rating": 8.0, "bonus": "100% до 1 BTC", "type": "crypto", "desc": "Дружелюбное крипто-казино с низким вейджером."},
+    {"slug": "bitstarz", "name": "BitStarz", "rating": 9.8, "bonus": "5 BTC + 200 FS", "type": "crypto", "desc": "Award-winning crypto casino with instant payouts. Over 3,500 games from top-tier providers including Pragmatic Play, Evolution, and Play'n GO. Accepts BTC, ETH, LTC, DOGE and more. Withdrawals processed in under 10 minutes. Curaçao licensed with provably fair games."},
+    {"slug": "stake", "name": "Stake", "rating": 9.6, "bonus": "200% + VIP", "type": "crypto", "desc": "One of the most popular crypto casinos worldwide with an exclusive VIP programme, original Stake games, and a full sportsbook. Supports 8 cryptocurrencies. Known for fast withdrawals and transparent house edge on original games."},
+    {"slug": "bc-game", "name": "BC.Game", "rating": 9.4, "bonus": "300% up to 1 BTC", "type": "crypto", "desc": "Innovative crypto casino with proprietary crash, dice, and limbo games. Supports 100+ cryptocurrencies including BTC, ETH, SOL, and DOGE. Daily bonuses, lucky spins, and a task-based reward system. Curaçao licence."},
+    {"slug": "tonybet", "name": "TonyBet", "rating": 9.2, "bonus": "150% + 100 FS", "type": "classic", "desc": "Established sportsbook and casino platform with a strong live dealer section powered by Evolution. Accepts Visa, Mastercard, Skrill, and crypto. MGA-licensed with responsible gambling tools built in."},
+    {"slug": "epicbet", "name": "Epicbet", "rating": 9.0, "bonus": "100% up to €500", "type": "classic", "desc": "Modern casino with a clean interface, fast card and e-wallet withdrawals, and responsive 24/7 support. Over 2,000 slots from NetEnt, Microgaming, and Pragmatic Play. Curaçao licensed."},
+    {"slug": "respin", "name": "Respin Casino", "rating": 8.9, "bonus": "200% + 50 FS", "type": "classic", "desc": "Casino with a massive slot library exceeding 4,000 titles and generous deposit bonuses. Weekly cashback and reload offers for existing players. Supports multiple languages and currencies."},
+    {"slug": "vegazone", "name": "VegaZone", "rating": 8.8, "bonus": "150% up to €300", "type": "classic", "desc": "Stylish casino featuring exclusive slot tournaments, regular promotions, and a loyalty programme with real rewards. Good selection of live tables and e-wallet payment support."},
+    {"slug": "wildcoins", "name": "WildCoins", "rating": 8.7, "bonus": "250% + 100 FS", "type": "crypto", "desc": "Crypto-focused casino with high-percentage welcome bonuses and fast BTC withdrawals. Supports Bitcoin, Ethereum, Litecoin, and USDT. No KYC required for crypto deposits under certain thresholds."},
+    {"slug": "katsubet", "name": "KatsuBet", "rating": 8.6, "bonus": "100% + 100 FS", "type": "crypto", "desc": "Japanese-themed crypto casino with over 5,000 games from 40+ providers. Accepts BTC, ETH, LTC, DOGE, USDT, and BCH. Weekly tournaments, daily free spins, and a four-tier VIP programme."},
+    {"slug": "winz", "name": "Winz.io", "rating": 8.5, "bonus": "300 FS no wager", "type": "crypto", "desc": "Unique casino offering wager-free bonuses — you keep what you win with no playthrough requirements. Supports 6 cryptocurrencies and offers 5,000+ games. Licensed in Curaçao."},
+    {"slug": "7bit", "name": "7Bit Casino", "rating": 8.5, "bonus": "200% + 100 FS", "type": "crypto", "desc": "Retro-styled crypto casino established in 2014 with a proven track record. Over 7,000 games, weekly cashback up to 20%, Monday reload bonuses. Accepts BTC, ETH, LTC, DOGE, USDT, and BCH."},
+    {"slug": "mbitcasino", "name": "mBit Casino", "rating": 8.4, "bonus": "175% + 300 FS", "type": "crypto", "desc": "One of the oldest crypto casinos, operating since 2014. Accepts Bitcoin, Ethereum, Litecoin, Dogecoin, and Tether. Over 3,000 games with provably fair options. VIP programme with personal account manager."},
+    {"slug": "cloudbet", "name": "Cloudbet", "rating": 8.4, "bonus": "100% up to 5 BTC", "type": "crypto", "desc": "Premium crypto casino and sportsbook with high table limits for VIP players. Supports BTC, ETH, USDT, and more. Known for competitive sports odds and a large live casino section."},
+    {"slug": "casinonic", "name": "Casinonic", "rating": 8.3, "bonus": "100% + 100 FS", "type": "classic", "desc": "Beginner-friendly casino with a simple registration process and intuitive navigation. Over 2,000 slots, live dealer tables, and weekly cashback. Accepts Visa, Mastercard, and crypto."},
+    {"slug": "national-casino", "name": "National Casino", "rating": 8.3, "bonus": "100% + 100 FS", "type": "classic", "desc": "Casino with an excellent live dealer collection powered by Evolution and Pragmatic Play Live. Fast verification process, multiple withdrawal methods, and responsive customer support."},
+    {"slug": "20bet", "name": "20Bet", "rating": 8.2, "bonus": "100% up to €120", "type": "classic", "desc": "All-in-one platform combining casino, live casino, and sportsbook. Over 6,000 games from 70+ providers. Accepts Visa, Mastercard, e-wallets, and cryptocurrencies. Licensed in Curaçao."},
+    {"slug": "rocketplay", "name": "RocketPlay", "rating": 8.2, "bonus": "150% + 100 FS", "type": "crypto", "desc": "Space-themed crypto casino with fast Bitcoin withdrawals and a wide game selection. 3,500+ games, weekly reload bonuses, and a four-level VIP programme with cashback up to 12%."},
+    {"slug": "hellspin", "name": "HellSpin", "rating": 8.1, "bonus": "150% + 50 FS", "type": "crypto", "desc": "Bold casino with aggressive bonus offers, frequent promotions, and a dark-themed interface. Supports BTC, ETH, LTC, and USDT. Over 3,000 games including exclusive titles."},
+    {"slug": "neospin", "name": "NeoSpin", "rating": 8.1, "bonus": "100% + 100 FS", "type": "crypto", "desc": "Next-generation casino with a futuristic design, 5,000+ games, and support for Bitcoin, Ethereum, and Tether. Daily cashback, weekly tournaments, and instant crypto payouts."},
+    {"slug": "betpanda", "name": "BetPanda", "rating": 8.0, "bonus": "100% up to 1 BTC", "type": "crypto", "desc": "Friendly crypto casino with low wagering requirements on bonuses (typically 30x). Supports BTC, ETH, and USDT. Simple interface, fast payouts, and no-KYC deposits up to certain limits."},
 ]
 
-# Генерируем ещё 130 казино
+# Generate 130 more casinos
 extra_casino_names = [
     "LuckyStar", "IceBet", "NordicSlots", "FrostBet", "SnowCasino", "AuroraBet",
     "VikingSlots", "ThunderBet", "GlacierCasino", "BorealisBet", "CrystalSlots",
@@ -69,7 +69,7 @@ for i, name in enumerate(extra_casino_names[:130]):
     rating = round(8.0 - (i * 0.015), 1)
     rating = max(rating, 6.0)
     ctype = "crypto" if i % 3 == 0 else "classic"
-    bonus_options = ["100% до €200", "150% + 50 FS", "200% до €500", "50 FS бесплатно", "100% до 0.5 BTC", "125% + 75 FS", "100% до €300"]
+    bonus_options = ["100% up to €200", "150% + 50 FS", "200% up to €500", "50 FS no deposit", "100% up to 0.5 BTC", "125% + 75 FS", "100% up to €300"]
     bonus = bonus_options[i % len(bonus_options)]
     casinos.append({
         "slug": slug,
@@ -77,10 +77,10 @@ for i, name in enumerate(extra_casino_names[:130]):
         "rating": rating,
         "bonus": bonus,
         "type": ctype,
-        "desc": f"{name} — онлайн казино с лицензией и быстрыми выплатами. {bonus} для новых игроков."
+        "desc": f"{name} is a licensed online casino offering {bonus} for new players. Fast crypto withdrawals, a wide game library, and 24/7 customer support. Available to players from Iceland."
     })
 
-# 250 слотов
+# 250 slots
 slots_data = [
     {"slug": "gates-of-olympus", "name": "Gates of Olympus", "provider": "Pragmatic Play", "rtp": 96.5, "volatility": "High", "maxwin": "x5000", "theme": "Mythology", "cdn": "pragmaticexternal/vs20olympgate.png"},
     {"slug": "sweet-bonanza", "name": "Sweet Bonanza", "provider": "Pragmatic Play", "rtp": 96.48, "volatility": "High", "maxwin": "x21100", "theme": "Fruit", "cdn": "pragmaticexternal/vs20fruitsw.png"},
@@ -98,63 +98,63 @@ slots_data = [
     {"slug": "money-train-3", "name": "Money Train 3", "provider": "Relax Gaming", "rtp": 96.1, "volatility": "High", "maxwin": "x100000", "theme": "Western", "cdn": "relax/MoneyTrain3.png"},
     {"slug": "wanted-dead-or-a-wild", "name": "Wanted Dead or a Wild", "provider": "Hacksaw Gaming", "rtp": 96.38, "volatility": "High", "maxwin": "x12500", "theme": "Western", "cdn": "hacksaw/WantedDeadoraWild.png"},
     {"slug": "mental", "name": "Mental", "provider": "NoLimit City", "rtp": 96.08, "volatility": "Extreme", "maxwin": "x66666", "theme": "Horror", "cdn": "nolimitcity/Mental.png"},
-    {"slug": "tombstone-rip", "name": "Tombstone RIP", "provider": "NoLimit City", "rtp": 96.08, "volatility": "Экстрим", "maxwin": "x300000", "theme": "Вестерн"},
-    {"slug": "fruit-party", "name": "Fruit Party", "provider": "Pragmatic Play", "rtp": 96.47, "volatility": "Высокая", "maxwin": "x5000", "theme": "Фрукты"},
-    {"slug": "buffalo-king-megaways", "name": "Buffalo King Megaways", "provider": "Pragmatic Play", "rtp": 96.52, "volatility": "Высокая", "maxwin": "x5000", "theme": "Природа"},
-    {"slug": "legacy-of-dead", "name": "Legacy of Dead", "provider": "Play'n GO", "rtp": 96.58, "volatility": "Высокая", "maxwin": "x5000", "theme": "Египет"},
+    {"slug": "tombstone-rip", "name": "Tombstone RIP", "provider": "NoLimit City", "rtp": 96.08, "volatility": "Extreme", "maxwin": "x300000", "theme": "Western"},
+    {"slug": "fruit-party", "name": "Fruit Party", "provider": "Pragmatic Play", "rtp": 96.47, "volatility": "High", "maxwin": "x5000", "theme": "Fruit"},
+    {"slug": "buffalo-king-megaways", "name": "Buffalo King Megaways", "provider": "Pragmatic Play", "rtp": 96.52, "volatility": "High", "maxwin": "x5000", "theme": "Nature"},
+    {"slug": "legacy-of-dead", "name": "Legacy of Dead", "provider": "Play'n GO", "rtp": 96.58, "volatility": "High", "maxwin": "x5000", "theme": "Egypt"},
 ]
 
-# Ещё 230 слотов
+# 230 more slots
 more_slot_names = [
-    ("Madame Destiny Megaways", "Pragmatic Play", 96.56, "x5000", "Магия"),
-    ("Great Rhino Megaways", "Pragmatic Play", 96.58, "x20000", "Природа"),
-    ("John Hunter and the Tomb", "Pragmatic Play", 96.5, "x5000", "Приключения"),
-    ("Floating Dragon", "Pragmatic Play", 96.71, "x5000", "Азия"),
-    ("Sugar Rush", "Pragmatic Play", 96.5, "x5000", "Сладости"),
-    ("Starlight Princess", "Pragmatic Play", 96.5, "x5000", "Аниме"),
-    ("Wild West Gold", "Pragmatic Play", 96.51, "x10000", "Вестерн"),
-    ("Release the Kraken", "Pragmatic Play", 96.5, "x3000", "Океан"),
-    ("Gems Bonanza", "Pragmatic Play", 96.51, "x10000", "Камни"),
-    ("Aztec Gems", "Pragmatic Play", 96.52, "x375", "Ацтеки"),
-    ("Hot Fiesta", "Pragmatic Play", 96.56, "x5000", "Мексика"),
-    ("Pirate Gold Deluxe", "Pragmatic Play", 96.48, "x15000", "Пираты"),
-    ("Emerald King", "Pragmatic Play", 96.51, "x5000", "Ирландия"),
-    ("Book of Fallen", "Pragmatic Play", 96.5, "x5000", "Египет"),
-    ("Rise of Giza", "Pragmatic Play", 96.5, "x5000", "Египет"),
-    ("Cleocatra", "Pragmatic Play", 96.2, "x5000", "Египет"),
-    ("Zeus vs Hades", "Pragmatic Play", 96.07, "x15000", "Мифология"),
-    ("Big Bass Bonanza", "Pragmatic Play", 96.71, "x2100", "Рыбалка"),
-    ("Big Bass Amazon", "Pragmatic Play", 96.71, "x2100", "Рыбалка"),
-    ("Bigger Bass Bonanza", "Pragmatic Play", 96.71, "x4000", "Рыбалка"),
-    ("Rise of Samurai Megaways", "Pragmatic Play", 96.5, "x5000", "Самураи"),
-    ("Hand of Midas", "Pragmatic Play", 96.54, "x5000", "Мифология"),
-    ("Wild West Gold Megaways", "Pragmatic Play", 96.48, "x10000", "Вестерн"),
-    ("Juicy Fruits", "Pragmatic Play", 96.53, "x4000", "Фрукты"),
-    ("Cash Bonanza", "Pragmatic Play", 96.56, "x5000", "Деньги"),
-    ("Moon Princess", "Play'n GO", 96.2, "x5000", "Аниме"),
-    ("Rich Wilde and the Amulet", "Play'n GO", 96.29, "x10000", "Приключения"),
-    ("Rise of Olympus", "Play'n GO", 96.5, "x5000", "Мифология"),
-    ("Immortal Romance", "Microgaming", 96.86, "x12150", "Вампиры"),
-    ("Thunderstruck II", "Microgaming", 96.65, "x8000", "Мифология"),
-    ("Mega Moolah", "Microgaming", 88.12, "Прогрессив", "Сафари"),
-    ("Avalon II", "Microgaming", 97.0, "x120", "Артурианна"),
-    ("Vikings Go Berzerk", "Yggdrasil", 96.1, "x5000", "Викинги"),
-    ("Valley of the Gods", "Yggdrasil", 96.2, "x3600", "Египет"),
-    ("Trolls Bridge", "Yggdrasil", 96.3, "x4500", "Фэнтези"),
-    ("Holmes and the Stolen Stones", "Yggdrasil", 96.8, "x1000", "Детектив"),
-    ("Nitro Circus", "Yggdrasil", 96.1, "x2000", "Экстрим"),
-    ("Lucha Maniacs", "Yggdrasil", 96.2, "x3000", "Борьба"),
-    ("Hades - Gigablox", "Yggdrasil", 96.1, "x11129", "Мифология"),
-    ("9 Masks of Fire", "Gameburger", 96.24, "x2000", "Африка"),
-    ("Divine Fortune", "NetEnt", 96.59, "Прогрессив", "Мифология"),
-    ("Blood Suckers", "NetEnt", 98.0, "x900", "Вампиры"),
-    ("Jack and the Beanstalk", "NetEnt", 96.28, "x1000", "Сказки"),
-    ("Twin Spin", "NetEnt", 96.56, "x1080", "Классика"),
-    ("Narcos", "NetEnt", 96.23, "x1506", "Криминал"),
-    ("Finn and the Swirly Spin", "NetEnt", 96.62, "x500", "Ирландия"),
-    ("Aloha! Cluster Pays", "NetEnt", 96.42, "x2000", "Гаваи"),
-    ("Sakura Fortune", "Quickspin", 96.58, "x1300", "Азия"),
-    ("Dwarven Gold", "Pragmatic Play", 96.49, "x1000", "Фэнтези"),
+    ("Madame Destiny Megaways", "Pragmatic Play", 96.56, "x5000", "Magic"),
+    ("Great Rhino Megaways", "Pragmatic Play", 96.58, "x20000", "Nature"),
+    ("John Hunter and the Tomb", "Pragmatic Play", 96.5, "x5000", "Adventure"),
+    ("Floating Dragon", "Pragmatic Play", 96.71, "x5000", "Asia"),
+    ("Sugar Rush", "Pragmatic Play", 96.5, "x5000", "Sweets"),
+    ("Starlight Princess", "Pragmatic Play", 96.5, "x5000", "Anime"),
+    ("Wild West Gold", "Pragmatic Play", 96.51, "x10000", "Western"),
+    ("Release the Kraken", "Pragmatic Play", 96.5, "x3000", "Ocean"),
+    ("Gems Bonanza", "Pragmatic Play", 96.51, "x10000", "Gems"),
+    ("Aztec Gems", "Pragmatic Play", 96.52, "x375", "Aztec"),
+    ("Hot Fiesta", "Pragmatic Play", 96.56, "x5000", "Mexico"),
+    ("Pirate Gold Deluxe", "Pragmatic Play", 96.48, "x15000", "Pirates"),
+    ("Emerald King", "Pragmatic Play", 96.51, "x5000", "Ireland"),
+    ("Book of Fallen", "Pragmatic Play", 96.5, "x5000", "Egypt"),
+    ("Rise of Giza", "Pragmatic Play", 96.5, "x5000", "Egypt"),
+    ("Cleocatra", "Pragmatic Play", 96.2, "x5000", "Egypt"),
+    ("Zeus vs Hades", "Pragmatic Play", 96.07, "x15000", "Mythology"),
+    ("Big Bass Bonanza", "Pragmatic Play", 96.71, "x2100", "Fishing"),
+    ("Big Bass Amazon", "Pragmatic Play", 96.71, "x2100", "Fishing"),
+    ("Bigger Bass Bonanza", "Pragmatic Play", 96.71, "x4000", "Fishing"),
+    ("Rise of Samurai Megaways", "Pragmatic Play", 96.5, "x5000", "Samurai"),
+    ("Hand of Midas", "Pragmatic Play", 96.54, "x5000", "Mythology"),
+    ("Wild West Gold Megaways", "Pragmatic Play", 96.48, "x10000", "Western"),
+    ("Juicy Fruits", "Pragmatic Play", 96.53, "x4000", "Fruit"),
+    ("Cash Bonanza", "Pragmatic Play", 96.56, "x5000", "Money"),
+    ("Moon Princess", "Play'n GO", 96.2, "x5000", "Anime"),
+    ("Rich Wilde and the Amulet", "Play'n GO", 96.29, "x10000", "Adventure"),
+    ("Rise of Olympus", "Play'n GO", 96.5, "x5000", "Mythology"),
+    ("Immortal Romance", "Microgaming", 96.86, "x12150", "Vampires"),
+    ("Thunderstruck II", "Microgaming", 96.65, "x8000", "Mythology"),
+    ("Mega Moolah", "Microgaming", 88.12, "Progressive", "Safari"),
+    ("Avalon II", "Microgaming", 97.0, "x120", "Arthurian"),
+    ("Vikings Go Berzerk", "Yggdrasil", 96.1, "x5000", "Vikings"),
+    ("Valley of the Gods", "Yggdrasil", 96.2, "x3600", "Egypt"),
+    ("Trolls Bridge", "Yggdrasil", 96.3, "x4500", "Fantasy"),
+    ("Holmes and the Stolen Stones", "Yggdrasil", 96.8, "x1000", "Detective"),
+    ("Nitro Circus", "Yggdrasil", 96.1, "x2000", "Extreme"),
+    ("Lucha Maniacs", "Yggdrasil", 96.2, "x3000", "Wrestling"),
+    ("Hades - Gigablox", "Yggdrasil", 96.1, "x11129", "Mythology"),
+    ("9 Masks of Fire", "Gameburger", 96.24, "x2000", "Africa"),
+    ("Divine Fortune", "NetEnt", 96.59, "Progressive", "Mythology"),
+    ("Blood Suckers", "NetEnt", 98.0, "x900", "Vampires"),
+    ("Jack and the Beanstalk", "NetEnt", 96.28, "x1000", "Fairy Tales"),
+    ("Twin Spin", "NetEnt", 96.56, "x1080", "Classic"),
+    ("Narcos", "NetEnt", 96.23, "x1506", "Crime"),
+    ("Finn and the Swirly Spin", "NetEnt", 96.62, "x500", "Ireland"),
+    ("Aloha! Cluster Pays", "NetEnt", 96.42, "x2000", "Hawaii"),
+    ("Sakura Fortune", "Quickspin", 96.58, "x1300", "Asia"),
+    ("Dwarven Gold", "Pragmatic Play", 96.49, "x1000", "Fantasy"),
 ]
 
 for i, (name, provider, rtp, maxwin, theme) in enumerate(more_slot_names):
@@ -164,13 +164,13 @@ for i, (name, provider, rtp, maxwin, theme) in enumerate(more_slot_names):
         "name": name,
         "provider": provider,
         "rtp": rtp,
-        "volatility": "Высокая" if i % 3 != 2 else "Средняя",
+        "volatility": "High" if i % 3 != 2 else "Medium",
         "maxwin": maxwin,
         "theme": theme
     })
 
-# Добавим ещё 180 слотов
-generic_slot_themes = ["Египет","Фрукты","Космос","Океан","Сказки","Викинги","Азия","Пираты","Мифология","Вестерн","Природа","Деньги","Хоррор","Фэнтези","Классика"]
+# Add 180 more slots
+generic_slot_themes = ["Egypt","Fruit","Space","Ocean","Fairy Tales","Vikings","Asia","Pirates","Mythology","Western","Nature","Money","Horror","Fantasy","Classic"]
 generic_providers = ["Pragmatic Play","NetEnt","Play'n GO","Microgaming","Yggdrasil","Push Gaming","Hacksaw Gaming","NoLimit City","Red Tiger","Thunderkick","Relax Gaming","ELK Studios","Big Time Gaming","Blueprint Gaming","iSoftBet"]
 for i in range(180):
     n = f"Slot Game {i+70}"
@@ -180,65 +180,65 @@ for i in range(180):
         "name": n,
         "provider": generic_providers[i % len(generic_providers)],
         "rtp": round(95.5 + (i % 30) * 0.1, 2),
-        "volatility": ["Низкая","Средняя","Высокая","Экстрим"][i % 4],
+        "volatility": ["Low","Medium","High","Extreme"][i % 4],
         "maxwin": f"x{(i+1)*500}",
         "theme": generic_slot_themes[i % len(generic_slot_themes)]
     })
 
-# Категории казино (50 страниц)
+# Casino categories (50 pages)
 casino_categories = [
-    {"slug": "luchshie-online-casino", "title": "Лучшие онлайн казино", "desc": "Рейтинг лучших онлайн казино для игроков из Исландии."},
-    {"slug": "crypto-casino", "title": "Крипто казино", "desc": "Казино принимающие Bitcoin, Ethereum и другие криптовалюты."},
-    {"slug": "novye-casino", "title": "Новые казино 2026", "desc": "Самые новые онлайн казино открытые в 2026 году."},
-    {"slug": "casino-s-bystrym-vyvodom", "title": "Казино с быстрым выводом", "desc": "Казино где вывод средств занимает менее 24 часов."},
-    {"slug": "casino-bez-verifikacii", "title": "Казино без верификации", "desc": "Казино не требующие верификации документов."},
-    {"slug": "bitcoin-casino", "title": "Bitcoin казино", "desc": "Лучшие казино для депозитов и выводов в Bitcoin."},
-    {"slug": "ethereum-casino", "title": "Ethereum казино", "desc": "Казино принимающие Ethereum для депозитов."},
-    {"slug": "usdt-casino", "title": "USDT казино", "desc": "Казино принимающие стейблкоин USDT."},
-    {"slug": "litecoin-casino", "title": "Litecoin казино", "desc": "Казино с депозитами в Litecoin."},
-    {"slug": "live-casino", "title": "Live казино", "desc": "Лучшие казино с живыми дилерами."},
-    {"slug": "casino-s-bonusom", "title": "Казино с бонусом", "desc": "Казино предлагающие щедрые приветственные бонусы."},
-    {"slug": "casino-bez-depozita", "title": "Казино без депозита", "desc": "Бонусы без необходимости вносить депозит."},
-    {"slug": "casino-s-frispinami", "title": "Казино с фриспинами", "desc": "Казино дающие бесплатные вращения при регистрации."},
-    {"slug": "mobilnoe-casino", "title": "Мобильное казино", "desc": "Лучшие казино для игры на телефоне."},
-    {"slug": "casino-s-niskim-depozitom", "title": "Казино с низким депозитом", "desc": "Казино где можно играть от 1€."},
-    {"slug": "vip-casino", "title": "VIP казино", "desc": "Казино с лучшими VIP и лоялти программами."},
-    {"slug": "megaways-casino", "title": "Megaways казино", "desc": "Казино с большим выбором Megaways слотов."},
-    {"slug": "jackpot-casino", "title": "Джекпот казино", "desc": "Казино с прогрессивными джекпотами."},
-    {"slug": "casino-s-vysokim-rtp", "title": "Казино с высоким RTP", "desc": "Казино предлагающие слоты с RTP выше 97%."},
-    {"slug": "casino-s-licenziej", "title": "Казино с лицензией", "desc": "Проверенные лицензированные казино."},
+    {"slug": "luchshie-online-casino", "title": "Best Online Casinos", "desc": "Top-rated online casinos for players from Iceland."},
+    {"slug": "crypto-casino", "title": "Crypto Casinos", "desc": "Casinos accepting Bitcoin, Ethereum, and other cryptocurrencies."},
+    {"slug": "novye-casino", "title": "New Casinos 2026", "desc": "The newest online casinos launched in 2026."},
+    {"slug": "casino-s-bystrym-vyvodom", "title": "Fast Payout Casinos", "desc": "Casinos where withdrawals are processed in under 24 hours."},
+    {"slug": "casino-bez-verifikacii", "title": "No KYC Casinos", "desc": "Casinos that do not require identity verification documents."},
+    {"slug": "bitcoin-casino", "title": "Bitcoin Casinos", "desc": "Best casinos for Bitcoin deposits and withdrawals."},
+    {"slug": "ethereum-casino", "title": "Ethereum Casinos", "desc": "Casinos accepting Ethereum for deposits and withdrawals."},
+    {"slug": "usdt-casino", "title": "USDT Casinos", "desc": "Casinos accepting the USDT stablecoin."},
+    {"slug": "litecoin-casino", "title": "Litecoin Casinos", "desc": "Casinos with Litecoin deposits."},
+    {"slug": "live-casino", "title": "Live Casinos", "desc": "Best casinos with live dealers."},
+    {"slug": "casino-s-bonusom", "title": "Casinos with Bonus", "desc": "Casinos offering generous welcome bonuses."},
+    {"slug": "casino-bez-depozita", "title": "No Deposit Casinos", "desc": "Bonuses without requiring a deposit."},
+    {"slug": "casino-s-frispinami", "title": "Free Spins Casinos", "desc": "Casinos offering free spins on registration."},
+    {"slug": "mobilnoe-casino", "title": "Mobile Casinos", "desc": "Best casinos for mobile play on iPhone and Android."},
+    {"slug": "casino-s-niskim-depozitom", "title": "Low Deposit Casinos", "desc": "Casinos where you can play from €1."},
+    {"slug": "vip-casino", "title": "VIP Casinos", "desc": "Casinos with the best VIP and loyalty programmes."},
+    {"slug": "megaways-casino", "title": "Megaways Casinos", "desc": "Casinos with a large selection of Megaways slots."},
+    {"slug": "jackpot-casino", "title": "Jackpot Casinos", "desc": "Casinos with progressive jackpots."},
+    {"slug": "casino-s-vysokim-rtp", "title": "High RTP Casinos", "desc": "Casinos offering slots with RTP above 97%."},
+    {"slug": "casino-s-licenziej", "title": "Licensed Casinos", "desc": "Verified and licensed online casinos."},
 ]
 
-# Ещё 30 категорий
+# 30 more categories
 more_cats = [
-    "Казино Curacao", "Казино Malta (MGA)", "Казино с кешбэком", "Казино с турнирами",
-    "Казино для хайроллеров", "Казино с минимальным вейджером", "Казино с бонус-кодами",
-    "Казино с приложением", "Казино с быстрой регистрацией", "Казино с рулеткой",
-    "Казино с блэкджеком", "Казино с баккарой", "Казино с покером", "Казино с лотереей",
-    "Казино с бинго", "Казино со скретч-картами", "Казино с краш-играми", "Казино с Plinko",
-    "Казино с Aviator", "Казино с Mines", "Казино с Dice", "Казино с автоматами",
-    "Казино с 3D слотами", "Казино с Bonus Buy", "Казино с Drops & Wins",
-    "Казино с быстрыми играми", "Казино с провайдером Pragmatic", "Казино с провайдером NetEnt",
-    "Казино с провайдером Evolution", "Казино с провайдером Play'n GO"
+    "Curaçao Casinos", "Malta MGA Casinos", "Cashback Casinos", "Tournament Casinos",
+    "High Roller Casinos", "Low Wager Casinos", "Bonus Code Casinos",
+    "Casino Apps", "Quick Registration Casinos", "Roulette Casinos",
+    "Blackjack Casinos", "Baccarat Casinos", "Poker Casinos", "Lottery Casinos",
+    "Bingo Casinos", "Scratch Card Casinos", "Crash Game Casinos", "Plinko Casinos",
+    "Aviator Casinos", "Mines Casinos", "Dice Casinos", "Slot Machine Casinos",
+    "3D Slot Casinos", "Bonus Buy Casinos", "Drops & Wins Casinos",
+    "Instant Game Casinos", "Pragmatic Play Casinos", "NetEnt Casinos",
+    "Evolution Casinos", "Play'n GO Casinos"
 ]
 for i, title in enumerate(more_cats):
     slug = title.lower().replace("'", "").replace(" ", "-").replace("(", "").replace(")", "")
-    casino_categories.append({"slug": slug, "title": title, "desc": f"Обзор и рейтинг: {title} в Исландии."})
+    casino_categories.append({"slug": slug, "title": title, "desc": f"Review and rating: {title} for Icelandic players."})
 
-# Live казино (50 страниц)
+# Live casino (50 pages)
 live_games = [
-    {"slug": "blackjack", "name": "Блэкджек", "desc": "Онлайн блэкджек с живым дилером — правила, стратегии и лучшие столы."},
-    {"slug": "roulette", "name": "Рулетка", "desc": "Живая рулетка онлайн — европейская, французская и американская."},
-    {"slug": "baccarat", "name": "Баккара", "desc": "Баккара с живым дилером — как играть и выигрывать."},
-    {"slug": "poker", "name": "Покер", "desc": "Casino Hold'em и другие виды покера с живым дилером."},
-    {"slug": "dream-catcher", "name": "Dream Catcher", "desc": "Колесо фортуны от Evolution — правила и стратегии."},
-    {"slug": "monopoly-live", "name": "Monopoly Live", "desc": "Монополия в реальном времени с живым ведущим."},
-    {"slug": "crazy-time", "name": "Crazy Time", "desc": "Самое популярное шоу от Evolution Gaming."},
-    {"slug": "lightning-roulette", "name": "Lightning Roulette", "desc": "Рулетка с молниями и множителями до x500."},
-    {"slug": "mega-ball", "name": "Mega Ball", "desc": "Лотерея с живым ведущим и множителями."},
-    {"slug": "gonzo-treasure-hunt", "name": "Gonzo's Treasure Hunt", "desc": "Охота за сокровищами с Гонзо."},
+    {"slug": "blackjack", "name": "Blackjack", "desc": "Online blackjack with a live dealer — rules, strategies, and best tables for Icelandic players."},
+    {"slug": "roulette", "name": "Roulette", "desc": "Live roulette online — European, French, and American variants."},
+    {"slug": "baccarat", "name": "Baccarat", "desc": "Live baccarat — how to play and win at online casinos."},
+    {"slug": "poker", "name": "Poker", "desc": "Casino Hold'em and other live dealer poker variants."},
+    {"slug": "dream-catcher", "name": "Dream Catcher", "desc": "Evolution wheel of fortune game — rules and strategies."},
+    {"slug": "monopoly-live", "name": "Monopoly Live", "desc": "Real-time Monopoly game show with a live host."},
+    {"slug": "crazy-time", "name": "Crazy Time", "desc": "The most popular game show from Evolution Gaming."},
+    {"slug": "lightning-roulette", "name": "Lightning Roulette", "desc": "Roulette with lightning strikes and multipliers up to x500."},
+    {"slug": "mega-ball", "name": "Mega Ball", "desc": "Live lottery game with a host and multipliers."},
+    {"slug": "gonzo-treasure-hunt", "name": "Gonzo's Treasure Hunt", "desc": "Treasure hunt game featuring Gonzo from NetEnt's classic slot."},
 ]
-# Ещё 40 live игр
+# 40 more live games
 more_live = [
     "Speed Blackjack", "Infinite Blackjack", "Power Blackjack", "Free Bet Blackjack",
     "Lightning Blackjack", "Speed Roulette", "Auto Roulette", "Immersive Roulette",
@@ -253,131 +253,131 @@ more_live = [
 ]
 for name in more_live:
     slug = name.lower().replace("'", "").replace(" ", "-")
-    live_games.append({"slug": slug, "name": name, "desc": f"{name} — играйте с живым дилером в лучших казино Исландии."})
+    live_games.append({"slug": slug, "name": name, "desc": f"{name} — play with a live dealer at the best casinos for Iceland."})
 
-# Бонусы (80 страниц)
+# Bonuses (80 pages)
 bonus_pages = [
-    {"slug": "velkomstbonus", "title": "Приветственный бонус", "desc": "Лучшие приветственные бонусы в онлайн казино Исландии."},
-    {"slug": "frispiny-bez-depozita", "title": "Фриспины без депозита", "desc": "Бесплатные вращения без необходимости вносить депозит."},
-    {"slug": "bezdepozitnye-bonusy", "title": "Бездепозитные бонусы", "desc": "Все бонусы без депозита в казино Исландии."},
-    {"slug": "keshbek", "title": "Кешбэк бонусы", "desc": "Казино с возвратом проигранных средств."},
-    {"slug": "bonus-za-registraciyu", "title": "Бонус за регистрацию", "desc": "Получите бонус сразу после регистрации."},
-    {"slug": "bonus-na-pervyj-depozit", "title": "Бонус на первый депозит", "desc": "Лучшие бонусы на первое пополнение счёта."},
-    {"slug": "bonus-na-vtoroj-depozit", "title": "Бонус на второй депозит", "desc": "Бонусы на второе пополнение."},
-    {"slug": "vejer", "title": "Что такое вейджер", "desc": "Объяснение требований к отыгрышу бонусов."},
-    {"slug": "bonus-kody", "title": "Бонус-коды казино", "desc": "Актуальные промокоды для онлайн казино."},
-    {"slug": "reload-bonus", "title": "Релоад бонусы", "desc": "Бонусы на повторные депозиты."},
+    {"slug": "velkomstbonus", "title": "Welcome Bonus", "desc": "Best welcome bonuses at online casinos available to Icelandic players."},
+    {"slug": "frispiny-bez-depozita", "title": "Free Spins No Deposit", "desc": "Free spins with no deposit required — just register and claim."},
+    {"slug": "bezdepozitnye-bonusy", "title": "No Deposit Bonuses", "desc": "All no-deposit bonuses available at casinos accepting Icelandic players."},
+    {"slug": "keshbek", "title": "Cashback Bonuses", "desc": "Casinos offering cashback on net losses — get a percentage back weekly."},
+    {"slug": "bonus-za-registraciyu", "title": "Registration Bonus", "desc": "Get a bonus immediately after completing registration — no deposit needed."},
+    {"slug": "bonus-na-pervyj-depozit", "title": "First Deposit Bonus", "desc": "Best bonuses available on your first deposit at top-rated casinos."},
+    {"slug": "bonus-na-vtoroj-depozit", "title": "Second Deposit Bonus", "desc": "Second deposit bonuses — reload offers for your next top-up."},
+    {"slug": "vejer", "title": "What is Wagering", "desc": "Understanding wagering requirements — how playthrough works and what to look for."},
+    {"slug": "bonus-kody", "title": "Casino Bonus Codes", "desc": "Current promo codes and bonus codes for online casinos in 2026."},
+    {"slug": "reload-bonus", "title": "Reload Bonuses", "desc": "Reload bonuses for existing players — weekly and monthly deposit offers."},
 ]
-# Ещё 70 бонус-страниц по казино
+# 70 more bonus pages per casino
 for casino in casinos[:70]:
     bonus_pages.append({
         "slug": f"bonus-{casino['slug']}",
-        "title": f"Бонус {casino['name']}",
-        "desc": f"Актуальные бонусы и промокоды {casino['name']} — {casino['bonus']}."
+        "title": f"Bonus {casino['name']}",
+        "desc": f"Current bonuses and promo codes for {casino['name']} — {casino['bonus']}."
     })
 
-# Платежи (50 страниц)
+# Payments (50 pages)
 payment_pages = [
-    {"slug": "bitcoin", "title": "Bitcoin в казино", "desc": "Как использовать Bitcoin для депозитов и выводов в онлайн казино."},
-    {"slug": "ethereum", "title": "Ethereum в казино", "desc": "Депозиты и выводы через Ethereum."},
-    {"slug": "usdt", "title": "USDT (Tether) в казино", "desc": "Использование стейблкоина USDT в онлайн казино."},
-    {"slug": "litecoin", "title": "Litecoin в казино", "desc": "Быстрые платежи через Litecoin."},
-    {"slug": "dogecoin", "title": "Dogecoin в казино", "desc": "Как играть в казино с Dogecoin."},
-    {"slug": "ripple-xrp", "title": "Ripple (XRP) в казино", "desc": "Платежи через XRP в онлайн казино."},
-    {"slug": "cardano", "title": "Cardano (ADA) в казино", "desc": "Использование ADA для игры в казино."},
-    {"slug": "solana", "title": "Solana (SOL) в казино", "desc": "Быстрые SOL-транзакции в казино."},
-    {"slug": "bnb", "title": "BNB в казино", "desc": "Binance Coin для депозитов в казино."},
-    {"slug": "tron", "title": "TRON (TRX) в казино", "desc": "Низкие комиссии с TRON."},
-    {"slug": "kak-kupit-bitcoin", "title": "Как купить Bitcoin", "desc": "Пошаговый гайд по покупке Bitcoin для казино."},
-    {"slug": "kak-kupit-ethereum", "title": "Как купить Ethereum", "desc": "Где и как купить ETH."},
-    {"slug": "obhod-blokirovok-bankov", "title": "Обход банковских блокировок", "desc": "Как обойти блокировки исландских банков на казино-транзакции."},
-    {"slug": "kripto-koshelki", "title": "Крипто-кошельки", "desc": "Лучшие кошельки для хранения криптовалют."},
-    {"slug": "metamask-casino", "title": "MetaMask для казино", "desc": "Как использовать MetaMask для казино."},
-    {"slug": "trust-wallet-casino", "title": "Trust Wallet для казино", "desc": "Депозиты через Trust Wallet."},
-    {"slug": "binance-casino", "title": "Binance для казино", "desc": "Как переводить средства с Binance в казино."},
-    {"slug": "coinbase-casino", "title": "Coinbase для казино", "desc": "Покупка крипто через Coinbase для казино."},
-    {"slug": "kraken-casino", "title": "Kraken для казино", "desc": "Использование биржи Kraken."},
-    {"slug": "vpn-casino", "title": "VPN для казино", "desc": "Нужен ли VPN для игры в казино из Исландии."},
+    {"slug": "bitcoin", "title": "Bitcoin at Casinos", "desc": "How to use Bitcoin for deposits and withdrawals at online casinos. Step-by-step guide for Icelandic players."},
+    {"slug": "ethereum", "title": "Ethereum at Casinos", "desc": "Depositing and withdrawing with Ethereum (ETH) at online casinos."},
+    {"slug": "usdt", "title": "USDT (Tether) at Casinos", "desc": "Using USDT (Tether) stablecoin at online casinos — instant deposits with stable value."},
+    {"slug": "litecoin", "title": "Litecoin at Casinos", "desc": "Fast and low-fee payments using Litecoin (LTC) at online casinos."},
+    {"slug": "dogecoin", "title": "Dogecoin at Casinos", "desc": "How to deposit and play at online casinos with Dogecoin (DOGE)."},
+    {"slug": "ripple-xrp", "title": "Ripple (XRP) at Casinos", "desc": "Using Ripple (XRP) for fast casino payments with minimal fees."},
+    {"slug": "cardano", "title": "Cardano (ADA) at Casinos", "desc": "Cardano (ADA) casino payments — how to deposit and withdraw."},
+    {"slug": "solana", "title": "Solana (SOL) at Casinos", "desc": "Solana (SOL) for ultra-fast casino transactions with near-zero fees."},
+    {"slug": "bnb", "title": "BNB at Casinos", "desc": "Using BNB (Binance Coin) for casino deposits and withdrawals."},
+    {"slug": "tron", "title": "TRON (TRX) at Casinos", "desc": "TRON (TRX) payments — extremely low fees for casino transactions."},
+    {"slug": "kak-kupit-bitcoin", "title": "How to Buy Bitcoin", "desc": "Step-by-step guide to buying Bitcoin for casino deposits in Iceland."},
+    {"slug": "kak-kupit-ethereum", "title": "How to Buy Ethereum", "desc": "Where and how to buy Ethereum for casino deposits."},
+    {"slug": "obhod-blokirovok-bankov", "title": "Bypassing Bank Blocks", "desc": "How to bypass Icelandic bank blocks on casino payments using crypto."},
+    {"slug": "kripto-koshelki", "title": "Crypto Wallets", "desc": "Best crypto wallets for casino deposits — MetaMask, Trust Wallet, and more."},
+    {"slug": "metamask-casino", "title": "MetaMask for Casinos", "desc": "Using MetaMask wallet for online casino deposits and withdrawals."},
+    {"slug": "trust-wallet-casino", "title": "Trust Wallet for Casinos", "desc": "Making casino deposits through Trust Wallet — complete guide."},
+    {"slug": "binance-casino", "title": "Binance for Casinos", "desc": "How to transfer funds from Binance exchange to your casino account."},
+    {"slug": "coinbase-casino", "title": "Coinbase for Casinos", "desc": "Buying crypto on Coinbase and depositing at online casinos."},
+    {"slug": "kraken-casino", "title": "Kraken for Casinos", "desc": "Using Kraken exchange for casino crypto transactions."},
+    {"slug": "vpn-casino", "title": "VPN for Casinos", "desc": "Do you need a VPN to play at online casinos from Iceland? Legal overview."},
 ]
-# Ещё 30 платежных страниц
+# 30 more payment pages
 more_payments = [
-    "Visa в казино", "Mastercard в казино", "Apple Pay в казино", "Google Pay в казино",
-    "Skrill в казино", "Neteller в казино", "ecoPayz в казино", "MiFinity в казино",
-    "Jeton в казино", "CashtoCode в казино", "Neosurf в казино", "Paysafecard в казино",
-    "AstroPay в казино", "MuchBetter в казино", "Interac в казино", "iDebit в казино",
-    "Instadebit в казино", "Flexepin в казино", "Monero в казино", "Bitcoin Cash в казино",
-    "Polkadot в казино", "Avalanche в казино", "Polygon в казино", "Arbitrum в казино",
-    "Optimism в казино", "Минимальный депозит 1€", "Минимальный депозит 5€", "Минимальный депозит 10€",
-    "Вывод на карту", "Быстрый вывод крипто"
+    "Visa at Casinos", "Mastercard at Casinos", "Apple Pay at Casinos", "Google Pay at Casinos",
+    "Skrill at Casinos", "Neteller at Casinos", "ecoPayz at Casinos", "MiFinity at Casinos",
+    "Jeton at Casinos", "CashtoCode at Casinos", "Neosurf at Casinos", "Paysafecard at Casinos",
+    "AstroPay at Casinos", "MuchBetter at Casinos", "Interac at Casinos", "iDebit at Casinos",
+    "Instadebit at Casinos", "Flexepin at Casinos", "Monero at Casinos", "Bitcoin Cash at Casinos",
+    "Polkadot at Casinos", "Avalanche at Casinos", "Polygon at Casinos", "Arbitrum at Casinos",
+    "Optimism at Casinos", "Minimum Deposit €1", "Minimum Deposit €5", "Minimum Deposit €10",
+    "Card Withdrawals", "Fast Crypto Withdrawals"
 ]
 for title in more_payments:
     slug = title.lower().replace("€", "eur").replace(" ", "-").replace("(", "").replace(")", "")
-    payment_pages.append({"slug": slug, "title": title, "desc": f"{title} — полный гайд для игроков из Исландии."})
+    payment_pages.append({"slug": slug, "title": title, "desc": f"{title} — complete guide for players from Iceland."})
 
-# Гайды (60 страниц)
+# Guides (60 pages)
 guide_pages = [
-    {"slug": "kak-vybrat-casino", "title": "Как выбрать онлайн казино", "desc": "Полное руководство по выбору надёжного казино."},
-    {"slug": "chto-takoe-rtp", "title": "Что такое RTP", "desc": "Объяснение Return to Player — процента возврата."},
-    {"slug": "chto-takoe-volatilnost", "title": "Что такое волатильность", "desc": "Разница между низкой, средней и высокой волатильностью."},
-    {"slug": "kak-igrat-v-sloty", "title": "Как играть в слоты", "desc": "Пошаговое руководство для начинающих."},
-    {"slug": "strategii-blackjack", "title": "Стратегии блэкджека", "desc": "Базовая стратегия и карточка для блэкджека."},
-    {"slug": "pravila-ruletki", "title": "Правила рулетки", "desc": "Как играть в рулетку — полное руководство."},
-    {"slug": "pravila-bakkary", "title": "Правила баккары", "desc": "Как играть в баккару."},
-    {"slug": "kak-vyigrat-v-casino", "title": "Как выиграть в казино", "desc": "Советы и стратегии для увеличения шансов."},
-    {"slug": "otvetstvennaya-igra", "title": "Ответственная игра", "desc": "Как играть ответственно и контролировать расходы."},
-    {"slug": "zakon-ob-azartnyh-igrah-islandiya", "title": "Закон об азартных играх Исландии", "desc": "Правовой статус онлайн казино в Исландии."},
-    {"slug": "nalogi-na-vyigrysh", "title": "Налоги на выигрыш", "desc": "Нужно ли платить налоги с выигрыша в Исландии."},
-    {"slug": "bezopasnost-v-casino", "title": "Безопасность в казино", "desc": "Как защитить свои данные при игре онлайн."},
-    {"slug": "glossarij-casino", "title": "Глоссарий казино", "desc": "Все термины казино от А до Я."},
-    {"slug": "provajdery-igr", "title": "Провайдеры игр", "desc": "Обзор крупнейших разработчиков слотов."},
-    {"slug": "megaways-sloty", "title": "Что такое Megaways", "desc": "Как работает механика Megaways."},
-    {"slug": "bonus-buy-sloty", "title": "Слоты с Bonus Buy", "desc": "Как работает покупка бонуса."},
-    {"slug": "progressivnye-jackpoty", "title": "Прогрессивные джекпоты", "desc": "Как выиграть прогрессивный джекпот."},
-    {"slug": "turniry-v-casino", "title": "Турниры в казино", "desc": "Как участвовать в слот-турнирах."},
-    {"slug": "vip-programmy", "title": "VIP программы", "desc": "Как работают VIP и лоялти программы."},
-    {"slug": "casino-na-telefone", "title": "Казино на телефоне", "desc": "Лучшие мобильные казино и приложения."},
+    {"slug": "kak-vybrat-casino", "title": "How to Choose an Online Casino", "desc": "Complete guide to choosing a reliable and safe online casino."},
+    {"slug": "chto-takoe-rtp", "title": "What is RTP", "desc": "Understanding RTP (Return to Player) — what it means for your gameplay."},
+    {"slug": "chto-takoe-volatilnost", "title": "What is Volatility", "desc": "The difference between low, medium, and high volatility slots explained."},
+    {"slug": "kak-igrat-v-sloty", "title": "How to Play Slots", "desc": "Step-by-step guide for beginners — how slot machines work."},
+    {"slug": "strategii-blackjack", "title": "Blackjack Strategy", "desc": "Basic blackjack strategy and strategy card — improve your odds."},
+    {"slug": "pravila-ruletki", "title": "Roulette Rules", "desc": "How to play roulette — complete rules, bets, and strategies."},
+    {"slug": "pravila-bakkary", "title": "Baccarat Rules", "desc": "How to play baccarat — rules, strategies, and tips."},
+    {"slug": "kak-vyigrat-v-casino", "title": "How to Win at Casinos", "desc": "Tips and strategies for improving your odds at online casinos."},
+    {"slug": "otvetstvennaya-igra", "title": "Responsible Gambling", "desc": "How to gamble responsibly — setting limits and staying in control."},
+    {"slug": "zakon-ob-azartnyh-igrah-islandiya", "title": "Iceland Gambling Law", "desc": "Legal status of online casinos in Iceland — what players need to know."},
+    {"slug": "nalogi-na-vyigrysh", "title": "Taxes on Gambling Winnings", "desc": "Do you need to pay taxes on gambling winnings in Iceland?"},
+    {"slug": "bezopasnost-v-casino", "title": "Casino Security", "desc": "How to protect your personal data when playing at online casinos."},
+    {"slug": "glossarij-casino", "title": "Casino Glossary", "desc": "Casino glossary — all gambling terms from A to Z explained."},
+    {"slug": "provajdery-igr", "title": "Game Providers", "desc": "Overview of the biggest slot game providers and developers."},
+    {"slug": "megaways-sloty", "title": "What are Megaways Slots", "desc": "How the Megaways mechanic works — up to 117,649 ways to win."},
+    {"slug": "bonus-buy-sloty", "title": "Bonus Buy Slots", "desc": "How Bonus Buy slots work — skip to the bonus round instantly."},
+    {"slug": "progressivnye-jackpoty", "title": "Progressive Jackpots", "desc": "How progressive jackpots work and how to win them."},
+    {"slug": "turniry-v-casino", "title": "Casino Tournaments", "desc": "How casino slot tournaments work — compete for cash prizes."},
+    {"slug": "vip-programmy", "title": "VIP Programmes", "desc": "How VIP and loyalty programmes work at online casinos."},
+    {"slug": "casino-na-telefone", "title": "Mobile Casinos", "desc": "Best mobile casinos and casino apps for iPhone and Android."},
 ]
-# Ещё 40 гайдов
+# 40 more guides
 more_guides = [
-    "Как вывести деньги из казино", "Как пополнить счёт в казино", "Что такое вагерные требования",
-    "Как работает генератор случайных чисел", "Разница между слотами и автоматами",
-    "Казино с лицензией Curacao", "Казино с лицензией MGA", "Казино с лицензией UK",
-    "Как проверить лицензию казино", "Что такое KYC верификация",
-    "Как выбрать слот с высоким RTP", "Топ-10 слотов для новичков", "Топ-10 слотов для хайроллеров",
-    "Слоты с максимальным выигрышем", "Слоты с низкой волатильностью",
-    "Как играть в краш-игры", "Как играть в Plinko", "Как играть в Aviator",
-    "Как играть в Mines", "Как играть в Dice",
-    "Что такое провайдер Evolution", "Что такое провайдер Pragmatic Play", "Что такое провайдер NetEnt",
-    "История казино в Исландии", "Онлайн казино vs наземные казино",
-    "Криптовалюты vs фиат в казино", "Преимущества крипто-казино",
-    "Как избежать мошенничества", "Признаки честного казино", "Чёрный список казино",
-    "Как связаться с поддержкой казино", "Как подать жалобу на казино",
-    "Сравнение бонусов разных казино", "Как использовать бонус максимально эффективно",
-    "Стратегия управления банкроллом", "Психология азартных игр",
-    "Зависимость от азартных игр — помощь", "Сайты помощи при игровой зависимости",
-    "Самоисключение из казино", "Лимиты депозитов и проигрыша"
+    "How to Withdraw from Casino", "How to Deposit at Casino", "What are Wagering Requirements",
+    "How RNG Works", "Slots vs Slot Machines",
+    "Curaçao Licensed Casinos", "MGA Licensed Casinos", "UK Licensed Casinos",
+    "How to Verify Casino Licence", "What is KYC Verification",
+    "How to Choose High RTP Slots", "Top 10 Slots for Beginners", "Top 10 Slots for High Rollers",
+    "Highest Win Potential Slots", "Low Volatility Slots",
+    "How to Play Crash Games", "How to Play Plinko", "How to Play Aviator",
+    "How to Play Mines", "How to Play Dice",
+    "What is Evolution Gaming", "What is Pragmatic Play", "What is NetEnt",
+    "History of Casinos in Iceland", "Online vs Land-Based Casinos",
+    "Crypto vs Fiat at Casinos", "Advantages of Crypto Casinos",
+    "How to Avoid Casino Scams", "Signs of a Fair Casino", "Casino Blacklist",
+    "How to Contact Casino Support", "How to File a Casino Complaint",
+    "Comparing Casino Bonuses", "How to Maximise Your Bonus",
+    "Bankroll Management Strategy", "Psychology of Gambling",
+    "Gambling Addiction — Help", "Gambling Addiction Support Sites",
+    "Casino Self-Exclusion", "Deposit and Loss Limits"
 ]
 for title in more_guides:
-    slug = title.lower().replace("—", "").replace("ё", "е").replace(" ", "-").replace(",", "").replace(".", "")
-    guide_pages.append({"slug": slug, "title": title, "desc": f"{title} — подробное руководство."})
+    slug = title.lower().replace("—", "").replace("ё", "e").replace(" ", "-").replace(",", "").replace(".", "")
+    guide_pages.append({"slug": slug, "title": title, "desc": f"{title} — detailed guide for casino players."})
 
-# О нас (10 страниц)
+# About (10 pages)
 about_pages = [
-    {"slug": "o-nas", "title": "О Bestiflokkurinn", "desc": "Кто мы и почему создали Bestiflokkurinn."},
-    {"slug": "kontakty", "title": "Контакты", "desc": "Свяжитесь с командой Bestiflokkurinn."},
-    {"slug": "konfidencialnost", "title": "Политика конфиденциальности", "desc": "Как мы обрабатываем ваши данные."},
-    {"slug": "usloviya", "title": "Условия использования", "desc": "Правила использования сайта Bestiflokkurinn."},
-    {"slug": "otkaz-ot-otvetstvennosti", "title": "Отказ от ответственности", "desc": "Важная юридическая информация."},
-    {"slug": "kak-my-ocenivaem", "title": "Как мы оцениваем казино", "desc": "Наша методология оценки."},
-    {"slug": "redakcionnaya-politika", "title": "Редакционная политика", "desc": "Принципы нашей редакции."},
-    {"slug": "partnerstvo", "title": "Партнёрство", "desc": "Сотрудничество с Bestiflokkurinn."},
-    {"slug": "karta-sajta", "title": "Карта сайта", "desc": "Полная карта всех страниц Bestiflokkurinn."},
-    {"slug": "otvetstvennaya-igra-stranica", "title": "Ответственная игра", "desc": "Наша позиция по ответственной игре."},
+    {"slug": "o-nas", "title": "About BF Casino", "desc": "Who we are and why we created BF Casino at Bestiflokkurinn.is."},
+    {"slug": "kontakty", "title": "Contact", "desc": "Contact the BF Casino team — get in touch with us."},
+    {"slug": "konfidencialnost", "title": "Privacy Policy", "desc": "How we handle your data — our privacy policy explained."},
+    {"slug": "usloviya", "title": "Terms of Use", "desc": "Terms of use for the Bestiflokkurinn.is website."},
+    {"slug": "otkaz-ot-otvetstvennosti", "title": "Disclaimer", "desc": "Important legal disclaimer about our casino reviews."},
+    {"slug": "kak-my-ocenivaem", "title": "How We Rate Casinos", "desc": "How we rate and review online casinos — our methodology."},
+    {"slug": "redakcionnaya-politika", "title": "Editorial Policy", "desc": "Our editorial policy — independence, accuracy, and transparency."},
+    {"slug": "partnerstvo", "title": "Partnership", "desc": "Partnership opportunities with BF Casino."},
+    {"slug": "karta-sajta", "title": "Sitemap", "desc": "Complete sitemap of all pages on Bestiflokkurinn.is."},
+    {"slug": "otvetstvennaya-igra-stranica", "title": "Responsible Gambling", "desc": "Our position on responsible gambling and player protection."},
 ]
 
 
 # ============================================================
-# HTML ШАБЛОН
+# HTML TEMPLATE
 # ============================================================
 
 def get_nav():
@@ -532,7 +532,7 @@ body::after{{content:'';position:fixed;bottom:-200px;left:-10%;width:600px;heigh
 
 
 # ============================================================
-# ГЕНЕРАЦИЯ СТРАНИЦ
+# PAGE GENERATION
 # ============================================================
 
 BASE = "/home/claude/slotoro-site"
@@ -547,7 +547,7 @@ def write_page(path, html):
     count += 1
 
 # 1. КАЗИНО ОБЗОРЫ (150)
-print("Генерирую обзоры казино...")
+print("Generating casino reviews...")
 for c in casinos:
     content = f'''<h1>{c["name"]} — Review & Bonuses 2026</h1>
 <div class="rating-box"><div class="score">{c["rating"]}</div><div class="label">/ 10</div></div>
@@ -579,12 +579,12 @@ for c in casinos:
     write_page(f'casino/{c["slug"]}/index.html', html)
 
 # 2. КАТЕГОРИИ КАЗИНО (50)
-print("Генерирую категории казино...")
+print("Generating casino categories...")
 for cat in casino_categories:
     top_casinos = casinos[:10]
     cards = ""
     for c in top_casinos:
-        cards += f'<div class="info-box"><p><strong>{c["name"]}</strong> — {c["bonus"]} (Рейтинг: {c["rating"]}/10) <a href="/slotoro-site/casino/{c["slug"]}/">Обзор →</a></p></div>\n'
+        cards += f'<div class="info-box"><p><strong>{c["name"]}</strong> — {c["bonus"]} (Rating: {c["rating"]}/10) <a href="/slotoro-site/casino/{c["slug"]}/">Review →</a></p></div>\n'
 
     content = f'''<h1>{cat["title"]} in Iceland 2026</h1>
 <p>{cat["desc"]}</p>
@@ -599,7 +599,7 @@ for cat in casino_categories:
     write_page(f'casino/{cat["slug"]}/index.html', html)
 
 # 3. СЛОТЫ (250)
-print("Генерирую обзоры слотов...")
+print("Generating slot reviews...")
 for s in slots_data:
     cdn_img = ""
     if s.get("cdn"):
@@ -631,7 +631,7 @@ for s in slots_data:
     write_page(f'slots/{s["slug"]}/index.html', html)
 
 # 4. LIVE КАЗИНО (50)
-print("Генерирую live казино страницы...")
+print("Generating live casino pages...")
 for g in live_games:
     content = f'''<h1>{g["name"]} — Live Casino</h1>
 <p>{g["desc"]}</p>
@@ -650,7 +650,7 @@ for g in live_games:
     write_page(f'live/{g["slug"]}/index.html', html)
 
 # 5. БОНУСЫ (80)
-print("Генерирую страницы бонусов...")
+print("Generating bonus pages...")
 for b in bonus_pages:
     content = f'''<h1>{b["title"]}</h1>
 <p>{b["desc"]}</p>
@@ -670,7 +670,7 @@ for b in bonus_pages:
     write_page(f'bonusy/{b["slug"]}/index.html', html)
 
 # 6. ПЛАТЕЖИ (50)
-print("Генерирую страницы платежей...")
+print("Generating payment pages...")
 for p in payment_pages:
     content = f'''<h1>{p["title"]}</h1>
 <p>{p["desc"]}</p>
@@ -695,7 +695,7 @@ for p in payment_pages:
     write_page(f'platezhi/{p["slug"]}/index.html', html)
 
 # 7. ГАЙДЫ (60)
-print("Генерирую гайды...")
+print("Generating guides...")
 for g in guide_pages:
     content = f'''<h1>{g["title"]}</h1>
 <p>{g["desc"]}</p>
@@ -720,7 +720,7 @@ for g in guide_pages:
     write_page(f'gajdy/{g["slug"]}/index.html', html)
 
 # 8. О НАС (10)
-print("Генерирую страницы 'О нас'...")
+print("Generating about pages...")
 for a in about_pages:
     content = f'''<h1>{a["title"]}</h1>
 <p>{a["desc"]}</p>
@@ -731,7 +731,7 @@ for a in about_pages:
     write_page(f'{a["slug"]}/index.html', html)
 
 # 9. ИНДЕКСНЫЕ СТРАНИЦЫ РАЗДЕЛОВ
-print("Генерирую индексные страницы...")
+print("Generating index pages...")
 
 # Casino index — FULL landing page (main casino hub)
 casino_cards = ""
@@ -787,7 +787,7 @@ write_page("gajdy/index.html", page_template("Guides", "Player guides and tutori
 
 
 # 10. SITEMAP
-print("Генерирую sitemap.xml...")
+print("Generating sitemap.xml...")
 sitemap_urls = ['https://bestiflokkurinn.is/']
 for c in casinos:
     sitemap_urls.append(f'https://bestiflokkurinn.is/casino/{c["slug"]}/')
@@ -826,5 +826,5 @@ with open(os.path.join(BASE, 'sitemap.xml'), 'w') as f:
 with open(os.path.join(BASE, 'robots.txt'), 'w') as f:
     f.write('User-agent: *\nAllow: /\nSitemap: https://bestiflokkurinn.is/sitemap.xml\n')
 
-print(f"\n✅ Сгенерировано {count} страниц + sitemap.xml + robots.txt")
-print(f"URLs в sitemap: {len(sitemap_urls)}")
+print(f"\n✅ Generated {count} pages + sitemap.xml + robots.txt")
+print(f"URLs in sitemap: {len(sitemap_urls)}")
