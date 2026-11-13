@@ -34,16 +34,100 @@ a{text-decoration:none;color:inherit;}
 .nav-links{display:flex;gap:22px;font-size:13px;font-weight:500;}
 .nav-links a{color:var(--muted);transition:color .2s;}
 .nav-links a:hover{color:#e0c0ff;}
-/* Liquid glass btn */
-.btn-glass{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,rgba(140,60,240,.2),rgba(200,100,255,.1));backdrop-filter:blur(8px);border:1px solid rgba(180,140,255,.2);color:#e0c0ff;padding:8px 22px;border-radius:20px;font-size:13px;font-weight:600;transition:all .25s;position:relative;overflow:hidden;box-shadow:0 2px 12px rgba(140,60,240,.1),inset 0 1px 0 rgba(255,255,255,.06);}
-.btn-glass::before{content:'';position:absolute;top:0;left:0;right:0;height:50%;background:linear-gradient(180deg,rgba(255,255,255,.06),transparent);pointer-events:none;border-radius:20px 20px 0 0;}
-.btn-glass:hover{background:linear-gradient(135deg,rgba(140,60,240,.3),rgba(200,100,255,.15));border-color:rgba(180,140,255,.35);color:#fff;transform:translateY(-1px);box-shadow:0 4px 20px rgba(140,60,240,.2),inset 0 1px 0 rgba(255,255,255,.08);}
-/* Big liquid glass CTA */
-.btn-cta{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,rgba(140,60,240,.25),rgba(200,100,255,.12));backdrop-filter:blur(12px);color:#fff;padding:16px 44px;border-radius:24px;font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:600;transition:all .3s;position:relative;overflow:hidden;border:1px solid rgba(180,140,255,.2);box-shadow:0 4px 24px rgba(130,60,230,.2),inset 0 1px 0 rgba(255,255,255,.06);}
-.btn-cta::before{content:'';position:absolute;top:0;left:0;right:0;height:50%;background:linear-gradient(180deg,rgba(255,255,255,.08),transparent);pointer-events:none;border-radius:24px 24px 0 0;}
-.btn-cta::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),transparent);pointer-events:none;}
-.btn-cta:hover{transform:translateY(-3px);box-shadow:0 8px 36px rgba(130,60,230,.35),inset 0 1px 0 rgba(255,255,255,.08);border-color:rgba(180,140,255,.35);}
-.btn-cta:hover::after{animation:btnShine .6s ease-out;}
+/* ═══ LIQUID GLASS BUTTONS ═══ */
+/* Small nav glass btn — dark glass capsule */
+.btn-glass{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:10px 26px;border-radius:28px;font-size:13px;font-weight:600;
+  color:#fff;cursor:pointer;transition:all .3s;position:relative;overflow:hidden;
+  background:linear-gradient(180deg,rgba(40,25,80,.7) 0%,rgba(20,12,50,.9) 100%);
+  border:1px solid rgba(180,140,255,.12);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.07) inset,
+    0 -1px 0 rgba(0,0,0,.3) inset,
+    0 4px 16px rgba(0,0,0,.4),
+    0 1px 3px rgba(0,0,0,.3);
+}
+/* Top glass highlight */
+.btn-glass::before{content:'';position:absolute;top:1px;left:10%;right:10%;height:40%;background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.02));border-radius:20px;pointer-events:none;}
+/* Color glow underneath */
+.btn-glass::after{content:'';position:absolute;bottom:-6px;left:20%;right:20%;height:12px;background:rgba(140,80,240,.25);filter:blur(8px);border-radius:50%;pointer-events:none;transition:all .3s;}
+.btn-glass:hover{
+  transform:translateY(-2px);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.1) inset,
+    0 -1px 0 rgba(0,0,0,.3) inset,
+    0 8px 24px rgba(0,0,0,.5),
+    0 2px 4px rgba(0,0,0,.3);
+}
+.btn-glass:hover::after{background:rgba(140,80,240,.4);filter:blur(12px);}
+
+/* Big CTA — liquid glass with color glow */
+.btn-cta{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:18px 50px;border-radius:32px;
+  font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;
+  color:#fff;cursor:pointer;transition:all .3s;position:relative;overflow:hidden;
+  background:linear-gradient(180deg,rgba(160,80,255,.5) 0%,rgba(100,40,200,.8) 50%,rgba(80,30,160,.9) 100%);
+  border:1px solid rgba(220,180,255,.15);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.1) inset,
+    0 -2px 0 rgba(0,0,0,.2) inset,
+    0 4px 20px rgba(120,50,220,.3),
+    0 8px 40px rgba(100,30,200,.15),
+    0 1px 3px rgba(0,0,0,.3);
+}
+/* Top glass highlight — curved reflection */
+.btn-cta::before{content:'';position:absolute;top:1px;left:8%;right:8%;height:45%;background:linear-gradient(180deg,rgba(255,255,255,.18),rgba(255,255,255,.03));border-radius:30px;pointer-events:none;}
+/* Animated color glow underneath */
+.btn-cta::after{content:'';position:absolute;bottom:-8px;left:15%;right:15%;height:16px;background:rgba(140,60,240,.4);filter:blur(12px);border-radius:50%;pointer-events:none;transition:all .3s;animation:ctaGlow 3s ease-in-out infinite;}
+@keyframes ctaGlow{0%,100%{opacity:.6;filter:blur(12px);}50%{opacity:1;filter:blur(16px);}}
+.btn-cta:hover{
+  transform:translateY(-3px);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.15) inset,
+    0 -2px 0 rgba(0,0,0,.2) inset,
+    0 8px 30px rgba(120,50,220,.4),
+    0 16px 60px rgba(100,30,200,.2),
+    0 2px 4px rgba(0,0,0,.3);
+}
+.btn-cta:hover::after{background:rgba(140,60,240,.6);filter:blur(16px);}
+
+/* Secondary glass btn for promos */
+.promo-btn{
+  display:inline-block;
+  padding:10px 22px;border-radius:22px;font-size:12px;font-weight:600;
+  color:#d0b0ff;cursor:pointer;transition:all .3s;position:relative;overflow:hidden;
+  background:linear-gradient(180deg,rgba(35,20,65,.6) 0%,rgba(18,10,40,.8) 100%);
+  border:1px solid rgba(160,120,230,.12);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.05) inset,
+    0 -1px 0 rgba(0,0,0,.2) inset,
+    0 3px 12px rgba(0,0,0,.3);
+}
+.promo-btn::before{content:'';position:absolute;top:1px;left:12%;right:12%;height:40%;background:linear-gradient(180deg,rgba(255,255,255,.08),transparent);border-radius:16px;pointer-events:none;}
+.promo-btn::after{content:'';position:absolute;bottom:-4px;left:25%;right:25%;height:8px;background:rgba(120,60,220,.2);filter:blur(6px);border-radius:50%;pointer-events:none;transition:all .3s;}
+.promo-btn:hover{
+  color:#fff;transform:translateY(-2px);
+  box-shadow:0 1px 0 rgba(255,255,255,.08) inset,0 -1px 0 rgba(0,0,0,.2) inset,0 6px 20px rgba(0,0,0,.4);
+}
+.promo-btn:hover::after{background:rgba(140,60,240,.35);filter:blur(8px);}
+
+/* Game play button — small glass */
+.gc-play{
+  display:block;margin:4px 12px 12px;text-align:center;
+  padding:9px;border-radius:16px;font-size:12px;font-weight:600;
+  color:#c0a0f0;cursor:pointer;transition:all .25s;position:relative;overflow:hidden;
+  background:linear-gradient(180deg,rgba(30,18,60,.5) 0%,rgba(15,8,35,.7) 100%);
+  border:1px solid rgba(140,100,220,.1);
+  box-shadow:0 1px 0 rgba(255,255,255,.04) inset,0 2px 8px rgba(0,0,0,.2);
+}
+.gc-play::before{content:'';position:absolute;top:1px;left:15%;right:15%;height:40%;background:linear-gradient(180deg,rgba(255,255,255,.06),transparent);border-radius:12px;pointer-events:none;}
+.gc:hover .gc-play{
+  color:#e0c0ff;border-color:rgba(180,140,255,.2);
+  box-shadow:0 1px 0 rgba(255,255,255,.06) inset,0 4px 14px rgba(0,0,0,.3);
+}
+
 @keyframes btnShine{0%{left:-100%;}100%{left:200%;}}
 
 /* HERO */
