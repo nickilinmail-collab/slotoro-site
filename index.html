@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Slotoro – Лучшие онлайн казино Исландии 2026</title>
-<meta name="description" content="Slotoro — лучший сайт сравнения онлайн казино в Исландии.">
+<title>Frostspil – Лучшие онлайн казино Исландии 2026</title>
+<meta name="description" content="Frostspil — лучший сайт сравнения онлайн казино в Исландии.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
@@ -14,12 +14,20 @@ a{text-decoration:none;color:inherit;}
 img{display:block;max-width:100%;}
 button{font-family:inherit;}
 
+/* Snowflakes */
+@keyframes snowfall{0%{transform:translateY(-10px) rotate(0deg);opacity:0}10%{opacity:1}90%{opacity:0.8}100%{transform:translateY(100vh) rotate(360deg);opacity:0}}
+.snowflake{position:fixed;top:-10px;color:rgba(200,230,255,0.4);font-size:14px;pointer-events:none;z-index:200;animation:snowfall linear infinite;}
+
+/* Ice frost border */
+.frost-border{position:relative;}
+.frost-border::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,rgba(150,220,255,0.6),rgba(200,240,255,0.8),rgba(150,220,255,0.6),transparent);}
+
 .promo-bar{background:linear-gradient(90deg,#0a0520,#1a0a50,#0a0520);padding:10px 20px;text-align:center;border-bottom:1px solid rgba(120,60,255,0.2);}
 .promo-bar span{color:rgba(255,215,0,0.9);font-size:12px;font-weight:600;letter-spacing:0.5px;}
 
 .nav{background:rgba(5,8,24,0.95);padding:14px 40px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(0,150,255,0.1);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
 .nav-logo{display:flex;align-items:center;gap:12px;}
-.logo-icon{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#00d4ff,#7b2fff);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:900;color:#fff;box-shadow:0 0 18px rgba(0,180,255,0.4);}
+.logo-icon{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#80e0ff,#00a0e0,#0060b0);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:#fff;box-shadow:0 0 18px rgba(100,200,255,0.5),0 0 40px rgba(0,150,255,0.2);text-shadow:0 0 8px rgba(200,240,255,0.6);}
 .logo-text{font-size:22px;font-weight:800;letter-spacing:2px;}
 .logo-text small{color:#00d4ff;font-size:10px;vertical-align:super;margin-left:2px;font-weight:400;}
 .nav-links{display:flex;gap:22px;font-size:13px;font-weight:500;}
@@ -57,14 +65,14 @@ button{font-family:inherit;}
 .hero-badge{display:inline-block;background:linear-gradient(90deg,rgba(255,200,0,0.12),rgba(255,215,0,0.22),rgba(255,200,0,0.12));border:1px solid rgba(255,200,0,0.25);border-radius:50px;padding:5px 20px;margin-bottom:12px;}
 .hero-badge span{color:#ffd700;font-size:10px;font-weight:700;letter-spacing:2px;}
 .hero-title{font-size:28px;font-weight:800;line-height:1.15;margin-bottom:6px;}
-.hero-title em{font-style:normal;background:linear-gradient(90deg,#00d4ff,#7b6fff,#00eeff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:34px;}
+.hero-title em{font-style:normal;background:linear-gradient(90deg,#80e0ff,#a0d0ff,#60f0ff,#80e0ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:34px;text-shadow:none;}
 .hero-sub{color:rgba(180,215,255,0.65);font-size:14px;margin-bottom:18px;line-height:1.5;}
 .hero-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
 .btn-gold{background:linear-gradient(135deg,#ffd700,#ffaa00);color:#1a0a00;padding:13px 32px;border-radius:50px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 0 22px rgba(255,200,0,0.35),0 4px 16px rgba(0,0,0,0.3);border:none;transition:transform 0.2s;}
 .btn-gold:hover{transform:translateY(-2px);}
 .btn-blue{background:rgba(0,150,255,0.1);border:1.5px solid rgba(0,180,255,0.3);color:#60c8ff;padding:13px 24px;border-radius:50px;font-size:14px;font-weight:600;cursor:pointer;transition:background 0.2s;}
 .btn-blue:hover{background:rgba(0,150,255,0.2);}
-.hero-neon{position:absolute;bottom:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(0,180,255,0.5),rgba(120,40,255,0.5),rgba(0,180,255,0.5),transparent);}
+.hero-neon{position:absolute;bottom:0;left:5%;right:5%;height:2px;background:linear-gradient(90deg,transparent,rgba(150,220,255,0.6),rgba(200,240,255,0.8),rgba(150,220,255,0.6),transparent);box-shadow:0 0 12px rgba(150,220,255,0.3);}
 
 /* TRUST */
 .trust-bar{background:linear-gradient(90deg,#060a20,#0a1040,#060a20);padding:16px 40px;display:flex;justify-content:center;gap:50px;border-bottom:1px solid rgba(0,100,255,0.08);}
@@ -153,8 +161,8 @@ button{font-family:inherit;}
 
 <nav class="nav">
   <a href="#" class="nav-logo">
-    <div class="logo-icon">S</div>
-    <div class="logo-text">SLOTORO<small>.is</small></div>
+    <div class="logo-icon">❄</div>
+    <div class="logo-text">FROSTSPIL<small>.is</small></div>
   </a>
   <div class="nav-links">
     <a href="#" class="active">Казино</a>
@@ -170,6 +178,11 @@ button{font-family:inherit;}
 <section class="hero">
   <div class="hero-bg">
     <div class="a1"></div><div class="a2"></div>
+    <!-- Ice crystals -->
+    <div style="position:absolute;top:10%;left:2%;font-size:24px;opacity:0.15;transform:rotate(15deg);">❄</div>
+    <div style="position:absolute;top:60%;right:3%;font-size:18px;opacity:0.12;transform:rotate(-20deg);">❄</div>
+    <div style="position:absolute;bottom:15%;left:8%;font-size:20px;opacity:0.1;transform:rotate(45deg);">❄</div>
+    <div style="position:absolute;top:25%;right:12%;font-size:14px;opacity:0.08;">✦</div>
     <div class="star" style="top:18px;left:16%;width:4px;height:4px;box-shadow:0 0 8px #fff,0 0 16px rgba(100,180,255,0.4);"></div>
     <div class="star" style="top:42px;left:52%;width:3px;height:3px;box-shadow:0 0 6px #6ab0ff;background:#b0d8ff;"></div>
     <div class="star" style="top:28px;right:20%;width:5px;height:5px;box-shadow:0 0 10px #fff,0 0 20px rgba(0,150,255,0.3);"></div>
@@ -183,7 +196,7 @@ button{font-family:inherit;}
   <div class="hero-inner">
     <!-- LEFT: Gnome BIG -->
     <div class="hero-char">
-      <img src="images/gnome_web.png" alt="Slotoro Gnome">
+      <img src="images/gnome_web.png" alt="Frostspil Gnome">
     </div>
 
     <!-- CENTER -->
@@ -243,7 +256,7 @@ button{font-family:inherit;}
 
     <!-- RIGHT: Wolf BIG -->
     <div class="hero-char right">
-      <img src="images/wolf_web.png" alt="Slotoro Wolf">
+      <img src="images/wolf_web.png" alt="Frostspil Wolf">
     </div>
   </div>
   <div class="hero-neon"></div>
@@ -376,10 +389,10 @@ button{font-family:inherit;}
   <div class="footer-top">
     <div>
       <div style="display:flex;align-items:center;gap:8px;">
-        <div class="logo-icon" style="width:26px;height:26px;font-size:13px;">S</div>
-        <span style="font-size:15px;font-weight:700;">Slotoro</span>
+        <div class="logo-icon" style="width:26px;height:26px;font-size:12px;">❄</div>
+        <span style="font-size:15px;font-weight:700;">Frostspil</span>
       </div>
-      <div class="footer-desc">Slotoro — независимый сайт сравнения казино. Мы не рекламируем азартные игры. 18+</div>
+      <div class="footer-desc">Frostspil — независимый сайт сравнения казино. Мы не рекламируем азартные игры. 18+</div>
     </div>
     <div class="footer-cols">
       <div>
@@ -392,17 +405,33 @@ button{font-family:inherit;}
       </div>
       <div>
         <div class="footer-col-title">О НАС</div>
-        <a href="#">О Slotoro</a><a href="#">Конфиденциальность</a><a href="#">Контакты</a>
+        <a href="#">О Frostspil</a><a href="#">Конфиденциальность</a><a href="#">Контакты</a>
       </div>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 Slotoro.is — Все права защищены</span>
+    <span>© 2026 Frostspil.is — Все права защищены</span>
     <span>18+ | Играйте ответственно</span>
   </div>
 </footer>
 
 <script>
+// Snowflakes
+(function(){
+  var flakes='❄❆✦✧';
+  for(var i=0;i<15;i++){
+    var s=document.createElement('div');
+    s.className='snowflake';
+    s.textContent=flakes[Math.floor(Math.random()*flakes.length)];
+    s.style.left=Math.random()*100+'%';
+    s.style.fontSize=(8+Math.random()*14)+'px';
+    s.style.animationDuration=(8+Math.random()*12)+'s';
+    s.style.animationDelay=Math.random()*10+'s';
+    s.style.opacity=0.1+Math.random()*0.3;
+    document.body.appendChild(s);
+  }
+})();
+
 var spinning=false,currentDeg=0;
 var prizes=['500% бонус','50 фриспинов','200% бонус','100 фриспинов','300% бонус','25 фриспинов','150% бонус','200 фриспинов'];
 function spinWheel(){
