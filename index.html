@@ -75,11 +75,11 @@ a{text-decoration:none;color:inherit;}
 @keyframes sparkle{0%,100%{opacity:.3;transform:scale(.6);}50%{opacity:1;transform:scale(1.2);}}
 
 /* ═══ SEARCH BAR ═══ */
-.search-wrap{max-width:580px;margin:0 auto 60px;padding:0 40px;position:relative;z-index:1;}
+.search-wrap{max-width:580px;margin:0 auto 60px;padding:0 40px;position:relative;z-index:10;}
 .search-bar{display:flex;align-items:center;background:rgba(30,20,60,.6);backdrop-filter:blur(16px);border:1px solid rgba(140,100,220,.15);border-radius:14px;padding:4px;transition:border-color .2s;}
 .search-bar:focus-within{border-color:rgba(140,100,220,.35);}
 .search-bar .icon{padding:12px 14px;color:rgba(160,140,200,.4);font-size:16px;}
-.search-bar input{flex:1;background:none;border:none;color:#e0d0f0;font-size:14px;outline:none;font-family:'Inter',sans-serif;}
+.search-bar input{flex:1;background:none;border:none;color:#e0d0f0;font-size:16px;outline:none;font-family:'Inter',sans-serif;}
 .search-bar input::placeholder{color:rgba(140,120,180,.4);}
 .search-bar .year-tag{background:rgba(140,80,240,.12);border:1px solid rgba(140,80,240,.2);color:#c0a0f0;padding:8px 16px;border-radius:10px;font-size:12px;font-weight:600;margin:2px;}
 
@@ -221,10 +221,65 @@ a{text-decoration:none;color:inherit;}
 <div class="search-wrap">
   <div class="search-bar">
     <span class="icon">🔍</span>
-    <input type="text" placeholder="Search casinos, slots, guides..." onclick="window.location='/slotoro-site/entertainment/'">
+    <input type="text" id="site-search" placeholder="Leita að spilavítum, spilakössum..." autocomplete="off">
     <span class="year-tag">2026</span>
   </div>
+  <div id="search-results" style="display:none;position:absolute;left:40px;right:40px;top:56px;background:rgba(20,14,40,.95);backdrop-filter:blur(16px);border:1px solid rgba(140,100,220,.2);border-radius:12px;max-height:320px;overflow-y:auto;z-index:50;"></div>
 </div>
+<script>
+(function(){
+var data=[
+{n:"BitStarz",u:"/slotoro-site/casino/bitstarz/",t:"casino"},
+{n:"Stake",u:"/slotoro-site/casino/stake/",t:"casino"},
+{n:"BC.Game",u:"/slotoro-site/casino/bc-game/",t:"casino"},
+{n:"TonyBet",u:"/slotoro-site/casino/tonybet/",t:"casino"},
+{n:"KatsuBet",u:"/slotoro-site/casino/katsubet/",t:"casino"},
+{n:"Winz.io",u:"/slotoro-site/casino/winz/",t:"casino"},
+{n:"7Bit Casino",u:"/slotoro-site/casino/7bit/",t:"casino"},
+{n:"Cloudbet",u:"/slotoro-site/casino/cloudbet/",t:"casino"},
+{n:"mBit Casino",u:"/slotoro-site/casino/mbitcasino/",t:"casino"},
+{n:"NeoSpin",u:"/slotoro-site/casino/neospin/",t:"casino"},
+{n:"Gates of Olympus",u:"/slotoro-site/slots/gates-of-olympus/",t:"slot"},
+{n:"Sweet Bonanza",u:"/slotoro-site/slots/sweet-bonanza/",t:"slot"},
+{n:"Big Bass Splash",u:"/slotoro-site/slots/big-bass-splash/",t:"slot"},
+{n:"Book of Dead",u:"/slotoro-site/slots/book-of-dead/",t:"slot"},
+{n:"Starburst",u:"/slotoro-site/slots/starburst/",t:"slot"},
+{n:"Money Train 3",u:"/slotoro-site/slots/money-train-3/",t:"slot"},
+{n:"Reactoonz",u:"/slotoro-site/slots/reactoonz/",t:"slot"},
+{n:"Wolf Gold",u:"/slotoro-site/slots/wolf-gold/",t:"slot"},
+{n:"Razor Shark",u:"/slotoro-site/slots/razor-shark/",t:"slot"},
+{n:"Dead or Alive 2",u:"/slotoro-site/slots/dead-or-alive-2/",t:"slot"},
+{n:"Starlight Princess",u:"/slotoro-site/slots/starlight-princess/",t:"slot"},
+{n:"Sugar Rush",u:"/slotoro-site/slots/sugar-rush/",t:"slot"},
+{n:"Mega Moolah",u:"/slotoro-site/slots/mega-moolah/",t:"slot"},
+{n:"Immortal Romance",u:"/slotoro-site/slots/immortal-romance/",t:"slot"},
+{n:"Gonzo's Quest",u:"/slotoro-site/slots/gonzos-quest/",t:"slot"},
+{n:"Blackjack",u:"/slotoro-site/live/blackjack/",t:"live"},
+{n:"Roulette",u:"/slotoro-site/live/roulette/",t:"live"},
+{n:"Crazy Time",u:"/slotoro-site/live/crazy-time/",t:"live"},
+{n:"Lightning Roulette",u:"/slotoro-site/live/lightning-roulette/",t:"live"},
+{n:"Bitcoin greiðslur",u:"/slotoro-site/platezhi/bitcoin/",t:"guide"},
+{n:"Ethereum greiðslur",u:"/slotoro-site/platezhi/ethereum/",t:"guide"},
+{n:"Hvað er RTP",u:"/slotoro-site/gajdy/chto-takoe-rtp/",t:"guide"},
+{n:"Ábyrg spilun",u:"/slotoro-site/gajdy/otvetstvennaya-igra/",t:"guide"},
+{n:"Velkomstbónus",u:"/slotoro-site/bonusy/velkomstbonus/",t:"bonus"},
+{n:"Ókeypis snúningar",u:"/slotoro-site/bonusy/frispiny-bez-depozita/",t:"bonus"},
+];
+var input=document.getElementById('site-search');
+var box=document.getElementById('search-results');
+var labels={casino:'Spilavíti',slot:'Spilakassi',live:'Í beinni',guide:'Leiðbeining',bonus:'Bónus'};
+input.addEventListener('input',function(){
+  var q=this.value.toLowerCase().trim();
+  if(q.length<2){box.style.display='none';return;}
+  var hits=data.filter(function(d){return d.n.toLowerCase().indexOf(q)!==-1;}).slice(0,8);
+  if(!hits.length){box.innerHTML='<div style="padding:16px;color:rgba(160,140,200,.6);font-size:13px;">Ekkert fannst</div>';box.style.display='block';return;}
+  box.innerHTML=hits.map(function(h){return '<a href="'+h.u+'" style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;color:#e0d0f0;font-size:14px;border-bottom:1px solid rgba(140,100,220,.1);transition:background .15s;"><span>'+h.n+'</span><span style="font-size:11px;color:rgba(160,140,200,.5);background:rgba(140,60,240,.1);padding:2px 8px;border-radius:6px;">'+labels[h.t]+'</span></a>';}).join('');
+  box.style.display='block';
+});
+input.addEventListener('keydown',function(e){if(e.key==='Enter'){var q=this.value.toLowerCase().trim();var hit=data.find(function(d){return d.n.toLowerCase().indexOf(q)!==-1;});if(hit)window.location=hit.u;}});
+document.addEventListener('click',function(e){if(!e.target.closest('.search-wrap'))box.style.display='none';});
+})();
+</script>
 
 <!-- TIMELINE -->
 <div class="timeline-section anim" id="timeline">
