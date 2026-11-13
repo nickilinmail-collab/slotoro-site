@@ -17,6 +17,7 @@ URL_BASE = "/" if "--production" in sys.argv else "/slotoro-site/"
 
 # 150 casino reviews
 casinos = [
+    {"slug": "slotoro", "name": "Slotoro", "rating": 9.0, "bonus": "Velkomstpakki á 3 fyrstu innborgunum", "type": "classic", "partner": True, "desc": "Spilavíti og veðmálasíða sem opnaði 2025. Yfir 8.000 leikir frá 71 framleiðanda, lágmarksinnborgun €10 og velkomstpakki sem skiptist á fyrstu þrjár innborganirnar (40x veðskilyrði). Tekur við kortum, rafrænum veskjum og dulritunargjaldmiðlum. BF Casino er í samstarfi við Slotoro."},
     {"slug": "bitstarz", "name": "BitStarz", "rating": 9.8, "bonus": "5 BTC + 200 FS", "type": "crypto", "desc": "Margverðlaunað dulritunarspilavíti með yfir 3.500 leikjum frá Pragmatic Play, Evolution og Play'n GO. Tekur við BTC, ETH, LTC, DOGE og fleiri myntum. Rekstraraðilinn segir útborganir í dulritunargjaldmiðlum afgreiddar á nokkrum mínútum. Curaçao leyfi."},
     {"slug": "stake", "name": "Stake", "rating": 9.6, "bonus": "200% + VIP", "type": "crypto", "desc": "Eitt vinsælasta dulritunarspilavíti heims með VIP kerfi, eigin Stake leikjum og íþróttaveðmálum. Styður 8 dulritunargjaldmiðla og birtir húsforskot á eigin leikjum."},
     {"slug": "bc-game", "name": "BC.Game", "rating": 9.4, "bonus": "300% up to 1 BTC", "type": "crypto", "desc": "Spilavíti með eigin crash, dice og limbo leikjum. Styður yfir 100 dulritunargjaldmiðla, þar á meðal BTC, ETH, SOL og DOGE. Daglegir bónusar og verkefnakerfi. Curaçao leyfi."},
@@ -799,6 +800,7 @@ background:linear-gradient(180deg,rgba(255,255,255,.5),rgba(255,255,255,0));}}
 <aside class="sidebar">
 <div class="sidebar-card">
 <h4>🏆 Topp spilavíti</h4>
+<a href="{URL_BASE}casino/slotoro/">Slotoro — ráðlagt (samstarfsaðili)</a>
 <a href="{URL_BASE}casino/bitstarz/">BitStarz — 5 BTC + 200 FS</a>
 <a href="{URL_BASE}casino/stake/">Stake — 200% + VIP</a>
 <a href="{URL_BASE}casino/bc-game/">BC.Game — 300% allt að 1 BTC</a>
@@ -857,13 +859,31 @@ var q=d.querySelector('.dr-search input'),empty=d.querySelector('.dr-empty');q.a
 BASE = "/home/claude/slotoro-site"
 count = 0
 
+AFF = "https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/"
+def honest_cta(html):
+    html = html.replace(f'href="{AFF}" target="_blank" rel="noopener"', f'href="{AFF}" target="_blank" rel="sponsored noopener"')
+    def fix(m):
+        cls = m.group(2)
+        label = "Nýskráning á Slotoro" if cls == "btn-signup" else "Spila á Slotoro →"
+        return m.group(1) + label + m.group(3)
+    return re.sub(r'(<a href="' + re.escape(AFF) + r'"[^>]*class="(cta-btn|sidebar-cta|btn-signup)"[^>]*>)(?:.*?)(</a>)', fix, html)
+
 def write_page(path, html):
     global count
+    html = honest_cta(html)
     full = os.path.join(BASE, path)
     os.makedirs(os.path.dirname(full), exist_ok=True)
     with open(full, 'w', encoding='utf-8') as f:
         f.write(html)
     count += 1
+
+def partner_box(c):
+    if c.get("partner"):
+        return f'<div class="cta-box"><a href="{AFF}" target="_blank" rel="sponsored noopener" class="cta-btn">Spila á Slotoro →</a></div>'
+    return (f'<div class="info-box"><p><strong>Athugið:</strong> BF Casino er ekki í samstarfi við {c["name"]}. '
+            f'Viltu spila þar, farðu beint á vef {c["name"]}. Spilavítið sem við vinnum með er '
+            f'<a href="{URL_BASE}casino/slotoro/">Slotoro</a>.</p></div>'
+            f'<div class="cta-box"><a href="{AFF}" target="_blank" rel="sponsored noopener" class="cta-btn">Spila á Slotoro →</a></div>')
 
 # 1. КАЗИНО ОБЗОРЫ (150)
 print("Generating casino reviews...")
@@ -882,7 +902,7 @@ for c in casinos:
 <h3>Greiðslumátar</h3>
 <p>{"Tekur við Bitcoin, Ethereum, USDT, Litecoin og öðrum dulritunargjaldmiðlum." if c["type"]=="crypto" else "Tekur við Visa, Mastercard, dulritunargjaldmiðlum og rafrænum veskjum."} Þetta er sérstaklega mikilvægt fyrir íslenska leikmenn þar sem innlendir bankar loka oft á spilavíta-færslur.</p>
 <h3>Leikir</h3>
-<p>{c["name"]} býður upp á yfir 2000 leiki frá fremstu birgjum: Pragmatic Play, NetEnt, Play'n GO, Microgaming og fleiri.</p>
+<p>{"Yfir 8.000 leikir frá 71 framleiðanda, þar á meðal Pragmatic Play, Evolution og NetEnt." if c.get("partner") else c["name"] + " býður leiki frá þekktum framleiðendum. Athugaðu leikjasafnið á vef spilavítisins."}</p>
 <h2>Kostir og gallar</h2>
 <ul>
 <li>✅ {c["bonus"]}</li>
@@ -891,7 +911,7 @@ for c in casinos:
 <li>✅ Stórt safn leikja</li>
 <li>⚠️ Athugaðu hvort ISK sé í boði — flest erlend spilavíti nota EUR</li>
 </ul>
-<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Spila á {c["name"]} →</a></div>'''
+{partner_box(c)}'''
 
     bc = [("{URL_BASE}", "Heim"), ("{URL_BASE}casino/", "Spilavíti"), ("", c["name"])]
     review = {"@type":"Review","itemReviewed":{"@type":"Organization","name":c["name"]},
@@ -940,12 +960,7 @@ for s in slots_data:
 <h3>RTP og sveifla</h3>
 <p>RTP (Return to Player) á {s["name"]} er {s["rtp"]}%. Þetta þýðir að spilakassinn skilar fræðilega {s["rtp"]}% af öllum veðmálum til leikmanna til lengri tíma.</p>
 <h3>Hvar á að spila {s["name"]}</h3>
-<p>Þessi spilakassi er í boði á eftirfarandi spilavítum sem taka við íslenskum leikmönnum:</p>
-<ul>
-<li><a href="{URL_BASE}casino/bitstarz/">BitStarz</a> — 5 BTC + 200 FS</li>
-<li><a href="{URL_BASE}casino/stake/">Stake</a> — 200% bonus</li>
-<li><a href="{URL_BASE}casino/bc-game/">BC.Game</a> — 300% up to 1 BTC</li>
-</ul>
+<p>{s["name"]} frá {s["provider"]} er í leikjasafni <a href="{URL_BASE}casino/slotoro/">Slotoro</a>, sem tekur við íslenskum leikmönnum og býður yfir 8.000 leiki. Athugaðu að spilavíti geta keyrt mismunandi RTP útgáfur — RTP talan í leiknum sjálfum gildir.</p>
 <div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Spila {s["name"]} →</a></div>'''
 
     bc = [("{URL_BASE}", "Home"), ("{URL_BASE}slots/", "Slots"), ("", s["name"])]
@@ -1333,12 +1348,11 @@ seo_pages = [
 <h2>Tilboð sem vert er að skoða</h2>
 <p><em>Tilboð breytast oft — staðfestu alltaf skilmálana á síðu spilavítisins áður en þú skráir þig.</em></p>
 <div class="info-box">
-<p><strong>🎁 BitStarz</strong> — Velkomstpakki allt að 5 BTC + 200 frísnúningar. Athugaðu síðuna fyrir núverandi tilboð án innborgunar.</p>
-<p><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener">Sækja frísnúninga →</a></p>
+<p><strong>🎁 Slotoro</strong> (samstarfsaðili okkar) — velkomstpakki með frísnúningum á fyrstu þremur innborgunum, 40x veðskilyrði. Athugaðu í reikningnum þínum hvaða tilboð gilda fyrir Ísland.</p>
+<p><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="sponsored noopener">Sjá tilboð á Slotoro →</a></p>
 </div>
 <div class="info-box">
-<p><strong>🎁 Winz.io</strong> — 300 frísnúningar (án veðskilyrða!) — vinninga geymdir sem peningar</p>
-<p><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener">Sækja frísnúninga →</a></p>
+<p><strong>Winz.io</strong> — þekkt fyrir bónusa án veðskilyrða. Við erum ekki í samstarfi við Winz.io; skoðaðu tilboðin beint á vef þeirra. <a href="{URL_BASE}casino/winz/">Umsögn okkar →</a></p>
 </div>
 
 <h2>Hvernig virka frísnúningar án innborgunar?</h2>
