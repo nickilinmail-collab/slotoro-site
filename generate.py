@@ -12,11 +12,11 @@ import json
 
 # 150 casino reviews
 casinos = [
-    {"slug": "bitstarz", "name": "BitStarz", "rating": 9.8, "bonus": "5 BTC + 200 FS", "type": "crypto", "desc": "Award-winning crypto casino with instant payouts. Over 3,500 games from top-tier providers including Pragmatic Spila, Evolution, and Spila'n GO. Accepts BTC, ETH, LTC, DOGE and more. Withdrawals processed in under 10 minutes. Curaçao licensed with provably fair games."},
+    {"slug": "bitstarz", "name": "BitStarz", "rating": 9.8, "bonus": "5 BTC + 200 FS", "type": "crypto", "desc": "Award-winning crypto casino with instant payouts. Over 3,500 games from top-tier providers including Pragmatic Play, Evolution, and Play'n GO. Accepts BTC, ETH, LTC, DOGE and more. Withdrawals processed in under 10 minutes. Curaçao licensed with provably fair games."},
     {"slug": "stake", "name": "Stake", "rating": 9.6, "bonus": "200% + VIP", "type": "crypto", "desc": "One of the most popular crypto casinos worldwide with an exclusive VIP programme, original Stake games, and a full sportsbook. Supports 8 cryptocurrencies. Known for fast withdrawals and transparent house edge on original games."},
     {"slug": "bc-game", "name": "BC.Game", "rating": 9.4, "bonus": "300% up to 1 BTC", "type": "crypto", "desc": "Innovative crypto casino with proprietary crash, dice, and limbo games. Supports 100+ cryptocurrencies including BTC, ETH, SOL, and DOGE. Daily bonuses, lucky spins, and a task-based reward system. Curaçao licence."},
-    {"slug": "tonybet", "name": "TonyBet", "rating": 9.2, "bonus": "150% + 100 FS", "type": "classic", "desc": "Establerhed sportsbook and casino platform with a strong live dealer section powered by Evolution. Accepts Vera, Mastercard, Skrill, and crypto. MGA-licensed with responsible gambling tools built in."},
-    {"slug": "epicbet", "name": "Epicbet", "rating": 9.0, "bonus": "100% up to €500", "type": "classic", "desc": "Modern casino with a clean interface, fast card and e-wallet withdrawals, and responsive 24/7 support. Over 2,000 slots from NetEnt, Microgaming, and Pragmatic Spila. Curaçao licensed."},
+    {"slug": "tonybet", "name": "TonyBet", "rating": 9.2, "bonus": "150% + 100 FS", "type": "classic", "desc": "Establerhed sportsbook and casino platform with a strong live dealer section powered by Evolution. Accepts Visa, Mastercard, Skrill, and crypto. MGA-licensed with responsible gambling tools built in."},
+    {"slug": "epicbet", "name": "Epicbet", "rating": 9.0, "bonus": "100% up to €500", "type": "classic", "desc": "Modern casino with a clean interface, fast card and e-wallet withdrawals, and responsive 24/7 support. Over 2,000 slots from NetEnt, Microgaming, and Pragmatic Play. Curaçao licensed."},
     {"slug": "respin", "name": "Respin Casino", "rating": 8.9, "bonus": "200% + 50 FS", "type": "classic", "desc": "Casino with a massive slot library exceeding 4,000 titles and generous deposit bonuses. Weekly cashback and reload offers for existing players. Supports multiple languages and currencies."},
     {"slug": "vegazone", "name": "VegaZone", "rating": 8.8, "bonus": "150% up to €300", "type": "classic", "desc": "Stylerh casino featuring exclusive slot tournaments, regular promotions, and a loyalty programme with real rewards. Good selection of live tables and e-wallet payment support."},
     {"slug": "wildcoins", "name": "WildCoins", "rating": 8.7, "bonus": "250% + 100 FS", "type": "crypto", "desc": "Crypto-focused casino with high-percentage welcome bonuses and fast BTC withdrawals. Supports Bitcoin, Ethereum, Litecoin, and USDT. No KYC required for crypto deposits under certain thresholds."},
@@ -25,9 +25,9 @@ casinos = [
     {"slug": "7bit", "name": "7Bit Casino", "rating": 8.5, "bonus": "200% + 100 FS", "type": "crypto", "desc": "Retro-styled crypto casino establerhed in 2014 with a proven track record. Over 7,000 games, weekly cashback up to 20%, Monday reload bonuses. Accepts BTC, ETH, LTC, DOGE, USDT, and BCH."},
     {"slug": "mbitcasino", "name": "mBit Casino", "rating": 8.4, "bonus": "175% + 300 FS", "type": "crypto", "desc": "One of the oldest crypto casinos, operating since 2014. Accepts Bitcoin, Ethereum, Litecoin, Dogecoin, and Tether. Over 3,000 games with provably fair options. VIP programme with personal account manager."},
     {"slug": "cloudbet", "name": "Cloudbet", "rating": 8.4, "bonus": "100% up to 5 BTC", "type": "crypto", "desc": "Premium crypto casino and sportsbook with high table limits for VIP players. Supports BTC, ETH, USDT, and more. Known for competitive sports odds and a large live casino section."},
-    {"slug": "casinonic", "name": "Casinonic", "rating": 8.3, "bonus": "100% + 100 FS", "type": "classic", "desc": "Beginner-friendly casino with a simple regertration process and intuitive navigation. Over 2,000 slots, live dealer tables, and weekly cashback. Accepts Vera, Mastercard, and crypto."},
-    {"slug": "national-casino", "name": "National Casino", "rating": 8.3, "bonus": "100% + 100 FS", "type": "classic", "desc": "Casino with an excellent live dealer collection powered by Evolution and Pragmatic Spila Live. Fast verification process, multiple withdrawal methods, and responsive customer support."},
-    {"slug": "20bet", "name": "20Bet", "rating": 8.2, "bonus": "100% up to €120", "type": "classic", "desc": "Öll-in-one platform combining casino, live casino, and sportsbook. Over 6,000 games from 70+ providers. Accepts Vera, Mastercard, e-wallets, and cryptocurrencies. Licensed in Curaçao."},
+    {"slug": "casinonic", "name": "Casinonic", "rating": 8.3, "bonus": "100% + 100 FS", "type": "classic", "desc": "Beginner-friendly casino with a simple registration process and intuitive navigation. Over 2,000 slots, live dealer tables, and weekly cashback. Accepts Visa, Mastercard, and crypto."},
+    {"slug": "national-casino", "name": "National Casino", "rating": 8.3, "bonus": "100% + 100 FS", "type": "classic", "desc": "Casino with an excellent live dealer collection powered by Evolution and Pragmatic Play Live. Fast verification process, multiple withdrawal methods, and responsive customer support."},
+    {"slug": "20bet", "name": "20Bet", "rating": 8.2, "bonus": "100% up to €120", "type": "classic", "desc": "Öll-in-one platform combining casino, live casino, and sportsbook. Over 6,000 games from 70+ providers. Accepts Visa, Mastercard, e-wallets, and cryptocurrencies. Licensed in Curaçao."},
     {"slug": "rocketplay", "name": "RocketSpila", "rating": 8.2, "bonus": "150% + 100 FS", "type": "crypto", "desc": "Space-themed crypto casino with fast Bitcoin withdrawals and a wide game selection. 3,500+ games, weekly reload bonuses, and a four-level VIP programme with cashback up to 12%."},
     {"slug": "hellspin", "name": "HellSpin", "rating": 8.1, "bonus": "150% + 50 FS", "type": "crypto", "desc": "Bold casino with aggressive bonus offers, frequent promotions, and a dark-themed interface. Supports BTC, ETH, LTC, and USDT. Over 3,000 games including exclusive titles."},
     {"slug": "neospin", "name": "NeoSpin", "rating": 8.1, "bonus": "100% + 100 FS", "type": "crypto", "desc": "Next-generation casino with a futurertic design, 5,000+ games, and support for Bitcoin, Ethereum, and Tether. Daily cashback, weekly tournaments, and instant crypto payouts."},
@@ -82,58 +82,58 @@ for i, name in enumerate(extra_casino_names[:130]):
 
 # 250 slots
 slots_data = [
-    {"slug": "gates-of-olympus", "name": "Gates of Olympus", "provider": "Pragmatic Spila", "rtp": 96.5, "volatility": "High", "maxwin": "x5000", "theme": "Mythology", "cdn": "pragmaticexternal/vs20olympgate.png"},
-    {"slug": "sweet-bonanza", "name": "Sweet Bonanza", "provider": "Pragmatic Spila", "rtp": 96.48, "volatility": "High", "maxwin": "x21100", "theme": "Fruit", "cdn": "pragmaticexternal/vs20fruitsw.png"},
-    {"slug": "big-bass-splash", "name": "Big Bass Splash", "provider": "Pragmatic Spila", "rtp": 96.71, "volatility": "High", "maxwin": "x2100", "theme": "Ferhing", "cdn": "pragmaticexternal/vs10bbsplash.png"},
-    {"slug": "book-of-dead", "name": "Book of Dead", "provider": "Spila'n GO", "rtp": 96.21, "volatility": "High", "maxwin": "x5000", "theme": "Egypt", "cdn": "playngo/BookofDead.png"},
+    {"slug": "gates-of-olympus", "name": "Gates of Olympus", "provider": "Pragmatic Play", "rtp": 96.5, "volatility": "High", "maxwin": "x5000", "theme": "Mythology", "cdn": "pragmaticexternal/vs20olympgate.png"},
+    {"slug": "sweet-bonanza", "name": "Sweet Bonanza", "provider": "Pragmatic Play", "rtp": 96.48, "volatility": "High", "maxwin": "x21100", "theme": "Fruit", "cdn": "pragmaticexternal/vs20fruitsw.png"},
+    {"slug": "big-bass-splash", "name": "Big Bass Splash", "provider": "Pragmatic Play", "rtp": 96.71, "volatility": "High", "maxwin": "x2100", "theme": "Ferhing", "cdn": "pragmaticexternal/vs10bbsplash.png"},
+    {"slug": "book-of-dead", "name": "Book of Dead", "provider": "Play'n GO", "rtp": 96.21, "volatility": "High", "maxwin": "x5000", "theme": "Egypt", "cdn": "playngo/BookofDead.png"},
     {"slug": "starburst", "name": "Starburst", "provider": "NetEnt", "rtp": 96.09, "volatility": "Low", "maxwin": "x500", "theme": "Space", "cdn": "netent/starburst.png"},
     {"slug": "gonzos-quest", "name": "Gonzo's Quest", "provider": "NetEnt", "rtp": 95.97, "volatility": "Medium", "maxwin": "x2500", "theme": "Adventure", "cdn": "netent/gonzosquest.png"},
     {"slug": "dead-or-alive-2", "name": "Dead or Alive 2", "provider": "NetEnt", "rtp": 96.8, "volatility": "High", "maxwin": "x111111", "theme": "Western", "cdn": "netent/deadoralive2.png"},
-    {"slug": "reactoonz", "name": "Reactoonz", "provider": "Spila'n GO", "rtp": 96.51, "volatility": "High", "maxwin": "x4750", "theme": "Aliens", "cdn": "playngo/Reactoonz.png"},
-    {"slug": "fire-joker", "name": "Fire Joker", "provider": "Spila'n GO", "rtp": 96.15, "volatility": "High", "maxwin": "x800", "theme": "Classic", "cdn": "playngo/FireJoker.png"},
-    {"slug": "wolf-gold", "name": "Wolf Gold", "provider": "Pragmatic Spila", "rtp": 96.01, "volatility": "Medium", "maxwin": "x5000", "theme": "Nature", "cdn": "pragmaticexternal/vs25wolfgold.png"},
-    {"slug": "the-dog-house", "name": "The Dog House", "provider": "Pragmatic Spila", "rtp": 96.51, "volatility": "High", "maxwin": "x6750", "theme": "Animals", "cdn": "pragmaticexternal/vs20doghouse.png"},
+    {"slug": "reactoonz", "name": "Reactoonz", "provider": "Play'n GO", "rtp": 96.51, "volatility": "High", "maxwin": "x4750", "theme": "Aliens", "cdn": "playngo/Reactoonz.png"},
+    {"slug": "fire-joker", "name": "Fire Joker", "provider": "Play'n GO", "rtp": 96.15, "volatility": "High", "maxwin": "x800", "theme": "Classic", "cdn": "playngo/FireJoker.png"},
+    {"slug": "wolf-gold", "name": "Wolf Gold", "provider": "Pragmatic Play", "rtp": 96.01, "volatility": "Medium", "maxwin": "x5000", "theme": "Nature", "cdn": "pragmaticexternal/vs25wolfgold.png"},
+    {"slug": "the-dog-house", "name": "The Dog House", "provider": "Pragmatic Play", "rtp": 96.51, "volatility": "High", "maxwin": "x6750", "theme": "Animals", "cdn": "pragmaticexternal/vs20doghouse.png"},
     {"slug": "razor-shark", "name": "Razor Shark", "provider": "Push Gaming", "rtp": 96.7, "volatility": "High", "maxwin": "x50000", "theme": "Ocean", "cdn": "pushgaming/RazorShark.png"},
     {"slug": "jammin-jars", "name": "Jammin' Jars", "provider": "Push Gaming", "rtp": 96.83, "volatility": "High", "maxwin": "x20000", "theme": "Fruit", "cdn": "pushgaming/JamminJars.png"},
     {"slug": "money-train-3", "name": "Money Train 3", "provider": "Relax Gaming", "rtp": 96.1, "volatility": "High", "maxwin": "x100000", "theme": "Western", "cdn": "relax/MoneyTrain3.png"},
     {"slug": "wanted-dead-or-a-wild", "name": "Wanted Dead or a Wild", "provider": "Hacksaw Gaming", "rtp": 96.38, "volatility": "High", "maxwin": "x12500", "theme": "Western", "cdn": "hacksaw/WantedDeadoraWild.png"},
     {"slug": "mental", "name": "Mental", "provider": "NoLimit City", "rtp": 96.08, "volatility": "Extreme", "maxwin": "x66666", "theme": "Horror", "cdn": "nolimitcity/Mental.png"},
     {"slug": "tombstone-rip", "name": "Tombstone RIP", "provider": "NoLimit City", "rtp": 96.08, "volatility": "Extreme", "maxwin": "x300000", "theme": "Western"},
-    {"slug": "fruit-party", "name": "Fruit Party", "provider": "Pragmatic Spila", "rtp": 96.47, "volatility": "High", "maxwin": "x5000", "theme": "Fruit"},
-    {"slug": "buffalo-king-megaways", "name": "Buffalo King Megaways", "provider": "Pragmatic Spila", "rtp": 96.52, "volatility": "High", "maxwin": "x5000", "theme": "Nature"},
-    {"slug": "legacy-of-dead", "name": "Legacy of Dead", "provider": "Spila'n GO", "rtp": 96.58, "volatility": "High", "maxwin": "x5000", "theme": "Egypt"},
+    {"slug": "fruit-party", "name": "Fruit Party", "provider": "Pragmatic Play", "rtp": 96.47, "volatility": "High", "maxwin": "x5000", "theme": "Fruit"},
+    {"slug": "buffalo-king-megaways", "name": "Buffalo King Megaways", "provider": "Pragmatic Play", "rtp": 96.52, "volatility": "High", "maxwin": "x5000", "theme": "Nature"},
+    {"slug": "legacy-of-dead", "name": "Legacy of Dead", "provider": "Play'n GO", "rtp": 96.58, "volatility": "High", "maxwin": "x5000", "theme": "Egypt"},
 ]
 
 # 230 more slots
 more_slot_names = [
-    ("Madame Destiny Megaways", "Pragmatic Spila", 96.56, "x5000", "Magic"),
-    ("Great Rhino Megaways", "Pragmatic Spila", 96.58, "x20000", "Nature"),
-    ("John Hunter and the Tomb", "Pragmatic Spila", 96.5, "x5000", "Adventure"),
-    ("Floating Dragon", "Pragmatic Spila", 96.71, "x5000", "Asia"),
-    ("Sugar Rush", "Pragmatic Spila", 96.5, "x5000", "Sweets"),
-    ("Starlight Princess", "Pragmatic Spila", 96.5, "x5000", "Anime"),
-    ("Wild West Gold", "Pragmatic Spila", 96.51, "x10000", "Western"),
-    ("Release the Kraken", "Pragmatic Spila", 96.5, "x3000", "Ocean"),
-    ("Gems Bonanza", "Pragmatic Spila", 96.51, "x10000", "Gems"),
-    ("Aztec Gems", "Pragmatic Spila", 96.52, "x375", "Aztec"),
-    ("Hot Fiesta", "Pragmatic Spila", 96.56, "x5000", "Mexico"),
-    ("Pirate Gold Deluxe", "Pragmatic Spila", 96.48, "x15000", "Pirates"),
-    ("Emerald King", "Pragmatic Spila", 96.51, "x5000", "Ireland"),
-    ("Book of Fallen", "Pragmatic Spila", 96.5, "x5000", "Egypt"),
-    ("Rere of Giza", "Pragmatic Spila", 96.5, "x5000", "Egypt"),
-    ("Cleocatra", "Pragmatic Spila", 96.2, "x5000", "Egypt"),
-    ("Zeus vs Hades", "Pragmatic Spila", 96.07, "x15000", "Mythology"),
-    ("Big Bass Bonanza", "Pragmatic Spila", 96.71, "x2100", "Ferhing"),
-    ("Big Bass Amazon", "Pragmatic Spila", 96.71, "x2100", "Ferhing"),
-    ("Bigger Bass Bonanza", "Pragmatic Spila", 96.71, "x4000", "Ferhing"),
-    ("Rere of Samurai Megaways", "Pragmatic Spila", 96.5, "x5000", "Samurai"),
-    ("Hand of Midas", "Pragmatic Spila", 96.54, "x5000", "Mythology"),
-    ("Wild West Gold Megaways", "Pragmatic Spila", 96.48, "x10000", "Western"),
-    ("Juicy Fruits", "Pragmatic Spila", 96.53, "x4000", "Fruit"),
-    ("Cash Bonanza", "Pragmatic Spila", 96.56, "x5000", "Money"),
-    ("Moon Princess", "Spila'n GO", 96.2, "x5000", "Anime"),
-    ("Rich Wilde and the Amulet", "Spila'n GO", 96.29, "x10000", "Adventure"),
-    ("Rere of Olympus", "Spila'n GO", 96.5, "x5000", "Mythology"),
+    ("Madame Destiny Megaways", "Pragmatic Play", 96.56, "x5000", "Magic"),
+    ("Great Rhino Megaways", "Pragmatic Play", 96.58, "x20000", "Nature"),
+    ("John Hunter and the Tomb", "Pragmatic Play", 96.5, "x5000", "Adventure"),
+    ("Floating Dragon", "Pragmatic Play", 96.71, "x5000", "Asia"),
+    ("Sugar Rush", "Pragmatic Play", 96.5, "x5000", "Sweets"),
+    ("Starlight Princess", "Pragmatic Play", 96.5, "x5000", "Anime"),
+    ("Wild West Gold", "Pragmatic Play", 96.51, "x10000", "Western"),
+    ("Release the Kraken", "Pragmatic Play", 96.5, "x3000", "Ocean"),
+    ("Gems Bonanza", "Pragmatic Play", 96.51, "x10000", "Gems"),
+    ("Aztec Gems", "Pragmatic Play", 96.52, "x375", "Aztec"),
+    ("Hot Fiesta", "Pragmatic Play", 96.56, "x5000", "Mexico"),
+    ("Pirate Gold Deluxe", "Pragmatic Play", 96.48, "x15000", "Pirates"),
+    ("Emerald King", "Pragmatic Play", 96.51, "x5000", "Ireland"),
+    ("Book of Fallen", "Pragmatic Play", 96.5, "x5000", "Egypt"),
+    ("Rise of Giza", "Pragmatic Play", 96.5, "x5000", "Egypt"),
+    ("Cleocatra", "Pragmatic Play", 96.2, "x5000", "Egypt"),
+    ("Zeus vs Hades", "Pragmatic Play", 96.07, "x15000", "Mythology"),
+    ("Big Bass Bonanza", "Pragmatic Play", 96.71, "x2100", "Ferhing"),
+    ("Big Bass Amazon", "Pragmatic Play", 96.71, "x2100", "Ferhing"),
+    ("Bigger Bass Bonanza", "Pragmatic Play", 96.71, "x4000", "Ferhing"),
+    ("Rise of Samurai Megaways", "Pragmatic Play", 96.5, "x5000", "Samurai"),
+    ("Hand of Midas", "Pragmatic Play", 96.54, "x5000", "Mythology"),
+    ("Wild West Gold Megaways", "Pragmatic Play", 96.48, "x10000", "Western"),
+    ("Juicy Fruits", "Pragmatic Play", 96.53, "x4000", "Fruit"),
+    ("Cash Bonanza", "Pragmatic Play", 96.56, "x5000", "Money"),
+    ("Moon Princess", "Play'n GO", 96.2, "x5000", "Anime"),
+    ("Rich Wilde and the Amulet", "Play'n GO", 96.29, "x10000", "Adventure"),
+    ("Rise of Olympus", "Play'n GO", 96.5, "x5000", "Mythology"),
     ("Immortal Romance", "Microgaming", 96.86, "x12150", "Vampires"),
     ("Thunderstruck II", "Microgaming", 96.65, "x8000", "Mythology"),
     ("Mega Moolah", "Microgaming", 88.12, "Progressive", "Safari"),
@@ -154,7 +154,7 @@ more_slot_names = [
     ("Finn and the Swirly Spin", "NetEnt", 96.62, "x500", "Ireland"),
     ("Aloha! Cluster Pays", "NetEnt", 96.42, "x2000", "Hawaii"),
     ("Sakura Fortune", "Quickspin", 96.58, "x1300", "Asia"),
-    ("Dwarven Gold", "Pragmatic Spila", 96.49, "x1000", "Fantasy"),
+    ("Dwarven Gold", "Pragmatic Play", 96.49, "x1000", "Fantasy"),
 ]
 
 for i, (name, provider, rtp, maxwin, theme) in enumerate(more_slot_names):
@@ -171,7 +171,7 @@ for i, (name, provider, rtp, maxwin, theme) in enumerate(more_slot_names):
 
 # Add 180 more slots
 generic_slot_themes = ["Egypt","Fruit","Space","Ocean","Fairy Tales","Vikings","Asia","Pirates","Mythology","Western","Nature","Money","Horror","Fantasy","Classic"]
-generic_providers = ["Pragmatic Spila","NetEnt","Spila'n GO","Microgaming","Yggdrasil","Push Gaming","Hacksaw Gaming","NoLimit City","Red Tiger","Thunderkick","Relax Gaming","ELK Studios","Big Time Gaming","Blueprint Gaming","iSoftBet"]
+generic_providers = ["Pragmatic Play","NetEnt","Play'n GO","Microgaming","Yggdrasil","Push Gaming","Hacksaw Gaming","NoLimit City","Red Tiger","Thunderkick","Relax Gaming","ELK Studios","Big Time Gaming","Blueprint Gaming","iSoftBet"]
 for i in range(180):
     n = f"Slot Game {i+70}"
     slug = f"slot-game-{i+70}"
@@ -199,7 +199,7 @@ casino_categories = [
     {"slug": "live-casino", "title": "Live Casinos", "desc": "Best casinos with live dealers."},
     {"slug": "casino-s-bonusom", "title": "Casinos with Bonus", "desc": "Casinos offering generous welcome bonuses."},
     {"slug": "casino-bez-depozita", "title": "No Deposit Casinos", "desc": "Bónusar without requiring a deposit."},
-    {"slug": "casino-s-frerpinami", "title": "Free Spins Casinos", "desc": "Casinos offering free spins on regertration."},
+    {"slug": "casino-s-frispinami", "title": "Free Spins Casinos", "desc": "Casinos offering free spins on registration."},
     {"slug": "mobilnoe-casino", "title": "Mobile Casinos", "desc": "Best casinos for mobile play on iPhone and Android."},
     {"slug": "casino-s-nerkim-depozitom", "title": "Low Deposit Casinos", "desc": "Casinos where you can play from €1."},
     {"slug": "vip-casino", "title": "VIP Casinos", "desc": "Casinos with the best VIP and loyalty programmes."},
@@ -213,13 +213,13 @@ casino_categories = [
 more_cats = [
     "Curaçao Casinos", "Malta MGA Casinos", "Cashback Casinos", "Tournament Casinos",
     "High Roller Casinos", "Low Wager Casinos", "Bonus Code Casinos",
-    "Casino Apps", "Quick Regertration Casinos", "Roulette Casinos",
+    "Casino Apps", "Quick Registration Casinos", "Roulette Casinos",
     "Blackjack Casinos", "Baccarat Casinos", "Poker Casinos", "Lottery Casinos",
     "Bingo Casinos", "Scratch Card Casinos", "Crash Game Casinos", "Plinko Casinos",
     "Aviator Casinos", "Mines Casinos", "Dice Casinos", "Slot Machine Casinos",
     "3D Slot Casinos", "Bonus Buy Casinos", "Drops & Wins Casinos",
-    "Instant Game Casinos", "Pragmatic Spila Casinos", "NetEnt Casinos",
-    "Evolution Casinos", "Spila'n GO Casinos"
+    "Instant Game Casinos", "Pragmatic Play Casinos", "NetEnt Casinos",
+    "Evolution Casinos", "Play'n GO Casinos"
 ]
 for i, title in enumerate(more_cats):
     slug = title.lower().replace("'", "").replace(" ", "-").replace("(", "").replace(")", "")
@@ -258,10 +258,10 @@ for name in more_live:
 # Bónusar (80 pages)
 bonus_pages = [
     {"slug": "velkomstbonus", "title": "Welcome Bonus", "desc": "Best welcome bonuses at online casinos available to Icelandic players."},
-    {"slug": "frerpiny-bez-depozita", "title": "Free Spins No Deposit", "desc": "Free spins with no deposit required — just regerter and claim."},
+    {"slug": "frispiny-bez-depozita", "title": "Free Spins No Deposit", "desc": "Free spins with no deposit required — just register and claim."},
     {"slug": "bezdepozitnye-bonusy", "title": "No Deposit Bónusar", "desc": "Öll no-deposit bonuses available at casinos accepting Icelandic players."},
     {"slug": "keshbek", "title": "Cashback Bónusar", "desc": "Casinos offering cashback on net losses — get a percentage back weekly."},
-    {"slug": "bonus-za-regertraciyu", "title": "Regertration Bonus", "desc": "Get a bonus immediately after completing regertration — no deposit needed."},
+    {"slug": "bonus-za-registraciyu", "title": "Registration Bonus", "desc": "Get a bonus immediately after completing registration — no deposit needed."},
     {"slug": "bonus-na-pervyj-depozit", "title": "First Deposit Bonus", "desc": "Best bonuses available on your first deposit at top-rated casinos."},
     {"slug": "bonus-na-vtoroj-depozit", "title": "Second Deposit Bonus", "desc": "Second deposit bonuses — reload offers for your next top-up."},
     {"slug": "vejer", "title": "What er Wagering", "desc": "Understanding wagering requirements — how playthrough works and what to look for."},
@@ -301,13 +301,13 @@ payment_pages = [
 ]
 # 30 more payment pages
 more_payments = [
-    "Vera at Casinos", "Mastercard at Casinos", "Apple Pay at Casinos", "Google Pay at Casinos",
+    "Visa at Casinos", "Mastercard at Casinos", "Apple Pay at Casinos", "Google Pay at Casinos",
     "Skrill at Casinos", "Neteller at Casinos", "ecoPayz at Casinos", "MiFinity at Casinos",
     "Jeton at Casinos", "CashtoCode at Casinos", "Neosurf at Casinos", "Paysafecard at Casinos",
     "AstroPay at Casinos", "MuchBetter at Casinos", "Interac at Casinos", "iDebit at Casinos",
     "Instadebit at Casinos", "Flexepin at Casinos", "Monero at Casinos", "Bitcoin Cash at Casinos",
     "Polkadot at Casinos", "Avalanche at Casinos", "Polygon at Casinos", "Arbitrum at Casinos",
-    "Optimerm at Casinos", "Minimum Deposit €1", "Minimum Deposit €5", "Minimum Deposit €10",
+    "Optimism at Casinos", "Minimum Deposit €1", "Minimum Deposit €5", "Minimum Deposit €10",
     "Card Withdrawals", "Fast Crypto Withdrawals"
 ]
 for title in more_payments:
@@ -325,7 +325,7 @@ guide_pages = [
     {"slug": "pravila-bakkary", "title": "Baccarat Rules", "desc": "How to play baccarat — rules, strategies, and tips."},
     {"slug": "kak-vyigrat-v-casino", "title": "How to Win at Casinos", "desc": "Tips and strategies for improving your odds at online casinos."},
     {"slug": "otvetstvennaya-igra", "title": "Responsible Gambling", "desc": "How to gamble responsibly — setting limits and staying in control."},
-    {"slug": "zakon-ob-azartnyh-igrah-erlandiya", "title": "Iceland Gambling Law", "desc": "Legal status of online casinos in Iceland — what players need to know."},
+    {"slug": "zakon-ob-azartnyh-igrah-islandiya", "title": "Iceland Gambling Law", "desc": "Legal status of online casinos in Iceland — what players need to know."},
     {"slug": "nalogi-na-vyigrysh", "title": "Taxes on Gambling Winnings", "desc": "Do you need to pay taxes on gambling winnings in Iceland?"},
     {"slug": "bezopasnost-v-casino", "title": "Casino Security", "desc": "How to protect your personal data when playing at online casinos."},
     {"slug": "glossarij-casino", "title": "Casino Glossary", "desc": "Casino glossary — all gambling terms from A to Z explained."},
@@ -347,10 +347,10 @@ more_guides = [
     "Highest Win Potential Slots", "Low Volatility Slots",
     "Hvernig á að spila Crash Games", "Hvernig á að spila Plinko", "Hvernig á að spila Aviator",
     "Hvernig á að spila Mines", "Hvernig á að spila Dice",
-    "What er Evolution Gaming", "What er Pragmatic Spila", "What er NetEnt",
+    "What er Evolution Gaming", "What er Pragmatic Play", "What er NetEnt",
     "Hertory of Casinos in Iceland", "Online vs Land-Based Casinos",
     "Crypto vs Fiat at Casinos", "Advantages of Crypto Casinos",
-    "How to Avoid Casino Scams", "Signs of a Fair Casino", "Casino Blacklert",
+    "How to Avoid Casino Scams", "Signs of a Fair Casino", "Casino Blacklist",
     "How to Contact Casino Support", "How to File a Casino Complaint",
     "Comparing Casino Bónusar", "How to Maximere Your Bonus",
     "Bankroll Management Strategy", "Psychology of Gambling",
@@ -561,9 +561,9 @@ for c in casinos:
 <h3>Bónusar og tilboð</h3>
 <p>Nýir leikmenn fá velkomstbónus upp á {c["bonus"]}. Til að virkja bónusinn, skráðu þig og leggðu inn fyrstu innborgun þína.</p>
 <h3>Greiðslumátar</h3>
-<p>{"Tekur við Bitcoin, Ethereum, USDT, Litecoin og öðrum dulritunargjaldmiðlum." if c["type"]=="crypto" else "Tekur við Vera, Mastercard, dulritunargjaldmiðlum og rafrænum veskjum."} Þetta er sérstaklega mikilvægt fyrir íslenska leikmenn þar sem innlendir bankar loka oft á spilavíta-færslur.</p>
+<p>{"Tekur við Bitcoin, Ethereum, USDT, Litecoin og öðrum dulritunargjaldmiðlum." if c["type"]=="crypto" else "Tekur við Visa, Mastercard, dulritunargjaldmiðlum og rafrænum veskjum."} Þetta er sérstaklega mikilvægt fyrir íslenska leikmenn þar sem innlendir bankar loka oft á spilavíta-færslur.</p>
 <h3>Leikir</h3>
-<p>{c["name"]} býður upp á yfir 2000 leiki frá fremstu birgjum: Pragmatic Spila, NetEnt, Spila'n GO, Microgaming og fleiri.</p>
+<p>{c["name"]} býður upp á yfir 2000 leiki frá fremstu birgjum: Pragmatic Play, NetEnt, Play'n GO, Microgaming og fleiri.</p>
 <h2>Kostir og gallar</h2>
 <ul>
 <li>✅ {c["bonus"]}</li>
@@ -662,7 +662,7 @@ for b in bonus_pages:
 <p><strong>BC.Game:</strong> 300% crypto bonus — <a href="/slotoro-site/casino/bc-game/">Nánari upplýsingar →</a></p>
 </div>
 <h2>Hvernig á að fá bónus</h2>
-<p>To claim a bonus, regerter at the casino, make a deposit and the bonus will be credited automatically. Pay attention to wagering requirements.</p>
+<p>To claim a bonus, register at the casino, make a deposit and the bonus will be credited automatically. Pay attention to wagering requirements.</p>
 <div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Fá bónus →</a></div>'''
 
     bc = [("/slotoro-site/", "Home"), ("/slotoro-site/bonusy/", "Bónusar"), ("", b["title"])]
@@ -741,7 +741,7 @@ for c in casinos[:20]:
 <div class="game-card-thumb" style="background:linear-gradient(135deg,{'#0a2060,#1a40a0' if c['type']=='crypto' else '#2a1040,#5020a0'});derplay:flex;align-items:center;justify-content:center;"><span style="font-size:28px;font-weight:800;color:rgba(255,255,255,.15);">{c["rating"]}</span></div>
 <div class="game-card-info"><div class="game-card-name">{c["name"]}</div><div class="game-card-prov">{c["bonus"]} · {ctype_label}</div></div></a>\n'''
 
-casino_lert = "\n".join([f'<div class="info-box"><p><strong><a href="/slotoro-site/casino/{c["slug"]}/">{c["name"]}</a></strong> — {c["bonus"]} (Einkunn: {c["rating"]}/10)</p></div>' for c in casinos[:50]])
+casino_list = "\n".join([f'<div class="info-box"><p><strong><a href="/slotoro-site/casino/{c["slug"]}/">{c["name"]}</a></strong> — {c["bonus"]} (Einkunn: {c["rating"]}/10)</p></div>' for c in casinos[:50]])
 
 casino_content = f'''<h1>Best Online Casinos Iceland 2026</h1>
 <p>BF Casino reviews {len(casinos)} online casinos for Icelandic players. Compare bonuses, payment methods and game libraries. Öll casinos lerted support cryptocurrency — the easiest way to play from Iceland.</p>
@@ -749,41 +749,41 @@ casino_content = f'''<h1>Best Online Casinos Iceland 2026</h1>
 <h2>Topp 20 spilavíti</h2>
 <div class="game-grid">{casino_cards}</div>
 <h2>Öll {len(casinos)} Spilavíti umsagnir</h2>
-{casino_lert}'''
+{casino_list}'''
 
 write_page("casino/index.html", page_template("Best Online Casinos Iceland 2026", f"Compare {len(casinos)} online casinos for Iceland. Crypto payments, fast withdrawals, welcome bonuses.",
     [("/slotoro-site/", "Home"), ("", "Casino")],
     casino_content))
 
 # Slots index
-slots_lert = "\n".join([f'<div class="info-box"><p><strong><a href="/slotoro-site/slots/{s["slug"]}/">{s["name"]}</a></strong> — {s["provider"]} | RTP {s["rtp"]}% | {s["maxwin"]}</p></div>' for s in slots_data[:30]])
+slots_list = "\n".join([f'<div class="info-box"><p><strong><a href="/slotoro-site/slots/{s["slug"]}/">{s["name"]}</a></strong> — {s["provider"]} | RTP {s["rtp"]}% | {s["maxwin"]}</p></div>' for s in slots_data[:30]])
 write_page("slots/index.html", page_template("Öll Slots", "Umsagnir um popular slots",
     [("/slotoro-site/", "Home"), ("", "Slots")],
-    f'<h1>Vinsælir spilakassar 2026</h1><p>Umsagnir um {len(slots_data)} spilakassa frá fremstu birgjum.</p>{slots_lert}'))
+    f'<h1>Vinsælir spilakassar 2026</h1><p>Umsagnir um {len(slots_data)} spilakassa frá fremstu birgjum.</p>{slots_list}'))
 
 # Live index
-live_lert = "\n".join([f'<div class="info-box"><p><strong><a href="/slotoro-site/live/{g["slug"]}/">{g["name"]}</a></strong> — {g["desc"][:80]}</p></div>' for g in live_games[:20]])
+live_list = "\n".join([f'<div class="info-box"><p><strong><a href="/slotoro-site/live/{g["slug"]}/">{g["name"]}</a></strong> — {g["desc"][:80]}</p></div>' for g in live_games[:20]])
 write_page("live/index.html", page_template("Live Casino", "Leikir með lifandi spilastjórum",
     [("/slotoro-site/", "Home"), ("", "Live Casino")],
-    f'<h1>Spilavíti í beinni — Leikir með lifandi spilastjórum</h1><p>{len(live_games)} leikir með faglegum spilastjórum.</p>{live_lert}'))
+    f'<h1>Spilavíti í beinni — Leikir með lifandi spilastjórum</h1><p>{len(live_games)} leikir með faglegum spilastjórum.</p>{live_list}'))
 
 # Bonus index
-bonus_lert = "\n".join([f'<div class="info-box"><p><strong><a href="/slotoro-site/bonusy/{b["slug"]}/">{b["title"]}</a></strong> — {b["desc"][:80]}</p></div>' for b in bonus_pages[:20]])
+bonus_list = "\n".join([f'<div class="info-box"><p><strong><a href="/slotoro-site/bonusy/{b["slug"]}/">{b["title"]}</a></strong> — {b["desc"][:80]}</p></div>' for b in bonus_pages[:20]])
 write_page("bonusy/index.html", page_template("Casino Bónusar", "Öllir bónusar og afsláttarkóðar",
     [("/slotoro-site/", "Home"), ("", "Bónusar")],
-    f'<h1>Casino Bónusar 2026</h1><p>{len(bonus_pages)} virk bónustilboð.</p>{bonus_lert}'))
+    f'<h1>Casino Bónusar 2026</h1><p>{len(bonus_pages)} virk bónustilboð.</p>{bonus_list}'))
 
 # Payment index
-pay_lert = "\n".join([f'<div class="info-box"><p><strong><a href="/slotoro-site/platezhi/{p["slug"]}/">{p["title"]}</a></strong></p></div>' for p in payment_pages[:20]])
+pay_list = "\n".join([f'<div class="info-box"><p><strong><a href="/slotoro-site/platezhi/{p["slug"]}/">{p["title"]}</a></strong></p></div>' for p in payment_pages[:20]])
 write_page("platezhi/index.html", page_template("Greiðslumátar", "Dulritunargjaldmiðlar og aðrar greiðslur í spilavítum",
     [("/slotoro-site/", "Home"), ("", "Payments")],
-    f'<h1>Casino Greiðslumátar</h1><p>Hvernig á að komast framhjá lokun banka og spila frá Íslandi.</p>{pay_lert}'))
+    f'<h1>Casino Greiðslumátar</h1><p>Hvernig á að komast framhjá lokun banka og spila frá Íslandi.</p>{pay_list}'))
 
 # Guide index
-guide_lert = "\n".join([f'<div class="info-box"><p><strong><a href="/slotoro-site/gajdy/{g["slug"]}/">{g["title"]}</a></strong> — {g["desc"][:80]}</p></div>' for g in guide_pages[:20]])
+guide_list = "\n".join([f'<div class="info-box"><p><strong><a href="/slotoro-site/gajdy/{g["slug"]}/">{g["title"]}</a></strong> — {g["desc"][:80]}</p></div>' for g in guide_pages[:20]])
 write_page("gajdy/index.html", page_template("Guides", "Leiðbeiningar og kennsluefni fyrir leikmenn",
     [("/slotoro-site/", "Home"), ("", "Guides")],
-    f'<h1>Leiðbeiningar fyrir leikmenn</h1><p>{len(guide_pages)} leiðbeiningar fyrir byrjendur og reynda leikmenn.</p>{guide_lert}'))
+    f'<h1>Leiðbeiningar fyrir leikmenn</h1><p>{len(guide_pages)} leiðbeiningar fyrir byrjendur og reynda leikmenn.</p>{guide_list}'))
 
 
 # 10. SITEMAP
