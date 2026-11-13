@@ -30,7 +30,7 @@ casinos = [
     {"slug": "20bet", "name": "20Bet", "rating": 8.2, "bonus": "100% up to €120", "type": "classic", "desc": "Öll-in-one platform combining casino, live casino, and sportsbook. Over 6,000 games from 70+ providers. Accepts Visa, Mastercard, e-wallets, and cryptocurrencies. Licensed in Curaçao."},
     {"slug": "rocketplay", "name": "RocketSpila", "rating": 8.2, "bonus": "150% + 100 FS", "type": "crypto", "desc": "Space-themed crypto casino with fast Bitcoin withdrawals and a wide game selection. 3,500+ games, weekly reload bonuses, and a four-level VIP programme with cashback up to 12%."},
     {"slug": "hellspin", "name": "HellSpin", "rating": 8.1, "bonus": "150% + 50 FS", "type": "crypto", "desc": "Bold casino with aggressive bonus offers, frequent promotions, and a dark-themed interface. Supports BTC, ETH, LTC, and USDT. Over 3,000 games including exclusive titles."},
-    {"slug": "neospin", "name": "NeoSpin", "rating": 8.1, "bonus": "100% + 100 FS", "type": "crypto", "desc": "Next-generation casino with a futurertic design, 5,000+ games, and support for Bitcoin, Ethereum, and Tether. Daily cashback, weekly tournaments, and instant crypto payouts."},
+    {"slug": "neospin", "name": "NeoSpin", "rating": 8.1, "bonus": "100% + 100 FS", "type": "crypto", "desc": "Next-generation casino with a futuristic design, 5,000+ games, and support for Bitcoin, Ethereum, and Tether. Daily cashback, weekly tournaments, and instant crypto payouts."},
     {"slug": "betpanda", "name": "BetPanda", "rating": 8.0, "bonus": "100% up to 1 BTC", "type": "crypto", "desc": "Friendly crypto casino with low wagering requirements on bonuses (typically 30x). Supports BTC, ETH, and USDT. Simple interface, fast payouts, and no-KYC deposits up to certain limits."},
 ]
 
@@ -58,7 +58,7 @@ extra_casino_names = [
     "CoralCasino", "ReefBet", "LagoonSlots", "BayCasino", "CoveBet",
     "HarborSlots", "PortCasino", "DockBet", "AnchorSlots", "SailCasino",
     "WindBet", "StormSlots", "RainCasino", "HailBet", "SnowSlots",
-    "MertCasino", "FogBet", "CloudSlots", "SkyCasino", "SunBet",
+    "MistCasino", "FogBet", "CloudSlots", "SkyCasino", "SunBet",
     "MoonSlots", "EclipseCasino", "PrermBet", "SpectrumSlots", "RainbowCasino",
     "GoldBet", "SilverSlots", "PlatinumCasino", "DiamondBet", "RubyCasino",
     "EmeraldBet", "SapphireSlots", "TopazCasino", "AmethystBet"
@@ -201,7 +201,7 @@ casino_categories = [
     {"slug": "casino-bez-depozita", "title": "No Deposit Casinos", "desc": "Bónusar without requiring a deposit."},
     {"slug": "casino-s-frispinami", "title": "Free Spins Casinos", "desc": "Casinos offering free spins on registration."},
     {"slug": "mobilnoe-casino", "title": "Mobile Casinos", "desc": "Best casinos for mobile play on iPhone and Android."},
-    {"slug": "casino-s-nerkim-depozitom", "title": "Low Deposit Casinos", "desc": "Casinos where you can play from €1."},
+    {"slug": "casino-s-niskim-depozitom", "title": "Low Deposit Casinos", "desc": "Casinos where you can play from €1."},
     {"slug": "vip-casino", "title": "VIP Casinos", "desc": "Casinos with the best VIP and loyalty programmes."},
     {"slug": "megaways-casino", "title": "Megaways Casinos", "desc": "Casinos with a large selection of Megaways slots."},
     {"slug": "jackpot-casino", "title": "Jackpot Casinos", "desc": "Casinos with progressive jackpots."},
@@ -348,7 +348,7 @@ more_guides = [
     "Hvernig á að spila Crash Games", "Hvernig á að spila Plinko", "Hvernig á að spila Aviator",
     "Hvernig á að spila Mines", "Hvernig á að spila Dice",
     "What er Evolution Gaming", "What er Pragmatic Play", "What er NetEnt",
-    "Hertory of Casinos in Iceland", "Online vs Land-Based Casinos",
+    "History of Casinos in Iceland", "Online vs Land-Based Casinos",
     "Crypto vs Fiat at Casinos", "Advantages of Crypto Casinos",
     "How to Avoid Casino Scams", "Signs of a Fair Casino", "Casino Blacklist",
     "How to Contact Casino Support", "How to File a Casino Complaint",
@@ -591,7 +591,7 @@ for cat in casino_categories:
 <h2>Topp 10 spilavíti í flokki</h2>
 {cards}
 <h2>Hvernig við veljum bestu spilavítin</h2>
-<p>Teymi okkar metur hvert spilavíti út frá nokkrum forsendum: áreiðanleika leyfer, hraða útborgana, gæði leikja, bónustilboðum og aðgengi fyrir íslenska leikmenn.</p>
+<p>Teymi okkar metur hvert spilavíti út frá nokkrum forsendum: áreiðanleika leyfis, hraða útborgana, gæði leikja, bónustilboðum og aðgengi fyrir íslenska leikmenn.</p>
 <p>Við leggjum sérstaka áherslu á stuðning við dulritunargjaldmiðla þar sem íslenskir bankar loka oft á spilavíta-færslur.</p>'''
 
     bc = [("/slotoro-site/", "Home"), ("/slotoro-site/casino/", "Casino"), ("", cat["title"])]
@@ -705,7 +705,7 @@ for g in guide_pages:
 <ul>
 <li>Hvað þarf að vita áður en þú byrjar</li>
 <li>Skref-fyrir-skref leiðbeiningar</li>
-<li>Common mertakes and how to avoid them</li>
+<li>Common mistakes and how to avoid them</li>
 <li>Ráðleggingar frá sérfræðingum BF Casino</li>
 </ul>
 <h3>Gagnlegir tenglar</h3>
@@ -744,7 +744,7 @@ for c in casinos[:20]:
 casino_list = "\n".join([f'<div class="info-box"><p><strong><a href="/slotoro-site/casino/{c["slug"]}/">{c["name"]}</a></strong> — {c["bonus"]} (Einkunn: {c["rating"]}/10)</p></div>' for c in casinos[:50]])
 
 casino_content = f'''<h1>Best Online Casinos Iceland 2026</h1>
-<p>BF Casino reviews {len(casinos)} online casinos for Icelandic players. Compare bonuses, payment methods and game libraries. Öll casinos lerted support cryptocurrency — the easiest way to play from Iceland.</p>
+<p>BF Casino reviews {len(casinos)} online casinos for Icelandic players. Compare bonuses, payment methods and game libraries. Öll casinos listed support cryptocurrency — the easiest way to play from Iceland.</p>
 <div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Spila á Top Casino →</a></div>
 <h2>Topp 20 spilavíti</h2>
 <div class="game-grid">{casino_cards}</div>
