@@ -54,12 +54,13 @@ button{font-family:inherit;}
 .hero-center{flex:1;text-align:center;padding:40px 10px 50px;display:flex;flex-direction:column;align-items:center;}
 
 /* Wheel */
-.wheel-box{position:relative;width:240px;height:240px;margin:0 auto 16px;}
-.wheel-glow{position:absolute;inset:-18px;border-radius:50%;background:radial-gradient(circle,rgba(0,150,255,0.2) 0%,rgba(120,0,255,0.12) 50%,transparent 70%);filter:blur(12px);pointer-events:none;}
-#wheelSvg{width:100%;height:100%;cursor:pointer;}
-#wheelSvg:hover{filter:drop-shadow(0 0 35px rgba(0,150,255,0.5));}
-.wheel-ptr{position:absolute;top:-5px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:12px solid transparent;border-right:12px solid transparent;border-top:22px solid #ffd700;filter:drop-shadow(0 0 10px rgba(255,200,0,0.7));z-index:5;}
-#wheelResult{margin-top:8px;background:linear-gradient(135deg,rgba(255,200,0,0.15),rgba(255,180,0,0.08));border:1px solid rgba(255,200,0,0.25);border-radius:12px;padding:8px 22px;color:#ffd700;font-size:15px;font-weight:700;opacity:0;transition:opacity 0.5s;text-align:center;}
+.wheel-box{position:relative;width:280px;height:280px;margin:0 auto 16px;}
+.wheel-glow{position:absolute;inset:-20px;border-radius:50%;background:radial-gradient(circle,rgba(0,150,255,0.2) 0%,rgba(120,0,255,0.12) 50%,transparent 70%);filter:blur(12px);pointer-events:none;}
+#wheelCanvas{width:280px;height:280px;cursor:pointer;border-radius:50%;}
+.wheel-ptr{position:absolute;top:-8px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:14px solid transparent;border-right:14px solid transparent;border-top:26px solid #ffd700;filter:drop-shadow(0 0 10px rgba(255,200,0,0.7));z-index:5;}
+.wheel-spin-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#00d8ff,#0060cc);border:3px solid #ffd700;color:#fff;font-size:13px;font-weight:800;cursor:pointer;z-index:3;box-shadow:0 0 20px rgba(0,180,255,0.5);transition:transform 0.2s;}
+.wheel-spin-btn:hover{transform:translate(-50%,-50%) scale(1.1);}
+#wheelResult{margin-top:8px;background:linear-gradient(135deg,rgba(255,200,0,0.15),rgba(255,180,0,0.08));border:1px solid rgba(255,200,0,0.25);border-radius:12px;padding:10px 24px;color:#ffd700;font-size:16px;font-weight:700;opacity:0;transition:opacity 0.5s;text-align:center;}
 #wheelResult.show{opacity:1;}
 
 .hero-badge{display:inline-block;background:linear-gradient(90deg,rgba(255,200,0,0.12),rgba(255,215,0,0.22),rgba(255,200,0,0.12));border:1px solid rgba(255,200,0,0.25);border-radius:50px;padding:5px 20px;margin-bottom:12px;}
@@ -206,46 +207,8 @@ button{font-family:inherit;}
 
       <div class="wheel-box">
         <div class="wheel-glow"></div>
-        <svg viewBox="0 0 300 300" id="wheelSvg" onclick="spinWheel()">
-          <defs>
-            <filter id="gl"><feGaussianBlur stdDeviation="2" result="g"/><feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-            <radialGradient id="cg" cx="50%" cy="40%"><stop offset="0%" stop-color="#00e0ff"/><stop offset="100%" stop-color="#0050cc"/></radialGradient>
-          </defs>
-          <g id="wheelGroup">
-            <!-- Bright colorful segments -->
-            <path d="M150,150 L150,10 A140,140 0 0,1 249,51 Z" fill="#c62828" stroke="#fff" stroke-width="1"/>
-            <path d="M150,150 L249,51 A140,140 0 0,1 290,150 Z" fill="#1565c0" stroke="#fff" stroke-width="1"/>
-            <path d="M150,150 L290,150 A140,140 0 0,1 249,249 Z" fill="#f9a825" stroke="#fff" stroke-width="1"/>
-            <path d="M150,150 L249,249 A140,140 0 0,1 150,290 Z" fill="#2e7d32" stroke="#fff" stroke-width="1"/>
-            <path d="M150,150 L150,290 A140,140 0 0,1 51,249 Z" fill="#6a1b9a" stroke="#fff" stroke-width="1"/>
-            <path d="M150,150 L51,249 A140,140 0 0,1 10,150 Z" fill="#00838f" stroke="#fff" stroke-width="1"/>
-            <path d="M150,150 L10,150 A140,140 0 0,1 51,51 Z" fill="#e65100" stroke="#fff" stroke-width="1"/>
-            <path d="M150,150 L51,51 A140,140 0 0,1 150,10 Z" fill="#283593" stroke="#fff" stroke-width="1"/>
-            <!-- Labels - white on bright colors -->
-            <text transform="rotate(22.5,150,150)" x="150" y="55" fill="#fff" font-size="14" font-weight="800" text-anchor="middle" font-family="Inter,sans-serif">500%</text>
-            <text transform="rotate(67.5,150,150)" x="150" y="55" fill="#fff" font-size="12" font-weight="700" text-anchor="middle" font-family="Inter,sans-serif">50 FS</text>
-            <text transform="rotate(112.5,150,150)" x="150" y="55" fill="#fff" font-size="14" font-weight="800" text-anchor="middle" font-family="Inter,sans-serif">200%</text>
-            <text transform="rotate(157.5,150,150)" x="150" y="55" fill="#fff" font-size="12" font-weight="700" text-anchor="middle" font-family="Inter,sans-serif">100 FS</text>
-            <text transform="rotate(202.5,150,150)" x="150" y="55" fill="#fff" font-size="14" font-weight="800" text-anchor="middle" font-family="Inter,sans-serif">300%</text>
-            <text transform="rotate(247.5,150,150)" x="150" y="55" fill="#fff" font-size="12" font-weight="700" text-anchor="middle" font-family="Inter,sans-serif">25 FS</text>
-            <text transform="rotate(292.5,150,150)" x="150" y="55" fill="#fff" font-size="14" font-weight="800" text-anchor="middle" font-family="Inter,sans-serif">150%</text>
-            <text transform="rotate(337.5,150,150)" x="150" y="55" fill="#fff" font-size="12" font-weight="700" text-anchor="middle" font-family="Inter,sans-serif">200 FS</text>
-            <!-- Outer ring gold -->
-            <circle cx="150" cy="150" r="141" fill="none" stroke="#ffd700" stroke-width="3"/>
-            <circle cx="150" cy="150" r="144" fill="none" stroke="rgba(255,215,0,0.3)" stroke-width="1"/>
-            <!-- Bulbs around edge -->
-            <circle cx="150" cy="4" r="5" fill="#ffd700" filter="url(#gl)"/><circle cx="250" cy="46" r="5" fill="#ff4444" filter="url(#gl)"/>
-            <circle cx="296" cy="150" r="5" fill="#ffd700" filter="url(#gl)"/><circle cx="250" cy="254" r="5" fill="#44ff44" filter="url(#gl)"/>
-            <circle cx="150" cy="296" r="5" fill="#ffd700" filter="url(#gl)"/><circle cx="50" cy="254" r="5" fill="#4488ff" filter="url(#gl)"/>
-            <circle cx="4" cy="150" r="5" fill="#ffd700" filter="url(#gl)"/><circle cx="50" cy="46" r="5" fill="#ff44ff" filter="url(#gl)"/>
-            <!-- Center button -->
-            <circle cx="150" cy="150" r="32" fill="url(#cg)" stroke="#ffd700" stroke-width="3" style="cursor:pointer"/>
-            <text x="150" y="145" fill="#fff" font-size="10" font-weight="600" text-anchor="middle" font-family="Inter,sans-serif" style="pointer-events:none">НАЖМИ</text>
-            <text x="150" y="160" fill="#ffd700" font-size="14" font-weight="900" text-anchor="middle" font-family="Inter,sans-serif" style="pointer-events:none">SPIN</text>
-          </g>
-          <!-- Pointer outside wheelGroup -->
-          <polygon points="150,18 137,-2 163,-2" fill="#ffd700" stroke="#fff" stroke-width="1" filter="url(#gl)"/>
-        </svg>
+        <canvas id="wheelCanvas" width="560" height="560" onclick="spinWheel()"></canvas>
+        <button class="wheel-spin-btn" onclick="spinWheel()">SPIN</button>
         <div class="wheel-ptr"></div>
       </div>
       <div id="wheelResult"></div>
@@ -429,8 +392,8 @@ button{font-family:inherit;}
 <script>
 // Snowflakes
 (function(){
-  var flakes='❄❆✦✧';
-  for(var i=0;i<15;i++){
+  var flakes=['❄','❆','✦','✧'];
+  for(var i=0;i<12;i++){
     var s=document.createElement('div');
     s.className='snowflake';
     s.textContent=flakes[Math.floor(Math.random()*flakes.length)];
@@ -443,29 +406,129 @@ button{font-family:inherit;}
   }
 })();
 
-var spinning=false,currentDeg=0;
-var prizes=['500% бонус','50 фриспинов','200% бонус','100 фриспинов','300% бонус','25 фриспинов','150% бонус','200 фриспинов'];
+// Canvas Wheel
+var canvas=document.getElementById('wheelCanvas');
+var ctx=canvas.getContext('2d');
+var W=canvas.width, H=canvas.height, cx=W/2, cy=H/2, R=250;
+var segments=[
+  {label:'500%',color:'#c62828'},
+  {label:'50 FS',color:'#1565c0'},
+  {label:'200%',color:'#f9a825'},
+  {label:'100 FS',color:'#2e7d32'},
+  {label:'300%',color:'#6a1b9a'},
+  {label:'25 FS',color:'#00838f'},
+  {label:'150%',color:'#e65100'},
+  {label:'200 FS',color:'#283593'}
+];
+var numSeg=segments.length;
+var arc=2*Math.PI/numSeg;
+var angle=0;
+var spinning=false;
+var spinVel=0;
+var targetAngle=0;
+var spinStart=0;
+var spinDuration=4000;
+var startAngle=0;
+
+function drawWheel(){
+  ctx.clearRect(0,0,W,H);
+  ctx.save();
+  ctx.translate(cx,cy);
+  ctx.rotate(angle);
+  // Segments
+  for(var i=0;i<numSeg;i++){
+    var a0=i*arc-Math.PI/2;
+    var a1=a0+arc;
+    ctx.beginPath();
+    ctx.moveTo(0,0);
+    ctx.arc(0,0,R,a0,a1);
+    ctx.closePath();
+    ctx.fillStyle=segments[i].color;
+    ctx.fill();
+    ctx.strokeStyle='rgba(255,255,255,0.4)';
+    ctx.lineWidth=2;
+    ctx.stroke();
+    // Label
+    ctx.save();
+    ctx.rotate(a0+arc/2);
+    ctx.textAlign='center';
+    ctx.fillStyle='#fff';
+    ctx.font='bold 28px Inter,sans-serif';
+    ctx.shadowColor='rgba(0,0,0,0.5)';
+    ctx.shadowBlur=4;
+    ctx.fillText(segments[i].label,R*0.62,8);
+    ctx.shadowBlur=0;
+    ctx.restore();
+  }
+  ctx.restore();
+  // Outer gold ring
+  ctx.beginPath();
+  ctx.arc(cx,cy,R+4,0,2*Math.PI);
+  ctx.strokeStyle='#ffd700';
+  ctx.lineWidth=6;
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(cx,cy,R+8,0,2*Math.PI);
+  ctx.strokeStyle='rgba(255,215,0,0.25)';
+  ctx.lineWidth=2;
+  ctx.stroke();
+  // Bulbs
+  for(var i=0;i<12;i++){
+    var ba=i*(2*Math.PI/12)-Math.PI/2;
+    var bx=cx+Math.cos(ba)*(R+10);
+    var by=cy+Math.sin(ba)*(R+10);
+    ctx.beginPath();
+    ctx.arc(bx,by,6,0,2*Math.PI);
+    ctx.fillStyle=i%2===0?'#ffd700':'#60ddff';
+    ctx.fill();
+    ctx.shadowColor=i%2===0?'#ffd700':'#60ddff';
+    ctx.shadowBlur=8;
+    ctx.fill();
+    ctx.shadowBlur=0;
+  }
+}
+
+function easeOut(t){
+  return 1-Math.pow(1-t,3);
+}
+
+function animateSpin(){
+  var now=Date.now();
+  var elapsed=now-spinStart;
+  if(elapsed>=spinDuration){
+    angle=targetAngle;
+    spinning=false;
+    drawWheel();
+    // Show result
+    var norm=angle%(2*Math.PI);
+    if(norm<0)norm+=2*Math.PI;
+    var idx=Math.floor((2*Math.PI-norm+Math.PI/2)%(2*Math.PI)/arc)%numSeg;
+    var r=document.getElementById('wheelResult');
+    r.textContent='🎉 Ты выиграл: '+segments[idx].label+(segments[idx].label.indexOf('FS')>-1?' фриспинов':' бонус')+'!';
+    r.className='show';
+    return;
+  }
+  var t=elapsed/spinDuration;
+  angle=startAngle+(targetAngle-startAngle)*easeOut(t);
+  drawWheel();
+  requestAnimationFrame(animateSpin);
+}
+
 function spinWheel(){
   if(spinning)return;
   spinning=true;
   var r=document.getElementById('wheelResult');
   r.className='';r.textContent='';
-  var extra=1440+Math.floor(Math.random()*720);
-  var seg=Math.floor(Math.random()*8);
-  var target=extra+(360-seg*45-22.5);
-  currentDeg=target;
-  var g=document.getElementById('wheelGroup');
-  g.style.transition='none';
-  g.style.transform='rotate('+0+'deg)';
-  void g.offsetWidth;
-  g.style.transition='transform 4s cubic-bezier(0.17,0.67,0.12,0.99)';
-  g.style.transform='rotate('+target+'deg)';
-  setTimeout(function(){
-    spinning=false;
-    r.textContent='🎉 Ты выиграл: '+prizes[seg]+'!';
-    r.className='show';
-  },4200);
+  startAngle=angle;
+  var spins=5+Math.floor(Math.random()*3);
+  var extra=Math.random()*2*Math.PI;
+  targetAngle=startAngle+spins*2*Math.PI+extra;
+  spinStart=Date.now();
+  spinDuration=3500+Math.random()*1500;
+  requestAnimationFrame(animateSpin);
 }
+
+drawWheel();
 </script>
 
 </body>
