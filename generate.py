@@ -525,8 +525,10 @@ def get_footer():
   </div>
 </footer>'''
 
-def page_template(title, desc, breadcrumbs, content, canonical=""):
+def page_template(title, desc, breadcrumbs, content, canonical="", og_img=""):
     bc_html = ' → '.join([f'<a href="{url}">{name}</a>' for url, name in breadcrumbs])
+    site_url = "https://bestiflokkurinn.is"
+    og_image = og_img if og_img else f"{site_url}/img/og-default.jpg"
     return f'''<!DOCTYPE html>
 <html lang="is">
 <head>
@@ -535,6 +537,20 @@ def page_template(title, desc, breadcrumbs, content, canonical=""):
 <title>{title} | BF Casino</title>
 <meta name="description" content="{desc}">
 {f'<link rel="canonical" href="{canonical}">' if canonical else ''}
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="{URL_BASE}favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="{URL_BASE}favicon-32.png">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="{title} | BF Casino">
+<meta property="og:description" content="{desc}">
+<meta property="og:image" content="{og_image}">
+<meta property="og:locale" content="is_IS">
+<meta property="og:site_name" content="BF Casino — Bestiflokkurinn.is">
+<meta name="twitter:card" content="summary_large_image">
+<!-- Hreflang -->
+<link rel="alternate" hreflang="is" href="{site_url}/">
+<link rel="alternate" hreflang="x-default" href="{site_url}/">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{{--bg:#0c0618;--bg2:#140e28;--bg3:#1a1235;--card:rgba(25,15,50,.55);--border:rgba(140,100,220,.1);--border2:rgba(140,100,220,.2);--purple:#8040e0;--violet:#c060ff;--blue:#80b0ff;--accent:#c080ff;--accent-bg:rgba(140,80,240,.06);--gold:#f0c050;--text:#c4b8e8;--text2:#9a8cc0;--muted:rgba(180,160,220,.85);--muted2:rgba(140,120,180,.6);--warm1:#2a1040;--warm2:#1a0830;}}
@@ -685,6 +701,10 @@ body::after{{content:'';position:fixed;bottom:-200px;left:-10%;width:600px;heigh
 </aside>
 </div>
 {get_footer()}
+<script type="application/ld+json">
+{{"@context":"https://schema.org","@type":"WebSite","name":"BF Casino","url":"https://bestiflokkurinn.is/","description":"{desc}","inLanguage":"is","publisher":{{"@type":"Organization","name":"BF Casino","url":"https://bestiflokkurinn.is/"}}}}
+</script>
+<script>document.querySelectorAll('img[loading]').length||document.querySelectorAll('.slot-hero-img,.game-card-thumb img').forEach(function(i){{i.loading='lazy'}})</script>
 </body>
 </html>'''
 
@@ -761,7 +781,7 @@ for cat in casino_categories:
 # 3. СЛОТЫ (250)
 print("Generating slot reviews...")
 for s in slots_data:
-    cdn_img = f'<div class="slot-hero"><img src="{URL_BASE}img/slots/{s["slug"]}.jpg" alt="{s["name"]}" class="slot-hero-img"></div>'
+    cdn_img = f'<div class="slot-hero"><img src="{URL_BASE}img/slots/{s["slug"]}.jpg" alt="{s["name"]}" class="slot-hero-img" loading="lazy"></div>'
     content = f'''<h1>{s["name"]} — Spilakassaumsögn</h1>
 {cdn_img}
 <div class="info-box">
