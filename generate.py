@@ -39,53 +39,7 @@ casinos = [
     {"slug": "betpanda", "name": "BetPanda", "rating": 8.0, "bonus": "100% up to 1 BTC", "type": "crypto", "desc": "Dulritunarspilavíti með tiltölulega lágum veðskilyrðum (venjulega 30x). Styður BTC, ETH og USDT."},
 ]
 
-# Generate 130 more casinos
-extra_casino_names = [
-    "LuckyStar", "IceBet", "NordicSlots", "FrostBet", "SnowCasino", "AuroraBet",
-    "VikingSlots", "ThunderBet", "GlacierCasino", "BorealisBet", "CrystalSlots",
-    "MidnightSun", "VolcanoBet", "GeyserCasino", "RuneBet", "ValhallaCasino",
-    "OdinSlots", "ThorBet", "FreyaCasino", "LokiBet", "FenrirSlots",
-    "JormungandrBet", "MidgardCasino", "AsgardSlots", "BifrostBet", "YggdrasilCasino",
-    "RagnarokBet", "HelCasino", "TyrSlots", "BaldurBet", "HeimdallCasino",
-    "NjordBet", "SkadiSlots", "SifCasino", "BragiBet", "IdunnSlots",
-    "MimirCasino", "NornBet", "EinherjSlots", "WyrdCasino", "SagaBet",
-    "EddaSlots", "RunicCasino", "GaldurBet", "SeidrSlots", "VolvaCasino",
-    "DrakkarBet", "LongshipSlots", "ShieldCasino", "AxeBet", "SwordSlots",
-    "HammerCasino", "SpearBet", "BowSlots", "HelmCasino", "ChainmailBet",
-    "FjordSlots", "TundraCasino", "PermafrostBet", "IcebergSlots", "BlizzardCasino",
-    "AvalancheBet", "SnowstormSlots", "FrostbiteCasino", "GlacialBet", "ArcticSlots",
-    "PolarCasino", "NorthernBet", "MidwinterSlots", "SolsticeCasino", "EquinoxBet",
-    "TwilightSlots", "DawnCasino", "DuskBet", "StarfallSlots", "MeteorCasino",
-    "CometBet", "NebulSlots", "PulsarCasino", "QuasarBet", "NovaSlots",
-    "ZenithCasino", "ApexBet", "PeakSlots", "SummitCasino", "RidgeBet",
-    "CliffSlots", "ValleyCasino", "RiverBet", "OceanSlots", "TideCasino",
-    "WaveBet", "CurrentSlots", "DepthCasino", "AbyssBet", "TrenchSlots",
-    "CoralCasino", "ReefBet", "LagoonSlots", "BayCasino", "CoveBet",
-    "HarborSlots", "PortCasino", "DockBet", "AnchorSlots", "SailCasino",
-    "WindBet", "StormSlots", "RainCasino", "HailBet", "SnowSlots",
-    "MistCasino", "FogBet", "CloudSlots", "SkyCasino", "SunBet",
-    "MoonSlots", "EclipseCasino", "PrismBet", "SpectrumSlots", "RainbowCasino",
-    "GoldBet", "SilverSlots", "PlatinumCasino", "DiamondBet", "RubyCasino",
-    "EmeraldBet", "SapphireSlots", "TopazCasino", "AmethystBet"
-]
-
-for i, name in enumerate(extra_casino_names[:130]):
-    slug = name.lower().replace(" ", "-")
-    rating = round(8.0 - (i * 0.015), 1)
-    rating = max(rating, 6.0)
-    ctype = "crypto" if i % 3 == 0 else "classic"
-    bonus_options = ["100% up to €200", "150% + 50 FS", "200% up to €500", "50 FS no deposit", "100% up to 0.5 BTC", "125% + 75 FS", "100% up to €300"]
-    bonus = bonus_options[i % len(bonus_options)]
-    casinos.append({
-        "slug": slug,
-        "name": name,
-        "rating": rating,
-        "bonus": bonus,
-        "type": ctype,
-        "desc": f"{name} er netspilavíti með erlent leyfi sem tekur við íslenskum leikmönnum. Velkomstbónus: {bonus}. Styður dulritunargjaldmiðla og býður fjölbreytt leikjaúrval."
-    })
-
-# 250 slots
+# Real slots only
 slots_data = [
     {"slug": "gates-of-olympus", "name": "Gates of Olympus", "provider": "Pragmatic Play", "rtp": 96.5, "volatility": "High", "maxwin": "x5000", "theme": "Mythology", "cdn": "pragmaticexternal/vs20olympgate.png"},
     {"slug": "sweet-bonanza", "name": "Sweet Bonanza", "provider": "Pragmatic Play", "rtp": 96.48, "volatility": "High", "maxwin": "x21100", "theme": "Fruit", "cdn": "pragmaticexternal/vs20fruitsw.png"},
@@ -173,42 +127,6 @@ for i, (name, provider, rtp, maxwin, theme, cdn) in enumerate(more_slot_names):
         "maxwin": maxwin,
         "theme": theme,
         "cdn": cdn
-    })
-
-# Add 180 more slots with CDN-mapped provider folders
-generic_slot_themes = ["Egypt","Fruit","Space","Ocean","Fairy Tales","Vikings","Asia","Pirates","Mythology","Western","Nature","Money","Horror","Fantasy","Classic"]
-generic_providers = ["Pragmatic Play","NetEnt","Play'n GO","Microgaming","Yggdrasil","Push Gaming","Hacksaw Gaming","NoLimit City","Red Tiger","Thunderkick","Relax Gaming","ELK Studios","Big Time Gaming","Blueprint Gaming","iSoftBet"]
-cdn_provider_map = {
-    "Pragmatic Play": "pragmaticexternal",
-    "NetEnt": "netent",
-    "Play'n GO": "playngo",
-    "Microgaming": "microgaming",
-    "Yggdrasil": "yggdrasil",
-    "Push Gaming": "pushgaming",
-    "Hacksaw Gaming": "hacksaw",
-    "NoLimit City": "nolimitcity",
-    "Red Tiger": "redtiger",
-    "Thunderkick": "thunderkick",
-    "Relax Gaming": "relax",
-    "ELK Studios": "elk",
-    "Big Time Gaming": "bigtimegaming",
-    "Blueprint Gaming": "blueprint",
-    "iSoftBet": "isoftbet",
-}
-for i in range(180):
-    n = f"Slot Game {i+70}"
-    slug = f"slot-game-{i+70}"
-    prov = generic_providers[i % len(generic_providers)]
-    cdn_folder = cdn_provider_map.get(prov, prov.lower().replace(" ", ""))
-    slots_data.append({
-        "slug": slug,
-        "name": n,
-        "provider": prov,
-        "rtp": round(95.5 + (i % 30) * 0.1, 2),
-        "volatility": ["Low","Medium","High","Extreme"][i % 4],
-        "maxwin": f"x{(i+1)*500}",
-        "theme": generic_slot_themes[i % len(generic_slot_themes)],
-        "cdn": f"{cdn_folder}/SlotGame{i+70}.png"
     })
 
 # Casino categories (50 pages) — all in Icelandic
@@ -316,7 +234,7 @@ bonus_pages = [
     {"slug": "reload-bonus", "title": "Endurnýjunarbónusar", "desc": "Endurnýjunarbónusar fyrir núverandi leikmenn — vikuleg og mánaðarleg innborgunartilboð."},
 ]
 # 70 more bonus pages per casino
-for casino in casinos[:70]:
+for casino in casinos:
     bonus_pages.append({
         "slug": f"bonus-{casino['slug']}",
         "title": f"{casino['name']} bónus",
@@ -1342,7 +1260,7 @@ seo_pages = [
 </ol>
 
 <h2>Veðskilyrði — hvað þýðir 30x?</h2>
-<p>Ef þú vinnur €10 úr frísnúningum og veðskilyrði eru 30x, þarftu að veðja €300 áður en þú getur tekið út. <a href="{URL_BASE}gajdy/vejer/">Lestu meira um veðskilyrði →</a></p>
+<p>Ef þú vinnur €10 úr frísnúningum og veðskilyrði eru 30x, þarftu að veðja €300 áður en þú getur tekið út. <a href="{URL_BASE}bonusy/vejer/">Lestu meira um veðskilyrði →</a></p>
 
 <div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Fá frísnúninga →</a></div>'''
     },
