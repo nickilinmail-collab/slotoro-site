@@ -3,405 +3,301 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Frostspil – Best Online Casinos in Iceland 2026</title>
-<meta name="description" content="Frostspil is Iceland's #1 online casino comparison site. Find trusted casinos with crypto support, bonuses and free spins.">
+<title>Frostspil – Best Online Casino Iceland 2026</title>
+<meta name="description" content="Frostspil is Iceland's top online casino. Play 3000+ slots, live casino, and claim up to 500% welcome bonus. Crypto accepted.">
+<meta name="theme-color" content="#060a14">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
+:root{--bg:#060a14;--bg2:#0a1020;--bg3:#0e1630;--accent:#00c8ff;--gold:#ffd700;--green:#00dd88;--text:#e0e8f0;--muted:rgba(180,200,230,.45);--border:rgba(0,120,255,.08);}
 *{margin:0;padding:0;box-sizing:border-box;}
-body{background:#050818;color:#fff;font-family:'Inter',system-ui,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
-a{text-decoration:none;color:inherit;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;transition:color .15s;}
 button{font-family:inherit;cursor:pointer;}
-@keyframes snowfall{0%{transform:translateY(-10px) rotate(0);opacity:0}10%{opacity:1}90%{opacity:.8}100%{transform:translateY(100vh) rotate(360deg);opacity:0}}
-.sf{position:fixed;top:-10px;color:rgba(200,230,255,.3);pointer-events:none;z-index:200;animation:snowfall linear infinite;}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+img{display:block;max-width:100%;}
 
-/* NAV */
-.topbar{background:rgba(5,8,24,.97);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,150,255,.08);}
-.topbar-inner{max-width:1100px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;}
-.logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;letter-spacing:1px;}
-.logo .frost{color:#80e0ff;font-size:24px;}
-.logo small{color:#00d4ff;font-size:10px;vertical-align:super;margin-left:2px;font-weight:400;}
-.nav-right{display:flex;align-items:center;gap:16px;}
-.search-box{display:flex;border:1px solid rgba(0,150,255,.15);border-radius:8px;overflow:hidden;background:rgba(0,20,60,.3);}
-.search-box input{background:transparent;border:none;color:#fff;padding:8px 12px;font-size:12px;width:180px;outline:none;}
-.search-box input::placeholder{color:rgba(140,180,255,.35);}
-.search-box button{background:linear-gradient(135deg,#00b0ff,#0070dd);border:none;color:#fff;padding:8px 14px;font-size:11px;font-weight:600;}
-.hamburger{display:none;background:none;border:none;color:#fff;font-size:24px;padding:4px;}
+/* PROMO STRIP */
+.promo-strip{background:linear-gradient(90deg,var(--bg2),#0a1835,var(--bg2));padding:8px 20px;text-align:center;border-bottom:1px solid var(--border);font-size:12px;color:var(--gold);font-weight:600;letter-spacing:.3px;}
 
-/* MEGA MENU */
-.nav-menu{max-width:1100px;margin:0 auto;padding:0 24px;}
-.menu-row{display:flex;gap:0;border-top:1px solid rgba(0,150,255,.06);}
-.menu-item{position:relative;padding:10px 16px;font-size:13px;font-weight:500;color:rgba(180,200,255,.65);cursor:pointer;transition:color .2s,background .2s;display:flex;align-items:center;gap:6px;}
-.menu-item:hover{color:#fff;background:rgba(0,100,255,.06);}
-.menu-item.active{color:#00d4ff;border-bottom:2px solid #00d4ff;}
-.menu-count{background:rgba(0,150,255,.15);color:#60c8ff;font-size:9px;padding:2px 7px;border-radius:10px;font-weight:600;}
-.menu-arrow{font-size:10px;transition:transform .2s;}
-.menu-item:hover .menu-arrow{transform:rotate(180deg);}
-.dropdown{display:none;position:absolute;top:100%;left:0;background:rgba(8,12,35,.97);border:1px solid rgba(0,120,255,.12);border-radius:0 0 12px 12px;min-width:220px;padding:8px 0;z-index:50;backdrop-filter:blur(12px);}
-.menu-item:hover .dropdown{display:block;}
-.dropdown a{display:block;padding:8px 18px;font-size:12px;color:rgba(180,200,255,.6);transition:background .15s,color .15s;}
-.dropdown a:hover{background:rgba(0,100,255,.08);color:#fff;}
-
-/* MOBILE MENU */
-.mobile-menu{display:none;position:fixed;inset:0;background:rgba(5,8,24,.98);z-index:200;overflow-y:auto;padding:20px;}
-.mobile-menu.open{display:block;}
-.mm-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;}
-.mm-close{background:none;border:none;color:#fff;font-size:28px;cursor:pointer;}
-.mm-section{border-bottom:1px solid rgba(0,100,255,.08);padding:12px 0;}
-.mm-title{display:flex;align-items:center;justify-content:space-between;padding:8px 0;font-size:15px;font-weight:600;cursor:pointer;}
-.mm-title .cnt{background:rgba(0,150,255,.15);color:#60c8ff;font-size:10px;padding:2px 8px;border-radius:10px;}
-.mm-sub{display:none;padding:4px 0 4px 16px;border-left:2px solid rgba(0,100,255,.1);}
-.mm-sub.open{display:block;}
-.mm-sub a{display:block;padding:8px 0;font-size:13px;color:rgba(180,200,255,.6);}
-.mm-sub a:hover{color:#00d4ff;}
+/* HEADER */
+.header{background:var(--bg);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+.header-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;}
+.logo{display:flex;align-items:center;gap:8px;font-size:24px;font-weight:900;letter-spacing:1px;}
+.logo .ice{color:var(--accent);font-size:26px;}
+.nav-links{display:flex;gap:20px;}
+.nav-links a{font-size:13px;font-weight:500;color:var(--muted);padding:4px 0;}
+.nav-links a:hover,.nav-links a.act{color:#fff;}
+.header-actions{display:flex;gap:10px;align-items:center;}
+.btn-login{background:transparent;border:1.5px solid rgba(0,180,255,.25);color:var(--accent);padding:8px 20px;border-radius:8px;font-size:12px;font-weight:600;}
+.btn-login:hover{background:rgba(0,180,255,.08);}
+.btn-signup{background:linear-gradient(135deg,var(--accent),#0080cc);color:#fff;padding:8px 20px;border-radius:8px;font-size:12px;font-weight:700;border:none;box-shadow:0 0 15px rgba(0,200,255,.2);}
+.btn-signup:hover{box-shadow:0 0 25px rgba(0,200,255,.35);}
+.hamburger{display:none;background:none;border:none;color:#fff;font-size:24px;}
 
 /* HERO */
-.hero{background:linear-gradient(180deg,#080530 0%,#0d0845 12%,#101060 28%,#0a3080 48%,#0a5598 62%,#0d1060 78%,#080530 100%);position:relative;padding:50px 24px 60px;overflow:hidden;}
-.hero-bg{position:absolute;inset:0;pointer-events:none;}
-.hero-bg .a1{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 15%,rgba(0,100,255,.18) 0%,transparent 60%);}
-.hero-bg .a2{position:absolute;top:0;left:15%;right:15%;height:260px;background:radial-gradient(ellipse at center,rgba(80,0,255,.1) 0%,transparent 70%);}
-.star{position:absolute;border-radius:50%;background:#fff;}
-.coin{position:absolute;border-radius:50%;animation:float 3.5s ease-in-out infinite;}
-.hero-inner{position:relative;z-index:4;text-align:center;max-width:700px;margin:0 auto;}
-.hero-badge{display:inline-block;background:linear-gradient(90deg,rgba(255,200,0,.08),rgba(255,215,0,.16),rgba(255,200,0,.08));border:1px solid rgba(255,200,0,.2);border-radius:50px;padding:5px 20px;margin-bottom:14px;}
-.hero-badge span{color:#ffd700;font-size:10px;font-weight:700;letter-spacing:2px;}
-.hero-title{font-size:36px;font-weight:800;line-height:1.15;margin-bottom:8px;}
-.hero-title em{font-style:normal;background:linear-gradient(90deg,#80e0ff,#a0d0ff,#60f0ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:42px;}
-.hero-sub{color:rgba(180,215,255,.55);font-size:15px;margin-bottom:24px;line-height:1.6;}
+.hero{background:linear-gradient(135deg,#060a1a 0%,#0a1840 30%,#0c2860 55%,#0a1840 80%,#060a1a 100%);position:relative;padding:60px 24px 50px;overflow:hidden;text-align:center;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(0,150,255,.1) 0%,transparent 65%);}
+.hero-label{display:inline-block;font-size:11px;font-weight:600;letter-spacing:2px;color:var(--accent);text-transform:uppercase;margin-bottom:12px;position:relative;}
+.hero h1{font-size:48px;font-weight:900;line-height:1.1;margin-bottom:12px;position:relative;}
+.hero h1 span{background:linear-gradient(90deg,var(--accent),#60e0ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hero-sub{font-size:16px;color:var(--muted);margin-bottom:8px;position:relative;}
+.hero-offer{font-size:22px;font-weight:800;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin-bottom:24px;position:relative;}
+.hero-cta{display:inline-block;background:linear-gradient(135deg,var(--gold),#ffaa00);color:#1a0a00;padding:16px 48px;border-radius:10px;font-size:16px;font-weight:800;border:none;box-shadow:0 4px 25px rgba(255,200,0,.3);transition:transform .15s;position:relative;}
+.hero-cta:hover{transform:translateY(-2px);}
+.hero-compliance{font-size:10px;color:rgba(180,200,230,.3);margin-top:14px;position:relative;}
+.hero-compliance a{color:var(--accent);text-decoration:underline;}
 
-/* WHEEL */
-.wheel-wrap{display:flex;justify-content:center;margin:20px 0 30px;}
-.wheel-box{position:relative;width:280px;height:280px;}
-#wc{width:280px;height:280px;cursor:pointer;}
-.wptr{position:absolute;top:-6px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:13px solid transparent;border-right:13px solid transparent;border-top:24px solid #ffd700;filter:drop-shadow(0 0 8px rgba(255,200,0,.6));z-index:5;}
-.sbtn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#00d8ff,#0060cc);border:3px solid #ffd700;color:#fff;font-size:13px;font-weight:800;z-index:3;box-shadow:0 0 20px rgba(0,180,255,.5);transition:transform .15s;}
-.sbtn:hover{transform:translate(-50%,-50%) scale(1.08);}
-#wr{text-align:center;margin-top:12px;padding:10px 24px;color:#ffd700;font-size:16px;font-weight:700;opacity:0;transition:opacity .5s;background:rgba(255,200,0,.08);border:1px solid rgba(255,200,0,.15);border-radius:12px;}
-#wr.show{opacity:1;}
-.hero-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
-.btn-gold{background:linear-gradient(135deg,#ffd700,#ffaa00);color:#1a0a00;padding:14px 34px;border-radius:50px;font-size:15px;font-weight:700;box-shadow:0 0 22px rgba(255,200,0,.3);border:none;transition:transform .2s;}
-.btn-gold:hover{transform:translateY(-2px);}
-.btn-outline{display:inline-flex;align-items:center;background:rgba(0,150,255,.08);border:1.5px solid rgba(0,180,255,.25);color:#60c8ff;padding:14px 26px;border-radius:50px;font-size:15px;font-weight:600;transition:background .2s;}
-.btn-outline:hover{background:rgba(0,150,255,.15);}
-.hero-neon{position:absolute;bottom:0;left:5%;right:5%;height:2px;background:linear-gradient(90deg,transparent,rgba(150,220,255,.5),rgba(200,240,255,.7),rgba(150,220,255,.5),transparent);}
+/* TRUST ROW */
+.trust-row{max-width:1200px;margin:0 auto;padding:30px 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.trust-item{text-align:center;padding:16px;background:var(--bg2);border:1px solid var(--border);border-radius:12px;}
+.trust-item .icon{font-size:24px;margin-bottom:6px;}
+.trust-item h3{font-size:14px;font-weight:700;margin-bottom:2px;}
+.trust-item p{font-size:11px;color:var(--muted);line-height:1.4;}
 
-/* TRUST */
-.trust{background:linear-gradient(90deg,#060a20,#0a1040,#060a20);padding:16px 24px;display:flex;justify-content:center;gap:50px;border-bottom:1px solid rgba(0,100,255,.06);}
-.trust-i{text-align:center;}
-.trust-n{font-size:20px;font-weight:700;}
-.trust-l{color:rgba(140,180,255,.4);font-size:10px;margin-top:2px;}
+/* PAYMENTS STRIP */
+.pay-strip{max-width:1200px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;border-bottom:1px solid var(--border);}
+.pay-icon{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:8px 14px;font-size:11px;font-weight:600;color:var(--muted);}
+.pay-more{color:var(--accent);font-size:12px;font-weight:500;}
 
-/* SECTIONS */
-.sec{padding:40px 24px;max-width:1100px;margin:0 auto;}
-.sec-l{font-size:11px;letter-spacing:3px;font-weight:600;margin-bottom:4px;}
-.sec-t{font-size:22px;font-weight:800;}
+/* SECTION */
+.sec{max-width:1200px;margin:0 auto;padding:40px 24px;}
+.sec-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:20px;}
+.sec-header h2{font-size:22px;font-weight:800;}
+.sec-header a{color:var(--accent);font-size:13px;}
 
-/* OFFER */
-.offer{background:linear-gradient(135deg,rgba(0,50,120,.3),rgba(10,20,70,.5));border:2px solid rgba(0,180,255,.18);border-radius:20px;padding:36px;text-align:center;position:relative;overflow:hidden;}
-.offer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#00d4ff,#7b6fff,#ffd700,#00d4ff);}
-.offer-badge{display:inline-block;background:linear-gradient(135deg,#ffd700,#ffaa00);color:#1a0a00;font-size:11px;font-weight:700;padding:5px 18px;border-radius:20px;margin-bottom:16px;}
-.offer-name{font-size:28px;font-weight:800;margin-bottom:4px;}
-.offer-bonus{font-size:48px;font-weight:900;background:linear-gradient(90deg,#ffd700,#ffaa00);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin:8px 0;}
-.offer-desc{color:rgba(180,210,255,.6);font-size:14px;line-height:1.6;margin-bottom:20px;}
-.offer-feats{display:flex;justify-content:center;gap:14px;margin-bottom:24px;flex-wrap:wrap;}
-.of{background:rgba(0,150,255,.07);border:1px solid rgba(0,150,255,.1);border-radius:12px;padding:12px 16px;text-align:center;min-width:100px;}
-.of .v{font-size:18px;font-weight:700;color:#00d4ff;}
-.of .l{font-size:10px;color:rgba(140,180,255,.4);margin-top:2px;}
-.offer-cta{display:inline-block;background:linear-gradient(135deg,#ffd700,#ffaa00);color:#1a0a00;padding:16px 48px;border-radius:50px;font-size:16px;font-weight:700;box-shadow:0 0 25px rgba(255,200,0,.3);border:none;transition:transform .2s;}
-.offer-cta:hover{transform:scale(1.04);}
+/* GAME TABS */
+.tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;}
+.tab{padding:7px 16px;border-radius:8px;font-size:12px;font-weight:600;background:var(--bg2);border:1px solid var(--border);color:var(--muted);cursor:pointer;transition:all .15s;}
+.tab:hover,.tab.act{background:rgba(0,150,255,.1);border-color:var(--accent);color:var(--accent);}
 
-/* CASINO CARDS */
-.casino-list{display:flex;flex-direction:column;gap:10px;}
-.cc{background:linear-gradient(135deg,rgba(0,30,70,.25),rgba(8,15,45,.45));border:1px solid rgba(0,120,255,.1);border-radius:14px;padding:16px 20px;display:flex;align-items:center;gap:14px;transition:border-color .2s,transform .2s;}
-.cc:hover{border-color:rgba(0,180,255,.25);transform:translateY(-2px);}
-.cc-rank{min-width:28px;text-align:center;font-size:16px;font-weight:800;color:rgba(0,200,255,.5);}
-.cc-info{flex:1;}
-.cc-name{font-size:15px;font-weight:700;}
-.cc-bonus{color:rgba(160,200,255,.6);font-size:12px;margin-top:2px;}
-.cc-badge{display:inline-block;font-size:9px;padding:2px 8px;border-radius:12px;font-weight:600;margin-left:6px;}
-.badge-c{background:rgba(0,200,100,.1);color:#00dd88;border:1px solid rgba(0,200,100,.15);}
-.badge-p{background:rgba(0,180,255,.08);color:#00c8ff;border:1px solid rgba(0,180,255,.1);}
-.cc-score{font-size:20px;font-weight:800;color:#00e0ff;min-width:40px;text-align:center;}
-.cc-btn{background:linear-gradient(135deg,#00b8ff,#0070dd);color:#fff;padding:9px 18px;border-radius:50px;font-size:12px;font-weight:600;border:none;white-space:nowrap;transition:transform .15s;}
-.cc-btn:hover{transform:scale(1.05);}
+/* GAME GRID */
+.games-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px;}
+.game-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:transform .15s,border-color .15s;}
+.game-card:hover{transform:translateY(-4px);border-color:rgba(0,180,255,.2);}
+.game-thumb{width:100%;aspect-ratio:4/3;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.game-demo{position:absolute;top:8px;left:8px;background:rgba(0,200,100,.9);color:#fff;font-size:8px;font-weight:700;padding:2px 8px;border-radius:6px;text-transform:uppercase;}
+.game-thumb .name{font-size:14px;font-weight:700;text-shadow:0 2px 8px rgba(0,0,0,.5);text-align:center;padding:0 8px;}
+.game-info{padding:10px 12px;display:flex;align-items:center;justify-content:space-between;}
+.game-info .title{font-size:11px;font-weight:600;}
+.game-info .provider{font-size:9px;color:var(--muted);}
+.game-play{background:var(--accent);color:#fff;border:none;padding:5px 12px;border-radius:6px;font-size:10px;font-weight:700;}
 
-/* SLOTS */
-.slots-g{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
-.sc{background:linear-gradient(180deg,rgba(12,22,55,.9),rgba(8,14,38,.95));border:1px solid rgba(0,100,255,.08);border-radius:14px;overflow:hidden;transition:border-color .2s,transform .2s;}
-.sc:hover{border-color:rgba(0,150,255,.2);transform:translateY(-3px);}
-.sc-thumb{width:100%;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative;}
-.sc-badge{position:absolute;top:7px;right:7px;font-size:8px;padding:2px 7px;border-radius:10px;font-weight:700;color:#fff;}
-.sc-badge.hot{background:#e03030;}.sc-badge.new{background:#00bb66;}
-.sc-title{padding:3px 10px;background:rgba(0,0,0,.45);border-radius:6px;font-size:13px;font-weight:700;text-align:center;}
-.sc-info{padding:10px 12px;}
-.sc-name{font-size:12px;font-weight:600;}
-.sc-meta{color:rgba(0,200,255,.4);font-size:9px;margin-top:2px;}
+/* PROMOS */
+.promos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;}
+.promo-card{background:linear-gradient(135deg,var(--bg3),var(--bg2));border:1px solid var(--border);border-radius:14px;padding:24px;position:relative;overflow:hidden;transition:transform .15s;}
+.promo-card:hover{transform:translateY(-3px);}
+.promo-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--gold));}
+.promo-label{font-size:10px;letter-spacing:2px;color:var(--accent);text-transform:uppercase;font-weight:600;margin-bottom:8px;}
+.promo-title{font-size:18px;font-weight:800;margin-bottom:6px;}
+.promo-offer{font-size:14px;color:var(--gold);font-weight:700;text-transform:uppercase;margin-bottom:14px;}
+.promo-btn{display:inline-block;background:linear-gradient(135deg,var(--gold),#ffaa00);color:#1a0a00;padding:10px 24px;border-radius:8px;font-size:12px;font-weight:700;border:none;}
 
-/* CRYPTO */
-.crypto{background:linear-gradient(135deg,rgba(0,45,110,.2),rgba(12,22,60,.4));border:1.5px solid rgba(0,150,255,.12);border-radius:18px;padding:28px;position:relative;overflow:hidden;}
-.crypto::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#00d4ff,#7b6fff,transparent);}
-.crypto-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;}
-.ct{font-size:11px;padding:6px 14px;border-radius:20px;font-weight:600;}
+/* CONTENT SECTION */
+.content-section{max-width:1200px;margin:0 auto;padding:40px 24px;}
+.content-section h2{font-size:20px;font-weight:800;margin-bottom:12px;}
+.content-section h3{font-size:16px;font-weight:700;margin:20px 0 8px;color:rgba(200,220,255,.85);}
+.content-section p{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:12px;}
+.content-section ul{font-size:13px;color:var(--muted);line-height:1.7;margin:0 0 12px 18px;}
+.content-section a{color:var(--accent);}
 
-/* GUIDES */
-.guides-g{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
-.gc{background:linear-gradient(135deg,rgba(0,35,75,.25),rgba(8,18,45,.45));border:1px solid rgba(0,120,255,.08);border-radius:14px;padding:18px;transition:border-color .2s,transform .2s;}
-.gc:hover{border-color:rgba(0,180,255,.2);transform:translateY(-2px);}
-.gc-e{font-size:28px;margin-bottom:10px;}
-.gc-t{font-size:13px;font-weight:600;margin-bottom:4px;}
-.gc-d{color:rgba(160,200,255,.45);font-size:11px;line-height:1.4;}
+/* FAQ */
+.faq{max-width:800px;margin:0 auto;}
+.faq-item{border-bottom:1px solid var(--border);padding:14px 0;}
+.faq-q{font-size:14px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;}
+.faq-q::after{content:'▾';color:var(--accent);transition:transform .2s;}
+.faq-q.open::after{transform:rotate(180deg);}
+.faq-a{font-size:13px;color:var(--muted);line-height:1.6;max-height:0;overflow:hidden;transition:max-height .3s,padding .3s;}
+.faq-a.open{max-height:200px;padding-top:10px;}
 
-/* SHARE BAR */
-.share{background:rgba(0,20,60,.3);border:1px solid rgba(0,120,255,.1);border-radius:14px;padding:14px 20px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:30px;}
-.share-text{color:rgba(180,200,255,.5);font-size:13px;font-weight:500;}
-.share-btn{padding:6px 14px;border-radius:8px;font-size:11px;font-weight:600;border:1px solid rgba(0,150,255,.15);color:rgba(200,220,255,.7);background:rgba(0,60,120,.15);cursor:pointer;transition:background .15s;}
-.share-btn:hover{background:rgba(0,80,150,.25);color:#fff;}
-.share-btn.primary{background:linear-gradient(135deg,#00b0ff,#0070dd);color:#fff;border:none;}
+/* SHARE */
+.share-bar{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:14px 20px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:30px auto;max-width:1200px;}
+.share-bar span{color:var(--muted);font-size:13px;font-weight:500;}
+.share-btn{padding:6px 14px;border-radius:8px;font-size:11px;font-weight:600;border:1px solid var(--border);color:var(--muted);background:var(--bg3);cursor:pointer;}
+.share-btn:hover{color:#fff;border-color:rgba(0,150,255,.2);}
+.share-btn.primary{background:var(--accent);color:#fff;border-color:var(--accent);}
 
-/* FOOTER - CraicBet style */
-.footer{background:#030610;padding:40px 24px 20px;border-top:1px solid rgba(0,60,150,.06);}
-.footer-inner{max-width:1100px;margin:0 auto;}
-.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1fr;gap:30px;margin-bottom:24px;}
-.footer-brand{}.footer-brand p{color:rgba(100,140,200,.35);font-size:11px;line-height:1.6;margin-top:10px;max-width:260px;}
-.footer-col h4{color:rgba(0,150,255,.4);font-size:10px;letter-spacing:1.5px;font-weight:600;margin-bottom:8px;}
-.footer-col a{display:block;color:rgba(140,180,230,.4);font-size:11px;line-height:2.2;transition:color .15s;}
-.footer-col a:hover{color:#60c8ff;}
-.footer-disclaimer{text-align:center;padding:20px 0;border-top:1px solid rgba(0,60,150,.05);color:rgba(100,140,200,.3);font-size:10px;line-height:1.6;}
-.footer-copy{text-align:center;color:rgba(80,120,180,.25);font-size:9px;margin-top:10px;}
+/* FOOTER */
+.footer{background:#030610;border-top:1px solid var(--border);padding:40px 24px 20px;}
+.footer-inner{max-width:1200px;margin:0 auto;}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:30px;margin-bottom:24px;}
+.footer-brand p{color:rgba(140,170,210,.3);font-size:11px;line-height:1.6;margin-top:10px;}
+.footer-col h4{font-size:10px;letter-spacing:1.5px;font-weight:600;color:rgba(0,150,255,.35);margin-bottom:8px;}
+.footer-col a{display:block;font-size:11px;color:rgba(140,170,210,.35);line-height:2.2;}
+.footer-col a:hover{color:var(--accent);}
+.footer-18{text-align:center;margin:20px 0;padding:16px;border:1px solid var(--border);border-radius:12px;background:var(--bg2);}
+.footer-18 .badge{display:inline-block;border:2px solid rgba(255,80,80,.5);color:rgba(255,80,80,.7);font-size:14px;font-weight:800;padding:4px 10px;border-radius:8px;margin-bottom:8px;}
+.footer-18 p{font-size:10px;color:rgba(140,170,210,.3);line-height:1.5;}
+.footer-18 a{color:var(--accent);}
+.footer-pays{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:16px 0;padding:12px 0;border-top:1px solid var(--border);}
+.footer-pay{background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:6px 12px;font-size:10px;color:var(--muted);font-weight:500;}
+.footer-copy{text-align:center;font-size:9px;color:rgba(100,130,170,.25);margin-top:12px;}
 
 @media(max-width:768px){
-  .topbar-inner{flex-wrap:wrap;gap:8px;}
-  .search-box input{width:120px;}
-  .menu-row{display:none;}
+  .header-inner{flex-wrap:wrap;gap:10px;}
+  .nav-links{display:none;}
   .hamburger{display:block;}
-  .hero{padding:30px 16px 40px;}
-  .hero-title{font-size:26px;}.hero-title em{font-size:30px;}
-  .wheel-box{width:220px;height:220px;}#wc{width:220px;height:220px;}
+  .hero h1{font-size:30px;}
+  .hero-offer{font-size:16px;}
+  .trust-row{grid-template-columns:repeat(2,1fr);}
   .sec{padding:24px 16px;}
-  .slots-g,.guides-g{grid-template-columns:repeat(2,1fr);}
-  .offer-feats{flex-direction:column;align-items:center;}
+  .games-grid{grid-template-columns:repeat(2,1fr);}
+  .promos-grid{grid-template-columns:1fr;}
   .footer-grid{grid-template-columns:1fr 1fr;gap:20px;}
-  .cc{flex-wrap:wrap;}
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<div class="topbar">
-  <div class="topbar-inner">
-    <a href="/slotoro-site/" class="logo"><span class="frost">❄</span> FROSTSPIL<small>.is</small></a>
-    <div class="nav-right">
-      <div class="search-box"><input type="text" placeholder="Search casinos, slots, guides..." id="searchInput"><button onclick="doSearch()">Search</button></div>
-      <button class="hamburger" onclick="document.getElementById('mm').classList.add('open')">☰</button>
-    </div>
-  </div>
-  <div class="nav-menu">
-    <div class="menu-row">
-      <div class="menu-item active">Home</div>
-      <div class="menu-item">Casinos <span class="menu-count">150</span> <span class="menu-arrow">▾</span>
-        <div class="dropdown">
-          <a href="/slotoro-site/casino/">All Casino Reviews</a>
-          <a href="/slotoro-site/casino/luchshie-online-casino/">Best Casinos Iceland</a>
-          <a href="/slotoro-site/casino/crypto-casino/">Crypto Casinos</a>
-          <a href="/slotoro-site/casino/novye-casino/">New Casinos 2026</a>
-          <a href="/slotoro-site/casino/casino-s-bystrym-vyvodom/">Fast Payout Casinos</a>
-          <a href="/slotoro-site/casino/casino-bez-verifikacii/">No KYC Casinos</a>
-          <a href="/slotoro-site/casino/bitcoin-casino/">Bitcoin Casinos</a>
-          <a href="/slotoro-site/casino/live-casino/">Live Casinos</a>
-          <a href="/slotoro-site/casino/mobilnoe-casino/">Mobile Casinos</a>
-        </div>
-      </div>
-      <div class="menu-item">Slots <span class="menu-count">250</span> <span class="menu-arrow">▾</span>
-        <div class="dropdown">
-          <a href="/slotoro-site/slots/">All Slot Reviews</a>
-          <a href="/slotoro-site/slots/gates-of-olympus/">Gates of Olympus</a>
-          <a href="/slotoro-site/slots/sweet-bonanza/">Sweet Bonanza</a>
-          <a href="/slotoro-site/slots/big-bass-splash/">Big Bass Splash</a>
-          <a href="/slotoro-site/slots/book-of-dead/">Book of Dead</a>
-          <a href="/slotoro-site/slots/starburst/">Starburst</a>
-        </div>
-      </div>
-      <div class="menu-item">Bonuses <span class="menu-count">80</span> <span class="menu-arrow">▾</span>
-        <div class="dropdown">
-          <a href="/slotoro-site/bonusy/">All Bonuses</a>
-          <a href="/slotoro-site/bonusy/velkomstbonus/">Welcome Bonuses</a>
-          <a href="/slotoro-site/bonusy/frispiny-bez-depozita/">No Deposit Free Spins</a>
-          <a href="/slotoro-site/bonusy/bezdepozitnye-bonusy/">No Deposit Bonuses</a>
-          <a href="/slotoro-site/bonusy/keshbek/">Cashback</a>
-        </div>
-      </div>
-      <div class="menu-item">Live Casino <span class="menu-count">50</span> <span class="menu-arrow">▾</span>
-        <div class="dropdown">
-          <a href="/slotoro-site/live/">All Live Games</a>
-          <a href="/slotoro-site/live/blackjack/">Blackjack</a>
-          <a href="/slotoro-site/live/roulette/">Roulette</a>
-          <a href="/slotoro-site/live/baccarat/">Baccarat</a>
-          <a href="/slotoro-site/live/crazy-time/">Crazy Time</a>
-        </div>
-      </div>
-      <div class="menu-item">Payments <span class="menu-count">50</span> <span class="menu-arrow">▾</span>
-        <div class="dropdown">
-          <a href="/slotoro-site/platezhi/">All Payment Methods</a>
-          <a href="/slotoro-site/platezhi/bitcoin/">Bitcoin</a>
-          <a href="/slotoro-site/platezhi/ethereum/">Ethereum</a>
-          <a href="/slotoro-site/platezhi/usdt/">USDT</a>
-          <a href="/slotoro-site/platezhi/obhod-blokirovok-bankov/">Bank Block Bypass</a>
-        </div>
-      </div>
-      <div class="menu-item">Guides <span class="menu-count">60</span> <span class="menu-arrow">▾</span>
-        <div class="dropdown">
-          <a href="/slotoro-site/gajdy/">All Guides</a>
-          <a href="/slotoro-site/gajdy/kak-vybrat-casino/">How to Choose a Casino</a>
-          <a href="/slotoro-site/gajdy/chto-takoe-rtp/">What is RTP</a>
-          <a href="/slotoro-site/gajdy/strategii-blackjack/">Blackjack Strategy</a>
-          <a href="/slotoro-site/gajdy/zakon-ob-azartnyh-igrah-islandiya/">Iceland Gambling Law</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<!-- PROMO STRIP -->
+<div class="promo-strip">🎰 WELCOME BONUS — UP TO 500% + 200 FREE SPINS — PLAY NOW 🎰</div>
 
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mm">
-  <div class="mm-header"><div class="logo"><span class="frost">❄</span> FROSTSPIL</div><button class="mm-close" onclick="document.getElementById('mm').classList.remove('open')">✕</button></div>
-  <a href="/slotoro-site/" style="display:block;padding:12px 0;font-size:16px;font-weight:600;">Home</a>
-  <div class="mm-section"><div class="mm-title" onclick="this.nextElementSibling.classList.toggle('open')">Casinos <span class="cnt">150</span> ▾</div><div class="mm-sub"><a href="/slotoro-site/casino/">All Reviews</a><a href="/slotoro-site/casino/crypto-casino/">Crypto Casinos</a><a href="/slotoro-site/casino/novye-casino/">New Casinos</a><a href="/slotoro-site/casino/bitcoin-casino/">Bitcoin Casinos</a></div></div>
-  <div class="mm-section"><div class="mm-title" onclick="this.nextElementSibling.classList.toggle('open')">Slots <span class="cnt">250</span> ▾</div><div class="mm-sub"><a href="/slotoro-site/slots/">All Slots</a><a href="/slotoro-site/slots/gates-of-olympus/">Gates of Olympus</a><a href="/slotoro-site/slots/sweet-bonanza/">Sweet Bonanza</a></div></div>
-  <div class="mm-section"><div class="mm-title" onclick="this.nextElementSibling.classList.toggle('open')">Bonuses <span class="cnt">80</span> ▾</div><div class="mm-sub"><a href="/slotoro-site/bonusy/">All Bonuses</a><a href="/slotoro-site/bonusy/velkomstbonus/">Welcome</a><a href="/slotoro-site/bonusy/frispiny-bez-depozita/">Free Spins</a></div></div>
-  <div class="mm-section"><div class="mm-title" onclick="this.nextElementSibling.classList.toggle('open')">Live Casino <span class="cnt">50</span> ▾</div><div class="mm-sub"><a href="/slotoro-site/live/">All Live</a><a href="/slotoro-site/live/blackjack/">Blackjack</a><a href="/slotoro-site/live/roulette/">Roulette</a></div></div>
-  <div class="mm-section"><div class="mm-title" onclick="this.nextElementSibling.classList.toggle('open')">Payments <span class="cnt">50</span> ▾</div><div class="mm-sub"><a href="/slotoro-site/platezhi/">All Payments</a><a href="/slotoro-site/platezhi/bitcoin/">Bitcoin</a><a href="/slotoro-site/platezhi/ethereum/">Ethereum</a></div></div>
-  <div class="mm-section"><div class="mm-title" onclick="this.nextElementSibling.classList.toggle('open')">Guides <span class="cnt">60</span> ▾</div><div class="mm-sub"><a href="/slotoro-site/gajdy/">All Guides</a><a href="/slotoro-site/gajdy/kak-vybrat-casino/">How to Choose</a></div></div>
-  <div style="margin-top:16px;"><div class="search-box" style="width:100%;"><input type="text" placeholder="Search..." style="width:100%;"><button>Search</button></div></div>
-  <div style="margin-top:16px;text-align:center;color:rgba(140,180,255,.35);font-size:11px;">18+ · Play responsibly</div>
-</div>
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <a href="/slotoro-site/" class="logo"><span class="ice">❄</span> FROSTSPIL</a>
+    <nav class="nav-links">
+      <a href="/slotoro-site/" class="act">Home</a>
+      <a href="/slotoro-site/casino/">Casinos</a>
+      <a href="/slotoro-site/slots/">Slots</a>
+      <a href="/slotoro-site/live/">Live Casino</a>
+      <a href="/slotoro-site/bonusy/">Bonuses</a>
+      <a href="/slotoro-site/platezhi/">Payments</a>
+      <a href="/slotoro-site/gajdy/">Guides</a>
+    </nav>
+    <div class="header-actions">
+      <button class="btn-login">Log In</button>
+      <button class="btn-signup">Sign Up</button>
+      <button class="hamburger" onclick="document.body.classList.toggle('menu-open')">☰</button>
+    </div>
+  </div>
+</header>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg">
-    <div class="a1"></div><div class="a2"></div>
-    <div class="star" style="top:18px;left:16%;width:4px;height:4px;box-shadow:0 0 8px #fff,0 0 16px rgba(100,180,255,.4);"></div>
-    <div class="star" style="top:42px;left:52%;width:3px;height:3px;box-shadow:0 0 6px #6ab0ff;background:#b0d8ff;"></div>
-    <div class="star" style="top:28px;right:20%;width:5px;height:5px;box-shadow:0 0 10px #fff;"></div>
-    <div class="coin" style="top:25px;left:5%;width:24px;height:24px;background:linear-gradient(135deg,#ffd700,#ffaa00);border:2px solid #ffcc00;box-shadow:0 0 10px rgba(255,200,0,.4);"></div>
-    <div class="coin" style="top:100px;right:4%;width:18px;height:18px;background:linear-gradient(135deg,#ffd700,#ffaa00);border:2px solid #ffcc00;opacity:.6;animation-delay:1s;"></div>
-    <div style="position:absolute;top:12%;left:3%;font-size:18px;opacity:.1;color:#80d0ff;">❄</div>
-    <div style="position:absolute;top:50%;right:4%;font-size:14px;opacity:.07;color:#80d0ff;">❄</div>
-  </div>
-  <div class="hero-inner">
-    <div class="hero-badge"><span>★ ICELAND'S #1 CASINO GUIDE ★</span></div>
-    <h1 class="hero-title">Spin the wheel &<br><em>win big!</em></h1>
-    <p class="hero-sub">Get up to 500% welcome bonus at Iceland's best online casinos</p>
-    <div class="wheel-wrap"><div class="wheel-box">
-      <canvas id="wc" width="560" height="560"></canvas>
-      <button class="sbtn" onclick="spin()">SPIN</button>
-      <div class="wptr"></div>
-    </div></div>
-    <div id="wr"></div>
-    <div class="hero-ctas">
-      <button class="btn-gold" onclick="spin()">Spin the wheel →</button>
-      <a href="#offer" class="btn-outline">Claim bonus</a>
-    </div>
-  </div>
-  <div class="hero-neon"></div>
+  <div class="hero-label">Iceland's #1 Online Casino</div>
+  <h1>Welcome to <span>Frostspil</span></h1>
+  <p class="hero-sub">Play 3000+ slots, live casino games, and win big with crypto</p>
+  <div class="hero-offer">GET UP TO 500% BONUS + 200 FREE SPINS</div>
+  <button class="hero-cta">Play Now</button>
+  <p class="hero-compliance">18+ | T&Cs apply | <a href="/slotoro-site/gajdy/otvetstvennaya-igra/">Play responsibly</a></p>
 </section>
 
-<!-- TRUST -->
-<div class="trust">
-  <div class="trust-i"><div class="trust-n" style="color:#00d4ff;">150+</div><div class="trust-l">Casinos</div></div>
-  <div class="trust-i"><div class="trust-n" style="color:#ffd700;">2000+</div><div class="trust-l">Slots</div></div>
-  <div class="trust-i"><div class="trust-n" style="color:#00cc88;">24/7</div><div class="trust-l">Support</div></div>
-  <div class="trust-i"><div class="trust-n" style="color:#a080ff;">Crypto</div><div class="trust-l">Payments</div></div>
+<!-- TRUST ROW -->
+<div class="trust-row">
+  <div class="trust-item"><div class="icon">⚡</div><h3>Instant Payouts</h3><p>Withdraw in under 10 minutes with crypto</p></div>
+  <div class="trust-item"><div class="icon">🔒</div><h3>Safe & Secure</h3><p>Licensed and regulated casino platform</p></div>
+  <div class="trust-item"><div class="icon">🎰</div><h3>3000+ Games</h3><p>Slots, table games, and live dealers</p></div>
+  <div class="trust-item"><div class="icon">₿</div><h3>Crypto Friendly</h3><p>Bitcoin, Ethereum, USDT and more</p></div>
 </div>
 
-<!-- SPECIAL OFFER -->
-<section id="offer" class="sec" style="padding-top:50px;padding-bottom:50px;">
-  <div class="offer">
-    <div class="offer-badge">★ EXCLUSIVE OFFER ★</div>
-    <div class="offer-name">BitStarz Casino</div>
-    <div class="offer-bonus">500% + 200 FS</div>
-    <div class="offer-desc">Iceland's top-rated crypto casino with instant withdrawals.<br>Accepts Bitcoin, Ethereum, USDT and 20+ cryptocurrencies.</div>
-    <div class="offer-feats">
-      <div class="of"><div class="v">5 BTC</div><div class="l">Max bonus</div></div>
-      <div class="of"><div class="v">10 min</div><div class="l">Withdrawals</div></div>
-      <div class="of"><div class="v">3000+</div><div class="l">Games</div></div>
-      <div class="of"><div class="v">9.8/10</div><div class="l">Rating</div></div>
-    </div>
-    <button class="offer-cta">Claim bonus →</button>
-  </div>
-</section>
+<!-- PAYMENTS STRIP -->
+<div class="pay-strip">
+  <div class="pay-icon">₿ Bitcoin</div>
+  <div class="pay-icon">Ξ Ethereum</div>
+  <div class="pay-icon">₮ USDT</div>
+  <div class="pay-icon">Ł Litecoin</div>
+  <div class="pay-icon">VISA</div>
+  <div class="pay-icon">Mastercard</div>
+  <a href="/slotoro-site/platezhi/" class="pay-more">All methods →</a>
+</div>
 
-<!-- TOP CASINOS -->
+<!-- GAME LOBBY -->
 <section class="sec">
-  <div style="text-align:center;margin-bottom:22px;">
-    <div class="sec-l" style="color:#ffd700;">★ TOP CASINOS ★</div>
-    <div class="sec-t">Best online casinos 2026</div>
+  <div class="sec-header">
+    <h2>Game Lobby</h2>
+    <a href="/slotoro-site/slots/">View all 250+ →</a>
   </div>
-  <div class="casino-list">
-    <div class="cc"><div class="cc-rank">1</div><div class="cc-info"><div class="cc-name">BitStarz <span class="cc-badge badge-c">CRYPTO</span></div><div class="cc-bonus">5 BTC + 200 free spins</div></div><div class="cc-score">9.8</div><a href="/slotoro-site/casino/bitstarz/" class="cc-btn">Review →</a></div>
-    <div class="cc"><div class="cc-rank">2</div><div class="cc-info"><div class="cc-name">Stake <span class="cc-badge badge-p">POPULAR</span></div><div class="cc-bonus">200% bonus + VIP</div></div><div class="cc-score">9.6</div><a href="/slotoro-site/casino/stake/" class="cc-btn">Review →</a></div>
-    <div class="cc"><div class="cc-rank">3</div><div class="cc-info"><div class="cc-name">BC.Game <span class="cc-badge badge-c">CRYPTO</span></div><div class="cc-bonus">300% up to 1 BTC</div></div><div class="cc-score">9.4</div><a href="/slotoro-site/casino/bc-game/" class="cc-btn">Review →</a></div>
-    <div class="cc"><div class="cc-rank">4</div><div class="cc-info"><div class="cc-name">TonyBet</div><div class="cc-bonus">150% + 100 free spins</div></div><div class="cc-score">9.2</div><a href="/slotoro-site/casino/tonybet/" class="cc-btn">Review →</a></div>
-    <div class="cc"><div class="cc-rank">5</div><div class="cc-info"><div class="cc-name">Epicbet</div><div class="cc-bonus">100% up to €500</div></div><div class="cc-score">9.0</div><a href="/slotoro-site/casino/epicbet/" class="cc-btn">Review →</a></div>
+  <div class="tabs">
+    <div class="tab act">All Games</div>
+    <div class="tab">Slots</div>
+    <div class="tab">Live Casino</div>
+    <div class="tab">Table Games</div>
+    <div class="tab">Jackpots</div>
+    <div class="tab">New</div>
   </div>
-  <div style="text-align:center;margin-top:16px;"><a href="/slotoro-site/casino/" class="btn-outline" style="font-size:13px;padding:10px 24px;">View all 150 casinos →</a></div>
+  <div class="games-grid">
+    <a href="/slotoro-site/slots/gates-of-olympus/" class="game-card"><div class="game-thumb" style="background:linear-gradient(135deg,#1a0a50,#3a1a8a);"><span class="game-demo">Demo</span><div class="name">Gates of Olympus</div></div><div class="game-info"><div><div class="title">Gates of Olympus</div><div class="provider">Pragmatic Play</div></div><button class="game-play">Play</button></div></a>
+    <a href="/slotoro-site/slots/sweet-bonanza/" class="game-card"><div class="game-thumb" style="background:linear-gradient(135deg,#a01050,#d03070);"><span class="game-demo">Demo</span><div class="name">Sweet Bonanza</div></div><div class="game-info"><div><div class="title">Sweet Bonanza</div><div class="provider">Pragmatic Play</div></div><button class="game-play">Play</button></div></a>
+    <a href="/slotoro-site/slots/big-bass-splash/" class="game-card"><div class="game-thumb" style="background:linear-gradient(135deg,#063060,#0870b0);"><span class="game-demo">Demo</span><div class="name">Big Bass Splash</div></div><div class="game-info"><div><div class="title">Big Bass Splash</div><div class="provider">Pragmatic Play</div></div><button class="game-play">Play</button></div></a>
+    <a href="/slotoro-site/slots/book-of-dead/" class="game-card"><div class="game-thumb" style="background:linear-gradient(135deg,#4a3000,#a07820);"><span class="game-demo">Demo</span><div class="name">Book of Dead</div></div><div class="game-info"><div><div class="title">Book of Dead</div><div class="provider">Play'n GO</div></div><button class="game-play">Play</button></div></a>
+    <a href="/slotoro-site/slots/starburst/" class="game-card"><div class="game-thumb" style="background:linear-gradient(135deg,#0a0050,#2020a0);"><div class="name">Starburst</div></div><div class="game-info"><div><div class="title">Starburst</div><div class="provider">NetEnt</div></div><button class="game-play">Play</button></div></a>
+    <a href="/slotoro-site/slots/dead-or-alive-2/" class="game-card"><div class="game-thumb" style="background:linear-gradient(135deg,#3a2000,#6a4010);"><div class="name">Dead or Alive 2</div></div><div class="game-info"><div><div class="title">Dead or Alive 2</div><div class="provider">NetEnt</div></div><button class="game-play">Play</button></div></a>
+    <a href="/slotoro-site/slots/money-train-3/" class="game-card"><div class="game-thumb" style="background:linear-gradient(135deg,#400a0a,#802020);"><span class="game-demo">Demo</span><div class="name">Money Train 3</div></div><div class="game-info"><div><div class="title">Money Train 3</div><div class="provider">Relax Gaming</div></div><button class="game-play">Play</button></div></a>
+    <a href="/slotoro-site/slots/reactoonz/" class="game-card"><div class="game-thumb" style="background:linear-gradient(135deg,#2a0a4a,#5020a0);"><div class="name">Reactoonz</div></div><div class="game-info"><div><div class="title">Reactoonz</div><div class="provider">Play'n GO</div></div><button class="game-play">Play</button></div></a>
+    <a href="/slotoro-site/slots/wolf-gold/" class="game-card"><div class="game-thumb" style="background:linear-gradient(135deg,#2a2000,#5a4010);"><div class="name">Wolf Gold</div></div><div class="game-info"><div><div class="title">Wolf Gold</div><div class="provider">Pragmatic Play</div></div><button class="game-play">Play</button></div></a>
+    <a href="/slotoro-site/slots/razor-shark/" class="game-card"><div class="game-thumb" style="background:linear-gradient(135deg,#003050,#006090);"><div class="name">Razor Shark</div></div><div class="game-info"><div><div class="title">Razor Shark</div><div class="provider">Push Gaming</div></div><button class="game-play">Play</button></div></a>
+  </div>
 </section>
 
-<!-- SLOTS -->
-<section class="sec" style="background:linear-gradient(180deg,rgba(6,10,32,.5),rgba(10,18,64,.3));border-radius:0;margin:0;max-width:100%;padding:40px;">
-  <div style="max-width:1100px;margin:0 auto;">
-    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:16px;">
-      <div><div class="sec-l" style="color:#ffd700;">🎰 POPULAR SLOTS</div><div class="sec-t">Top games</div></div>
-      <a href="/slotoro-site/slots/" style="color:rgba(0,200,255,.55);font-size:12px;">All 250 slots →</a>
+<!-- PROMOTIONS -->
+<section class="sec" style="background:linear-gradient(180deg,var(--bg2),var(--bg));border-radius:0;max-width:100%;padding:40px;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="sec-header"><h2>Promotions</h2><a href="/slotoro-site/bonusy/">All bonuses →</a></div>
+    <div class="promos-grid">
+      <div class="promo-card">
+        <div class="promo-label">Welcome Bonus</div>
+        <div class="promo-title">First Deposit Bonus</div>
+        <div class="promo-offer">500% UP TO 5 BTC + 200 FREE SPINS</div>
+        <button class="promo-btn">Claim Bonus</button>
+      </div>
+      <div class="promo-card">
+        <div class="promo-label">Weekly</div>
+        <div class="promo-title">Reload Bonus</div>
+        <div class="promo-offer">50% RELOAD EVERY MONDAY</div>
+        <button class="promo-btn">Claim Bonus</button>
+      </div>
+      <div class="promo-card">
+        <div class="promo-label">Cashback</div>
+        <div class="promo-title">Weekend Cashback</div>
+        <div class="promo-offer">UP TO 20% CASHBACK ON LOSSES</div>
+        <button class="promo-btn">Claim Bonus</button>
+      </div>
     </div>
-    <div class="slots-g">
-      <a href="/slotoro-site/slots/gates-of-olympus/" class="sc"><div class="sc-thumb" style="background:linear-gradient(135deg,#1a0a50,#3a1a8a,#5a30c0);"><span class="sc-badge hot">HOT</span><div class="sc-title">Gates of Olympus</div></div><div class="sc-info"><div class="sc-name">Gates of Olympus</div><div class="sc-meta">x5000 · Pragmatic Play</div></div></a>
-      <a href="/slotoro-site/slots/sweet-bonanza/" class="sc"><div class="sc-thumb" style="background:linear-gradient(135deg,#a01050,#d03070,#e05090);"><div class="sc-title">Sweet Bonanza</div></div><div class="sc-info"><div class="sc-name">Sweet Bonanza</div><div class="sc-meta">x21100 · Pragmatic Play</div></div></a>
-      <a href="/slotoro-site/slots/big-bass-splash/" class="sc"><div class="sc-thumb" style="background:linear-gradient(135deg,#063060,#0a5090,#0870b0);"><div class="sc-title">Big Bass Splash</div></div><div class="sc-info"><div class="sc-name">Big Bass Splash</div><div class="sc-meta">x2100 · Pragmatic Play</div></div></a>
-      <a href="/slotoro-site/slots/book-of-dead/" class="sc"><div class="sc-thumb" style="background:linear-gradient(135deg,#4a3000,#7a5510,#a07820);"><span class="sc-badge new">NEW</span><div class="sc-title">Book of Dead</div></div><div class="sc-info"><div class="sc-name">Book of Dead</div><div class="sc-meta">x5000 · Play'n GO</div></div></a>
-    </div>
   </div>
 </section>
 
-<!-- CRYPTO -->
-<section class="sec">
-  <div class="crypto">
-    <div class="sec-l" style="color:#ffd700;">PAYMENT METHODS</div>
-    <h2 style="font-size:20px;font-weight:700;margin:4px 0 8px;">Banks blocking you? No problem!</h2>
-    <p style="color:rgba(160,200,255,.5);font-size:13px;line-height:1.6;">Icelandic banks block casino payments. Use crypto for hassle-free deposits and withdrawals.</p>
-    <div class="crypto-tags">
-      <span class="ct" style="background:rgba(255,160,0,.08);border:1px solid rgba(255,160,0,.15);color:#ffaa40;">₿ Bitcoin</span>
-      <span class="ct" style="background:rgba(100,100,255,.08);border:1px solid rgba(100,100,255,.15);color:#8888ff;">Ξ Ethereum</span>
-      <span class="ct" style="background:rgba(0,200,120,.08);border:1px solid rgba(0,200,120,.15);color:#40dd90;">₮ USDT</span>
-      <span class="ct" style="background:rgba(180,180,200,.06);border:1px solid rgba(180,180,200,.12);color:#bbbbdd;">Ł Litecoin</span>
-    </div>
-  </div>
-</section>
+<!-- CONTENT -->
+<div class="content-section">
+  <h2>About Frostspil Casino</h2>
+  <p>Frostspil is Iceland's premier online casino platform, offering over 3,000 games from top providers like Pragmatic Play, NetEnt, Play'n GO, Microgaming, and Evolution Gaming. Whether you prefer slots, table games, or live dealer experiences, Frostspil has something for everyone.</p>
+  
+  <h3>Why Choose Frostspil?</h3>
+  <ul>
+    <li>3,000+ games from 50+ providers</li>
+    <li>Instant crypto withdrawals (Bitcoin, Ethereum, USDT)</li>
+    <li>24/7 live chat support</li>
+    <li>Mobile-optimized for play on any device</li>
+    <li>Generous welcome bonus up to 500%</li>
+    <li>No bank blocking issues — crypto payments always work</li>
+  </ul>
 
-<!-- GUIDES -->
-<section class="sec">
-  <div style="text-align:center;margin-bottom:18px;">
-    <div class="sec-l" style="color:rgba(0,200,255,.45);">GUIDES</div>
-    <div class="sec-t">For beginners</div>
-  </div>
-  <div class="guides-g">
-    <a href="/slotoro-site/gajdy/kak-vybrat-casino/" class="gc"><div class="gc-e">🎯</div><div class="gc-t">How to choose a casino</div><div class="gc-d">Key criteria for finding a trustworthy online casino.</div></a>
-    <a href="/slotoro-site/gajdy/chto-takoe-rtp/" class="gc"><div class="gc-e">₿</div><div class="gc-t">Crypto guide</div><div class="gc-d">Buy Bitcoin and deposit to a casino step by step.</div></a>
-    <a href="/slotoro-site/gajdy/strategii-blackjack/" class="gc"><div class="gc-e">🎁</div><div class="gc-t">Bonus wagering</div><div class="gc-d">Understanding wagering requirements and clearing bonuses.</div></a>
-    <a href="/slotoro-site/live/blackjack/" class="gc"><div class="gc-e">🃏</div><div class="gc-t">Live casino</div><div class="gc-d">Blackjack, roulette and baccarat with live dealers.</div></a>
-  </div>
-</section>
+  <h3>Crypto Payments for Icelandic Players</h3>
+  <p>Icelandic banks routinely block transactions to online casinos. Frostspil solves this by accepting Bitcoin, Ethereum, USDT, Litecoin, and 20+ other cryptocurrencies. Deposits are instant and withdrawals process in under 10 minutes. <a href="/slotoro-site/platezhi/">Learn more about payment methods →</a></p>
 
-<!-- SHARE BAR -->
-<div class="sec" style="padding-top:0;">
-  <div class="share">
-    <span class="share-text">Found this useful? Share it</span>
-    <button class="share-btn primary" onclick="shareTo('twitter')">Share</button>
-    <button class="share-btn" onclick="shareTo('twitter')">X</button>
-    <button class="share-btn" onclick="shareTo('whatsapp')">WhatsApp</button>
-    <button class="share-btn" onclick="shareTo('facebook')">Facebook</button>
-    <button class="share-btn" onclick="copyLink()">Copy link</button>
+  <h3>Is Online Casino Legal in Iceland?</h3>
+  <p>While Iceland doesn't regulate online casinos domestically, there are no laws prohibiting Icelandic players from using offshore casino platforms. No players have ever been prosecuted for online gambling. <a href="/slotoro-site/gajdy/zakon-ob-azartnyh-igrah-islandiya/">Read our full legal guide →</a></p>
+</div>
+
+<!-- FAQ -->
+<div class="content-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq">
+    <div class="faq-item"><div class="faq-q" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">Is Frostspil safe to play at?</div><div class="faq-a">Yes. Frostspil operates under a valid gaming licence and uses SSL encryption to protect all player data and transactions.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">Can I play from Iceland?</div><div class="faq-a">Yes. There are no laws in Iceland that prohibit players from using offshore online casinos. We accept Icelandic players and offer crypto payments to bypass bank restrictions.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">What payment methods do you accept?</div><div class="faq-a">We accept Bitcoin, Ethereum, USDT, Litecoin, Visa, Mastercard, and many other payment methods. Crypto deposits are instant with no fees.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">How fast are withdrawals?</div><div class="faq-a">Crypto withdrawals are processed within 10 minutes. Card withdrawals take 1-3 business days.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">What is the welcome bonus?</div><div class="faq-a">New players get up to 500% on their first deposit plus 200 free spins. The minimum deposit is €20 or equivalent in crypto.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">Do I need to pay taxes on winnings?</div><div class="faq-a">Iceland does not tax gambling winnings from offshore casinos. However, we recommend consulting a tax advisor for your specific situation.</div></div>
   </div>
+</div>
+
+<!-- SHARE -->
+<div class="share-bar" style="margin:0 24px 30px;">
+  <span>Found this useful? Share it</span>
+  <button class="share-btn primary" onclick="shareTo('twitter')">Share</button>
+  <button class="share-btn" onclick="shareTo('twitter')">X</button>
+  <button class="share-btn" onclick="shareTo('whatsapp')">WhatsApp</button>
+  <button class="share-btn" onclick="shareTo('facebook')">Facebook</button>
+  <button class="share-btn" onclick="copyLink()">Copy link</button>
 </div>
 
 <!-- FOOTER -->
@@ -409,39 +305,27 @@ button{font-family:inherit;cursor:pointer;}
   <div class="footer-inner">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div style="font-size:18px;font-weight:800;display:flex;align-items:center;gap:6px;"><span style="color:#80e0ff;">❄</span> Frostspil</div>
-        <p>Frostspil is Iceland's independent casino comparison guide. We review, test and rank online casinos. Honest, transparent, and always up to date.</p>
-        <div style="margin-top:12px;display:flex;gap:8px;">
-          <span style="border:1px solid rgba(0,120,255,.12);padding:4px 10px;border-radius:6px;font-size:10px;color:rgba(140,180,255,.4);">18+</span>
-        </div>
+        <div class="logo" style="font-size:20px;"><span class="ice">❄</span> Frostspil</div>
+        <p>Frostspil is Iceland's independent online casino guide. We review, test and rank casinos for Icelandic players. Honest, transparent, and always up to date.</p>
       </div>
       <div class="footer-col">
-        <h4>CASINO GUIDES</h4>
+        <h4>CASINO</h4>
         <a href="/slotoro-site/casino/">Best Casinos Iceland</a>
         <a href="/slotoro-site/casino/">Casino Reviews A-Z</a>
         <a href="/slotoro-site/bonusy/">Casino Bonuses</a>
         <a href="/slotoro-site/casino/novye-casino/">New Casinos 2026</a>
-        <a href="/slotoro-site/casino/casino-s-bystrym-vyvodom/">Fast Payout Casinos</a>
-        <a href="/slotoro-site/casino/casino-bez-depozita/">No Deposit Bonuses</a>
+        <a href="/slotoro-site/casino/casino-s-bystrym-vyvodom/">Fast Payout</a>
+        <a href="/slotoro-site/casino/casino-bez-depozita/">No Deposit</a>
         <a href="/slotoro-site/casino/crypto-casino/">Crypto Casinos</a>
-        <a href="/slotoro-site/casino/mobilnoe-casino/">Mobile Casinos</a>
       </div>
       <div class="footer-col">
         <h4>GAME GUIDES</h4>
         <a href="/slotoro-site/slots/">Slot Reviews</a>
         <a href="/slotoro-site/live/">Live Casino</a>
         <a href="/slotoro-site/gajdy/chto-takoe-rtp/">RTP Explained</a>
+        <a href="/slotoro-site/bonusy/vejer/">Wagering Requirements</a>
         <a href="/slotoro-site/gajdy/strategii-blackjack/">Blackjack Guide</a>
         <a href="/slotoro-site/gajdy/pravila-ruletki/">Roulette Guide</a>
-        <a href="/slotoro-site/bonusy/vejer/">Wagering Requirements</a>
-      </div>
-      <div class="footer-col">
-        <h4>PAYMENTS</h4>
-        <a href="/slotoro-site/platezhi/bitcoin/">Bitcoin</a>
-        <a href="/slotoro-site/platezhi/ethereum/">Ethereum</a>
-        <a href="/slotoro-site/platezhi/usdt/">USDT</a>
-        <a href="/slotoro-site/platezhi/obhod-blokirovok-bankov/">Bank Block Bypass</a>
-        <a href="/slotoro-site/platezhi/kripto-koshelki/">Crypto Wallets</a>
       </div>
       <div class="footer-col">
         <h4>ABOUT</h4>
@@ -454,38 +338,26 @@ button{font-family:inherit;cursor:pointer;}
         <a href="/slotoro-site/usloviya/">Terms of Use</a>
       </div>
     </div>
-    <div class="footer-disclaimer">⚠ Gambling can be addictive. Please play responsibly. 18+ only.</div>
-    <div class="footer-copy">© 2026 Frostspil.is · All rights reserved · Independent review site · We may earn affiliate commissions from partner links</div>
+    <div class="footer-18">
+      <div class="badge">18+</div>
+      <p>Gambling can be addictive. Please play responsibly. If you need help, visit <a href="#">gamblingcare.is</a>. Frostspil is an independent review site. We may earn affiliate commissions from partner links. This does not affect our reviews or rankings.</p>
+    </div>
+    <div class="footer-pays">
+      <div class="footer-pay">₿ Bitcoin</div>
+      <div class="footer-pay">Ξ Ethereum</div>
+      <div class="footer-pay">₮ USDT</div>
+      <div class="footer-pay">Ł Litecoin</div>
+      <div class="footer-pay">VISA</div>
+      <div class="footer-pay">Mastercard</div>
+      <div class="footer-pay">Skrill</div>
+      <div class="footer-pay">Neteller</div>
+    </div>
+    <div class="footer-copy">© 2026 Frostspil.is · All rights reserved</div>
   </div>
 </footer>
 
 <script>
-// Snowflakes
-!function(){for(var f=['❄','❆','✦'],i=0;i<10;i++){var s=document.createElement('div');s.className='sf';s.textContent=f[i%3];s.style.left=Math.random()*100+'%';s.style.fontSize=(8+Math.random()*10)+'px';s.style.animationDuration=(12+Math.random()*15)+'s';s.style.animationDelay=Math.random()*12+'s';s.style.opacity=.06+Math.random()*.15;document.body.appendChild(s);}}();
-
-// WHEEL
-var c=document.getElementById('wc'),x=c.getContext('2d'),W=c.width,H=c.height,cx=W/2,cy=H/2,R=W/2-22;
-var S=[{l:'500%',c:'#c62828'},{l:'50 FS',c:'#1565c0'},{l:'200%',c:'#f9a825'},{l:'100 FS',c:'#2e7d32'},{l:'300%',c:'#6a1b9a'},{l:'25 FS',c:'#00838f'},{l:'150%',c:'#e65100'},{l:'200 FS',c:'#283593'}];
-var N=S.length,arc=2*Math.PI/N,ang=0,busy=false;
-function draw(){
-  x.clearRect(0,0,W,H);x.save();x.translate(cx,cy);x.rotate(ang);
-  for(var i=0;i<N;i++){var a=i*arc-Math.PI/2;x.beginPath();x.moveTo(0,0);x.arc(0,0,R,a,a+arc);x.closePath();x.fillStyle=S[i].c;x.fill();x.strokeStyle='rgba(255,255,255,.5)';x.lineWidth=2;x.stroke();x.save();x.rotate(a+arc/2);x.fillStyle='#fff';x.font='bold 30px Inter,sans-serif';x.textAlign='center';x.textBaseline='middle';x.shadowColor='rgba(0,0,0,.5)';x.shadowBlur=6;x.fillText(S[i].l,R*.6,0);x.shadowBlur=0;x.restore();}
-  x.restore();
-  x.beginPath();x.arc(cx,cy,R+6,0,2*Math.PI);x.strokeStyle='#ffd700';x.lineWidth=8;x.stroke();
-  x.beginPath();x.arc(cx,cy,R+12,0,2*Math.PI);x.strokeStyle='rgba(255,215,0,.2)';x.lineWidth=2;x.stroke();
-  for(var i=0;i<16;i++){var ba=i*2*Math.PI/16-Math.PI/2;x.beginPath();x.arc(cx+Math.cos(ba)*(R+12),cy+Math.sin(ba)*(R+12),5,0,2*Math.PI);x.fillStyle=i%2?'#60ddff':'#ffd700';x.shadowColor=x.fillStyle;x.shadowBlur=8;x.fill();x.shadowBlur=0;}
-}
-var sa,ta,ss,sd;
-function ease(t){return 1-Math.pow(1-t,3);}
-function af(){var t=Math.min(1,(Date.now()-ss)/sd);ang=sa+(ta-sa)*ease(t);draw();if(t<1){requestAnimationFrame(af);return;}busy=false;var n=((ang%(2*Math.PI))+(2*Math.PI))%(2*Math.PI);var i=Math.floor(((2*Math.PI-n+Math.PI/2)%(2*Math.PI))/arc)%N;var r=document.getElementById('wr');r.textContent='🎉 You won: '+S[i].l+'!';r.className='show';}
-function spin(){if(busy)return;busy=true;document.getElementById('wr').className='';document.getElementById('wr').textContent='';sa=ang;ta=sa+(5+Math.floor(Math.random()*3))*2*Math.PI+Math.random()*2*Math.PI;ss=Date.now();sd=3500+Math.random()*1500;requestAnimationFrame(af);}
-draw();
-
-// Search
-function doSearch(){var q=document.getElementById('searchInput').value.trim();if(q)alert('Search for: '+q+'\n\nSearch functionality coming soon!');}
-
-// Share
-function shareTo(p){var u=encodeURIComponent(location.href),t=encodeURIComponent('Best Online Casinos in Iceland - Frostspil');if(p==='twitter')window.open('https://twitter.com/intent/tweet?url='+u+'&text='+t);if(p==='whatsapp')window.open('https://wa.me/?text='+t+' '+u);if(p==='facebook')window.open('https://www.facebook.com/sharer.php?u='+u);}
+function shareTo(p){var u=encodeURIComponent(location.href),t=encodeURIComponent('Frostspil - Best Online Casino Iceland');if(p==='twitter')window.open('https://twitter.com/intent/tweet?url='+u+'&text='+t);if(p==='whatsapp')window.open('https://wa.me/?text='+t+' '+u);if(p==='facebook')window.open('https://www.facebook.com/sharer.php?u='+u);}
 function copyLink(){navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}
 </script>
 </body>
