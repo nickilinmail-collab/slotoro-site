@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Frostspil.is — генератор 800 страниц казино-портала
+Bestiflokkurinn.is — генератор 800 страниц казино-портала
 Сначала на русском, потом переведём на исландский
 """
 import os
@@ -363,15 +363,15 @@ for title in more_guides:
 
 # О нас (10 страниц)
 about_pages = [
-    {"slug": "o-nas", "title": "О Frostspil", "desc": "Кто мы и почему создали Frostspil."},
-    {"slug": "kontakty", "title": "Контакты", "desc": "Свяжитесь с командой Frostspil."},
+    {"slug": "o-nas", "title": "О Bestiflokkurinn", "desc": "Кто мы и почему создали Bestiflokkurinn."},
+    {"slug": "kontakty", "title": "Контакты", "desc": "Свяжитесь с командой Bestiflokkurinn."},
     {"slug": "konfidencialnost", "title": "Политика конфиденциальности", "desc": "Как мы обрабатываем ваши данные."},
-    {"slug": "usloviya", "title": "Условия использования", "desc": "Правила использования сайта Frostspil."},
+    {"slug": "usloviya", "title": "Условия использования", "desc": "Правила использования сайта Bestiflokkurinn."},
     {"slug": "otkaz-ot-otvetstvennosti", "title": "Отказ от ответственности", "desc": "Важная юридическая информация."},
     {"slug": "kak-my-ocenivaem", "title": "Как мы оцениваем казино", "desc": "Наша методология оценки."},
     {"slug": "redakcionnaya-politika", "title": "Редакционная политика", "desc": "Принципы нашей редакции."},
-    {"slug": "partnerstvo", "title": "Партнёрство", "desc": "Сотрудничество с Frostspil."},
-    {"slug": "karta-sajta", "title": "Карта сайта", "desc": "Полная карта всех страниц Frostspil."},
+    {"slug": "partnerstvo", "title": "Партнёрство", "desc": "Сотрудничество с Bestiflokkurinn."},
+    {"slug": "karta-sajta", "title": "Карта сайта", "desc": "Полная карта всех страниц Bestiflokkurinn."},
     {"slug": "otvetstvennaya-igra-stranica", "title": "Ответственная игра", "desc": "Наша позиция по ответственной игре."},
 ]
 
@@ -381,9 +381,9 @@ about_pages = [
 # ============================================================
 
 def get_nav():
-    return '''<div class="promo-bar"><span>🎰 FROSTSPIL — ЛУЧШИЕ ОНЛАЙН КАЗИНО ИСЛАНДИИ 🎰</span></div>
+    return '''<div class="promo-bar"><span>🎰 BESTIFLOKKURINN — ЛУЧШИЕ ОНЛАЙН КАЗИНО ИСЛАНДИИ 🎰</span></div>
 <nav class="nav">
-  <a href="/slotoro-site/" class="nav-logo"><div class="logo-icon">❄</div><div class="logo-text">FROSTSPIL<small>.is</small></div></a>
+  <a href="/slotoro-site/" class="nav-logo"><div class="logo-icon">🏆</div><div class="logo-text">BESTIFLOKKURINN<small>.is</small></div></a>
   <div class="nav-links">
     <a href="/slotoro-site/">Главная</a>
     <a href="/slotoro-site/casino/">Казино</a>
@@ -399,15 +399,15 @@ def get_footer():
     return '''<footer class="footer">
   <div class="footer-inner">
     <div class="footer-top">
-      <div><div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;"><div class="logo-icon" style="width:26px;height:26px;font-size:12px;">❄</div><span style="font-size:15px;font-weight:700;">Frostspil</span></div>
-      <div class="footer-desc">Frostspil — независимый сайт сравнения казино. 18+ Играйте ответственно.</div></div>
+      <div><div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;"><div class="logo-icon" style="width:26px;height:26px;font-size:12px;">🏆</div><span style="font-size:15px;font-weight:700;">Bestiflokkurinn</span></div>
+      <div class="footer-desc">Bestiflokkurinn — независимый сайт сравнения казино. 18+ Играйте ответственно.</div></div>
       <div class="footer-cols">
         <div><div class="footer-col-title">КАЗИНО</div><a href="/slotoro-site/casino/">Обзоры</a><a href="/slotoro-site/bonusy/">Бонусы</a><a href="/slotoro-site/casino/crypto-casino/">Крипто</a></div>
         <div><div class="footer-col-title">ИГРЫ</div><a href="/slotoro-site/slots/">Слоты</a><a href="/slotoro-site/live/">Live</a></div>
         <div><div class="footer-col-title">ИНФО</div><a href="/slotoro-site/o-nas/">О нас</a><a href="/slotoro-site/gajdy/">Гайды</a><a href="/slotoro-site/platezhi/">Оплата</a></div>
       </div>
     </div>
-    <div class="footer-bottom"><span>© 2026 Frostspil.is</span><span>18+ | Играйте ответственно</span></div>
+    <div class="footer-bottom"><span>© 2026 Bestiflokkurinn.is</span><span>18+ | Играйте ответственно</span></div>
   </div>
 </footer>'''
 
@@ -418,7 +418,7 @@ def page_template(title, desc, breadcrumbs, content, canonical=""):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{title} | Frostspil</title>
+<title>{title} | Bestiflokkurinn</title>
 <meta name="description" content="{desc}">
 {f'<link rel="canonical" href="{canonical}">' if canonical else ''}
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -654,7 +654,7 @@ for g in guide_pages:
 <li>Что важно знать перед началом</li>
 <li>Пошаговая инструкция</li>
 <li>Частые ошибки и как их избежать</li>
-<li>Рекомендации от экспертов Frostspil</li>
+<li>Рекомендации от экспертов Bestiflokkurinn</li>
 </ul>
 <h3>Полезные ссылки</h3>
 <ul>
@@ -672,7 +672,7 @@ print("Генерирую страницы 'О нас'...")
 for a in about_pages:
     content = f'''<h1>{a["title"]}</h1>
 <p>{a["desc"]}</p>
-<p>Frostspil.is — независимый информационный портал об онлайн казино для игроков из Исландии. Мы помогаем найти надёжные казино с лучшими бонусами и поддержкой криптовалют.</p>'''
+<p>Bestiflokkurinn.is — независимый информационный портал об онлайн казино для игроков из Исландии. Мы помогаем найти надёжные казино с лучшими бонусами и поддержкой криптовалют.</p>'''
 
     bc = [("/slotoro-site/", "Главная"), ("", a["title"])]
     html = page_template(a["title"], a["desc"], bc, content)
@@ -685,7 +685,7 @@ print("Генерирую индексные страницы...")
 casino_list = "\n".join([f'<div class="info-box"><p><strong><a href="/slotoro-site/casino/{c["slug"]}/">{c["name"]}</a></strong> — {c["bonus"]} (Рейтинг: {c["rating"]}/10)</p></div>' for c in casinos[:30]])
 write_page("casino/index.html", page_template("Все казино", "Полный список онлайн казино для Исландии",
     [("/slotoro-site/", "Главная"), ("", "Казино")],
-    f'<h1>Все онлайн казино 2026</h1><p>Полный список из {len(casinos)} онлайн казино, проверенных командой Frostspil.</p>{casino_list}'))
+    f'<h1>Все онлайн казино 2026</h1><p>Полный список из {len(casinos)} онлайн казино, проверенных командой Bestiflokkurinn.</p>{casino_list}'))
 
 # Slots index
 slots_list = "\n".join([f'<div class="info-box"><p><strong><a href="/slotoro-site/slots/{s["slug"]}/">{s["name"]}</a></strong> — {s["provider"]} | RTP {s["rtp"]}% | {s["maxwin"]}</p></div>' for s in slots_data[:30]])
@@ -720,30 +720,30 @@ write_page("gajdy/index.html", page_template("Гайды", "Руководств
 
 # 10. SITEMAP
 print("Генерирую sitemap.xml...")
-sitemap_urls = ['https://frostspil.is/']
+sitemap_urls = ['https://bestiflokkurinn.is/']
 for c in casinos:
-    sitemap_urls.append(f'https://frostspil.is/casino/{c["slug"]}/')
+    sitemap_urls.append(f'https://bestiflokkurinn.is/casino/{c["slug"]}/')
 for cat in casino_categories:
-    sitemap_urls.append(f'https://frostspil.is/casino/{cat["slug"]}/')
+    sitemap_urls.append(f'https://bestiflokkurinn.is/casino/{cat["slug"]}/')
 for s in slots_data:
-    sitemap_urls.append(f'https://frostspil.is/slots/{s["slug"]}/')
+    sitemap_urls.append(f'https://bestiflokkurinn.is/slots/{s["slug"]}/')
 for g in live_games:
-    sitemap_urls.append(f'https://frostspil.is/live/{g["slug"]}/')
+    sitemap_urls.append(f'https://bestiflokkurinn.is/live/{g["slug"]}/')
 for b in bonus_pages:
-    sitemap_urls.append(f'https://frostspil.is/bonusy/{b["slug"]}/')
+    sitemap_urls.append(f'https://bestiflokkurinn.is/bonusy/{b["slug"]}/')
 for p in payment_pages:
-    sitemap_urls.append(f'https://frostspil.is/platezhi/{p["slug"]}/')
+    sitemap_urls.append(f'https://bestiflokkurinn.is/platezhi/{p["slug"]}/')
 for g in guide_pages:
-    sitemap_urls.append(f'https://frostspil.is/gajdy/{g["slug"]}/')
+    sitemap_urls.append(f'https://bestiflokkurinn.is/gajdy/{g["slug"]}/')
 for a in about_pages:
-    sitemap_urls.append(f'https://frostspil.is/{a["slug"]}/')
+    sitemap_urls.append(f'https://bestiflokkurinn.is/{a["slug"]}/')
 sitemap_urls.extend([
-    'https://frostspil.is/casino/',
-    'https://frostspil.is/slots/',
-    'https://frostspil.is/live/',
-    'https://frostspil.is/bonusy/',
-    'https://frostspil.is/platezhi/',
-    'https://frostspil.is/gajdy/',
+    'https://bestiflokkurinn.is/casino/',
+    'https://bestiflokkurinn.is/slots/',
+    'https://bestiflokkurinn.is/live/',
+    'https://bestiflokkurinn.is/bonusy/',
+    'https://bestiflokkurinn.is/platezhi/',
+    'https://bestiflokkurinn.is/gajdy/',
 ])
 
 sitemap_xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
@@ -756,7 +756,7 @@ with open(os.path.join(BASE, 'sitemap.xml'), 'w') as f:
 
 # robots.txt
 with open(os.path.join(BASE, 'robots.txt'), 'w') as f:
-    f.write('User-agent: *\nAllow: /\nSitemap: https://frostspil.is/sitemap.xml\n')
+    f.write('User-agent: *\nAllow: /\nSitemap: https://bestiflokkurinn.is/sitemap.xml\n')
 
 print(f"\n✅ Сгенерировано {count} страниц + sitemap.xml + robots.txt")
 print(f"URLs в sitemap: {len(sitemap_urls)}")
