@@ -381,17 +381,17 @@ about_pages = [
 # ============================================================
 
 def get_nav():
-    return '''<div class="promo-bar"><span>🎰 BESTIFLOKKURINN — ЛУЧШИЕ ОНЛАЙН КАЗИНО ИСЛАНДИИ 🎰</span></div>
+    return '''<div class="promo-bar"><span>🎰 BESTIFLOKKURINN — BESTA NETKVARTETTIÐ Á ÍSLANDI 🎰</span></div>
 <nav class="nav">
   <a href="/slotoro-site/" class="nav-logo"><div class="logo-icon">🏆</div><div class="logo-text">BESTIFLOKKURINN<small>.is</small></div></a>
   <div class="nav-links">
-    <a href="/slotoro-site/">Главная</a>
-    <a href="/slotoro-site/casino/">Казино</a>
-    <a href="/slotoro-site/slots/">Слоты</a>
-    <a href="/slotoro-site/bonusy/">Бонусы</a>
-    <a href="/slotoro-site/live/">Live</a>
-    <a href="/slotoro-site/platezhi/">Оплата</a>
-    <a href="/slotoro-site/gajdy/">Гайды</a>
+    <a href="/slotoro-site/">Forsíða</a>
+    <a href="/slotoro-site/casino/">Spilavíti</a>
+    <a href="/slotoro-site/slots/">Spilakassar</a>
+    <a href="/slotoro-site/bonusy/">Bónusar</a>
+    <a href="/slotoro-site/live/">Lifandi</a>
+    <a href="/slotoro-site/platezhi/">Greiðslur</a>
+    <a href="/slotoro-site/gajdy/">Leiðbeiningar</a>
   </div>
 </nav>'''
 
@@ -400,21 +400,21 @@ def get_footer():
   <div class="footer-inner">
     <div class="footer-top">
       <div><div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;"><div class="logo-icon" style="width:26px;height:26px;font-size:12px;">🏆</div><span style="font-size:15px;font-weight:700;">Bestiflokkurinn</span></div>
-      <div class="footer-desc">Bestiflokkurinn — независимый сайт сравнения казино. 18+ Играйте ответственно.</div></div>
+      <div class="footer-desc">Bestiflokkurinn — óháð samanburðarsíða fyrir netkvartetti. 18+ Spilaðu á ábyrgan hátt.</div></div>
       <div class="footer-cols">
-        <div><div class="footer-col-title">КАЗИНО</div><a href="/slotoro-site/casino/">Обзоры</a><a href="/slotoro-site/bonusy/">Бонусы</a><a href="/slotoro-site/casino/crypto-casino/">Крипто</a></div>
-        <div><div class="footer-col-title">ИГРЫ</div><a href="/slotoro-site/slots/">Слоты</a><a href="/slotoro-site/live/">Live</a></div>
-        <div><div class="footer-col-title">ИНФО</div><a href="/slotoro-site/o-nas/">О нас</a><a href="/slotoro-site/gajdy/">Гайды</a><a href="/slotoro-site/platezhi/">Оплата</a></div>
+        <div><div class="footer-col-title">SPILAVÍTI</div><a href="/slotoro-site/casino/">Umsagnir</a><a href="/slotoro-site/bonusy/">Bónusar</a><a href="/slotoro-site/casino/crypto-casino/">Dulritunargjaldmiðlar</a></div>
+        <div><div class="footer-col-title">LEIKIR</div><a href="/slotoro-site/slots/">Spilakassar</a><a href="/slotoro-site/live/">Lifandi</a></div>
+        <div><div class="footer-col-title">UPPLÝSINGAR</div><a href="/slotoro-site/o-nas/">Um okkur</a><a href="/slotoro-site/gajdy/">Leiðbeiningar</a><a href="/slotoro-site/platezhi/">Greiðslur</a></div>
       </div>
     </div>
-    <div class="footer-bottom"><span>© 2026 Bestiflokkurinn.is</span><span>18+ | Играйте ответственно</span></div>
+    <div class="footer-bottom"><span>© 2026 Bestiflokkurinn.is</span><span>18+ | Spilaðu á ábyrgan hátt</span></div>
   </div>
 </footer>'''
 
 def page_template(title, desc, breadcrumbs, content, canonical=""):
     bc_html = ' → '.join([f'<a href="{url}">{name}</a>' for url, name in breadcrumbs])
     return f'''<!DOCTYPE html>
-<html lang="ru">
+<html lang="is">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -501,33 +501,33 @@ def write_page(path, html):
 # 1. КАЗИНО ОБЗОРЫ (150)
 print("Генерирую обзоры казино...")
 for c in casinos:
-    content = f'''<h1>{c["name"]} — обзор и бонусы 2026</h1>
+    content = f'''<h1>{c["name"]} — umsögn og bónusar 2026</h1>
 <div class="rating-box"><div class="score">{c["rating"]}</div><div class="label">/ 10</div></div>
 <div class="info-box">
-<p><strong>Бонус:</strong> {c["bonus"]}</p>
-<p><strong>Тип:</strong> {"Крипто-казино" if c["type"]=="crypto" else "Классическое казино"}</p>
+<p><strong>Bónus:</strong> {c["bonus"]}</p>
+<p><strong>Tegund:</strong> {"Dulritunar-spilavíti" if c["type"]=="crypto" else "Hefðbundið spilavíti"}</p>
 </div>
 <p>{c["desc"]}</p>
-<h2>Обзор {c["name"]}</h2>
-<p>{c["name"]} — это {"крипто-казино" if c["type"]=="crypto" else "онлайн казино"} доступное для игроков из Исландии. Казино предлагает широкий выбор слотов, настольных игр и live-казино с живыми дилерами.</p>
-<h3>Бонусы и акции</h3>
-<p>Новые игроки получают приветственный бонус {c["bonus"]}. Для активации бонуса необходимо зарегистрироваться и сделать первый депозит.</p>
-<h3>Способы оплаты</h3>
-<p>{"Принимает Bitcoin, Ethereum, USDT, Litecoin и другие криптовалюты." if c["type"]=="crypto" else "Принимает Visa, Mastercard, криптовалюты и электронные кошельки."} Это особенно важно для исландских игроков, так как местные банки часто блокируют транзакции в казино.</p>
-<h3>Игры</h3>
-<p>В библиотеке {c["name"]} более 2000 игр от ведущих провайдеров: Pragmatic Play, NetEnt, Play'n GO, Microgaming и других.</p>
-<h2>Плюсы и минусы</h2>
+<h2>Umsögn um {c["name"]}</h2>
+<p>{c["name"]} er {"dulritunar-spilavíti" if c["type"]=="crypto" else "netspilavíti"} sem er aðgengilegt spilurum á Íslandi. Spilavítið býður upp á mikið úrval af spilakössum, borðleikjum og lifandi spilavíti með raunverulegum gjaldkerum.</p>
+<h3>Bónusar og tilboð</h3>
+<p>Nýir spilarar fá velkomsubónus {c["bonus"]}. Til að virkja bónusinn þarftu að skrá þig og leggja inn fyrstu innborgun.</p>
+<h3>Greiðslumátar</h3>
+<p>{"Tekur við Bitcoin, Ethereum, USDT, Litecoin og öðrum dulritunargjaldmiðlum." if c["type"]=="crypto" else "Tekur við Visa, Mastercard, dulritunargjaldmiðlum og rafrænum veskjum."} Þetta er sérstaklega mikilvægt fyrir íslenska spilara þar sem innlendir bankar loka oft á greiðslur til spilavíta.</p>
+<h3>Leikir</h3>
+<p>Í safni {c["name"]} eru yfir 2000 leikir frá fremstu framleiðendum: Pragmatic Play, NetEnt, Play'n GO, Microgaming og fleiri.</p>
+<h2>Kostir og gallar</h2>
 <ul>
 <li>✅ {c["bonus"]}</li>
-<li>✅ Быстрые выплаты</li>
-<li>✅ {"Крипто-платежи без блокировок" if c["type"]=="crypto" else "Широкий выбор способов оплаты"}</li>
-<li>✅ Большая библиотека игр</li>
-<li>⚠️ Не принимает исландскую крону напрямую</li>
+<li>✅ Hröð útborgun</li>
+<li>✅ {"Dulritunargreiðslur án lokunar" if c["type"]=="crypto" else "Fjölbreytt greiðslumátar"}</li>
+<li>✅ Stórt safn leikja</li>
+<li>⚠️ Tekur ekki við íslenskri krónu beint</li>
 </ul>
-<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Играть в {c["name"]} →</a></div>'''
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Spila hjá {c["name"]} →</a></div>'''
 
-    bc = [("/slotoro-site/", "Главная"), ("/slotoro-site/casino/", "Казино"), ("", c["name"])]
-    html = page_template(f'{c["name"]} обзор', c["desc"], bc, content)
+    bc = [("/slotoro-site/", "Forsíða"), ("/slotoro-site/casino/", "Spilavíti"), ("", c["name"])]
+    html = page_template(f'{c["name"]} umsögn', c["desc"], bc, content)
     write_page(f'casino/{c["slug"]}/index.html', html)
 
 # 2. КАТЕГОРИИ КАЗИНО (50)
@@ -538,63 +538,63 @@ for cat in casino_categories:
     for c in top_casinos:
         cards += f'<div class="info-box"><p><strong>{c["name"]}</strong> — {c["bonus"]} (Рейтинг: {c["rating"]}/10) <a href="/slotoro-site/casino/{c["slug"]}/">Обзор →</a></p></div>\n'
 
-    content = f'''<h1>{cat["title"]} в Исландии 2026</h1>
+    content = f'''<h1>{cat["title"]} á Íslandi 2026</h1>
 <p>{cat["desc"]}</p>
-<h2>Топ-10 казино в категории</h2>
+<h2>Topp 10 spilavíti í flokki</h2>
 {cards}
-<h2>Как мы выбираем лучшие казино</h2>
-<p>Наша команда оценивает каждое казино по нескольким критериям: надёжность лицензии, скорость выплат, качество игр, бонусные предложения и доступность для игроков из Исландии.</p>
-<p>Особое внимание мы уделяем поддержке криптовалют, так как исландские банки часто блокируют транзакции в онлайн казино.</p>'''
+<h2>Hvernig við veljum bestu spilavítin</h2>
+<p>Teymið okkar metur hvert spilavíti eftir nokkrum forsendum: áreiðanleiki leyfis, hraði útborgunar, gæði leikja, bónustilboð og aðgengi fyrir spilara á Íslandi.</p>
+<p>Við leggjum sérstaka áherslu á stuðning við dulritunargjaldmiðla þar sem íslenskir bankar loka oft á greiðslur til netspilavíta.</p>'''
 
-    bc = [("/slotoro-site/", "Главная"), ("/slotoro-site/casino/", "Казино"), ("", cat["title"])]
+    bc = [("/slotoro-site/", "Forsíða"), ("/slotoro-site/casino/", "Spilavíti"), ("", cat["title"])]
     html = page_template(cat["title"], cat["desc"], bc, content)
     write_page(f'casino/{cat["slug"]}/index.html', html)
 
 # 3. СЛОТЫ (250)
 print("Генерирую обзоры слотов...")
 for s in slots_data:
-    content = f'''<h1>{s["name"]} — обзор слота</h1>
+    content = f'''<h1>{s["name"]} — spilakassaumsögn</h1>
 <div class="info-box">
-<p><strong>Провайдер:</strong> {s["provider"]}</p>
+<p><strong>Framleiðandi:</strong> {s["provider"]}</p>
 <p><strong>RTP:</strong> {s["rtp"]}%</p>
-<p><strong>Волатильность:</strong> {s["volatility"]}</p>
-<p><strong>Макс. выигрыш:</strong> {s["maxwin"]}</p>
-<p><strong>Тема:</strong> {s["theme"]}</p>
+<p><strong>Sveifla:</strong> {s["volatility"]}</p>
+<p><strong>Hámarksvinninga:</strong> {s["maxwin"]}</p>
+<p><strong>Þema:</strong> {s["theme"]}</p>
 </div>
-<h2>Описание {s["name"]}</h2>
-<p>{s["name"]} от {s["provider"]} — один из популярных слотов в категории «{s["theme"]}». Слот отличается {s["volatility"].lower()} волатильностью и максимальным выигрышем {s["maxwin"]}.</p>
-<h3>RTP и волатильность</h3>
-<p>RTP (Return to Player) слота {s["name"]} составляет {s["rtp"]}%. Это означает, что теоретически слот возвращает игрокам {s["rtp"]}% от всех поставленных средств в долгосрочной перспективе.</p>
-<h3>Где играть в {s["name"]}</h3>
-<p>Этот слот доступен в следующих казино, принимающих игроков из Исландии:</p>
+<h2>Lýsing á {s["name"]}</h2>
+<p>{s["name"]} frá {s["provider"]} er einn af vinsælustu spilakössunum í flokknum «{s["theme"]}». Spilakassinn er með {s["volatility"].lower()} sveiflur og hámarksvinning {s["maxwin"]}.</p>
+<h3>RTP og sveifla</h3>
+<p>RTP (Return to Player) spilakassans {s["name"]} er {s["rtp"]}%. Þetta þýðir að fræðilega séð skilar spilakassinn spilurum {s["rtp"]}% af öllu veðfé til lengri tíma.</p>
+<h3>Hvar á að spila {s["name"]}</h3>
+<p>Þessi spilakassi er í boði í eftirfarandi spilavítum sem taka við spilurum frá Íslandi:</p>
 <ul>
 <li><a href="/slotoro-site/casino/bitstarz/">BitStarz</a> — 5 BTC + 200 FS</li>
-<li><a href="/slotoro-site/casino/stake/">Stake</a> — 200% бонус</li>
-<li><a href="/slotoro-site/casino/bc-game/">BC.Game</a> — 300% до 1 BTC</li>
+<li><a href="/slotoro-site/casino/stake/">Stake</a> — 200% bónus</li>
+<li><a href="/slotoro-site/casino/bc-game/">BC.Game</a> — 300% allt að 1 BTC</li>
 </ul>
-<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Играть в {s["name"]} →</a></div>'''
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Spila {s["name"]} →</a></div>'''
 
-    bc = [("/slotoro-site/", "Главная"), ("/slotoro-site/slots/", "Слоты"), ("", s["name"])]
-    html = page_template(f'{s["name"]} слот', f'{s["name"]} от {s["provider"]} — RTP {s["rtp"]}%, волатильность {s["volatility"]}, макс {s["maxwin"]}', bc, content)
+    bc = [("/slotoro-site/", "Forsíða"), ("/slotoro-site/slots/", "Spilakassar"), ("", s["name"])]
+    html = page_template(f'{s["name"]} spilakassi', f'{s["name"]} frá {s["provider"]} — RTP {s["rtp"]}%, sveifla {s["volatility"]}, hámark {s["maxwin"]}', bc, content)
     write_page(f'slots/{s["slug"]}/index.html', html)
 
 # 4. LIVE КАЗИНО (50)
 print("Генерирую live казино страницы...")
 for g in live_games:
-    content = f'''<h1>{g["name"]} — Live казино</h1>
+    content = f'''<h1>{g["name"]} — Lifandi spilavíti</h1>
 <p>{g["desc"]}</p>
-<h2>Как играть в {g["name"]}</h2>
-<p>{g["name"]} с живым дилером — это возможность окунуться в атмосферу настоящего казино, не выходя из дома. Профессиональные дилеры ведут игру в реальном времени через HD-видеотрансляцию.</p>
-<h3>Лучшие казино для {g["name"]}</h3>
+<h2>Hvernig á að spila {g["name"]}</h2>
+<p>{g["name"]} með lifandi gjaldkera gefur þér tækifæri til að upplifa alvöru spilavítisandrúmsloft heima hjá þér. Faglegir gjaldkerar stjórna leiknum í rauntíma í gegnum HD myndbandsútsendingu.</p>
+<h3>Bestu spilavítin fyrir {g["name"]}</h3>
 <ul>
-<li><a href="/slotoro-site/casino/bitstarz/">BitStarz</a> — лучший выбор live-игр</li>
-<li><a href="/slotoro-site/casino/stake/">Stake</a> — эксклюзивные столы</li>
-<li><a href="/slotoro-site/casino/tonybet/">TonyBet</a> — широкий выбор лимитов</li>
+<li><a href="/slotoro-site/casino/bitstarz/">BitStarz</a> — besta úrval lifandi leikja</li>
+<li><a href="/slotoro-site/casino/stake/">Stake</a> — einkaréttarborð</li>
+<li><a href="/slotoro-site/casino/tonybet/">TonyBet</a> — mikið úrval af mörkum</li>
 </ul>
-<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Играть в {g["name"]} →</a></div>'''
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Spila {g["name"]} →</a></div>'''
 
-    bc = [("/slotoro-site/", "Главная"), ("/slotoro-site/live/", "Live казино"), ("", g["name"])]
-    html = page_template(f'{g["name"]} Live', g["desc"], bc, content)
+    bc = [("/slotoro-site/", "Forsíða"), ("/slotoro-site/live/", "Lifandi spilavíti"), ("", g["name"])]
+    html = page_template(f'{g["name"]} Lifandi', g["desc"], bc, content)
     write_page(f'live/{g["slug"]}/index.html', html)
 
 # 5. БОНУСЫ (80)
@@ -602,18 +602,18 @@ print("Генерирую страницы бонусов...")
 for b in bonus_pages:
     content = f'''<h1>{b["title"]}</h1>
 <p>{b["desc"]}</p>
-<h2>Лучшие предложения 2026</h2>
+<h2>Bestu tilboðin 2026</h2>
 <div class="info-box">
-<p><strong>BitStarz:</strong> 5 BTC + 200 фриспинов — <a href="/slotoro-site/casino/bitstarz/">Подробнее →</a></p>
+<p><strong>BitStarz:</strong> 5 BTC + 200 ókeypis snúningar — <a href="/slotoro-site/casino/bitstarz/">Nánar →</a></p>
 </div>
 <div class="info-box">
-<p><strong>BC.Game:</strong> 300% крипто бонус — <a href="/slotoro-site/casino/bc-game/">Подробнее →</a></p>
+<p><strong>BC.Game:</strong> 300% dulritunarbónus — <a href="/slotoro-site/casino/bc-game/">Nánar →</a></p>
 </div>
-<h2>Как получить бонус</h2>
-<p>Для получения бонуса зарегистрируйтесь в казино, внесите депозит и бонус будет начислен автоматически. Обратите внимание на требования к отыгрышу (вейджер).</p>
-<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Забрать бонус →</a></div>'''
+<h2>Hvernig á að fá bónus</h2>
+<p>Til að fá bónus skaltu skrá þig hjá spilavítinu, leggja inn innborgun og bónusinn verður sjálfkrafa virkjaður. Athugaðu veðkröfur (wagering).</p>
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Sækja bónus →</a></div>'''
 
-    bc = [("/slotoro-site/", "Главная"), ("/slotoro-site/bonusy/", "Бонусы"), ("", b["title"])]
+    bc = [("/slotoro-site/", "Forsíða"), ("/slotoro-site/bonusy/", "Bónusar"), ("", b["title"])]
     html = page_template(b["title"], b["desc"], bc, content)
     write_page(f'bonusy/{b["slug"]}/index.html', html)
 
@@ -622,23 +622,23 @@ print("Генерирую страницы платежей...")
 for p in payment_pages:
     content = f'''<h1>{p["title"]}</h1>
 <p>{p["desc"]}</p>
-<h2>Как это работает</h2>
-<p>Исландские банки блокируют платежи в онлайн казино. Криптовалюты — лучший способ обойти эти ограничения. Транзакции быстрые, анонимные и без комиссий.</p>
-<h3>Пошаговая инструкция</h3>
+<h2>Hvernig virkar þetta</h2>
+<p>Íslenskir bankar loka á greiðslur til netspilavíta. Dulritunargjaldmiðlar eru besta leiðin til að komast framhjá þessum takmörkunum. Færslur eru hraðar, nafnlausar og án þóknana.</p>
+<h3>Skref-fyrir-skref leiðbeiningar</h3>
 <ol>
-<li>Создайте кошелёк (MetaMask, Trust Wallet или Binance)</li>
-<li>Купите криптовалюту на бирже</li>
-<li>Переведите средства в казино</li>
-<li>Играйте и выводите выигрыш обратно на кошелёк</li>
+<li>Búðu til veski (MetaMask, Trust Wallet eða Binance)</li>
+<li>Keyptu dulritunargjaldmiðil í kauphöll</li>
+<li>Flyttu fjármuni til spilavítisins</li>
+<li>Spilaðu og taktu út vinninga til baka í veskið</li>
 </ol>
-<h3>Рекомендуемые казино</h3>
+<h3>Mælt með spilavítum</h3>
 <ul>
-<li><a href="/slotoro-site/casino/bitstarz/">BitStarz</a> — мгновенные крипто-выплаты</li>
-<li><a href="/slotoro-site/casino/stake/">Stake</a> — поддержка 20+ криптовалют</li>
+<li><a href="/slotoro-site/casino/bitstarz/">BitStarz</a> — tafarlausar dulritunarútborganir</li>
+<li><a href="/slotoro-site/casino/stake/">Stake</a> — styður 20+ dulritunargjaldmiðla</li>
 </ul>
-<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Выбрать казино →</a></div>'''
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Veldu spilavíti →</a></div>'''
 
-    bc = [("/slotoro-site/", "Главная"), ("/slotoro-site/platezhi/", "Оплата"), ("", p["title"])]
+    bc = [("/slotoro-site/", "Forsíða"), ("/slotoro-site/platezhi/", "Greiðslur"), ("", p["title"])]
     html = page_template(p["title"], p["desc"], bc, content)
     write_page(f'platezhi/{p["slug"]}/index.html', html)
 
@@ -647,23 +647,23 @@ print("Генерирую гайды...")
 for g in guide_pages:
     content = f'''<h1>{g["title"]}</h1>
 <p>{g["desc"]}</p>
-<h2>Подробное руководство</h2>
-<p>В этом гайде мы подробно разберём всё что нужно знать про «{g["title"]}». Информация актуальна для игроков из Исландии в 2026 году.</p>
-<h3>Основные моменты</h3>
+<h2>Ítarlegar leiðbeiningar</h2>
+<p>Í þessari handbók förum við ítarlega yfir allt sem þú þarft að vita um «{g["title"]}». Upplýsingarnar eru uppfærðar fyrir spilara á Íslandi árið 2026.</p>
+<h3>Lykilatriði</h3>
 <ul>
-<li>Что важно знать перед началом</li>
-<li>Пошаговая инструкция</li>
-<li>Частые ошибки и как их избежать</li>
-<li>Рекомендации от экспертов Bestiflokkurinn</li>
+<li>Hvað þarf að vita áður en þú byrjar</li>
+<li>Skref-fyrir-skref leiðbeiningar</li>
+<li>Algeng mistök og hvernig á að forðast þau</li>
+<li>Ráðleggingar frá sérfræðingum Bestiflokkurinn</li>
 </ul>
-<h3>Полезные ссылки</h3>
+<h3>Gagnlegir tenglar</h3>
 <ul>
-<li><a href="/slotoro-site/casino/">Обзоры казино</a></li>
-<li><a href="/slotoro-site/bonusy/">Бонусы</a></li>
-<li><a href="/slotoro-site/platezhi/">Способы оплаты</a></li>
+<li><a href="/slotoro-site/casino/">Umsagnir um spilavíti</a></li>
+<li><a href="/slotoro-site/bonusy/">Bónusar</a></li>
+<li><a href="/slotoro-site/platezhi/">Greiðslumátar</a></li>
 </ul>'''
 
-    bc = [("/slotoro-site/", "Главная"), ("/slotoro-site/gajdy/", "Гайды"), ("", g["title"])]
+    bc = [("/slotoro-site/", "Forsíða"), ("/slotoro-site/gajdy/", "Leiðbeiningar"), ("", g["title"])]
     html = page_template(g["title"], g["desc"], bc, content)
     write_page(f'gajdy/{g["slug"]}/index.html', html)
 
@@ -672,9 +672,9 @@ print("Генерирую страницы 'О нас'...")
 for a in about_pages:
     content = f'''<h1>{a["title"]}</h1>
 <p>{a["desc"]}</p>
-<p>Bestiflokkurinn.is — независимый информационный портал об онлайн казино для игроков из Исландии. Мы помогаем найти надёжные казино с лучшими бонусами и поддержкой криптовалют.</p>'''
+<p>Bestiflokkurinn.is er óháð upplýsingagátt um netspilavíti fyrir spilara á Íslandi. Við hjálpum þér að finna áreiðanleg spilavíti með bestu bónusunum og stuðningi við dulritunargjaldmiðla.</p>'''
 
-    bc = [("/slotoro-site/", "Главная"), ("", a["title"])]
+    bc = [("/slotoro-site/", "Forsíða"), ("", a["title"])]
     html = page_template(a["title"], a["desc"], bc, content)
     write_page(f'{a["slug"]}/index.html', html)
 
@@ -683,39 +683,39 @@ print("Генерирую индексные страницы...")
 
 # Casino index
 casino_list = "\n".join([f'<div class="info-box"><p><strong><a href="/slotoro-site/casino/{c["slug"]}/">{c["name"]}</a></strong> — {c["bonus"]} (Рейтинг: {c["rating"]}/10)</p></div>' for c in casinos[:30]])
-write_page("casino/index.html", page_template("Все казино", "Полный список онлайн казино для Исландии",
-    [("/slotoro-site/", "Главная"), ("", "Казино")],
-    f'<h1>Все онлайн казино 2026</h1><p>Полный список из {len(casinos)} онлайн казино, проверенных командой Bestiflokkurinn.</p>{casino_list}'))
+write_page("casino/index.html", page_template("Öll spilavíti", "Heildarlisti yfir netspilavíti fyrir Ísland",
+    [("/slotoro-site/", "Forsíða"), ("", "Spilavíti")],
+    f'<h1>Öll netspilavíti 2026</h1><p>Heildarlisti yfir {len(casinos)} netspilavíti sem teymi Bestiflokkurinn hefur skoðað.</p>{casino_list}'))
 
 # Slots index
 slots_list = "\n".join([f'<div class="info-box"><p><strong><a href="/slotoro-site/slots/{s["slug"]}/">{s["name"]}</a></strong> — {s["provider"]} | RTP {s["rtp"]}% | {s["maxwin"]}</p></div>' for s in slots_data[:30]])
-write_page("slots/index.html", page_template("Все слоты", "Обзоры популярных слотов",
-    [("/slotoro-site/", "Главная"), ("", "Слоты")],
-    f'<h1>Популярные слоты 2026</h1><p>Обзоры {len(slots_data)} слотов от лучших провайдеров.</p>{slots_list}'))
+write_page("slots/index.html", page_template("Allir spilakassar", "Umsagnir um vinsæla spilakassa",
+    [("/slotoro-site/", "Forsíða"), ("", "Spilakassar")],
+    f'<h1>Vinsælir spilakassar 2026</h1><p>Umsagnir um {len(slots_data)} spilakassa frá bestu framleiðendum.</p>{slots_list}'))
 
 # Live index
 live_list = "\n".join([f'<div class="info-box"><p><strong><a href="/slotoro-site/live/{g["slug"]}/">{g["name"]}</a></strong> — {g["desc"][:80]}</p></div>' for g in live_games[:20]])
-write_page("live/index.html", page_template("Live казино", "Игры с живыми дилерами",
-    [("/slotoro-site/", "Главная"), ("", "Live казино")],
-    f'<h1>Live казино — игры с живым дилером</h1><p>{len(live_games)} игр с профессиональными дилерами.</p>{live_list}'))
+write_page("live/index.html", page_template("Lifandi spilavíti", "Leikir með lifandi gjaldkerum",
+    [("/slotoro-site/", "Forsíða"), ("", "Lifandi spilavíti")],
+    f'<h1>Lifandi spilavíti — leikir með lifandi gjaldkera</h1><p>{len(live_games)} leikir með faglegum gjaldkerum.</p>{live_list}'))
 
 # Bonus index
 bonus_list = "\n".join([f'<div class="info-box"><p><strong><a href="/slotoro-site/bonusy/{b["slug"]}/">{b["title"]}</a></strong> — {b["desc"][:80]}</p></div>' for b in bonus_pages[:20]])
-write_page("bonusy/index.html", page_template("Бонусы казино", "Все бонусы и промокоды",
-    [("/slotoro-site/", "Главная"), ("", "Бонусы")],
-    f'<h1>Бонусы казино 2026</h1><p>{len(bonus_pages)} актуальных бонусных предложений.</p>{bonus_list}'))
+write_page("bonusy/index.html", page_template("Spilavítibónusar", "Allir bónusar og afsláttarkóðar",
+    [("/slotoro-site/", "Forsíða"), ("", "Bónusar")],
+    f'<h1>Spilavítibónusar 2026</h1><p>{len(bonus_pages)} virk bónustilboð.</p>{bonus_list}'))
 
 # Payment index
 pay_list = "\n".join([f'<div class="info-box"><p><strong><a href="/slotoro-site/platezhi/{p["slug"]}/">{p["title"]}</a></strong></p></div>' for p in payment_pages[:20]])
-write_page("platezhi/index.html", page_template("Способы оплаты", "Крипто и другие платежи в казино",
-    [("/slotoro-site/", "Главная"), ("", "Оплата")],
-    f'<h1>Способы оплаты в казино</h1><p>Как обойти банковские блокировки и играть из Исландии.</p>{pay_list}'))
+write_page("platezhi/index.html", page_template("Greiðslumátar", "Dulritunargjaldmiðlar og aðrar greiðslur í spilavítum",
+    [("/slotoro-site/", "Forsíða"), ("", "Greiðslur")],
+    f'<h1>Greiðslumátar í spilavítum</h1><p>Hvernig á að komast framhjá bankalokunum og spila frá Íslandi.</p>{pay_list}'))
 
 # Guide index
 guide_list = "\n".join([f'<div class="info-box"><p><strong><a href="/slotoro-site/gajdy/{g["slug"]}/">{g["title"]}</a></strong> — {g["desc"][:80]}</p></div>' for g in guide_pages[:20]])
-write_page("gajdy/index.html", page_template("Гайды", "Руководства для игроков",
-    [("/slotoro-site/", "Главная"), ("", "Гайды")],
-    f'<h1>Гайды для игроков</h1><p>{len(guide_pages)} руководств для новичков и опытных игроков.</p>{guide_list}'))
+write_page("gajdy/index.html", page_template("Leiðbeiningar", "Handbækur fyrir spilara",
+    [("/slotoro-site/", "Forsíða"), ("", "Leiðbeiningar")],
+    f'<h1>Leiðbeiningar fyrir spilara</h1><p>{len(guide_pages)} handbækur fyrir nýliða og reynda spilara.</p>{guide_list}'))
 
 
 # 10. SITEMAP
