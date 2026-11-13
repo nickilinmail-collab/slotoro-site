@@ -260,6 +260,25 @@ box-shadow:0 0 0 1px rgba(255,255,255,.45),inset 0 1px 0 rgba(255,255,255,.45),i
 body.dr-lock{overflow:hidden;}
 @media(min-width:769px){.dr,.dr-overlay{display:none!important;}}
 @media (prefers-reduced-motion:reduce){.dr,.dr-overlay,.dr-chev{transition:none;}}
+/* Share buttons: liquid glass, brand colours */
+.share a.s-fb{--b0:#0f1f47;--b1:#1d3f8a;--g1:#4f8cff;--g2:#9cc2ff;--sh:79,140,255;}
+.share a.s-in{--b0:#06243f;--b1:#0a66c2;--g1:#2fa8ff;--g2:#8fdcff;--sh:47,168,255;}
+.share a.s-wa{--b0:#062e1b;--b1:#128c4a;--g1:#3ddc84;--g2:#c2ffd8;--sh:61,220,132;}
+.share a.s-copy{--b0:#24092a;--b1:#5a1d68;--g1:#ff9a3c;--g2:#f050d5;--sh:235,80,200;}
+.share a.s-fb,.share a.s-in,.share a.s-wa,.share a.s-copy{
+width:54px;height:54px;border:4px solid transparent;isolation:isolate;
+background:
+ radial-gradient(80% 70% at 22% 105%,var(--g1) 0%,transparent 60%) padding-box,
+ radial-gradient(80% 70% at 82% 110%,var(--g2) 0%,transparent 55%) padding-box,
+ linear-gradient(180deg,var(--b0) 0%,var(--b1) 100%) padding-box,
+ linear-gradient(170deg,rgba(255,255,255,.85) 0%,rgba(255,255,255,.15) 40%,rgba(255,255,255,.08) 65%,rgba(255,255,255,.5) 100%) border-box;
+box-shadow:0 0 0 1px rgba(255,255,255,.28),inset 0 0 0 1px rgba(255,255,255,.2),inset 0 3px 6px rgba(0,0,0,.4),0 12px 22px -8px rgba(var(--sh),.7),0 2px 6px rgba(0,0,0,.35);}
+.share a.s-fb::after,.share a.s-in::after,.share a.s-wa::after,.share a.s-copy::after{
+content:'';position:absolute;left:18%;right:18%;top:4px;height:22%;border-radius:999px;pointer-events:none;z-index:-1;
+background:linear-gradient(180deg,rgba(255,255,255,.5),rgba(255,255,255,0));}
+.share a.s-fb svg,.share a.s-in svg,.share a.s-wa svg,.share a.s-copy svg{filter:drop-shadow(0 1px 2px rgba(0,0,0,.45));}
+.share a.s-fb::before,.share a.s-in::before,.share a.s-wa::before,.share a.s-copy::before{top:-9px;left:2px;width:42px;height:17px;}
+.share a.s-fb:hover,.share a.s-in:hover,.share a.s-wa:hover,.share a.s-copy:hover{filter:brightness(1.12) saturate(1.1);box-shadow:0 0 0 1px rgba(255,255,255,.4),inset 0 0 0 1px rgba(255,255,255,.25),inset 0 3px 6px rgba(0,0,0,.4),0 16px 28px -8px rgba(var(--sh),.9),0 3px 8px rgba(0,0,0,.35);}
 </style>
 </head>
 <body>
@@ -369,7 +388,7 @@ body.dr-lock{overflow:hidden;}
 </footer>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://bestiflokkurinn.is/#website", "name": "BF Casino", "url": "https://bestiflokkurinn.is/", "inLanguage": "is"}, {"@type": "Organization", "@id": "https://bestiflokkurinn.is/#org", "name": "BF Casino ritstjórn", "url": "https://bestiflokkurinn.is/"}, {"@type": "Article", "headline": "iDebit í spilavítum", "description": "iDebit greiðslumáti á netspilavítum.", "inLanguage": "is", "datePublished": "2026-06-01", "dateModified": "2026-11-14", "author": {"@id": "https://bestiflokkurinn.is/#org"}, "publisher": {"@id": "https://bestiflokkurinn.is/#org"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bestiflokkurinn.is/"}, {"@type": "ListItem", "position": 2, "name": "Payments", "item": "https://bestiflokkurinn.is/platezhi/"}, {"@type": "ListItem", "position": 3, "name": "iDebit í spilavítum"}]}]}</script>
 <script>document.querySelectorAll('img[loading]').length||document.querySelectorAll('.slot-hero-img,.game-card-thumb img').forEach(function(i){i.loading='lazy'})</script>
-<script>(function(){var u=encodeURIComponent(location.href),t=encodeURIComponent(document.title);var m={fb:'https://www.facebook.com/sharer/sharer.php?u='+u,in:'https://www.linkedin.com/sharing/share-offsite/?url='+u,wa:'https://wa.me/?text='+t+'%20'+u};document.querySelectorAll('.share a').forEach(function(a){var n=a.dataset.net;if(m[n])a.href=m[n];else if(n==='copy')a.addEventListener('click',function(e){e.preventDefault();try{navigator.clipboard.writeText(location.href);a.setAttribute('aria-label','Tengill afritaður');a.style.background='#2f8f5a';setTimeout(function(){a.style.background='';},1500);}catch(_){}});});})();</script>
+<script>(function(){var u=encodeURIComponent(location.href),t=encodeURIComponent(document.title);var m={fb:'https://www.facebook.com/sharer/sharer.php?u='+u,in:'https://www.linkedin.com/sharing/share-offsite/?url='+u,wa:'https://wa.me/?text='+t+'%20'+u};document.querySelectorAll('.share a').forEach(function(a){var n=a.dataset.net;if(m[n])a.href=m[n];else if(n==='copy')a.addEventListener('click',function(e){e.preventDefault();try{navigator.clipboard.writeText(location.href);a.setAttribute('aria-label','Tengill afritaður');a.style.filter='hue-rotate(-60deg) brightness(1.2)';setTimeout(function(){a.style.filter='';},1500);}catch(_){}});});})();</script>
 <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Vafrakökur" hidden>
 <div class="cookie-text"><strong>🍪 Vafrakökur</strong><span>Við notum nauðsynlegar vafrakökur til að vefurinn virki og til að muna val þitt. Ef þú samþykkir allar má nota kökur til að mæla umferð. Samstarfstenglar geta sett kökur hjá þriðja aðila þegar þú smellir á þá. <a href="/slotoro-site/konfidencialnost/">Persónuverndarstefna</a></span></div>
 <div class="cookie-actions"><button type="button" class="btn-signup" data-consent="necessary">Aðeins nauðsynlegar</button><button type="button" class="btn-signup" data-consent="all">Samþykkja allar</button></div>
