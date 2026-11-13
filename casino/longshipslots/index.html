@@ -44,7 +44,7 @@ body::after{content:'';position:fixed;bottom:-200px;left:-10%;width:600px;height
 .nav-links{display:flex;gap:20px;font-size:13px;font-weight:500;}
 .nav-links a{color:var(--muted);transition:color .2s;}
 .nav-links a:hover{color:#e0c0ff;}
-.nav-actions{display:flex;gap:8px;}
+.nav-actions{display:flex;gap:8px;align-items:center;}
 /* Liquid glass nav button */
 .btn-signup{display:inline-flex;align-items:center;background:linear-gradient(135deg,rgba(140,60,240,.2),rgba(200,100,255,.1));backdrop-filter:blur(8px);border:1px solid rgba(180,140,255,.2);color:#e0c0ff;padding:8px 22px;border-radius:20px;font-size:13px;font-weight:600;transition:all .25s;position:relative;overflow:hidden;box-shadow:0 2px 12px rgba(140,60,240,.1),inset 0 1px 0 rgba(255,255,255,.06);}
 .btn-signup::before{content:'';position:absolute;top:0;left:0;right:0;height:50%;background:linear-gradient(180deg,rgba(255,255,255,.06),transparent);pointer-events:none;border-radius:20px 20px 0 0;}
@@ -197,6 +197,26 @@ box-shadow:0 0 0 1px rgba(255,255,255,.45),inset 0 1px 0 rgba(255,255,255,.45),i
 .cookie-actions{display:flex;gap:10px;flex-shrink:0;}
 .cookie-actions button{cursor:pointer;min-width:170px;}
 @media(max-width:700px){.cookie-banner{flex-direction:column;align-items:stretch;gap:14px;}.cookie-actions{flex-direction:column;}.cookie-actions button{width:100%;}}
+/* Burger menu */
+.nav-burger{display:none;width:44px;height:44px;border-radius:12px;border:1px solid rgba(180,140,255,.25);background:rgba(30,18,60,.7);cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:0;margin-left:10px;}
+.nav-burger span{display:block;width:20px;height:2px;border-radius:2px;background:#e8dcff;transition:transform .25s,opacity .2s;}
+.nav-burger:focus-visible{outline:2px solid #ffb86b;outline-offset:2px;}
+.nav.open .nav-burger span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav.open .nav-burger span:nth-child(2){opacity:0;}
+.nav.open .nav-burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.nav-right{display:flex;align-items:center;}
+@media(max-width:768px){
+ .nav{flex-wrap:nowrap!important;padding:10px 16px!important;gap:10px;}
+ .nav-burger{display:flex;}
+ .nav-links{display:none!important;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0!important;width:auto!important;overflow:visible!important;white-space:normal!important;padding:8px 20px 20px!important;background:rgba(14,8,30,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(180,140,255,.18);box-shadow:0 20px 40px rgba(0,0,0,.5);z-index:200;}
+ .nav.open .nav-links{display:flex!important;animation:navDrop .22s ease-out;}
+ .nav-links a{padding:15px 4px;font-size:17px!important;color:#e8dcff!important;border-bottom:1px solid rgba(180,140,255,.12);}
+ .nav-links a:last-child{border-bottom:none;}
+ .nav-logo .logo-text,.nav-brand,.logo-t{font-size:16px;}
+}
+@keyframes navDrop{from{opacity:0;transform:translateY(-8px);}to{opacity:1;transform:none;}}
+@media (prefers-reduced-motion:reduce){.nav.open .nav-links{animation:none;}.nav-burger span{transition:none;}}
+@media(max-width:768px){html,body{overflow-x:hidden;}.hero-buttons{flex-wrap:wrap;}.btn-primary,.btn-secondary,.btn-cta,.cta-btn{max-width:100%;white-space:normal;text-align:center;}}
 </style>
 </head>
 <body>
@@ -206,7 +226,7 @@ box-shadow:0 0 0 1px rgba(255,255,255,.45),inset 0 1px 0 rgba(255,255,255,.45),i
     <div class="nav-mark">BF</div>
     <div class="logo-text">BF Casino</div>
   </a>
-  <div class="nav-links">
+  <div class="nav-links" id="nav-links">
     <a href="/slotoro-site/">Heim</a>
     <a href="/slotoro-site/entertainment/">Afþreying</a>
     <a href="/slotoro-site/casino/">Spilavíti</a>
@@ -216,7 +236,7 @@ box-shadow:0 0 0 1px rgba(255,255,255,.45),inset 0 1px 0 rgba(255,255,255,.45),i
     <a href="/slotoro-site/gajdy/">Leiðbeiningar</a>
   </div>
   <div class="nav-actions">
-    <a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="btn-signup">Nýskráning</a>
+    <a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="btn-signup">Nýskráning</a><button class="nav-burger" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Opna valmynd"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="breadcrumbs"><a href="/slotoro-site/">Heim</a> → <a href="/slotoro-site/casino/">Spilavíti</a> → <a href="">LongshipSlots</a></div>
@@ -314,5 +334,6 @@ box-shadow:0 0 0 1px rgba(255,255,255,.45),inset 0 1px 0 rgba(255,255,255,.45),i
 <div class="cookie-actions"><button type="button" class="btn-signup" data-consent="necessary">Aðeins nauðsynlegar</button><button type="button" class="btn-signup" data-consent="all">Samþykkja allar</button></div>
 </div>
 <script>(function(){var b=document.getElementById('cookie-banner');if(!b)return;var v=null;try{v=localStorage.getItem('bf_cookie_consent');}catch(e){}if(!v)b.hidden=false;b.querySelectorAll('[data-consent]').forEach(function(btn){btn.addEventListener('click',function(){try{localStorage.setItem('bf_cookie_consent',btn.getAttribute('data-consent'));}catch(e){}b.hidden=true;});});document.querySelectorAll('[data-cookie-settings]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();b.hidden=false;});});})();</script>
+<script>(function(){var n=document.querySelector('.nav');if(!n)return;var b=n.querySelector('.nav-burger');if(!b)return;function set(o){n.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');b.setAttribute('aria-label',o?'Loka valmynd':'Opna valmynd');}b.addEventListener('click',function(){set(!n.classList.contains('open'));});n.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){set(false);});});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});document.addEventListener('click',function(e){if(!n.contains(e.target))set(false);});})();</script>
 </body>
 </html>
