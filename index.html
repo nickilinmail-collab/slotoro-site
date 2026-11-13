@@ -28,6 +28,14 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-s
 .snav-item:hover{color:var(--text);background:var(--accent-bg);}
 .snav-item.active{color:var(--accent);background:var(--accent-bg);border-left-color:var(--accent);font-weight:600;}
 .snav-icon{font-size:18px;width:24px;text-align:center;}
+.snav-count{margin-left:auto;background:rgba(77,217,180,.12);color:var(--accent);font-size:10px;padding:2px 8px;border-radius:10px;font-weight:600;}
+.snav-arrow{font-size:10px;margin-left:4px;transition:transform .2s;color:var(--muted);}
+.snav-section.open .snav-arrow{transform:rotate(180deg);}
+.snav-section.open>.snav-item{color:var(--accent);background:var(--accent-bg);border-left-color:var(--accent);}
+.snav-sub{display:none;padding:4px 0 8px 40px;border-left:2px solid var(--border);margin-left:20px;}
+.snav-section.open .snav-sub{display:block;}
+.snav-sub a{display:block;padding:6px 0;font-size:12px;color:var(--muted);transition:color .15s;}
+.snav-sub a:hover{color:var(--accent);}
 
 .sidebar-games{padding:12px;border-top:1px solid var(--border);margin-top:auto;}
 .sg-label{font-size:10px;font-weight:600;letter-spacing:1.5px;color:var(--muted2);margin-bottom:10px;padding-left:4px;}
@@ -196,18 +204,101 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-s
 <!-- SIDEBAR -->
 <aside class="sidebar">
   <div class="sidebar-logo"><span class="ice">❄</span><span>FROSTSPIL</span></div>
-  
+
   <div class="sidebar-bonus">
     <div class="sb-icon">🎁</div>
-    <div><div class="sb-text">Welcome package</div><div class="sb-offer">WELCOME PACKAGE UP TO 5 BTC + 200 FREE SPINS</div></div>
+    <div><div class="sb-text">Welcome package</div><div class="sb-offer">UP TO 5 BTC + 200 FREE SPINS</div></div>
   </div>
 
   <nav class="sidebar-nav">
-    <a href="#top" class="snav-item active"><span class="snav-icon">🏠</span> Home</a>
-    <a href="#games" class="snav-item"><span class="snav-icon">🎰</span> Casino Games</a>
-    <a href="#live" class="snav-item"><span class="snav-icon">📺</span> Live Casino</a>
-    <a href="#promotions" class="snav-item"><span class="snav-icon">🎁</span> Promotions</a>
-    <a href="#payments" class="snav-item"><span class="snav-icon">💳</span> Payments</a>
+    <a href="/slotoro-site/" class="snav-item active"><span class="snav-icon">🏠</span> Home</a>
+
+    <div class="snav-section">
+      <div class="snav-item" onclick="this.parentElement.classList.toggle('open')"><span class="snav-icon">🎰</span> Casino Games <span class="snav-count">150</span><span class="snav-arrow">▾</span></div>
+      <div class="snav-sub">
+        <a href="/slotoro-site/casino/">All Casino Reviews</a>
+        <a href="/slotoro-site/casino/luchshie-online-casino/">Best Casinos Iceland</a>
+        <a href="/slotoro-site/casino/crypto-casino/">Crypto Casinos</a>
+        <a href="/slotoro-site/casino/novye-casino/">New Casinos 2026</a>
+        <a href="/slotoro-site/casino/casino-s-bystrym-vyvodom/">Fast Payout Casinos</a>
+        <a href="/slotoro-site/casino/casino-bez-verifikacii/">No KYC Casinos</a>
+        <a href="/slotoro-site/casino/bitcoin-casino/">Bitcoin Casinos</a>
+        <a href="/slotoro-site/casino/live-casino/">Live Casinos</a>
+        <a href="/slotoro-site/casino/mobilnoe-casino/">Mobile Casinos</a>
+        <a href="/slotoro-site/casino/vip-casino/">VIP Casinos</a>
+      </div>
+    </div>
+
+    <div class="snav-section">
+      <div class="snav-item" onclick="this.parentElement.classList.toggle('open')"><span class="snav-icon">🎲</span> Slots <span class="snav-count">250</span><span class="snav-arrow">▾</span></div>
+      <div class="snav-sub">
+        <a href="/slotoro-site/slots/">All Slot Reviews</a>
+        <a href="/slotoro-site/slots/gates-of-olympus/">Gates of Olympus</a>
+        <a href="/slotoro-site/slots/sweet-bonanza/">Sweet Bonanza</a>
+        <a href="/slotoro-site/slots/big-bass-splash/">Big Bass Splash</a>
+        <a href="/slotoro-site/slots/book-of-dead/">Book of Dead</a>
+        <a href="/slotoro-site/slots/starburst/">Starburst</a>
+        <a href="/slotoro-site/slots/dead-or-alive-2/">Dead or Alive 2</a>
+        <a href="/slotoro-site/slots/money-train-3/">Money Train 3</a>
+        <a href="/slotoro-site/slots/razor-shark/">Razor Shark</a>
+        <a href="/slotoro-site/slots/wolf-gold/">Wolf Gold</a>
+      </div>
+    </div>
+
+    <div class="snav-section">
+      <div class="snav-item" onclick="this.parentElement.classList.toggle('open')"><span class="snav-icon">📺</span> Live Casino <span class="snav-count">50</span><span class="snav-arrow">▾</span></div>
+      <div class="snav-sub">
+        <a href="/slotoro-site/live/">All Live Games</a>
+        <a href="/slotoro-site/live/blackjack/">Blackjack</a>
+        <a href="/slotoro-site/live/roulette/">Roulette</a>
+        <a href="/slotoro-site/live/baccarat/">Baccarat</a>
+        <a href="/slotoro-site/live/crazy-time/">Crazy Time</a>
+        <a href="/slotoro-site/live/lightning-roulette/">Lightning Roulette</a>
+        <a href="/slotoro-site/live/monopoly-live/">Monopoly Live</a>
+      </div>
+    </div>
+
+    <div class="snav-section">
+      <div class="snav-item" onclick="this.parentElement.classList.toggle('open')"><span class="snav-icon">🎁</span> Bonuses <span class="snav-count">80</span><span class="snav-arrow">▾</span></div>
+      <div class="snav-sub">
+        <a href="/slotoro-site/bonusy/">All Bonuses</a>
+        <a href="/slotoro-site/bonusy/velkomstbonus/">Welcome Bonus</a>
+        <a href="/slotoro-site/bonusy/frispiny-bez-depozita/">Free Spins No Deposit</a>
+        <a href="/slotoro-site/bonusy/bezdepozitnye-bonusy/">No Deposit Bonus</a>
+        <a href="/slotoro-site/bonusy/keshbek/">Cashback</a>
+        <a href="/slotoro-site/bonusy/bonus-kody/">Promo Codes</a>
+        <a href="/slotoro-site/bonusy/reload-bonus/">Reload Bonus</a>
+      </div>
+    </div>
+
+    <div class="snav-section">
+      <div class="snav-item" onclick="this.parentElement.classList.toggle('open')"><span class="snav-icon">💳</span> Payments <span class="snav-count">50</span><span class="snav-arrow">▾</span></div>
+      <div class="snav-sub">
+        <a href="/slotoro-site/platezhi/">All Payment Methods</a>
+        <a href="/slotoro-site/platezhi/bitcoin/">Bitcoin</a>
+        <a href="/slotoro-site/platezhi/ethereum/">Ethereum</a>
+        <a href="/slotoro-site/platezhi/usdt/">USDT</a>
+        <a href="/slotoro-site/platezhi/litecoin/">Litecoin</a>
+        <a href="/slotoro-site/platezhi/obhod-blokirovok-bankov/">Bank Block Bypass</a>
+        <a href="/slotoro-site/platezhi/kripto-koshelki/">Crypto Wallets</a>
+        <a href="/slotoro-site/platezhi/vpn-casino/">VPN Guide</a>
+      </div>
+    </div>
+
+    <div class="snav-section">
+      <div class="snav-item" onclick="this.parentElement.classList.toggle('open')"><span class="snav-icon">📖</span> Guides <span class="snav-count">60</span><span class="snav-arrow">▾</span></div>
+      <div class="snav-sub">
+        <a href="/slotoro-site/gajdy/">All Guides</a>
+        <a href="/slotoro-site/gajdy/kak-vybrat-casino/">How to Choose Casino</a>
+        <a href="/slotoro-site/gajdy/chto-takoe-rtp/">What is RTP</a>
+        <a href="/slotoro-site/gajdy/chto-takoe-volatilnost/">Volatility Explained</a>
+        <a href="/slotoro-site/gajdy/strategii-blackjack/">Blackjack Strategy</a>
+        <a href="/slotoro-site/gajdy/pravila-ruletki/">Roulette Rules</a>
+        <a href="/slotoro-site/gajdy/zakon-ob-azartnyh-igrah-islandiya/">Iceland Gambling Law</a>
+        <a href="/slotoro-site/gajdy/otvetstvennaya-igra/">Responsible Gambling</a>
+      </div>
+    </div>
+
     <a href="#faq" class="snav-item"><span class="snav-icon">❓</span> FAQ</a>
   </nav>
 
@@ -215,12 +306,17 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-s
     <div class="sg-label">POPULAR GAMES</div>
     <a href="/slotoro-site/slots/gates-of-olympus/" class="sg-item">
       <div class="sg-thumb"><div style="background:linear-gradient(135deg,#3a1a8a,#5a30c0);">GoO</div></div>
-      <div class="sg-info"><div class="sg-name">Gates of Olympu...</div><div class="sg-provider">Pragmatic Play</div></div>
+      <div class="sg-info"><div class="sg-name">Gates of Olympus</div><div class="sg-provider">Pragmatic Play</div></div>
       <div class="sg-play">▶</div>
     </a>
     <a href="/slotoro-site/slots/sweet-bonanza/" class="sg-item">
       <div class="sg-thumb"><div style="background:linear-gradient(135deg,#d03070,#e05090);">SB</div></div>
       <div class="sg-info"><div class="sg-name">Sweet Bonanza</div><div class="sg-provider">Pragmatic Play</div></div>
+      <div class="sg-play">▶</div>
+    </a>
+    <a href="/slotoro-site/slots/big-bass-splash/" class="sg-item">
+      <div class="sg-thumb"><div style="background:linear-gradient(135deg,#063060,#0870b0);">BB</div></div>
+      <div class="sg-info"><div class="sg-name">Big Bass Splash</div><div class="sg-provider">Pragmatic Play</div></div>
       <div class="sg-play">▶</div>
     </a>
   </div>
@@ -378,9 +474,9 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-s
         <div style="font-size:18px;font-weight:800;display:flex;align-items:center;gap:6px;"><span style="color:var(--accent);">❄</span> Frostspil</div>
         <p>Frostspil is Iceland's independent online casino. We offer 3000+ games, instant crypto payouts, and 24/7 support.</p>
       </div>
-      <div class="footer-col"><h4>CASINO</h4><a href="#games">Casino Games</a><a href="#live">Live Casino</a><a href="#promotions">Promotions</a><a href="/slotoro-site/slots/">All Slots</a></div>
-      <div class="footer-col"><h4>ACCOUNT</h4><a href="#">Registration</a><a href="#">Login</a><a href="#payments">Payments</a><a href="#">Mobile App</a></div>
-      <div class="footer-col"><h4>HELP</h4><a href="#faq">FAQ</a><a href="#about">About</a><a href="#">Responsible Gambling</a><a href="#">Privacy Policy</a></div>
+      <div class="footer-col"><h4>CASINO</h4><a href="/slotoro-site/casino/">Best Casinos Iceland</a><a href="/slotoro-site/casino/">Casino Reviews A-Z</a><a href="/slotoro-site/casino/crypto-casino/">Crypto Casinos</a><a href="/slotoro-site/casino/novye-casino/">New Casinos 2026</a><a href="/slotoro-site/casino/casino-s-bystrym-vyvodom/">Fast Payout</a><a href="/slotoro-site/casino/casino-bez-depozita/">No Deposit</a><a href="/slotoro-site/casino/mobilnoe-casino/">Mobile Casinos</a></div>
+      <div class="footer-col"><h4>GAME GUIDES</h4><a href="/slotoro-site/slots/">Slot Reviews</a><a href="/slotoro-site/live/">Live Casino</a><a href="/slotoro-site/gajdy/chto-takoe-rtp/">RTP Explained</a><a href="/slotoro-site/bonusy/vejer/">Wagering Requirements</a><a href="/slotoro-site/gajdy/strategii-blackjack/">Blackjack Strategy</a><a href="/slotoro-site/gajdy/pravila-ruletki/">Roulette Guide</a></div>
+      <div class="footer-col"><h4>ABOUT</h4><a href="/slotoro-site/o-nas/">About Frostspil</a><a href="/slotoro-site/kak-my-ocenivaem/">How We Review</a><a href="/slotoro-site/gajdy/zakon-ob-azartnyh-igrah-islandiya/">Iceland Gambling Law</a><a href="/slotoro-site/gajdy/otvetstvennaya-igra/">Responsible Gambling</a><a href="/slotoro-site/kontakty/">Contact</a><a href="/slotoro-site/konfidencialnost/">Privacy Policy</a><a href="/slotoro-site/usloviya/">Terms of Use</a></div>
     </div>
     <div class="footer-18">
       <div class="badge">18+</div>
