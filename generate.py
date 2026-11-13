@@ -526,7 +526,7 @@ def get_footer():
 </footer>'''
 
 def page_template(title, desc, breadcrumbs, content, canonical="", og_img=""):
-    bc_html = ' → '.join([f'<a href="{url}">{name}</a>' for url, name in breadcrumbs])
+    bc_html = ' → '.join([f'<a href="{url.replace("{URL_BASE}", URL_BASE)}">{name}</a>' for url, name in breadcrumbs])
     site_url = "https://bestiflokkurinn.is"
     og_image = og_img if og_img else f"{site_url}/img/og-default.jpg"
     return f'''<!DOCTYPE html>
@@ -689,7 +689,11 @@ body::after{{content:'';position:fixed;bottom:-200px;left:-10%;width:600px;heigh
 <a href="{URL_BASE}gajdy/kak-vybrat-casino/">Hvernig á að velja spilavíti</a>
 <a href="{URL_BASE}gajdy/chto-takoe-rtp/">Hvað er RTP?</a>
 <a href="{URL_BASE}gajdy/chto-takoe-volatilnost/">Hvað er sveifla?</a>
-<a href="{URL_BASE}platezhi/bitcoin/">Bitcoin greiðslur</a>
+<a href="{URL_BASE}gajdy/framhja-bankalokun/">Framhjá bankalokun</a>
+<a href="{URL_BASE}gajdy/kaupa-bitcoin-island/">Kaupa Bitcoin á Íslandi</a>
+<a href="{URL_BASE}gajdy/besta-crypto-spilaviti-island/">Besta crypto spilavítið</a>
+<a href="{URL_BASE}gajdy/spilaviti-samanburdur/">Spilavíti samanburður</a>
+<a href="{URL_BASE}gajdy/frisnuningar-an-innborgunar/">Frísnúningar án innborgunar</a>
 </div>
 <div class="sidebar-card">
 <h4>🎰 Vinsælir spilakassar</h4>
@@ -920,7 +924,370 @@ for a in about_pages:
     html = page_template(a["title"], a["desc"], bc, content)
     write_page(f'{a["slug"]}/index.html', html)
 
-# 9. ИНДЕКСНЫЕ СТРАНИЦЫ РАЗДЕЛОВ
+# 9. SEO ЦЕЛЕВЫЕ СТРАНИЦЫ (10 новых под низкоконкурентные запросы)
+print("Generating SEO target pages...")
+
+seo_pages = [
+    {
+        "slug": "kaupa-bitcoin-island",
+        "title": "Hvernig á að kaupa Bitcoin á Íslandi fyrir spilavíti",
+        "desc": "Skref-fyrir-skref leiðbeiningar um kaup á Bitcoin frá Íslandi til að leggja inn á netspilavíti. Coinbase, Binance og fleiri.",
+        "emoji": "₿",
+        "colors": ("#081828", "#103060", "#2060a0"),
+        "content": f'''<h1>Hvernig á að kaupa Bitcoin á Íslandi fyrir spilavíti 2026</h1>
+{{hero}}
+<p>Íslenskir bankar loka oft á greiðslur til erlendra spilavíta. <strong>Bitcoin</strong> og aðrir dulritunargjaldmiðlar eru áreiðanlegasta leiðin til að leggja inn á netspilavíti frá Íslandi. Hér er nákvæm leiðbeining.</p>
+
+<h2>Skref 1 — Veldu kauphöll</h2>
+<div class="info-box">
+<p><strong>Coinbase</strong> — Auðvelt viðmót, tekur við íslenskum kortum (Visa/Mastercard). Staðfesting tekur 5-10 mínútur.</p>
+<p><strong>Binance</strong> — Lægri gjöld, meira úrval dulritunargjaldmiðla. Tekur við bankamillifærslu (SEPA).</p>
+<p><strong>Kraken</strong> — Evrópsk kauphöll með góðum öryggisráðstöfunum. SEPA millifærsla á 1-2 dögum.</p>
+</div>
+
+<h2>Skref 2 — Keyptu Bitcoin (BTC) eða USDT</h2>
+<p>Við mælum með <strong>USDT (Tether)</strong> frekar en Bitcoin fyrir spilavítainnlagnir af tveimur ástæðum:</p>
+<ul>
+<li>✅ USDT er stöðugt (1 USDT = ~1 USD) — engin sveiflur á meðan þú spilar</li>
+<li>✅ Lægri færslugjöld á TRC-20 netinu (undir $1)</li>
+<li>✅ Tafarlausar millifærslur (undir 1 mínúta)</li>
+</ul>
+
+<h2>Skref 3 — Sendu á spilavítið</h2>
+<ol>
+<li>Skráðu þig á spilavíti (t.d. <a href="{URL_BASE}casino/bitstarz/">BitStarz</a> eða <a href="{URL_BASE}casino/stake/">Stake</a>)</li>
+<li>Farðu í "Innborgun" og veldu Bitcoin eða USDT</li>
+<li>Afritaðu veskisáfangastaðinn (wallet address)</li>
+<li>Farðu aftur í kauphöllina og sendu fjármunina á þetta heimilisfang</li>
+<li>Bíddu 1-10 mínútur — innborgunin birtist á spilavítareikningnum þínum</li>
+</ol>
+
+<h2>Bestu spilavítin fyrir Bitcoin á Íslandi</h2>
+<div class="info-box"><p><strong><a href="{URL_BASE}casino/bitstarz/">BitStarz</a></strong> — 5 BTC + 200 FS | Tafarlausar BTC útborganir</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}casino/stake/">Stake</a></strong> — 200% bónus | Styður 8+ dulritunargjaldmiðla</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}casino/bc-game/">BC.Game</a></strong> — 300% allt að 1 BTC | 100+ dulritunargjaldmiðlar</p></div>
+
+<h2>Algengar spurningar</h2>
+<h3>Er löglegt að kaupa Bitcoin á Íslandi?</h3>
+<p>Já. Engin lög á Íslandi banna kaup á dulritunargjaldmiðlum. <a href="{URL_BASE}gajdy/zakon-ob-azartnyh-igrah-islandiya/">Lestu lagaleiðbeininguna okkar →</a></p>
+<h3>Hversu langan tíma tekur innborgun?</h3>
+<p>Bitcoin: 10-30 mínútur. USDT (TRC-20): 1-5 mínútur. Ethereum: 2-10 mínútur.</p>
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Spila með Bitcoin →</a></div>'''
+    },
+    {
+        "slug": "islenskir-bankar-spilaviti",
+        "title": "Íslenskir bankar og spilavíti — hvaða banki lokar á greiðslur?",
+        "desc": "Arion banki, Landsbankinn og Íslandsbanki loka oft á greiðslur til netspilavíta. Hér er hvað þú getur gert.",
+        "emoji": "🏦",
+        "colors": ("#0a1828", "#183050", "#305880"),
+        "content": f'''<h1>Íslenskir bankar og spilavíti — hvaða banki lokar á greiðslur?</h1>
+{{hero}}
+<p>Eitt stærsta vandamálið fyrir íslenska spilavítaspilara er að <strong>íslenskir bankar hafna oft greiðslum</strong> til erlendra netspilavíta. Þetta er ekki byggt á lögum — heldur innri stefnu bankanna sjálfra.</p>
+
+<h2>Staða stóru bankanna</h2>
+<p>Engin lög banna þessar greiðslur — höfnunin byggir á ákvörðunum bankanna sjálfra og getur breyst án fyrirvara.</p>
+<div class="info-box">
+<p><strong>Arion banki</strong> — Getur hafnað kortagreiðslum til erlendra spilavíta samkvæmt innri stefnu.</p>
+</div>
+<div class="info-box">
+<p><strong>Landsbankinn</strong> — Sama staða: sumar kortagreiðslur fara í gegn, aðrar ekki.</p>
+</div>
+<div class="info-box">
+<p><strong>Íslandsbanki</strong> — Kortaviðskipti virka stundum, stundum ekki.</p>
+</div>
+
+<h2>Lausnir sem virka</h2>
+<h3>1. Dulritunargjaldmiðlar (besta lausnin)</h3>
+<p>Bitcoin, USDT og Ethereum fara beint á blokkkeðjunni — <strong>bankarnir geta ekki lokað á þessar greiðslur</strong>. <a href="{URL_BASE}gajdy/kaupa-bitcoin-island/">Hvernig á að kaupa Bitcoin á Íslandi →</a></p>
+
+<h3>2. Rafræn veski (e-wallets)</h3>
+<p><strong>Skrill</strong> og <strong>Neteller</strong> virka sem milliliður — þú millifærir af bankareikningi á veskið, síðan frá veskinu á spilavítið.</p>
+
+<h3>3. PIQ greiðslur</h3>
+<p><a href="{URL_BASE}gajdy/piq-greidslur-island/">PIQ</a> er greiðsluþjónusta sem er sérstaklega hönnuð fyrir Ísland og Noreg. Epicbet og Respin styðja PIQ.</p>
+
+<h3>4. Fyrirframgreidd kort</h3>
+<p><strong>Paysafecard</strong> og <strong>Neosurf</strong> eru fyrirframgreidd kort sem þú kaupir í verslun. Enginn banki kemur við sögu.</p>
+
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Spila með dulritunargjaldmiðlum →</a></div>'''
+    },
+    {
+        "slug": "skattar-spilavinningar-island",
+        "title": "Skattar á spilavinninga á Íslandi 2026",
+        "desc": "Eru vinningar frá netspilavítum skattskyldir á Íslandi? Hvað þú þarft að vita og hvernig á að halda skrá.",
+        "emoji": "⚖️",
+        "colors": ("#101028", "#282860", "#484890"),
+        "content": f'''<h1>Skattar á spilavinninga á Íslandi 2026</h1>
+{{hero}}
+<p>Einn algengasti spurningin frá íslenskum spilurum: <strong>þarf ég að borga skatta af vinningum frá erlendum netspilavítum?</strong></p>
+
+<h2>Stutta svarið</h2>
+<p>Vinningar frá erlendum netspilavítum teljast <strong>almennt til skattskyldra tekna</strong> á Íslandi og sæta ekki staðgreiðslu. Það þýðir að það er á þína ábyrgð að gera grein fyrir þeim á skattframtali.</p>
+
+<h2>Hvað þarf að hafa í huga?</h2>
+<div class="info-box">
+<p><strong>⚠️ Erlend spilavíti draga ekki skatt frá.</strong> Ólíkt launum er enginn skattur tekinn af vinningnum áður en hann er greiddur út.</p>
+</div>
+<div class="info-box">
+<p><strong>⚠️ Dulritunargjaldmiðlar:</strong> Ef verðgildi Bitcoin hækkar á meðan þú átt hann getur sá hagnaður líka verið skattskyldur þegar þú selur.</p>
+</div>
+
+<h2>Ráðleggingar</h2>
+<ol>
+<li>Haltu skrá yfir allar innlagnir og úttektir</li>
+<li>Geymdu yfirlit frá spilavítinu og kauphöllinni</li>
+<li>Hafðu samband við Skattinn (skatturinn.is) eða endurskoðanda ef þú ert í vafa</li>
+</ol>
+
+<p><em>Þessi síða er ekki skattaleg ráðgjöf. Ráðfærðu þig við fagaðila.</em></p>'''
+    },
+    {
+        "slug": "spilaviti-isk-kronur",
+        "title": "Spilavíti sem taka við ISK — Íslenskum krónum",
+        "desc": "Spilavíti sem styðja íslenskar krónur (ISK) beint. Forðastu gjaldmiðlaskiptagjöld.",
+        "emoji": "💰",
+        "colors": ("#102008", "#205018", "#408030"),
+        "content": f'''<h1>Spilavíti sem taka við ISK — Íslenskum krónum 2026</h1>
+{{hero}}
+<p>Flest netspilavíti nota evrur (EUR) sem grunngjaldmiðil, sem þýðir gjaldmiðlaskiptagjöld fyrir íslenska spilara. Hér eru kostirnir:</p>
+
+<h2>Staðan: ISK stuðningur er sjaldgæfur</h2>
+<p>Fá alþjóðleg spilavíti bjóða ISK sem reikningsgjaldmiðil. Óháðar prófanir árið 2026 sýndu íslenskar krónur hjá <strong>BC.Game</strong> og <strong>Megapari</strong> þegar þau voru opnuð frá Íslandi. Annars eru þetta kostirnir:</p>
+
+<div class="info-box">
+<p><strong>🥇 Dulritunargjaldmiðlar (USDT)</strong> — Ekki ISK, en komast framhjá öllum gjaldmiðlaskiptagjöldum. 1 USDT = ~1 USD alltaf.</p>
+</div>
+<div class="info-box">
+<p><strong>🥈 EUR reikningur</strong> — Flest spilavíti styðja EUR. Bankinn þinn skiptir ISK í EUR sjálfkrafa (lítil þóknun ~1-2%).</p>
+</div>
+<div class="info-box">
+<p><strong>🥉 PIQ greiðslur</strong> — Sérstaklega hannað fyrir Ísland. <a href="{URL_BASE}casino/epicbet/">Epicbet</a> og <a href="{URL_BASE}casino/respin/">Respin</a> styðja PIQ.</p>
+</div>
+
+<h2>Bestu spilavítin fyrir íslenska spilara</h2>
+<div class="info-box"><p><strong><a href="{URL_BASE}casino/bitstarz/">BitStarz</a></strong> — Dulritunarspilavíti, engin gjaldmiðlaskiptagjöld</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}casino/epicbet/">Epicbet</a></strong> — PIQ greiðslur, íslenskt viðmót</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}casino/stake/">Stake</a></strong> — USDT innlagnir, engin gjöld</p></div>
+
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Spila án gjaldmiðlaskiptagjalda →</a></div>'''
+    },
+    {
+        "slug": "spilaviti-islenskt-vidmot",
+        "title": "Spilavíti með íslensku viðmóti 2026",
+        "desc": "Netspilavíti sem bjóða viðmót á íslensku — þjónustuveri, leikir og skilmálar á íslensku.",
+        "emoji": "🇮🇸",
+        "colors": ("#001040", "#003090", "#0050d0"),
+        "content": f'''<h1>Spilavíti með íslensku viðmóti 2026</h1>
+{{hero}}
+<p>Flest netspilavíti eru á ensku, en nokkur bjóða <strong>íslenskt viðmót</strong> og þjónustuver á íslensku:</p>
+
+<div class="info-box">
+<p><strong>✅ Epicbet</strong> — Fullt íslenskt viðmót, Apple Pay greiðslur, PIQ stuðningur. <a href="{URL_BASE}casino/epicbet/">Umsögn →</a></p>
+</div>
+<div class="info-box">
+<p><strong>✅ Respin</strong> — Íslenskt viðmót, PIQ greiðslur, 4000+ leikir. <a href="{URL_BASE}casino/respin/">Umsögn →</a></p>
+</div>
+<div class="info-box">
+<p><strong>✅ Betsson</strong> — Eitt af fáum stórum spilavítum með íslenskt viðmót.</p>
+</div>
+<div class="info-box">
+<p><strong>✅ TonyBet</strong> — Lifandi spilavíti á íslensku, leyfi í Eistlandi (innan EES). <a href="{URL_BASE}casino/tonybet/">Umsögn →</a></p>
+</div>
+
+<h2>Af hverju skiptir tungumálið máli?</h2>
+<ul>
+<li>Skilmálar og bónusreglur á íslensku — enginn misskilningur</li>
+<li>Þjónustuver á íslensku — fljótlegri aðstoð</li>
+<li>Greiðsluleiðir sérstaklega fyrir Ísland (PIQ)</li>
+</ul>
+
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Spila á íslensku →</a></div>'''
+    },
+    {
+        "slug": "piq-greidslur-island",
+        "title": "PIQ greiðslur á Íslandi — hvað er PIQ og hvernig virkar það?",
+        "desc": "PIQ er greiðsluþjónusta sérstaklega hönnuð fyrir Ísland og Noreg. Hvernig á að nota PIQ á netspilavítum.",
+        "emoji": "💳",
+        "colors": ("#081828", "#103060", "#2060a0"),
+        "content": f'''<h1>PIQ greiðslur á Íslandi — hvað er PIQ?</h1>
+{{hero}}
+<p><strong>PIQ</strong> er greiðsluþjónusta sem er sérstaklega hönnuð fyrir spilara á Íslandi og í Noregi. Hún veitir sérstaka greiðslubraut sem gæti reynst áreiðanlegri en hefðbundin Visa/Mastercard vinnsla í gegnum íslenska banka.</p>
+
+<h2>Hvernig virkar PIQ?</h2>
+<ol>
+<li>Veldu PIQ sem greiðslumáta á spilavítinu</li>
+<li>Sláðu inn upphæð og kortaupplýsingar</li>
+<li>PIQ sér um greiðsluvinnsluna í stað hefðbundinnar kortavinnslu</li>
+<li>Staðfestu innborgunina í bankaappinu ef beðið er um það</li>
+</ol>
+
+<h2>Spilavíti sem styðja PIQ á Íslandi</h2>
+<div class="info-box"><p><strong><a href="{URL_BASE}casino/epicbet/">Epicbet</a></strong> — PIQ + Apple Pay + íslenskt viðmót</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}casino/respin/">Respin</a></strong> — PIQ + íslenskt viðmót + 4000 leikir</p></div>
+
+<h2>Kostir PIQ</h2>
+<ul>
+<li>✅ Meiri líkur á að greiðslan fari í gegnum íslenskan banka</li>
+<li>✅ Hraðar innborganir</li>
+<li>✅ Sérhannað fyrir Ísland og Noreg</li>
+</ul>
+<h2>Gallar PIQ</h2>
+<ul>
+<li>⚠️ Ekki 100% tryggt — bankar geta enn hafnað</li>
+<li>⚠️ Aðeins fáein spilavíti styðja PIQ enn sem komið er</li>
+</ul>
+<p>Ef PIQ virkar ekki, er <a href="{URL_BASE}gajdy/kaupa-bitcoin-island/">dulritunargjaldmiðill besta lausnin →</a></p>'''
+    },
+    {
+        "slug": "frisnuningar-an-innborgunar",
+        "title": "Frísnúningar án innborgunar á Íslandi 2026",
+        "desc": "Nýjustu frísnúningatilboð án innborgunar fyrir íslenska spilara. Skráðu þig og fáðu ókeypis snúninga.",
+        "emoji": "🎰",
+        "colors": ("#280840", "#5020a0", "#8040e0"),
+        "content": f'''<h1>Frísnúningar án innborgunar á Íslandi 2026</h1>
+{{hero}}
+<p>Frísnúningar án innborgunar leyfa þér að <strong>prófa spilavíti ókeypis</strong> — engin innborgun þarf. Hér eru bestu tilboðin:</p>
+
+<h2>Tilboð sem vert er að skoða</h2>
+<p><em>Tilboð breytast oft — staðfestu alltaf skilmálana á síðu spilavítisins áður en þú skráir þig.</em></p>
+<div class="info-box">
+<p><strong>🎁 BitStarz</strong> — Velkomstpakki allt að 5 BTC + 200 frísnúningar. Athugaðu síðuna fyrir núverandi tilboð án innborgunar.</p>
+<p><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener">Sækja frísnúninga →</a></p>
+</div>
+<div class="info-box">
+<p><strong>🎁 Winz.io</strong> — 300 frísnúningar (án veðskilyrða!) — vinninga geymdir sem peningar</p>
+<p><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener">Sækja frísnúninga →</a></p>
+</div>
+
+<h2>Hvernig virka frísnúningar án innborgunar?</h2>
+<ol>
+<li>Skráðu þig á spilavítið (tekur 30 sekúndur)</li>
+<li>Frísnúningar birtast sjálfkrafa á reikningnum þínum</li>
+<li>Spilaðu og reyndu að vinna!</li>
+<li>Uppfylltu veðskilyrði til að taka vinninga út</li>
+</ol>
+
+<h2>Veðskilyrði — hvað þýðir 30x?</h2>
+<p>Ef þú vinnur €10 úr frísnúningum og veðskilyrði eru 30x, þarftu að veðja €300 áður en þú getur tekið út. <a href="{URL_BASE}gajdy/vejer/">Lestu meira um veðskilyrði →</a></p>
+
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Fá frísnúninga →</a></div>'''
+    },
+    {
+        "slug": "spilaviti-samanburdur",
+        "title": "Spilavíti samanburður — bestu netspilavítin á Íslandi 2026",
+        "desc": "Berðu saman netspilavíti hlið við hlið: bónusar, útborgunarhraði, leikjafjöldi og dulritunargjaldmiðlar.",
+        "emoji": "📊",
+        "colors": ("#100828", "#281860", "#4830a0"),
+        "content": f'''<h1>Spilavíti samanburður — Ísland 2026</h1>
+{{hero}}
+<p>Berðu saman bestu netspilavítin fyrir íslenska spilara hlið við hlið:</p>
+
+<div class="info-box" style="overflow-x:auto;">
+<table style="width:100%;border-collapse:collapse;font-size:13px;color:var(--muted);">
+<tr style="border-bottom:1px solid var(--border);color:#fff;"><th style="padding:10px;text-align:left;">Spilavíti</th><th>Bónus</th><th>Leikir</th><th>Útborgun</th><th>Dulritun</th><th>Einkunn</th></tr>
+<tr style="border-bottom:1px solid var(--border);"><td style="padding:10px;"><a href="{URL_BASE}casino/bitstarz/" style="color:#c080ff;">BitStarz</a></td><td>5 BTC + 200 FS</td><td>3500+</td><td>&lt;10 mín</td><td>✅ BTC, ETH, LTC</td><td>9.8</td></tr>
+<tr style="border-bottom:1px solid var(--border);"><td style="padding:10px;"><a href="{URL_BASE}casino/stake/" style="color:#c080ff;">Stake</a></td><td>200% + VIP</td><td>5000+</td><td>&lt;10 mín</td><td>✅ 8+ mynt</td><td>9.6</td></tr>
+<tr style="border-bottom:1px solid var(--border);"><td style="padding:10px;"><a href="{URL_BASE}casino/bc-game/" style="color:#c080ff;">BC.Game</a></td><td>300% / 1 BTC</td><td>8000+</td><td>&lt;5 mín</td><td>✅ 100+ mynt</td><td>9.4</td></tr>
+<tr style="border-bottom:1px solid var(--border);"><td style="padding:10px;"><a href="{URL_BASE}casino/epicbet/" style="color:#c080ff;">Epicbet</a></td><td>100% / €500</td><td>2000+</td><td>1-3 dagar</td><td>🟡 BTC, ETH</td><td>9.0</td></tr>
+<tr><td style="padding:10px;"><a href="{URL_BASE}casino/katsubet/" style="color:#c080ff;">KatsuBet</a></td><td>100% + 100 FS</td><td>5000+</td><td>&lt;10 mín</td><td>✅ 6 mynt</td><td>8.6</td></tr>
+</table>
+</div>
+
+<h2>Hvernig við metum spilavíti</h2>
+<ul>
+<li><strong>Bónus:</strong> Velkomstbónus, veðskilyrði, frísnúningar</li>
+<li><strong>Útborgunarhraði:</strong> Hversu fljótt færðu vinninga</li>
+<li><strong>Leikjafjöldi:</strong> Spilakassar, borðleikir, lifandi spilavíti</li>
+<li><strong>Dulritunargjaldmiðlar:</strong> Bitcoin, USDT, Ethereum stuðningur</li>
+<li><strong>Íslandsaðgengi:</strong> PIQ, íslenskt viðmót, ISK stuðningur</li>
+</ul>
+
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Spila á #1 spilavítinu →</a></div>'''
+    },
+    {
+        "slug": "framhja-bankalokun",
+        "title": "Hvernig á að komast framhjá bankalokun á Íslandi",
+        "desc": "Íslenskir bankar loka á spilavítagreiðslur. Hér eru 5 leiðir til að komast framhjá.",
+        "emoji": "🔓",
+        "colors": ("#0a1020", "#1a2850", "#304880"),
+        "content": f'''<h1>Hvernig á að komast framhjá bankalokun á Íslandi 2026</h1>
+{{hero}}
+<p>Arion banki, Landsbankinn og Íslandsbanki loka oft á greiðslur til erlendra spilavíta. Hér eru <strong>5 aðferðir sem virka</strong>:</p>
+
+<h2>1. 💎 Dulritunargjaldmiðlar (USDT / Bitcoin)</h2>
+<p><strong>Áreiðanlegasta lausnin.</strong> Bankar geta ekki lokað á blockchain-færslur.</p>
+<p><a href="{URL_BASE}gajdy/kaupa-bitcoin-island/">📖 Skref-fyrir-skref: Hvernig á að kaupa Bitcoin á Íslandi →</a></p>
+
+<h2>2. 💳 PIQ greiðslur</h2>
+<p>Greiðsluþjónusta sérstaklega fyrir Ísland. <a href="{URL_BASE}gajdy/piq-greidslur-island/">Lestu PIQ leiðbeininguna →</a></p>
+
+<h2>3. 👛 Rafræn veski (Skrill, Neteller)</h2>
+<p>Millifærðu á veskið, síðan frá veskinu á spilavítið. Bankinn sér ekki spilavítagreiðslu.</p>
+
+<h2>4. 🎫 Fyrirframgreidd kort (Paysafecard)</h2>
+<p>Keyptu kort í verslun og notaðu kóðann til innborgunar. Enginn banki kemur við sögu.</p>
+
+<h2>5. 📱 Apple Pay / Google Pay</h2>
+<p>Virkar á sumum spilavítum — t.d. Epicbet styður Apple Pay innborganir.</p>
+
+<h2>Samanburður á aðferðum</h2>
+<div class="info-box">
+<p>🥇 <strong>Dulritunargjaldmiðlar</strong> — 99% áreiðanleiki, tafarlausar, enginn milliliður</p>
+<p>🥈 <strong>PIQ</strong> — 80% áreiðanleiki, hraðar, en takmarkað framboð</p>
+<p>🥉 <strong>Rafræn veski</strong> — 90% áreiðanleiki, en þarf extra skref</p>
+</div>
+
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Spila með dulritunargjaldmiðlum →</a></div>'''
+    },
+    {
+        "slug": "besta-crypto-spilaviti-island",
+        "title": "Besta crypto spilavítið á Íslandi 2026",
+        "desc": "Bestu dulritunar netspilavítin fyrir íslenska spilara. Bitcoin, USDT, Ethereum. Hraðar útborganir.",
+        "emoji": "🏆",
+        "colors": ("#180840", "#3018a0", "#5030e0"),
+        "content": f'''<h1>Besta crypto spilavítið á Íslandi 2026</h1>
+{{hero}}
+<p>Dulritunargjaldmiðlar eru <strong>besta leiðin til að spila á netspilavítum frá Íslandi</strong> — engin bankalokun, tafarlausar útborganir, og lág gjöld.</p>
+
+<h2>Topp 5 crypto spilavíti á Íslandi</h2>
+<div class="info-box">
+<p><strong>🥇 <a href="{URL_BASE}casino/bitstarz/">BitStarz</a></strong> — Besta crypto spilavítið. 3500+ leikir, 5 BTC + 200 FS, útborganir undir 10 mínútum. Styður BTC, ETH, LTC, DOGE, USDT, BCH. Einkunn: 9.8/10</p>
+</div>
+<div class="info-box">
+<p><strong>🥈 <a href="{URL_BASE}casino/stake/">Stake</a></strong> — Vinsælasta crypto spilavítið í heimi. 200% VIP bónus, 5000+ leikir, 8+ dulritunargjaldmiðlar. Einkunn: 9.6/10</p>
+</div>
+<div class="info-box">
+<p><strong>🥉 <a href="{URL_BASE}casino/bc-game/">BC.Game</a></strong> — 100+ dulritunargjaldmiðlar, 8000+ leikir, 300% bónus. Mest fjölbreytt crypto stuðningur. Einkunn: 9.4/10</p>
+</div>
+<div class="info-box">
+<p><strong>4. <a href="{URL_BASE}casino/katsubet/">KatsuBet</a></strong> — 5000+ leikir, 6 dulritunargjaldmiðlar, 100% + 100 FS. Einkunn: 8.6/10</p>
+</div>
+<div class="info-box">
+<p><strong>5. <a href="{URL_BASE}casino/cloudbet/">Cloudbet</a></strong> — Premium crypto spilavíti, háar takmörkunar, 100% allt að 5 BTC. Einkunn: 8.4/10</p>
+</div>
+
+<h2>Af hverju dulritunar spilavíti á Íslandi?</h2>
+<ul>
+<li>🔓 Komast framhjá <a href="{URL_BASE}gajdy/islenskir-bankar-spilaviti/">bankalokun íslenskra banka</a></li>
+<li>⚡ Útborganir á undir 10 mínútum (vs. 1-5 dagar með korti)</li>
+<li>💰 Engin gjaldmiðlaskiptagjöld</li>
+<li>🛡️ Aukið næði — engar spilavítafærslur á bankayfirlitinu</li>
+</ul>
+
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Spila á BitStarz →</a></div>'''
+    },
+]
+
+for page in seo_pages:
+    hero = make_hero(page["title"][:40], "BF Casino leiðbeining", page["emoji"], *page["colors"])
+    page_content = page["content"].replace("{hero}", hero)
+    bc = [("{URL_BASE}", "Heim"), ("{URL_BASE}gajdy/", "Leiðbeiningar"), ("", page["title"][:50])]
+    html = page_template(page["title"], page["desc"], bc, page_content)
+    write_page(f'gajdy/{page["slug"]}/index.html', html)
+
+print(f"  ✅ {len(seo_pages)} SEO target pages generated")
+
+# 10. ИНДЕКСНЫЕ СТРАНИЦЫ РАЗДЕЛОВ
 print("Generating index pages...")
 
 # Casino index — FULL landing page (main casino hub)
@@ -970,7 +1337,7 @@ write_page("platezhi/index.html", page_template("Greiðslumátar", "Dulritunargj
     f'<h1>Casino Greiðslumátar</h1><p>Hvernig á að komast framhjá lokun banka og spila frá Íslandi.</p>{pay_list}'))
 
 # Guide index
-guide_list = "\n".join([f'<div class="info-box"><p><strong><a href="{URL_BASE}gajdy/{g["slug"]}/">{g["title"]}</a></strong> — {g["desc"][:80]}</p></div>' for g in guide_pages[:20]])
+guide_list = "\n".join([f'<div class="info-box"><p><strong><a href="{URL_BASE}gajdy/{g["slug"]}/">{g["title"]}</a></strong> — {g["desc"][:80]}</p></div>' for g in seo_pages + guide_pages])
 write_page("gajdy/index.html", page_template("Guides", "Leiðbeiningar og kennsluefni fyrir leikmenn",
     [("{URL_BASE}", "Home"), ("", "Guides")],
     f'<h1>Leiðbeiningar fyrir leikmenn</h1><p>{len(guide_pages)} leiðbeiningar fyrir byrjendur og reynda leikmenn.</p>{guide_list}'))
@@ -993,6 +1360,8 @@ for p in payment_pages:
     sitemap_urls.append(f'https://bestiflokkurinn.is/platezhi/{p["slug"]}/')
 for g in guide_pages:
     sitemap_urls.append(f'https://bestiflokkurinn.is/gajdy/{g["slug"]}/')
+for sp in seo_pages:
+    sitemap_urls.append(f'https://bestiflokkurinn.is/gajdy/{sp["slug"]}/')
 for a in about_pages:
     sitemap_urls.append(f'https://bestiflokkurinn.is/{a["slug"]}/')
 sitemap_urls.extend([
