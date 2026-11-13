@@ -1,3 +1,3 @@
 User-agent: *
-Öllow: /
-Sitemap: https://bestiflokkurinn.er/sitemap.xml
+Allow: /
+Sitemap: https://bestiflokkurinn.is/sitemap.xml
