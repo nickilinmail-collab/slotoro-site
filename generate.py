@@ -527,7 +527,7 @@ def get_footer():
       <div class="footer-cols">
         <div><div class="footer-col-title">SPILAVÍTI</div><a href="{URL_BASE}casino/">Umsagnir</a><a href="{URL_BASE}bonusy/">Bónusar</a><a href="{URL_BASE}casino/crypto-casino/">Dulritunargjaldmiðill</a></div>
         <div><div class="footer-col-title">LEIKIR</div><a href="{URL_BASE}slots/">Spilakassar</a><a href="{URL_BASE}live/">Í beinni</a></div>
-        <div><div class="footer-col-title">UPPLÝSINGAR</div><a href="{URL_BASE}o-nas/">Um okkur</a><a href="{URL_BASE}gajdy/">Leiðbeiningar</a><a href="{URL_BASE}platezhi/">Greiðslur</a></div>
+        <div><div class="footer-col-title">UPPLÝSINGAR</div><a href="{URL_BASE}o-nas/">Um okkur</a><a href="{URL_BASE}gajdy/">Leiðbeiningar</a><a href="{URL_BASE}platezhi/">Greiðslur</a><a href="{URL_BASE}konfidencialnost/">Persónuvernd</a><a href="#" data-cookie-settings>Vafrakökur</a></div>
       </div>
     </div>
     <div class="footer-help">Þarftu að tala við einhvern um spilavanda? Hjálparsíminn <a href="tel:1717">1717</a> hjá Rauða krossinum er ókeypis og opinn allan sólarhringinn. <a href="{URL_BASE}gajdy/otvetstvennaya-igra/">Ábyrg spilun →</a></div>
@@ -708,7 +708,8 @@ body::after{{content:'';position:fixed;bottom:-200px;left:-10%;width:600px;heigh
 @media(max-width:768px){{
   .page-wrap{{grid-template-columns:1fr;gap:24px;padding:24px 16px 40px;}}
   .nav{{padding:10px 16px;flex-wrap:wrap;gap:8px;}}
-  .nav-links{{gap:12px;font-size:11px;}}
+  .nav-links{{gap:16px;font-size:13px;width:100%;overflow-x:auto;white-space:nowrap;padding-bottom:4px;scrollbar-width:none;}}
+  .nav-links::-webkit-scrollbar{{display:none;}}
   .content h1{{font-size:26px;}}
   .footer-top{{flex-direction:column;gap:14px;}}
   .game-grid{{grid-template-columns:repeat(2,1fr);}}
@@ -751,6 +752,15 @@ box-shadow:0 0 0 1px rgba(255,255,255,.45),inset 0 1px 0 rgba(255,255,255,.45),i
 .gc-play{{--rim:4px;display:flex;margin:0 12px 14px;padding:9px 0;font-size:14px;}}
 .btn-secondary .play-icon{{background:rgba(255,255,255,.15);}}
 @media (prefers-reduced-motion:reduce){{.btn-primary,.btn-cta,.cta-btn,.btn-glass,.btn-signup,.sidebar-cta,.nav-cta,.btn-secondary,.promo-btn,.gc-play{{transition:none;}}}}
+/* Cookie banner */
+.cookie-banner{{position:fixed;left:16px;right:16px;bottom:16px;z-index:1000;max-width:880px;margin:0 auto;display:flex;align-items:center;gap:20px;padding:18px 22px;border-radius:20px;background:rgba(20,12,38,.94);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(180,140,255,.22);box-shadow:0 18px 50px rgba(0,0,0,.55);color:#e6dcf8;font-family:'Inter',system-ui,sans-serif;}}
+.cookie-banner[hidden]{{display:none;}}
+.cookie-text{{flex:1;font-size:14px;line-height:1.55;}}
+.cookie-text strong{{display:block;color:#fff;font-size:15px;margin-bottom:4px;}}
+.cookie-text a{{color:#d8b4ff;text-decoration:underline;}}
+.cookie-actions{{display:flex;gap:10px;flex-shrink:0;}}
+.cookie-actions button{{cursor:pointer;min-width:170px;}}
+@media(max-width:700px){{.cookie-banner{{flex-direction:column;align-items:stretch;gap:14px;}}.cookie-actions{{flex-direction:column;}}.cookie-actions button{{width:100%;}}}}
 </style>
 </head>
 <body>
@@ -773,9 +783,9 @@ box-shadow:0 0 0 1px rgba(255,255,255,.45),inset 0 1px 0 rgba(255,255,255,.45),i
 <h4>🏆 Topp spilavíti</h4>
 <a href="{URL_BASE}casino/bitstarz/">BitStarz — 5 BTC + 200 FS</a>
 <a href="{URL_BASE}casino/stake/">Stake — 200% + VIP</a>
-<a href="{URL_BASE}casino/bc-game/">BC.Game — 300% up to 1 BTC</a>
+<a href="{URL_BASE}casino/bc-game/">BC.Game — 300% allt að 1 BTC</a>
 <a href="{URL_BASE}casino/katsubet/">KatsuBet — 100% + 100 FS</a>
-<a href="{URL_BASE}casino/winz/">Winz.io — 300 FS no wager</a>
+<a href="{URL_BASE}casino/winz/">Winz.io — 300 FS án veðskilyrða</a>
 </div>
 <a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="sidebar-cta">Spila núna →</a>
 <div class="sidebar-card" style="margin-top:16px;">
@@ -802,6 +812,11 @@ box-shadow:0 0 0 1px rgba(255,255,255,.45),inset 0 1px 0 rgba(255,255,255,.45),i
 <script type="application/ld+json">{schema_json}</script>
 <script>document.querySelectorAll('img[loading]').length||document.querySelectorAll('.slot-hero-img,.game-card-thumb img').forEach(function(i){{i.loading='lazy'}})</script>
 <script>(function(){{var u=encodeURIComponent(location.href),t=encodeURIComponent(document.title);var m={{fb:'https://www.facebook.com/sharer/sharer.php?u='+u,in:'https://www.linkedin.com/sharing/share-offsite/?url='+u,wa:'https://wa.me/?text='+t+'%20'+u}};document.querySelectorAll('.share a').forEach(function(a){{var n=a.dataset.net;if(m[n])a.href=m[n];else if(n==='copy')a.addEventListener('click',function(e){{e.preventDefault();try{{navigator.clipboard.writeText(location.href);a.setAttribute('aria-label','Tengill afritaður');a.style.background='#2f8f5a';setTimeout(function(){{a.style.background='';}},1500);}}catch(_){{}}}});}});}})();</script>
+<div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Vafrakökur" hidden>
+<div class="cookie-text"><strong>🍪 Vafrakökur</strong><span>Við notum nauðsynlegar vafrakökur til að vefurinn virki og til að muna val þitt. Ef þú samþykkir allar má nota kökur til að mæla umferð. Samstarfstenglar geta sett kökur hjá þriðja aðila þegar þú smellir á þá. <a href="{URL_BASE}konfidencialnost/">Persónuverndarstefna</a></span></div>
+<div class="cookie-actions"><button type="button" class="btn-signup" data-consent="necessary">Aðeins nauðsynlegar</button><button type="button" class="btn-signup" data-consent="all">Samþykkja allar</button></div>
+</div>
+<script>(function(){{var b=document.getElementById('cookie-banner');if(!b)return;var v=null;try{{v=localStorage.getItem('bf_cookie_consent');}}catch(e){{}}if(!v)b.hidden=false;b.querySelectorAll('[data-consent]').forEach(function(btn){{btn.addEventListener('click',function(){{try{{localStorage.setItem('bf_cookie_consent',btn.getAttribute('data-consent'));}}catch(e){{}}b.hidden=true;}});}});document.querySelectorAll('[data-cookie-settings]').forEach(function(a){{a.addEventListener('click',function(e){{e.preventDefault();b.hidden=false;}});}});}})();</script>
 </body>
 </html>'''
 
@@ -1011,7 +1026,24 @@ about_emojis = {"Um BF Casino":"🏛️","Hafa samband":"📬","Persónuverndars
 for a in about_pages:
     emoji = about_emojis.get(a["title"], "ℹ️")
     hero = make_hero(a["title"], "BF Casino", emoji, "#100828", "#201050", "#402080")
-    if a["slug"] == "kak-my-ocenivaem":
+    if a["slug"] == "konfidencialnost":
+        content = f'''<h1>Persónuverndarstefna</h1>
+{hero}
+<p>Hér útskýrum við hvaða gögnum er safnað þegar þú notar bestiflokkurinn.is og hvernig vafrakökur eru notaðar.</p>
+<h2>Gögn sem við söfnum</h2>
+<p>Við biðjum ekki um nafn, netfang eða greiðsluupplýsingar. Engin skráning er á vefnum.</p>
+<h2>Vafrakökur</h2>
+<div class="info-box">
+<p><strong>Nauðsynlegar:</strong> Við vistum val þitt um vafrakökur í vafranum þínum (localStorage) svo borðinn birtist ekki aftur. Þetta er alltaf virkt.</p>
+<p><strong>Mælingar:</strong> Aðeins ef þú velur „Samþykkja allar“ gætum við notað kökur til að mæla umferð um vefinn.</p>
+<p><strong>Þriðju aðilar:</strong> Þegar þú smellir á samstarfstengil ferðu á vef spilavítisins, sem getur sett eigin kökur samkvæmt sinni persónuverndarstefnu.</p>
+<p><strong>Leturgerðir:</strong> Letur er sótt frá Google Fonts, sem fær IP-tölu þína við niðurhal.</p>
+</div>
+<p><a href="#" data-cookie-settings>Breyta vali á vafrakökum →</a></p>
+<h2>Réttindi þín</h2>
+<p>Ísland er aðili að EES og GDPR gildir. Þú getur hvenær sem er breytt vali þínu eða eytt vafragögnum í stillingum vafrans. Spurningar? <a href="{URL_BASE}kontakty/">Hafðu samband</a>.</p>
+<p><em>Síðast uppfært: nóvember 2026.</em></p>'''
+    elif a["slug"] == "kak-my-ocenivaem":
         content = f'''<h1>Hvernig við metum spilavíti</h1>
 {hero}
 <p>Hvert spilavíti á BF Casino fær einkunn frá 0 til 10. Einkunnin byggir á sex föstum viðmiðum með birtum vægi, svo þú getir séð nákvæmlega hvernig hún verður til.</p>

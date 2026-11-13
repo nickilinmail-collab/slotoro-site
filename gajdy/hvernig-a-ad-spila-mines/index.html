@@ -144,7 +144,8 @@ body::after{content:'';position:fixed;bottom:-200px;left:-10%;width:600px;height
 @media(max-width:768px){
   .page-wrap{grid-template-columns:1fr;gap:24px;padding:24px 16px 40px;}
   .nav{padding:10px 16px;flex-wrap:wrap;gap:8px;}
-  .nav-links{gap:12px;font-size:11px;}
+  .nav-links{gap:16px;font-size:13px;width:100%;overflow-x:auto;white-space:nowrap;padding-bottom:4px;scrollbar-width:none;}
+  .nav-links::-webkit-scrollbar{display:none;}
   .content h1{font-size:26px;}
   .footer-top{flex-direction:column;gap:14px;}
   .game-grid{grid-template-columns:repeat(2,1fr);}
@@ -187,6 +188,15 @@ box-shadow:0 0 0 1px rgba(255,255,255,.45),inset 0 1px 0 rgba(255,255,255,.45),i
 .gc-play{--rim:4px;display:flex;margin:0 12px 14px;padding:9px 0;font-size:14px;}
 .btn-secondary .play-icon{background:rgba(255,255,255,.15);}
 @media (prefers-reduced-motion:reduce){.btn-primary,.btn-cta,.cta-btn,.btn-glass,.btn-signup,.sidebar-cta,.nav-cta,.btn-secondary,.promo-btn,.gc-play{transition:none;}}
+/* Cookie banner */
+.cookie-banner{position:fixed;left:16px;right:16px;bottom:16px;z-index:1000;max-width:880px;margin:0 auto;display:flex;align-items:center;gap:20px;padding:18px 22px;border-radius:20px;background:rgba(20,12,38,.94);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(180,140,255,.22);box-shadow:0 18px 50px rgba(0,0,0,.55);color:#e6dcf8;font-family:'Inter',system-ui,sans-serif;}
+.cookie-banner[hidden]{display:none;}
+.cookie-text{flex:1;font-size:14px;line-height:1.55;}
+.cookie-text strong{display:block;color:#fff;font-size:15px;margin-bottom:4px;}
+.cookie-text a{color:#d8b4ff;text-decoration:underline;}
+.cookie-actions{display:flex;gap:10px;flex-shrink:0;}
+.cookie-actions button{cursor:pointer;min-width:170px;}
+@media(max-width:700px){.cookie-banner{flex-direction:column;align-items:stretch;gap:14px;}.cookie-actions{flex-direction:column;}.cookie-actions button{width:100%;}}
 </style>
 </head>
 <body>
@@ -248,9 +258,9 @@ box-shadow:0 0 0 1px rgba(255,255,255,.45),inset 0 1px 0 rgba(255,255,255,.45),i
 <h4>🏆 Topp spilavíti</h4>
 <a href="/slotoro-site/casino/bitstarz/">BitStarz — 5 BTC + 200 FS</a>
 <a href="/slotoro-site/casino/stake/">Stake — 200% + VIP</a>
-<a href="/slotoro-site/casino/bc-game/">BC.Game — 300% up to 1 BTC</a>
+<a href="/slotoro-site/casino/bc-game/">BC.Game — 300% allt að 1 BTC</a>
 <a href="/slotoro-site/casino/katsubet/">KatsuBet — 100% + 100 FS</a>
-<a href="/slotoro-site/casino/winz/">Winz.io — 300 FS no wager</a>
+<a href="/slotoro-site/casino/winz/">Winz.io — 300 FS án veðskilyrða</a>
 </div>
 <a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="sidebar-cta">Spila núna →</a>
 <div class="sidebar-card" style="margin-top:16px;">
@@ -286,7 +296,7 @@ box-shadow:0 0 0 1px rgba(255,255,255,.45),inset 0 1px 0 rgba(255,255,255,.45),i
       <div class="footer-cols">
         <div><div class="footer-col-title">SPILAVÍTI</div><a href="/slotoro-site/casino/">Umsagnir</a><a href="/slotoro-site/bonusy/">Bónusar</a><a href="/slotoro-site/casino/crypto-casino/">Dulritunargjaldmiðill</a></div>
         <div><div class="footer-col-title">LEIKIR</div><a href="/slotoro-site/slots/">Spilakassar</a><a href="/slotoro-site/live/">Í beinni</a></div>
-        <div><div class="footer-col-title">UPPLÝSINGAR</div><a href="/slotoro-site/o-nas/">Um okkur</a><a href="/slotoro-site/gajdy/">Leiðbeiningar</a><a href="/slotoro-site/platezhi/">Greiðslur</a></div>
+        <div><div class="footer-col-title">UPPLÝSINGAR</div><a href="/slotoro-site/o-nas/">Um okkur</a><a href="/slotoro-site/gajdy/">Leiðbeiningar</a><a href="/slotoro-site/platezhi/">Greiðslur</a><a href="/slotoro-site/konfidencialnost/">Persónuvernd</a><a href="#" data-cookie-settings>Vafrakökur</a></div>
       </div>
     </div>
     <div class="footer-help">Þarftu að tala við einhvern um spilavanda? Hjálparsíminn <a href="tel:1717">1717</a> hjá Rauða krossinum er ókeypis og opinn allan sólarhringinn. <a href="/slotoro-site/gajdy/otvetstvennaya-igra/">Ábyrg spilun →</a></div>
@@ -297,5 +307,10 @@ box-shadow:0 0 0 1px rgba(255,255,255,.45),inset 0 1px 0 rgba(255,255,255,.45),i
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://bestiflokkurinn.is/#website", "name": "BF Casino", "url": "https://bestiflokkurinn.is/", "inLanguage": "is"}, {"@type": "Organization", "@id": "https://bestiflokkurinn.is/#org", "name": "BF Casino ritstjórn", "url": "https://bestiflokkurinn.is/"}, {"@type": "Article", "headline": "Hvernig á að spila Mines", "description": "Hvernig Mines leikurinn virkar.", "inLanguage": "is", "datePublished": "2026-06-01", "dateModified": "2026-11-14", "author": {"@id": "https://bestiflokkurinn.is/#org"}, "publisher": {"@id": "https://bestiflokkurinn.is/#org"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bestiflokkurinn.is/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://bestiflokkurinn.is/gajdy/"}, {"@type": "ListItem", "position": 3, "name": "Hvernig á að spila Mines"}]}]}</script>
 <script>document.querySelectorAll('img[loading]').length||document.querySelectorAll('.slot-hero-img,.game-card-thumb img').forEach(function(i){i.loading='lazy'})</script>
 <script>(function(){var u=encodeURIComponent(location.href),t=encodeURIComponent(document.title);var m={fb:'https://www.facebook.com/sharer/sharer.php?u='+u,in:'https://www.linkedin.com/sharing/share-offsite/?url='+u,wa:'https://wa.me/?text='+t+'%20'+u};document.querySelectorAll('.share a').forEach(function(a){var n=a.dataset.net;if(m[n])a.href=m[n];else if(n==='copy')a.addEventListener('click',function(e){e.preventDefault();try{navigator.clipboard.writeText(location.href);a.setAttribute('aria-label','Tengill afritaður');a.style.background='#2f8f5a';setTimeout(function(){a.style.background='';},1500);}catch(_){}});});})();</script>
+<div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Vafrakökur" hidden>
+<div class="cookie-text"><strong>🍪 Vafrakökur</strong><span>Við notum nauðsynlegar vafrakökur til að vefurinn virki og til að muna val þitt. Ef þú samþykkir allar má nota kökur til að mæla umferð. Samstarfstenglar geta sett kökur hjá þriðja aðila þegar þú smellir á þá. <a href="/slotoro-site/konfidencialnost/">Persónuverndarstefna</a></span></div>
+<div class="cookie-actions"><button type="button" class="btn-signup" data-consent="necessary">Aðeins nauðsynlegar</button><button type="button" class="btn-signup" data-consent="all">Samþykkja allar</button></div>
+</div>
+<script>(function(){var b=document.getElementById('cookie-banner');if(!b)return;var v=null;try{v=localStorage.getItem('bf_cookie_consent');}catch(e){}if(!v)b.hidden=false;b.querySelectorAll('[data-consent]').forEach(function(btn){btn.addEventListener('click',function(){try{localStorage.setItem('bf_cookie_consent',btn.getAttribute('data-consent'));}catch(e){}b.hidden=true;});});document.querySelectorAll('[data-cookie-settings]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();b.hidden=false;});});})();</script>
 </body>
 </html>
