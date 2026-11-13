@@ -723,11 +723,27 @@ for a in about_pages:
 # 9. ИНДЕКСНЫЕ СТРАНИЦЫ РАЗДЕЛОВ
 print("Генерирую индексные страницы...")
 
-# Casino index
-casino_list = "\n".join([f'<div class="info-box"><p><strong><a href="/slotoro-site/casino/{c["slug"]}/">{c["name"]}</a></strong> — {c["bonus"]} (Рейтинг: {c["rating"]}/10)</p></div>' for c in casinos[:30]])
-write_page("casino/index.html", page_template("All Casinos", "Full list of online casinos for Iceland",
+# Casino index — FULL landing page (main casino hub)
+casino_cards = ""
+for c in casinos[:20]:
+    ctype_label = "Crypto" if c["type"]=="crypto" else "Classic"
+    casino_cards += f'''<a href="/slotoro-site/casino/{c["slug"]}/" class="game-card">
+<div class="game-card-thumb" style="background:linear-gradient(135deg,{'#0a2060,#1a40a0' if c['type']=='crypto' else '#2a1040,#5020a0'});display:flex;align-items:center;justify-content:center;"><span style="font-size:28px;font-weight:800;color:rgba(255,255,255,.15);">{c["rating"]}</span></div>
+<div class="game-card-info"><div class="game-card-name">{c["name"]}</div><div class="game-card-prov">{c["bonus"]} · {ctype_label}</div></div></a>\n'''
+
+casino_list = "\n".join([f'<div class="info-box"><p><strong><a href="/slotoro-site/casino/{c["slug"]}/">{c["name"]}</a></strong> — {c["bonus"]} (Rating: {c["rating"]}/10)</p></div>' for c in casinos[:50]])
+
+casino_content = f'''<h1>Best Online Casinos Iceland 2026</h1>
+<p>BF Casino reviews {len(casinos)} online casinos for Icelandic players. Compare bonuses, payment methods and game libraries. All casinos listed support cryptocurrency — the easiest way to play from Iceland.</p>
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Play at Top Casino →</a></div>
+<h2>Top 20 Casinos</h2>
+<div class="game-grid">{casino_cards}</div>
+<h2>All {len(casinos)} Casino Reviews</h2>
+{casino_list}'''
+
+write_page("casino/index.html", page_template("Best Online Casinos Iceland 2026", f"Compare {len(casinos)} online casinos for Iceland. Crypto payments, fast withdrawals, welcome bonuses.",
     [("/slotoro-site/", "Home"), ("", "Casino")],
-    f'<h1>All Online Casinos 2026</h1><p>Full list of {len(casinos)} online casinos reviewed by BF Casino.</p>{casino_list}'))
+    casino_content))
 
 # Slots index
 slots_list = "\n".join([f'<div class="info-box"><p><strong><a href="/slotoro-site/slots/{s["slug"]}/">{s["name"]}</a></strong> — {s["provider"]} | RTP {s["rtp"]}% | {s["maxwin"]}</p></div>' for s in slots_data[:30]])
