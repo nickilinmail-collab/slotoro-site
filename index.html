@@ -14,9 +14,11 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-s
 
 /* SIDEBAR */
 .sidebar{width:250px;background:var(--bg);border-right:1px solid var(--border);position:fixed;top:0;left:0;bottom:0;overflow-y:auto;z-index:50;display:flex;flex-direction:column;}
-.sidebar-logo{padding:20px 20px 16px;display:flex;align-items:center;gap:8px;}
-.sidebar-logo .ice{color:var(--accent);font-size:28px;}
-.sidebar-logo span{font-size:20px;font-weight:800;letter-spacing:1px;}
+.sidebar-logo{padding:20px 16px 16px;display:flex;align-items:center;gap:0;}
+.sidebar-logo .logo-mark{width:42px;height:42px;background:linear-gradient(135deg,#4dd9b4,#2ab897);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:900;color:#0a1018;flex-shrink:0;box-shadow:0 2px 12px rgba(77,217,180,.3);}
+.sidebar-logo .logo-text{margin-left:10px;display:flex;flex-direction:column;line-height:1.1;}
+.sidebar-logo .logo-top{font-size:18px;font-weight:900;letter-spacing:1px;color:#fff;}
+.sidebar-logo .logo-bot{font-size:9px;font-weight:600;letter-spacing:2px;color:var(--muted);margin-top:2px;}
 
 .sidebar-bonus{margin:0 12px 16px;background:linear-gradient(135deg,rgba(77,217,180,.12),rgba(77,217,180,.05));border:1px solid rgba(77,217,180,.15);border-radius:12px;padding:14px 16px;display:flex;gap:10px;align-items:flex-start;}
 .sb-icon{width:32px;height:32px;background:var(--accent);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
@@ -205,7 +207,7 @@ a.btn-login,a.btn-signup,a.hero-cta,a.promo-btn{text-decoration:none;}
 
 <!-- SIDEBAR -->
 <aside class="sidebar">
-  <div class="sidebar-logo"><span class="ice">🏆</span><span>BESTI<small style="font-size:11px;opacity:.6;display:block;letter-spacing:1px;">FLOKKURINN.IS</small></span></div>
+  <div class="sidebar-logo"><div class="logo-mark">BF</div><div class="logo-text"><span class="logo-top">BESTI</span><span class="logo-bot">FLOKKURINN.IS</span></div></div>
 
   <div class="sidebar-bonus">
     <div class="sb-icon">🎁</div>
