@@ -212,36 +212,39 @@ button{font-family:inherit;}
             <radialGradient id="cg" cx="50%" cy="40%"><stop offset="0%" stop-color="#00e0ff"/><stop offset="100%" stop-color="#0050cc"/></radialGradient>
           </defs>
           <g id="wheelGroup">
-            <circle cx="150" cy="150" r="140" fill="#080530"/>
-            <path d="M150,150 L150,10 A140,140 0 0,1 249,51 Z" fill="#0a2268" stroke="rgba(0,150,255,0.25)" stroke-width="0.5"/>
-            <path d="M150,150 L249,51 A140,140 0 0,1 290,150 Z" fill="#0d1a5a" stroke="rgba(0,150,255,0.25)" stroke-width="0.5"/>
-            <path d="M150,150 L290,150 A140,140 0 0,1 249,249 Z" fill="#0a2268" stroke="rgba(0,150,255,0.25)" stroke-width="0.5"/>
-            <path d="M150,150 L249,249 A140,140 0 0,1 150,290 Z" fill="#0d1a5a" stroke="rgba(0,150,255,0.25)" stroke-width="0.5"/>
-            <path d="M150,150 L150,290 A140,140 0 0,1 51,249 Z" fill="#0a2268" stroke="rgba(0,150,255,0.25)" stroke-width="0.5"/>
-            <path d="M150,150 L51,249 A140,140 0 0,1 10,150 Z" fill="#0d1a5a" stroke="rgba(0,150,255,0.25)" stroke-width="0.5"/>
-            <path d="M150,150 L10,150 A140,140 0 0,1 51,51 Z" fill="#0a2268" stroke="rgba(0,150,255,0.25)" stroke-width="0.5"/>
-            <path d="M150,150 L51,51 A140,140 0 0,1 150,10 Z" fill="#0d1a5a" stroke="rgba(0,150,255,0.25)" stroke-width="0.5"/>
-            <!-- Labels -->
-            <text transform="rotate(22.5,150,150)" x="150" y="52" fill="#ffd700" font-size="13" font-weight="700" text-anchor="middle" font-family="Inter,sans-serif">500%</text>
-            <text transform="rotate(67.5,150,150)" x="150" y="52" fill="#00d4ff" font-size="11" font-weight="600" text-anchor="middle" font-family="Inter,sans-serif">50 FS</text>
-            <text transform="rotate(112.5,150,150)" x="150" y="52" fill="#ffd700" font-size="13" font-weight="700" text-anchor="middle" font-family="Inter,sans-serif">200%</text>
-            <text transform="rotate(157.5,150,150)" x="150" y="52" fill="#00d4ff" font-size="11" font-weight="600" text-anchor="middle" font-family="Inter,sans-serif">100 FS</text>
-            <text transform="rotate(202.5,150,150)" x="150" y="52" fill="#ffd700" font-size="13" font-weight="700" text-anchor="middle" font-family="Inter,sans-serif">300%</text>
-            <text transform="rotate(247.5,150,150)" x="150" y="52" fill="#00d4ff" font-size="11" font-weight="600" text-anchor="middle" font-family="Inter,sans-serif">25 FS</text>
-            <text transform="rotate(292.5,150,150)" x="150" y="52" fill="#ffd700" font-size="13" font-weight="700" text-anchor="middle" font-family="Inter,sans-serif">150%</text>
-            <text transform="rotate(337.5,150,150)" x="150" y="52" fill="#00d4ff" font-size="11" font-weight="600" text-anchor="middle" font-family="Inter,sans-serif">200 FS</text>
-            <!-- Ring -->
-            <circle cx="150" cy="150" r="142" fill="none" stroke="rgba(0,150,255,0.3)" stroke-width="2"/>
-            <!-- Bulbs -->
-            <circle cx="150" cy="6" r="4" fill="#ffd700" filter="url(#gl)"/><circle cx="250" cy="48" r="4" fill="#00d4ff" filter="url(#gl)"/>
-            <circle cx="294" cy="150" r="4" fill="#ffd700" filter="url(#gl)"/><circle cx="250" cy="252" r="4" fill="#00d4ff" filter="url(#gl)"/>
-            <circle cx="150" cy="294" r="4" fill="#ffd700" filter="url(#gl)"/><circle cx="50" cy="252" r="4" fill="#00d4ff" filter="url(#gl)"/>
-            <circle cx="6" cy="150" r="4" fill="#ffd700" filter="url(#gl)"/><circle cx="50" cy="48" r="4" fill="#00d4ff" filter="url(#gl)"/>
-            <!-- Center -->
-            <circle cx="150" cy="150" r="30" fill="url(#cg)" stroke="rgba(255,255,255,0.3)" stroke-width="2" style="cursor:pointer"/>
-            <text x="150" y="155" fill="#fff" font-size="13" font-weight="800" text-anchor="middle" font-family="Inter,sans-serif" style="pointer-events:none">SPIN</text>
+            <!-- Bright colorful segments -->
+            <path d="M150,150 L150,10 A140,140 0 0,1 249,51 Z" fill="#c62828" stroke="#fff" stroke-width="1"/>
+            <path d="M150,150 L249,51 A140,140 0 0,1 290,150 Z" fill="#1565c0" stroke="#fff" stroke-width="1"/>
+            <path d="M150,150 L290,150 A140,140 0 0,1 249,249 Z" fill="#f9a825" stroke="#fff" stroke-width="1"/>
+            <path d="M150,150 L249,249 A140,140 0 0,1 150,290 Z" fill="#2e7d32" stroke="#fff" stroke-width="1"/>
+            <path d="M150,150 L150,290 A140,140 0 0,1 51,249 Z" fill="#6a1b9a" stroke="#fff" stroke-width="1"/>
+            <path d="M150,150 L51,249 A140,140 0 0,1 10,150 Z" fill="#00838f" stroke="#fff" stroke-width="1"/>
+            <path d="M150,150 L10,150 A140,140 0 0,1 51,51 Z" fill="#e65100" stroke="#fff" stroke-width="1"/>
+            <path d="M150,150 L51,51 A140,140 0 0,1 150,10 Z" fill="#283593" stroke="#fff" stroke-width="1"/>
+            <!-- Labels - white on bright colors -->
+            <text transform="rotate(22.5,150,150)" x="150" y="55" fill="#fff" font-size="14" font-weight="800" text-anchor="middle" font-family="Inter,sans-serif">500%</text>
+            <text transform="rotate(67.5,150,150)" x="150" y="55" fill="#fff" font-size="12" font-weight="700" text-anchor="middle" font-family="Inter,sans-serif">50 FS</text>
+            <text transform="rotate(112.5,150,150)" x="150" y="55" fill="#fff" font-size="14" font-weight="800" text-anchor="middle" font-family="Inter,sans-serif">200%</text>
+            <text transform="rotate(157.5,150,150)" x="150" y="55" fill="#fff" font-size="12" font-weight="700" text-anchor="middle" font-family="Inter,sans-serif">100 FS</text>
+            <text transform="rotate(202.5,150,150)" x="150" y="55" fill="#fff" font-size="14" font-weight="800" text-anchor="middle" font-family="Inter,sans-serif">300%</text>
+            <text transform="rotate(247.5,150,150)" x="150" y="55" fill="#fff" font-size="12" font-weight="700" text-anchor="middle" font-family="Inter,sans-serif">25 FS</text>
+            <text transform="rotate(292.5,150,150)" x="150" y="55" fill="#fff" font-size="14" font-weight="800" text-anchor="middle" font-family="Inter,sans-serif">150%</text>
+            <text transform="rotate(337.5,150,150)" x="150" y="55" fill="#fff" font-size="12" font-weight="700" text-anchor="middle" font-family="Inter,sans-serif">200 FS</text>
+            <!-- Outer ring gold -->
+            <circle cx="150" cy="150" r="141" fill="none" stroke="#ffd700" stroke-width="3"/>
+            <circle cx="150" cy="150" r="144" fill="none" stroke="rgba(255,215,0,0.3)" stroke-width="1"/>
+            <!-- Bulbs around edge -->
+            <circle cx="150" cy="4" r="5" fill="#ffd700" filter="url(#gl)"/><circle cx="250" cy="46" r="5" fill="#ff4444" filter="url(#gl)"/>
+            <circle cx="296" cy="150" r="5" fill="#ffd700" filter="url(#gl)"/><circle cx="250" cy="254" r="5" fill="#44ff44" filter="url(#gl)"/>
+            <circle cx="150" cy="296" r="5" fill="#ffd700" filter="url(#gl)"/><circle cx="50" cy="254" r="5" fill="#4488ff" filter="url(#gl)"/>
+            <circle cx="4" cy="150" r="5" fill="#ffd700" filter="url(#gl)"/><circle cx="50" cy="46" r="5" fill="#ff44ff" filter="url(#gl)"/>
+            <!-- Center button -->
+            <circle cx="150" cy="150" r="32" fill="url(#cg)" stroke="#ffd700" stroke-width="3" style="cursor:pointer"/>
+            <text x="150" y="145" fill="#fff" font-size="10" font-weight="600" text-anchor="middle" font-family="Inter,sans-serif" style="pointer-events:none">НАЖМИ</text>
+            <text x="150" y="160" fill="#ffd700" font-size="14" font-weight="900" text-anchor="middle" font-family="Inter,sans-serif" style="pointer-events:none">SPIN</text>
           </g>
-          <polygon points="150,16 139,0 161,0" fill="#ffd700" filter="url(#gl)"/>
+          <!-- Pointer outside wheelGroup -->
+          <polygon points="150,18 137,-2 163,-2" fill="#ffd700" stroke="#fff" stroke-width="1" filter="url(#gl)"/>
         </svg>
         <div class="wheel-ptr"></div>
       </div>
@@ -300,7 +303,9 @@ button{font-family:inherit;}
     <div class="slot-card" style="position:relative;">
       <span class="slot-badge hot">HOT</span>
       <div class="slot-thumb">
-        <div class="slot-thumb-bg" style="background:linear-gradient(135deg,#2a1a6a,#4a2a9a,#1a1060);">⚡</div>
+        <div class="slot-thumb-bg" style="background:linear-gradient(135deg,#1a0a50,#3a1a8a,#5a30c0);">
+          <svg viewBox="0 0 80 60" width="80" height="60"><text x="40" y="22" text-anchor="middle" fill="#ffd700" font-size="28">⚡</text><text x="40" y="42" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="8" font-weight="700" font-family="Inter,sans-serif">GATES OF</text><text x="40" y="53" text-anchor="middle" fill="#ffd700" font-size="9" font-weight="800" font-family="Inter,sans-serif">OLYMPUS</text></svg>
+        </div>
       </div>
       <div class="slot-info-bar">
         <div class="slot-name">Gates of Olympus</div>
@@ -309,7 +314,9 @@ button{font-family:inherit;}
     </div>
     <div class="slot-card">
       <div class="slot-thumb">
-        <div class="slot-thumb-bg" style="background:linear-gradient(135deg,#c03070,#e06090,#a02060);">🍬</div>
+        <div class="slot-thumb-bg" style="background:linear-gradient(135deg,#a01050,#d03070,#e05090);">
+          <svg viewBox="0 0 80 60" width="80" height="60"><text x="40" y="22" text-anchor="middle" fill="#fff" font-size="24">🍭🍬🍫</text><text x="40" y="42" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="8" font-weight="700" font-family="Inter,sans-serif">SWEET</text><text x="40" y="53" text-anchor="middle" fill="#ffd700" font-size="9" font-weight="800" font-family="Inter,sans-serif">BONANZA</text></svg>
+        </div>
       </div>
       <div class="slot-info-bar">
         <div class="slot-name">Sweet Bonanza</div>
@@ -318,7 +325,9 @@ button{font-family:inherit;}
     </div>
     <div class="slot-card">
       <div class="slot-thumb">
-        <div class="slot-thumb-bg" style="background:linear-gradient(135deg,#0a4080,#1060a0,#083060);">🐟</div>
+        <div class="slot-thumb-bg" style="background:linear-gradient(135deg,#063060,#0a5090,#0870b0);">
+          <svg viewBox="0 0 80 60" width="80" height="60"><text x="40" y="22" text-anchor="middle" fill="#fff" font-size="26">🐟🎣</text><text x="40" y="42" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="8" font-weight="700" font-family="Inter,sans-serif">BIG BASS</text><text x="40" y="53" text-anchor="middle" fill="#4de0ff" font-size="9" font-weight="800" font-family="Inter,sans-serif">SPLASH</text></svg>
+        </div>
       </div>
       <div class="slot-info-bar">
         <div class="slot-name">Big Bass Splash</div>
@@ -328,7 +337,9 @@ button{font-family:inherit;}
     <div class="slot-card" style="position:relative;">
       <span class="slot-badge new">NEW</span>
       <div class="slot-thumb">
-        <div class="slot-thumb-bg" style="background:linear-gradient(135deg,#5a3a00,#8a6a20,#3a2500);">📖</div>
+        <div class="slot-thumb-bg" style="background:linear-gradient(135deg,#4a3000,#7a5510,#a07820);">
+          <svg viewBox="0 0 80 60" width="80" height="60"><text x="40" y="22" text-anchor="middle" fill="#fff" font-size="26">📜💀</text><text x="40" y="42" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="8" font-weight="700" font-family="Inter,sans-serif">BOOK OF</text><text x="40" y="53" text-anchor="middle" fill="#ffd700" font-size="9" font-weight="800" font-family="Inter,sans-serif">DEAD</text></svg>
+        </div>
       </div>
       <div class="slot-info-bar">
         <div class="slot-name">Book of Dead</div>
