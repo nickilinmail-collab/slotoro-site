@@ -43,7 +43,7 @@ casinos = [
 slots_data = [
     {"slug": "gates-of-olympus", "name": "Gates of Olympus", "provider": "Pragmatic Play", "rtp": 96.5, "volatility": "High", "maxwin": "x5000", "theme": "Mythology", "cdn": "pragmaticexternal/vs20olympgate.png"},
     {"slug": "sweet-bonanza", "name": "Sweet Bonanza", "provider": "Pragmatic Play", "rtp": 96.48, "volatility": "High", "maxwin": "x21100", "theme": "Fruit", "cdn": "pragmaticexternal/vs20fruitsw.png"},
-    {"slug": "big-bass-splash", "name": "Big Bass Splash", "provider": "Pragmatic Play", "rtp": 96.71, "volatility": "High", "maxwin": "x2100", "theme": "Fishing", "cdn": "pragmaticexternal/vs10bbsplash.png"},
+    {"slug": "big-bass-splash", "name": "Big Bass Splash", "provider": "Pragmatic Play", "rtp": 96.71, "volatility": "High", "maxwin": "x5000", "theme": "Fishing", "cdn": "pragmaticexternal/vs10bbsplash.png"},
     {"slug": "book-of-dead", "name": "Book of Dead", "provider": "Play'n GO", "rtp": 96.21, "volatility": "High", "maxwin": "x5000", "theme": "Egypt", "cdn": "playngo/BookofDead.png"},
     {"slug": "starburst", "name": "Starburst", "provider": "NetEnt", "rtp": 96.09, "volatility": "Low", "maxwin": "x500", "theme": "Space", "cdn": "netent/starburst.png"},
     {"slug": "gonzos-quest", "name": "Gonzo's Quest", "provider": "NetEnt", "rtp": 95.97, "volatility": "Medium", "maxwin": "x2500", "theme": "Adventure", "cdn": "netent/gonzosquest.png"},
@@ -128,6 +128,24 @@ for i, (name, provider, rtp, maxwin, theme, cdn) in enumerate(more_slot_names):
         "theme": theme,
         "cdn": cdn
     })
+
+# Verified extra slots (RTP / max win checked against OLBG, PokerListings, SiGMA, 2026)
+verified_slots = [
+    ("Gates of Olympus 1000", "Pragmatic Play", 96.50, "High", "x15000", "Mythology"),
+    ("Sweet Bonanza 1000", "Pragmatic Play", 96.53, "High", "x25000", "Sweets"),
+    ("Sugar Rush 1000", "Pragmatic Play", 96.53, "High", "x25000", "Sweets"),
+    ("Starlight Princess 1000", "Pragmatic Play", 96.50, "High", "x15000", "Anime"),
+    ("Chaos Crew", "Hacksaw Gaming", 96.30, "High", "x10000", "Adventure"),
+    ("Le Bandit", "Hacksaw Gaming", 96.34, "Medium", "x10000", "Crime"),
+    ("San Quentin xWays", "NoLimit City", 96.03, "Extreme", "x150000", "Crime"),
+    ("Fire in the Hole xBomb", "NoLimit City", 96.06, "Extreme", "x60000", "Adventure"),
+    ("Bonanza Megaways", "Big Time Gaming", 96.00, "High", "x26000", "Adventure"),
+    ("White Rabbit Megaways", "Big Time Gaming", 97.24, "High", "x17420", "Fairy Tales"),
+    ("Danger High Voltage", "Big Time Gaming", 96.22, "High", "x15746", "Classic"),
+]
+for name, provider, rtp, vol, maxwin, theme in verified_slots:
+    slugv = name.lower().replace("'", "").replace(" ", "-")
+    slots_data.append({"slug": slugv, "name": name, "provider": provider, "rtp": rtp, "volatility": vol, "maxwin": maxwin, "theme": theme})
 
 # Casino categories (50 pages) — all in Icelandic
 casino_categories = [
