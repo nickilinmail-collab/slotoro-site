@@ -524,7 +524,7 @@ for c in casinos:
 <li>✅ Большая библиотека игр</li>
 <li>⚠️ Не принимает исландскую крону напрямую</li>
 </ul>
-<div class="cta-box"><a href="#" class="cta-btn">Играть в {c["name"]} →</a></div>'''
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Играть в {c["name"]} →</a></div>'''
 
     bc = [("/slotoro-site/", "Главная"), ("/slotoro-site/casino/", "Казино"), ("", c["name"])]
     html = page_template(f'{c["name"]} обзор', c["desc"], bc, content)
@@ -572,7 +572,7 @@ for s in slots_data:
 <li><a href="/slotoro-site/casino/stake/">Stake</a> — 200% бонус</li>
 <li><a href="/slotoro-site/casino/bc-game/">BC.Game</a> — 300% до 1 BTC</li>
 </ul>
-<div class="cta-box"><a href="#" class="cta-btn">Играть в {s["name"]} →</a></div>'''
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Играть в {s["name"]} →</a></div>'''
 
     bc = [("/slotoro-site/", "Главная"), ("/slotoro-site/slots/", "Слоты"), ("", s["name"])]
     html = page_template(f'{s["name"]} слот', f'{s["name"]} от {s["provider"]} — RTP {s["rtp"]}%, волатильность {s["volatility"]}, макс {s["maxwin"]}', bc, content)
@@ -591,7 +591,7 @@ for g in live_games:
 <li><a href="/slotoro-site/casino/stake/">Stake</a> — эксклюзивные столы</li>
 <li><a href="/slotoro-site/casino/tonybet/">TonyBet</a> — широкий выбор лимитов</li>
 </ul>
-<div class="cta-box"><a href="#" class="cta-btn">Играть в {g["name"]} →</a></div>'''
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Играть в {g["name"]} →</a></div>'''
 
     bc = [("/slotoro-site/", "Главная"), ("/slotoro-site/live/", "Live казино"), ("", g["name"])]
     html = page_template(f'{g["name"]} Live', g["desc"], bc, content)
@@ -611,7 +611,7 @@ for b in bonus_pages:
 </div>
 <h2>Как получить бонус</h2>
 <p>Для получения бонуса зарегистрируйтесь в казино, внесите депозит и бонус будет начислен автоматически. Обратите внимание на требования к отыгрышу (вейджер).</p>
-<div class="cta-box"><a href="#" class="cta-btn">Забрать бонус →</a></div>'''
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Забрать бонус →</a></div>'''
 
     bc = [("/slotoro-site/", "Главная"), ("/slotoro-site/bonusy/", "Бонусы"), ("", b["title"])]
     html = page_template(b["title"], b["desc"], bc, content)
@@ -636,7 +636,7 @@ for p in payment_pages:
 <li><a href="/slotoro-site/casino/bitstarz/">BitStarz</a> — мгновенные крипто-выплаты</li>
 <li><a href="/slotoro-site/casino/stake/">Stake</a> — поддержка 20+ криптовалют</li>
 </ul>
-<div class="cta-box"><a href="#" class="cta-btn">Выбрать казино →</a></div>'''
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Выбрать казино →</a></div>'''
 
     bc = [("/slotoro-site/", "Главная"), ("/slotoro-site/platezhi/", "Оплата"), ("", p["title"])]
     html = page_template(p["title"], p["desc"], bc, content)
