@@ -468,6 +468,18 @@ about_pages = [
 
 
 # ============================================================
+# HERO CARD GENERATOR
+# ============================================================
+
+def make_hero(title, subtitle, emoji, grad1="#1a0840", grad2="#3020a0", grad3="#6040c0"):
+    """Generate a themed gradient hero card with emoji, title and subtitle."""
+    return f'''<div class="slot-hero"><div class="slot-hero-bg" style="background:linear-gradient(135deg,{grad1},{grad2},{grad3});display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;text-align:center;">
+<span style="font-size:48px;margin-bottom:12px;filter:drop-shadow(0 4px 12px rgba(0,0,0,.3));">{emoji}</span>
+<span style="font-family:\'Space Grotesk\',sans-serif;font-size:22px;font-weight:700;color:rgba(255,255,255,.9);text-shadow:0 2px 12px rgba(0,0,0,.4);line-height:1.2;">{title}</span>
+<span style="font-size:13px;color:rgba(255,255,255,.5);margin-top:8px;">{subtitle}</span>
+</div></div>'''
+
+# ============================================================
 # HTML TEMPLATE
 # ============================================================
 
@@ -582,7 +594,7 @@ body::after{{content:'';position:fixed;bottom:-200px;left:-10%;width:600px;heigh
 .slot-hero{{width:100%;max-width:400px;aspect-ratio:4/3;border-radius:16px;overflow:hidden;margin:0 0 24px;border:1px solid var(--border2);transition:all .3s;box-shadow:0 4px 24px rgba(100,40,200,.12);position:relative;}}
 .slot-hero::after{{content:'';position:absolute;inset:0;border-radius:16px;box-shadow:inset 0 -40px 40px -20px rgba(10,6,24,.6);pointer-events:none;}}
 .slot-hero:hover{{border-color:rgba(180,140,255,.3);box-shadow:0 8px 36px rgba(100,40,200,.2);}}
-.slot-hero-bg{{width:100%;height:100%;background-size:cover;background-position:center;}}
+.slot-hero-bg{{width:100%;height:100%;}}
 /* Info cards */
 .info-box{{background:var(--card);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:16px;padding:20px 24px;margin:16px 0;transition:all .3s;position:relative;overflow:hidden;}}
 .info-box::before{{content:'';position:absolute;top:0;left:0;right:0;height:50%;background:linear-gradient(180deg,rgba(255,255,255,.02),transparent);pointer-events:none;border-radius:16px 16px 0 0;}}
@@ -731,7 +743,9 @@ for cat in casino_categories:
     for c in top_casinos:
         cards += f'<div class="info-box"><p><strong>{c["name"]}</strong> — {c["bonus"]} (Einkunn: {c["rating"]}/10) <a href="{URL_BASE}casino/{c["slug"]}/">Umsögn →</a></p></div>\n'
 
+    hero = make_hero(cat["title"], "Spilavítaflokkur", "🏆", "#180840", "#3018a0", "#5030e0")
     content = f'''<h1>{cat["title"]} á Íslandi 2026</h1>
+{hero}
 <p>{cat["desc"]}</p>
 <h2>Topp 10 spilavíti í flokki</h2>
 {cards}
@@ -800,8 +814,12 @@ for s in slots_data:
 
 # 4. LIVE КАЗИНО (50)
 print("Generating live casino pages...")
+live_emojis = {"Blackjack":"🃏","Roulette":"🎡","Baccarat":"🎴","Poker":"♠️","Dream Catcher":"🎡","Monopoly Live":"🎲","Crazy Time":"🎉","Lightning Roulette":"⚡","Mega Ball":"🔮","Gonzo's Treasure Hunt":"🗺️"}
 for g in live_games:
+    emoji = live_emojis.get(g["name"], "🎲")
+    hero = make_hero(g["name"], "Spilavíti í beinni", emoji, "#0a0828", "#1a1060", "#302090")
     content = f'''<h1>{g["name"]} — Spilavíti í beinni</h1>
+{hero}
 <p>{g["desc"]}</p>
 <h2>Hvernig á að spila {g["name"]}</h2>
 <p>{g["name"]} með lifandi spilastjóra gefur þér upplifun af raunverulegu spilavíti heima hjá þér. Faglegir spilastjórar stjórna leiknum í rauntíma í gegnum HD myndvarp.</p>
@@ -820,7 +838,9 @@ for g in live_games:
 # 5. БОНУСЫ (80)
 print("Generating bonus pages...")
 for b in bonus_pages:
+    hero = make_hero(b["title"], "Bónus 2026", "🎁", "#280840", "#5020a0", "#8040e0")
     content = f'''<h1>{b["title"]}</h1>
+{hero}
 <p>{b["desc"]}</p>
 <h2>Bestu tilboðin 2026</h2>
 <div class="info-box">
@@ -840,7 +860,9 @@ for b in bonus_pages:
 # 6. ПЛАТЕЖИ (50)
 print("Generating payment pages...")
 for p in payment_pages:
+    hero = make_hero(p["title"], "Greiðslumáti", "💳", "#081828", "#103060", "#2060a0")
     content = f'''<h1>{p["title"]}</h1>
+{hero}
 <p>{p["desc"]}</p>
 <h2>Hvernig það virkar</h2>
 <p>Íslenskir bankar loka á greiðslur til netspilavíta. Dulritunargjaldmiðlar eru besta leiðin til að komast framhjá þessum takmörkunum. Færslur eru hraðar, nafnlausar og gjaldfrjálsar.</p>
@@ -865,7 +887,9 @@ for p in payment_pages:
 # 7. ГАЙДЫ (60)
 print("Generating guides...")
 for g in guide_pages:
+    hero = make_hero(g["title"], "Leiðbeining", "📖", "#0a1828", "#182850", "#304880")
     content = f'''<h1>{g["title"]}</h1>
+{hero}
 <p>{g["desc"]}</p>
 <h2>Ítarleg leiðbeining</h2>
 <p>Í þessari leiðbeiningu fjöllum við um allt sem þú þarft að vita um «{g["title"]}». Upplýsingarnar eru uppfærðar fyrir íslenska leikmenn árið 2026.</p>
@@ -889,8 +913,12 @@ for g in guide_pages:
 
 # 8. О НАС (10)
 print("Generating about pages...")
+about_emojis = {"Um BF Casino":"🏛️","Hafa samband":"📬","Persónuverndarstefna":"🔒","Notkunarskilmálar":"📋","Fyrirvari":"⚖️","Hvernig við metum spilavíti":"⭐","Ritstjórnarstefna":"✍️","Samstarf":"🤝","Vefkort":"🗺️","Ábyrg spilun":"🛡️"}
 for a in about_pages:
+    emoji = about_emojis.get(a["title"], "ℹ️")
+    hero = make_hero(a["title"], "BF Casino", emoji, "#100828", "#201050", "#402080")
     content = f'''<h1>{a["title"]}</h1>
+{hero}
 <p>{a["desc"]}</p>
 <p>BF Casino (bestiflokkurinn.is) er óháð spilavítavefgátt fyrir íslenska leikmenn. Við hjálpum þér að finna áreiðanleg spilavíti með bestu bónusum og stuðningi við dulritunargjaldmiðla.</p>'''
 
