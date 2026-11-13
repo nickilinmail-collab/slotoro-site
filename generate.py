@@ -206,58 +206,79 @@ for i in range(180):
         "cdn": f"{cdn_folder}/SlotGame{i+70}.png"
     })
 
-# Casino categories (50 pages)
+# Casino categories (50 pages) — all in Icelandic
 casino_categories = [
-    {"slug": "luchshie-online-casino", "title": "Best Online Casinos", "desc": "Top-rated online casinos for players from Iceland."},
-    {"slug": "crypto-casino", "title": "Crypto Casinos", "desc": "Casinos accepting Bitcoin, Ethereum, and other cryptocurrencies."},
-    {"slug": "novye-casino", "title": "New Casinos 2026", "desc": "The newest online casinos launched in 2026."},
-    {"slug": "casino-s-bystrym-vyvodom", "title": "Fast Payout Casinos", "desc": "Casinos where withdrawals are processed in under 24 hours."},
-    {"slug": "casino-bez-verifikacii", "title": "No KYC Casinos", "desc": "Casinos that do not require identity verification documents."},
-    {"slug": "bitcoin-casino", "title": "Bitcoin Casinos", "desc": "Best casinos for Bitcoin deposits and withdrawals."},
-    {"slug": "ethereum-casino", "title": "Ethereum Casinos", "desc": "Casinos accepting Ethereum for deposits and withdrawals."},
-    {"slug": "usdt-casino", "title": "USDT Casinos", "desc": "Casinos accepting the USDT stablecoin."},
-    {"slug": "litecoin-casino", "title": "Litecoin Casinos", "desc": "Casinos with Litecoin deposits."},
-    {"slug": "live-casino", "title": "Live Casinos", "desc": "Best casinos with live dealers."},
-    {"slug": "casino-s-bonusom", "title": "Casinos with Bonus", "desc": "Casinos offering generous welcome bonuses."},
-    {"slug": "casino-bez-depozita", "title": "No Deposit Casinos", "desc": "Bónusar without requiring a deposit."},
-    {"slug": "casino-s-frispinami", "title": "Free Spins Casinos", "desc": "Casinos offering free spins on registration."},
-    {"slug": "mobilnoe-casino", "title": "Mobile Casinos", "desc": "Best casinos for mobile play on iPhone and Android."},
-    {"slug": "casino-s-niskim-depozitom", "title": "Low Deposit Casinos", "desc": "Casinos where you can play from €1."},
-    {"slug": "vip-casino", "title": "VIP Casinos", "desc": "Casinos with the best VIP and loyalty programmes."},
-    {"slug": "megaways-casino", "title": "Megaways Casinos", "desc": "Casinos with a large selection of Megaways slots."},
-    {"slug": "jackpot-casino", "title": "Jackpot Casinos", "desc": "Casinos with progressive jackpots."},
-    {"slug": "casino-s-vysokim-rtp", "title": "High RTP Casinos", "desc": "Casinos offering slots with RTP above 97%."},
-    {"slug": "casino-s-licenziej", "title": "Licensed Casinos", "desc": "Verified and licensed online casinos."},
+    {"slug": "luchshie-online-casino", "title": "Bestu netspilavítin", "desc": "Hæst metnu netspilavítin fyrir íslenska leikmenn."},
+    {"slug": "crypto-casino", "title": "Dulritunargjaldmiðils spilavíti", "desc": "Spilavíti sem taka við Bitcoin, Ethereum og öðrum dulritunargjaldmiðlum."},
+    {"slug": "novye-casino", "title": "Ný spilavíti 2026", "desc": "Nýjustu netspilavítin sem opnuðu árið 2026."},
+    {"slug": "casino-s-bystrym-vyvodom", "title": "Hröð útborgun spilavíti", "desc": "Spilavíti þar sem útborganir eru afgreiddar á undir 24 klukkustundum."},
+    {"slug": "casino-bez-verifikacii", "title": "Spilavíti án KYC", "desc": "Spilavíti sem krefjast ekki persónuskilríkja."},
+    {"slug": "bitcoin-casino", "title": "Bitcoin spilavíti", "desc": "Bestu spilavítin fyrir Bitcoin innborganir og útborganir."},
+    {"slug": "ethereum-casino", "title": "Ethereum spilavíti", "desc": "Spilavíti sem taka við Ethereum innborgunum og útborgunum."},
+    {"slug": "usdt-casino", "title": "USDT spilavíti", "desc": "Spilavíti sem taka við USDT stablecoin."},
+    {"slug": "litecoin-casino", "title": "Litecoin spilavíti", "desc": "Spilavíti með Litecoin innborgunum."},
+    {"slug": "live-casino", "title": "Spilavíti í beinni", "desc": "Bestu spilavítin með lifandi spilastjórum."},
+    {"slug": "casino-s-bonusom", "title": "Spilavíti með bónus", "desc": "Spilavíti sem bjóða rausnarlega velkomstbónusa."},
+    {"slug": "casino-bez-depozita", "title": "Spilavíti án innborgunar", "desc": "Bónusar án innborgunarkröfu."},
+    {"slug": "casino-s-frispinami", "title": "Ókeypis snúningar spilavíti", "desc": "Spilavíti sem bjóða ókeypis snúninga við skráningu."},
+    {"slug": "mobilnoe-casino", "title": "Farsíma spilavíti", "desc": "Bestu spilavítin fyrir farsímaspilun á iPhone og Android."},
+    {"slug": "casino-s-niskim-depozitom", "title": "Lág innborgun spilavíti", "desc": "Spilavíti þar sem þú getur spilað frá €1."},
+    {"slug": "vip-casino", "title": "VIP spilavíti", "desc": "Spilavíti með bestu VIP og tryggðarkerfi."},
+    {"slug": "megaways-casino", "title": "Megaways spilavíti", "desc": "Spilavíti með stórt úrval Megaways spilakassa."},
+    {"slug": "jackpot-casino", "title": "Jackpot spilavíti", "desc": "Spilavíti með stigvaxandi jackpottum."},
+    {"slug": "casino-s-vysokim-rtp", "title": "Hátt RTP spilavíti", "desc": "Spilavíti sem bjóða spilakassa með RTP yfir 97%."},
+    {"slug": "casino-s-licenziej", "title": "Leyfisskyld spilavíti", "desc": "Staðfest og leyfisskyld netspilavíti."},
 ]
 
-# 30 more categories
+# 30 more categories — Icelandic titles
 more_cats = [
-    "Curaçao Casinos", "Malta MGA Casinos", "Cashback Casinos", "Tournament Casinos",
-    "High Roller Casinos", "Low Wager Casinos", "Bonus Code Casinos",
-    "Casino Apps", "Quick Registration Casinos", "Roulette Casinos",
-    "Blackjack Casinos", "Baccarat Casinos", "Poker Casinos", "Lottery Casinos",
-    "Bingo Casinos", "Scratch Card Casinos", "Crash Game Casinos", "Plinko Casinos",
-    "Aviator Casinos", "Mines Casinos", "Dice Casinos", "Slot Machine Casinos",
-    "3D Slot Casinos", "Bonus Buy Casinos", "Drops & Wins Casinos",
-    "Instant Game Casinos", "Pragmatic Play Casinos", "NetEnt Casinos",
-    "Evolution Casinos", "Play'n GO Casinos"
+    ("Curaçao spilavíti", "Spilavíti með Curaçao leyfi fyrir íslenska leikmenn."),
+    ("Malta MGA spilavíti", "Spilavíti með Malta MGA leyfi."),
+    ("Endurgreiðslu spilavíti", "Spilavíti sem bjóða endurgreiðslu á nettótapi."),
+    ("Mótaspilavíti", "Spilavíti með spilakassamótum og verðlaunum."),
+    ("Háröllu spilavíti", "Spilavíti fyrir leikmenn sem veðja hátt."),
+    ("Lág veðskilyrði spilavíti", "Spilavíti með lág veðskilyrði á bónusum."),
+    ("Bónuskóða spilavíti", "Spilavíti sem nota bónuskóða."),
+    ("Spilavíti öpp", "Bestu spilavíti öppin fyrir farsíma."),
+    ("Hröð skráning spilavíti", "Spilavíti með skjótri skráningu."),
+    ("Rúletta spilavíti", "Bestu spilavítin fyrir rúlettu."),
+    ("Blackjack spilavíti", "Bestu spilavítin fyrir blackjack."),
+    ("Baccarat spilavíti", "Bestu spilavítin fyrir baccarat."),
+    ("Póker spilavíti", "Bestu spilavítin fyrir póker."),
+    ("Lottó spilavíti", "Spilavíti með lottóleikjum."),
+    ("Bingó spilavíti", "Spilavíti með bingóleikjum."),
+    ("Skraploð spilavíti", "Spilavíti með skraploðaleikjum."),
+    ("Crash leikja spilavíti", "Spilavíti með crash leikjum."),
+    ("Plinko spilavíti", "Spilavíti með Plinko leikjum."),
+    ("Aviator spilavíti", "Spilavíti með Aviator leiknum."),
+    ("Mines spilavíti", "Spilavíti með Mines leikjum."),
+    ("Teningaleikja spilavíti", "Spilavíti með teningaleikjum."),
+    ("Spilakassa spilavíti", "Spilavíti með stórt úrval spilakassa."),
+    ("3D spilakassa spilavíti", "Spilavíti með 3D spilakössum."),
+    ("Bonus Buy spilavíti", "Spilavíti með kaupabónus spilakössum."),
+    ("Drops & Wins spilavíti", "Spilavíti sem taka þátt í Drops & Wins."),
+    ("Skyndisspil spilavíti", "Spilavíti með skyndisspilum."),
+    ("Pragmatic Play spilavíti", "Spilavíti með Pragmatic Play leikjum."),
+    ("NetEnt spilavíti", "Spilavíti með NetEnt leikjum."),
+    ("Evolution spilavíti", "Spilavíti með Evolution lifandi leikjum."),
+    ("Play'n GO spilavíti", "Spilavíti með Play'n GO leikjum."),
 ]
-for i, title in enumerate(more_cats):
-    slug = title.lower().replace("'", "").replace(" ", "-").replace("(", "").replace(")", "")
-    casino_categories.append({"slug": slug, "title": title, "desc": f"Review and rating: {title} for Icelandic players."})
+for title, desc in more_cats:
+    slug = title.lower().replace("'", "").replace(" ", "-").replace("(", "").replace(")", "").replace("ú", "u").replace("á", "a").replace("ö", "o")
+    casino_categories.append({"slug": slug, "title": title, "desc": desc})
 
-# Live casino (50 pages)
+# Live casino (50 pages) — Icelandic descriptions
 live_games = [
-    {"slug": "blackjack", "name": "Blackjack", "desc": "Online blackjack with a live dealer — rules, strategies, and best tables for Icelandic players."},
-    {"slug": "roulette", "name": "Roulette", "desc": "Live roulette online — European, French, and American variants."},
-    {"slug": "baccarat", "name": "Baccarat", "desc": "Live baccarat — how to play and win at online casinos."},
-    {"slug": "poker", "name": "Poker", "desc": "Casino Hold'em and other live dealer poker variants."},
-    {"slug": "dream-catcher", "name": "Dream Catcher", "desc": "Evolution wheel of fortune game — rules and strategies."},
-    {"slug": "monopoly-live", "name": "Monopoly Live", "desc": "Real-time Monopoly game show with a live host."},
-    {"slug": "crazy-time", "name": "Crazy Time", "desc": "The most popular game show from Evolution Gaming."},
-    {"slug": "lightning-roulette", "name": "Lightning Roulette", "desc": "Roulette with lightning strikes and multipliers up to x500."},
-    {"slug": "mega-ball", "name": "Mega Ball", "desc": "Live lottery game with a host and multipliers."},
-    {"slug": "gonzo-treasure-hunt", "name": "Gonzo's Treasure Hunt", "desc": "Treasure hunt game featuring Gonzo from NetEnt's classic slot."},
+    {"slug": "blackjack", "name": "Blackjack", "desc": "Blackjack á netinu með lifandi spilastjóra — reglur, aðferðir og bestu borðin fyrir íslenska leikmenn."},
+    {"slug": "roulette", "name": "Roulette", "desc": "Rúletta í beinni á netinu — evrópskt, franskt og amerískt útlit."},
+    {"slug": "baccarat", "name": "Baccarat", "desc": "Baccarat í beinni — hvernig á að spila og vinna á netspilavítum."},
+    {"slug": "poker", "name": "Poker", "desc": "Casino Hold'em og aðrar lifandi pókerafbrigði."},
+    {"slug": "dream-catcher", "name": "Dream Catcher", "desc": "Evolution lukku-hjólleikur — reglur og aðferðir."},
+    {"slug": "monopoly-live", "name": "Monopoly Live", "desc": "Monopoly leikjaþáttur í rauntíma með lifandi þáttastjórnanda."},
+    {"slug": "crazy-time", "name": "Crazy Time", "desc": "Vinsælasti leikjaþátturinn frá Evolution Gaming."},
+    {"slug": "lightning-roulette", "name": "Lightning Roulette", "desc": "Rúletta með eldingarhjólum og margfaldara upp á x500."},
+    {"slug": "mega-ball", "name": "Mega Ball", "desc": "Lifandi lottóleikur með þáttastjórnanda og margfaldara."},
+    {"slug": "gonzo-treasure-hunt", "name": "Gonzo's Treasure Hunt", "desc": "Fjársjóðaleit með Gonzo úr klassíska NetEnt spilakassanum."},
 ]
 # 40 more live games
 more_live = [
@@ -274,126 +295,171 @@ more_live = [
 ]
 for name in more_live:
     slug = name.lower().replace("'", "").replace(" ", "-")
-    live_games.append({"slug": slug, "name": name, "desc": f"{name} — play with a live dealer at the best casinos for Iceland."})
+    live_games.append({"slug": slug, "name": name, "desc": f"{name} — spilaðu með lifandi spilastjóra á bestu spilavítunum fyrir Ísland."})
 
-# Bónusar (80 pages)
+# Bónusar (80 pages) — all Icelandic
 bonus_pages = [
-    {"slug": "velkomstbonus", "title": "Welcome Bonus", "desc": "Best welcome bonuses at online casinos available to Icelandic players."},
-    {"slug": "frispiny-bez-depozita", "title": "Free Spins No Deposit", "desc": "Free spins with no deposit required — just register and claim."},
-    {"slug": "bezdepozitnye-bonusy", "title": "No Deposit Bónusar", "desc": "Öll no-deposit bonuses available at casinos accepting Icelandic players."},
-    {"slug": "keshbek", "title": "Cashback Bónusar", "desc": "Casinos offering cashback on net losses — get a percentage back weekly."},
-    {"slug": "bonus-za-registraciyu", "title": "Registration Bonus", "desc": "Get a bonus immediately after completing registration — no deposit needed."},
-    {"slug": "bonus-na-pervyj-depozit", "title": "First Deposit Bonus", "desc": "Best bonuses available on your first deposit at top-rated casinos."},
-    {"slug": "bonus-na-vtoroj-depozit", "title": "Second Deposit Bonus", "desc": "Second deposit bonuses — reload offers for your next top-up."},
-    {"slug": "vejer", "title": "What is Wagering", "desc": "Understanding wagering requirements — how playthrough works and what to look for."},
-    {"slug": "bonus-kody", "title": "Casino Bonus Codes", "desc": "Current promo codes and bonus codes for online casinos in 2026."},
-    {"slug": "reload-bonus", "title": "Reload Bónusar", "desc": "Reload bonuses for existing players — weekly and monthly deposit offers."},
+    {"slug": "velkomstbonus", "title": "Velkomstbónus", "desc": "Bestu velkomstbónusarnir á netspilavítum sem eru í boði fyrir íslenska leikmenn."},
+    {"slug": "frispiny-bez-depozita", "title": "Ókeypis snúningar án innborgunar", "desc": "Ókeypis snúningar án innborgunarkröfu — skráðu þig og sæktu."},
+    {"slug": "bezdepozitnye-bonusy", "title": "Bónusar án innborgunar", "desc": "Allir bónusar án innborgunar á spilavítum sem taka við íslenskum leikmönnum."},
+    {"slug": "keshbek", "title": "Endurgreiðslubónusar", "desc": "Spilavíti sem bjóða endurgreiðslu á nettótapi — fáðu hlutfall til baka vikulega."},
+    {"slug": "bonus-za-registraciyu", "title": "Skráningarbónus", "desc": "Fáðu bónus strax eftir skráningu — engin innborgun þarf."},
+    {"slug": "bonus-na-pervyj-depozit", "title": "Fyrsta innborgunarbónus", "desc": "Bestu bónusarnir á fyrstu innborgun hjá efstu spilavítum."},
+    {"slug": "bonus-na-vtoroj-depozit", "title": "Önnur innborgunarbónus", "desc": "Bónusar á annarri innborgun — endurnýjunartilboð við næstu áfyllingu."},
+    {"slug": "vejer", "title": "Hvað eru veðskilyrði", "desc": "Skilningur á veðskilyrðum — hvernig gegnumspilun virkar og hvað á að hafa í huga."},
+    {"slug": "bonus-kody", "title": "Bónuskóðar spilavíta", "desc": "Virk afsláttarkóðar og bónuskóðar fyrir netspilavíti árið 2026."},
+    {"slug": "reload-bonus", "title": "Endurnýjunarbónusar", "desc": "Endurnýjunarbónusar fyrir núverandi leikmenn — vikuleg og mánaðarleg innborgunartilboð."},
 ]
 # 70 more bonus pages per casino
 for casino in casinos[:70]:
     bonus_pages.append({
         "slug": f"bonus-{casino['slug']}",
-        "title": f"Bonus {casino['name']}",
-        "desc": f"Current bonuses and promo codes for {casino['name']} — {casino['bonus']}."
+        "title": f"{casino['name']} bónus",
+        "desc": f"Virk bónustilboð og afsláttarkóðar hjá {casino['name']} — {casino['bonus']}."
     })
 
-# Payments (50 pages)
+# Payments (50 pages) — Icelandic
 payment_pages = [
-    {"slug": "bitcoin", "title": "Bitcoin at Casinos", "desc": "How to use Bitcoin for deposits and withdrawals at online casinos. Step-by-step guide for Icelandic players."},
-    {"slug": "ethereum", "title": "Ethereum at Casinos", "desc": "Depositing and withdrawing with Ethereum (ETH) at online casinos."},
-    {"slug": "usdt", "title": "USDT (Tether) at Casinos", "desc": "Using USDT (Tether) stablecoin at online casinos — instant deposits with stable value."},
-    {"slug": "litecoin", "title": "Litecoin at Casinos", "desc": "Fast and low-fee payments using Litecoin (LTC) at online casinos."},
-    {"slug": "dogecoin", "title": "Dogecoin at Casinos", "desc": "How to deposit and play at online casinos with Dogecoin (DOGE)."},
-    {"slug": "ripple-xrp", "title": "Ripple (XRP) at Casinos", "desc": "Using Ripple (XRP) for fast casino payments with minimal fees."},
-    {"slug": "cardano", "title": "Cardano (ADA) at Casinos", "desc": "Cardano (ADA) casino payments — how to deposit and withdraw."},
-    {"slug": "solana", "title": "Solana (SOL) at Casinos", "desc": "Solana (SOL) for ultra-fast casino transactions with near-zero fees."},
-    {"slug": "bnb", "title": "BNB at Casinos", "desc": "Using BNB (Binance Coin) for casino deposits and withdrawals."},
-    {"slug": "tron", "title": "TRON (TRX) at Casinos", "desc": "TRON (TRX) payments — extremely low fees for casino transactions."},
-    {"slug": "kak-kupit-bitcoin", "title": "How to Buy Bitcoin", "desc": "Step-by-step guide to buying Bitcoin for casino deposits in Iceland."},
-    {"slug": "kak-kupit-ethereum", "title": "How to Buy Ethereum", "desc": "Where and how to buy Ethereum for casino deposits."},
-    {"slug": "obhod-blokirovok-bankov", "title": "Bypassing Bank Blocks", "desc": "How to bypass Icelandic bank blocks on casino payments using crypto."},
-    {"slug": "kripto-koshelki", "title": "Crypto Wallets", "desc": "Best crypto wallets for casino deposits — MetaMask, Trust Wallet, and more."},
-    {"slug": "metamask-casino", "title": "MetaMask for Casinos", "desc": "Using MetaMask wallet for online casino deposits and withdrawals."},
-    {"slug": "trust-wallet-casino", "title": "Trust Wallet for Casinos", "desc": "Making casino deposits through Trust Wallet — complete guide."},
-    {"slug": "binance-casino", "title": "Binance for Casinos", "desc": "How to transfer funds from Binance exchange to your casino account."},
-    {"slug": "coinbase-casino", "title": "Coinbase for Casinos", "desc": "Buying crypto on Coinbase and depositing at online casinos."},
-    {"slug": "kraken-casino", "title": "Kraken for Casinos", "desc": "Using Kraken exchange for casino crypto transactions."},
-    {"slug": "vpn-casino", "title": "VPN for Casinos", "desc": "Do you need a VPN to play at online casinos from Iceland? Legal overview."},
+    {"slug": "bitcoin", "title": "Bitcoin í spilavítum", "desc": "Hvernig á að nota Bitcoin til innborgana og útborgana á netspilavítum. Skref-fyrir-skref leiðbeiningar fyrir íslenska leikmenn."},
+    {"slug": "ethereum", "title": "Ethereum í spilavítum", "desc": "Innborganir og útborganir með Ethereum (ETH) á netspilavítum."},
+    {"slug": "usdt", "title": "USDT (Tether) í spilavítum", "desc": "Notkun USDT (Tether) stablecoin á netspilavítum — tafarlausar innborganir með stöðugu gildi."},
+    {"slug": "litecoin", "title": "Litecoin í spilavítum", "desc": "Hraðar og ódýrar greiðslur með Litecoin (LTC) á netspilavítum."},
+    {"slug": "dogecoin", "title": "Dogecoin í spilavítum", "desc": "Hvernig á að leggja inn og spila á netspilavítum með Dogecoin (DOGE)."},
+    {"slug": "ripple-xrp", "title": "Ripple (XRP) í spilavítum", "desc": "Notkun Ripple (XRP) fyrir hraðar spilavítagreiðslur með lágmarksgjöldum."},
+    {"slug": "cardano", "title": "Cardano (ADA) í spilavítum", "desc": "Cardano (ADA) spilavítagreiðslur — hvernig á að leggja inn og taka út."},
+    {"slug": "solana", "title": "Solana (SOL) í spilavítum", "desc": "Solana (SOL) fyrir ofurhraðar spilavítafærslur með nánast engum gjöldum."},
+    {"slug": "bnb", "title": "BNB í spilavítum", "desc": "Notkun BNB (Binance Coin) fyrir innborganir og útborganir í spilavítum."},
+    {"slug": "tron", "title": "TRON (TRX) í spilavítum", "desc": "TRON (TRX) greiðslur — afar lág gjöld fyrir spilavítafærslur."},
+    {"slug": "kak-kupit-bitcoin", "title": "Hvernig á að kaupa Bitcoin", "desc": "Skref-fyrir-skref leiðbeiningar um kaup á Bitcoin fyrir spilavítainnborganir á Íslandi."},
+    {"slug": "kak-kupit-ethereum", "title": "Hvernig á að kaupa Ethereum", "desc": "Hvar og hvernig á að kaupa Ethereum fyrir spilavítainnborganir."},
+    {"slug": "obhod-blokirovok-bankov", "title": "Framhjá bankalokunum", "desc": "Hvernig á að komast framhjá lokun íslenskra banka á spilavítagreiðslum með dulritunargjaldmiðlum."},
+    {"slug": "kripto-koshelki", "title": "Dulritunarveski", "desc": "Bestu dulritunarveskin fyrir spilavítainnborganir — MetaMask, Trust Wallet og fleira."},
+    {"slug": "metamask-casino", "title": "MetaMask fyrir spilavíti", "desc": "Notkun MetaMask veskis fyrir innborganir og útborganir á netspilavítum."},
+    {"slug": "trust-wallet-casino", "title": "Trust Wallet fyrir spilavíti", "desc": "Innborganir á spilavíti í gegnum Trust Wallet — fullkomin leiðbeining."},
+    {"slug": "binance-casino", "title": "Binance fyrir spilavíti", "desc": "Hvernig á að millifæra fjármuni frá Binance kauphöll á spilavítareikninginn þinn."},
+    {"slug": "coinbase-casino", "title": "Coinbase fyrir spilavíti", "desc": "Kaupa dulritunargjaldmiðil á Coinbase og leggja inn á netspilavíti."},
+    {"slug": "kraken-casino", "title": "Kraken fyrir spilavíti", "desc": "Notkun Kraken kauphallar fyrir dulritunarfærslur í spilavítum."},
+    {"slug": "vpn-casino", "title": "VPN fyrir spilavíti", "desc": "Þarftu VPN til að spila á netspilavítum frá Íslandi? Lagaleg samantekt."},
 ]
-# 30 more payment pages
+# 30 more payment pages — Icelandic
 more_payments = [
-    "Visa at Casinos", "Mastercard at Casinos", "Apple Pay at Casinos", "Google Pay at Casinos",
-    "Skrill at Casinos", "Neteller at Casinos", "ecoPayz at Casinos", "MiFinity at Casinos",
-    "Jeton at Casinos", "CashtoCode at Casinos", "Neosurf at Casinos", "Paysafecard at Casinos",
-    "AstroPay at Casinos", "MuchBetter at Casinos", "Interac at Casinos", "iDebit at Casinos",
-    "Instadebit at Casinos", "Flexepin at Casinos", "Monero at Casinos", "Bitcoin Cash at Casinos",
-    "Polkadot at Casinos", "Avalanche at Casinos", "Polygon at Casinos", "Arbitrum at Casinos",
-    "Optimism at Casinos", "Minimum Deposit €1", "Minimum Deposit €5", "Minimum Deposit €10",
-    "Card Withdrawals", "Fast Crypto Withdrawals"
+    ("Visa í spilavítum", "Visa greiðslur á netspilavítum — leiðbeiningar fyrir íslenska leikmenn."),
+    ("Mastercard í spilavítum", "Mastercard innborganir og útborganir á netspilavítum."),
+    ("Apple Pay í spilavítum", "Notkun Apple Pay á netspilavítum."),
+    ("Google Pay í spilavítum", "Notkun Google Pay á netspilavítum."),
+    ("Skrill í spilavítum", "Skrill rafrænt veski fyrir spilavítagreiðslur."),
+    ("Neteller í spilavítum", "Neteller rafrænt veski fyrir spilavítagreiðslur."),
+    ("ecoPayz í spilavítum", "ecoPayz greiðslur á netspilavítum."),
+    ("MiFinity í spilavítum", "MiFinity rafrænt veski fyrir spilavíti."),
+    ("Jeton í spilavítum", "Jeton greiðslumáti á netspilavítum."),
+    ("CashtoCode í spilavítum", "CashtoCode greiðslur á spilavítum."),
+    ("Neosurf í spilavítum", "Neosurf fyrirframgreitt kort á spilavítum."),
+    ("Paysafecard í spilavítum", "Paysafecard greiðslur á netspilavítum."),
+    ("AstroPay í spilavítum", "AstroPay greiðslur á spilavítum."),
+    ("MuchBetter í spilavítum", "MuchBetter rafrænt veski fyrir spilavíti."),
+    ("Interac í spilavítum", "Interac greiðslur á spilavítum."),
+    ("iDebit í spilavítum", "iDebit greiðslumáti á netspilavítum."),
+    ("Instadebit í spilavítum", "Instadebit greiðslur á spilavítum."),
+    ("Flexepin í spilavítum", "Flexepin fyrirframgreitt kort á spilavítum."),
+    ("Monero í spilavítum", "Monero (XMR) nafnlausar greiðslur á spilavítum."),
+    ("Bitcoin Cash í spilavítum", "Bitcoin Cash (BCH) greiðslur á spilavítum."),
+    ("Polkadot í spilavítum", "Polkadot (DOT) greiðslur á spilavítum."),
+    ("Avalanche í spilavítum", "Avalanche (AVAX) greiðslur á spilavítum."),
+    ("Polygon í spilavítum", "Polygon (MATIC) greiðslur á spilavítum."),
+    ("Arbitrum í spilavítum", "Arbitrum greiðslur á spilavítum."),
+    ("Optimism í spilavítum", "Optimism greiðslur á spilavítum."),
+    ("Lágmarksinnborgun €1", "Spilavíti þar sem þú getur spilað frá €1."),
+    ("Lágmarksinnborgun €5", "Spilavíti þar sem þú getur spilað frá €5."),
+    ("Lágmarksinnborgun €10", "Spilavíti þar sem þú getur spilað frá €10."),
+    ("Kortaútborganir", "Hvernig á að taka út vinninga á greiðslukort."),
+    ("Hraðar dulritunarútborganir", "Hraðastar dulritunarútborganir á spilavítum."),
 ]
-for title in more_payments:
-    slug = title.lower().replace("€", "eur").replace(" ", "-").replace("(", "").replace(")", "")
-    payment_pages.append({"slug": slug, "title": title, "desc": f"{title} — complete guide for players from Iceland."})
+for title, desc in more_payments:
+    slug = title.lower().replace("€", "eur").replace(" ", "-").replace("(", "").replace(")", "").replace("á", "a").replace("ú", "u")
+    payment_pages.append({"slug": slug, "title": title, "desc": desc})
 
-# Guides (60 pages)
+# Guides (60 pages) — all Icelandic
 guide_pages = [
-    {"slug": "kak-vybrat-casino", "title": "How to Choose an Online Casino", "desc": "Complete guide to choosing a reliable and safe online casino."},
-    {"slug": "chto-takoe-rtp", "title": "What is RTP", "desc": "Understanding RTP (Return to Player) — what it means for your gameplay."},
-    {"slug": "chto-takoe-volatilnost", "title": "What is Volatility", "desc": "The difference between low, medium, and high volatility slots explained."},
-    {"slug": "kak-igrat-v-sloty", "title": "Hvernig á að spila Slots", "desc": "Step-by-step guide for beginners — how slot machines work."},
-    {"slug": "strategii-blackjack", "title": "Blackjack Strategy", "desc": "Basic blackjack strategy and strategy card — improve your odds."},
-    {"slug": "pravila-ruletki", "title": "Roulette Rules", "desc": "How to play roulette — complete rules, bets, and strategies."},
-    {"slug": "pravila-bakkary", "title": "Baccarat Rules", "desc": "How to play baccarat — rules, strategies, and tips."},
-    {"slug": "kak-vyigrat-v-casino", "title": "How to Win at Casinos", "desc": "Tips and strategies for improving your odds at online casinos."},
-    {"slug": "otvetstvennaya-igra", "title": "Responsible Gambling", "desc": "How to gamble responsibly — setting limits and staying in control."},
-    {"slug": "zakon-ob-azartnyh-igrah-islandiya", "title": "Iceland Gambling Law", "desc": "Legal status of online casinos in Iceland — what players need to know."},
-    {"slug": "nalogi-na-vyigrysh", "title": "Taxes on Gambling Winnings", "desc": "Do you need to pay taxes on gambling winnings in Iceland?"},
-    {"slug": "bezopasnost-v-casino", "title": "Casino Security", "desc": "How to protect your personal data when playing at online casinos."},
-    {"slug": "glossarij-casino", "title": "Casino Glossary", "desc": "Casino glossary — all gambling terms from A to Z explained."},
-    {"slug": "provajdery-igr", "title": "Game Providers", "desc": "Overview of the biggest slot game providers and developers."},
-    {"slug": "megaways-sloty", "title": "What are Megaways Slots", "desc": "How the Megaways mechanic works — up to 117,649 ways to win."},
-    {"slug": "bonus-buy-sloty", "title": "Bonus Buy Slots", "desc": "How Bonus Buy slots work — skip to the bonus round instantly."},
-    {"slug": "progressivnye-jackpoty", "title": "Progressive Jackpots", "desc": "How progressive jackpots work and how to win them."},
-    {"slug": "turniry-v-casino", "title": "Casino Tournaments", "desc": "How casino slot tournaments work — compete for cash prizes."},
-    {"slug": "vip-programmy", "title": "VIP Programmes", "desc": "How VIP and loyalty programmes work at online casinos."},
-    {"slug": "casino-na-telefone", "title": "Mobile Casinos", "desc": "Best mobile casinos and casino apps for iPhone and Android."},
+    {"slug": "kak-vybrat-casino", "title": "Hvernig á að velja netspilavíti", "desc": "Fullkomin leiðbeining um val á áreiðanlegu og öruggu netspilavíti."},
+    {"slug": "chto-takoe-rtp", "title": "Hvað er RTP", "desc": "Skilningur á RTP (Return to Player) — hvað það þýðir fyrir spilun þína."},
+    {"slug": "chto-takoe-volatilnost", "title": "Hvað er sveifla", "desc": "Munurinn á lágri, miðlungs og hárri sveiflu spilakassa útskýrður."},
+    {"slug": "kak-igrat-v-sloty", "title": "Hvernig á að spila spilakassa", "desc": "Skref-fyrir-skref leiðbeining fyrir byrjendur — hvernig spilakassar virka."},
+    {"slug": "strategii-blackjack", "title": "Blackjack aðferðir", "desc": "Grunn blackjack aðferð og aðferðakort — bættu líkurnar þínar."},
+    {"slug": "pravila-ruletki", "title": "Rúlettureglur", "desc": "Hvernig á að spila rúlettu — fullkomnar reglur, veðmál og aðferðir."},
+    {"slug": "pravila-bakkary", "title": "Baccarat reglur", "desc": "Hvernig á að spila baccarat — reglur, aðferðir og ráð."},
+    {"slug": "kak-vyigrat-v-casino", "title": "Hvernig á að vinna á spilavítum", "desc": "Ráðleggingar og aðferðir til að bæta líkur þínar á netspilavítum."},
+    {"slug": "otvetstvennaya-igra", "title": "Ábyrg spilun", "desc": "Hvernig á að spila á ábyrgan hátt — setja mörk og halda stjórn."},
+    {"slug": "zakon-ob-azartnyh-igrah-islandiya", "title": "Fjárhættuspilalagaíslandi", "desc": "Lagaleg staða netspilavíta á Íslandi — hvað leikmenn þurfa að vita."},
+    {"slug": "nalogi-na-vyigrysh", "title": "Skattar á spilavinninga", "desc": "Þarftu að borga skatta af fjárhættuspilvinningum á Íslandi?"},
+    {"slug": "bezopasnost-v-casino", "title": "Öryggi spilavíta", "desc": "Hvernig á að vernda persónuupplýsingarnar þínar þegar þú spilar á netspilavítum."},
+    {"slug": "glossarij-casino", "title": "Orðasafn spilavíta", "desc": "Orðasafn spilavíta — öll fjárhættuspilahugtök frá A til Ö útskýrð."},
+    {"slug": "provajdery-igr", "title": "Leikjabirgjar", "desc": "Yfirlit yfir stærstu spilakassabirgjana og þróunaraðila."},
+    {"slug": "megaways-sloty", "title": "Hvað eru Megaways spilakassar", "desc": "Hvernig Megaways vélbúnaðurinn virkar — allt að 117.649 leiðir til vinnings."},
+    {"slug": "bonus-buy-sloty", "title": "Bonus Buy spilakassar", "desc": "Hvernig Bonus Buy spilakassar virka — farðu beint í bónuslotuna."},
+    {"slug": "progressivnye-jackpoty", "title": "Stigvaxandi jackpottar", "desc": "Hvernig stigvaxandi jackpottar virka og hvernig á að vinna þá."},
+    {"slug": "turniry-v-casino", "title": "Spilavítamót", "desc": "Hvernig spilakassamót virka — kepptu um peningaverðlaun."},
+    {"slug": "vip-programmy", "title": "VIP kerfi", "desc": "Hvernig VIP og tryggðarkerfi virka á netspilavítum."},
+    {"slug": "casino-na-telefone", "title": "Farsíma spilavíti", "desc": "Bestu farsíma spilavítin og spilavíti öppin fyrir iPhone og Android."},
 ]
-# 40 more guides
+# 40 more guides — Icelandic
 more_guides = [
-    "How to Withdraw from Casino", "How to Deposit at Casino", "What are Wagering Requirements",
-    "How RNG Works", "Slots vs Slot Machines",
-    "Curaçao Licensed Casinos", "MGA Licensed Casinos", "UK Licensed Casinos",
-    "How to Verify Casino Licence", "What is KYC Verification",
-    "How to Choose High RTP Slots", "Top 10 Slots for Beginners", "Top 10 Slots for High Rollers",
-    "Highest Win Potential Slots", "Low Volatility Slots",
-    "Hvernig á að spila Crash Games", "Hvernig á að spila Plinko", "Hvernig á að spila Aviator",
-    "Hvernig á að spila Mines", "Hvernig á að spila Dice",
-    "What is Evolution Gaming", "What is Pragmatic Play", "What is NetEnt",
-    "History of Casinos in Iceland", "Online vs Land-Based Casinos",
-    "Crypto vs Fiat at Casinos", "Advantages of Crypto Casinos",
-    "How to Avoid Casino Scams", "Signs of a Fair Casino", "Casino Blacklist",
-    "How to Contact Casino Support", "How to File a Casino Complaint",
-    "Comparing Casino Bónusar", "How to Maximere Your Bonus",
-    "Bankroll Management Strategy", "Psychology of Gambling",
-    "Gambling Addiction — Help", "Gambling Addiction Support Sites",
-    "Casino Self-Exclusion", "Deposit and Loss Limits"
+    ("Hvernig á að taka út af spilavíti", "Hvernig á að taka út vinninga af netspilavítum."),
+    ("Hvernig á að leggja inn á spilavíti", "Hvernig á að leggja inn á netspilavíti — skref fyrir skref."),
+    ("Hvað eru veðskilyrði", "Veðskilyrði útskýrð — hvernig gegnumspilun virkar."),
+    ("Hvernig RNG virkar", "Hvernig slembitölugjafi (RNG) virkar í spilakössum."),
+    ("Spilakassar á netinu vs hefðbundnir", "Samanburður á netspilakössum og hefðbundnum spilakössum."),
+    ("Curaçao leyfisskyld spilavíti", "Spilavíti með Curaçao leyfi."),
+    ("Malta MGA leyfisskyld spilavíti", "Spilavíti með Malta MGA leyfi."),
+    ("Bretland leyfisskyld spilavíti", "Spilavíti með bresku leyfi (UKGC)."),
+    ("Hvernig á að staðfesta spilavítaleyfi", "Hvernig á að ganga úr skugga um spilavítaleyfi."),
+    ("Hvað er KYC staðfesting", "Hvað er KYC (Know Your Customer) staðfesting."),
+    ("Hvernig á að velja hátt RTP spilakassa", "Hvernig á að finna spilakassa með hæstu RTP."),
+    ("Topp 10 spilakassar fyrir byrjendur", "Bestu spilakassarnir fyrir byrjendur."),
+    ("Topp 10 spilakassar fyrir háröllu", "Bestu spilakassarnir fyrir leikmenn sem veðja hátt."),
+    ("Spilakassar með hæsta vinningsmöguleika", "Spilakassar með mesta vinningsmöguleikann."),
+    ("Lág sveiflu spilakassar", "Bestu lág sveiflu spilakassarnir."),
+    ("Hvernig á að spila Crash leiki", "Hvernig Crash leikir virka á netspilavítum."),
+    ("Hvernig á að spila Plinko", "Hvernig Plinko leikurinn virkar."),
+    ("Hvernig á að spila Aviator", "Hvernig Aviator leikurinn virkar."),
+    ("Hvernig á að spila Mines", "Hvernig Mines leikurinn virkar."),
+    ("Hvernig á að spila Dice", "Hvernig Dice leikir virka á spilavítum."),
+    ("Hvað er Evolution Gaming", "Kynning á Evolution Gaming — stærsti lifandi spilavítabirginn."),
+    ("Hvað er Pragmatic Play", "Kynning á Pragmatic Play — einn vinsælasti leikjabirginn."),
+    ("Hvað er NetEnt", "Kynning á NetEnt — sænski spilakassaframleiðandinn."),
+    ("Saga spilavíta á Íslandi", "Saga fjárhættuspila og spilavíta á Íslandi."),
+    ("Netspilavíti vs raunveruleg spilavíti", "Samanburður á netspilavítum og raunverulegum spilavítum."),
+    ("Dulritunargjaldmiðlar vs hefðbundnar greiðslur", "Dulritunargjaldmiðlar samanborið við hefðbundnar greiðslur á spilavítum."),
+    ("Kostir dulritunar spilavíta", "Kostir þess að nota dulritunargjaldmiðla á spilavítum."),
+    ("Hvernig á að forðast spilavítasvindl", "Hvernig á að bera kennsl á og forðast spilavítasvindl."),
+    ("Einkenni sanngjarns spilavítis", "Hvernig á að bera kennsl á sanngjarnt og áreiðanlegt spilavíti."),
+    ("Svarti listi spilavíta", "Spilavíti á svörtum lista — hvaða spilavíti á að forðast."),
+    ("Hvernig á að hafa samband við þjónustuver", "Hvernig á að hafa samband við þjónustuver spilavíta."),
+    ("Hvernig á að leggja fram kvörtun", "Hvernig á að leggja fram kvörtun gegn spilavíti."),
+    ("Samanburður á bónusum spilavíta", "Hvernig á að bera saman bónusa mismunandi spilavíta."),
+    ("Hvernig á að hámarka bónusinn", "Ráðleggingar um hvernig á að fá sem mest út úr spilavítabónusum."),
+    ("Bankastjórnunaraðferðir", "Bankastjórnunaraðferðir fyrir spilavítaleikmenn."),
+    ("Sálfræði fjárhættuspila", "Sálfræði fjárhættuspila — skilningur á hegðun."),
+    ("Fjárhættuspilafíkn — hjálp", "Hjálp og stuðningur við fjárhættuspilafíkn."),
+    ("Stuðningssíður við spilafíkn", "Stuðningssíður og úrræði við fjárhættuspilafíkn."),
+    ("Sjálfsútilokun spilavíta", "Hvernig sjálfsútilokun virkar á netspilavítum."),
+    ("Innborgunar- og tapsmörk", "Hvernig á að setja innborgunar- og tapsmörk á spilavítum."),
 ]
-for title in more_guides:
-    slug = title.lower().replace("—", "").replace("ё", "e").replace(" ", "-").replace(",", "").replace(".", "")
-    guide_pages.append({"slug": slug, "title": title, "desc": f"{title} — detailed guide for casino players."})
+for title, desc in more_guides:
+    slug = title.lower().replace("á", "a").replace("ð", "d").replace("í", "i").replace("ö", "o").replace("ú", "u").replace("þ", "th").replace("æ", "ae").replace(" ", "-").replace(",", "").replace(".", "").replace("—", "").replace("(", "").replace(")", "")
+    guide_pages.append({"slug": slug, "title": title, "desc": desc})
 
 # About (10 pages)
 about_pages = [
-    {"slug": "o-nas", "title": "About BF Casino", "desc": "Who we are and why we created BF Casino at Bestiflokkurinn.er."},
-    {"slug": "kontakty", "title": "Contact", "desc": "Contact the BF Casino team — get in touch with us."},
-    {"slug": "konfidencialnost", "title": "Privacy Policy", "desc": "How we handle your data — our privacy policy explained."},
-    {"slug": "usloviya", "title": "Terms of Use", "desc": "Terms of use for the Bestiflokkurinn.is website."},
-    {"slug": "otkaz-ot-otvetstvennosti", "title": "Disclaimer", "desc": "Important legal derclaimer about our casino reviews."},
-    {"slug": "kak-my-ocenivaem", "title": "How We Rate Casinos", "desc": "How we rate and review online casinos — our methodology."},
-    {"slug": "redakcionnaya-politika", "title": "Editorial Policy", "desc": "Our editorial policy — independence, accuracy, and transparency."},
-    {"slug": "partnerstvo", "title": "Partnership", "desc": "Partnership opportunities with BF Casino."},
-    {"slug": "karta-sajta", "title": "Sitemap", "desc": "Complete sitemap of all pages on Bestiflokkurinn.er."},
-    {"slug": "otvetstvennaya-igra-stranica", "title": "Responsible Gambling", "desc": "Our position on responsible gambling and player protection."},
+    {"slug": "o-nas", "title": "Um BF Casino", "desc": "Hverjir við erum og hvers vegna við stofnuðum BF Casino á Bestiflokkurinn.is."},
+    {"slug": "kontakty", "title": "Hafa samband", "desc": "Hafðu samband við BF Casino teymið."},
+    {"slug": "konfidencialnost", "title": "Persónuverndarstefna", "desc": "Hvernig við meðhöndlum gögnin þín — persónuverndarstefna okkar útskýrð."},
+    {"slug": "usloviya", "title": "Notkunarskilmálar", "desc": "Notkunarskilmálar vefsíðunnar Bestiflokkurinn.is."},
+    {"slug": "otkaz-ot-otvetstvennosti", "title": "Fyrirvari", "desc": "Mikilvægur lagalegur fyrirvari um spilavítaumsagnir okkar."},
+    {"slug": "kak-my-ocenivaem", "title": "Hvernig við metum spilavíti", "desc": "Hvernig við metum og umsögnum netspilavíti — aðferðafræði okkar."},
+    {"slug": "redakcionnaya-politika", "title": "Ritstjórnarstefna", "desc": "Ritstjórnarstefna okkar — sjálfstæði, nákvæmni og gagnsæi."},
+    {"slug": "partnerstvo", "title": "Samstarf", "desc": "Samstarfstækifæri hjá BF Casino."},
+    {"slug": "karta-sajta", "title": "Vefkort", "desc": "Fullkomið vefkort yfir allar síður á Bestiflokkurinn.is."},
+    {"slug": "otvetstvennaya-igra-stranica", "title": "Ábyrg spilun", "desc": "Afstaða okkar til ábyrgrar spilunar og verndar leikmanna."},
 ]
 
 
@@ -689,11 +755,11 @@ for s in slots_data:
 <p><strong>Þema:</strong> {s["theme"]}</p>
 </div>
 <h2>Um {s["name"]}</h2>
-<p>{s["name"]} by {s["provider"]} er einn vinsælasti spilakassinn í «{s["theme"]}» flokknum. Spilakassinn býður upp á {s["volatility"].lower()} sveiflur og hámarksvinninga upp á {s["maxwin"]}.</p>
+<p>{s["name"]} frá {s["provider"]} er einn vinsælasti spilakassinn í «{s["theme"]}» flokknum. Spilakassinn býður upp á {s["volatility"].lower()} sveiflur og hámarksvinninga upp á {s["maxwin"]}.</p>
 <h3>RTP og sveifla</h3>
-<p>RTP (Return to Player) á {s["name"]} er {s["rtp"]}%. This means the slot theoretically returns {s["rtp"]}% af öllum veðmálum til leikmanna til lengri tíma.</p>
+<p>RTP (Return to Player) á {s["name"]} er {s["rtp"]}%. Þetta þýðir að spilakassinn skilar fræðilega {s["rtp"]}% af öllum veðmálum til leikmanna til lengri tíma.</p>
 <h3>Hvar á að spila {s["name"]}</h3>
-<p>This slot is available at the following casinos accepting players from Iceland:</p>
+<p>Þessi spilakassi er í boði á eftirfarandi spilavítum sem taka við íslenskum leikmönnum:</p>
 <ul>
 <li><a href="/slotoro-site/casino/bitstarz/">BitStarz</a> — 5 BTC + 200 FS</li>
 <li><a href="/slotoro-site/casino/stake/">Stake</a> — 200% bonus</li>
@@ -702,7 +768,7 @@ for s in slots_data:
 <div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Spila {s["name"]} →</a></div>'''
 
     bc = [("/slotoro-site/", "Home"), ("/slotoro-site/slots/", "Slots"), ("", s["name"])]
-    html = page_template(f'{s["name"]} Slot', f'{s["name"]} by {s["provider"]} — RTP {s["rtp"]}%, volatility {s["volatility"]}, max {s["maxwin"]}', bc, content)
+    html = page_template(f'{s["name"]} spilakassi', f'{s["name"]} frá {s["provider"]} — RTP {s["rtp"]}%, sveifla {s["volatility"]}, hámark {s["maxwin"]}', bc, content)
     write_page(f'slots/{s["slug"]}/index.html', html)
 
 # 4. LIVE КАЗИНО (50)
@@ -737,7 +803,7 @@ for b in bonus_pages:
 <p><strong>BC.Game:</strong> 300% crypto bonus — <a href="/slotoro-site/casino/bc-game/">Nánari upplýsingar →</a></p>
 </div>
 <h2>Hvernig á að fá bónus</h2>
-<p>To claim a bonus, register at the casino, make a deposit and the bonus will be credited automatically. Pay attention to wagering requirements.</p>
+<p>Til að virkja bónus, skráðu þig á spilavítið, leggðu inn og bónusinn verður sjálfkrafa inneignaður. Athugaðu veðskilyrði.</p>
 <div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Fá bónus →</a></div>'''
 
     bc = [("/slotoro-site/", "Home"), ("/slotoro-site/bonusy/", "Bónusar"), ("", b["title"])]
@@ -775,12 +841,12 @@ for g in guide_pages:
     content = f'''<h1>{g["title"]}</h1>
 <p>{g["desc"]}</p>
 <h2>Ítarleg leiðbeining</h2>
-<p>In this guide we cover everything you need to know about «{g["title"]}». Information is up to date for players in Iceland in 2026.</p>
+<p>Í þessari leiðbeiningu fjöllum við um allt sem þú þarft að vita um «{g["title"]}». Upplýsingarnar eru uppfærðar fyrir íslenska leikmenn árið 2026.</p>
 <h3>Lykilatriði</h3>
 <ul>
 <li>Hvað þarf að vita áður en þú byrjar</li>
 <li>Skref-fyrir-skref leiðbeiningar</li>
-<li>Common mistakes and how to avoid them</li>
+<li>Algeng mistök og hvernig á að forðast þau</li>
 <li>Ráðleggingar frá sérfræðingum BF Casino</li>
 </ul>
 <h3>Gagnlegir tenglar</h3>
@@ -799,7 +865,7 @@ print("Generating about pages...")
 for a in about_pages:
     content = f'''<h1>{a["title"]}</h1>
 <p>{a["desc"]}</p>
-<p>BF Casino (bestiflokkurinn.is) is an independent online casino portal for players in Iceland. We help you find reliable casinos with the best bonuses and cryptocurrency support.</p>'''
+<p>BF Casino (bestiflokkurinn.is) er óháð spilavítavefgátt fyrir íslenska leikmenn. Við hjálpum þér að finna áreiðanleg spilavíti með bestu bónusum og stuðningi við dulritunargjaldmiðla.</p>'''
 
     bc = [("/slotoro-site/", "Home"), ("", a["title"])]
     html = page_template(a["title"], a["desc"], bc, content)
@@ -818,21 +884,21 @@ for c in casinos[:20]:
 
 casino_list = "\n".join([f'<div class="info-box"><p><strong><a href="/slotoro-site/casino/{c["slug"]}/">{c["name"]}</a></strong> — {c["bonus"]} (Einkunn: {c["rating"]}/10)</p></div>' for c in casinos[:50]])
 
-casino_content = f'''<h1>Best Online Casinos Iceland 2026</h1>
-<p>BF Casino reviews {len(casinos)} online casinos for Icelandic players. Compare bonuses, payment methods and game libraries. Öll casinos listed support cryptocurrency — the easiest way to play from Iceland.</p>
+casino_content = f'''<h1>Bestu netspilavítin á Íslandi 2026</h1>
+<p>BF Casino umsagnir um {len(casinos)} netspilavíti fyrir íslenska leikmenn. Berðu saman bónusa, greiðslumáta og leikjasöfn. Öll spilavíti styðja dulritunargjaldmiðla — auðveldasta leiðin til að spila frá Íslandi.</p>
 <div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Spila á Top Casino →</a></div>
 <h2>Topp 20 spilavíti</h2>
 <div class="game-grid">{casino_cards}</div>
 <h2>Öll {len(casinos)} Spilavíti umsagnir</h2>
 {casino_list}'''
 
-write_page("casino/index.html", page_template("Best Online Casinos Iceland 2026", f"Compare {len(casinos)} online casinos for Iceland. Crypto payments, fast withdrawals, welcome bonuses.",
+write_page("casino/index.html", page_template("Bestu netspilavítin á Íslandi 2026", f"Berðu saman {len(casinos)} netspilavíti á Íslandi. Dulritunargreiðslur, hraðar útborganir, velkomstbónusar.",
     [("/slotoro-site/", "Home"), ("", "Casino")],
     casino_content))
 
 # Slots index
 slots_list = "\n".join([f'<div class="info-box"><p><strong><a href="/slotoro-site/slots/{s["slug"]}/">{s["name"]}</a></strong> — {s["provider"]} | RTP {s["rtp"]}% | {s["maxwin"]}</p></div>' for s in slots_data[:30]])
-write_page("slots/index.html", page_template("Öll Slots", "Umsagnir um popular slots",
+write_page("slots/index.html", page_template("Allir spilakassar", "Umsagnir um vinsæla spilakassa",
     [("/slotoro-site/", "Home"), ("", "Slots")],
     f'<h1>Vinsælir spilakassar 2026</h1><p>Umsagnir um {len(slots_data)} spilakassa frá fremstu birgjum.</p>{slots_list}'))
 
