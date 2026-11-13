@@ -525,7 +525,7 @@ def page_template(title, desc, breadcrumbs, content, canonical=""):
 {f'<link rel="canonical" href="{canonical}">' if canonical else ''}
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{{--bg:#0c0618;--bg2:#140e28;--bg3:#1a1235;--card:rgba(25,15,50,.55);--border:rgba(140,100,220,.1);--border2:rgba(140,100,220,.2);--purple:#8040e0;--violet:#c060ff;--blue:#80b0ff;--accent:#c080ff;--accent-bg:rgba(140,80,240,.06);--gold:#f0c050;--text:#c4b8e8;--text2:#9a8cc0;--muted:rgba(160,140,200,.6);--muted2:rgba(100,80,150,.4);--warm1:#2a1040;--warm2:#1a0830;}}
+:root{{--bg:#0c0618;--bg2:#140e28;--bg3:#1a1235;--card:rgba(25,15,50,.55);--border:rgba(140,100,220,.1);--border2:rgba(140,100,220,.2);--purple:#8040e0;--violet:#c060ff;--blue:#80b0ff;--accent:#c080ff;--accent-bg:rgba(140,80,240,.06);--gold:#f0c050;--text:#c4b8e8;--text2:#9a8cc0;--muted:rgba(180,160,220,.85);--muted2:rgba(140,120,180,.6);--warm1:#2a1040;--warm2:#1a0830;}}
 *{{margin:0;padding:0;box-sizing:border-box;}}
 html{{scroll-behavior:smooth;}}
 body{{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;}}
@@ -559,12 +559,12 @@ body::after{{content:'';position:fixed;bottom:-200px;left:-10%;width:600px;heigh
 /* Layout */
 .page-wrap{{max-width:1100px;margin:0 auto;padding:40px 30px 60px;display:grid;grid-template-columns:1fr 280px;gap:40px;position:relative;z-index:1;}}
 .content{{animation:fadeUp .5s ease-out;}}
-.content h1{{font-family:'DM Serif Display',serif;font-size:32px;font-weight:400;margin-bottom:20px;line-height:1.2;color:#fff;background:linear-gradient(135deg,#fff 60%,#c080ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}}
+.content h1{{font-family:'DM Serif Display',serif;font-size:32px;font-weight:400;margin-bottom:20px;line-height:1.25;color:#fff;}}
 .content h2{{font-family:'Space Grotesk',sans-serif;font-size:21px;font-weight:700;margin:32px 0 14px;color:#e0d0f8;position:relative;padding-left:16px;}}
 .content h2::before{{content:'';position:absolute;left:0;top:4px;bottom:4px;width:3px;border-radius:2px;background:linear-gradient(180deg,#8040e0,#c060ff);}}
 .content h3{{font-size:16px;font-weight:600;margin:24px 0 10px;color:var(--text);}}
-.content p{{color:var(--muted);font-size:14px;line-height:1.75;margin-bottom:16px;}}
-.content ul,.content ol{{color:var(--muted);font-size:14px;line-height:1.75;margin:0 0 16px 20px;}}
+.content p{{color:var(--muted);font-size:15px;line-height:1.8;margin-bottom:16px;}}
+.content ul,.content ol{{color:var(--muted);font-size:15px;line-height:1.8;margin:0 0 16px 20px;}}
 .content li{{margin-bottom:8px;}}
 .content a{{color:#c080ff;font-weight:500;transition:color .15s;}}
 .content a:hover{{color:#e0c0ff;}}
@@ -746,9 +746,32 @@ for cat in casino_categories:
 # 3. СЛОТЫ (250)
 print("Generating slot reviews...")
 for s in slots_data:
-    cdn_img = ""
-    if s.get("cdn"):
-        cdn_img = f'<div class="slot-hero"><div class="slot-hero-bg" style="background:url(\'https://cdn.softswiss.net/i/s3/{s["cdn"]}\') center/cover,linear-gradient(135deg,#0a1040,#1a2070);"></div></div>'
+    # Theme-based gradient colors for slot hero cards
+    theme_gradients = {
+        "Mythology": "#1a0840,#3020a0,#6040c0", "Egypt": "#2a1800,#8a6020,#c09030",
+        "Fruit": "#300828,#a02060,#e04080", "Fishing": "#001830,#004080,#0080c0",
+        "Space": "#080020,#1010a0,#4040e0", "Western": "#2a1000,#804020,#c06030",
+        "Ocean": "#001828,#003860,#0070b0", "Adventure": "#102000,#306010,#50a020",
+        "Nature": "#081808,#205020,#40a040", "Animals": "#181008,#604020,#a06030",
+        "Aliens": "#100030,#4020a0,#8040e0", "Classic": "#180818,#502050,#904090",
+        "Horror": "#100008,#400018,#800030", "Fantasy": "#0a0828,#302080,#6040c0",
+        "Vampires": "#180008,#500020,#900040", "Vikings": "#081020,#203060,#4060a0",
+        "Asia": "#280808,#802020,#c04040", "Pirates": "#100818,#302840,#605880",
+        "Sweets": "#280020,#802060,#d040a0", "Anime": "#200830,#6020a0,#a040e0",
+        "Samurai": "#180010,#501040,#a02080", "Gems": "#100828,#302880,#5048c0",
+        "Money": "#082008,#206020,#40a020", "Ireland": "#001808,#005020,#00a040",
+        "Aztec": "#201008,#604020,#a08040", "Mexico": "#280808,#a02020,#e04040",
+        "Crime": "#0a0a18,#202040,#404080", "Hawaii": "#002020,#008080,#00c0c0",
+        "Africa": "#201008,#704020,#b08040", "Detective": "#101020,#303050,#606090",
+        "Wrestling": "#200808,#802020,#c04040", "Extreme": "#201000,#806000,#c0a000",
+        "Arthurian": "#081028,#203060,#4060b0", "Safari": "#201808,#806030,#c0a060",
+        "Fairy Tales": "#180828,#502080,#9040c0",
+    }
+    grad = theme_gradients.get(s["theme"], "#0a0828,#302060,#6040a0")
+    cdn_img = f'''<div class="slot-hero"><div class="slot-hero-bg" style="background:linear-gradient(135deg,{grad});display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center;">
+<span style="font-family:\'Space Grotesk\',sans-serif;font-size:28px;font-weight:700;color:rgba(255,255,255,.9);text-shadow:0 2px 12px rgba(0,0,0,.5);line-height:1.2;">{s["name"]}</span>
+<span style="font-size:12px;color:rgba(255,255,255,.5);margin-top:8px;letter-spacing:1px;text-transform:uppercase;">{s["provider"]}</span>
+</div></div>'''
     content = f'''<h1>{s["name"]} — Spilakassaumsögn</h1>
 {cdn_img}
 <div class="info-box">
