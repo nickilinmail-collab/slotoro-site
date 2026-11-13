@@ -160,7 +160,7 @@ a{text-decoration:none;color:inherit;}
 .share{max-width:1100px;margin:30px auto 10px;padding:22px 30px 0;border-top:1px solid rgba(140,100,220,.12);justify-content:center;position:relative;z-index:1;display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
 .share-label{font-size:14px;color:rgba(180,160,220,.85);margin-right:4px;}
 .share a{position:relative;width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 14px rgba(0,0,0,.35);}
-.share a::before{content:'';position:absolute;top:-7px;left:50%;transform:translateX(-50%);width:40px;height:16px;background:#fff;border-radius:50% 50% 40% 40%/80% 80% 30% 30%;box-shadow:-9px 4px 0 -3px #fff,9px 4px 0 -3px #fff;}
+.share a::before{content:'';position:absolute;top:-4px;left:0;width:48px;height:22px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 -4 48 22'%3E%3Cpath fill='white' d='M3.5 11.5 A21 21 0 0 1 44.5 11.5 Q43 14.5 40.5 12.8 Q39.5 17.5 37 13.2 Q34 15 31.5 13 Q30 19 27.5 13.3 Q24.5 15.5 22 13.2 Q20.5 16.5 18 13 Q15 15.5 12.5 12.8 Q11 18 8.5 12.6 Q6 14.5 3.5 11.5 Z'/%3E%3C/svg%3E") no-repeat center/100% 100%;filter:drop-shadow(0 1px 1px rgba(0,0,0,.25));pointer-events:none;}
 .share a:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.45);}
 .share a:focus-visible{outline:2px solid #c080ff;outline-offset:3px;}
 .share svg{width:22px;height:22px;fill:#fff;position:relative;}
@@ -339,7 +339,7 @@ document.addEventListener('click',function(e){if(!e.target.closest('.search-wrap
   <div class="stats-grid">
     <div class="stat"><div class="stat-icon purple">🎰</div><div><div class="stat-num">8 000+</div><div class="stat-label">Spilavítaleikir</div></div></div>
     <div class="stat"><div class="stat-icon blue">📺</div><div><div class="stat-num">71</div><div class="stat-label">Leikjabirgjar</div></div></div>
-    <div class="stat"><div class="stat-icon gold">⚡</div><div><div class="stat-num">10 min</div><div class="stat-label">Dulritunarútborganir</div></div></div>
+    <div class="stat"><div class="stat-icon gold">⚡</div><div><div class="stat-num">10 min</div><div class="stat-label">Dulritunarútborganir (skv. rekstraraðila)</div></div></div>
     <div class="stat"><div class="stat-icon pink">🛡️</div><div><div class="stat-num">100%</div><div class="stat-label">Leyfisskylt og öruggt</div></div></div>
   </div>
 </div>
@@ -361,6 +361,8 @@ document.addEventListener('click',function(e){if(!e.target.closest('.search-wrap
 <a class="s-copy" data-net="copy" href="#" aria-label="Afrita tengil"><svg viewBox="0 0 24 24"><path d="M10.6 13.4a1 1 0 0 1 0-1.4l3.5-3.5a1 1 0 1 1 1.4 1.4L12 13.4a1 1 0 0 1-1.4 0zM8.5 16.9a2.5 2.5 0 0 1-3.5-3.5l2.8-2.8-1.4-1.4-2.8 2.8a4.5 4.5 0 0 0 6.4 6.4l2.8-2.8-1.4-1.4zM18.4 4.2a4.5 4.5 0 0 0-6.4 0L9.2 7l1.4 1.4L13.4 5.6a2.5 2.5 0 0 1 3.5 3.5L14.1 12l1.4 1.4 2.9-2.8a4.5 4.5 0 0 0 0-6.4z"/></svg></a>
 </div>
 <!-- FOOTER -->
+<div style="text-align:center;font-size:13px;color:rgba(200,185,235,.9);margin:10px 0;">Þarftu að tala við einhvern um spilavanda? Hjálparsíminn <a href="tel:1717" style="color:#fff;font-weight:700;">1717</a> hjá Rauða krossinum er ókeypis og opinn allan sólarhringinn.</div>
+
 <div class="foot">
   <p>© 2026 bestiflokkurinn.is · Besti flokkurinn var íslenskur stjórnmálaflokkur (2009–2014).<br>Afþreyingarhlutinn er rekinn sjálfstætt. 18+ | <a href="https://www.begambleaware.org" target="_blank" rel="noopener">BeGambleAware.org</a></p>
 </div>

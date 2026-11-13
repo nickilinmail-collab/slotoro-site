@@ -6,6 +6,7 @@ Bestiflokkurinn.is — BF Casino site generator
 import os
 import json
 import sys
+import re
 
 # URL base path — "/" for production on bestiflokkurinn.is, "/slotoro-site/" for GitHub Pages
 URL_BASE = "/" if "--production" in sys.argv else "/slotoro-site/"
@@ -16,32 +17,32 @@ URL_BASE = "/" if "--production" in sys.argv else "/slotoro-site/"
 
 # 150 casino reviews
 casinos = [
-    {"slug": "bitstarz", "name": "BitStarz", "rating": 9.8, "bonus": "5 BTC + 200 FS", "type": "crypto", "desc": "Award-winning crypto casino with instant payouts. Over 3,500 games from top-tier providers including Pragmatic Play, Evolution, and Play'n GO. Accepts BTC, ETH, LTC, DOGE and more. Withdrawals processed in under 10 minutes. Curaçao licensed with provably fair games."},
-    {"slug": "stake", "name": "Stake", "rating": 9.6, "bonus": "200% + VIP", "type": "crypto", "desc": "One of the most popular crypto casinos worldwide with an exclusive VIP programme, original Stake games, and a full sportsbook. Supports 8 cryptocurrencies. Known for fast withdrawals and transparent house edge on original games."},
-    {"slug": "bc-game", "name": "BC.Game", "rating": 9.4, "bonus": "300% up to 1 BTC", "type": "crypto", "desc": "Innovative crypto casino with proprietary crash, dice, and limbo games. Supports 100+ cryptocurrencies including BTC, ETH, SOL, and DOGE. Daily bonuses, lucky spins, and a task-based reward system. Curaçao licence."},
-    {"slug": "tonybet", "name": "TonyBet", "rating": 9.2, "bonus": "150% + 100 FS", "type": "classic", "desc": "Established sportsbook and casino platform with a strong live dealer section powered by Evolution. Accepts Visa, Mastercard, Skrill, and crypto. MGA-licensed with responsible gambling tools built in."},
-    {"slug": "epicbet", "name": "Epicbet", "rating": 9.0, "bonus": "100% up to €500", "type": "classic", "desc": "Modern casino with a clean interface, fast card and e-wallet withdrawals, and responsive 24/7 support. Over 2,000 slots from NetEnt, Microgaming, and Pragmatic Play. Curaçao licensed."},
-    {"slug": "respin", "name": "Respin Casino", "rating": 8.9, "bonus": "200% + 50 FS", "type": "classic", "desc": "Casino with a massive slot library exceeding 4,000 titles and generous deposit bonuses. Weekly cashback and reload offers for existing players. Supports multiple languages and currencies."},
-    {"slug": "vegazone", "name": "VegaZone", "rating": 8.8, "bonus": "150% up to €300", "type": "classic", "desc": "Stylish casino featuring exclusive slot tournaments, regular promotions, and a loyalty programme with real rewards. Good selection of live tables and e-wallet payment support."},
-    {"slug": "wildcoins", "name": "WildCoins", "rating": 8.7, "bonus": "250% + 100 FS", "type": "crypto", "desc": "Crypto-focused casino with high-percentage welcome bonuses and fast BTC withdrawals. Supports Bitcoin, Ethereum, Litecoin, and USDT. No KYC required for crypto deposits under certain thresholds."},
-    {"slug": "katsubet", "name": "KatsuBet", "rating": 8.6, "bonus": "100% + 100 FS", "type": "crypto", "desc": "Japanese-themed crypto casino with over 5,000 games from 40+ providers. Accepts BTC, ETH, LTC, DOGE, USDT, and BCH. Weekly tournaments, daily free spins, and a four-tier VIP programme."},
-    {"slug": "winz", "name": "Winz.io", "rating": 8.5, "bonus": "300 FS no wager", "type": "crypto", "desc": "Unique casino offering wager-free bonuses — you keep what you win with no playthrough requirements. Supports 6 cryptocurrencies and offers 5,000+ games. Licensed in Curaçao."},
-    {"slug": "7bit", "name": "7Bit Casino", "rating": 8.5, "bonus": "200% + 100 FS", "type": "crypto", "desc": "Retro-styled crypto casino establerhed in 2014 with a proven track record. Over 7,000 games, weekly cashback up to 20%, Monday reload bonuses. Accepts BTC, ETH, LTC, DOGE, USDT, and BCH."},
-    {"slug": "mbitcasino", "name": "mBit Casino", "rating": 8.4, "bonus": "175% + 300 FS", "type": "crypto", "desc": "One of the oldest crypto casinos, operating since 2014. Accepts Bitcoin, Ethereum, Litecoin, Dogecoin, and Tether. Over 3,000 games with provably fair options. VIP programme with personal account manager."},
-    {"slug": "cloudbet", "name": "Cloudbet", "rating": 8.4, "bonus": "100% up to 5 BTC", "type": "crypto", "desc": "Premium crypto casino and sportsbook with high table limits for VIP players. Supports BTC, ETH, USDT, and more. Known for competitive sports odds and a large live casino section."},
-    {"slug": "casinonic", "name": "Casinonic", "rating": 8.3, "bonus": "100% + 100 FS", "type": "classic", "desc": "Beginner-friendly casino with a simple registration process and intuitive navigation. Over 2,000 slots, live dealer tables, and weekly cashback. Accepts Visa, Mastercard, and crypto."},
-    {"slug": "national-casino", "name": "National Casino", "rating": 8.3, "bonus": "100% + 100 FS", "type": "classic", "desc": "Casino with an excellent live dealer collection powered by Evolution and Pragmatic Play Live. Fast verification process, multiple withdrawal methods, and responsive customer support."},
-    {"slug": "20bet", "name": "20Bet", "rating": 8.2, "bonus": "100% up to €120", "type": "classic", "desc": "Öll-in-one platform combining casino, live casino, and sportsbook. Over 6,000 games from 70+ providers. Accepts Visa, Mastercard, e-wallets, and cryptocurrencies. Licensed in Curaçao."},
-    {"slug": "rocketplay", "name": "RocketSpila", "rating": 8.2, "bonus": "150% + 100 FS", "type": "crypto", "desc": "Space-themed crypto casino with fast Bitcoin withdrawals and a wide game selection. 3,500+ games, weekly reload bonuses, and a four-level VIP programme with cashback up to 12%."},
-    {"slug": "hellspin", "name": "HellSpin", "rating": 8.1, "bonus": "150% + 50 FS", "type": "crypto", "desc": "Bold casino with aggressive bonus offers, frequent promotions, and a dark-themed interface. Supports BTC, ETH, LTC, and USDT. Over 3,000 games including exclusive titles."},
-    {"slug": "neospin", "name": "NeoSpin", "rating": 8.1, "bonus": "100% + 100 FS", "type": "crypto", "desc": "Next-generation casino with a futuristic design, 5,000+ games, and support for Bitcoin, Ethereum, and Tether. Daily cashback, weekly tournaments, and instant crypto payouts."},
-    {"slug": "betpanda", "name": "BetPanda", "rating": 8.0, "bonus": "100% up to 1 BTC", "type": "crypto", "desc": "Friendly crypto casino with low wagering requirements on bonuses (typically 30x). Supports BTC, ETH, and USDT. Simple interface, fast payouts, and no-KYC deposits up to certain limits."},
+    {"slug": "bitstarz", "name": "BitStarz", "rating": 9.8, "bonus": "5 BTC + 200 FS", "type": "crypto", "desc": "Margverðlaunað dulritunarspilavíti með yfir 3.500 leikjum frá Pragmatic Play, Evolution og Play'n GO. Tekur við BTC, ETH, LTC, DOGE og fleiri myntum. Rekstraraðilinn segir útborganir í dulritunargjaldmiðlum afgreiddar á nokkrum mínútum. Curaçao leyfi."},
+    {"slug": "stake", "name": "Stake", "rating": 9.6, "bonus": "200% + VIP", "type": "crypto", "desc": "Eitt vinsælasta dulritunarspilavíti heims með VIP kerfi, eigin Stake leikjum og íþróttaveðmálum. Styður 8 dulritunargjaldmiðla og birtir húsforskot á eigin leikjum."},
+    {"slug": "bc-game", "name": "BC.Game", "rating": 9.4, "bonus": "300% up to 1 BTC", "type": "crypto", "desc": "Spilavíti með eigin crash, dice og limbo leikjum. Styður yfir 100 dulritunargjaldmiðla, þar á meðal BTC, ETH, SOL og DOGE. Daglegir bónusar og verkefnakerfi. Curaçao leyfi."},
+    {"slug": "tonybet", "name": "TonyBet", "rating": 9.2, "bonus": "150% + 100 FS", "type": "classic", "desc": "Rótgróið spilavíti og veðmálasíða með sterkum lifandi spilavítishluta frá Evolution. Tekur við Visa, Mastercard, Skrill og dulritunargjaldmiðlum. Leyfi í Eistlandi (innan EES)."},
+    {"slug": "epicbet", "name": "Epicbet", "rating": 9.0, "bonus": "100% up to €500", "type": "classic", "desc": "Nútímalegt spilavíti með skýru viðmóti, íslensku tungumáli og Apple Pay. Yfir 2.000 spilakassar frá NetEnt, Microgaming og Pragmatic Play."},
+    {"slug": "respin", "name": "Respin Casino", "rating": 8.9, "bonus": "200% + 50 FS", "type": "classic", "desc": "Spilavíti með yfir 4.000 spilakössum, íslensku viðmóti og PIQ greiðslum. Vikuleg endurgreiðsla og endurnýjunartilboð fyrir núverandi leikmenn."},
+    {"slug": "vegazone", "name": "VegaZone", "rating": 8.8, "bonus": "150% up to €300", "type": "classic", "desc": "Spilavíti með spilakassamótum, reglulegum tilboðum og tryggðarkerfi. Gott úrval lifandi borða og stuðningur við rafræn veski."},
+    {"slug": "wildcoins", "name": "WildCoins", "rating": 8.7, "bonus": "250% + 100 FS", "type": "crypto", "desc": "Dulritunarspilavíti með háum hlutfallsbónusum. Styður Bitcoin, Ethereum, Litecoin og USDT."},
+    {"slug": "katsubet", "name": "KatsuBet", "rating": 8.6, "bonus": "100% + 100 FS", "type": "crypto", "desc": "Japanskt þema og yfir 5.000 leikir frá 40+ framleiðendum. Tekur við BTC, ETH, LTC, DOGE, USDT og BCH. Vikuleg mót og fjögurra þrepa VIP kerfi."},
+    {"slug": "winz", "name": "Winz.io", "rating": 8.5, "bonus": "300 FS no wager", "type": "crypto", "desc": "Spilavíti með bónusum án veðskilyrða — það sem þú vinnur geturðu tekið út. Styður 6 dulritunargjaldmiðla og yfir 5.000 leiki. Curaçao leyfi."},
+    {"slug": "7bit", "name": "7Bit Casino", "rating": 8.5, "bonus": "200% + 100 FS", "type": "crypto", "desc": "Dulritunarspilavíti í retró stíl, starfrækt síðan 2014. Yfir 7.000 leikir, vikuleg endurgreiðsla og mánudagsbónusar."},
+    {"slug": "mbitcasino", "name": "mBit Casino", "rating": 8.4, "bonus": "175% + 300 FS", "type": "crypto", "desc": "Eitt elsta dulritunarspilavítið, starfrækt síðan 2014. Tekur við Bitcoin, Ethereum, Litecoin, Dogecoin og Tether. Yfir 3.000 leikir."},
+    {"slug": "cloudbet", "name": "Cloudbet", "rating": 8.4, "bonus": "100% up to 5 BTC", "type": "crypto", "desc": "Dulritunarspilavíti og veðmálasíða með háum borðmörkum fyrir stórspilara. Styður BTC, ETH, USDT og fleiri."},
+    {"slug": "casinonic", "name": "Casinonic", "rating": 8.3, "bonus": "100% + 100 FS", "type": "classic", "desc": "Byrjendavænt spilavíti með einfaldri skráningu. Yfir 2.000 spilakassar, lifandi borð og vikuleg endurgreiðsla."},
+    {"slug": "national-casino", "name": "National Casino", "rating": 8.3, "bonus": "100% + 100 FS", "type": "classic", "desc": "Spilavíti með gott úrval lifandi leikja frá Evolution og Pragmatic Play Live og nokkrar útborgunarleiðir."},
+    {"slug": "20bet", "name": "20Bet", "rating": 8.2, "bonus": "100% up to €120", "type": "classic", "desc": "Spilavíti, lifandi spilavíti og veðmálasíða á einum stað. Yfir 6.000 leikir frá 70+ framleiðendum. Curaçao leyfi."},
+    {"slug": "rocketplay", "name": "RocketSpila", "rating": 8.2, "bonus": "150% + 100 FS", "type": "crypto", "desc": "Spilavíti með geimþema og yfir 3.500 leikjum. Vikulegir endurnýjunarbónusar og fjögurra þrepa VIP kerfi."},
+    {"slug": "hellspin", "name": "HellSpin", "rating": 8.1, "bonus": "150% + 50 FS", "type": "crypto", "desc": "Spilavíti með tíðum tilboðum og dökku viðmóti. Styður BTC, ETH, LTC og USDT. Yfir 3.000 leikir."},
+    {"slug": "neospin", "name": "NeoSpin", "rating": 8.1, "bonus": "100% + 100 FS", "type": "crypto", "desc": "Nútímalegt spilavíti með yfir 5.000 leikjum og stuðningi við Bitcoin, Ethereum og Tether. Dagleg endurgreiðsla og vikuleg mót."},
+    {"slug": "betpanda", "name": "BetPanda", "rating": 8.0, "bonus": "100% up to 1 BTC", "type": "crypto", "desc": "Dulritunarspilavíti með tiltölulega lágum veðskilyrðum (venjulega 30x). Styður BTC, ETH og USDT."},
 ]
 
 # Generate 130 more casinos
 extra_casino_names = [
     "LuckyStar", "IceBet", "NordicSlots", "FrostBet", "SnowCasino", "AuroraBet",
-    "VikingSlots", "ThunderBet", "GlacierCasino", "BorealerBet", "CrystalSlots",
+    "VikingSlots", "ThunderBet", "GlacierCasino", "BorealisBet", "CrystalSlots",
     "MidnightSun", "VolcanoBet", "GeyserCasino", "RuneBet", "ValhallaCasino",
     "OdinSlots", "ThorBet", "FreyaCasino", "LokiBet", "FenrirSlots",
     "JormungandrBet", "MidgardCasino", "AsgardSlots", "BifrostBet", "YggdrasilCasino",
@@ -81,7 +82,7 @@ for i, name in enumerate(extra_casino_names[:130]):
         "rating": rating,
         "bonus": bonus,
         "type": ctype,
-        "desc": f"{name} is a licensed online casino offering {bonus} for new players. Fast crypto withdrawals, a wide game library, and 24/7 customer support. Available to players from Iceland."
+        "desc": f"{name} er netspilavíti með erlent leyfi sem tekur við íslenskum leikmönnum. Velkomstbónus: {bonus}. Styður dulritunargjaldmiðla og býður fjölbreytt leikjaúrval."
     })
 
 # 250 slots
@@ -467,6 +468,15 @@ about_pages = [
 ]
 
 
+EUR_ISK = 143  # nóv 2026, um það bil
+def isk(text):
+    """Bætir ISK upphæð við evruupphæðir: '€500' -> '€500 (~71.500 kr.)'"""
+    def f(m):
+        n = int(m.group(1).replace('.','').replace(',',''))
+        k = round(n*EUR_ISK, -2)
+        return f"€{m.group(1)} (~{k:,.0f} kr.)".replace(',', '.')
+    return re.sub(r'€(\d[\d.,]*)', f, text)
+
 # ============================================================
 # HERO CARD GENERATOR
 # ============================================================
@@ -520,12 +530,35 @@ def get_footer():
         <div><div class="footer-col-title">UPPLÝSINGAR</div><a href="{URL_BASE}o-nas/">Um okkur</a><a href="{URL_BASE}gajdy/">Leiðbeiningar</a><a href="{URL_BASE}platezhi/">Greiðslur</a></div>
       </div>
     </div>
+    <div class="footer-help">Þarftu að tala við einhvern um spilavanda? Hjálparsíminn <a href="tel:1717">1717</a> hjá Rauða krossinum er ókeypis og opinn allan sólarhringinn. <a href="{URL_BASE}gajdy/otvetstvennaya-igra/">Ábyrg spilun →</a></div>
     <div class="footer-18">18+ | Fjárhættuspil geta verið ávanabindandi. Spilaðu á ábyrgan hátt. <a href="https://www.begambleaware.org" target="_blank" rel="noopener">BeGambleAware.org</a></div>
     <div class="footer-bottom"><span>© 2026 bestiflokkurinn.is</span><span>BF Casino — óháð umsagnarvefur</span></div>
   </div>
 </footer>'''
 
-def page_template(title, desc, breadcrumbs, content, canonical="", og_img=""):
+def page_template(title, desc, breadcrumbs, content, canonical="", og_img="", schema_extra=None, show_byline=True):
+    # Byline + affiliate disclosure under the first H1
+    if show_byline and '</h1>' in content:
+        byline = (f'<div class="byline">BF Casino ritstjórn · Uppfært nóvember 2026 · '
+                  f'<a href="{URL_BASE}kak-my-ocenivaem/">Hvernig við metum</a></div>'
+                  f'<div class="disclosure">Þessi síða inniheldur samstarfstengla. Við gætum fengið þóknun ef þú skráir þig, '
+                  f'en það hefur ekki áhrif á einkunnir okkar. 18+</div>')
+        content = content.replace('</h1>', '</h1>\n' + byline, 1)
+    # JSON-LD
+    site = "https://bestiflokkurinn.is"
+    def abs_url(u):
+        u = u.replace("{URL_BASE}", "/").replace(URL_BASE, "/")
+        return site + (u if u.startswith("/") else "/" + u)
+    crumbs = [{"@type":"ListItem","position":i+1,"name":n,**({"item":abs_url(u)} if u else {})} for i,(u,n) in enumerate(breadcrumbs)]
+    graph = [
+        {"@type":"WebSite","@id":site+"/#website","name":"BF Casino","url":site+"/","inLanguage":"is"},
+        {"@type":"Organization","@id":site+"/#org","name":"BF Casino ritstjórn","url":site+"/"},
+        {"@type":"Article","headline":title[:110],"description":desc,"inLanguage":"is",
+         "datePublished":"2026-06-01","dateModified":"2026-11-14",
+         "author":{"@id":site+"/#org"},"publisher":{"@id":site+"/#org"}},
+        {"@type":"BreadcrumbList","itemListElement":crumbs},
+    ] + (schema_extra or [])
+    schema_json = json.dumps({"@context":"https://schema.org","@graph":graph}, ensure_ascii=False).replace("</","<\\/")
     bc_html = ' → '.join([f'<a href="{url.replace("{URL_BASE}", URL_BASE)}">{name}</a>' for url, name in breadcrumbs])
     site_url = "https://bestiflokkurinn.is"
     og_image = og_img if og_img else f"{site_url}/img/og-default.jpg"
@@ -642,11 +675,16 @@ body::after{{content:'';position:fixed;bottom:-200px;left:-10%;width:600px;heigh
 .game-card-info{{padding:12px 14px;}}
 .game-card-name{{font-size:13px;font-weight:600;color:#fff;}}
 .game-card-prov{{font-size:11px;color:var(--muted);margin-top:2px;}}
+.byline{{font-size:13px;color:var(--muted);margin:-8px 0 8px;}}
+.byline a{{color:#c080ff;}}
+.disclosure{{font-size:12px;color:var(--muted2);margin-bottom:20px;padding:8px 12px;border-left:2px solid rgba(140,100,220,.3);background:rgba(140,80,240,.04);border-radius:0 8px 8px 0;}}
+.footer-help{{text-align:center;font-size:13px;color:var(--text);margin-bottom:10px;}}
+.footer-help a{{color:#fff;font-weight:700;}}
 /* Share buttons */
 .share{{margin:36px 0 8px;padding-top:22px;border-top:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap;}}
 .share-label{{font-size:14px;color:var(--muted);margin-right:4px;}}
 .share a{{position:relative;width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 14px rgba(0,0,0,.35);}}
-.share a::before{{content:'';position:absolute;top:-7px;left:50%;transform:translateX(-50%);width:40px;height:16px;background:#fff;border-radius:50% 50% 40% 40%/80% 80% 30% 30%;box-shadow:-9px 4px 0 -3px #fff,9px 4px 0 -3px #fff;}}
+.share a::before{{content:'';position:absolute;top:-4px;left:0;width:48px;height:22px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 -4 48 22'%3E%3Cpath fill='white' d='M3.5 11.5 A21 21 0 0 1 44.5 11.5 Q43 14.5 40.5 12.8 Q39.5 17.5 37 13.2 Q34 15 31.5 13 Q30 19 27.5 13.3 Q24.5 15.5 22 13.2 Q20.5 16.5 18 13 Q15 15.5 12.5 12.8 Q11 18 8.5 12.6 Q6 14.5 3.5 11.5 Z'/%3E%3C/svg%3E") no-repeat center/100% 100%;filter:drop-shadow(0 1px 1px rgba(0,0,0,.25));pointer-events:none;}}
 .share a:hover{{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.45);}}
 .share a:focus-visible{{outline:2px solid #c080ff;outline-offset:3px;}}
 .share svg{{width:22px;height:22px;fill:#fff;position:relative;}}
@@ -664,7 +702,7 @@ body::after{{content:'';position:fixed;bottom:-200px;left:-10%;width:600px;heigh
 .footer-col-title{{color:var(--muted2);font-size:9px;letter-spacing:1.5px;font-weight:600;margin-bottom:6px;}}
 .footer-cols a{{display:block;color:var(--muted);font-size:11px;line-height:2.2;transition:color .15s;}}
 .footer-cols a:hover{{color:#c080ff;}}
-.footer-18{{text-align:center;padding:14px;border:1px solid var(--border);border-radius:12px;background:var(--bg2);margin-bottom:12px;font-size:10px;color:var(--muted2);}}
+.footer-18{{text-align:center;padding:14px;border:1px solid var(--border);border-radius:12px;background:var(--bg2);margin-bottom:12px;font-size:12px;color:var(--muted2);}}
 .footer-18 a{{color:#c080ff;}}
 .footer-bottom{{border-top:1px solid var(--border);padding-top:10px;display:flex;justify-content:space-between;color:var(--muted2);font-size:9px;}}
 @media(max-width:768px){{
@@ -724,9 +762,7 @@ body::after{{content:'';position:fixed;bottom:-200px;left:-10%;width:600px;heigh
 </aside>
 </div>
 {get_footer()}
-<script type="application/ld+json">
-{{"@context":"https://schema.org","@type":"WebSite","name":"BF Casino","url":"https://bestiflokkurinn.is/","description":"{desc}","inLanguage":"is","publisher":{{"@type":"Organization","name":"BF Casino","url":"https://bestiflokkurinn.is/"}}}}
-</script>
+<script type="application/ld+json">{schema_json}</script>
 <script>document.querySelectorAll('img[loading]').length||document.querySelectorAll('.slot-hero-img,.game-card-thumb img').forEach(function(i){{i.loading='lazy'}})</script>
 <script>(function(){{var u=encodeURIComponent(location.href),t=encodeURIComponent(document.title);var m={{fb:'https://www.facebook.com/sharer/sharer.php?u='+u,in:'https://www.linkedin.com/sharing/share-offsite/?url='+u,wa:'https://wa.me/?text='+t+'%20'+u}};document.querySelectorAll('.share a').forEach(function(a){{var n=a.dataset.net;if(m[n])a.href=m[n];else if(n==='copy')a.addEventListener('click',function(e){{e.preventDefault();try{{navigator.clipboard.writeText(location.href);a.setAttribute('aria-label','Tengill afritaður');a.style.background='#2f8f5a';setTimeout(function(){{a.style.background='';}},1500);}}catch(_){{}}}});}});}})();</script>
 </body>
@@ -754,14 +790,14 @@ for c in casinos:
     content = f'''<h1>{c["name"]} — Umsögn og bónusar 2026</h1>
 <div class="rating-box"><div class="score">{c["rating"]}</div><div class="label">/ 10</div></div>
 <div class="info-box">
-<p><strong>Bónus:</strong> {c["bonus"]}</p>
+<p><strong>Bónus:</strong> {isk(c["bonus"])}</p>
 <p><strong>Tegund:</strong> {"Dulritunargjaldmiðils spilavíti" if c["type"]=="crypto" else "Hefðbundið spilavíti"}</p>
 </div>
 <p>{c["desc"]}</p>
 <h2>{c["name"]} umsögn</h2>
 <p>{c["name"]} er {"dulritunargjaldmiðils spilavíti" if c["type"]=="crypto" else "netspilavíti"} í boði fyrir íslenska leikmenn. Spilavítið býður upp á fjölbreytt úrval af spilakössum, borðleikjum og lifandi spilavíti með raunverulegum spilastjórum.</p>
 <h3>Bónusar og tilboð</h3>
-<p>Nýir leikmenn fá velkomstbónus upp á {c["bonus"]}. Til að virkja bónusinn, skráðu þig og leggðu inn fyrstu innborgun þína.</p>
+<p>Nýir leikmenn fá velkomstbónus upp á {isk(c["bonus"])} samkvæmt rekstraraðila. Til að virkja bónusinn, skráðu þig og leggðu inn fyrstu innborgun þína.</p>
 <h3>Greiðslumátar</h3>
 <p>{"Tekur við Bitcoin, Ethereum, USDT, Litecoin og öðrum dulritunargjaldmiðlum." if c["type"]=="crypto" else "Tekur við Visa, Mastercard, dulritunargjaldmiðlum og rafrænum veskjum."} Þetta er sérstaklega mikilvægt fyrir íslenska leikmenn þar sem innlendir bankar loka oft á spilavíta-færslur.</p>
 <h3>Leikir</h3>
@@ -769,15 +805,18 @@ for c in casinos:
 <h2>Kostir og gallar</h2>
 <ul>
 <li>✅ {c["bonus"]}</li>
-<li>✅ Hraðar útborganir</li>
+<li>✅ {"Hraðar dulritunarútborganir (skv. rekstraraðila)" if c["type"]=="crypto" else "Nokkrar útborgunarleiðir"}</li>
 <li>✅ {"Dulritunargreiðslur án lokunar" if c["type"]=="crypto" else "Fjölbreytt úrval greiðslumáta"}</li>
 <li>✅ Stórt safn leikja</li>
-<li>⚠️ Tekur ekki við íslenskum krónum beint</li>
+<li>⚠️ Athugaðu hvort ISK sé í boði — flest erlend spilavíti nota EUR</li>
 </ul>
 <div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Spila á {c["name"]} →</a></div>'''
 
     bc = [("{URL_BASE}", "Heim"), ("{URL_BASE}casino/", "Spilavíti"), ("", c["name"])]
-    html = page_template(f'{c["name"]} umsögn', c["desc"], bc, content)
+    review = {"@type":"Review","itemReviewed":{"@type":"Organization","name":c["name"]},
+              "reviewRating":{"@type":"Rating","ratingValue":c["rating"],"bestRating":10,"worstRating":0},
+              "author":{"@id":"https://bestiflokkurinn.is/#org"},"inLanguage":"is"}
+    html = page_template(f'{c["name"]} umsögn', c["desc"], bc, content, schema_extra=[review])
     write_page(f'casino/{c["slug"]}/index.html', html)
 
 # 2. КАТЕГОРИИ КАЗИНО (50)
@@ -935,7 +974,32 @@ about_emojis = {"Um BF Casino":"🏛️","Hafa samband":"📬","Persónuverndars
 for a in about_pages:
     emoji = about_emojis.get(a["title"], "ℹ️")
     hero = make_hero(a["title"], "BF Casino", emoji, "#100828", "#201050", "#402080")
-    content = f'''<h1>{a["title"]}</h1>
+    if a["slug"] == "kak-my-ocenivaem":
+        content = f'''<h1>Hvernig við metum spilavíti</h1>
+{hero}
+<p>Hvert spilavíti á BF Casino fær einkunn frá 0 til 10. Einkunnin byggir á sex föstum viðmiðum með birtum vægi, svo þú getir séð nákvæmlega hvernig hún verður til.</p>
+<h2>Viðmið og vægi</h2>
+<div class="info-box" style="overflow-x:auto;">
+<table style="width:100%;border-collapse:collapse;font-size:14px;color:var(--muted);">
+<tr style="color:#fff;border-bottom:1px solid var(--border);"><th style="text-align:left;padding:8px;">Viðmið</th><th style="text-align:left;padding:8px;">Vægi</th><th style="text-align:left;padding:8px;">Hvað við skoðum</th></tr>
+<tr style="border-bottom:1px solid var(--border);"><td style="padding:8px;">Leyfi og öryggi</td><td style="padding:8px;">25%</td><td style="padding:8px;">Leyfisveitandi, birt leyfisnúmer, rekstraraðili, SSL</td></tr>
+<tr style="border-bottom:1px solid var(--border);"><td style="padding:8px;">Aðgengi frá Íslandi</td><td style="padding:8px;">20%</td><td style="padding:8px;">Tekur við íslenskum leikmönnum, íslenskt viðmót, ISK, PIQ</td></tr>
+<tr style="border-bottom:1px solid var(--border);"><td style="padding:8px;">Greiðslur</td><td style="padding:8px;">20%</td><td style="padding:8px;">Dulritunargjaldmiðlar, rafræn veski, lágmarksinnborgun, útborgunarmörk</td></tr>
+<tr style="border-bottom:1px solid var(--border);"><td style="padding:8px;">Bónusskilmálar</td><td style="padding:8px;">15%</td><td style="padding:8px;">Veðskilyrði, tímamörk, hámarksveðmál, hvaða leikir telja</td></tr>
+<tr style="border-bottom:1px solid var(--border);"><td style="padding:8px;">Leikjaúrval</td><td style="padding:8px;">10%</td><td style="padding:8px;">Fjöldi leikja, framleiðendur, lifandi spilavíti</td></tr>
+<tr><td style="padding:8px;">Ábyrg spilun</td><td style="padding:8px;">10%</td><td style="padding:8px;">Innborgunarmörk, sjálfsútilokun, tapsmörk</td></tr>
+</table>
+</div>
+<h2>Það sem við gerum ekki</h2>
+<ul>
+<li>Við höfum ekki lagt inn raunverulegt fé eða mælt útborgunartíma sjálf. Útborgunartímar á síðunni eru samkvæmt upplýsingum rekstraraðila og merktir sem slíkir.</li>
+<li>Við breytum ekki einkunnum gegn greiðslu. Samstarfstenglar hafa ekki áhrif á röðun.</li>
+</ul>
+<h2>Uppfærslur</h2>
+<p>Við förum yfir bónusa og skilmála reglulega. Síðast yfirfarið: nóvember 2026. Upphæðir í ISK eru reiknaðar á genginu 1 EUR ≈ {EUR_ISK} kr. og eru aðeins til viðmiðunar.</p>
+<p>Ef þú finnur villu, <a href="{URL_BASE}kontakty/">hafðu samband</a>.</p>'''
+    else:
+        content = f'''<h1>{a["title"]}</h1>
 {hero}
 <p>{a["desc"]}</p>
 <p>BF Casino (bestiflokkurinn.is) er óháð spilavítavefgátt fyrir íslenska leikmenn. Við hjálpum þér að finna áreiðanleg spilavíti með bestu bónusum og stuðningi við dulritunargjaldmiðla.</p>'''
@@ -1213,6 +1277,7 @@ seo_pages = [
 </table>
 </div>
 
+<p style="font-size:13px;color:var(--muted2);">Útborgunartímar eru samkvæmt upplýsingum rekstraraðila, ekki mældir af okkur. <a href="{URL_BASE}kak-my-ocenivaem/">Aðferðafræði →</a></p>
 <h2>Hvernig við metum spilavíti</h2>
 <ul>
 <li><strong>Bónus:</strong> Velkomstbónus, veðskilyrði, frísnúningar</li>
@@ -1271,7 +1336,7 @@ seo_pages = [
 
 <h2>Topp 5 crypto spilavíti á Íslandi</h2>
 <div class="info-box">
-<p><strong>🥇 <a href="{URL_BASE}casino/bitstarz/">BitStarz</a></strong> — Besta crypto spilavítið. 3500+ leikir, 5 BTC + 200 FS, útborganir undir 10 mínútum. Styður BTC, ETH, LTC, DOGE, USDT, BCH. Einkunn: 9.8/10</p>
+<p><strong>🥇 <a href="{URL_BASE}casino/bitstarz/">BitStarz</a></strong> — Besta crypto spilavítið. 3500+ leikir, 5 BTC + 200 FS, útborganir á nokkrum mínútum samkvæmt rekstraraðila. Styður BTC, ETH, LTC, DOGE, USDT, BCH. Einkunn: 9.8/10</p>
 </div>
 <div class="info-box">
 <p><strong>🥈 <a href="{URL_BASE}casino/stake/">Stake</a></strong> — Vinsælasta crypto spilavítið í heimi. 200% VIP bónus, 5000+ leikir, 8+ dulritunargjaldmiðlar. Einkunn: 9.6/10</p>
@@ -1289,7 +1354,7 @@ seo_pages = [
 <h2>Af hverju dulritunar spilavíti á Íslandi?</h2>
 <ul>
 <li>🔓 Komast framhjá <a href="{URL_BASE}gajdy/islenskir-bankar-spilaviti/">bankalokun íslenskra banka</a></li>
-<li>⚡ Útborganir á undir 10 mínútum (vs. 1-5 dagar með korti)</li>
+<li>⚡ Dulritunarútborganir oft á mínútum, samkvæmt rekstraraðilum (kort taka yfirleitt 1–5 daga)</li>
 <li>💰 Engin gjaldmiðlaskiptagjöld</li>
 <li>🛡️ Aukið næði — engar spilavítafærslur á bankayfirlitinu</li>
 </ul>
@@ -1318,11 +1383,25 @@ for c in casinos[:20]:
 <div class="game-card-thumb" style="background:linear-gradient(135deg,{'#0a2060,#1a40a0' if c['type']=='crypto' else '#2a1040,#5020a0'});display:flex;align-items:center;justify-content:center;"><span style="font-size:28px;font-weight:800;color:rgba(255,255,255,.15);">{c["rating"]}</span></div>
 <div class="game-card-info"><div class="game-card-name">{c["name"]}</div><div class="game-card-prov">{c["bonus"]} · {ctype_label}</div></div></a>\n'''
 
-casino_list = "\n".join([f'<div class="info-box"><p><strong><a href="{URL_BASE}casino/{c["slug"]}/">{c["name"]}</a></strong> — {c["bonus"]} (Einkunn: {c["rating"]}/10)</p></div>' for c in casinos[:50]])
+casino_list = "\n".join([f'<div class="info-box"><p><strong><a href="{URL_BASE}casino/{c["slug"]}/">{c["name"]}</a></strong> — {isk(c["bonus"])} (Einkunn: {c["rating"]}/10)</p></div>' for c in casinos[:50]])
 
 casino_content = f'''<h1>Bestu netspilavítin á Íslandi 2026</h1>
 <p>BF Casino umsagnir um {len(casinos)} netspilavíti fyrir íslenska leikmenn. Berðu saman bónusa, greiðslumáta og leikjasöfn. Öll spilavíti styðja dulritunargjaldmiðla — auðveldasta leiðin til að spila frá Íslandi.</p>
 <div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Spila á Top Casino →</a></div>
+<h2>Besta spilavítið eftir þörfum</h2>
+<h3>Hæsti velkomstbónusinn</h3>
+<div class="info-box"><p><strong><a href="{URL_BASE}casino/bitstarz/">BitStarz</a></strong> — allt að 5 BTC + 200 frísnúningar. <a href="{URL_BASE}bonusy/velkomstbonus/">Allir velkomstbónusar →</a></p></div>
+<h3>Stærsta leikjasafnið</h3>
+<div class="info-box"><p><strong><a href="{URL_BASE}casino/7bit/">7Bit Casino</a></strong> — yfir 7.000 leikir samkvæmt rekstraraðila. <a href="{URL_BASE}slots/">Spilakassar →</a></p></div>
+<h3>Bestu dulritunarútborganirnar</h3>
+<div class="info-box"><p><strong><a href="{URL_BASE}casino/bc-game/">BC.Game</a></strong> — yfir 100 dulritunargjaldmiðlar og sýnir ISK frá Íslandi. <a href="{URL_BASE}gajdy/besta-crypto-spilaviti-island/">Bestu crypto spilavítin →</a></p></div>
+<h3>Íslenskt viðmót</h3>
+<div class="info-box"><p><strong><a href="{URL_BASE}casino/respin/">Respin</a></strong> og <strong><a href="{URL_BASE}casino/epicbet/">Epicbet</a></strong> — viðmót á íslensku og PIQ greiðslur. <a href="{URL_BASE}gajdy/spilaviti-islenskt-vidmot/">Meira →</a></p></div>
+<h3>Bónus án veðskilyrða</h3>
+<div class="info-box"><p><strong><a href="{URL_BASE}casino/winz/">Winz.io</a></strong> — vinningar úr bónus án veðskilyrða. <a href="{URL_BASE}gajdy/frisnuningar-an-innborgunar/">Frísnúningar →</a></p></div>
+<h3>Lifandi spilavíti á íslensku</h3>
+<div class="info-box"><p><strong><a href="{URL_BASE}casino/tonybet/">TonyBet</a></strong> — Evolution borð og leyfi innan EES. <a href="{URL_BASE}live/">Lifandi leikir →</a></p></div>
+<p style="font-size:13px;color:var(--muted2);">Allur samanburður: <a href="{URL_BASE}gajdy/spilaviti-samanburdur/">Spilavíti samanburður</a> · <a href="{URL_BASE}kak-my-ocenivaem/">Hvernig við metum</a></p>
 <h2>Topp 20 spilavíti</h2>
 <div class="game-grid">{casino_cards}</div>
 <h2>Öll {len(casinos)} Spilavíti umsagnir</h2>
