@@ -111,6 +111,18 @@ body::after{content:'';position:fixed;bottom:-200px;left:-10%;width:600px;height
 .game-card-info{padding:12px 14px;}
 .game-card-name{font-size:13px;font-weight:600;color:#fff;}
 .game-card-prov{font-size:11px;color:var(--muted);margin-top:2px;}
+/* Share buttons */
+.share{margin:36px 0 8px;padding-top:22px;border-top:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+.share-label{font-size:14px;color:var(--muted);margin-right:4px;}
+.share a{position:relative;width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 14px rgba(0,0,0,.35);}
+.share a::before{content:'';position:absolute;top:-7px;left:50%;transform:translateX(-50%);width:40px;height:16px;background:#fff;border-radius:50% 50% 40% 40%/80% 80% 30% 30%;box-shadow:-9px 4px 0 -3px #fff,9px 4px 0 -3px #fff;}
+.share a:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.45);}
+.share a:focus-visible{outline:2px solid #c080ff;outline-offset:3px;}
+.share svg{width:22px;height:22px;fill:#fff;position:relative;}
+.share .s-fb{background:#3b5998;}
+.share .s-in{background:#4a77b8;}
+.share .s-wa{background:#5dc46b;}
+.share .s-copy{background:#5a3aa8;}
 /* Footer */
 .footer{background:rgba(6,4,18,.85);padding:28px 30px 14px;border-top:1px solid var(--border);position:relative;z-index:1;}
 .footer-inner{max-width:1100px;margin:0 auto;}
@@ -179,6 +191,13 @@ body::after{content:'';position:fixed;bottom:-200px;left:-10%;width:600px;height
 <li><a href="/slotoro-site/casino/bc-game/">BC.Game</a> — 300% up to 1 BTC</li>
 </ul>
 <div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Spila Slot Game 161 →</a></div>
+<div class="share" aria-label="Deila">
+<span class="share-label">Deila:</span>
+<a class="s-fb" data-net="fb" href="#" target="_blank" rel="noopener" aria-label="Deila á Facebook"><svg viewBox="0 0 24 24"><path d="M14 8V6.5c0-.7.5-1 1-1h2V2h-3c-3 0-4 2-4 4.3V8H8v3.5h2V22h4V11.5h2.8L17 8h-3z"/></svg></a>
+<a class="s-in" data-net="in" href="#" target="_blank" rel="noopener" aria-label="Deila á LinkedIn"><svg viewBox="0 0 24 24"><path d="M4 3.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM2.3 9h3.4v12H2.3zM9 9h3.3v1.7c.5-.9 1.7-2 3.6-2 3.6 0 4.3 2.4 4.3 5.4V21h-3.4v-6c0-1.5 0-3.3-2-3.3s-2.4 1.6-2.4 3.2V21H9z"/></svg></a>
+<a class="s-wa" data-net="wa" href="#" target="_blank" rel="noopener" aria-label="Deila á WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg></a>
+<a class="s-copy" data-net="copy" href="#" aria-label="Afrita tengil"><svg viewBox="0 0 24 24"><path d="M10.6 13.4a1 1 0 0 1 0-1.4l3.5-3.5a1 1 0 1 1 1.4 1.4L12 13.4a1 1 0 0 1-1.4 0zM8.5 16.9a2.5 2.5 0 0 1-3.5-3.5l2.8-2.8-1.4-1.4-2.8 2.8a4.5 4.5 0 0 0 6.4 6.4l2.8-2.8-1.4-1.4zM18.4 4.2a4.5 4.5 0 0 0-6.4 0L9.2 7l1.4 1.4L13.4 5.6a2.5 2.5 0 0 1 3.5 3.5L14.1 12l1.4 1.4 2.9-2.8a4.5 4.5 0 0 0 0-6.4z"/></svg></a>
+</div>
 </main>
 <aside class="sidebar">
 <div class="sidebar-card">
@@ -234,5 +253,6 @@ body::after{content:'';position:fixed;bottom:-200px;left:-10%;width:600px;height
 {"@context":"https://schema.org","@type":"WebSite","name":"BF Casino","url":"https://bestiflokkurinn.is/","description":"Slot Game 161 frá NetEnt — RTP 95.6%, sveifla Extreme, hámark x46000","inLanguage":"is","publisher":{"@type":"Organization","name":"BF Casino","url":"https://bestiflokkurinn.is/"}}
 </script>
 <script>document.querySelectorAll('img[loading]').length||document.querySelectorAll('.slot-hero-img,.game-card-thumb img').forEach(function(i){i.loading='lazy'})</script>
+<script>(function(){var u=encodeURIComponent(location.href),t=encodeURIComponent(document.title);var m={fb:'https://www.facebook.com/sharer/sharer.php?u='+u,in:'https://www.linkedin.com/sharing/share-offsite/?url='+u,wa:'https://wa.me/?text='+t+'%20'+u};document.querySelectorAll('.share a').forEach(function(a){var n=a.dataset.net;if(m[n])a.href=m[n];else if(n==='copy')a.addEventListener('click',function(e){e.preventDefault();try{navigator.clipboard.writeText(location.href);a.setAttribute('aria-label','Tengill afritaður');a.style.background='#2f8f5a';setTimeout(function(){a.style.background='';},1500);}catch(_){}});});})();</script>
 </body>
 </html>
