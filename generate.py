@@ -595,6 +595,7 @@ body::after{{content:'';position:fixed;bottom:-200px;left:-10%;width:600px;heigh
 .slot-hero::after{{content:'';position:absolute;inset:0;border-radius:16px;box-shadow:inset 0 -40px 40px -20px rgba(10,6,24,.6);pointer-events:none;}}
 .slot-hero:hover{{border-color:rgba(180,140,255,.3);box-shadow:0 8px 36px rgba(100,40,200,.2);}}
 .slot-hero-bg{{width:100%;height:100%;}}
+.slot-hero-img{{width:100%;height:100%;object-fit:cover;display:block;}}
 /* Info cards */
 .info-box{{background:var(--card);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:16px;padding:20px 24px;margin:16px 0;transition:all .3s;position:relative;overflow:hidden;}}
 .info-box::before{{content:'';position:absolute;top:0;left:0;right:0;height:50%;background:linear-gradient(180deg,rgba(255,255,255,.02),transparent);pointer-events:none;border-radius:16px 16px 0 0;}}
@@ -760,32 +761,7 @@ for cat in casino_categories:
 # 3. СЛОТЫ (250)
 print("Generating slot reviews...")
 for s in slots_data:
-    # Theme-based gradient colors for slot hero cards
-    theme_gradients = {
-        "Mythology": "#1a0840,#3020a0,#6040c0", "Egypt": "#2a1800,#8a6020,#c09030",
-        "Fruit": "#300828,#a02060,#e04080", "Fishing": "#001830,#004080,#0080c0",
-        "Space": "#080020,#1010a0,#4040e0", "Western": "#2a1000,#804020,#c06030",
-        "Ocean": "#001828,#003860,#0070b0", "Adventure": "#102000,#306010,#50a020",
-        "Nature": "#081808,#205020,#40a040", "Animals": "#181008,#604020,#a06030",
-        "Aliens": "#100030,#4020a0,#8040e0", "Classic": "#180818,#502050,#904090",
-        "Horror": "#100008,#400018,#800030", "Fantasy": "#0a0828,#302080,#6040c0",
-        "Vampires": "#180008,#500020,#900040", "Vikings": "#081020,#203060,#4060a0",
-        "Asia": "#280808,#802020,#c04040", "Pirates": "#100818,#302840,#605880",
-        "Sweets": "#280020,#802060,#d040a0", "Anime": "#200830,#6020a0,#a040e0",
-        "Samurai": "#180010,#501040,#a02080", "Gems": "#100828,#302880,#5048c0",
-        "Money": "#082008,#206020,#40a020", "Ireland": "#001808,#005020,#00a040",
-        "Aztec": "#201008,#604020,#a08040", "Mexico": "#280808,#a02020,#e04040",
-        "Crime": "#0a0a18,#202040,#404080", "Hawaii": "#002020,#008080,#00c0c0",
-        "Africa": "#201008,#704020,#b08040", "Detective": "#101020,#303050,#606090",
-        "Wrestling": "#200808,#802020,#c04040", "Extreme": "#201000,#806000,#c0a000",
-        "Arthurian": "#081028,#203060,#4060b0", "Safari": "#201808,#806030,#c0a060",
-        "Fairy Tales": "#180828,#502080,#9040c0",
-    }
-    grad = theme_gradients.get(s["theme"], "#0a0828,#302060,#6040a0")
-    cdn_img = f'''<div class="slot-hero"><div class="slot-hero-bg" style="background:linear-gradient(135deg,{grad});display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center;">
-<span style="font-family:\'Space Grotesk\',sans-serif;font-size:28px;font-weight:700;color:rgba(255,255,255,.9);text-shadow:0 2px 12px rgba(0,0,0,.5);line-height:1.2;">{s["name"]}</span>
-<span style="font-size:12px;color:rgba(255,255,255,.5);margin-top:8px;letter-spacing:1px;text-transform:uppercase;">{s["provider"]}</span>
-</div></div>'''
+    cdn_img = f'<div class="slot-hero"><img src="{URL_BASE}img/slots/{s["slug"]}.jpg" alt="{s["name"]}" class="slot-hero-img"></div>'
     content = f'''<h1>{s["name"]} — Spilakassaumsögn</h1>
 {cdn_img}
 <div class="info-box">
@@ -814,12 +790,10 @@ for s in slots_data:
 
 # 4. LIVE КАЗИНО (50)
 print("Generating live casino pages...")
-live_emojis = {"Blackjack":"🃏","Roulette":"🎡","Baccarat":"🎴","Poker":"♠️","Dream Catcher":"🎡","Monopoly Live":"🎲","Crazy Time":"🎉","Lightning Roulette":"⚡","Mega Ball":"🔮","Gonzo's Treasure Hunt":"🗺️"}
 for g in live_games:
-    emoji = live_emojis.get(g["name"], "🎲")
-    hero = make_hero(g["name"], "Spilavíti í beinni", emoji, "#0a0828", "#1a1060", "#302090")
+    hero_img = f'<div class="slot-hero"><img src="{URL_BASE}img/live/{g["slug"]}.jpg" alt="{g["name"]}" class="slot-hero-img"></div>'
     content = f'''<h1>{g["name"]} — Spilavíti í beinni</h1>
-{hero}
+{hero_img}
 <p>{g["desc"]}</p>
 <h2>Hvernig á að spila {g["name"]}</h2>
 <p>{g["name"]} með lifandi spilastjóra gefur þér upplifun af raunverulegu spilavíti heima hjá þér. Faglegir spilastjórar stjórna leiknum í rauntíma í gegnum HD myndvarp.</p>
