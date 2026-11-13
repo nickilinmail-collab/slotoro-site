@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slotoro – Besta netcasino Íslands 2026</title>
+<meta name="description" content="Slotoro er besti samanburðarvefur fyrir netcasino á Íslandi. Finndu áreiðanleg spilavíti, bónusa og ókeypis snúningar.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#050818;color:#fff;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+
+/* PROMO BAR */
+.promo-bar{background:linear-gradient(90deg,#0a0520,#1a0a50,#0a0520);padding:10px 20px;text-align:center;border-bottom:1px solid rgba(120,60,255,0.2);}
+.promo-bar span{color:rgba(255,215,0,0.9);font-size:12px;font-weight:600;letter-spacing:0.5px;}
+
+/* NAV */
+.nav{background:linear-gradient(180deg,rgba(8,5,30,0.98),rgba(10,8,40,0.95));padding:16px 40px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(0,150,255,0.1);position:sticky;top:0;z-index:100;backdrop-filter:blur(10px);}
+.nav-logo{display:flex;align-items:center;gap:12px;}
+.nav-logo-icon{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#00d4ff,#7b2fff,#00d4ff);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;color:#fff;box-shadow:0 0 20px rgba(0,180,255,0.4),0 0 40px rgba(120,40,255,0.2);}
+.nav-brand{font-size:24px;font-weight:800;letter-spacing:2px;text-shadow:0 0 20px rgba(0,180,255,0.3);}
+.nav-brand small{color:#00d4ff;font-size:10px;vertical-align:super;margin-left:2px;font-weight:400;}
+.nav-links{display:flex;gap:24px;font-size:13px;font-weight:500;}
+.nav-links a{color:rgba(180,200,255,0.7);transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:#fff;}
+.nav-links a.active{border-bottom:2px solid #00d4ff;padding-bottom:3px;}
+
+/* HERO */
+.hero{background:linear-gradient(180deg,#080530 0%,#0d0845 15%,#101060 30%,#0a3080 50%,#0a5090 65%,#0d1060 80%,#080530 100%);position:relative;padding:50px 40px 50px;min-height:520px;overflow:hidden;}
+.hero-aurora1{position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 50% 20%,rgba(0,100,255,0.2) 0%,transparent 60%);}
+.hero-aurora2{position:absolute;top:0;left:20%;right:20%;height:250px;background:radial-gradient(ellipse at center,rgba(80,0,255,0.15) 0%,transparent 70%);}
+.hero-aurora3{position:absolute;top:100px;left:35%;width:30%;height:120px;background:radial-gradient(ellipse at center,rgba(0,255,200,0.08) 0%,transparent 80%);}
+
+/* Stars */
+.star{position:absolute;border-radius:50%;background:#fff;}
+.star-glow{box-shadow:0 0 8px #fff,0 0 16px rgba(100,180,255,0.4);}
+
+/* Floating coins */
+.coin{position:absolute;border-radius:50%;box-shadow:0 0 12px rgba(255,200,0,0.4);}
+.chip{position:absolute;border-radius:50%;}
+
+/* Characters */
+.char{position:absolute;bottom:0;z-index:3;pointer-events:none;}
+.char img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 0 20px rgba(0,120,255,0.4)) drop-shadow(0 0 40px rgba(120,40,255,0.2));}
+.char-left{left:-20px;width:220px;height:260px;}
+.char-right{right:-20px;width:220px;height:260px;}
+.char-right img{transform:scaleX(-1);}
+
+/* Wheel */
+.wheel-wrap{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:240px;height:240px;z-index:1;}
+.wheel-glow{position:absolute;inset:-20px;border-radius:50%;background:conic-gradient(from 0deg,rgba(0,180,255,0.3),rgba(120,0,255,0.3),rgba(0,255,180,0.2),rgba(255,200,0,0.3),rgba(0,180,255,0.3));filter:blur(10px);animation:spin 8s linear infinite;}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.5}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.wheel-body{position:absolute;inset:0;border-radius:50%;border:3px solid rgba(0,180,255,0.5);background:conic-gradient(from 0deg,#0a1560 0deg,#0d2080 45deg,#0a1060 90deg,#0d2080 135deg,#0a1560 180deg,#0d2080 225deg,#0a1060 270deg,#0d2080 315deg,#0a1560 360deg);box-shadow:0 0 40px rgba(0,150,255,0.3),inset 0 0 30px rgba(0,100,255,0.2);overflow:hidden;}
+.wheel-segments{position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,rgba(0,180,255,0.15) 0deg 45deg,rgba(120,40,255,0.15) 45deg 90deg,rgba(0,200,150,0.15) 90deg 135deg,rgba(255,200,0,0.15) 135deg 180deg,rgba(0,180,255,0.15) 180deg 225deg,rgba(120,40,255,0.15) 225deg 270deg,rgba(0,200,150,0.15) 270deg 315deg,rgba(255,200,0,0.15) 315deg 360deg);}
+.wheel-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#00d4ff,#0060ff);box-shadow:0 0 25px rgba(0,180,255,0.5);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#fff;text-shadow:0 0 10px rgba(255,255,255,0.5);border:2px solid rgba(255,255,255,0.3);cursor:pointer;transition:transform 0.2s;}
+.wheel-center:hover{transform:translate(-50%,-50%) scale(1.1);}
+.wheel-pointer{position:absolute;top:-10px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:10px solid transparent;border-right:10px solid transparent;border-top:18px solid #ffd700;filter:drop-shadow(0 0 8px rgba(255,200,0,0.6));z-index:5;}
+.wheel-dot{position:absolute;width:7px;height:7px;border-radius:50%;animation:pulse 1.5s ease-in-out infinite;}
+
+.hero-content{position:relative;z-index:4;text-align:center;}
+.hero-badge{display:inline-block;background:linear-gradient(90deg,rgba(255,200,0,0.15),rgba(255,215,0,0.25),rgba(255,200,0,0.15));border:1px solid rgba(255,200,0,0.3);border-radius:50px;padding:5px 20px;margin-bottom:16px;}
+.hero-badge span{color:#ffd700;font-size:11px;font-weight:700;letter-spacing:2px;}
+.hero-title{font-size:38px;font-weight:800;line-height:1.1;margin-bottom:8px;text-shadow:0 0 40px rgba(0,100,255,0.4);}
+.hero-title em{font-style:normal;background:linear-gradient(90deg,#00d4ff,#7b6fff,#00eeff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:46px;}
+.hero-sub{color:rgba(180,215,255,0.7);font-size:15px;margin-bottom:24px;line-height:1.5;}
+.hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.btn-gold{background:linear-gradient(135deg,#ffd700,#ffaa00);color:#1a0a00;padding:14px 36px;border-radius:50px;font-size:15px;font-weight:700;cursor:pointer;box-shadow:0 0 25px rgba(255,200,0,0.4),0 4px 20px rgba(0,0,0,0.3);letter-spacing:0.5px;border:none;transition:transform 0.2s,box-shadow 0.2s;}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 0 35px rgba(255,200,0,0.5),0 6px 25px rgba(0,0,0,0.3);}
+.btn-blue{background:rgba(0,150,255,0.12);border:1.5px solid rgba(0,180,255,0.35);color:#60c8ff;padding:14px 28px;border-radius:50px;font-size:15px;font-weight:600;cursor:pointer;box-shadow:0 0 15px rgba(0,150,255,0.15);transition:background 0.2s;}
+.btn-blue:hover{background:rgba(0,150,255,0.2);}
+
+.hero-neon-line{position:absolute;bottom:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(0,180,255,0.5),rgba(120,40,255,0.5),rgba(0,180,255,0.5),transparent);box-shadow:0 0 10px rgba(0,150,255,0.3);}
+
+/* TRUST BAR */
+.trust-bar{background:linear-gradient(90deg,#060a20,#0a1040,#060a20);padding:18px 40px;display:flex;justify-content:center;gap:50px;border-bottom:1px solid rgba(0,100,255,0.08);}
+.trust-item{text-align:center;}
+.trust-item .num{font-size:22px;font-weight:700;}
+.trust-item .label{color:rgba(140,180,255,0.5);font-size:10px;margin-top:2px;}
+
+/* SECTION */
+.section{padding:40px 40px;}
+.section-label{font-size:11px;letter-spacing:3px;font-weight:600;margin-bottom:4px;}
+.section-title{font-size:24px;font-weight:800;text-shadow:0 0 20px rgba(0,100,255,0.2);}
+
+/* CASINO CARDS */
+.casino-card{background:linear-gradient(135deg,rgba(0,30,70,0.3),rgba(8,15,45,0.5));border:1px solid rgba(0,120,255,0.15);border-radius:16px;padding:18px 20px;margin-bottom:12px;display:flex;align-items:center;gap:16px;transition:border-color 0.2s,transform 0.2s;}
+.casino-card:hover{border-color:rgba(0,180,255,0.3);transform:translateY(-2px);}
+.casino-card.featured{border:2px solid rgba(0,180,255,0.3);background:linear-gradient(135deg,rgba(0,40,100,0.4),rgba(10,20,60,0.6));position:relative;overflow:hidden;}
+.casino-card.featured::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#00d4ff,#7b6fff,#ffd700,#00d4ff);}
+.casino-avatar{min-width:56px;height:56px;border-radius:14px;overflow:hidden;border:2px solid rgba(0,150,255,0.2);box-shadow:0 0 15px rgba(0,120,255,0.15);}
+.casino-avatar img{width:56px;height:56px;object-fit:cover;}
+.casino-info{flex:1;}
+.casino-name{font-size:17px;font-weight:700;margin-bottom:3px;}
+.casino-bonus{color:rgba(160,200,255,0.7);font-size:13px;}
+.casino-badge{display:inline-block;font-size:9px;padding:3px 10px;border-radius:20px;font-weight:600;margin-left:8px;}
+.badge-crypto{background:rgba(0,200,100,0.15);color:#00dd88;border:1px solid rgba(0,200,100,0.2);}
+.badge-popular{background:rgba(0,180,255,0.1);color:#00c8ff;border:1px solid rgba(0,180,255,0.15);}
+.badge-new{background:rgba(120,40,255,0.1);color:#a080ff;border:1px solid rgba(120,40,255,0.15);}
+.badge-recommended{position:absolute;top:10px;right:14px;background:linear-gradient(135deg,#ffd700,#ffaa00);color:#1a0a00;font-size:9px;font-weight:700;padding:4px 12px;border-radius:20px;letter-spacing:0.5px;}
+.casino-rating{text-align:center;margin:0 8px;}
+.casino-rating .score{width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,rgba(0,180,255,0.2),rgba(0,100,255,0.3));display:flex;align-items:center;justify-content:center;border:2px solid rgba(0,180,255,0.3);font-size:20px;font-weight:800;color:#00e0ff;}
+.casino-stars{color:#ffd700;font-size:13px;margin-top:4px;}
+.btn-play{background:linear-gradient(135deg,#00b8ff,#0070dd);color:#fff;padding:10px 22px;border-radius:50px;font-size:13px;font-weight:600;cursor:pointer;box-shadow:0 0 12px rgba(0,150,255,0.2);white-space:nowrap;border:none;transition:transform 0.2s;}
+.btn-play:hover{transform:scale(1.05);}
+.btn-play-gold{background:linear-gradient(135deg,#ffd700,#ffaa00);color:#1a0a00;padding:12px 24px;border-radius:50px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 0 20px rgba(255,200,0,0.3);white-space:nowrap;border:none;transition:transform 0.2s;}
+.btn-play-gold:hover{transform:scale(1.05);}
+
+/* SLOTS */
+.slots-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.slot-card{background:linear-gradient(180deg,rgba(15,25,60,0.9),rgba(8,15,40,0.95));border:1px solid rgba(0,100,255,0.15);border-radius:16px;padding:12px;text-align:center;position:relative;overflow:hidden;transition:border-color 0.2s,transform 0.2s;}
+.slot-card:hover{border-color:rgba(0,150,255,0.3);transform:translateY(-3px);}
+.slot-badge{position:absolute;top:8px;right:8px;font-size:8px;padding:3px 8px;border-radius:10px;font-weight:700;color:#fff;z-index:2;}
+.slot-badge.hot{background:rgba(255,60,60,0.9);}
+.slot-badge.new{background:rgba(0,200,100,0.9);}
+.slot-thumb{width:100%;aspect-ratio:1;border-radius:12px;background:linear-gradient(135deg,#150a40,#0a2060);margin-bottom:10px;overflow:hidden;}
+.slot-thumb img{width:100%;height:100%;object-fit:cover;}
+.slot-name{color:#fff;font-size:12px;font-weight:600;}
+.slot-mult{color:rgba(0,200,255,0.5);font-size:10px;margin-top:3px;}
+.slot-provider{color:rgba(140,180,255,0.4);font-size:9px;margin-top:2px;}
+
+/* CRYPTO BANNER */
+.crypto-banner{background:linear-gradient(135deg,rgba(0,50,120,0.3),rgba(15,25,70,0.5));border:1.5px solid rgba(0,150,255,0.2);border-radius:20px;padding:28px;display:flex;align-items:center;gap:24px;position:relative;overflow:hidden;}
+.crypto-banner::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#00d4ff,#7b6fff,transparent);}
+.crypto-char{min-width:110px;height:110px;}
+.crypto-char img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 0 15px rgba(0,150,255,0.3));}
+.crypto-tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;}
+.crypto-tag{font-size:11px;padding:6px 14px;border-radius:20px;font-weight:600;}
+
+/* GUIDE CARDS */
+.guides-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.guide-card{background:linear-gradient(135deg,rgba(0,40,80,0.4),rgba(10,20,50,0.6));border:1px solid rgba(0,130,255,0.15);border-radius:14px;padding:20px;transition:border-color 0.2s,transform 0.2s;}
+.guide-card:hover{border-color:rgba(0,180,255,0.3);transform:translateY(-2px);}
+.guide-icon{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;overflow:hidden;}
+.guide-icon img{width:38px;height:38px;object-fit:cover;border-radius:8px;}
+.guide-title{color:#fff;font-size:14px;font-weight:600;margin-bottom:5px;}
+.guide-desc{color:rgba(160,200,255,0.6);font-size:12px;line-height:1.4;}
+
+/* FOOTER */
+.footer{background:#040610;padding:30px 40px 18px;border-top:1px solid rgba(0,60,150,0.1);}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px;}
+.footer-logo{display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.footer-logo .icon{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#00d4ff,#7b2fff);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;}
+.footer-desc{color:rgba(100,140,200,0.4);font-size:11px;line-height:1.6;max-width:280px;}
+.footer-cols{display:flex;gap:40px;}
+.footer-col-title{color:rgba(0,150,255,0.4);font-size:10px;letter-spacing:1px;margin-bottom:8px;}
+.footer-col a{display:block;color:rgba(140,180,230,0.5);font-size:12px;line-height:2;transition:color 0.2s;}
+.footer-col a:hover{color:#60c8ff;}
+.footer-bottom{border-top:1px solid rgba(0,60,150,0.08);padding-top:12px;display:flex;justify-content:space-between;color:rgba(80,120,180,0.35);font-size:10px;}
+
+@media(max-width:768px){
+  .nav{padding:12px 16px;flex-direction:column;gap:10px;}
+  .nav-links{gap:12px;font-size:11px;}
+  .hero{padding:30px 16px 40px;min-height:450px;}
+  .hero-title{font-size:26px;}
+  .hero-title em{font-size:32px;}
+  .char-left,.char-right{width:120px;height:150px;}
+  .wheel-wrap{width:160px;height:160px;}
+  .trust-bar{gap:20px;padding:14px 16px;}
+  .section{padding:24px 16px;}
+  .slots-grid{grid-template-columns:repeat(2,1fr);}
+  .guides-grid{grid-template-columns:1fr;}
+  .casino-card{flex-wrap:wrap;}
+  .crypto-banner{flex-direction:column;text-align:center;}
+  .footer-top{flex-direction:column;gap:20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- PROMO BAR -->
+<div class="promo-bar">
+  <span>🎰 VELKOMSTBÓNUS — FÁÐU UPP Í 500% + 200 ÓKEYPIS SNÚNINGAR 🎰</span>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">
+    <div class="nav-logo-icon">S</div>
+    <div class="nav-brand">SLOTORO<small>.is</small></div>
+  </div>
+  <div class="nav-links">
+    <a href="#" class="active">Spilavíti</a>
+    <a href="#">Spilakassar</a>
+    <a href="#">Bónusar</a>
+    <a href="#">Lifandi casino</a>
+    <a href="#">Greiðslur</a>
+    <a href="#">Leiðbeiningar</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-aurora1"></div>
+  <div class="hero-aurora2"></div>
+  <div class="hero-aurora3"></div>
+
+  <!-- Stars -->
+  <div class="star star-glow" style="top:20px;left:18%;width:4px;height:4px;"></div>
+  <div class="star" style="top:45px;left:55%;width:3px;height:3px;background:#b0d8ff;box-shadow:0 0 8px #6ab0ff;"></div>
+  <div class="star star-glow" style="top:30px;right:22%;width:5px;height:5px;"></div>
+  <div class="star" style="top:80px;left:40%;width:2px;height:2px;box-shadow:0 0 4px #90c0ff;"></div>
+  <div class="star star-glow" style="top:12px;right:12%;width:3px;height:3px;"></div>
+  <div class="star" style="top:70px;left:10%;width:3px;height:3px;box-shadow:0 0 5px #90c0ff;"></div>
+
+  <!-- Floating coins -->
+  <div class="coin" style="top:35px;left:7%;width:30px;height:30px;background:linear-gradient(135deg,#ffd700,#ffaa00);border:2px solid #ffcc00;animation:float 3s ease-in-out infinite;"></div>
+  <div class="coin" style="top:90px;left:3%;width:20px;height:20px;background:linear-gradient(135deg,#ffd700,#ff9500);border:1.5px solid #ffbb00;opacity:0.7;animation:float 4s ease-in-out infinite 0.5s;"></div>
+  <div class="coin" style="top:160px;right:4%;width:26px;height:26px;background:linear-gradient(135deg,#ffd700,#ffaa00);border:2px solid #ffcc00;opacity:0.8;animation:float 3.5s ease-in-out infinite 1s;"></div>
+  <div class="coin" style="top:65px;right:8%;width:16px;height:16px;background:linear-gradient(135deg,#ff4040,#cc0000);border:1.5px solid #ff6060;box-shadow:0 0 8px rgba(255,0,0,0.3);animation:float 4s ease-in-out infinite 0.3s;"></div>
+  <div class="coin" style="bottom:150px;left:5%;width:22px;height:22px;background:linear-gradient(135deg,#00cc88,#008855);border:1.5px solid #00dd99;box-shadow:0 0 8px rgba(0,200,100,0.3);opacity:0.6;animation:float 3s ease-in-out infinite 0.7s;"></div>
+
+  <!-- Chips -->
+  <div class="chip" style="top:130px;right:3%;width:32px;height:32px;background:conic-gradient(#1a1aff 0deg 90deg,#fff 90deg 180deg,#1a1aff 180deg 270deg,#fff 270deg 360deg);border:3px solid #3333ff;box-shadow:0 0 12px rgba(0,0,255,0.3);animation:float 5s ease-in-out infinite;"></div>
+  <div class="chip" style="bottom:130px;left:2%;width:28px;height:28px;background:conic-gradient(#ff1a1a 0deg 90deg,#fff 90deg 180deg,#ff1a1a 180deg 270deg,#fff 270deg 360deg);border:2.5px solid #ff4444;box-shadow:0 0 8px rgba(255,0,0,0.3);opacity:0.7;animation:float 4.5s ease-in-out infinite 0.5s;"></div>
+
+  <!-- Characters -->
+  <div class="char char-left"><img src="images/gnome_web.png" alt="Slotoro Gnome"></div>
+  <div class="char char-right"><img src="images/wolf_web.png" alt="Slotoro Wolf"></div>
+
+  <!-- Wheel -->
+  <div class="wheel-wrap">
+    <div class="wheel-glow"></div>
+    <div class="wheel-body">
+      <div class="wheel-segments"></div>
+    </div>
+    <div class="wheel-center">SPIN</div>
+    <div class="wheel-pointer"></div>
+    <div class="wheel-dot" style="top:-4px;left:25%;background:#ffd700;box-shadow:0 0 6px #ffd700;"></div>
+    <div class="wheel-dot" style="top:-4px;right:25%;background:#00d4ff;box-shadow:0 0 6px #00d4ff;animation-delay:0.3s;"></div>
+    <div class="wheel-dot" style="bottom:-4px;left:25%;background:#ff4488;box-shadow:0 0 6px #ff4488;animation-delay:0.6s;"></div>
+    <div class="wheel-dot" style="bottom:-4px;right:25%;background:#00cc88;box-shadow:0 0 6px #00cc88;animation-delay:0.9s;"></div>
+    <div class="wheel-dot" style="top:25%;left:-4px;background:#ffd700;box-shadow:0 0 6px #ffd700;animation-delay:0.2s;"></div>
+    <div class="wheel-dot" style="top:25%;right:-4px;background:#7b2fff;box-shadow:0 0 6px #7b2fff;animation-delay:0.5s;"></div>
+    <div class="wheel-dot" style="bottom:25%;left:-4px;background:#00d4ff;box-shadow:0 0 6px #00d4ff;animation-delay:0.8s;"></div>
+    <div class="wheel-dot" style="bottom:25%;right:-4px;background:#ffd700;box-shadow:0 0 6px #ffd700;animation-delay:1.1s;"></div>
+  </div>
+
+  <!-- Hero Content -->
+  <div class="hero-content" style="margin-bottom:220px;">
+    <div class="hero-badge"><span>★ #1 NETCASINO Á ÍSLANDI ★</span></div>
+    <h1 class="hero-title">Snúðu hjólinu og<br/><em>vindu stórt!</em></h1>
+  </div>
+  <div class="hero-content" style="position:absolute;bottom:40px;left:0;right:0;">
+    <p class="hero-sub">Fáðu allt að 500% velkomstbónus á bestu netcasino Íslands</p>
+    <div class="hero-ctas">
+      <button class="btn-gold">Snúa hjólinu →</button>
+      <button class="btn-blue">Sjá öll spilavíti</button>
+    </div>
+  </div>
+
+  <div class="hero-neon-line"></div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><div class="num" style="color:#00d4ff;">150+</div><div class="label">Spilavíti</div></div>
+  <div class="trust-item"><div class="num" style="color:#ffd700;">2000+</div><div class="label">Spilakassar</div></div>
+  <div class="trust-item"><div class="num" style="color:#00cc88;">24/7</div><div class="label">Stuðningur</div></div>
+  <div class="trust-item"><div class="num" style="color:#a080ff;">Crypto</div><div class="label">Greiðslur</div></div>
+</div>
+
+<!-- TOP CASINOS -->
+<section class="section" style="background:linear-gradient(180deg,#060a20 0%,#0a1040 50%,#060a20 100%);">
+  <div style="text-align:center;margin-bottom:24px;">
+    <div class="section-label" style="color:#ffd700;">★ TOPP SPILAVÍTI ★</div>
+    <div class="section-title">Besti netcasino 2026</div>
+  </div>
+
+  <div class="casino-card featured">
+    <span class="badge-recommended">★ MÆLT MEÐ</span>
+    <div class="casino-avatar"><img src="images/meerkat_web.png" alt="BitStarz"></div>
+    <div class="casino-info">
+      <div class="casino-name">BitStarz <span class="casino-badge badge-crypto">CRYPTO</span></div>
+      <div class="casino-bonus">5 BTC + 200 ókeypis snúningar</div>
+      <div class="casino-stars">★★★★★</div>
+    </div>
+    <div class="casino-rating"><div class="score">9.8</div></div>
+    <button class="btn-play-gold">Spila →</button>
+  </div>
+
+  <div class="casino-card">
+    <div class="casino-avatar"><img src="images/swindler_web.png" alt="Stake"></div>
+    <div class="casino-info">
+      <div class="casino-name">Stake <span class="casino-badge badge-popular">VINSÆLT</span></div>
+      <div class="casino-bonus">200% velkomstbónus + VIP</div>
+    </div>
+    <div style="color:#00d4ff;font-size:22px;font-weight:700;margin:0 12px;">9.6</div>
+    <button class="btn-play">Spila →</button>
+  </div>
+
+  <div class="casino-card">
+    <div class="casino-avatar"><img src="images/mouse_web.png" alt="BC.Game"></div>
+    <div class="casino-info">
+      <div class="casino-name">BC.Game <span class="casino-badge badge-new">NÝTT</span></div>
+      <div class="casino-bonus">300% crypto bónus upp að 1 BTC</div>
+    </div>
+    <div style="color:#00d4ff;font-size:22px;font-weight:700;margin:0 12px;">9.4</div>
+    <button class="btn-play">Spila →</button>
+  </div>
+
+  <div class="casino-card">
+    <div class="casino-avatar"><img src="images/thief_web.png" alt="TonyBet"></div>
+    <div class="casino-info">
+      <div class="casino-name">TonyBet</div>
+      <div class="casino-bonus">150% bónus + 100 ókeypis snúningar</div>
+    </div>
+    <div style="color:#00d4ff;font-size:22px;font-weight:700;margin:0 12px;">9.2</div>
+    <button class="btn-play">Spila →</button>
+  </div>
+
+  <div class="casino-card">
+    <div class="casino-avatar"><img src="images/eskimo_web.png" alt="Epicbet"></div>
+    <div class="casino-info">
+      <div class="casino-name">Epicbet</div>
+      <div class="casino-bonus">100% bónus upp að €500</div>
+    </div>
+    <div style="color:#00d4ff;font-size:22px;font-weight:700;margin:0 12px;">9.0</div>
+    <button class="btn-play">Spila →</button>
+  </div>
+</section>
+
+<!-- SLOTS -->
+<section class="section" style="background:linear-gradient(180deg,#060a20 0%,#0a1240 100%);position:relative;">
+  <div style="position:absolute;top:-20px;right:50px;width:70px;height:70px;overflow:hidden;opacity:0.8;z-index:2;">
+    <img src="images/crocodile_web.png" style="width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 0 10px rgba(0,150,255,0.3));" alt="">
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:18px;">
+    <div>
+      <div class="section-label" style="color:#ffd700;">🎰 VINSÆLIR SPILAKASSAR</div>
+      <div class="section-title">Spilaðu bestu leikina</div>
+    </div>
+    <a href="#" style="color:rgba(0,200,255,0.7);font-size:13px;">Sjá alla →</a>
+  </div>
+  <div class="slots-grid">
+    <div class="slot-card">
+      <span class="slot-badge hot">HOT</span>
+      <div class="slot-thumb"><img src="images/crocodile_web.png" alt="Gates of Olympus"></div>
+      <div class="slot-name">Gates of Olympus</div>
+      <div class="slot-mult">x5000</div>
+      <div class="slot-provider">Pragmatic Play</div>
+    </div>
+    <div class="slot-card">
+      <div class="slot-thumb"><img src="images/eskimo_web.png" alt="Sweet Bonanza"></div>
+      <div class="slot-name">Sweet Bonanza</div>
+      <div class="slot-mult">x21100</div>
+      <div class="slot-provider">Pragmatic Play</div>
+    </div>
+    <div class="slot-card">
+      <div class="slot-thumb"><img src="images/fisherman_web.png" alt="Big Bass Splash"></div>
+      <div class="slot-name">Big Bass Splash</div>
+      <div class="slot-mult">x2100</div>
+      <div class="slot-provider">Pragmatic Play</div>
+    </div>
+    <div class="slot-card">
+      <span class="slot-badge new">NEW</span>
+      <div class="slot-thumb"><img src="images/thief_web.png" alt="Book of Dead"></div>
+      <div class="slot-name">Book of Dead</div>
+      <div class="slot-mult">x5000</div>
+      <div class="slot-provider">Play'n GO</div>
+    </div>
+  </div>
+</section>
+
+<!-- CRYPTO SECTION -->
+<section class="section" style="background:linear-gradient(135deg,#0a1240 0%,#0a2060 50%,#0a1240 100%);">
+  <div class="crypto-banner">
+    <div class="crypto-char"><img src="images/swindler_web.png" alt="Crypto guide"></div>
+    <div style="flex:1;">
+      <div class="section-label" style="color:#ffd700;">GREIÐSLULEIÐIR</div>
+      <h2 style="font-size:20px;font-weight:700;margin:4px 0 8px;">Bankareglur? Ekkert mál!</h2>
+      <p style="color:rgba(160,200,255,0.65);font-size:13px;line-height:1.6;margin-bottom:14px;">Íslenskir bankar loka á netcasino greiðslur. Við sýnum þér hvernig dulritunargjaldmiðlar gera þér kleift að leika óhindrað.</p>
+      <div class="crypto-tags">
+        <span class="crypto-tag" style="background:linear-gradient(135deg,rgba(255,160,0,0.15),rgba(255,100,0,0.1));border:1px solid rgba(255,160,0,0.25);color:#ffaa40;">₿ Bitcoin</span>
+        <span class="crypto-tag" style="background:linear-gradient(135deg,rgba(100,100,255,0.15),rgba(80,80,200,0.1));border:1px solid rgba(100,100,255,0.25);color:#8888ff;">Ξ Ethereum</span>
+        <span class="crypto-tag" style="background:linear-gradient(135deg,rgba(0,200,120,0.15),rgba(0,150,80,0.1));border:1px solid rgba(0,200,120,0.25);color:#40dd90;">₮ USDT</span>
+        <span class="crypto-tag" style="background:linear-gradient(135deg,rgba(180,180,200,0.15),rgba(120,120,150,0.1));border:1px solid rgba(180,180,200,0.25);color:#bbbbdd;">Ł Litecoin</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDES -->
+<section class="section" style="background:linear-gradient(180deg,#0a1240 0%,#0a0e2a 100%);">
+  <div style="text-align:center;margin-bottom:20px;">
+    <div class="section-label" style="color:rgba(0,200,255,0.6);">LEIÐBEININGAR</div>
+    <div class="section-title">Fyrir byrjendur</div>
+  </div>
+  <div class="guides-grid">
+    <div class="guide-card">
+      <div class="guide-icon" style="background:rgba(0,150,255,0.12);"><img src="images/gnome_web.png" alt=""></div>
+      <div class="guide-title">Hvernig á að velja casino</div>
+      <div class="guide-desc">Mikilvægustu atriðin sem þú þarft að vita áður en þú skráir þig.</div>
+    </div>
+    <div class="guide-card">
+      <div class="guide-icon" style="background:rgba(120,60,255,0.12);"><img src="images/eskimo_web.png" alt=""></div>
+      <div class="guide-title">Crypto leiðarvísir</div>
+      <div class="guide-desc">Kaupa Bitcoin og leggja inn á casino — skref fyrir skref.</div>
+    </div>
+    <div class="guide-card">
+      <div class="guide-icon" style="background:rgba(0,200,150,0.12);"><img src="images/fisherman_web.png" alt=""></div>
+      <div class="guide-title">Veiðibónusar</div>
+      <div class="guide-desc">Veðmálaskilyrði og hvernig á að nýta bónus sem best.</div>
+    </div>
+    <div class="guide-card">
+      <div class="guide-icon" style="background:rgba(255,150,0,0.12);"><img src="images/meerkat_web.png" alt=""></div>
+      <div class="guide-title">Lifandi casino</div>
+      <div class="guide-desc">Blackjack, rúletta og baccarat í beinni með alvöru dealer.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">
+        <div class="icon">S</div>
+        <span style="font-size:16px;font-weight:700;">Slotoro</span>
+      </div>
+      <div class="footer-desc">Slotoro er óháður samanburðarvefur fyrir netcasino á Íslandi. Við mælum ekki með fjárhættuspilum. Spilaðu alltaf ábyrgt.</div>
+    </div>
+    <div class="footer-cols">
+      <div>
+        <div class="footer-col-title">SPILAVÍTI</div>
+        <a href="#">Umsagnir</a>
+        <a href="#">Bónusar</a>
+        <a href="#">Nýjustu</a>
+        <a href="#">Crypto casino</a>
+      </div>
+      <div>
+        <div class="footer-col-title">LEIKIR</div>
+        <a href="#">Spilakassar</a>
+        <a href="#">Blackjack</a>
+        <a href="#">Rúletta</a>
+        <a href="#">Lifandi casino</a>
+      </div>
+      <div>
+        <div class="footer-col-title">UM OKKUR</div>
+        <a href="#">Um Slotoro</a>
+        <a href="#">Persónuvernd</a>
+        <a href="#">Skilmálar</a>
+        <a href="#">Hafa samband</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Slotoro.is — Öll réttindi áskilin</span>
+    <span>18+ | Spilaðu ábyrgt | Fjárhættuspil geta verið ávanabindandi</span>
+  </div>
+</footer>
+
+</body>
+</html>
