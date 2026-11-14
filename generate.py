@@ -1986,6 +1986,182 @@ seo_pages = [
 
 <div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Spila án VPN →</a></div>'''
     },
+    {
+        "slug": "spilavitin-a-netinu-a-islandi",
+        "title": "Spilavítin á netinu á Íslandi 2026 — heildaryfirlit",
+        "desc": "Allt sem þú þarft að vita um spilavíti á netinu á Íslandi. Umsagnir, bónusar, löggjöf og ráðleggingar um ábyrga spilun.",
+        "emoji": "🇮🇸",
+        "colors": ("#0a1628", "#102040", "#1a3060"),
+        "content": f'''<h1>Spilavítin á netinu á Íslandi 2026</h1>
+{{hero}}
+<p>Íslenskir spilarar hafa takmarkaðan aðgang að innlendum spilavítum, en <strong>erlend netspilavíti</strong> bjóða upp á fjölbreytt úrval leikja, bónusa og greiðsluleiða. Hér förum við yfir helstu atriði um spilavíti á netinu á Íslandi.</p>
+
+<h2>Er löglegt að spila á netspilavítum á Íslandi?</h2>
+<p>Á Íslandi er ekkert innlent leyfiskerfi fyrir netspilavíti. Þó er ekki ólöglegt fyrir einstaklinga að spila á erlendum spilavítum á netinu. Flest spilavíti sem þjóna íslenskum spilurum starfa undir alþjóðlegum leyfum, til dæmis frá <strong>Malta (MGA)</strong>, <strong>Curaçao</strong> eða <strong>Bretlandi (UKGC)</strong>.</p>
+<p>Lestu nánar um <a href="{URL_BASE}leidbeiningar/log-um-fjarhaettuspil-a-islandi/">lög um fjárhættuspil á Íslandi</a>.</p>
+
+<h2>Hvernig veljum við bestu spilavítin?</h2>
+<ul>
+<li><strong>Leyfi og öryggi</strong> — aðeins spilavíti með gilt alþjóðlegt leyfi</li>
+<li><strong>Leikjaúrval</strong> — spilakassar, borðleikir, lifandi spilavíti</li>
+<li><strong>Bónusar</strong> — sanngjarn veðskilyrði og raunhæf tilboð</li>
+<li><strong>Greiðsluleiðir</strong> — stuðningur við dulritunargjaldmiðla og alþjóðleg kort</li>
+<li><strong>Útborgunarhraði</strong> — hversu fljótt þú færð peningana þína</li>
+</ul>
+<p>Lestu <a href="{URL_BASE}hvernig-vid-metum/">hvernig við metum spilavíti</a> fyrir nánari upplýsingar.</p>
+
+<h2>Bestu netspilavítin á Íslandi</h2>
+<div class="info-box"><p><strong>Slotoro</strong> — 98 spilakassar, hröð skráning og stuðningur við dulritunargjaldmiðla. <a href="{URL_BASE}spilaviti/slotoro/">Umsögn →</a></p></div>
+<div class="info-box"><p><strong>BitStarz</strong> — yfir 3.000 leikir, bæði hefðbundnar og dulritunargreiðslur. <a href="{URL_BASE}spilaviti/bitstarz/">Umsögn →</a></p></div>
+<div class="info-box"><p><strong>Stake</strong> — vinsælt dulritunarspilavíti með sérstökum leikjum. <a href="{URL_BASE}spilaviti/stake/">Umsögn →</a></p></div>
+
+<h2>Algengar spurningar</h2>
+<h3>Hvaða greiðsluleiðir eru í boði?</h3>
+<p>Flest netspilavíti sem þjóna Íslandi taka við <a href="{URL_BASE}greidslur/bitcoin/">Bitcoin</a>, <a href="{URL_BASE}greidslur/ethereum/">Ethereum</a>, <a href="{URL_BASE}greidslur/visa-i-spilavitum/">Visa</a> og <a href="{URL_BASE}greidslur/mastercard-i-spilavitum/">Mastercard</a>.</p>
+
+<h3>Er hægt að spila í íslenskum krónum?</h3>
+<p>Fá spilavíti styðja ISK beint. Flest nota EUR eða USD og bankinn sér um gjaldmiðlaskipti. <a href="{URL_BASE}leidbeiningar/spilaviti-isk-kronur/">Lestu meira →</a></p>
+
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Skoða Slotoro →</a></div>'''
+    },
+    {
+        "slug": "bestu-spilavitin-a-netinu",
+        "title": "Bestu spilavítin á netinu 2026 — topp 10 listi",
+        "desc": "Uppfærður listi yfir bestu netspilavítin 2026. Sérfræðiugsagnir, bónusar, útborgunarhraði og leikjaúrval borið saman.",
+        "emoji": "🏆",
+        "colors": ("#1a0a2e", "#2a1050", "#3a1870"),
+        "content": f'''<h1>Bestu spilavítin á netinu 2026</h1>
+{{hero}}
+<p>Við höfum prófað og borið saman tugir netspilavíta til að finna <strong>bestu valkostina</strong> fyrir íslenska spilara. Hér er listi okkar yfir 10 bestu spilavítin á netinu árið 2026.</p>
+
+<h2>Topp 10 netspilavítin 2026</h2>
+
+<h3>1. Slotoro — besta netspilavítið á Íslandi</h3>
+<div class="info-box"><p>⭐ <strong>Einkunn: 9.5/10</strong> | 98 spilakassar | Hröð skráning | Dulritunargreiðslur<br>Slotoro sker sig úr með einfaldri upplifun og hröðum útborgunum. <a href="{URL_BASE}spilaviti/slotoro/">Lesa umsögn →</a></p></div>
+
+<h3>2. BitStarz — besta dulritunarspilavítið</h3>
+<div class="info-box"><p>⭐ <strong>Einkunn: 9.3/10</strong> | 3.000+ leikir | Bitcoin og fleiri | Margverðlaunað<br>BitStarz hefur unnið til margra verðlauna og býður bæði dulritunar- og hefðbundnar greiðslur. <a href="{URL_BASE}spilaviti/bitstarz/">Lesa umsögn →</a></p></div>
+
+<h3>3. Stake — besta spilavítið fyrir live leiki</h3>
+<div class="info-box"><p>⭐ <strong>Einkunn: 9.1/10</strong> | Sérstakir Stake-leikir | Stórt live-úrval | VIP-kerfi<br>Stake er þekkt fyrir sérstaka leiki eins og Crash, Dice og Plinko. <a href="{URL_BASE}spilaviti/stake/">Lesa umsögn →</a></p></div>
+
+<h3>4. BC.Game — besta spilavítið fyrir dulritunarúrval</h3>
+<div class="info-box"><p>⭐ <strong>Einkunn: 9.0/10</strong> | 100+ dulritunargjaldmiðlar | Provably Fair | Stór samfélag<br><a href="{URL_BASE}spilaviti/bc-game/">Lesa umsögn →</a></p></div>
+
+<h3>5-10. Fleiri frábær spilavíti</h3>
+<div class="info-box"><p><strong>TonyBet</strong> — sterkt íþróttaveðmálaúrval. <a href="{URL_BASE}spilaviti/tonybet/">Umsögn →</a><br>
+<strong>7Bit</strong> — bónus án veðskilyrða. <a href="{URL_BASE}spilaviti/7bit/">Umsögn →</a><br>
+<strong>Cloudbet</strong> — háar útborgunarmörk. <a href="{URL_BASE}spilaviti/cloudbet/">Umsögn →</a><br>
+<strong>HellSpin</strong> — stór velkomstbónus. <a href="{URL_BASE}spilaviti/hellspin/">Umsögn →</a><br>
+<strong>KatsuBet</strong> — japanskt þema. <a href="{URL_BASE}spilaviti/katsubet/">Umsögn →</a><br>
+<strong>Winz</strong> — bónus án veðskilyrða. <a href="{URL_BASE}spilaviti/winz/">Umsögn →</a></p></div>
+
+<h2>Hvernig veljum við bestu spilavítin?</h2>
+<p>Við leggjum áherslu á <a href="{URL_BASE}hvernig-vid-metum/">ítarlegt matsferli</a> sem tekur til öryggis, leikjaúrvals, bónusa, greiðsluleiða og þjónustu.</p>
+
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Prófa #1 spilavítið →</a></div>'''
+    },
+    {
+        "slug": "spilaviti-island-2026",
+        "title": "Spilavíti á Íslandi 2026 — löggjöf, valkostir og ráðleggingar",
+        "desc": "Er löglegt að spila á spilavítum á Íslandi? Allt um löggjöf, bestu erlend netspilavítin og hvernig íslenskir spilarar geta spilað á netinu.",
+        "emoji": "🏔️",
+        "colors": ("#0a1a2a", "#152a3a", "#203a4a"),
+        "content": f'''<h1>Spilavíti á Íslandi 2026</h1>
+{{hero}}
+<p>Ísland hefur ekki innlend spilavíti eða leyfiskerfi fyrir netspilavíti, en íslenskir spilarar geta spilað á <strong>erlendum netspilavítum</strong> sem starfa undir alþjóðlegum leyfum.</p>
+
+<h2>Löggjöf um fjárhættuspil á Íslandi</h2>
+<p>Samkvæmt íslenskum lögum er fjárhættuspil almennt bannað, en þó eru nokkrar undantekningar:</p>
+<ul>
+<li><strong>Happdrætti Íslands</strong> — eina löglega fjárhættuspilið á Íslandi</li>
+<li><strong>Íslenskir spilakassar</strong> — voru bannaðir með lögum</li>
+<li><strong>Erlend netspilavíti</strong> — ekki beinlínis bönnuð fyrir einstaklinga</li>
+</ul>
+<p>Lestu nánar í <a href="{URL_BASE}leidbeiningar/log-um-fjarhaettuspil-a-islandi/">ítarlegri grein um löggjöf</a>.</p>
+
+<h2>Hvernig spila Íslendingar á netinu?</h2>
+<p>Flestir íslenskir spilarar nota erlend netspilavíti sem taka við leikmönnum frá Íslandi. Algengustu greiðsluleiðirnar eru:</p>
+<ul>
+<li><a href="{URL_BASE}greidslur/bitcoin/">Bitcoin</a> og önnur dulritunargjaldmiðlar</li>
+<li><a href="{URL_BASE}greidslur/visa-i-spilavitum/">Visa</a> og <a href="{URL_BASE}greidslur/mastercard-i-spilavitum/">Mastercard</a></li>
+<li><a href="{URL_BASE}greidslur/neteller-i-spilavitum/">Neteller</a> og <a href="{URL_BASE}greidslur/skrill-i-spilavitum/">Skrill</a></li>
+</ul>
+
+<h2>Bestu spilavítin sem taka við Íslendigum</h2>
+<div class="info-box"><p><strong>Slotoro</strong> — topp val okkar fyrir Ísland. <a href="{URL_BASE}spilaviti/slotoro/">Umsögn →</a></p></div>
+<div class="info-box"><p><strong>BitStarz</strong> — besta dulritunarspilavítið. <a href="{URL_BASE}spilaviti/bitstarz/">Umsögn →</a></p></div>
+<div class="info-box"><p><strong>Stake</strong> — vinsælast meðal ungs fólks. <a href="{URL_BASE}spilaviti/stake/">Umsögn →</a></p></div>
+
+<h2>Ábyrg spilun á Íslandi</h2>
+<p>Ef þú eða einhver sem þú þekkir á í vandræðum með fjárhættuspil, vinsamlegast hafðu samband við <strong>SÁÁ</strong> (Samtök áfengis- og vímuefnasjúkra) í síma 550-5100. Lestu okkar <a href="{URL_BASE}abyrg-spilun/">leiðbeiningar um ábyrga spilun</a>.</p>
+
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Skoða bestu spilavítin →</a></div>'''
+    },
+    {
+        "slug": "ny-spilaviti-2026",
+        "title": "Ný spilavíti á Íslandi 2026 — nýjustu netspilavítin",
+        "desc": "Nýjustu netspilavítin sem hafa opnað fyrir íslenska spilara 2026. Nýir bónusar, leikir og eiginleikar prófaðir.",
+        "emoji": "🆕",
+        "colors": ("#1a0a20", "#2a1040", "#3a1860"),
+        "content": f'''<h1>Ný spilavíti á Íslandi 2026</h1>
+{{hero}}
+<p>Netspilavítamarkaðurinn er sífellt að breytast og ný spilavíti opna reglulega. Hér eru <strong>nýjustu spilavítin</strong> sem taka við íslenskum spilurum árið 2026.</p>
+
+<h2>Af hverju að velja nýtt spilavíti?</h2>
+<ul>
+<li><strong>Betri bónusar</strong> — ný spilavíti bjóða oft stærri velkomstbónusa til að laða að spilara</li>
+<li><strong>Nýjasta tæknin</strong> — nútímalegt viðmót, farsímavænt og hraðar útborganir</li>
+<li><strong>Nýir leikir</strong> — aðgangur að nýjustu spilakössum og live-leikjum</li>
+<li><strong>Nýjungar</strong> — gamification, VIP-kerfi og sérstök tilboð</li>
+</ul>
+
+<h2>Nýjustu spilavítin sem við mælum með</h2>
+<div class="info-box"><p><strong>Slotoro</strong> — nýlega endurbætt með stærra leikjaúrvali. <a href="{URL_BASE}spilaviti/slotoro/">Lesa umsögn →</a></p></div>
+<div class="info-box"><p><strong>EpicBet</strong> — nýtt spilavíti með áherslu á live-leiki. <a href="{URL_BASE}spilaviti/epicbet/">Lesa umsögn →</a></p></div>
+<div class="info-box"><p><strong>Respin</strong> — nýr valkostur með hröðum útborgunum. <a href="{URL_BASE}spilaviti/respin/">Lesa umsögn →</a></p></div>
+
+<h2>Hvað á að huga að þegar valið er nýtt spilavíti</h2>
+<p>Þó ný spilavíti bjóði oft spennandi nýjungar er mikilvægt að vera varkár:</p>
+<ul>
+<li>Athugaðu hvort spilavítið hafi <a href="{URL_BASE}leidbeiningar/hvernig-a-ad-stadfesta-spilavitaleyfi/">gilt leyfi</a></li>
+<li>Lestu <a href="{URL_BASE}leidbeiningar/hvad-eru-vedskilyrdi/">veðskilyrði bónusa</a> vel</li>
+<li>Prófaðu <a href="{URL_BASE}leidbeiningar/hvernig-a-ad-hafa-samband-vid-thjonustuver/">þjónustuver</a> áður en þú leggur inn</li>
+</ul>
+
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Prófa nýjasta spilavítið →</a></div>'''
+    },
+    {
+        "slug": "netspilaviti-island",
+        "title": "Netspilavíti á Íslandi — yfirlit og umsagnir 2026",
+        "desc": "Heildaryfirlit yfir netspilavíti sem þjóna Íslandi. Bónusar, leikjaúrval, greiðsluleiðir og öryggi metið af sérfræðingum.",
+        "emoji": "🎰",
+        "colors": ("#0a0a1e", "#14142e", "#1e1e3e"),
+        "content": f'''<h1>Netspilavíti á Íslandi 2026</h1>
+{{hero}}
+<p>Leitaðu ekki lengur — hér finnur þú <strong>heildstæðar umsagnir</strong> um öll helstu netspilavíti sem taka við íslenskum spilurum. Við prófum spilavítin sjálf og gefum óháðar einkunnir.</p>
+
+<h2>Hvað gerir netspilavíti gott?</h2>
+<p>Við skoðum marga þætti þegar við metum spilavíti:</p>
+<ul>
+<li><strong>Öryggi fyrst</strong> — gilt leyfi, SSL-dulkóðun og RNG-vottun</li>
+<li><strong>Leikjaúrval</strong> — fjölbreytni spilakassa, borðleikja og live-leikja</li>
+<li><strong>Bónusar</strong> — raunhæf tilboð með sanngjörnum veðskilyrðum</li>
+<li><strong>Greiðsluleiðir</strong> — aðeins þær sem virka frá Íslandi</li>
+<li><strong>Útborgunarhraði</strong> — enginn vill bíða í vikur eftir vinningum</li>
+</ul>
+
+<h2>Bestu netspilavítin núna</h2>
+<p>Skoðaðu <a href="{URL_BASE}spilaviti/">alla lista spilavíta</a> eða smelltu á einstaka umsögn:</p>
+<div class="info-box"><p>🥇 <a href="{URL_BASE}spilaviti/slotoro/">Slotoro</a> — besta heildareinkunnin<br>
+🥈 <a href="{URL_BASE}spilaviti/bitstarz/">BitStarz</a> — besta dulritunarspilavítið<br>
+🥉 <a href="{URL_BASE}spilaviti/stake/">Stake</a> — besta live-spilavítið</p></div>
+
+<h2>Greiðsluleiðir sem virka á Íslandi</h2>
+<p>Vegna takmarkana íslensku bankanna eru <a href="{URL_BASE}greidslur/bitcoin/">dulritunargjaldmiðlar</a> oft besti kosturinn. Skoðaðu einnig <a href="{URL_BASE}greidslur/">allar greiðsluleiðir</a>.</p>
+
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Byrja að spila →</a></div>'''
+    },
 ]
 
 for page in seo_pages:
