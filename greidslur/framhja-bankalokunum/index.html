@@ -17,7 +17,7 @@
 <meta name="geo.region" content="IS">
 <meta name="geo.placename" content="Iceland">
 <meta property="og:locale" content="is_IS">
-<meta name="robots" content="noindex,follow">
+<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -303,22 +303,33 @@ background:linear-gradient(180deg,rgba(255,255,255,.5),rgba(255,255,255,0));}
 <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(24px,4vw,34px);font-weight:700;color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.7);line-height:1.2">Framhjá bankalokunum</span>
 <span style="font-size:17px;color:#fff;opacity:.9;margin-top:8px;text-shadow:0 1px 8px rgba(0,0,0,.7)">Greiðslumáti</span>
 </div></div>
-<p>Hvernig á að komast framhjá lokun íslenskra banka á spilavítagreiðslum með dulritunargjaldmiðlum.</p>
-<h2>Hvernig það virkar</h2>
-<p>Íslenskir bankar loka á greiðslur til netspilavíta. Dulritunargjaldmiðlar eru besta leiðin til að komast framhjá þessum takmörkunum. Færslur eru hraðar, nafnlausar og gjaldfrjálsar.</p>
-<h3>Skref-fyrir-skref leiðbeiningar</h3>
-<ol>
-<li>Búðu til veski (MetaMask, Trust Wallet eða Binance)</li>
-<li>Keyptu dulritunargjaldmiðil á kauphöll</li>
-<li>Sendu fjármuni til spilavítisins</li>
-<li>Spilaðu og dragðu vinninga aftur í veskið þitt</li>
-</ol>
-<h3>Mælt með spilavítum</h3>
-<ul>
-<li><a href="/spilaviti/bitstarz/">BitStarz</a> — tafarlausar dulritunarútborganir</li>
-<li><a href="/spilaviti/stake/">Stake</a> — styður 20+ dulritunargjaldmiðla</li>
-</ul>
+
+<p>Kortinu hafnað með „færsla ekki heimil" — og engin skýring. Þetta er algengasta fyrsta snerting Íslendinga við spilavítagreiðslur, og þessi síða útskýrir hvað gerðist, hvað er löglegt og hverjar raunverulegu leiðirnar framhjá eru. Allar þrjár staðreyndir fyrst: lokunin er bankaregla en ekki lög, þú braust ekkert af þér, og löglegar leiðir eru til.</p>
+
+<h2>Hvað lokar — og hvað ekki</h2>
+<p>Hver kortafærsla ber söluaðilaflokk; fjárhættuspil er 7995, og kortaútgefandinn ákveður hvort flokkurinn fer í gegn — áhættu- og regluvörslumat hvers banka, ekki landslög. Þess vegna er myndin ósamkvæm: sami banki getur hleypt færslu í gegn á einni síðu og hafnað annarri (skráning söluaðilans ræður), debet og kredit hegða sér ólíkt, og reglurnar breytast án tilkynningar. Smáatriðin eru í <a href="/greidslur/visa-i-spilavitum/">Visa-</a> og <a href="/greidslur/mastercard-i-spilavitum/">Mastercard-umfjöllununum</a>.</p>
+
+<h2>Leiðirnar framhjá, raðaðar eftir notagildi</h2>
+<table>
+<tr><th>Leið</th><th>Hvernig hún sneiðir hjá 7995</th><th>Fyrirvari</th></tr>
+<tr><td><a href="/greidslur/bitcoin/">Rafmynt</a></td><td>Kaup á kauphöll eru fjárfestingarfærsla; blockchain-hlutinn snertir ekki kortakerfið</td><td>Kaupin sjálf: kauphallarskráning + gjöld</td></tr>
+<tr><td><a href="/greidslur/skrill-i-spilavitum/">Rafveski (Skrill/Neteller)</a></td><td>Hleðsla veskis flokkast sem veskisfærsla; veski→síða er innan veskiskerfis</td><td>Gjaldskrá veskjanna, bónusútilokanir</td></tr>
+<tr><td>Fyrirframgreiddir kóðar</td><td>Keyptir sem vara, sjá <a href="/greidslur/paysafecard-i-spilavitum/">paysafecard</a></td><td>Stopult framboð á Íslandi, engin úttektarleið</td></tr>
+</table>
+<p>Rafmyntaleiðin er sú sem markaðurinn hefur í raun valið: hún leysir lokunina varanlega, í báðar áttir, og er hraðasta úttektarleiðin í leiðinni. <a href="/spilaviti/crypto-spilaviti/">Rafmyntasíðuyfirlitið</a> er framhaldslesningin.</p>
+
+<h2>Það sem við mælum EKKI með</h2>
+<p>Heiðarleg umfjöllun um „framhjá" þarf líka bannlistann: <strong>rangur söluaðilaflokkur</strong> (síður sem bóka spilafærslur sem „ráðgjöf" eða netverslun) er sviksamleg skráning — merki um síðu sem svindlar líka annars staðar, og færslurnar þínar geta fryst í uppgjörsdeilum. <strong>Kort þriðja aðila</strong> brýtur skilmála og endar í frystum vinningum við fyrstu KYC-skoðun. <strong>VPN til að þykjast annað land</strong> leysir ekkert greiðslutengt en bætir skilmálabroti ofan á. Leiðirnar í töflunni eru löglegar og skilmálahreinar; þessar þrjár eru það ekki, og gallinn lendir alltaf á spilaranum.</p>
+
+<h2>Algengar spurningar</h2>
+<h3>Má bankinn minn yfirhöfuð loka á þetta?</h3>
+<p>Já — færsluheimildir eru þjónustuskilmálar kortsins, og áhætturöksemdir bankans (svikatíðni, endurkröfur í flokknum) eru málefnalegar þó niðurstaðan sé óþægileg. Sum kortafyrirtæki bjóða flokkastillingar í netbanka; athugun þar er fyrsta skrefið áður en þú byggir hjáleið.</p>
+<h3>Er það peningaþvætti að fara rafmyntaleiðina?</h3>
+<p>Nei — kaup á skráðri kauphöll með eigin auðkenndum reikningi, millifærsla á spilasíðu og úttekt sömu leið er gagnsæ keðja með skjalfestan uppruna. Þvættisreglurnar snúast um uppruna fjár, ekki um hvað þú kaupir fyrir þitt eigið; geymdu færslusöguna og <a href="/leidbeiningar/skattur-a-vinninga/">skattaumfjöllunin</a> dekkar framtalshliðina.</p>
+<h3>Af hverju gengur innlögn en úttekt á sama kort ekki?</h3>
+<p>Úttektir á kort fara aðra kerfisleið (OCT-færslur) sem færri útgefendur styðja fyrir 7995 — algeng og óþægileg ósamhverfa. Reglan úr kortaumfjöllununum gildir: úttektarleiðin skipulögð áður en vinningurinn verður til.</p>
 <div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="sponsored noopener" class="cta-btn">Spila á Slotoro →</a></div>
+
 <div class="share" aria-label="Deila">
 <span class="share-label">Deila:</span>
 <a class="s-fb" data-net="fb" href="#" target="_blank" rel="noopener" aria-label="Deila á Facebook"><svg viewBox="0 0 24 24"><path d="M14 8V6.5c0-.7.5-1 1-1h2V2h-3c-3 0-4 2-4 4.3V8H8v3.5h2V22h4V11.5h2.8L17 8h-3z"/></svg></a>
