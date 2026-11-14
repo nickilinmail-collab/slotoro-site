@@ -1,0 +1,56 @@
+# -*- coding: utf-8 -*-
+"""Lobby catalogue: well-known slots from studios whose games Slotoro carries.
+Cards link to Slotoro (no review page). Availability can differ by country."""
+
+RAW = {
+"Pragmatic Play": """The Dog House Megaways|The Dog House Multihold|5 Lions Megaways|5 Lions Gold|Aztec Bonanza|Aztec King Megaways|Big Bass Bonanza Megaways|Big Bass Splash 1000|Big Bass Hold & Spinner|Big Bass Keeping it Reel|Big Bass Halloween|Big Bass Christmas Bash|Big Bass Mission Fishin'|Big Bass Floats My Boat|Big Bass Secrets of the Golden Lake|Big Bass Day at the Races|Bigger Bass Splash|Big Bass Vegas Double Down Deluxe|Buffalo King|Chilli Heat|Chilli Heat Megaways|Christmas Carol Megaways|Curse of the Werewolf Megaways|Da Vinci's Treasure|Dance Party|Diamond Strike|Drago – Jewels of Fortune|Extra Juicy|Extra Juicy Megaways|Fire Strike|Fire Strike 2|Fruit Party 2|Fury of Odin Megaways|Gates of Valhalla|Gates of Gatot Kaca|Great Rhino|Great Rhino Deluxe|Heart of Rio|Hot to Burn|Hot to Burn Hold and Spin|John Hunter and the Book of Tut|John Hunter and the Aztec Treasure|John Hunter and the Mayan Gods|Joker's Jewels|Jungle Gorilla|Madame Destiny|Master Joker|Mustang Gold|Mysterious Egypt|Peking Luck|Pyramid Bonanza|Queen of Gold|Release the Kraken 2|Release the Kraken Megaways|Return of the Dead|Rise of Samurai|Rise of Samurai III|Spartan King|Star Pirates Code|Starz Megaways|Street Racer|Sweet Powernudge|Temujin Treasures|Hand of Midas 2|The Great Chicken Escape|The Magic Cauldron|The Ultimate 5|The Wild Machine|Tree of Riches|Triple Dragons|Ultra Hold and Spin|Ultra Burn|Vampires vs Wolves|Voodoo Magic|Wild Booster|Wild Walker|Wolf Gold 4 Pack|Wild Wild Riches|Wild Wild Riches Megaways|Zeus vs Hades – Gods of War 250|Wisdom of Athena|Wisdom of Athena 1000|Power of Thor Megaways|Floating Dragon Megaways|Barn Festival|Cowboys Gold|Gold Party|Gold Rush|Gorilla Mayhem|Greek Gods|Hercules and Pegasus|Juicy Fruits Multihold|Kingdom of the Dead|Little Gem|Mochimon|Muertos Multiplier Megaways|North Guardians|Pirate Golden Age|Pirate Gold|Rainbow Gold|Rock Vegas|Santa's Wonderland|Spirit of Adventure|Sticky Bees|Bounty Gold|Candy Village|Cash Elevator|Chicken Drop|Clover Gold|Colossal Cash Zone|Cosmic Cash|Crown of Fire|Dragon Hero|Eye of the Storm|Eye of Cleopatra|Fish Eye|Goblin Heist Powernudge|Heist for the Golden Nuggets|Jasmine Dreams|Mighty Munching Melons|Mystic Chief|Octobeer Fortunes|Old Gold Miner Megaways|Queenie|Raging Bull|Shining Hot 100|Sword of Ares|Twilight Princess|Wild Beach Party|Wild Bison Charge|Wild Celebrity Bus Megaways|Wild Hop & Drop|Yum Yum Powerways|Zombie Carnival|Dragon Kingdom – Eyes of Fire|Fortune of Giza|Gates of Olympus Super Scatter|Starlight Princess Pachi|Emerald King Rainbow Road|Emerald King Wheel of Wealth|Fiesta Fortune|Chilli Heat Spicy Spins|Aztec Gems Deluxe|Aztec Gems Megaways|Genie's Gem Bonanza|Fruit Party|Sugar Supreme Powernudge|Book of Golden Sands|Sweet Bonanza Xmas|Big Bass Blast|Dwarf & Dragon|Oracle of Gold|Heart of Cleopatra|Wild West Gold Blazing Bounty|Rise of Samurai 4|Captain Kraken Megaways|Pinup Girls|Lucky Lightning|Magic Journey|Wild Pixies|Caishen's Gold|Golden Beauty|Panda's Fortune|Asgard|Master Chen's Fortune|Lucky New Year|Ancient Egypt|Ancient Egypt Classic|Vegas Magic|Vegas Nights|Hot Chilli|Monkey Madness|Fruit Rainbow""",
+"Play'n GO": """Rise of Merlin|Viking Runecraft|Viking Runecraft Apocalypse|Fire Joker Freeze|Gemix|Gemix 2|Rich Wilde and the Tome of Madness|Rich Wilde and the Shield of Athena|Rich Wilde and the Tome of Dead|Cat Wilde and the Doom of Dead|Cat Wilde in the Eclipse of the Sun God|Pearls of India|Aztec Idols|Raging Rex|Raging Rex 2|Raging Rex 3|Golden Ticket|Golden Ticket 2|Honey Rush|Hugo|Hugo 2|Sweet Alchemy|Wild Falls|Easter Eggs|Riches of Ra|Mount M|Ankh of Anubis|Contact|Reactoonz 2|Gigantoonz|Moon Princess 100|Moon Princess Trinity|Moon Princess Origins|Rise of Olympus 100|Legacy of Egypt|Tower Quest|Sticky Joker|Crabby's Gold|Rage to Riches|Leprechaun's Vault|Riddle Reels: A Case of Riches|Charlie Chance|Wild Frames|Banquet of Dead|Book of Dead|Faces of Freya""",
+"NetEnt": """Dead or Alive|Divine Fortune Megaways|Blood Suckers 2|Twin Spin Megaways|Twin Spin Deluxe|Twin Spin XXXtreme|Starburst XXXtreme|Mega Fortune|Mega Fortune Dreams|Hall of Gods|Arabian Nights|Jack Hammer|Jack Hammer 2|Jack Hammer 3|Reel Rush|Reel Rush 2|Fruit Shop|Fruit Shop Megaways|Fruit Shop Christmas Edition|Gonzo's Gold|Knight Rider|Space Wars|Victorious|Vikings|Asgardian Stones|Dazzle Me|Berry Burst|Butterfly Staxx|Copy Cats|Finn and the Candy Spin|Finn's Golden Tavern|Finn and the Dragon Tales|Fruit Spin|Wild Water|Flowers|Secrets of Atlantis|Steam Tower|Lost Relics|Koi Princess|Archangels: Salvation|Jumanji|Drive: Multiplier Mayhem|Silverback Gold|Street Fighter II|Wild Wild West|Hotline|Hotline 2|Spiñata Grande|Jack and the Beanstalk 2|Aloha! Christmas|Dead or Alive 2 Feature Buy|Starburst Galaxy""",
+"Red Tiger": """Gonzo's Quest Megaways|Dragon's Fire|Dragon's Fire Megaways|Pirates' Plenty|Pirates' Plenty Megaways|Mystery Reels|Mystery Reels Megaways|Rainbow Jackpots|Rainbow Jackpots Megaways|Piggy Riches Megaways|Thor's Lightning|Thor's Vengeance|Dynamite Riches|Dynamite Riches Megaways|Bounty Raid|Bounty Raid 2|Primate King|Primate King Megaways|Lucky Fortune Cat|Wild Cats Multiline|777 Strike|Treasure Mine|Laser Fruit|Gems Gone Wild|Fiesta de la Memoria|Agent Destiny|Dragons Clusterbuster|Good Luck Clusterbuster|Ninja Ways|Rasputin Megaways|Golden Leprechaun Megaways|Return of Kong Megaways""",
+"Big Time Gaming": """Extra Chilli|Extra Chilli Megaways|Danger High Voltage 2|Danger High Voltage Megapays|Who Wants to Be a Millionaire|Queen of Riches|Opal Fruits|Kingmaker|Star Clusters Megaclusters|Max Megaways 2|Lil Devil|Book of Gods|Dragon Born""",
+"Hacksaw Gaming": """Stack 'Em|Chaos Crew 2|Hand of Anubis|Le Pharaoh|Le Viking|Le King|Le Zeus|Le Fisherman|Le Bunny|Le Outlaw|Dork Unit|Itero|Cubes 2|RIP City|Rotten|Xpander|Joker Bombs|Stick 'Em|Frutz|Gladiator Legends|Fire My Laser|Twisted Lab|Om Nom|Hop'N'Pop|Dark Summoning|Mighty Masks|Densho|Duel at Dawn|Sixsixsix|Beam Boys|Ronin Stackways|Bloodthirst|Rad Maxx|Toshi Video Club|Cursed Seas|Keep 'Em|Shaolin Master""",
+"NoLimit City": """Deadwood|Deadwood R.I.P|San Quentin|Fire in the Hole 2|Fire in the Hole 3|Tombstone|Tombstone Slaughter|Mental 2|Punk Rocker|Punk Toilet|Das xBoot|Remember Gulag|Book of Shadows|East Coast vs West Coast|Folsom Prison|Karen Maneater|Infectious 5 xWays|Misery Mining|The Border|Blood & Shadow|Outsourced|The Rave|Land of the Free|Dead Canary|Bushido Ways xNudge|Barbarian Fury|El Paso Gunfight xNudge|Evil Goblins xBomb|Golden Genie and the Walking Wilds|Kiss My Chainsaw|Pixies vs Pirates|Poison Eve|Disturbed|Duck Hunters|Gaelic Gold|Benji Killed in Vegas|Serial|Tractor Beam|Manhattan Goes Wild|Hot Nudge""",
+"Push Gaming": """Razor Returns|Jammin' Jars 2|Fat Rabbit|Fat Banker|Fat Santa|Big Bamboo|Retro Tapes|Wild Swarm|Mystery Museum|Shamrock Miner|Fire Hopper|Joker Troupe|Dinopolis|Tiki Tumble|Razor Ways""",
+"Relax Gaming": """Money Train|Money Train 2|Money Train 4|Temple Tumble|Temple Tumble 2 Dream Drop|Snake Arena|Iron Bank|Iron Bank 2|Hellcatraz|Top Dawg$|Dead Man's Trail Dream Drop|Volatile Vikings|Volatile Vikings 2 Dream Drop|Beast Mode|Wild Chapo Dream Drop|Erik the Red|TNT Tumble|Book of 99|Marching Legions""",
+"ELK Studios": """Cygnus|Cygnus 2|Nitropolis|Nitropolis 5|Pirots|Pirots 2|Pirots 3|Tropicool|Tropicool 3|Wild Toro|Wild Toro 2|Kaiju|Coba Reborn|Cluster Kingdom|Ecuador Gold|Katmandu Gold|Sam on the Beach""",
+"Thunderkick": """Esqueleto Explosivo|Esqueleto Explosivo 2|Pink Elephants|Pink Elephants 2|Midas Golden Touch|Pyramyth|Baron Bloodmore and the Crimson Castle|Odin's Gamble|Gods of Rock!|Lava Lava|Shifting Seas|Triple Royal Gold|Flame Busters|Carnival Queen|Jaguar Superways""",
+"Quickspin": """Big Bad Wolf|Big Bad Wolf Megaways|Sakura Fortune 2|Sakura Fortune Epic Bloom|Sticky Bandits|Sticky Bandits 3 Most Wanted|Eastern Emeralds|Eastern Emeralds Megaways|Golden Glyph|Golden Glyph 3|Dragon Shrine|Hot Sync|Phoenix Sun|Spinions|Razortooth|Wins of Fortune|Pied Piper|Fairy Gate|Tower of Fortuna|Book of Inferno|Cash Truck|Azticons Chaos Clusters|Arcane Gems|Ark of Mystery|Big Bot Crew""",
+"Yggdrasil": """Vikings Go Wild|Vikings Go to Hell|Vikings Go Berzerk Reloaded|Vikings Go to Valhalla|Valley of the Gods 2|Raptor DoubleMax|Gator Gold Gigablox|Champion of the Underworld|Multifly|Easter Island|Easter Island 2|Golden Fish Tank|Cazino Zeppelin Reloaded|Jackpot Raiders|Wolf Hunters|Winterberries|Winterberries 2|Lucky Neko|Devour the Weak|Draglings|Trolls Bridge 2""",
+"Games Global": """Immortal Romance II|Thunderstruck|Thunderstruck Stormchaser|Book of Oz|9 Pots of Gold|Break da Bank Again|Mega Moolah Isis|Avalon|Lucky Leprechaun Clusters|Ancient Fortunes: Zeus|Assassin Moon|Hyper Gold|Basketball Star|Football Star|Agent Jane Blonde Returns|Burning Desire|Atlantean Treasures Mega Moolah|Immortal Romance Mega Moolah|Fishin' Pots of Gold|Fishin' Bigger Pots of Gold|9 Masks of Fire HyperSpins|Avalon III""",
+"Blueprint Gaming": """Fishin' Frenzy Megaways|Fishin' Frenzy The Big Catch|Eye of Horus|Eye of Horus Megaways|King Kong Cash|Diamond Mine Megaways|Genie Jackpots Megaways|Ted|Ted Megaways|Wish Upon a Jackpot|Vikings Unleashed Megaways|Rick and Morty Megaways|Buffalo Rising Megaways|Legacy of Ra Megaways|The Goonies|Irish Riches Megaways""",
+"BGaming": """Aztec Magic|Elvis Frog in Vegas|Bonanza Billion|Dig Dig Digger|Lucky Lady Moon|Book of Cats|Johnny Cash|Wild Cash|Princess Royal|Gold Magnate|Aloha King Elvis|Fruit Million""",
+"PG Soft": """Mahjong Ways|Mahjong Ways 2|Fortune Tiger|Fortune Ox|Fortune Rabbit|Treasures of Aztec|Wild Bandito|Dragon Hatch|Ganesha Gold""",
+"Wazdan": """9 Coins|15 Coins|Power of Gods: Hades|Sizzling 777 Deluxe""",
+"Habanero": """Hot Hot Fruit|Koi Gate|Wealth Inn|Fa Cai Shen|Hey Sushi|Nuwa""",
+}
+
+def slugify(n):
+    import re, unicodedata
+    n = unicodedata.normalize("NFKD", n).encode("ascii", "ignore").decode()
+    return re.sub(r"[^a-z0-9]+", "-", n.lower()).strip("-")
+
+def build(existing_names, target):
+    seen = {n.lower() for n in existing_names}
+    out = []
+    # round-robin across providers so trimming keeps variety
+    lists = {p: [x.strip() for x in v.split("|") if x.strip()] for p, v in RAW.items()}
+    while any(lists.values()) and len(out) < target:
+        for p in list(lists):
+            if not lists[p] or len(out) >= target:
+                continue
+            n = lists[p].pop(0)
+            if n.lower() in seen:
+                continue
+            seen.add(n.lower())
+            out.append({"name": n, "provider": p, "slug": "x-" + slugify(n)})
+    return out
+
+def category(name):
+    l = name.lower()
+    cats = []
+    if "megaways" in l or "ways" in l: cats.append("megaways")
+    if "book of" in l or "tome of" in l or "legacy of" in l: cats.append("book")
+    if "bass" in l or "fishin" in l or "fisherman" in l: cats.append("fishing")
+    if "moolah" in l or "mega fortune" in l or "jackpot" in l or "divine fortune" in l or "megapays" in l: cats.append("jackpot")
+    if any(k in l for k in ("fruit", "juicy", "joker", "777", "hot", "chilli", "coins", "sizzling")): cats.append("classic")
+    return cats

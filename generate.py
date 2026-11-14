@@ -1554,11 +1554,61 @@ write_page("casino/index.html", page_template("Bestu netspilavítin á Íslandi 
     [("{URL_BASE}", "Home"), ("", "Casino")],
     casino_content))
 
-# Slots index
-slots_list = "\n".join([f'<div class="info-box"><p><strong><a href="{URL_BASE}slots/{s["slug"]}/">{s["name"]}</a></strong> — {s["provider"]} | RTP {rtp_is(s["rtp"])} | {vol_is(s["volatility"])} sveifla | hámark {maxwin_is(s["maxwin"])}</p></div>' for s in slots_data[:30]])
-write_page("slots/index.html", page_template("Allir spilakassar", "Umsagnir um vinsæla spilakassa",
-    [("{URL_BASE}", "Home"), ("", "Slots")],
-    f'<h1>Vinsælir spilakassar 2026</h1><p>Umsagnir um {len(slots_data)} spilakassa frá fremstu birgjum.</p>{slots_list}'))
+# Slots index — casino-style lobby (500 games)
+import catalog as _cat, html as _h
+_extra = _cat.build([x["name"] for x in slots_data], 500 - len(slots_data))
+_cards = []
+for x in slots_data:
+    cats = ["review"] + _cat.category(x["name"])
+    _cards.append(f'<a class="lb-card" href="{URL_BASE}slots/{x["slug"]}/" data-n="{_h.escape(x["name"].lower())}" data-p="{_h.escape(x["provider"])}" data-c="{" ".join(cats)}"><img src="{URL_BASE}img/slots/{x["slug"]}.jpg" alt="{_h.escape(x["name"])}" loading="lazy" width="300" height="400"><span class="lb-tag">Umsögn</span><span class="lb-hover"><span class="lb-btn">Lesa umsögn</span></span><span class="lb-name">{_h.escape(x["name"])}<small>{_h.escape(x["provider"])}</small></span></a>')
+for x in _extra:
+    cats = _cat.category(x["name"])
+    _cards.append(f'<a class="lb-card" href="{AFF}" target="_blank" rel="sponsored nofollow noopener" data-n="{_h.escape(x["name"].lower())}" data-p="{_h.escape(x["provider"])}" data-c="{" ".join(cats)}"><img src="{URL_BASE}img/lobby/{x["slug"]}.jpg" alt="{_h.escape(x["name"])}" loading="lazy" width="300" height="400"><span class="lb-hover"><span class="lb-btn">Spila á Slotoro</span></span><span class="lb-name">{_h.escape(x["name"])}<small>{_h.escape(x["provider"])}</small></span></a>')
+_provs = {}
+for x in slots_data + _extra:
+    _provs[x["provider"]] = _provs.get(x["provider"], 0) + 1
+_prov_opts = "".join(f'<option value="{_h.escape(k)}">{_h.escape(k)} ({v})</option>' for k, v in sorted(_provs.items(), key=lambda kv: -kv[1]))
+_tabs = [("all","Allir leikir"),("review","Með umsögn"),("megaways","Megaways"),("jackpot","Pottar"),("book","Bókaleikir"),("fishing","Veiði"),("classic","Klassískir")]
+_tab_html = "".join(f'<button type="button" class="lb-tab{" on" if k=="all" else ""}" data-t="{k}">{v}</button>' for k, v in _tabs)
+lobby = f"""<style>
+.lb-head h1{{margin-bottom:6px}}.lb-sub{{opacity:.85;margin:0 0 18px}}
+.lb-bar{{position:sticky;top:64px;z-index:5;background:rgba(14,8,28,.92);backdrop-filter:blur(10px);padding:12px 0;margin-bottom:14px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}}
+.lb-search{{flex:1 1 220px;min-width:180px;padding:12px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:#fff;font-size:16px}}
+.lb-prov{{padding:12px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:#1a1030;color:#fff;font-size:15px;max-width:100%}}
+.lb-tabs{{display:flex;gap:8px;overflow-x:auto;width:100%;padding-bottom:2px;scrollbar-width:none}}.lb-tabs::-webkit-scrollbar{{display:none}}
+.lb-tab{{flex:0 0 auto;padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.05);color:#e9e2ff;font-size:15px;cursor:pointer;white-space:nowrap}}
+.lb-tab.on{{background:linear-gradient(135deg,#7b2ff7,#ff5fa2);border-color:transparent;color:#fff;font-weight:600}}
+.lb-count{{font-size:14px;opacity:.75;margin:0 0 10px}}
+.lb-grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}}
+.lb-card{{position:relative;display:block;aspect-ratio:3/4;border-radius:16px;overflow:hidden;background:#1a1030;text-decoration:none;color:#fff;box-shadow:0 6px 18px rgba(0,0,0,.35);transition:transform .15s}}
+.lb-card:hover,.lb-card:focus-visible{{transform:translateY(-3px)}}
+.lb-card img{{width:100%;height:100%;object-fit:cover;display:block}}
+.lb-tag{{position:absolute;top:8px;left:8px;background:#7b2ff7;color:#fff;font-size:12px;font-weight:700;padding:4px 9px;border-radius:8px}}
+.lb-name{{color:#fff;position:absolute;left:0;right:0;bottom:0;padding:26px 10px 9px;background:linear-gradient(transparent,rgba(0,0,0,.85));font-size:14px;font-weight:600;line-height:1.25}}
+.lb-name small{{display:block;font-weight:400;opacity:.75;font-size:12px}}
+.lb-hover{{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(10,5,25,.55);opacity:0;transition:opacity .15s}}
+.lb-card:hover .lb-hover,.lb-card:focus-visible .lb-hover{{opacity:1}}
+.lb-btn{{padding:10px 18px;border-radius:999px;background:linear-gradient(135deg,#ff8a3d,#ff3d9a);font-weight:700;font-size:14px}}
+.lb-more{{display:block;margin:22px auto 6px}}
+.lb-empty{{text-align:center;opacity:.8;padding:30px 0}}
+@media(max-width:520px){{.lb-grid{{grid-template-columns:repeat(3,1fr);gap:8px}}.lb-name{{font-size:12px;padding:20px 6px 6px}}.lb-name small{{display:none}}.lb-tag{{font-size:10px;padding:3px 6px}}}}
+</style>
+<div class="lb-head"><h1>Spilakassar — {len(_cards)} leikir</h1>
+<p class="lb-sub">Vinsælustu spilakassarnir frá {len(_provs)} framleiðendum. Leikir merktir „Umsögn“ eru með ítarlega umsögn hjá okkur; aðrir opnast hjá Slotoro.</p></div>
+<div class="lb-bar"><input class="lb-search" type="search" placeholder="Leita að leik…" aria-label="Leita að leik"><select class="lb-prov" aria-label="Framleiðandi"><option value="">Allir framleiðendur</option>{_prov_opts}</select><div class="lb-tabs" role="tablist">{_tab_html}</div></div>
+<p class="lb-count" aria-live="polite"></p>
+<div class="lb-grid">{"".join(_cards)}</div>
+<p class="lb-empty" hidden>Enginn leikur fannst. Prófaðu annað leitarorð.</p>
+<button type="button" class="cta-btn lb-more">Sýna fleiri leiki</button>
+<p style="font-size:14px;opacity:.75;margin-top:18px">Leikjaframboð Slotoro getur verið mismunandi eftir landi og breyst án fyrirvara. 18+ · Spilaðu á ábyrgan hátt · Hjálparsími 1717.</p>
+<script>(function(){{var cards=[].slice.call(document.querySelectorAll('.lb-card')),q=document.querySelector('.lb-search'),pv=document.querySelector('.lb-prov'),more=document.querySelector('.lb-more'),cnt=document.querySelector('.lb-count'),empty=document.querySelector('.lb-empty'),tab='all',limit=60;
+function run(){{var s=q.value.trim().toLowerCase(),p=pv.value,m=[];cards.forEach(function(c){{var ok=(!s||c.dataset.n.indexOf(s)>-1)&&(!p||c.dataset.p===p)&&(tab==='all'||(' '+c.dataset.c+' ').indexOf(' '+tab+' ')>-1);if(ok)m.push(c);c.hidden=true}});m.forEach(function(c,i){{c.hidden=i>=limit}});cnt.textContent=m.length+' leikir';more.hidden=m.length<=limit;empty.hidden=m.length>0}}
+q.addEventListener('input',function(){{limit=60;run()}});pv.addEventListener('change',function(){{limit=60;run()}});
+document.querySelectorAll('.lb-tab').forEach(function(b){{b.addEventListener('click',function(){{document.querySelectorAll('.lb-tab').forEach(function(x){{x.classList.remove('on')}});b.classList.add('on');tab=b.dataset.t;limit=60;run()}})}});
+more.addEventListener('click',function(){{limit+=60;run()}});run()}})();</script>
+<style>.lb-card[hidden]{{display:none!important}}</style>"""
+write_page("slots/index.html", page_template("Spilakassar — 500 vinsælir leikir", f"Leitaðu í {len(_cards)} spilakössum frá {len(_provs)} framleiðendum: Pragmatic Play, Play'n GO, NetEnt, Hacksaw, NoLimit City og fleiri. Umsagnir um 80 vinsælustu.",
+    [("{URL_BASE}", "Heim"), ("", "Spilakassar")], lobby))
 
 # Live index
 live_list = "\n".join([f'<div class="info-box"><p><strong><a href="{URL_BASE}live/{g["slug"]}/">{g["name"]}</a></strong> — {g["desc"][:80]}</p></div>' for g in live_games[:20]])
