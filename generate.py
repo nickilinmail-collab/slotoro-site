@@ -667,31 +667,10 @@ body::after{{content:'';position:fixed;bottom:-200px;left:-10%;width:600px;heigh
   .sidebar{{order:2;}}
 }}
 /* === Liquid glass capsule buttons === */
-.btn-primary,.btn-secondary,.nav-cta,.btn-cta,.btn-glass,.promo-btn,.gc-play,.btn-signup,.cta-btn,.sidebar-cta{{
---rim:6px;position:relative;display:inline-flex;align-items:center;justify-content:center;gap:8px;
-color:#fff!important;font-family:'Inter',system-ui,sans-serif;white-space:nowrap;font-weight:500;letter-spacing:.2px;
-text-shadow:0 1px 2px rgba(0,0,0,.45);border-radius:999px;overflow:visible;isolation:isolate;
-border:var(--rim) solid transparent;background-clip:padding-box;
-background:
- linear-gradient(180deg,#e04550 0%,#d63641 55%,#b8232e 100%) padding-box,
- linear-gradient(170deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,.12) 40%,rgba(255,255,255,.05) 100%) border-box;
-box-shadow:
- 0 0 0 1px rgba(255,255,255,.18),
- inset 0 1px 0 rgba(255,255,255,.25),
- inset 0 -3px 8px rgba(0,0,0,.25),
- 0 12px 26px -10px rgba(214,54,65,.65),
- 0 2px 6px rgba(0,0,0,.35);
-backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
-transition:transform .25s,box-shadow .25s,filter .25s;}}
-.btn-primary::before,.btn-secondary::before,.nav-cta::before,.btn-cta::before,.btn-glass::before,.promo-btn::before,.gc-play::before,.btn-signup::before,.cta-btn::before,.sidebar-cta::before{{
-content:'';position:absolute;left:7%;right:7%;top:2px;height:16%;border-radius:999px;pointer-events:none;z-index:-1;
-background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(255,255,255,0));}}
-.btn-primary::after,.btn-secondary::after,.nav-cta::after,.btn-cta::after,.btn-glass::after,.promo-btn::after,.gc-play::after,.btn-signup::after,.cta-btn::after,.sidebar-cta::after{{
-content:'';position:absolute;left:6%;bottom:2px;width:30%;height:22%;border-radius:999px;pointer-events:none;z-index:-1;animation:none;
-background:radial-gradient(closest-side,rgba(255,255,255,.28),transparent);}}
-.btn-primary:hover,.btn-secondary:hover,.nav-cta:hover,.btn-cta:hover,.btn-glass:hover,.promo-btn:hover,.gc-play:hover,.btn-signup:hover,.cta-btn:hover,.sidebar-cta:hover{{
-transform:translateY(-2px);filter:brightness(1.12) saturate(1.1);
-box-shadow:0 0 0 1px rgba(255,255,255,.45),inset 0 1px 0 rgba(255,255,255,.45),inset 0 -3px 8px rgba(0,0,0,.25),0 18px 32px -10px rgba(214,54,65,.8),0 3px 8px rgba(0,0,0,.35);}}
+.btn-primary,.btn-secondary,.nav-cta,.btn-cta,.btn-glass,.promo-btn,.gc-play,.btn-signup,.cta-btn,.sidebar-cta{{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:8px;color:#fff!important;font-family:'Inter',system-ui,sans-serif;white-space:nowrap;font-weight:700;letter-spacing:.2px;border-radius:14px;border:none;background:#d63641;box-shadow:0 2px 10px rgba(0,0,0,.25);transition:background .2s,transform .2s,box-shadow .2s;}}
+.btn-primary::before,.btn-secondary::before,.nav-cta::before,.btn-cta::before,.btn-glass::before,.promo-btn::before,.gc-play::before,.btn-signup::before,.cta-btn::before,.sidebar-cta::before{{content:none;}}
+.btn-primary::after,.btn-secondary::after,.nav-cta::after,.btn-cta::after,.btn-glass::after,.promo-btn::after,.gc-play::after,.btn-signup::after,.cta-btn::after,.sidebar-cta::after{{content:none;}}
+.btn-primary:hover,.btn-secondary:hover,.nav-cta:hover,.btn-cta:hover,.btn-glass:hover,.promo-btn:hover,.gc-play:hover,.btn-signup:hover,.cta-btn:hover,.sidebar-cta:hover{{background:#e04550;transform:translateY(-1px);box-shadow:0 6px 16px rgba(214,54,65,.4);}}
 .btn-primary:focus-visible,.btn-secondary:focus-visible,.nav-cta:focus-visible,.btn-cta:focus-visible,.btn-glass:focus-visible,.promo-btn:focus-visible,.gc-play:focus-visible,.btn-signup:focus-visible,.cta-btn:focus-visible,.sidebar-cta:focus-visible{{outline:2px solid #e04550;outline-offset:4px;}}
 .btn-primary,.btn-cta,.cta-btn{{padding:14px 40px;font-size:16px;}}
 .sidebar-cta{{display:flex;padding:12px 20px;font-size:16px;}}
