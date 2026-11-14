@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DXR83WTCFX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DXR83WTCFX');</script>
 <title>Gods of Rock! spilakassi — umsögn og RTP | Svipan</title>
 <link rel="canonical" href="https://svipan.is/spilakassar/gods-of-rock/">
 <meta name="description" content="Gods of Rock! frá Thunderkick: RTP 96,05%, há sveifla, hámark 20.000x. Hvernig leikurinn virkar.">
@@ -376,5 +379,6 @@ d.querySelectorAll('.dr-toggle').forEach(function(t){t.addEventListener('click',
 var path=location.pathname;d.querySelectorAll('.dr-sub a').forEach(function(a){if(a.getAttribute('href')===path){a.setAttribute('aria-current','page');a.style.color='#fff';a.style.fontWeight='600';var t=a.closest('.dr-group').querySelector('.dr-toggle');t.setAttribute('aria-expanded','true');a.parentNode.hidden=false;}});
 var q=d.querySelector('.dr-search input'),empty=d.querySelector('.dr-empty');q.addEventListener('input',function(){var v=q.value.trim().toLowerCase(),any=false;d.querySelectorAll('.dr-group').forEach(function(g){var sub=g.querySelector('.dr-sub'),t=g.querySelector('.dr-toggle'),hit=false;sub.querySelectorAll('a').forEach(function(a){var m=!v||a.textContent.toLowerCase().indexOf(v)>-1;a.hidden=!m;if(m&&v)hit=true;});if(v){g.hidden=!hit;sub.hidden=!hit;t.setAttribute('aria-expanded',hit?'true':'false');if(hit)any=true;}else{g.hidden=false;sub.querySelectorAll('a').forEach(function(a){a.hidden=false;});sub.hidden=t.getAttribute('aria-expanded')!=='true';}});d.querySelectorAll('.dr-body > .dr-item').forEach(function(i){i.hidden=!!v;});empty.hidden=!v||any;});
 })();</script>
+<script>document.addEventListener('click',function(e){var a=e.target.closest('a[href*="gameslnk.cc"]');if(a){gtag('event','affiliate_click',{'link_url':a.href,'link_text':a.textContent.trim(),'page_path':location.pathname});}});</script>
 </body>
 </html>
