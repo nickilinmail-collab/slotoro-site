@@ -17,7 +17,7 @@
 <meta name="geo.region" content="IS">
 <meta name="geo.placename" content="Iceland">
 <meta property="og:locale" content="is_IS">
-<meta name="robots" content="noindex,follow">
+<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -303,22 +303,37 @@ background:linear-gradient(180deg,rgba(255,255,255,.5),rgba(255,255,255,0));}
 <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(24px,4vw,34px);font-weight:700;color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.7);line-height:1.2">Hvernig RNG virkar</span>
 <span style="font-size:17px;color:#fff;opacity:.9;margin-top:8px;text-shadow:0 1px 8px rgba(0,0,0,.7)">Leiðbeining</span>
 </div></div>
-<p>Hvernig slembitölugjafi (RNG) virkar í spilakössum.</p>
-<h2>Ítarleg leiðbeining</h2>
-<p>Í þessari leiðbeiningu fjöllum við um allt sem þú þarft að vita um «Hvernig RNG virkar». Upplýsingarnar eru uppfærðar fyrir íslenska leikmenn árið 2026.</p>
-<h3>Lykilatriði</h3>
-<ul>
-<li>Hvað þarf að vita áður en þú byrjar</li>
-<li>Skref-fyrir-skref leiðbeiningar</li>
-<li>Algeng mistök og hvernig á að forðast þau</li>
-<li>Ráðleggingar frá sérfræðingum Svipan</li>
-</ul>
-<h3>Gagnlegir tenglar</h3>
-<ul>
-<li><a href="/spilaviti/">Spilavíti umsagnir</a></li>
-<li><a href="/bonusar/">Bónusar</a></li>
-<li><a href="/greidslur/">Greiðslumátar</a></li>
-</ul>
+
+<p>RNG — Random Number Generator — er hjarta hvers netspilakassa: forritið sem ákveður útkomu snúningsins. Um ekkert í netspilun ganga fleiri mýtur, og engin þeirra lifir af fimm mínútna skilning á því hvernig kerfið raunverulega vinnur. Þessi síða er þær fimm mínútur.</p>
+
+<h2>Hvað gerist þegar þú smellir á „spin"</h2>
+<p>Slembitölugjafinn framleiðir tölur stanslaust — þúsundir á sekúndu — hvort sem einhver spilar eða ekki. Smellurinn þinn grípur töluna sem er uppi á nákvæmlega því augnabliki, og leikurinn varpar henni á hjólastöður eftir fastri töflu. Tvennt fylgir beint af þessu: <strong>útkoman ræðst á smellaugnablikinu</strong>, ekki meðan hjólin „snúast" (snúningurinn er sjónvarp, niðurstaðan er þegar til), og <strong>millisekúndan skiptir öllu</strong> — sami leikur, einni ms síðar, allt önnur tala. Þess vegna er „ég hefði unnið ef…" alltaf satt og alltaf merkingarlaust.</p>
+
+<h2>Mýturnar, afgreiddar af vélinni sjálfri</h2>
+<table>
+<tr><th>Mýtan</th><th>Af hverju hún stenst ekki</th></tr>
+<tr><td>„Kassinn er heitur/kaldur"</td><td>Gjafinn á ekkert ástand milli snúninga — hver tala er óháð öllum fyrri</td></tr>
+<tr><td>„Hann á eftir að borga, enginn hefur unnið lengi"</td><td>Engin minnisskrá „safnar" skuld; <a href="/leidbeiningar/hvad-er-rtp/">RTP</a> er langtímameðaltal, ekki teljari</td></tr>
+<tr><td>„Síðan herðir hann þegar ég vinn"</td><td>RNG og RTP-útgáfa eru læst í vottuðum leikjakóða framleiðandans — síðan hefur ekki stillihnapp á einstaka spilara</td></tr>
+<tr><td>„Autoplay/max bet breytir útkomum"</td><td>Sama talnaröð grípst, sama varpunartafla — veðmálið skalar útborgun, ekki líkur</td></tr>
+<tr><td>„Near-miss þýðir að ég nálgast"</td><td>Næstum-því er birtingarval á töpuðum snúningi, sjá <a href="/leidbeiningar/hvad-er-sveifla/">sveifluumfjöllunina</a></td></tr>
+</table>
+
+<h2>Hver gætir gæslumannsins?</h2>
+<p>Réttmæta spurningin er ekki „er RNG til?" heldur „hver sannreynir hann?". Svarið er vottunarkeðjan: óháðar prófunarstofur (eCOGRA, iTech Labs, GLI, BMM) keyra algrímið gegnum tölfræðipróf á milljónum útkoma — dreifingu, fylgniprófanir, spáþol — og leyfisveitendur krefjast vottunarinnar áður en leikur fer í loftið. Keðjan stendur og fellur með leyfinu: á <a href="/leidbeiningar/hvernig-a-ad-stadfesta-spilavitaleyfi/">sannreyndri leyfissíðu</a> spilarðu vottaðan kóða framleiðandans; á leyfislausri síðu er „RNG" fullyrðing án vitnis — og fölsuð eintök þekktra leikja (sjá <a href="/spilaviti/pragmatic-play-spilaviti/">framleiðendaumfjöllunina</a>) eru nákvæmlega þar.</p>
+
+<h2>Provably fair: þegar þú ert sjálfur prófunarstofan</h2>
+<p>Rafmyntaheimurinn bætti við eigin lausn: leikir þar sem hver útkoma er dulrituð fyrirfram og sannreynanleg eftir á af spilaranum sjálfum — ekkert traust á stofu þarf. Kerfið er útskýrt í <a href="/spilaviti/crypto-spilaviti/">rafmyntayfirlitinu</a> og borið uppi af <a href="/spilaviti/crash-leikja-spilaviti/">crash-</a> og <a href="/spilaviti/plinko-spilaviti/">Plinko-flokkunum</a>. Vottun og sannprófun eru tvö svör við sömu spurningu; besta staðan er síða sem býður hvort tveggja.</p>
+
+<h2>Algengar spurningar</h2>
+<h3>Er „alvöru" tilviljun yfirhöfuð til í tölvu?</h3>
+<p>Leikir nota pseudo-RNG: algrím sem er stærðfræðilega fyrirsjáanlegt EF fræið er þekkt — og fræið er það ekki, það sækir óreiðu úr umhverfinu. Fyrir alla praktíska og tölfræðilega mælikvarða er útkoman tilviljun; vottunarprófin mæla einmitt það.</p>
+<h3>Geta hakkarar „lesið" RNG og unnið?</h3>
+<p>Sögulega hafa veikir gjafar verið brotnir — í áratuga gömlum tilvikum og illa hönnuðum kerfum. Nútíma vottaðir gjafar með dulfræðilega óreiðu eru utan seilingar; raunhæfa svindláhættan í greininni er ekki stærðfræðileg heldur viðskiptaleg: síður sem borga ekki út. Þar ver <a href="/leidbeiningar/hvernig-a-ad-velja-spilaviti/">síðuvalið</a> þig, ekki talnafræðin.</p>
+<h3>Live-borð — er RNG þar líka?</h3>
+<p>Nei — þar er niðurstaðan líkamleg (spil, kúla, hjól) undir myndavélum, sjá <a href="/spilaviti/live-spilaviti/">live-umfjöllunina</a>. Það er einmitt aðdráttarafl formsins fyrir þá sem treysta augum betur en algrímum — stærðfræðilega standa bæði kerfin jafnfætis undir vottun.</p>
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="sponsored noopener" class="cta-btn">Spila á Slotoro →</a></div>
+
 <div class="share" aria-label="Deila">
 <span class="share-label">Deila:</span>
 <a class="s-fb" data-net="fb" href="#" target="_blank" rel="noopener" aria-label="Deila á Facebook"><svg viewBox="0 0 24 24"><path d="M14 8V6.5c0-.7.5-1 1-1h2V2h-3c-3 0-4 2-4 4.3V8H8v3.5h2V22h4V11.5h2.8L17 8h-3z"/></svg></a>
@@ -376,7 +391,7 @@ background:linear-gradient(180deg,rgba(255,255,255,.5),rgba(255,255,255,0));}
     </div>
     <div class="footer-help">Þarftu að tala við einhvern um spilavanda? Hjálparsíminn <a href="tel:1717">1717</a> hjá Rauða krossinum er ókeypis og opinn allan sólarhringinn. <a href="/leidbeiningar/spila-af-abyrgd/">Ábyrg spilun →</a></div>
     <div class="footer-18">18+ | Fjárhættuspil geta verið ávanabindandi. Spilaðu á ábyrgan hátt. <a href="https://www.begambleaware.org" target="_blank" rel="noopener">BeGambleAware.org</a></div>
-    <div class="footer-bottom"><span>© 2026 svipan.is</span><span><a href="/saga/" style="color:var(--muted2);text-decoration:none;">Saga</a> · <a href="https://www.facebook.com/svipanfrettir/" target="_blank" rel="noopener" style="color:var(--muted2);text-decoration:none;">Facebook</a> · Svipan — óháð umsagnarvefur</span></div>
+    <div class="footer-bottom"><span>© 2012–2026 svipan.is</span><span><a href="/saga/" style="color:var(--muted2);text-decoration:none;">Saga</a> · <a href="https://www.facebook.com/svipanfrettir/" target="_blank" rel="noopener" style="color:var(--muted2);text-decoration:none;">Facebook</a> · Svipan — óháð umsagnarvefur</span></div>
   </div>
 </footer>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://svipan.is/#website", "name": "Svipan", "url": "https://svipan.is/", "inLanguage": "is", "description": "Óháður íslenski leiðarvísirinn um netspilavíti, spilakassa og greiðsluleiðir.", "potentialAction": {"@type": "SearchAction", "target": {"@type": "EntryPoint", "urlTemplate": "https://svipan.is/?s={search_term_string}"}, "query-input": "required name=search_term_string"}}, {"@type": "Organization", "@id": "https://svipan.is/#org", "name": "Svipan", "url": "https://svipan.is/", "logo": {"@type": "ImageObject", "url": "https://svipan.is/favicon.svg", "width": 40, "height": 40}, "description": "Svipan er óháður íslenski leiðarvísirinn um netspilavíti. Við metum og berum saman yfir 150 spilavíti fyrir íslenska spilara.", "foundingDate": "2010", "contactPoint": {"@type": "ContactPoint", "contactType": "customer support", "url": "https://svipan.is/hafa-samband/", "availableLanguage": ["is", "en"]}, "sameAs": ["https://www.facebook.com/svipanfrettir/"]}, {"@type": "SiteNavigationElement", "name": "Spilavíti", "url": "https://svipan.is/spilaviti/"}, {"@type": "SiteNavigationElement", "name": "Spilakassar", "url": "https://svipan.is/spilakassar/"}, {"@type": "SiteNavigationElement", "name": "Bónusar", "url": "https://svipan.is/bonusar/"}, {"@type": "SiteNavigationElement", "name": "Greiðslur", "url": "https://svipan.is/greidslur/"}, {"@type": "SiteNavigationElement", "name": "Leiðbeiningar", "url": "https://svipan.is/leidbeiningar/"}, {"@type": "SiteNavigationElement", "name": "Lifandi spilavíti", "url": "https://svipan.is/live/"}, {"@type": "Person", "@id": "https://svipan.is/#valbjorn", "name": "Valbjörn Gjúkason", "url": "https://svipan.is/hofundur/valbjorn-gjukason/", "jobTitle": "Blaðamaður og ritstjóri", "knowsAbout": ["Fjárhættuspil", "Netspilavíti", "Spilakassar"], "worksFor": {"@id": "https://svipan.is/#org"}}, {"@type": "Article", "headline": "Hvernig RNG virkar", "description": "Hvernig slembitölugjafi (RNG) virkar í spilakössum. Óháður leiðarvísir fyrir íslenska spilara á Svipan.", "inLanguage": "is", "datePublished": "2026-06-01", "dateModified": "2026-11-14", "author": {"@id": "https://svipan.is/#valbjorn"}, "publisher": {"@id": "https://svipan.is/#org"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://svipan.is/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://svipan.is/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://svipan.is/leidbeiningar/"}, {"@type": "ListItem", "position": 3, "name": "Hvernig RNG virkar"}]}]}</script>

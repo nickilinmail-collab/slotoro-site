@@ -496,7 +496,7 @@ def get_footer():
     </div>
     <div class="footer-help">Þarftu að tala við einhvern um spilavanda? Hjálparsíminn <a href="tel:1717">1717</a> hjá Rauða krossinum er ókeypis og opinn allan sólarhringinn. <a href="{URL_BASE}leidbeiningar/spila-af-abyrgd/">Ábyrg spilun →</a></div>
     <div class="footer-18">18+ | Fjárhættuspil geta verið ávanabindandi. Spilaðu á ábyrgan hátt. <a href="https://www.begambleaware.org" target="_blank" rel="noopener">BeGambleAware.org</a></div>
-    <div class="footer-bottom"><span>© 2026 svipan.is</span><span><a href="{URL_BASE}saga/" style="color:var(--muted2);text-decoration:none;">Saga</a> · <a href="https://www.facebook.com/svipanfrettir/" target="_blank" rel="noopener" style="color:var(--muted2);text-decoration:none;">Facebook</a> · Svipan — óháð umsagnarvefur</span></div>
+    <div class="footer-bottom"><span>© 2012–2026 svipan.is</span><span><a href="{URL_BASE}saga/" style="color:var(--muted2);text-decoration:none;">Saga</a> · <a href="https://www.facebook.com/svipanfrettir/" target="_blank" rel="noopener" style="color:var(--muted2);text-decoration:none;">Facebook</a> · Svipan — óháð umsagnarvefur</span></div>
   </div>
 </footer>'''
 
