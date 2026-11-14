@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Svipan Casino (svipan.is) site generator
+Svipan (svipan.is) site generator
 Öll content in English
 """
 import os
@@ -17,7 +17,7 @@ URL_BASE = "/" if "--production" in sys.argv else "/slotoro-site/"
 
 # 150 casino reviews
 casinos = [
-    {"slug": "slotoro", "name": "Slotoro", "rating": 9.0, "bonus": "Velkomstpakki á 3 fyrstu innborgunum", "type": "classic", "partner": True, "desc": "Spilavíti og veðmálasíða sem opnaði 2025. Yfir 8.000 leikir frá 71 framleiðanda, lágmarksinnborgun €10 og velkomstpakki sem skiptist á fyrstu þrjár innborganirnar (40x veðskilyrði). Tekur við kortum, rafrænum veskjum og dulritunargjaldmiðlum. Svipan Casino er í samstarfi við Slotoro."},
+    {"slug": "slotoro", "name": "Slotoro", "rating": 9.0, "bonus": "Velkomstpakki á 3 fyrstu innborgunum", "type": "classic", "partner": True, "desc": "Spilavíti og veðmálasíða sem opnaði 2025. Yfir 8.000 leikir frá 71 framleiðanda, lágmarksinnborgun €10 og velkomstpakki sem skiptist á fyrstu þrjár innborganirnar (40x veðskilyrði). Tekur við kortum, rafrænum veskjum og dulritunargjaldmiðlum. Svipan er í samstarfi við Slotoro."},
     {"slug": "bitstarz", "name": "BitStarz", "rating": 9.8, "bonus": "5 BTC + 200 FS", "type": "crypto", "desc": "Margverðlaunað dulritunarspilavíti með yfir 3.500 leikjum frá Pragmatic Play, Evolution og Play'n GO. Tekur við BTC, ETH, LTC, DOGE og fleiri myntum. Rekstraraðilinn segir útborganir í dulritunargjaldmiðlum afgreiddar á nokkrum mínútum. Curaçao leyfi."},
     {"slug": "stake", "name": "Stake", "rating": 9.6, "bonus": "200% + VIP", "type": "crypto", "desc": "Eitt vinsælasta dulritunarspilavíti heims með VIP kerfi, eigin Stake leikjum og íþróttaveðmálum. Styður 8 dulritunargjaldmiðla og birtir húsforskot á eigin leikjum."},
     {"slug": "bc-game", "name": "BC.Game", "rating": 9.4, "bonus": "300% allt að 1 BTC", "type": "crypto", "desc": "Spilavíti með eigin crash, dice og limbo leikjum. Styður yfir 100 dulritunargjaldmiðla, þar á meðal BTC, ETH, SOL og DOGE. Daglegir bónusar og verkefnakerfi. Curaçao leyfi."},
@@ -395,14 +395,14 @@ for title, desc in more_guides:
 
 # About (10 pages)
 about_pages = [
-    {"slug": "o-nas", "title": "Um Svipan Casino", "desc": "Hverjir við erum og hvers vegna við stofnuðum Svipan Casino á svipan.is."},
-    {"slug": "kontakty", "title": "Hafa samband", "desc": "Hafðu samband við Svipan Casino teymið."},
+    {"slug": "o-nas", "title": "Um Svipan", "desc": "Hverjir við erum og hvers vegna við stofnuðum Svipan á svipan.is."},
+    {"slug": "kontakty", "title": "Hafa samband", "desc": "Hafðu samband við Svipan teymið."},
     {"slug": "konfidencialnost", "title": "Persónuverndarstefna", "desc": "Hvernig við meðhöndlum gögnin þín — persónuverndarstefna okkar útskýrð."},
     {"slug": "usloviya", "title": "Notkunarskilmálar", "desc": "Notkunarskilmálar vefsíðunnar svipan.is."},
     {"slug": "otkaz-ot-otvetstvennosti", "title": "Fyrirvari", "desc": "Mikilvægur lagalegur fyrirvari um spilavítaumsagnir okkar."},
     {"slug": "kak-my-ocenivaem", "title": "Hvernig við metum spilavíti", "desc": "Hvernig við metum og umsögnum netspilavíti — aðferðafræði okkar."},
     {"slug": "redakcionnaya-politika", "title": "Ritstjórnarstefna", "desc": "Ritstjórnarstefna okkar — sjálfstæði, nákvæmni og gagnsæi."},
-    {"slug": "partnerstvo", "title": "Samstarf", "desc": "Samstarfstækifæri hjá Svipan Casino."},
+    {"slug": "partnerstvo", "title": "Samstarf", "desc": "Samstarfstækifæri hjá Svipan."},
     {"slug": "karta-sajta", "title": "Vefkort", "desc": "Fullkomið vefkort yfir allar síður á svipan.is."},
     {"slug": "otvetstvennaya-igra-stranica", "title": "Ábyrg spilun", "desc": "Afstaða okkar til ábyrgrar spilunar og verndar leikmanna."},
 ]
@@ -445,8 +445,8 @@ def make_hero(title, subtitle, emoji, grad1="#41070f", grad2="#a31d34", grad3="#
 def get_nav():
     return f'''<nav class="nav">
   <a href="{URL_BASE}" class="nav-logo">
-    <div class="nav-mark"><svg class="bf-logo" viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="bfg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff8a3d"/><stop offset=".5" stop-color="#ff513d"/><stop offset="1" stop-color="#fc2a44"/></linearGradient><linearGradient id="bfs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff6c8"/><stop offset="1" stop-color="#ffb02e"/></linearGradient></defs><circle cx="20" cy="20" r="19" fill="url(#bfg)"/><rect x="18" y="1.2" width="4" height="6" rx="1.4" fill="#fff" transform="rotate(0 20 20)"/><rect x="18" y="1.2" width="4" height="6" rx="1.4" fill="#fff" transform="rotate(45 20 20)"/><rect x="18" y="1.2" width="4" height="6" rx="1.4" fill="#fff" transform="rotate(90 20 20)"/><rect x="18" y="1.2" width="4" height="6" rx="1.4" fill="#fff" transform="rotate(135 20 20)"/><rect x="18" y="1.2" width="4" height="6" rx="1.4" fill="#fff" transform="rotate(180 20 20)"/><rect x="18" y="1.2" width="4" height="6" rx="1.4" fill="#fff" transform="rotate(225 20 20)"/><rect x="18" y="1.2" width="4" height="6" rx="1.4" fill="#fff" transform="rotate(270 20 20)"/><rect x="18" y="1.2" width="4" height="6" rx="1.4" fill="#fff" transform="rotate(315 20 20)"/><circle cx="20" cy="20" r="12.6" fill="#340a0f" stroke="#fff" stroke-width="1.4"/><polygon points="20.00,13.00 21.94,17.93 27.23,18.25 23.14,21.62 24.47,26.75 20.00,23.90 15.53,26.75 16.86,21.62 12.77,18.25 18.06,17.93" fill="url(#bfs)"/></svg></div>
-    <div class="logo-text">Svipan Casino</div>
+    <div class="nav-mark"><svg class="bf-logo" viewBox="0 0 40 40" aria-hidden="true"><defs><radialGradient id="svg_r" cx="35%" cy="30%" r="80%"><stop offset="0%" stop-color="#e04550"/><stop offset="60%" stop-color="#c52b36"/><stop offset="100%" stop-color="#9c1f29"/></radialGradient></defs><circle cx="20" cy="20" r="19" fill="url(#svg_r)"/><g fill="#fff"><rect x="16.6" y="4.5" width="6.8" height="17" rx="1" transform="rotate(0 20 20)"/><rect x="16.6" y="4.5" width="6.8" height="17" rx="1" transform="rotate(72 20 20)"/><rect x="16.6" y="4.5" width="6.8" height="17" rx="1" transform="rotate(144 20 20)"/><rect x="16.6" y="4.5" width="6.8" height="17" rx="1" transform="rotate(216 20 20)"/><rect x="16.6" y="4.5" width="6.8" height="17" rx="1" transform="rotate(288 20 20)"/></g></svg></div>
+    <div class="logo-text">Svipan</div>
   </a>
   <div class="nav-links" id="nav-links">
     <a href="{URL_BASE}">Heim</a>
@@ -468,10 +468,10 @@ def get_footer():
     <div class="footer-top">
       <div class="footer-brand">
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
-          <div class="nav-mark" style="width:24px;height:24px;font-size:16px;border-radius:8px;"><svg class="bf-logo" viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="bfg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff8a3d"/><stop offset=".5" stop-color="#ff513d"/><stop offset="1" stop-color="#fc2a44"/></linearGradient><linearGradient id="bfs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff6c8"/><stop offset="1" stop-color="#ffb02e"/></linearGradient></defs><circle cx="20" cy="20" r="19" fill="url(#bfg)"/><rect x="18" y="1.2" width="4" height="6" rx="1.4" fill="#fff" transform="rotate(0 20 20)"/><rect x="18" y="1.2" width="4" height="6" rx="1.4" fill="#fff" transform="rotate(45 20 20)"/><rect x="18" y="1.2" width="4" height="6" rx="1.4" fill="#fff" transform="rotate(90 20 20)"/><rect x="18" y="1.2" width="4" height="6" rx="1.4" fill="#fff" transform="rotate(135 20 20)"/><rect x="18" y="1.2" width="4" height="6" rx="1.4" fill="#fff" transform="rotate(180 20 20)"/><rect x="18" y="1.2" width="4" height="6" rx="1.4" fill="#fff" transform="rotate(225 20 20)"/><rect x="18" y="1.2" width="4" height="6" rx="1.4" fill="#fff" transform="rotate(270 20 20)"/><rect x="18" y="1.2" width="4" height="6" rx="1.4" fill="#fff" transform="rotate(315 20 20)"/><circle cx="20" cy="20" r="12.6" fill="#340a0f" stroke="#fff" stroke-width="1.4"/><polygon points="20.00,13.00 21.94,17.93 27.23,18.25 23.14,21.62 24.47,26.75 20.00,23.90 15.53,26.75 16.86,21.62 12.77,18.25 18.06,17.93" fill="url(#bfs)"/></svg></div>
-          <span style="font-family:Space Grotesk,sans-serif;font-size:16px;font-weight:700;color:#fff;">Svipan Casino</span>
+          <div class="nav-mark" style="width:24px;height:24px;font-size:16px;border-radius:8px;"><svg class="bf-logo" viewBox="0 0 40 40" aria-hidden="true"><defs><radialGradient id="svg_r" cx="35%" cy="30%" r="80%"><stop offset="0%" stop-color="#e04550"/><stop offset="60%" stop-color="#c52b36"/><stop offset="100%" stop-color="#9c1f29"/></radialGradient></defs><circle cx="20" cy="20" r="19" fill="url(#svg_r)"/><g fill="#fff"><rect x="16.6" y="4.5" width="6.8" height="17" rx="1" transform="rotate(0 20 20)"/><rect x="16.6" y="4.5" width="6.8" height="17" rx="1" transform="rotate(72 20 20)"/><rect x="16.6" y="4.5" width="6.8" height="17" rx="1" transform="rotate(144 20 20)"/><rect x="16.6" y="4.5" width="6.8" height="17" rx="1" transform="rotate(216 20 20)"/><rect x="16.6" y="4.5" width="6.8" height="17" rx="1" transform="rotate(288 20 20)"/></g></svg></div>
+          <span style="font-family:Space Grotesk,sans-serif;font-size:16px;font-weight:700;color:#fff;">Svipan</span>
         </div>
-        <div class="footer-desc">Svipan Casino á svipan.is — óháð samanburðarvefur spilavíta. 18+ Spilaðu á ábyrgan hátt.</div>
+        <div class="footer-desc">Svipan á svipan.is — óháð samanburðarvefur spilavíta. 18+ Spilaðu á ábyrgan hátt.</div>
       </div>
       <div class="footer-cols">
         <div><div class="footer-col-title">SPILAVÍTI</div><a href="{URL_BASE}casino/">Umsagnir</a><a href="{URL_BASE}bonusy/">Bónusar</a><a href="{URL_BASE}casino/crypto-casino/">Dulritunargjaldmiðill</a></div>
@@ -481,7 +481,7 @@ def get_footer():
     </div>
     <div class="footer-help">Þarftu að tala við einhvern um spilavanda? Hjálparsíminn <a href="tel:1717">1717</a> hjá Rauða krossinum er ókeypis og opinn allan sólarhringinn. <a href="{URL_BASE}gajdy/otvetstvennaya-igra/">Ábyrg spilun →</a></div>
     <div class="footer-18">18+ | Fjárhættuspil geta verið ávanabindandi. Spilaðu á ábyrgan hátt. <a href="https://www.begambleaware.org" target="_blank" rel="noopener">BeGambleAware.org</a></div>
-    <div class="footer-bottom"><span>© 2026 svipan.is</span><span>Svipan Casino — óháð umsagnarvefur</span></div>
+    <div class="footer-bottom"><span>© 2026 svipan.is</span><span>Svipan — óháð umsagnarvefur</span></div>
   </div>
 </footer>'''
 
@@ -500,8 +500,8 @@ def page_template(title, desc, breadcrumbs, content, canonical="", og_img="", sc
         return site + (u if u.startswith("/") else "/" + u)
     crumbs = [{"@type":"ListItem","position":i+1,"name":n,**({"item":abs_url(u)} if u else {})} for i,(u,n) in enumerate(breadcrumbs)]
     graph = [
-        {"@type":"WebSite","@id":site+"/#website","name":"Svipan Casino","url":site+"/","inLanguage":"is"},
-        {"@type":"Organization","@id":site+"/#org","name":"Svipan Casino","url":site+"/"},
+        {"@type":"WebSite","@id":site+"/#website","name":"Svipan","url":site+"/","inLanguage":"is"},
+        {"@type":"Organization","@id":site+"/#org","name":"Svipan","url":site+"/"},
         {"@type":"Person","@id":site+"/#valbjorn","name":"Valbjörn Gjúkason","url":site+"/hofundur/valbjorn-gjukason/","jobTitle":"Blaðamaður og ritstjóri","knowsAbout":["Fjárhættuspil","Netspilavíti","Spilakassar"],"worksFor":{"@id":site+"/#org"}},
         {"@type":"Article","headline":title[:110],"description":desc,"inLanguage":"is",
          "datePublished":"2026-06-01","dateModified":"2026-11-14",
@@ -517,7 +517,7 @@ def page_template(title, desc, breadcrumbs, content, canonical="", og_img="", sc
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{title} | Svipan Casino</title>
+<title>{title} | Svipan</title>
 <meta name="description" content="{desc}">
 {f'<link rel="canonical" href="{canonical}">' if canonical else ''}
 <!-- Favicon -->
@@ -525,77 +525,77 @@ def page_template(title, desc, breadcrumbs, content, canonical="", og_img="", sc
 <link rel="icon" type="image/png" sizes="32x32" href="{URL_BASE}favicon-32.png">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="{title} | Svipan Casino">
+<meta property="og:title" content="{title} | Svipan">
 <meta property="og:description" content="{desc}">
 <meta property="og:image" content="{og_image}">
 <meta property="og:locale" content="is_IS">
-<meta property="og:site_name" content="Svipan Casino">
+<meta property="og:site_name" content="Svipan">
 <meta name="twitter:card" content="summary_large_image">
 <!-- Hreflang -->
 <link rel="alternate" hreflang="is" href="{site_url}/">
 <link rel="alternate" hreflang="x-default" href="{site_url}/">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{{--bg:#180608;--bg2:#290d12;--bg3:#361117;--card:rgba(51,14,19,.55);--border:rgba(223,97,114,.1);--border2:rgba(223,97,114,.2);--purple:#e43c50;--violet:#ff606d;--blue:#ff80a3;--accent:#ff808d;--accent-bg:rgba(244,76,97,.06);--gold:#f0c050;--text:#e9b7be;--text2:#c18b93;--muted:#f1ced3;--muted2:#ddb1b7;--warm1:#410f13;--warm2:#31070c;}}
+:root{{--bg:#14161d;--bg2:#1a1d25;--bg3:#21242e;--card:rgba(26,29,37,.55);--border:rgba(255,255,255,.08);--border2:rgba(255,255,255,.16);--purple:#d63641;--violet:#e04550;--blue:#ef6672;--accent:#e8505c;--accent-bg:rgba(214,54,65,.06);--gold:#f0c050;--text:#eceef4;--text2:#a7adbd;--muted:#d8dbe4;--muted2:#b4bac8;--warm1:#262a35;--warm2:#171a21;}}
 *{{margin:0;padding:0;box-sizing:border-box;}}
 html{{scroll-behavior:smooth;}}
 body{{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;}}
 a{{text-decoration:none;color:inherit;}}
 /* Ambient orbs */
-body::before{{content:'';position:fixed;top:-200px;right:-5%;width:500px;height:500px;background:radial-gradient(circle,rgba(224,56,77,.12) 0%,transparent 70%);pointer-events:none;z-index:0;filter:blur(40px);animation:orbDrift 10s ease-in-out infinite;}}
-body::after{{content:'';position:fixed;bottom:-200px;left:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(184,37,57,.08) 0%,transparent 70%);pointer-events:none;z-index:0;filter:blur(40px);animation:orbDrift 12s ease-in-out 3s infinite;}}
+body::before{{content:'';position:fixed;top:-200px;right:-5%;width:500px;height:500px;background:radial-gradient(circle,rgba(214,54,65,.12) 0%,transparent 70%);pointer-events:none;z-index:0;filter:blur(40px);animation:orbDrift 10s ease-in-out infinite;}}
+body::after{{content:'';position:fixed;bottom:-200px;left:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(214,54,65,.08) 0%,transparent 70%);pointer-events:none;z-index:0;filter:blur(40px);animation:orbDrift 12s ease-in-out 3s infinite;}}
 @keyframes orbDrift{{0%,100%{{transform:translate(0,0);}}50%{{transform:translate(25px,-20px);}}}}
 @keyframes shimmerLine{{0%{{background-position:200% 0;}}100%{{background-position:-200% 0;}}}}
 @keyframes btnShine{{0%{{left:-100%;}}100%{{left:200%;}}}}
 @keyframes fadeUp{{from{{opacity:0;transform:translateY(16px);}}to{{opacity:1;transform:translateY(0);}}}}
 /* Top accent line */
-.top-accent{{height:3px;background:linear-gradient(90deg,#e43c50,#ff606d,#ff80a3,#ff606d,#e43c50);background-size:200% 100%;animation:shimmerLine 4s linear infinite;}}
+.top-accent{{height:3px;background:linear-gradient(90deg,#d63641,#e04550,#ef6672,#e04550,#d63641);background-size:200% 100%;animation:shimmerLine 4s linear infinite;}}
 /* Nav */
-.nav{{background:rgba(24,6,8,.88);padding:12px 30px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);}}
+.nav{{background:rgba(20,22,29,.88);padding:12px 30px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);}}
 .nav-logo{{display:flex;align-items:center;gap:10px;}}
-.nav-mark{{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,#e43c50,#ff606d);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;color:#fff;box-shadow:0 2px 12px rgba(244,56,76,.25);}}
+.nav-mark{{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,#d63641,#e04550);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;color:#fff;box-shadow:0 2px 12px rgba(214,54,65,.25);}}
 .logo-text{{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:#fff;}}
 .nav-links{{display:flex;gap:20px;font-size:16px;font-weight:500;}}
 .nav-links a{{color:var(--muted);transition:color .2s;}}
-.nav-links a:hover{{color:#ffc0c6;}}
+.nav-links a:hover{{color:#ffffff;}}
 .nav-actions{{display:flex;gap:8px;align-items:center;}}
 /* Liquid glass nav button */
-.btn-signup{{display:inline-flex;align-items:center;background:linear-gradient(135deg,rgba(244,56,76,.2),rgba(255,100,111,.1));backdrop-filter:blur(8px);border:1px solid rgba(255,140,155,.2);color:#ffc0c6;padding:8px 22px;border-radius:20px;font-size:16px;font-weight:600;transition:all .25s;position:relative;overflow:hidden;box-shadow:0 2px 12px rgba(244,56,76,.1),inset 0 1px 0 rgba(255,255,255,.06);}}
+.btn-signup{{display:inline-flex;align-items:center;background:linear-gradient(135deg,rgba(214,54,65,.2),rgba(255,100,111,.1));backdrop-filter:blur(8px);border:1px solid rgba(255,140,155,.2);color:#ffffff;padding:8px 22px;border-radius:20px;font-size:16px;font-weight:600;transition:all .25s;position:relative;overflow:hidden;box-shadow:0 2px 12px rgba(214,54,65,.1),inset 0 1px 0 rgba(255,255,255,.06);}}
 .btn-signup::before{{content:'';position:absolute;top:0;left:0;right:0;height:50%;background:linear-gradient(180deg,rgba(255,255,255,.06),transparent);pointer-events:none;border-radius:20px 20px 0 0;}}
-.btn-signup:hover{{background:linear-gradient(135deg,rgba(244,56,76,.35),rgba(255,100,111,.2));border-color:rgba(255,140,155,.4);color:#fff;box-shadow:0 4px 20px rgba(244,56,76,.25),inset 0 1px 0 rgba(255,255,255,.1);transform:translateY(-1px);}}
+.btn-signup:hover{{background:linear-gradient(135deg,rgba(214,54,65,.35),rgba(255,100,111,.2));border-color:rgba(255,140,155,.4);color:#fff;box-shadow:0 4px 20px rgba(214,54,65,.25),inset 0 1px 0 rgba(255,255,255,.1);transform:translateY(-1px);}}
 /* Breadcrumbs */
 .breadcrumbs{{padding:14px 30px;font-size:16px;color:var(--muted2);border-bottom:1px solid var(--border);}}
 .breadcrumbs a{{color:var(--muted);transition:color .15s;}}
-.breadcrumbs a:hover{{color:#ff808d;}}
+.breadcrumbs a:hover{{color:#e8505c;}}
 /* Layout */
 .page-wrap{{max-width:1100px;margin:0 auto;padding:40px 30px 60px;display:grid;grid-template-columns:1fr 280px;gap:40px;position:relative;z-index:1;}}
 .content{{animation:fadeUp .5s ease-out;}}
 .content h1{{font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:700;margin-bottom:20px;line-height:1.2;color:#fff;}}
 .content h2{{font-family:'Space Grotesk',sans-serif;font-size:21px;font-weight:700;margin:32px 0 14px;color:#f9cfd4;position:relative;padding-left:16px;}}
-.content h2::before{{content:'';position:absolute;left:0;top:4px;bottom:4px;width:3px;border-radius:2px;background:linear-gradient(180deg,#e43c50,#ff606d);}}
+.content h2::before{{content:'';position:absolute;left:0;top:4px;bottom:4px;width:3px;border-radius:2px;background:linear-gradient(180deg,#d63641,#e04550);}}
 .content h3{{font-size:16px;font-weight:600;margin:24px 0 10px;color:var(--text);}}
 .content p{{color:var(--muted);font-size:16px;line-height:1.8;margin-bottom:16px;}}
 .content ul,.content ol{{color:var(--muted);font-size:16px;line-height:1.8;margin:0 0 16px 20px;}}
 .content li{{margin-bottom:8px;}}
-.content a{{color:#ff808d;font-weight:500;transition:color .15s;}}
-.content a:hover{{color:#ffc0c6;}}
+.content a{{color:#e8505c;font-weight:500;transition:color .15s;}}
+.content a:hover{{color:#ffffff;}}
 /* Sidebar */
 .sidebar{{animation:fadeUp .5s ease-out .1s both;}}
 .sidebar-card{{background:var(--card);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:16px;padding:20px;margin-bottom:16px;position:relative;overflow:hidden;}}
-.sidebar-card::before{{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#e43c50,#ff606d);}}
+.sidebar-card::before{{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#d63641,#e04550);}}
 .sidebar-card h4{{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;color:#f9cfd4;margin-bottom:12px;}}
 .sidebar-card a{{display:block;color:var(--muted);font-size:16px;line-height:2;transition:color .15s;}}
-.sidebar-card a:hover{{color:#ff808d;}}
-.sidebar-cta{{display:block;text-align:center;background:linear-gradient(135deg,rgba(244,56,76,.25),rgba(255,100,111,.12));backdrop-filter:blur(12px);color:#fff;padding:14px;border-radius:16px;font-size:16px;font-weight:700;border:1px solid rgba(255,140,155,.2);transition:all .3s;position:relative;overflow:hidden;box-shadow:0 4px 20px rgba(234,56,77,.15);}}
+.sidebar-card a:hover{{color:#e8505c;}}
+.sidebar-cta{{display:block;text-align:center;background:linear-gradient(135deg,rgba(214,54,65,.25),rgba(255,100,111,.12));backdrop-filter:blur(12px);color:#fff;padding:14px;border-radius:16px;font-size:16px;font-weight:700;border:1px solid rgba(255,140,155,.2);transition:all .3s;position:relative;overflow:hidden;box-shadow:0 4px 20px rgba(234,56,77,.15);}}
 .sidebar-cta::before{{content:'';position:absolute;top:0;left:0;right:0;height:50%;background:linear-gradient(180deg,rgba(255,255,255,.06),transparent);pointer-events:none;border-radius:16px 16px 0 0;}}
 .sidebar-cta:hover{{transform:translateY(-2px);box-shadow:0 6px 28px rgba(234,56,77,.25);border-color:rgba(255,140,155,.35);}}
 /* Slot hero image */
 .slot-hero{{width:100%;max-width:400px;aspect-ratio:4/3;border-radius:16px;overflow:hidden;margin:0 0 24px;border:1px solid var(--border2);transition:all .3s;box-shadow:0 4px 24px rgba(204,36,57,.12);position:relative;}}
-.slot-hero::after{{content:'';position:absolute;inset:0;border-radius:16px;box-shadow:inset 0 -40px 40px -20px rgba(24,6,8,.6);pointer-events:none;}}
+.slot-hero::after{{content:'';position:absolute;inset:0;border-radius:16px;box-shadow:inset 0 -40px 40px -20px rgba(20,22,29,.6);pointer-events:none;}}
 .slot-hero:hover{{border-color:rgba(255,140,155,.3);box-shadow:0 8px 36px rgba(204,36,57,.2);}}
 .slot-hero-bg{{width:100%;height:100%;}}
 .slot-hero-img{{width:100%;height:100%;object-fit:cover;display:block;}}
-.faq-list{{margin:8px 0 24px;}}.faq-d{{border-bottom:1px solid rgba(255,255,255,.12);padding:14px 0;}}.faq-d summary{{cursor:pointer;font-weight:600;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:12px;}}.faq-d summary::-webkit-details-marker{{display:none;}}.faq-d summary::after{{content:"+";color:#ff8a3d;font-size:20px;line-height:1;}}.faq-d[open] summary::after{{content:"−";}}.faq-d p{{margin:10px 0 0;opacity:.9;}}
+.faq-list{{margin:8px 0 24px;}}.faq-d{{border-bottom:1px solid rgba(255,255,255,.12);padding:14px 0;}}.faq-d summary{{cursor:pointer;font-weight:600;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:12px;}}.faq-d summary::-webkit-details-marker{{display:none;}}.faq-d summary::after{{content:"+";color:#e04550;font-size:20px;line-height:1;}}.faq-d[open] summary::after{{content:"−";}}.faq-d p{{margin:10px 0 0;opacity:.9;}}
 /* Info cards */
 .info-box{{background:var(--card);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:16px;padding:20px 24px;margin:16px 0;transition:all .3s;position:relative;overflow:hidden;}}
 .info-box::before{{content:'';position:absolute;top:0;left:0;right:0;height:50%;background:linear-gradient(180deg,rgba(255,255,255,.02),transparent);pointer-events:none;border-radius:16px 16px 0 0;}}
@@ -603,10 +603,10 @@ body::after{{content:'';position:fixed;bottom:-200px;left:-10%;width:600px;heigh
 .info-box p{{margin-bottom:6px;}}
 .info-box p:last-child{{margin-bottom:0;}}
 .info-box strong{{color:#fff;}}
-.info-box a{{color:#ff808d;}}
+.info-box a{{color:#e8505c;}}
 /* Rating */
-.rating-box{{display:inline-flex;align-items:center;gap:10px;background:rgba(244,56,76,.08);border:1px solid rgba(244,56,76,.15);border-radius:14px;padding:12px 24px;margin:12px 0;}}
-.rating-box .score{{font-family:'DM Serif Display',serif;font-size:30px;font-weight:400;background:linear-gradient(135deg,#ff808d,#ff80a3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}}
+.rating-box{{display:inline-flex;align-items:center;gap:10px;background:rgba(214,54,65,.08);border:1px solid rgba(214,54,65,.15);border-radius:14px;padding:12px 24px;margin:12px 0;}}
+.rating-box .score{{font-family:'DM Serif Display',serif;font-size:30px;font-weight:400;background:linear-gradient(135deg,#e8505c,#ef6672);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}}
 .rating-box .label{{font-size:16px;color:var(--muted);}}
 /* CTA */
 .cta-box{{text-align:center;margin:36px 0;}}
@@ -619,16 +619,16 @@ body::after{{content:'';position:fixed;bottom:-200px;left:-10%;width:600px;heigh
 /* Game grid */
 .game-grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin:20px 0;}}
 .game-card{{background:var(--card);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all .3s;position:relative;}}
-.game-card::before{{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#e43c50,#ff606d,#ff80a3);opacity:0;transition:opacity .3s;z-index:1;}}
-.game-card:hover{{transform:translateY(-5px);border-color:rgba(255,140,155,.25);box-shadow:0 10px 32px rgba(204,36,57,.18);}}
+.game-card::before{{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#d63641,#e04550,#ef6672);opacity:0;transition:opacity .3s;z-index:1;}}
+.game-card:hover{{transform:translateY(-5px);border-color:rgba(255,255,255,.16);box-shadow:0 10px 32px rgba(204,36,57,.18);}}
 .game-card:hover::before{{opacity:1;}}
 .game-card-thumb{{width:100%;aspect-ratio:4/3;background-size:cover;background-position:center;}}
 .game-card-info{{padding:12px 14px;}}
 .game-card-name{{font-size:16px;font-weight:600;color:#fff;}}
 .game-card-prov{{font-size:16px;color:var(--muted);margin-top:2px;}}
 .byline{{font-size:16px;color:var(--muted);margin:-8px 0 8px;}}
-.byline a{{color:#ff808d;}}
-.disclosure{{font-size:16px;color:var(--muted2);margin-bottom:20px;padding:8px 12px;border-left:2px solid rgba(223,97,114,.3);background:rgba(244,76,97,.04);border-radius:0 8px 8px 0;}}
+.byline a{{color:#e8505c;}}
+.disclosure{{font-size:16px;color:var(--muted2);margin-bottom:20px;padding:8px 12px;border-left:2px solid rgba(255,255,255,.3);background:rgba(214,54,65,.04);border-radius:0 8px 8px 0;}}
 .footer-help{{text-align:center;font-size:16px;color:var(--text);margin-bottom:10px;}}
 .footer-help a{{color:#fff;font-weight:700;}}
 /* Share buttons */
@@ -637,7 +637,7 @@ body::after{{content:'';position:fixed;bottom:-200px;left:-10%;width:600px;heigh
 .share a{{position:relative;width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 14px rgba(0,0,0,.35);}}
 .share a::before{{content:'';position:absolute;top:-4px;left:0;width:48px;height:22px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 -4 48 22'%3E%3Cpath fill='white' d='M3.5 11.5 A21 21 0 0 1 44.5 11.5 Q43 14.5 40.5 12.8 Q39.5 17.5 37 13.2 Q34 15 31.5 13 Q30 19 27.5 13.3 Q24.5 15.5 22 13.2 Q20.5 16.5 18 13 Q15 15.5 12.5 12.8 Q11 18 8.5 12.6 Q6 14.5 3.5 11.5 Z'/%3E%3C/svg%3E") no-repeat center/100% 100%;filter:drop-shadow(0 1px 1px rgba(0,0,0,.25));pointer-events:none;}}
 .share a:hover{{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.45);}}
-.share a:focus-visible{{outline:2px solid #ff808d;outline-offset:3px;}}
+.share a:focus-visible{{outline:2px solid #e8505c;outline-offset:3px;}}
 .share svg{{width:22px;height:22px;fill:#fff;position:relative;}}
 .share .s-fb{{background:#3b5998;}}
 .share .s-in{{background:#4a77b8;}}
@@ -652,9 +652,9 @@ body::after{{content:'';position:fixed;bottom:-200px;left:-10%;width:600px;heigh
 .footer-cols{{display:flex;gap:30px;}}
 .footer-col-title{{color:var(--muted2);font-size:16px;letter-spacing:1.5px;font-weight:600;margin-bottom:6px;}}
 .footer-cols a{{display:block;color:var(--muted);font-size:16px;line-height:2.2;transition:color .15s;}}
-.footer-cols a:hover{{color:#ff808d;}}
+.footer-cols a:hover{{color:#e8505c;}}
 .footer-18{{text-align:center;padding:14px;border:1px solid var(--border);border-radius:12px;background:var(--bg2);margin-bottom:12px;font-size:16px;color:var(--muted2);}}
-.footer-18 a{{color:#ff808d;}}
+.footer-18 a{{color:#e8505c;}}
 .footer-bottom{{border-top:1px solid var(--border);padding-top:10px;display:flex;justify-content:space-between;color:var(--muted2);font-size:16px;}}
 @media(max-width:768px){{
   .page-wrap{{grid-template-columns:1fr;gap:24px;padding:24px 16px 40px;}}
@@ -673,17 +673,13 @@ color:#fff!important;font-family:'Inter',system-ui,sans-serif;white-space:nowrap
 text-shadow:0 1px 2px rgba(0,0,0,.45);border-radius:999px;overflow:visible;isolation:isolate;
 border:var(--rim) solid transparent;background-clip:padding-box;
 background:
- radial-gradient(70% 95% at 14% 108%,rgba(255,165,60,1) 0%,rgba(255,120,50,.55) 35%,transparent 70%) padding-box,
- radial-gradient(85% 100% at 72% 112%,rgba(244,81,76,1) 0%,rgba(209,56,56,.55) 38%,transparent 72%) padding-box,
- linear-gradient(180deg,#2b0809 0%,#3d0f11 45%,#6a1b1e 100%) padding-box,
- linear-gradient(170deg,rgba(255,255,255,.85) 0%,rgba(255,255,255,.18) 35%,rgba(255,255,255,.08) 60%,rgba(255,190,150,.6) 100%) border-box;
+ linear-gradient(180deg,#e04550 0%,#d63641 55%,#b8232e 100%) padding-box,
+ linear-gradient(170deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,.12) 40%,rgba(255,255,255,.05) 100%) border-box;
 box-shadow:
- 0 0 0 1px rgba(255,255,255,.28),
- inset 0 0 0 1px rgba(255,255,255,.22),
- inset 0 4px 8px rgba(0,0,0,.45),
- inset 0 -4px 10px rgba(255,170,90,.35),
- 0 14px 26px -10px rgba(229,61,56,.65),
- 0 10px 22px -12px rgba(255,140,40,.6),
+ 0 0 0 1px rgba(255,255,255,.18),
+ inset 0 1px 0 rgba(255,255,255,.25),
+ inset 0 -3px 8px rgba(0,0,0,.25),
+ 0 12px 26px -10px rgba(214,54,65,.65),
  0 2px 6px rgba(0,0,0,.35);
 backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
 transition:transform .25s,box-shadow .25s,filter .25s;}}
@@ -692,11 +688,11 @@ content:'';position:absolute;left:7%;right:7%;top:2px;height:16%;border-radius:9
 background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(255,255,255,0));}}
 .btn-primary::after,.btn-secondary::after,.nav-cta::after,.btn-cta::after,.btn-glass::after,.promo-btn::after,.gc-play::after,.btn-signup::after,.cta-btn::after,.sidebar-cta::after{{
 content:'';position:absolute;left:6%;bottom:2px;width:30%;height:22%;border-radius:999px;pointer-events:none;z-index:-1;animation:none;
-background:radial-gradient(closest-side,rgba(255,210,140,.7),transparent);}}
+background:radial-gradient(closest-side,rgba(255,255,255,.28),transparent);}}
 .btn-primary:hover,.btn-secondary:hover,.nav-cta:hover,.btn-cta:hover,.btn-glass:hover,.promo-btn:hover,.gc-play:hover,.btn-signup:hover,.cta-btn:hover,.sidebar-cta:hover{{
 transform:translateY(-2px);filter:brightness(1.12) saturate(1.1);
-box-shadow:0 0 0 1px rgba(255,255,255,.45),inset 0 1px 0 rgba(255,255,255,.45),inset 0 -3px 8px rgba(255,170,90,.35),0 18px 32px -10px rgba(229,61,56,.8),0 14px 26px -12px rgba(255,140,40,.75),0 3px 8px rgba(0,0,0,.35);}}
-.btn-primary:focus-visible,.btn-secondary:focus-visible,.nav-cta:focus-visible,.btn-cta:focus-visible,.btn-glass:focus-visible,.promo-btn:focus-visible,.gc-play:focus-visible,.btn-signup:focus-visible,.cta-btn:focus-visible,.sidebar-cta:focus-visible{{outline:2px solid #ffb86b;outline-offset:4px;}}
+box-shadow:0 0 0 1px rgba(255,255,255,.45),inset 0 1px 0 rgba(255,255,255,.45),inset 0 -3px 8px rgba(0,0,0,.25),0 18px 32px -10px rgba(214,54,65,.8),0 3px 8px rgba(0,0,0,.35);}}
+.btn-primary:focus-visible,.btn-secondary:focus-visible,.nav-cta:focus-visible,.btn-cta:focus-visible,.btn-glass:focus-visible,.promo-btn:focus-visible,.gc-play:focus-visible,.btn-signup:focus-visible,.cta-btn:focus-visible,.sidebar-cta:focus-visible{{outline:2px solid #e04550;outline-offset:4px;}}
 .btn-primary,.btn-cta,.cta-btn{{padding:14px 40px;font-size:16px;}}
 .sidebar-cta{{display:flex;padding:12px 20px;font-size:16px;}}
 .nav-cta,.btn-glass,.btn-signup,.btn-secondary,.promo-btn{{--rim:4px;padding:8px 22px;font-size:16px;}}
@@ -713,9 +709,9 @@ box-shadow:0 0 0 1px rgba(255,255,255,.45),inset 0 1px 0 rgba(255,255,255,.45),i
 .cookie-actions button{{cursor:pointer;min-width:170px;}}
 @media(max-width:700px){{.cookie-banner{{flex-direction:column;align-items:stretch;gap:14px;}}.cookie-actions{{flex-direction:column;}}.cookie-actions button{{width:100%;}}}}
 /* Burger menu */
-.nav-burger{{display:none;width:44px;height:44px;border-radius:12px;border:1px solid rgba(255,140,155,.25);background:rgba(61,17,23,.7);cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:0;margin-left:10px;}}
-.nav-burger span{{display:block;width:20px;height:2px;border-radius:2px;background:#ffdce1;transition:transform .25s,opacity .2s;}}
-.nav-burger:focus-visible{{outline:2px solid #ffb86b;outline-offset:2px;}}
+.nav-burger{{display:none;width:44px;height:44px;border-radius:12px;border:1px solid rgba(255,255,255,.16);background:rgba(33,36,46,.8);cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:0;margin-left:10px;}}
+.nav-burger span{{display:block;width:20px;height:2px;border-radius:2px;background:#ffffff;transition:transform .25s,opacity .2s;}}
+.nav-burger:focus-visible{{outline:2px solid #e04550;outline-offset:2px;}}
 .nav.open .nav-burger span:nth-child(1){{transform:translateY(7px) rotate(45deg);}}
 .nav.open .nav-burger span:nth-child(2){{opacity:0;}}
 .nav.open .nav-burger span:nth-child(3){{transform:translateY(-7px) rotate(-45deg);}}
@@ -725,7 +721,7 @@ box-shadow:0 0 0 1px rgba(255,255,255,.45),inset 0 1px 0 rgba(255,255,255,.45),i
  .nav-burger{{display:flex;}}
  .nav-links{{display:none!important;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0!important;width:auto!important;overflow:visible!important;white-space:normal!important;padding:8px 20px 20px!important;background:rgba(31,7,11,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,140,155,.18);box-shadow:0 20px 40px rgba(0,0,0,.5);z-index:200;}}
  .nav.open .nav-links{{display:flex!important;animation:navDrop .22s ease-out;}}
- .nav-links a{{padding:15px 4px;font-size:17px!important;color:#ffdce1!important;border-bottom:1px solid rgba(255,140,155,.12);}}
+ .nav-links a{{padding:15px 4px;font-size:17px!important;color:#ffffff!important;border-bottom:1px solid rgba(255,140,155,.12);}}
  .nav-links a:last-child{{border-bottom:none;}}
  .nav-logo .logo-text,.nav-brand,.logo-t{{font-size:16px;}}
 }}
@@ -739,7 +735,7 @@ box-shadow:0 0 0 1px rgba(255,255,255,.45),inset 0 1px 0 rgba(255,255,255,.45),i
 .dr.on{{transform:none;}}
 .dr-head{{display:flex;align-items:center;gap:14px;padding:18px 18px 16px 22px;border-bottom:1px solid rgba(255,140,155,.14);}}
 .dr-brand{{display:flex;align-items:center;gap:10px;text-decoration:none;}}
-.dr-mark{{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#e43c50,#ff606d);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;color:#fff;}}
+.dr-mark{{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#d63641,#e04550);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;color:#fff;}}
 .dr-name{{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;color:#fff;letter-spacing:-.2px;}}
 .dr-name b{{color:#ff9f4a;font-weight:700;}}
 .dr [hidden]{{display:none!important;}}
@@ -754,18 +750,18 @@ box-shadow:0 0 0 1px rgba(255,255,255,.45),inset 0 1px 0 rgba(255,255,255,.45),i
 .dr-item:focus-visible,.dr-sub a:focus-visible,.dr-close:focus-visible{{outline:2px solid #ff9f4a;outline-offset:2px;}}
 .dr-ic{{width:24px;height:24px;flex-shrink:0;color:#ffb2bd;}}
 .dr-item span{{flex:1;}}
-.dr-badge{{font-style:normal;min-width:30px;height:28px;padding:0 9px;border-radius:9px;background:linear-gradient(135deg,#ff8a3d,#e8505b);color:#fff;font-size:16px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;}}
+.dr-badge{{font-style:normal;min-width:30px;height:28px;padding:0 9px;border-radius:9px;background:linear-gradient(135deg,#e04550,#c52b36);color:#fff;font-size:16px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;}}
 .dr-chev{{width:20px;height:20px;color:rgba(255,228,232,.88);transition:transform .25s;}}
 .dr-toggle[aria-expanded="true"]{{background:#fff;color:#310c11;box-shadow:0 8px 24px rgba(0,0,0,.35);}}
 .dr-toggle[aria-expanded="true"] .dr-ic{{color:#310c11;}}
 .dr-toggle[aria-expanded="true"] .dr-chev{{transform:rotate(180deg);color:#310c11;}}
-.dr-sub{{margin:6px 0 10px 36px;padding-left:18px;border-left:2px solid rgba(255,140,155,.25);}}
+.dr-sub{{margin:6px 0 10px 36px;padding-left:18px;border-left:2px solid rgba(255,255,255,.16);}}
 .dr-sub a{{display:flex;align-items:center;gap:14px;padding:12px 10px;border-radius:12px;color:rgba(255,228,232,.85);font-size:16px;text-decoration:none;}}
 .dr-sub a:hover{{background:rgba(255,255,255,.05);color:#fff;}}
 .dr-fold{{width:20px;height:20px;flex-shrink:0;color:rgba(255,178,189,.88);}}
 .dr-empty{{padding:16px 18px;color:rgba(255,228,232,.88);font-size:16px;}}
 .dr-foot{{padding:14px 18px 18px;border-top:1px solid rgba(255,140,155,.14);background:rgba(22,5,7,.5);}}
-.dr-search{{display:flex;align-items:center;gap:12px;padding:14px 22px;border-radius:999px;background:linear-gradient(135deg,#ff8a3d,#e0506a);box-shadow:0 10px 24px -8px rgba(255,120,60,.6);cursor:text;}}
+.dr-search{{display:flex;align-items:center;gap:12px;padding:14px 22px;border-radius:999px;background:linear-gradient(135deg,#e04550,#c52b36);box-shadow:0 10px 24px -8px rgba(214,54,65,.6);cursor:text;}}
 .dr-search svg{{width:22px;height:22px;color:#fff;flex-shrink:0;}}
 .dr-search input{{flex:1;min-width:0;border:0;background:none;color:#fff;font:600 17px 'Inter',system-ui,sans-serif;outline:none;}}
 .dr-search input::placeholder{{color:rgba(255,255,255,.9);}}
@@ -794,7 +790,7 @@ background:linear-gradient(180deg,rgba(255,255,255,.5),rgba(255,255,255,0));}}
 .share a.s-fb svg,.share a.s-in svg,.share a.s-wa svg,.share a.s-copy svg{{filter:drop-shadow(0 1px 2px rgba(0,0,0,.45));}}
 .share a.s-fb::before,.share a.s-in::before,.share a.s-wa::before,.share a.s-copy::before{{top:-9px;left:2px;width:42px;height:17px;}}
 .share a.s-fb:hover,.share a.s-in:hover,.share a.s-wa:hover,.share a.s-copy:hover{{filter:brightness(1.12) saturate(1.1);box-shadow:0 0 0 1px rgba(255,255,255,.4),inset 0 0 0 1px rgba(255,255,255,.25),inset 0 3px 6px rgba(0,0,0,.4),0 16px 28px -8px rgba(var(--sh),.9),0 3px 8px rgba(0,0,0,.35);}}
-.nav-mark,.dr-mark{{background:none!important;box-shadow:0 0 18px rgba(255,81,61,.45)!important;border-radius:50%!important;padding:0!important;display:inline-flex!important;align-items:center;justify-content:center;font-size:0!important;overflow:visible}}.bf-logo{{width:100%;height:100%;display:block}}</style>
+.nav-mark,.dr-mark{{background:none!important;box-shadow:0 0 18px rgba(214,54,61,.45)!important;border-radius:50%!important;padding:0!important;display:inline-flex!important;align-items:center;justify-content:center;font-size:0!important;overflow:visible}}.bf-logo{{width:100%;height:100%;display:block}}</style>
 </head>
 <body>
 <div class="top-accent"></div>
@@ -852,7 +848,7 @@ background:linear-gradient(180deg,rgba(255,255,255,.5),rgba(255,255,255,0));}}
 </div>
 <script>(function(){{var b=document.getElementById('cookie-banner');if(!b)return;var v=null;try{{v=localStorage.getItem('bf_cookie_consent');}}catch(e){{}}if(!v)b.hidden=false;b.querySelectorAll('[data-consent]').forEach(function(btn){{btn.addEventListener('click',function(){{try{{localStorage.setItem('bf_cookie_consent',btn.getAttribute('data-consent'));}}catch(e){{}}b.hidden=true;}});}});document.querySelectorAll('[data-cookie-settings]').forEach(function(a){{a.addEventListener('click',function(e){{e.preventDefault();b.hidden=false;}});}});}})();</script>
 
-<div class="dr-overlay" data-dr-close hidden></div><aside class="dr" id="site-drawer" aria-label="Valmynd" aria-hidden="true" inert><div class="dr-head"><a href="{URL_BASE}" class="dr-brand"><span class="dr-mark"><svg class="bf-logo" viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="bfg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff8a3d"/><stop offset=".5" stop-color="#ff513d"/><stop offset="1" stop-color="#fc2a44"/></linearGradient><linearGradient id="bfs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff6c8"/><stop offset="1" stop-color="#ffb02e"/></linearGradient></defs><circle cx="20" cy="20" r="19" fill="url(#bfg)"/><rect x="18" y="1.2" width="4" height="6" rx="1.4" fill="#fff" transform="rotate(0 20 20)"/><rect x="18" y="1.2" width="4" height="6" rx="1.4" fill="#fff" transform="rotate(45 20 20)"/><rect x="18" y="1.2" width="4" height="6" rx="1.4" fill="#fff" transform="rotate(90 20 20)"/><rect x="18" y="1.2" width="4" height="6" rx="1.4" fill="#fff" transform="rotate(135 20 20)"/><rect x="18" y="1.2" width="4" height="6" rx="1.4" fill="#fff" transform="rotate(180 20 20)"/><rect x="18" y="1.2" width="4" height="6" rx="1.4" fill="#fff" transform="rotate(225 20 20)"/><rect x="18" y="1.2" width="4" height="6" rx="1.4" fill="#fff" transform="rotate(270 20 20)"/><rect x="18" y="1.2" width="4" height="6" rx="1.4" fill="#fff" transform="rotate(315 20 20)"/><circle cx="20" cy="20" r="12.6" fill="#340a0f" stroke="#fff" stroke-width="1.4"/><polygon points="20.00,13.00 21.94,17.93 27.23,18.25 23.14,21.62 24.47,26.75 20.00,23.90 15.53,26.75 16.86,21.62 12.77,18.25 18.06,17.93" fill="url(#bfs)"/></svg></span><span class="dr-name">Svipan<b>Casino</b></span></a><span class="dr-title">Valmynd</span><button class="dr-close" type="button" data-dr-close aria-label="Loka valmynd"><svg class="dr-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div><nav class="dr-body"><a class="dr-item" href="{URL_BASE}"><svg class="dr-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span>Heim</span></a><a class="dr-item" href="{URL_BASE}entertainment/"><svg class="dr-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.6 5.6 6 .6-4.5 4 1.3 6L12 16.8 6.6 19.2l1.3-6-4.5-4 6-.6z"/></svg><span>Afþreying</span></a><div class="dr-group"><button class="dr-item dr-toggle" type="button" aria-expanded="false" aria-controls="drg0"><svg class="dr-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="8" cy="8" r="1.3"/><circle cx="16" cy="8" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="8" cy="16" r="1.3"/><circle cx="16" cy="16" r="1.3"/></svg><span>Spilavíti</span><em class="dr-badge">7</em><svg class="dr-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="dr-sub" id="drg0" hidden><a href="{URL_BASE}casino/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Allar umsagnir</span></a><a href="{URL_BASE}gajdy/spilaviti-samanburdur/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Spilavíti samanburður</span></a><a href="{URL_BASE}gajdy/besta-crypto-spilaviti-island/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Besta crypto spilavítið</span></a><a href="{URL_BASE}casino/crypto-casino/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Crypto spilavíti</span></a><a href="{URL_BASE}casino/novye-casino/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Ný spilavíti 2026</span></a><a href="{URL_BASE}gajdy/spilaviti-islenskt-vidmot/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Íslenskt viðmót</span></a><a href="{URL_BASE}kak-my-ocenivaem/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Hvernig við metum</span></a></div></div><div class="dr-group"><button class="dr-item dr-toggle" type="button" aria-expanded="false" aria-controls="drg1"><svg class="dr-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 4v16M15 4v16"/></svg><span>Spilakassar</span><em class="dr-badge">6</em><svg class="dr-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="dr-sub" id="drg1" hidden><a href="{URL_BASE}slots/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Allir spilakassar</span></a><a href="{URL_BASE}slots/gates-of-olympus/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Gates of Olympus</span></a><a href="{URL_BASE}slots/sweet-bonanza/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Sweet Bonanza</span></a><a href="{URL_BASE}slots/book-of-dead/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Book of Dead</span></a><a href="{URL_BASE}slots/big-bass-splash/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Big Bass Splash</span></a><a href="{URL_BASE}gajdy/chto-takoe-rtp/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Hvað er RTP?</span></a></div></div><div class="dr-group"><button class="dr-item dr-toggle" type="button" aria-expanded="false" aria-controls="drg2"><svg class="dr-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/><circle cx="12" cy="11" r="2.5"/></svg><span>Í beinni</span><em class="dr-badge">5</em><svg class="dr-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="dr-sub" id="drg2" hidden><a href="{URL_BASE}live/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Allir lifandi leikir</span></a><a href="{URL_BASE}live/blackjack/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Blackjack</span></a><a href="{URL_BASE}live/roulette/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Rúletta</span></a><a href="{URL_BASE}live/crazy-time/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Crazy Time</span></a><a href="{URL_BASE}live/lightning-roulette/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Lightning Roulette</span></a></div></div><div class="dr-group"><button class="dr-item dr-toggle" type="button" aria-expanded="false" aria-controls="drg3"><svg class="dr-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="9" width="18" height="12" rx="2"/><path d="M3 13h18M12 9v12M12 9c-2-4-6-4-6-1s6 1 6 1 6 2 6-1-4-3-6 1"/></svg><span>Bónusar</span><em class="dr-badge">5</em><svg class="dr-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="dr-sub" id="drg3" hidden><a href="{URL_BASE}bonusy/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Allir bónusar</span></a><a href="{URL_BASE}bonusy/velkomstbonus/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Velkomstbónus</span></a><a href="{URL_BASE}gajdy/frisnuningar-an-innborgunar/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Frísnúningar án innborgunar</span></a><a href="{URL_BASE}bonusy/bezdepozitnye-bonusy/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Bónusar án innborgunar</span></a><a href="{URL_BASE}bonusy/vejer/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Hvað eru veðskilyrði?</span></a></div></div><div class="dr-group"><button class="dr-item dr-toggle" type="button" aria-expanded="false" aria-controls="drg4"><svg class="dr-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M2 10h20M6 15h4"/></svg><span>Greiðslur</span><em class="dr-badge">7</em><svg class="dr-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="dr-sub" id="drg4" hidden><a href="{URL_BASE}platezhi/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Allar greiðsluleiðir</span></a><a href="{URL_BASE}gajdy/framhja-bankalokun/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Framhjá bankalokun</span></a><a href="{URL_BASE}gajdy/kaupa-bitcoin-island/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Kaupa Bitcoin á Íslandi</span></a><a href="{URL_BASE}gajdy/islenskir-bankar-spilaviti/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Íslenskir bankar</span></a><a href="{URL_BASE}gajdy/piq-greidslur-island/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>PIQ greiðslur</span></a><a href="{URL_BASE}gajdy/spilaviti-isk-kronur/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Spilavíti sem taka við ISK</span></a><a href="{URL_BASE}platezhi/usdt/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>USDT</span></a></div></div><div class="dr-group"><button class="dr-item dr-toggle" type="button" aria-expanded="false" aria-controls="drg5"><svg class="dr-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h6a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H4zM20 4h-6a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h7z"/></svg><span>Leiðbeiningar</span><em class="dr-badge">5</em><svg class="dr-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="dr-sub" id="drg5" hidden><a href="{URL_BASE}gajdy/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Allar leiðbeiningar</span></a><a href="{URL_BASE}gajdy/zakon-ob-azartnyh-igrah-islandiya/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Lög á Íslandi</span></a><a href="{URL_BASE}gajdy/skattar-spilavinningar-island/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Skattar á vinninga</span></a><a href="{URL_BASE}gajdy/kak-vybrat-casino/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Hvernig á að velja spilavíti</span></a><a href="{URL_BASE}gajdy/otvetstvennaya-igra/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Ábyrg spilun</span></a></div></div><p class="dr-empty" hidden>Ekkert fannst</p></nav><div class="dr-foot"><label class="dr-search"><svg class="dr-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input type="search" placeholder="Leita á vefnum" aria-label="Leita í valmynd" autocomplete="off"></label><div class="dr-rg"><span class="dr-18">18+</span> Spilaðu á ábyrgan hátt · <a href="tel:1717">1717</a></div></div></aside><script>(function(){{var d=document.getElementById('site-drawer');if(!d)return;var o=document.querySelector('.dr-overlay'),b=document.querySelector('.nav-burger'),last=null;
+<div class="dr-overlay" data-dr-close hidden></div><aside class="dr" id="site-drawer" aria-label="Valmynd" aria-hidden="true" inert><div class="dr-head"><a href="{URL_BASE}" class="dr-brand"><span class="dr-mark"><svg class="bf-logo" viewBox="0 0 40 40" aria-hidden="true"><defs><radialGradient id="svg_r" cx="35%" cy="30%" r="80%"><stop offset="0%" stop-color="#e04550"/><stop offset="60%" stop-color="#c52b36"/><stop offset="100%" stop-color="#9c1f29"/></radialGradient></defs><circle cx="20" cy="20" r="19" fill="url(#svg_r)"/><g fill="#fff"><rect x="16.6" y="4.5" width="6.8" height="17" rx="1" transform="rotate(0 20 20)"/><rect x="16.6" y="4.5" width="6.8" height="17" rx="1" transform="rotate(72 20 20)"/><rect x="16.6" y="4.5" width="6.8" height="17" rx="1" transform="rotate(144 20 20)"/><rect x="16.6" y="4.5" width="6.8" height="17" rx="1" transform="rotate(216 20 20)"/><rect x="16.6" y="4.5" width="6.8" height="17" rx="1" transform="rotate(288 20 20)"/></g></svg></span><span class="dr-name">Svipan<b>.is</b></span></a><span class="dr-title">Valmynd</span><button class="dr-close" type="button" data-dr-close aria-label="Loka valmynd"><svg class="dr-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div><nav class="dr-body"><a class="dr-item" href="{URL_BASE}"><svg class="dr-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span>Heim</span></a><a class="dr-item" href="{URL_BASE}entertainment/"><svg class="dr-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.6 5.6 6 .6-4.5 4 1.3 6L12 16.8 6.6 19.2l1.3-6-4.5-4 6-.6z"/></svg><span>Afþreying</span></a><div class="dr-group"><button class="dr-item dr-toggle" type="button" aria-expanded="false" aria-controls="drg0"><svg class="dr-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="8" cy="8" r="1.3"/><circle cx="16" cy="8" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="8" cy="16" r="1.3"/><circle cx="16" cy="16" r="1.3"/></svg><span>Spilavíti</span><em class="dr-badge">7</em><svg class="dr-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="dr-sub" id="drg0" hidden><a href="{URL_BASE}casino/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Allar umsagnir</span></a><a href="{URL_BASE}gajdy/spilaviti-samanburdur/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Spilavíti samanburður</span></a><a href="{URL_BASE}gajdy/besta-crypto-spilaviti-island/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Besta crypto spilavítið</span></a><a href="{URL_BASE}casino/crypto-casino/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Crypto spilavíti</span></a><a href="{URL_BASE}casino/novye-casino/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Ný spilavíti 2026</span></a><a href="{URL_BASE}gajdy/spilaviti-islenskt-vidmot/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Íslenskt viðmót</span></a><a href="{URL_BASE}kak-my-ocenivaem/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Hvernig við metum</span></a></div></div><div class="dr-group"><button class="dr-item dr-toggle" type="button" aria-expanded="false" aria-controls="drg1"><svg class="dr-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 4v16M15 4v16"/></svg><span>Spilakassar</span><em class="dr-badge">6</em><svg class="dr-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="dr-sub" id="drg1" hidden><a href="{URL_BASE}slots/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Allir spilakassar</span></a><a href="{URL_BASE}slots/gates-of-olympus/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Gates of Olympus</span></a><a href="{URL_BASE}slots/sweet-bonanza/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Sweet Bonanza</span></a><a href="{URL_BASE}slots/book-of-dead/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Book of Dead</span></a><a href="{URL_BASE}slots/big-bass-splash/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Big Bass Splash</span></a><a href="{URL_BASE}gajdy/chto-takoe-rtp/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Hvað er RTP?</span></a></div></div><div class="dr-group"><button class="dr-item dr-toggle" type="button" aria-expanded="false" aria-controls="drg2"><svg class="dr-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/><circle cx="12" cy="11" r="2.5"/></svg><span>Í beinni</span><em class="dr-badge">5</em><svg class="dr-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="dr-sub" id="drg2" hidden><a href="{URL_BASE}live/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Allir lifandi leikir</span></a><a href="{URL_BASE}live/blackjack/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Blackjack</span></a><a href="{URL_BASE}live/roulette/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Rúletta</span></a><a href="{URL_BASE}live/crazy-time/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Crazy Time</span></a><a href="{URL_BASE}live/lightning-roulette/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Lightning Roulette</span></a></div></div><div class="dr-group"><button class="dr-item dr-toggle" type="button" aria-expanded="false" aria-controls="drg3"><svg class="dr-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="9" width="18" height="12" rx="2"/><path d="M3 13h18M12 9v12M12 9c-2-4-6-4-6-1s6 1 6 1 6 2 6-1-4-3-6 1"/></svg><span>Bónusar</span><em class="dr-badge">5</em><svg class="dr-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="dr-sub" id="drg3" hidden><a href="{URL_BASE}bonusy/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Allir bónusar</span></a><a href="{URL_BASE}bonusy/velkomstbonus/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Velkomstbónus</span></a><a href="{URL_BASE}gajdy/frisnuningar-an-innborgunar/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Frísnúningar án innborgunar</span></a><a href="{URL_BASE}bonusy/bezdepozitnye-bonusy/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Bónusar án innborgunar</span></a><a href="{URL_BASE}bonusy/vejer/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Hvað eru veðskilyrði?</span></a></div></div><div class="dr-group"><button class="dr-item dr-toggle" type="button" aria-expanded="false" aria-controls="drg4"><svg class="dr-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M2 10h20M6 15h4"/></svg><span>Greiðslur</span><em class="dr-badge">7</em><svg class="dr-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="dr-sub" id="drg4" hidden><a href="{URL_BASE}platezhi/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Allar greiðsluleiðir</span></a><a href="{URL_BASE}gajdy/framhja-bankalokun/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Framhjá bankalokun</span></a><a href="{URL_BASE}gajdy/kaupa-bitcoin-island/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Kaupa Bitcoin á Íslandi</span></a><a href="{URL_BASE}gajdy/islenskir-bankar-spilaviti/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Íslenskir bankar</span></a><a href="{URL_BASE}gajdy/piq-greidslur-island/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>PIQ greiðslur</span></a><a href="{URL_BASE}gajdy/spilaviti-isk-kronur/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Spilavíti sem taka við ISK</span></a><a href="{URL_BASE}platezhi/usdt/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>USDT</span></a></div></div><div class="dr-group"><button class="dr-item dr-toggle" type="button" aria-expanded="false" aria-controls="drg5"><svg class="dr-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h6a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H4zM20 4h-6a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h7z"/></svg><span>Leiðbeiningar</span><em class="dr-badge">5</em><svg class="dr-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="dr-sub" id="drg5" hidden><a href="{URL_BASE}gajdy/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Allar leiðbeiningar</span></a><a href="{URL_BASE}gajdy/zakon-ob-azartnyh-igrah-islandiya/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Lög á Íslandi</span></a><a href="{URL_BASE}gajdy/skattar-spilavinningar-island/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Skattar á vinninga</span></a><a href="{URL_BASE}gajdy/kak-vybrat-casino/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Hvernig á að velja spilavíti</span></a><a href="{URL_BASE}gajdy/otvetstvennaya-igra/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Ábyrg spilun</span></a></div></div><p class="dr-empty" hidden>Ekkert fannst</p></nav><div class="dr-foot"><label class="dr-search"><svg class="dr-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input type="search" placeholder="Leita á vefnum" aria-label="Leita í valmynd" autocomplete="off"></label><div class="dr-rg"><span class="dr-18">18+</span> Spilaðu á ábyrgan hátt · <a href="tel:1717">1717</a></div></div></aside><script>(function(){{var d=document.getElementById('site-drawer');if(!d)return;var o=document.querySelector('.dr-overlay'),b=document.querySelector('.nav-burger'),last=null;
 function open(){{last=document.activeElement;o.hidden=false;d.removeAttribute('inert');d.setAttribute('aria-hidden','false');requestAnimationFrame(function(){{o.classList.add('on');d.classList.add('on');}});document.body.classList.add('dr-lock');if(b)b.setAttribute('aria-expanded','true');setTimeout(function(){{d.querySelector('.dr-close').focus();}},50);}}
 function close(){{o.classList.remove('on');d.classList.remove('on');d.setAttribute('aria-hidden','true');d.setAttribute('inert','');document.body.classList.remove('dr-lock');if(b)b.setAttribute('aria-expanded','false');setTimeout(function(){{o.hidden=true;}},300);if(last&&last.focus)last.focus();}}
 if(b){{b.setAttribute('aria-controls','site-drawer');b.addEventListener('click',function(e){{e.stopImmediatePropagation();d.classList.contains('on')?close():open();}},true);}}
@@ -906,14 +902,14 @@ def casino_faq(c):
         (f"Er {n} með íslenskt leyfi?", f"Nei. {n} starfar undir erlendu leyfi. Á Íslandi hafa aðeins innlendir aðilar eins og Íslensk getspá og Happdrætti Háskólans leyfi til fjárhættuspila, svo erlend spilavíti falla ekki undir íslenskt eftirlit."),
         (f"Hver er velkomstbónusinn hjá {n}?", f"Samkvæmt rekstraraðila: {isk(c['bonus'])}. Skilmálar og veðskilyrði geta breyst — lestu þá alltaf á vef spilavítisins áður en þú samþykkir bónus."),
         (f"Hvaða greiðslumáta býður {n}?", f"{n} tekur við {pay}. Flest erlend spilavíti nota evrur, svo gengismunur getur bæst við íslenskar krónur."),
-        (f"Er Svipan Casino í samstarfi við {n}?", ("Já. Við fáum þóknun ef þú skráir þig í gegnum tengla okkar, sem hefur ekki áhrif á einkunnina." if c.get("partner") else f"Nei. Við fáum enga þóknun frá {n}. Eina spilavítið sem við vinnum með er Slotoro.")),
+        (f"Er Svipan í samstarfi við {n}?", ("Já. Við fáum þóknun ef þú skráir þig í gegnum tengla okkar, sem hefur ekki áhrif á einkunnina." if c.get("partner") else f"Nei. Við fáum enga þóknun frá {n}. Eina spilavítið sem við vinnum með er Slotoro.")),
         ("Hvar fæ ég hjálp ef spilamennskan fer úr böndunum?", "Hjálparsími Rauða krossins 1717 er opinn allan sólarhringinn og er ókeypis og trúnaðarmál. Settu þér alltaf tíma- og upphæðarmörk áður en þú spilar."),
     ]
 
 def partner_box(c):
     if c.get("partner"):
         return f'<div class="cta-box"><a href="{AFF}" target="_blank" rel="sponsored noopener" class="cta-btn">Spila á Slotoro →</a></div>'
-    return (f'<div class="info-box"><p><strong>Athugið:</strong> Svipan Casino er ekki í samstarfi við {c["name"]}. '
+    return (f'<div class="info-box"><p><strong>Athugið:</strong> Svipan er ekki í samstarfi við {c["name"]}. '
             f'Viltu spila þar, farðu beint á vef {c["name"]}. Spilavítið sem við vinnum með er '
             f'<a href="{URL_BASE}casino/slotoro/">Slotoro</a>.</p></div>'
             f'<div class="cta-box"><a href="{AFF}" target="_blank" rel="sponsored noopener" class="cta-btn">Spila á Slotoro →</a></div>')
@@ -1065,7 +1061,7 @@ for g in live_games:
 # 5. БОНУСЫ (80)
 print("Generating bonus pages...")
 for b in bonus_pages:
-    hero = make_hero(b["title"], "Bónus 2026", "🎁", "#41070c", "#a31d2e", "#e43c50")
+    hero = make_hero(b["title"], "Bónus 2026", "🎁", "#41070c", "#a31d2e", "#d63641")
     content = f'''<h1>{b["title"]}</h1>
 {hero}
 <p>{b["desc"]}</p>
@@ -1125,7 +1121,7 @@ for g in guide_pages:
 <li>Hvað þarf að vita áður en þú byrjar</li>
 <li>Skref-fyrir-skref leiðbeiningar</li>
 <li>Algeng mistök og hvernig á að forðast þau</li>
-<li>Ráðleggingar frá sérfræðingum Svipan Casino</li>
+<li>Ráðleggingar frá sérfræðingum Svipan</li>
 </ul>
 <h3>Gagnlegir tenglar</h3>
 <ul>
@@ -1140,10 +1136,10 @@ for g in guide_pages:
 
 # 8. О НАС (10)
 print("Generating about pages...")
-about_emojis = {"Um Svipan Casino":"🏛️","Hafa samband":"📬","Persónuverndarstefna":"🔒","Notkunarskilmálar":"📋","Fyrirvari":"⚖️","Hvernig við metum spilavíti":"⭐","Ritstjórnarstefna":"✍️","Samstarf":"🤝","Vefkort":"🗺️","Ábyrg spilun":"🛡️"}
+about_emojis = {"Um Svipan":"🏛️","Hafa samband":"📬","Persónuverndarstefna":"🔒","Notkunarskilmálar":"📋","Fyrirvari":"⚖️","Hvernig við metum spilavíti":"⭐","Ritstjórnarstefna":"✍️","Samstarf":"🤝","Vefkort":"🗺️","Ábyrg spilun":"🛡️"}
 for a in about_pages:
     emoji = about_emojis.get(a["title"], "ℹ️")
-    hero = make_hero(a["title"], "Svipan Casino", emoji, "#29070c", "#520e18", "#821e2b")
+    hero = make_hero(a["title"], "Svipan", emoji, "#29070c", "#520e18", "#821e2b")
     if a["slug"] == "konfidencialnost":
         content = f'''<h1>Persónuverndarstefna</h1>
 {hero}
@@ -1164,7 +1160,7 @@ for a in about_pages:
     elif a["slug"] == "kak-my-ocenivaem":
         content = f'''<h1>Hvernig við metum spilavíti</h1>
 {hero}
-<p>Hvert spilavíti á Svipan Casino fær einkunn frá 0 til 10. Einkunnin byggir á sex föstum viðmiðum með birtum vægi, svo þú getir séð nákvæmlega hvernig hún verður til.</p>
+<p>Hvert spilavíti á Svipan fær einkunn frá 0 til 10. Einkunnin byggir á sex föstum viðmiðum með birtum vægi, svo þú getir séð nákvæmlega hvernig hún verður til.</p>
 <h2>Viðmið og vægi</h2>
 <div class="info-box" style="overflow-x:auto;">
 <table style="width:100%;border-collapse:collapse;font-size:16px;color:var(--muted);">
@@ -1189,7 +1185,7 @@ for a in about_pages:
         content = f'''<h1>{a["title"]}</h1>
 {hero}
 <p>{a["desc"]}</p>
-<p>Svipan Casino (svipan.is) er óháð spilavítavefgátt fyrir íslenska leikmenn. Við hjálpum þér að finna áreiðanleg spilavíti með bestu bónusum og stuðningi við dulritunargjaldmiðla.</p>'''
+<p>Svipan (svipan.is) er óháð spilavítavefgátt fyrir íslenska leikmenn. Við hjálpum þér að finna áreiðanleg spilavíti með bestu bónusum og stuðningi við dulritunargjaldmiðla.</p>'''
 
     bc = [("{URL_BASE}", "Home"), ("", a["title"])]
     html = page_template(a["title"], a["desc"], bc, content)
@@ -1414,7 +1410,7 @@ seo_pages = [
         "title": "Frísnúningar án innborgunar á Íslandi 2026",
         "desc": "Nýjustu frísnúningatilboð án innborgunar fyrir íslenska spilara. Skráðu þig og fáðu ókeypis snúninga.",
         "emoji": "🎰",
-        "colors": ("#41070c", "#a31d2e", "#e43c50"),
+        "colors": ("#41070c", "#a31d2e", "#d63641"),
         "content": f'''<h1>Frísnúningar án innborgunar á Íslandi 2026</h1>
 {{hero}}
 <p>Frísnúningar án innborgunar leyfa þér að <strong>prófa spilavíti ókeypis</strong> — engin innborgun þarf. Hér eru bestu tilboðin:</p>
@@ -1455,11 +1451,11 @@ seo_pages = [
 <div class="info-box" style="overflow-x:auto;">
 <table style="width:100%;border-collapse:collapse;font-size:16px;color:var(--muted);">
 <tr style="border-bottom:1px solid var(--border);color:#fff;"><th style="padding:10px;text-align:left;">Spilavíti</th><th>Bónus</th><th>Leikir</th><th>Útborgun</th><th>Dulritun</th><th>Einkunn</th></tr>
-<tr style="border-bottom:1px solid var(--border);"><td style="padding:10px;"><a href="{URL_BASE}casino/bitstarz/" style="color:#ff808d;">BitStarz</a></td><td>5 BTC + 200 FS</td><td>3500+</td><td>&lt;10 mín</td><td>✅ BTC, ETH, LTC</td><td>9.8</td></tr>
-<tr style="border-bottom:1px solid var(--border);"><td style="padding:10px;"><a href="{URL_BASE}casino/stake/" style="color:#ff808d;">Stake</a></td><td>200% + VIP</td><td>5000+</td><td>&lt;10 mín</td><td>✅ 8+ mynt</td><td>9.6</td></tr>
-<tr style="border-bottom:1px solid var(--border);"><td style="padding:10px;"><a href="{URL_BASE}casino/bc-game/" style="color:#ff808d;">BC.Game</a></td><td>300% / 1 BTC</td><td>8000+</td><td>&lt;5 mín</td><td>✅ 100+ mynt</td><td>9.4</td></tr>
-<tr style="border-bottom:1px solid var(--border);"><td style="padding:10px;"><a href="{URL_BASE}casino/epicbet/" style="color:#ff808d;">Epicbet</a></td><td>100% / €500</td><td>2000+</td><td>1-3 dagar</td><td>🟡 BTC, ETH</td><td>9.0</td></tr>
-<tr><td style="padding:10px;"><a href="{URL_BASE}casino/katsubet/" style="color:#ff808d;">KatsuBet</a></td><td>100% + 100 FS</td><td>5000+</td><td>&lt;10 mín</td><td>✅ 6 mynt</td><td>8.6</td></tr>
+<tr style="border-bottom:1px solid var(--border);"><td style="padding:10px;"><a href="{URL_BASE}casino/bitstarz/" style="color:#e8505c;">BitStarz</a></td><td>5 BTC + 200 FS</td><td>3500+</td><td>&lt;10 mín</td><td>✅ BTC, ETH, LTC</td><td>9.8</td></tr>
+<tr style="border-bottom:1px solid var(--border);"><td style="padding:10px;"><a href="{URL_BASE}casino/stake/" style="color:#e8505c;">Stake</a></td><td>200% + VIP</td><td>5000+</td><td>&lt;10 mín</td><td>✅ 8+ mynt</td><td>9.6</td></tr>
+<tr style="border-bottom:1px solid var(--border);"><td style="padding:10px;"><a href="{URL_BASE}casino/bc-game/" style="color:#e8505c;">BC.Game</a></td><td>300% / 1 BTC</td><td>8000+</td><td>&lt;5 mín</td><td>✅ 100+ mynt</td><td>9.4</td></tr>
+<tr style="border-bottom:1px solid var(--border);"><td style="padding:10px;"><a href="{URL_BASE}casino/epicbet/" style="color:#e8505c;">Epicbet</a></td><td>100% / €500</td><td>2000+</td><td>1-3 dagar</td><td>🟡 BTC, ETH</td><td>9.0</td></tr>
+<tr><td style="padding:10px;"><a href="{URL_BASE}casino/katsubet/" style="color:#e8505c;">KatsuBet</a></td><td>100% + 100 FS</td><td>5000+</td><td>&lt;10 mín</td><td>✅ 6 mynt</td><td>8.6</td></tr>
 </table>
 </div>
 
@@ -1550,7 +1546,7 @@ seo_pages = [
 ]
 
 for page in seo_pages:
-    hero = make_hero(page["title"][:40], "Svipan Casino leiðbeining", page["emoji"], *page["colors"])
+    hero = make_hero(page["title"][:40], "Svipan leiðbeining", page["emoji"], *page["colors"])
     page_content = page["content"].replace("{hero}", hero)
     bc = [("{URL_BASE}", "Heim"), ("{URL_BASE}gajdy/", "Leiðbeiningar"), ("", page["title"][:50])]
     html = page_template(page["title"], page["desc"], bc, page_content)
@@ -1566,13 +1562,13 @@ casino_cards = ""
 for c in casinos[:20]:
     ctype_label = "Crypto" if c["type"]=="crypto" else "Classic"
     casino_cards += f'''<a href="{URL_BASE}casino/{c["slug"]}/" class="game-card">
-<div class="game-card-thumb" style="background:linear-gradient(135deg,{'#62081f,#a3173b' if c['type']=='crypto' else '#410f13,#a31d2e'});display:flex;align-items:center;justify-content:center;"><span style="font-size:28px;font-weight:800;color:rgba(255,255,255,.88);">{c["rating"]}</span></div>
+<div class="game-card-thumb" style="background:linear-gradient(135deg,{'#62081f,#a3173b' if c['type']=='crypto' else '#262a35,#a31d2e'});display:flex;align-items:center;justify-content:center;"><span style="font-size:28px;font-weight:800;color:rgba(255,255,255,.88);">{c["rating"]}</span></div>
 <div class="game-card-info"><div class="game-card-name">{c["name"]}</div><div class="game-card-prov">{c["bonus"]} · {ctype_label}</div></div></a>\n'''
 
 casino_list = "\n".join([f'<div class="info-box"><p><strong><a href="{URL_BASE}casino/{c["slug"]}/">{c["name"]}</a></strong> — {isk(c["bonus"])} (Einkunn: {c["rating"]}/10)</p></div>' for c in casinos[:50]])
 
 casino_content = f'''<h1>Bestu netspilavítin á Íslandi 2026</h1>
-<p>Svipan Casino umsagnir um {len(casinos)} netspilavíti fyrir íslenska leikmenn. Berðu saman bónusa, greiðslumáta og leikjasöfn. Öll spilavíti styðja dulritunargjaldmiðla — auðveldasta leiðin til að spila frá Íslandi.</p>
+<p>Svipan umsagnir um {len(casinos)} netspilavíti fyrir íslenska leikmenn. Berðu saman bónusa, greiðslumáta og leikjasöfn. Öll spilavíti styðja dulritunargjaldmiðla — auðveldasta leiðin til að spila frá Íslandi.</p>
 <div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Spila á Top Casino →</a></div>
 <h2>Besta spilavítið eftir þörfum</h2>
 <h3>Hæsti velkomstbónusinn</h3>
@@ -1624,18 +1620,18 @@ lobby = f"""<style>
 .lb-prov{{padding:12px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:#310f14;color:#fff;font-size:16px;max-width:100%}}
 .lb-tabs{{display:flex;gap:8px;overflow-x:auto;width:100%;padding-bottom:2px;scrollbar-width:none}}.lb-tabs::-webkit-scrollbar{{display:none}}
 .lb-tab{{flex:0 0 auto;padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.05);color:#ffe2e6;font-size:16px;cursor:pointer;white-space:nowrap}}
-.lb-tab.on{{background:linear-gradient(135deg,#fc2a44,#ff725f);border-color:transparent;color:#fff;font-weight:600}}
+.lb-tab.on{{background:linear-gradient(135deg,#c52b36,#ff725f);border-color:transparent;color:#fff;font-weight:600}}
 .lb-count{{font-size:16px;opacity:.75;margin:0 0 10px}}
 .lb-grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px}}
 .lb-card{{position:relative;display:block;aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:#310f14;text-decoration:none;color:#fff;box-shadow:0 6px 18px rgba(0,0,0,.35);transition:transform .15s}}
 .lb-card:hover,.lb-card:focus-visible{{transform:translateY(-3px)}}
 .lb-card img{{width:100%;height:100%;object-fit:cover;display:block}}
-.lb-tag{{position:absolute;top:8px;left:8px;background:#fc2a44;color:#fff;font-size:16px;font-weight:700;padding:4px 9px;border-radius:8px}}
+.lb-tag{{position:absolute;top:8px;left:8px;background:#c52b36;color:#fff;font-size:16px;font-weight:700;padding:4px 9px;border-radius:8px}}
 .lb-name{{color:#fff;position:absolute;left:0;right:0;bottom:0;padding:26px 10px 9px;background:linear-gradient(transparent,rgba(0,0,0,.85));font-size:16px;font-weight:600;line-height:1.25}}
 .lb-name small{{display:block;font-weight:400;opacity:.75;font-size:16px}}
 .lb-hover{{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(25,5,8,.55);opacity:0;transition:opacity .15s}}
 .lb-card:hover .lb-hover,.lb-card:focus-visible .lb-hover{{opacity:1}}
-.lb-btn{{padding:10px 18px;border-radius:999px;background:linear-gradient(135deg,#ff8a3d,#ff513d);font-weight:700;font-size:16px}}
+.lb-btn{{padding:10px 18px;border-radius:999px;background:linear-gradient(135deg,#e04550,#d63641);font-weight:700;font-size:16px}}
 .lb-more{{display:block;margin:22px auto 6px}}
 .lb-empty{{text-align:center;opacity:.8;padding:30px 0}}
 @media(max-width:520px){{.lb-grid{{grid-template-columns:repeat(2,1fr);gap:10px}}.lb-name{{font-size:16px;padding:20px 6px 6px}}.lb-name small{{display:none}}.lb-tag{{font-size:16px;padding:3px 6px}}}}
@@ -1685,7 +1681,7 @@ write_page("gajdy/index.html", page_template("Guides", "Leiðbeiningar og kennsl
 # 10. SITEMAP
 # Author page
 _author = f'''<h1>Valbjörn Gjúkason</h1>
-<p><strong>Blaðamaður og ritstjóri Svipan Casino.</strong> Valbjörn er blaðamaður sem fjallar um fjárhættuspil og netspilavíti. Hjá Svipan Casino ber hann ábyrgð á öllum umsögnum, samanburði og leiðbeiningum á vefnum og fer yfir hverja síðu áður en hún birtist.</p>
+<p><strong>Blaðamaður og ritstjóri Svipan.</strong> Valbjörn er blaðamaður sem fjallar um fjárhættuspil og netspilavíti. Hjá Svipan ber hann ábyrgð á öllum umsögnum, samanburði og leiðbeiningum á vefnum og fer yfir hverja síðu áður en hún birtist.</p>
 <h2>Hvað hann skoðar</h2>
 <ul>
 <li>Spilakassa: RTP, sveiflu, hámarksvinning og hvernig bónusinn virkar, borið saman við gögn framleiðenda og óháðra gagnagrunna.</li>
@@ -1694,10 +1690,10 @@ _author = f'''<h1>Valbjörn Gjúkason</h1>
 </ul>
 <h2>Ritstjórnarstefna</h2>
 <p>Við birtum aðeins tölur sem við getum vísað í heimild fyrir. Þegar heimildir eru ósammála segjum við það og bendum á upplýsingaskjá leiksins í stað þess að giska. Síður eru merktar með dagsetningu síðustu uppfærslu.</p>
-<p>Svipan Casino fær þóknun frá Slotoro ef þú skráir þig í gegnum tengla okkar. Það hefur ekki áhrif á einkunnir, og við segjum skýrt frá því á hverri síðu. Lestu meira um <a href="{URL_BASE}kak-my-ocenivaem/">hvernig við metum spilavíti</a>.</p>
+<p>Svipan fær þóknun frá Slotoro ef þú skráir þig í gegnum tengla okkar. Það hefur ekki áhrif á einkunnir, og við segjum skýrt frá því á hverri síðu. Lestu meira um <a href="{URL_BASE}kak-my-ocenivaem/">hvernig við metum spilavíti</a>.</p>
 <h2>Leiðrétting</h2>
 <p>Finnurðu villu í umsögn? Láttu okkur vita og við leiðréttum hana og uppfærum dagsetninguna.</p>'''
-write_page("hofundur/valbjorn-gjukason/index.html", page_template("Valbjörn Gjúkason — ritstjóri Svipan Casino", "Valbjörn Gjúkason er blaðamaður sem fjallar um fjárhættuspil og ritstjóri Svipan Casino. Hann ber ábyrgð á umsögnum um spilakassa og spilavíti fyrir íslenska leikmenn.",
+write_page("hofundur/valbjorn-gjukason/index.html", page_template("Valbjörn Gjúkason — ritstjóri Svipan", "Valbjörn Gjúkason er blaðamaður sem fjallar um fjárhættuspil og ritstjóri Svipan. Hann ber ábyrgð á umsögnum um spilakassa og spilavíti fyrir íslenska leikmenn.",
     [("{URL_BASE}", "Heim"), ("", "Höfundur")], _author, show_byline=False,
     schema_extra=[{"@type":"ProfilePage","mainEntity":{"@id":"https://svipan.is/#valbjorn"}}]))
 
