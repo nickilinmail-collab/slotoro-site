@@ -542,8 +542,8 @@ def page_template(title, desc, breadcrumbs, content, canonical="", og_img="", sc
 <!-- Google Analytics GA4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DXR83WTCFX"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','G-DXR83WTCFX');</script>
-<title>{title + ' | Svipan' if len(title) <= 57 else title}</title>
-<meta name="description" content="{desc}">
+<title>{title + ' | Svipan' if len(title) <= 50 else title[:60]}</title>
+<meta name="description" content="{desc[:155]}">
 {f'<link rel="canonical" href="{canonical}">' if canonical else ''}
 {f'<link rel="alternate" hreflang="is" href="{canonical}">' if canonical else ''}
 <meta name="geo.region" content="IS">
