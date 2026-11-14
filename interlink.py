@@ -135,4 +135,115 @@ for sec in SECTIONS:
             s=s.replace('<footer class="footer">', block+'\n<footer class="footer">',1)
             f.write_text(s,encoding="utf-8")
             count+=1
+
+# ============================================================
+# PASS 2 — hub pages, info/legal pages, English pages, misc
+# ============================================================
+
+def abs_link(path, label):
+    return f'<a href="{URL_BASE}{path}">{label}</a>'
+
+def pick(sec, n):
+    """n entries from a section registry, rotated by section name for variety."""
+    items = sorted(reg.get(sec, {}).items())
+    if not items: return []
+    i = zlib.crc32(sec.encode()) % len(items)
+    return [(sec, items[(i+k) % len(items)][0], items[(i+k) % len(items)][1])
+            for k in range(min(n, len(items)))]
+
+HUB_LABEL = {"spilaviti":"Spilavíti","spilakassar":"Spilakassar","live":"Lifandi spilavíti",
+             "bonusar":"Bónusar","greidslur":"Greiðslur","leidbeiningar":"Leiðbeiningar"}
+
+INFO_PAGES = [("um-okkur/","Um okkur"), ("hvernig-vid-metum/","Hvernig við metum"),
+              ("ritstjornarstefna/","Ritstjórnarstefna"), ("samstarf/","Samstarf"),
+              ("abyrg-spilun/","Ábyrg spilun"), ("hafa-samband/","Hafa samband"),
+              ("personuvernd/","Persónuvernd"), ("skilmalar/","Skilmálar"),
+              ("fyrirvari/","Fyrirvari"), ("saga/","Saga Svipan"),
+              ("hofundur/valbjorn-gjukason/","Valbjörn Gjúkason"), ("vefkort/","Vefkort")]
+
+def build_block(title, cards_html, hub_html=""):
+    return (f'{STYLE}<section class="rel-links"><h2>{title}</h2>'
+            f'<div class="rel-grid">{cards_html}</div>{hub_html}</section>')
+
+def inject(path, block):
+    """Insert block before the footer, or before </body> on pages without one."""
+    f = ROOT / path
+    if not f.exists(): return False
+    s = f.read_text(encoding="utf-8", errors="ignore")
+    if MARK in s: return False
+    if '<footer class="footer">' in s:
+        s = s.replace('<footer class="footer">', block + '\n<footer class="footer">', 1)
+    elif '<footer>' in s:
+        s = s.replace('<footer>', block + '\n<footer>', 1)
+    elif '</body>' in s:
+        s = s.replace('</body>', block + '\n</body>', 1)
+    else:
+        return False
+    f.write_text(s, encoding="utf-8")
+    return True
+
+# --- 2a. Section hub pages: other hubs + a few own-section entries ---
+for sec in SECTIONS:
+    others = [abs_link(f"{s2}/", HUB_LABEL[s2]) for s2 in SECTIONS if s2 != sec]
+    own = "".join(link(a, b, c) for a, b, c in pick(sec, 3))
+    cards = "".join(others) + own
+    if inject(f"{sec}/index.html", build_block("Skoðaðu einnig", cards)):
+        count += 1
+
+# --- 2b. Info / legal / about pages: sibling info pages + main sections ---
+for path, label in INFO_PAGES:
+    siblings = [abs_link(p, l) for p, l in INFO_PAGES if p != path][:4]
+    sections = [abs_link(f"{s2}/", HUB_LABEL[s2]) for s2 in ["spilaviti", "spilakassar", "leidbeiningar"]]
+    cards = "".join(siblings + sections)
+    hub = f'<p class="rel-hub">{abs_link("", "Forsíða Svipan →")}</p>'
+    if inject(f"{path}index.html", build_block("Tengt efni", cards, hub)):
+        count += 1
+
+# --- 2c. English pages: each other + key Icelandic pages ---
+EN_PAGES = [("en/", "Online Casino Iceland"), ("en/casino-in-reykjavik/", "Casino in Reykjavik"),
+            ("en/poker-in-iceland/", "Poker in Iceland")]
+for path, label in EN_PAGES:
+    siblings = [abs_link(p, l) for p, l in EN_PAGES if p != path]
+    icelandic = [abs_link("spilaviti/", "Casino reviews (Icelandic)"),
+                 abs_link("spilakassar/", "Slot reviews (Icelandic)"),
+                 abs_link("leidbeiningar/", "Guides (Icelandic)"),
+                 abs_link("greidslur/", "Payment methods (Icelandic)")]
+    cards = "".join(siblings + icelandic)
+    if inject(f"{path}index.html", build_block("Related pages", cards)):
+        count += 1
+
+# --- 2d. Slotoro review page: top casinos + relevant guides ---
+afth_cards = "".join([
+    abs_link("spilaviti/slotoro/", "Slotoro umsögn"),
+    abs_link("spilaviti/", "Allar spilavítaumsagnir"),
+    abs_link("spilakassar/", "Spilakassaumsagnir"),
+    abs_link("bonusar/bonus-slotoro/", "Slotoro bónus"),
+    abs_link("leidbeiningar/hvernig-a-ad-velja-spilaviti-island/", "Hvernig á að velja spilavíti"),
+    abs_link("leidbeiningar/islenskir-bankar-spilaviti/", "Íslenskir bankar og spilavíti"),
+])
+if inject("afthreying/index.html", build_block("Tengt efni", afth_cards)):
+    count += 1
+
+# --- 2e. News archive: route old backlink traffic into the live site ---
+frettir_cards = "".join([
+    abs_link("spilaviti/", "Spilavítaumsagnir"),
+    abs_link("spilakassar/", "Spilakassaumsagnir"),
+    abs_link("leidbeiningar/", "Leiðbeiningar"),
+    abs_link("greidslur/", "Greiðsluleiðir"),
+    abs_link("saga/", "Saga Svipan"),
+    abs_link("um-okkur/", "Um okkur"),
+])
+if inject("frettir/index.html", build_block("Skoðaðu vefinn", frettir_cards)):
+    count += 1
+
+# --- 2f. Skuggaborg (legacy project page) ---
+skugga_cards = "".join([
+    abs_link("saga/", "Saga Svipan"),
+    abs_link("um-okkur/", "Um okkur"),
+    abs_link("frettir/", "Greinasafn"),
+    abs_link("spilaviti/", "Spilavítaumsagnir"),
+])
+if inject("skuggaborg/index.html", build_block("Tengt efni", skugga_cards)):
+    count += 1
+
 print(f"interlink: injected into {count} pages (base {URL_BASE})")
