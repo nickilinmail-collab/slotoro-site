@@ -548,6 +548,7 @@ def page_template(title, desc, breadcrumbs, content, canonical="", og_img="", sc
 <meta name="description" content="{desc[:155]}">
 {f'<link rel="canonical" href="{canonical}">' if canonical else ''}
 {f'<link rel="alternate" hreflang="is" href="{canonical}">' if canonical else ''}
+{f'<link rel="alternate" hreflang="x-default" href="{canonical}">' if canonical else ''}
 <meta name="geo.region" content="IS">
 <meta name="geo.placename" content="Iceland">
 <meta property="og:locale" content="is_IS">
@@ -564,8 +565,7 @@ def page_template(title, desc, breadcrumbs, content, canonical="", og_img="", sc
 <meta property="og:site_name" content="Svipan">
 <meta name="twitter:card" content="summary_large_image">
 <!-- Hreflang -->
-<link rel="alternate" hreflang="is" href="{site_url}/">
-<link rel="alternate" hreflang="x-default" href="{site_url}/">
+{f'<link rel="alternate" hreflang="en" href="{site_url}/en/">' if canonical and canonical.rstrip("/") == site_url else ''}
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{{--bg:#14161d;--bg2:#1a1d25;--bg3:#21242e;--card:rgba(26,29,37,.55);--border:rgba(255,255,255,.08);--border2:rgba(255,255,255,.16);--purple:#d63641;--violet:#e04550;--blue:#ef6672;--accent:#e8505c;--accent-bg:rgba(214,54,65,.06);--gold:#f0c050;--text:#eceef4;--text2:#a7adbd;--muted:#d8dbe4;--muted2:#b4bac8;--warm1:#262a35;--warm2:#171a21;}}
@@ -899,6 +899,15 @@ def write_page(path, html):
         _dir = path[:-len("index.html")]
         _canon = "https://svipan.is/" + _dir
         html = html.replace("</title>", "</title>\n<link rel=\"canonical\" href=\"" + _canon + "\">", 1)
+    # Inject hreflang if missing
+    if 'hreflang="is"' not in html and path.endswith("index.html") and not path.startswith("en/"):
+        _dir = path[:-len("index.html")]
+        _canon = "https://svipan.is/" + _dir
+        _hreflang = '<link rel="alternate" hreflang="is" href="' + _canon + '">\n<link rel="alternate" hreflang="x-default" href="' + _canon + '">'
+        # Add hreflang="en" only for the homepage
+        if _dir == "":
+            _hreflang += '\n<link rel="alternate" hreflang="en" href="https://svipan.is/en/">'
+        html = html.replace("<!-- Hreflang -->", "<!-- Hreflang -->\n" + _hreflang, 1)
     full = os.path.join(BASE, path)
     os.makedirs(os.path.dirname(full), exist_ok=True)
     with open(full, 'w', encoding='utf-8') as f:
