@@ -249,10 +249,18 @@
   <url><loc>https://svipan.is/greidslur/ethereum/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://svipan.is/greidslur/usdt/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://svipan.is/greidslur/litecoin/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://svipan.is/greidslur/dogecoin/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://svipan.is/greidslur/ripple-xrp/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://svipan.is/greidslur/solana/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://svipan.is/greidslur/tron/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://svipan.is/greidslur/hvernig-a-ad-kaupa-bitcoin/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://svipan.is/greidslur/visa-i-spilavitum/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://svipan.is/greidslur/mastercard-i-spilavitum/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://svipan.is/greidslur/apple-pay-i-spilavitum/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://svipan.is/greidslur/google-pay-i-spilavitum/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://svipan.is/greidslur/skrill-i-spilavitum/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://svipan.is/greidslur/neteller-i-spilavitum/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://svipan.is/greidslur/paysafecard-i-spilavitum/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://svipan.is/leidbeiningar/kaupa-bitcoin-island/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://svipan.is/leidbeiningar/islenskir-bankar-spilaviti/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://svipan.is/leidbeiningar/skattar-spilavinningar-island/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>

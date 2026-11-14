@@ -17,7 +17,7 @@
 <meta name="geo.region" content="IS">
 <meta name="geo.placename" content="Iceland">
 <meta property="og:locale" content="is_IS">
-<meta name="robots" content="noindex,follow">
+<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -303,22 +303,41 @@ background:linear-gradient(180deg,rgba(255,255,255,.5),rgba(255,255,255,0));}
 <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(24px,4vw,34px);font-weight:700;color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.7);line-height:1.2">TRON (TRX) í spilavítum</span>
 <span style="font-size:17px;color:#fff;opacity:.9;margin-top:8px;text-shadow:0 1px 8px rgba(0,0,0,.7)">Greiðslumáti</span>
 </div></div>
-<p>TRON (TRX) greiðslur — afar lág gjöld fyrir spilavítafærslur.</p>
-<h2>Hvernig það virkar</h2>
-<p>Íslenskir bankar loka á greiðslur til netspilavíta. Dulritunargjaldmiðlar eru besta leiðin til að komast framhjá þessum takmörkunum. Færslur eru hraðar, nafnlausar og gjaldfrjálsar.</p>
-<h3>Skref-fyrir-skref leiðbeiningar</h3>
+
+<p>TRON er netið sem flestir nota án þess að hafa valið það: TRC-20 útgáfan af <a href="/greidslur/usdt/">USDT</a> flytur meira af spilavítagreiðslum heimsins en nokkur önnur leið. Sjálf TRX-myntin er svo sérkapítuli — hún gegnir hlutverki bensíns á netinu og er um leið gjaldgeng innlagnarmynt.</p>
+
+<h2>Tvöfalda hlutverkið: TRX og TRC-20</h2>
+<p>Á TRON-netinu ferðast tvenns konar verðmæti. Annars vegar TRX, eigin mynt netsins — ódýr, hröð, studd af flestum rafmyntasíðum. Hins vegar token á TRC-20 staðlinum, þar sem USDT er langstærst. Færslugjaldið á netinu er greitt í TRX, sem þýðir praktískt atriði fyrir þá sem reka eigið veski: <strong>smá TRX-afgangur þarf alltaf að vera til staðar til að hreyfa USDT-eign</strong>. Kauphallaleiðin felur þetta — kauphöllin dregur gjaldið sjálf.</p>
+
+<h2>Af hverju varð TRON USDT-hraðbrautin?</h2>
+<table>
+<tr><th></th><th>USDT á TRON</th><th>USDT á Ethereum</th></tr>
+<tr><td>Dæmigert gjald</td><td>~$1–3</td><td>$2–15 eftir álagi</td></tr>
+<tr><td>Tími</td><td>~1 mínúta</td><td>1–3 mínútur</td></tr>
+<tr><td>Spilavítastuðningur</td><td>Nær algildur</td><td>Algildur</td></tr>
+</table>
+<p>Svarið er einfaldlega verðmiðinn: þegar dollarafærsla kostar dollar í stað fimmtán hreyfist magnið þangað. Spilavítin fylgdu notendunum og TRC-20 varð sjálfgefna valið í innlagnargluggum.</p>
+
+<h2>Innlögn með TRX, skref fyrir skref</h2>
 <ol>
-<li>Búðu til veski (MetaMask, Trust Wallet eða Binance)</li>
-<li>Keyptu dulritunargjaldmiðil á kauphöll</li>
-<li>Sendu fjármuni til spilavítisins</li>
-<li>Spilaðu og dragðu vinninga aftur í veskið þitt</li>
+<li>TRX fæst á öllum stóru kauphöllunum — Kraken, Binance, Coinbase.</li>
+<li>Veldu TRON (TRX) í innlagnarglugga spilavítisins; fangið byrjar á T.</li>
+<li>Sendu. Staðfesting tekur um mínútu og flest spilavíti bóka innlögnina eftir eina blokk.</li>
+<li>Úttekt fer sömu leið — og hraðinn er sá sami út.</li>
 </ol>
-<h3>Mælt með spilavítum</h3>
-<ul>
-<li><a href="/spilaviti/bitstarz/">BitStarz</a> — tafarlausar dulritunarútborganir</li>
-<li><a href="/spilaviti/stake/">Stake</a> — styður 20+ dulritunargjaldmiðla</li>
-</ul>
+
+<h2>Hvar TRON-leiðin er sterkust</h2>
+<p><a href="/spilaviti/bc-game/">BC.Game</a>, <a href="/spilaviti/stake/">Stake</a> og <a href="/spilaviti/slotoro/">Slotoro</a> styðja öll bæði TRX og TRC-20 USDT. Sé markmiðið verðfesta: farðu USDT-leiðina á þessu neti. Sé markmiðið einfaldlega ódýr rafmynt: TRX sjálft dugar. Samanburður allra leiða er í <a href="/spilaviti/crypto-spilaviti/">yfirlitinu</a>.</p>
+
+<h2>Algengar spurningar</h2>
+<h3>Sendi ég USDT og TRX á sama fang?</h3>
+<p>Já — TRON-fangið þitt tekur við hvoru tveggja. En í innlagnarglugga spilavítis eru USDT (TRC-20) og TRX aðskildir valkostir með sitthvoru fanginu hjá síðunni: veldu réttan glugga fyrir það sem þú sendir.</p>
+<h3>Hvað er „bandwidth" og „energy" sem veskið mitt sýnir?</h3>
+<p>Innri auðlindakerfi TRON — í stað þess að borga gjald beint getur TRX-eigandi „fryst" mynt og fengið fríar færslur. Fyrir spilara á kauphallaleið skiptir þetta engu; fyrir eigið-veskis-fólk er það leið til að losna við gjöldin alveg.</p>
+<h3>Er TRON öruggt net?</h3>
+<p>Netið hefur keyrt síðan 2018 án meiriháttar öryggisatvika og ber stærsta stablecoin-flæði heims daglega. Gagnrýnin á TRON snýr að miðstýringu í stjórnun netsins — gild umræða, en fyrir klukkustundarlanga spilafærslu er rekstraröryggið það sem gildir, og það er sannreynt.</p>
 <div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="sponsored noopener" class="cta-btn">Spila á Slotoro →</a></div>
+
 <div class="share" aria-label="Deila">
 <span class="share-label">Deila:</span>
 <a class="s-fb" data-net="fb" href="#" target="_blank" rel="noopener" aria-label="Deila á Facebook"><svg viewBox="0 0 24 24"><path d="M14 8V6.5c0-.7.5-1 1-1h2V2h-3c-3 0-4 2-4 4.3V8H8v3.5h2V22h4V11.5h2.8L17 8h-3z"/></svg></a>

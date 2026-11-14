@@ -17,7 +17,7 @@
 <meta name="geo.region" content="IS">
 <meta name="geo.placename" content="Iceland">
 <meta property="og:locale" content="is_IS">
-<meta name="robots" content="noindex,follow">
+<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -303,22 +303,42 @@ background:linear-gradient(180deg,rgba(255,255,255,.5),rgba(255,255,255,0));}
 <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(24px,4vw,34px);font-weight:700;color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.7);line-height:1.2">Google Pay í spilavítum</span>
 <span style="font-size:17px;color:#fff;opacity:.9;margin-top:8px;text-shadow:0 1px 8px rgba(0,0,0,.7)">Greiðslumáti</span>
 </div></div>
-<p>Notkun Google Pay á netspilavítum.</p>
-<h2>Hvernig það virkar</h2>
-<p>Íslenskir bankar loka á greiðslur til netspilavíta. Dulritunargjaldmiðlar eru besta leiðin til að komast framhjá þessum takmörkunum. Færslur eru hraðar, nafnlausar og gjaldfrjálsar.</p>
-<h3>Skref-fyrir-skref leiðbeiningar</h3>
+
+<p>Google Pay gegnir sama hlutverki fyrir Android og <a href="/greidslur/apple-pay-i-spilavitum/">Apple Pay</a> fyrir iPhone — og þó er ekki rétt að afgreiða hann sem afrit. Kerfin tvö taka ólíkar leiðir að sama markmiði, og munurinn skýrir hvers vegna Google Pay sést í öðrum innlagnargluggum en keppinauturinn.</p>
+
+<h2>Hvað gerist undir húddinu</h2>
+<p>Við greiðslu sendir Google Pay sýndarkortanúmer (token) í stað raunverulega kortsins, varið með skjálæsingu eða fingrafari símans. Spilavítið geymir aldrei sextán stafa númerið þitt — sami grundvallarávinningur og hjá Apple: lekavörn. Google-útgáfan er þó opnari í útfærslu; hún virkar í Chrome á hvaða stýrikerfi sem er og krefst ekki tiltekins vafra eins og Apple-lausnin gerir, sem í praxís þýðir að Android-notandi rekst sjaldnar á „leiðin sést ekki hjá mér"-vandann.</p>
+
+<h2>Hverju leiðin breytir — og hverju ekki</h2>
+<table>
+<tr><th>Atriði</th><th>Niðurstaða</th></tr>
+<tr><td>Öryggi kortaupplýsinga</td><td>Batnar — token í stað kortanúmers</td></tr>
+<tr><td>Hraði innlagnar</td><td>Sekúndur, engin innsláttur</td></tr>
+<tr><td>Höfnun íslenskra korta á 7995-færslum</td><td><strong>Óbreytt</strong> — ákvörðunin liggur hjá kortaútgefanda</td></tr>
+<tr><td>Úttektir</td><td>Ekki studdar — veldu aðra leið út</td></tr>
+<tr><td>Gjald frá Google</td><td>Ekkert</td></tr>
+</table>
+<p>Feitletraða línan er sú sem veldur vonbrigðum: tókngreiðslan ber áfram fjárhættuspilakóðann, og kort sem bankinn stoppar á spilavítum stoppar líka í Google Pay umbúðunum. Lausnirnar á þeim vanda eru raktar í <a href="/greidslur/mastercard-i-spilavitum/">kortaumfjöllununum</a>.</p>
+
+<h2>Uppsetningin tekur tvær mínútur</h2>
 <ol>
-<li>Búðu til veski (MetaMask, Trust Wallet eða Binance)</li>
-<li>Keyptu dulritunargjaldmiðil á kauphöll</li>
-<li>Sendu fjármuni til spilavítisins</li>
-<li>Spilaðu og dragðu vinninga aftur í veskið þitt</li>
+<li>Settu kort í Google Wallet appið — íslensku bankarnir styðja þjónustuna.</li>
+<li>Opnaðu innlagnarglugga spilavítisins í símanum; Google Pay birtist þar sem síðan styður leiðina.</li>
+<li>Veldu upphæð, staðfestu með fingrafari eða læsingu. Búið.</li>
 </ol>
-<h3>Mælt með spilavítum</h3>
-<ul>
-<li><a href="/spilaviti/bitstarz/">BitStarz</a> — tafarlausar dulritunarútborganir</li>
-<li><a href="/spilaviti/stake/">Stake</a> — styður 20+ dulritunargjaldmiðla</li>
-</ul>
+
+<h2>Hvar leiðin sést</h2>
+<p>Framboðið fylgir sama munstri og hjá Apple: síður með hefðbundna kortainnviði bjóða Google Pay helst, hreinar rafmyntasíður síður. Og eins og þar gildir: leiðin birtist aðeins í umhverfi sem styður hana — athugaðu í Android-símanum eða Chrome áður en þú ályktar að síðan bjóði hana ekki.</p>
+
+<h2>Algengar spurningar</h2>
+<h3>Google Pay eða rafveski eins og Skrill?</h3>
+<p>Ólík verkfæri: Google Pay er öruggari framsetning á kortinu þínu — sama fé, sama bankasamband. <a href="/greidslur/skrill-i-spilavitum/">Rafveskið</a> er sjálfstæður milliliður með eigin inneign og eigin úttektarleið. Höfnunarvandinn hverfur aðeins með milliliðsleiðinni eða rafmynt.</p>
+<h3>Virkar þetta á iPhone?</h3>
+<p>Google Pay appið er til fyrir iOS en greiðsluflæðið í vafra tengist þar Apple-kerfinu. Í praxís: iPhone-notendur nota Apple Pay, Android-notendur Google Pay — síðurnar birta hvorn hnapp í sínu umhverfi.</p>
+<h3>Sér Google hvað ég spila?</h3>
+<p>Google sér færsluna eins og kortaútgefandinn sér hana — söluaðila og upphæð. Spilavirknin sjálf, leikir og vinningar, fer aldrei um greiðslukerfið. Sá sem vill færsluna líka úr augsýn bankans notar <a href="/greidslur/bitcoin/">rafmyntaleiðina</a>.</p>
 <div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="sponsored noopener" class="cta-btn">Spila á Slotoro →</a></div>
+
 <div class="share" aria-label="Deila">
 <span class="share-label">Deila:</span>
 <a class="s-fb" data-net="fb" href="#" target="_blank" rel="noopener" aria-label="Deila á Facebook"><svg viewBox="0 0 24 24"><path d="M14 8V6.5c0-.7.5-1 1-1h2V2h-3c-3 0-4 2-4 4.3V8H8v3.5h2V22h4V11.5h2.8L17 8h-3z"/></svg></a>

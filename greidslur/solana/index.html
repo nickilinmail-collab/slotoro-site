@@ -17,7 +17,7 @@
 <meta name="geo.region" content="IS">
 <meta name="geo.placename" content="Iceland">
 <meta property="og:locale" content="is_IS">
-<meta name="robots" content="noindex,follow">
+<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -303,22 +303,38 @@ background:linear-gradient(180deg,rgba(255,255,255,.5),rgba(255,255,255,0));}
 <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(24px,4vw,34px);font-weight:700;color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.7);line-height:1.2">Solana (SOL) í spilavítum</span>
 <span style="font-size:17px;color:#fff;opacity:.9;margin-top:8px;text-shadow:0 1px 8px rgba(0,0,0,.7)">Greiðslumáti</span>
 </div></div>
-<p>Solana (SOL) fyrir ofurhraðar spilavítafærslur með nánast engum gjöldum.</p>
-<h2>Hvernig það virkar</h2>
-<p>Íslenskir bankar loka á greiðslur til netspilavíta. Dulritunargjaldmiðlar eru besta leiðin til að komast framhjá þessum takmörkunum. Færslur eru hraðar, nafnlausar og gjaldfrjálsar.</p>
-<h3>Skref-fyrir-skref leiðbeiningar</h3>
-<ol>
-<li>Búðu til veski (MetaMask, Trust Wallet eða Binance)</li>
-<li>Keyptu dulritunargjaldmiðil á kauphöll</li>
-<li>Sendu fjármuni til spilavítisins</li>
-<li>Spilaðu og dragðu vinninga aftur í veskið þitt</li>
-</ol>
-<h3>Mælt með spilavítum</h3>
-<ul>
-<li><a href="/spilaviti/bitstarz/">BitStarz</a> — tafarlausar dulritunarútborganir</li>
-<li><a href="/spilaviti/stake/">Stake</a> — styður 20+ dulritunargjaldmiðla</li>
-</ul>
+
+<p>Solana er hraðskreiðasta greiðslunetið sem spilavíti styðja almennt: færsla er staðfest á sekúndum og kostar minna en krónu. Fyrir óþolinmóða spilarann er SOL nálægt því að vera fullkomið innlagnarverkfæri — með tveimur fyrirvörum sem heiðarleg umfjöllun verður að nefna.</p>
+
+<h2>Hraðinn í samhengi</h2>
+<table>
+<tr><th>Net</th><th>Tími að nothæfri innlögn</th><th>Gjald</th></tr>
+<tr><td>Solana</td><td>Sekúndur</td><td>&lt; 1 kr.</td></tr>
+<tr><td><a href="/greidslur/ethereum/">Ethereum</a></td><td>1–3 mín</td><td>Sveiflast, $1–15</td></tr>
+<tr><td><a href="/greidslur/litecoin/">Litecoin</a></td><td>~8 mín</td><td>&lt; $0,10</td></tr>
+<tr><td><a href="/greidslur/bitcoin/">Bitcoin</a></td><td>30–60 mín</td><td>$1–5</td></tr>
+</table>
+<p>Í úttektarátt er munurinn enn áþreifanlegri: samþykki spilavítið úttektina er SOL-greiðslan komin í veskið þitt áður en þú nærð að endurhlaða síðuna.</p>
+
+<h2>Fyrirvararnir tveir</h2>
+<p><strong>Rekstrarsagan.</strong> Solana-netið stöðvaðist nokkrum sinnum á fyrri árum sínum — klukkustunda útföll þar sem engin færsla komst í gegn. Stöðugleikinn hefur batnað verulega, en „hraðasta netið" hefur keypt hraðann með flóknari innviðum en gömlu, hægu netin. Fyrir spilainnlagnir er áhættan léttvæg (færslan bíður bara); fyrir þann sem ætlar að taka út á ákveðinni mínútu er hún þess virði að vita af.</p>
+<p><strong>Stuðningsbreiddin.</strong> SOL er enn ekki alls staðar — hluti spilavíta styður aðeins gömlu stórmyntirnar. Athugaðu innlagnarglugga síðunnar áður en þú kaupir myntina sérstaklega fyrir spilun.</p>
+
+<h2>USDT á Solana-netinu: földu samlegðaráhrifin</h2>
+<p>Þar sem spilavíti býður USDT á SPL-neti (Solana) færðu hvort tveggja í einu: verðfestu dollarsins og sekúnduhraða netsins, með gjaldi sem mælist í aurum. Þessi samsetning er hljóðlega orðin besta innlagnarleið markaðarins þar sem hún stendur til boða — smáatriðin um netaval eru í <a href="/greidslur/usdt/">USDT-umfjölluninni</a>.</p>
+
+<h2>Hvar SOL virkar</h2>
+<p><a href="/spilaviti/stake/">Stake</a> og <a href="/spilaviti/bc-game/">BC.Game</a> styðja bæði SOL beint; <a href="/spilaviti/slotoro/">Slotoro</a> tekur við myntinni gegnum innbyggða skiptivirkni. Fullur samanburður í <a href="/spilaviti/crypto-spilaviti/">rafmyntayfirlitinu</a>.</p>
+
+<h2>Algengar spurningar</h2>
+<h3>Þarf ég sérstakt veski fyrir Solana?</h3>
+<p>Kauphallaleiðin þarf ekkert auka — Kraken og Binance höndla SOL eins og hverja mynt. Eigið veski fyrir Solana-vistkerfið (t.d. Phantom) er aðeins þarft ef þú ætlar lengra en innlagnir, t.d. í SPL-token.</p>
+<h3>Get ég sent SOL af Ethereum-fangi?</h3>
+<p>Nei — Solana er sjálfstætt net með eigið fangasnið (base58, engin 0x-forskeyti). „Wrapped SOL" á öðrum netum er annar hlutur og spilavíti taka ekki við honum. Sama regla og alltaf: netið hjá sendanda og móttakanda verður að vera það sama.</p>
+<h3>Af hverju er gjaldið svona lágt — er einhver galli?</h3>
+<p>Netið vinnur færslur samhliða í stað þess að raða þeim í eina biðröð; afkastagetan heldur gjaldinu niðri. Gallinn er ekki falinn kostnaður heldur fyrirvararnir að ofan: yngri innviðir, mjórri stuðningur.</p>
 <div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="sponsored noopener" class="cta-btn">Spila á Slotoro →</a></div>
+
 <div class="share" aria-label="Deila">
 <span class="share-label">Deila:</span>
 <a class="s-fb" data-net="fb" href="#" target="_blank" rel="noopener" aria-label="Deila á Facebook"><svg viewBox="0 0 24 24"><path d="M14 8V6.5c0-.7.5-1 1-1h2V2h-3c-3 0-4 2-4 4.3V8H8v3.5h2V22h4V11.5h2.8L17 8h-3z"/></svg></a>
