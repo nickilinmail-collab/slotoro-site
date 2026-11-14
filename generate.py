@@ -2446,6 +2446,298 @@ seo_pages = [
 <p>Raunveruleg þýðing er slétt og eðlileg. Google Translate-þýðing hefur oft skringilegar setningar og vandamál með séríslensk orð (þ, ð, æ). Epicbet og Respin nota fagþýðingar — ekki sjálfvirka þýðingu.</p>
 <div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Sjá spilavíti á íslensku →</a></div>'''
     },
+    {
+        "slug": "hvernig-a-ad-velja-spilaviti-island",
+        "title": "Hvernig á að velja spilavíti á Íslandi — leiðarvísir fyrir byrjendur 2026",
+        "desc": "Skref-fyrir-skref leiðarvísir til að velja netspilavíti á Íslandi. Leyfi, bónusar, greiðslur, öryggi og hvað þarf að varast.",
+        "emoji": "🎯",
+        "colors": ("#0d1926", "#1a324c", "#274b72"),
+        "content": f'''<h1>Hvernig á að velja spilavíti á Íslandi — leiðarvísir 2026</h1>
+{{hero}}
+<p>Það eru hundruð netspilavíta sem taka við íslenskum spilurum. <strong>Hvernig veistu hvert er rétt fyrir þig?</strong> Þessi leiðarvísir fer yfir allt sem þú þarft að vita áður en þú skráir þig — frá leyfum og bónusum til greiðslna og öryggis.</p>
+
+<h2>Skref 1 — Athugaðu leyfið</h2>
+<p>Leyfið er fyrsta og mikilvægasta atriðið. Spilavíti með gilt leyfi er skylt að:</p>
+<ul>
+<li>Nota sanngjarna <a href="{URL_BASE}leidbeiningar/hvernig-rng-virkar/">slembitölugjafa (RNG)</a> sem eru óháð prófaðir</li>
+<li>Greiða út vinninga innan ákveðins tíma</li>
+<li>Bjóða <a href="{URL_BASE}leidbeiningar/sjalfsutilokun-spilavita/">sjálfsútilokunarverkfæri</a></li>
+<li>Vernda persónuupplýsingar þínar</li>
+</ul>
+<p>Algeng leyfi sem íslenskir spilarar sjá:</p>
+<table class="info-table"><thead><tr><th>Leyfi</th><th>Útgefandi</th><th>Traust</th><th>Dæmi um spilavíti</th></tr></thead><tbody>
+<tr><td>MGA</td><td>Malta Gaming Authority</td><td>⭐⭐⭐⭐⭐ Hæst</td><td><a href="{URL_BASE}spilaviti/tonybet/">TonyBet</a></td></tr>
+<tr><td>UKGC</td><td>UK Gambling Commission</td><td>⭐⭐⭐⭐⭐ Hæst</td><td>—</td></tr>
+<tr><td>Curaçao</td><td>Curaçao eGaming</td><td>⭐⭐⭐ Miðlungs</td><td><a href="{URL_BASE}spilaviti/bitstarz/">BitStarz</a>, <a href="{URL_BASE}spilaviti/stake/">Stake</a></td></tr>
+<tr><td>Eistland</td><td>Tax and Customs Board</td><td>⭐⭐⭐⭐ Gott (EES)</td><td><a href="{URL_BASE}spilaviti/tonybet/">TonyBet</a></td></tr>
+</tbody></table>
+<p><a href="{URL_BASE}leidbeiningar/hvernig-a-ad-stadfesta-spilavitaleyfi/">Hvernig á að staðfesta spilavítileyfi — ítarleg leiðbeining →</a></p>
+
+<h2>Skref 2 — Skoðaðu greiðsluleiðir</h2>
+<p>Á Íslandi eru greiðslur stærsta vandamálið. <a href="{URL_BASE}leidbeiningar/islenskir-bankar-spilaviti/">Íslenskir bankar loka stundum á kortagreiðslur</a> til spilavíta. Veldu spilavíti sem styður margar greiðsluleiðir:</p>
+<ul>
+<li>✅ <strong>Dulritunargjaldmiðlar</strong> — Áreiðanlegast. <a href="{URL_BASE}leidbeiningar/kaupa-bitcoin-island/">Hvernig á að kaupa Bitcoin →</a></li>
+<li>✅ <strong>Rafræn veski</strong> — <a href="{URL_BASE}greidslur/skrill-i-spilavitum/">Skrill</a>, <a href="{URL_BASE}greidslur/neteller-i-spilavitum/">Neteller</a></li>
+<li>⚠️ <strong>Visa/Mastercard</strong> — Virkar stundum. <a href="{URL_BASE}leidbeiningar/spilaviti-sem-tekur-vid-islenskum-kortum/">Sjá stöðu íslenskra korta →</a></li>
+<li>✅ <strong>PIQ</strong> — <a href="{URL_BASE}leidbeiningar/piq-greidslur-island/">Sérhannað fyrir Ísland</a></li>
+</ul>
+
+<h2>Skref 3 — Berðu saman bónusa</h2>
+<p>Velkomstbónus hljómar oft vel — en smáa letrið skiptir máli. Athugaðu alltaf:</p>
+<ul>
+<li><strong>Veðskilyrði (wagering)</strong> — 30x þýðir að þú verður að veðja 30 sinnum bónusupphæðinni. <a href="{URL_BASE}leidbeiningar/hvad-eru-vedskilyrdi/">Hvað eru veðskilyrði? →</a></li>
+<li><strong>Hámarksveðmál</strong> — Yfirleitt €5 á snúning meðan bónus er virkur</li>
+<li><strong>Tímamörk</strong> — 7-30 dagar til að uppfylla veðskilyrði</li>
+<li><strong>Leikjaþyngd</strong> — Spilakassar telja yfirleitt 100%, borðleikir 10-20%</li>
+</ul>
+<table class="info-table"><thead><tr><th>Spilavíti</th><th>Bónus</th><th>Veðskilyrði</th><th>Mat</th></tr></thead><tbody>
+<tr><td><a href="{URL_BASE}spilaviti/epicbet/">Epicbet</a></td><td>100% allt að €500</td><td>Veðlaust (0x)</td><td>⭐⭐⭐⭐⭐</td></tr>
+<tr><td><a href="{URL_BASE}spilaviti/respin/">Respin</a></td><td>200% + 50 FS</td><td>Veðlaust (0x)</td><td>⭐⭐⭐⭐⭐</td></tr>
+<tr><td><a href="{URL_BASE}spilaviti/bitstarz/">BitStarz</a></td><td>5 BTC + 200 FS</td><td>40x</td><td>⭐⭐⭐⭐</td></tr>
+<tr><td><a href="{URL_BASE}spilaviti/slotoro/">Slotoro</a></td><td>Velkomstpakki</td><td>40x</td><td>⭐⭐⭐⭐</td></tr>
+<tr><td><a href="{URL_BASE}spilaviti/stake/">Stake</a></td><td>200% + VIP</td><td>Engin</td><td>⭐⭐⭐⭐</td></tr>
+</tbody></table>
+<p><a href="{URL_BASE}leidbeiningar/samanburdur-a-bonusum-spilavita/">Samanburður á bónusum — yfirlit →</a></p>
+
+<h2>Skref 4 — Skoðaðu leikjaúrvalið</h2>
+<p>Veldu spilavíti eftir því hvað þú vilt spila:</p>
+<ul>
+<li><strong>Spilakassar?</strong> — Skoðaðu fjölda framleiðenda. <a href="{URL_BASE}spilaviti/slotoro/">Slotoro</a> er með 71 framleiðendur og 8.000+ leiki</li>
+<li><strong>Lifandi spilavíti?</strong> — <a href="{URL_BASE}live/">Evolution og Pragmatic Play</a> eru best. <a href="{URL_BASE}spilaviti/tonybet/">TonyBet</a> sker sig úr</li>
+<li><strong>Borðleikir?</strong> — <a href="{URL_BASE}leidbeiningar/blackjack-adferdir/">Blackjack</a> og <a href="{URL_BASE}leidbeiningar/rulettu-reglur/">rúlletta</a> eru í boði á öllum spilavítum</li>
+<li><strong>Crash-leikir?</strong> — <a href="{URL_BASE}spilaviti/bc-game/">BC.Game</a> og <a href="{URL_BASE}spilaviti/stake/">Stake</a> eru sterkastir</li>
+</ul>
+
+<h2>Skref 5 — Athugaðu úttektarhraða</h2>
+<p>Enginn vill bíða vikur eftir vinningum. Athugaðu:</p>
+<ul>
+<li>Dulritunar-úttektir: 0-24 klst (hraðast)</li>
+<li>E-wallet úttektir: 0-48 klst</li>
+<li>Korta-úttektir: 1-5 virka dagar</li>
+<li>Bankamillifærsla: 3-7 virka dagar</li>
+</ul>
+<p><a href="{URL_BASE}leidbeiningar/hrod-utborgun-spilaviti/">Spilavíti með hraðri útborgun — listi →</a></p>
+
+<h2>Skref 6 — Prófaðu spilavítið</h2>
+<p>Áður en þú leggur inn stóra upphæð skaltu:</p>
+<ol>
+<li><a href="{URL_BASE}leidbeiningar/okeypis-spilaviti-island/">Prófa leiki í demo-ham</a> — skildu hvernig þeir virka</li>
+<li>Leggja inn lágmarksupphæð (€10) og prófa greiðsluferlið</li>
+<li>Prófa þjónustuver — sendu skilaboð og sjáðu hversu hratt þeir svara</li>
+<li>Prófaðu úttekt — tryggðu að þú getir tekið peninga út án vandræða</li>
+</ol>
+
+<h2>Algengar spurningar</h2>
+<h3>Hvert spilavíti er best fyrir byrjendur á Íslandi?</h3>
+<p><a href="{URL_BASE}spilaviti/epicbet/">Epicbet</a> er besti kosturinn fyrir byrjendur: íslensku viðmót, veðlaus bónusar (þú þarft ekki skilja flókin veðskilyrði), Apple Pay stuðningur og PIQ greiðslur.</p>
+<h3>Hversu mikla peninga þarf ég til að byrja?</h3>
+<p>Lágmarksinnborgun á flestum spilavítum er €10 (um 1.500 ISK). Við mælum með að byrja lítið og setja takmörk á innborgunum í stillingum spilavítisins.</p>
+<h3>Er öruggt að spila á netspilavíti frá Íslandi?</h3>
+<p>Já — ef spilavítið er með gilt leyfi og þú notar örugga greiðsluleið. <a href="{URL_BASE}leidbeiningar/einkenni-sanngjarns-spilavitis/">Sjá einkenni sanngjarns spilavítis →</a></p>
+<h3>Get ég spilað á farsímanum?</h3>
+<p>Já — öll nútíma netspilavíti eru farsímavinveitt. Sum bjóða sérstök app (sértaklega Android) en flest virka beint í vafranum. <a href="{URL_BASE}spilaviti/farsimaspilaviti/">Sjá farsímaspilavíti →</a></p>
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Finna spilavíti →</a></div>'''
+    },
+    {
+        "slug": "epicbet-vs-respin",
+        "title": "Epicbet vs Respin — samanburður íslensku spilavítanna 2026",
+        "desc": "Ítarlegur samanburður á Epicbet og Respin: bónusar, leikir, greiðsluleiðir, þjónustuver og hvort hentar betur á Íslandi.",
+        "emoji": "⚔️",
+        "colors": ("#1a0f28", "#2d1a45", "#402562"),
+        "content": f'''<h1>Epicbet vs Respin — samanburður 2026</h1>
+{{hero}}
+<p>Epicbet og Respin eru <strong>einu netspilavítin með fullkomnu íslensku viðmóti</strong>. Bæði eru rekin af sama fyrirtæki (Ducks In A Row OÜ) og deila sumum eiginleikum — en eru samt ólík. Hér berum við þau saman, punkt fyrir punkt.</p>
+
+<h2>Yfirlit</h2>
+<table class="info-table"><thead><tr><th>Þáttur</th><th>Epicbet</th><th>Respin</th></tr></thead><tbody>
+<tr><td>Stofnár</td><td>2024</td><td>2024</td></tr>
+<tr><td>Eigandi</td><td>Ducks In A Row OÜ</td><td>Ducks In A Row OÜ</td></tr>
+<tr><td>Leyfi</td><td>Curaçao</td><td>Curaçao</td></tr>
+<tr><td>Íslensku viðmót</td><td>✅ Alveg</td><td>✅ Alveg</td></tr>
+<tr><td>Þjónustuver á íslensku</td><td>✅ Já</td><td>✅ Já</td></tr>
+<tr><td>Velkomstbónus</td><td>100% allt að €500</td><td>200% + 50 FS</td></tr>
+<tr><td>Veðskilyrði</td><td>0x (veðlaust)</td><td>0x (veðlaust)</td></tr>
+<tr><td>PIQ greiðslur</td><td>✅ Já</td><td>✅ Já</td></tr>
+<tr><td>Apple Pay</td><td>✅ Já</td><td>⚠️ Óstaðfest</td></tr>
+<tr><td>Dulritunargjaldmiðlar</td><td>✅ BTC, ETH, LTC, DOGE+</td><td>✅ BTC, ETH, LTC, DOGE+</td></tr>
+<tr><td>Leikjaúrval</td><td>Spilakassar + lifandi + íþróttir</td><td>Spilakassar + lifandi</td></tr>
+<tr><td>Íþróttaveðmál</td><td>✅ Já</td><td>❌ Nei</td></tr>
+<tr><td>Vikuleg endurgreiðsla</td><td>✅ Já</td><td>✅ Já</td></tr>
+</tbody></table>
+
+<h2>Bónusar</h2>
+<h3>Epicbet: 100% allt að €500</h3>
+<p>Epicbet býður 100% samsvörunarbónus á fyrstu innborgun — leggðu inn €100, spilaðu með €200. Hámark €500. <strong>Veðskilyrði: 0x</strong> — þetta er sjaldgæft og þýðir að þú þarft ekki að veðja bónusnum ákveðið oft. Vinningar frá bónus eru þínir strax.</p>
+
+<h3>Respin: 200% + 50 frísnúningar</h3>
+<p>Respin býður hærri hlutfall — 200% samsvörun. Leggðu inn €100, spilaðu með €300. Auk þess færðu 50 frísnúninga. <strong>Veðskilyrði: líka 0x.</strong> Í tölum er Respin bónusinn stærri — en hámarksupphæðin fer eftir innborgun.</p>
+
+<p><strong>Sigurvegari í bónusum:</strong> Respin — hærra hlutfall (200% vs 100%) og frísnúningar ofan á.</p>
+
+<h2>Greiðsluleiðir</h2>
+<p>Bæði spilavítin styðja <a href="{URL_BASE}leidbeiningar/piq-greidslur-island/">PIQ greiðslur</a> sem eru sérstaklega hannaðar fyrir Ísland. Bæði taka við dulritunargjaldmiðlum (BTC, ETH, LTC, DOGE og fleira). Epicbet hefur staðfestan stuðning við Apple Pay sem getur verið kostur ef íslenskt bankakort virkar ekki.</p>
+<p><strong>Sigurvegari í greiðslum:</strong> Jafnt — báðir styðja PIQ og dulritunargjaldmiðla. Epicbet fær smá forskot vegna Apple Pay.</p>
+
+<h2>Leikjaúrval</h2>
+<p>Bæði spilavítin bjóða stórt úrval spilakassa frá sömu framleiðendum: Pragmatic Play, Evolution, Play'n GO, NetEnt, Hacksaw Gaming og fleiri. Lifandi spilavíti er í boði á báðum.</p>
+<p>Stóri munurinn: <strong>Epicbet bíður íþróttaveðmál</strong> — fótbolti, körfubolti, handbolti og fleira. Respin er eingöngu spilavíti.</p>
+<p><strong>Sigurvegari í leikjum:</strong> Epicbet — ef þú vilt veðja á íþróttir. Ef þú vilt bara spilakassa og lifandi borð er þetta jafnt.</p>
+
+<h2>Upplifun og viðmót</h2>
+<p>Bæði spilavítin hafa hreint, nútímalegt viðmót á íslensku. Epicbet er aðeins meira „sports-focused" í útliti meðan Respin einbeitir sér að spilavítisupplifuninni. Farsímaupplifun er góð á báðum.</p>
+
+<h2>Hvort á ég að velja?</h2>
+<div class="info-box"><p><strong>Veldu Epicbet ef:</strong> Þú vilt veðja á íþróttir OG spila spilavíti á sama stað. Þú vilt nota Apple Pay. Þú vilt allt-í-einu síðu.</p></div>
+<div class="info-box"><p><strong>Veldu Respin ef:</strong> Þú vilt einbeita þér að spilakössum og lifandi spilavíti. Þú vilt hærri velkomstbónus (200% vs 100%). Þú vilt vikulega endurgreiðslu sem aðalatriði.</p></div>
+<div class="info-box"><p><strong>Eða — prófaðu bæði:</strong> Þar sem bæði bjóða veðlausa bónusa getur þú skráð þig á bæði og ákveðið sjálfur hvert hentar betur. Engin áhætta.</p></div>
+
+<h2>Algengar spurningar</h2>
+<h3>Eru Epicbet og Respin í eigu sama fyrirtækis?</h3>
+<p>Já — bæði eru rekin af Ducks In A Row OÜ. Þau deila sumum tæknilegum innviðum en eru sjálfstæð spilavíti með mismunandi bónusa og leikjaúrval.</p>
+<h3>Get ég verið skráður á bæði?</h3>
+<p>Já — engin regla bannar það. Þú getur haft reikning á báðum og nýtt þér velkomstbónus á hvoru tveggja.</p>
+<h3>Hvort er betra fyrir íslenskt bankakort?</h3>
+<p>Báðir styðja PIQ sem virkar vel frá Íslandi. Ef bankakort virkar ekki skaltu nota dulritunargjaldmiðla eða <a href="{URL_BASE}leidbeiningar/revolut-spilaviti-island/">Revolut</a> — virkar eins á báðum.</p>
+<h3>Hvort er betra fyrir byrjendur?</h3>
+<p>Epicbet — einfaldara viðmót, Apple Pay stuðningur og allt á íslensku. Respin er líka gott en Epicbet er aðeins auðveldara í notkun.</p>
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Prófa Slotoro →</a></div>'''
+    },
+    {
+        "slug": "hversu-mikid-kostar-ad-spila",
+        "title": "Hversu mikið kostar að spila á spilavíti? Kostnaðarleiðarvísir 2026",
+        "desc": "Raunhæfur kostnaðarleiðarvísir: lágmarksinnborganir, meðaltap, gjöld og hvernig á að stjórna peningum í spilavíti.",
+        "emoji": "💰",
+        "colors": ("#1a1a0a", "#33331a", "#4d4d28"),
+        "content": f'''<h1>Hversu mikið kostar að spila á spilavíti? 2026</h1>
+{{hero}}
+<p>Þetta er ein af þeim spurningum sem fáar casino-síður svara heiðarlega. <strong>Við ætlum að gera það.</strong> Hér eru raunverulegar tölur — ekki markaðssetning.</p>
+
+<h2>Lágmarkskostnaður til að byrja</h2>
+<table class="info-table"><thead><tr><th>Liður</th><th>Kostnaður</th><th>Athugasemd</th></tr></thead><tbody>
+<tr><td>Lágmarksinnborgun</td><td>€10 (ca. 1.500 ISK)</td><td>Flest spilavíti. Sum leyfa €1-5</td></tr>
+<tr><td>Gjald fyrir innborgun (kort)</td><td>0-3%</td><td>Fer eftir banka og spilavíti</td></tr>
+<tr><td>Gjald fyrir innborgun (dulritun)</td><td>$0.5-5</td><td>Fer eftir neti (TRC-20 er ódýrast)</td></tr>
+<tr><td>Gjald fyrir úttekt</td><td>Yfirleitt €0</td><td>Flest spilavíti rukka ekki fyrir úttektir</td></tr>
+<tr><td>Gjaldmiðlaskipti ISK→EUR</td><td>1-2%</td><td>Bankinn rukkar — forðist með dulritunargjaldmiðlum</td></tr>
+</tbody></table>
+<p><strong>Raunverulegur byrjunarkostnaður: €10-15</strong> (um 1.500-2.300 ISK) ef þú notar dulritunargjaldmiðla eða PIQ. Aðeins meira ef þú notar bankakort vegna gjaldmiðlaskipta.</p>
+
+<h2>Hversu miklu tapar meðalspilarinn?</h2>
+<p>Þetta er mikilvægt að skilja: <strong>spilavíti er skemmtun, ekki tekjuleið.</strong> Húsforskotið (house edge) þýðir að spilavítið vinnur alltaf til lengri tíma.</p>
+<table class="info-table"><thead><tr><th>Leikur</th><th>RTP</th><th>Húsforskot</th><th>Meðaltap á €100</th></tr></thead><tbody>
+<tr><td>Spilakassar (meðal)</td><td>96%</td><td>4%</td><td>€4</td></tr>
+<tr><td>Blackjack (grunn)</td><td>99.5%</td><td>0.5%</td><td>€0.50</td></tr>
+<tr><td>Rúlletta (evrópsk)</td><td>97.3%</td><td>2.7%</td><td>€2.70</td></tr>
+<tr><td>Baccarat</td><td>98.9%</td><td>1.1%</td><td>€1.10</td></tr>
+<tr><td>Crash-leikir</td><td>95-97%</td><td>3-5%</td><td>€3-5</td></tr>
+</tbody></table>
+<p><em>Þetta er tölfræðilegt meðaltal yfir þúsundir snúninga. Á stuttum tíma geturðu unnið miklu meira eða tapað miklu meira.</em></p>
+<p><a href="{URL_BASE}leidbeiningar/hvad-er-rtp/">Hvað er RTP og hvers vegna skiptir það máli? →</a></p>
+
+<h2>Dæmi um mánaðarlegan kostnað</h2>
+<table class="info-table"><thead><tr><th>Spilastíll</th><th>Vikuleg innborgun</th><th>Mánaðarkostnaður</th><th>Meðaltap (v/ 96% RTP)</th></tr></thead><tbody>
+<tr><td>Frjálslegur (casual)</td><td>€10-20</td><td>€40-80</td><td>€1.60-3.20</td></tr>
+<tr><td>Virkur spilari</td><td>€50-100</td><td>€200-400</td><td>€8-16</td></tr>
+<tr><td>Háspilari</td><td>€200+</td><td>€800+</td><td>€32+</td></tr>
+</tbody></table>
+<p><strong>Mikilvægt:</strong> Þessar tölur eru meðaltap. Þú getur tapað öllu á einni lotu eða unnið stórt. Spilavíti er ófyrirsjáanlegt — og þess vegna er <a href="{URL_BASE}leidbeiningar/bankastjornunaradferdir/">peningastjórnun</a> svo mikilvæg.</p>
+
+<h2>Hvernig á að stjórna kostnaði</h2>
+<ol>
+<li><strong>Settu mánaðarlegt hámark</strong> — Ákveddu upphæð sem þú hefur efni á að tapa. Aldrei meira. Allir góðir spilarar gera þetta.</li>
+<li><strong>Notaðu innborgunartakmörk</strong> — Öll spilavíti bjóða þetta í stillingum. Settu vikutakmörk og þá geturðu ekki lagt inn meira þótt þú viljir.</li>
+<li><strong>Aldrei elta tap</strong> — Ef þú tapar €50 er lausnin ekki að leggja inn €100 til að vinna þau til baka. <a href="{URL_BASE}leidbeiningar/salfraedi-fjarhaettuspila/">Lesa um sálfræði fjárhættuspila →</a></li>
+<li><strong>Taktu hlé</strong> — Ef þú hefur spilað í 2+ tíma án hléa er kominn tími til að hætta. Þreyttur spilari tekur verri ákvarðanir.</li>
+<li><strong>Drekk ekki og spilaðu</strong> — Áfengi skerðir dómgreind. Þetta á við hvort sem þú spilar í spilavíti eða heima.</li>
+</ol>
+<p><a href="{URL_BASE}leidbeiningar/spila-af-abyrgd/">Spila af ábyrgð — ítarlegur leiðarvísir →</a></p>
+
+<h2>Falinn kostnaður sem margir gleyma</h2>
+<ul>
+<li><strong>Gjaldmiðlaskipti</strong> — Íslenskir bankar taka 1-2% fyrir ISK→EUR skipti. Á ári getur þetta orðið umtalsvert.</li>
+<li><strong>Bónusveðskilyrði</strong> — Ef þú tekur á móti 100% bónus með 40x veðskilyrðum og tapar meðan þú uppfyllir þau hefur bónusinn í raun kostað þig peninga. <a href="{URL_BASE}leidbeiningar/hvad-eru-vedskilyrdi/">Lesa meira →</a></li>
+<li><strong>Tími</strong> — Tíminn sem þú eyðir í að spila hefur tækifæriskostnað. Líttu á spilun sem skemmtun — ekki vinnu.</li>
+</ul>
+
+<h2>Algengar spurningar</h2>
+<h3>Er hægt að spila alvöru peninga með €10?</h3>
+<p>Já — €10 er lágmarksinnborgun á flestum spilavítum. Á €0.20 spilakassa á snúning nærðu 50 snúningum. Ekki mikið, en nóg til að prófa og hafa gaman.</p>
+<h3>Þarf ég að borga skatt af vinningum?</h3>
+<p>Á Íslandi eru fjárhættuspilavinningar yfirleitt ekki skattskyldir fyrir einstaklinga. Hins vegar ef spilun er tekjulind getur verið öðruvísi. <a href="{URL_BASE}leidbeiningar/skattar-spilavinningar-island/">Sjá skattaupplýsingar →</a></p>
+<h3>Hvað ef ég er kominn yfir mörkin?</h3>
+<p>Ef þú finnur að þú spilar meira en þú hefur efni á, hafðu samband við <strong>hjálparsíma 1717</strong> (opinn 24/7) eða skoðaðu <a href="{URL_BASE}leidbeiningar/studningssidur-vid-spilafikn/">stuðningssíður →</a></p>
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Byrja að spila →</a></div>'''
+    },
+    {
+        "slug": "spilaviti-fyrir-farsima-island",
+        "title": "Spilavíti fyrir farsíma á Íslandi — bestu farsímaspilavítin 2026",
+        "desc": "Bestu netspilavítin fyrir iPhone og Android á Íslandi. Hraði, leikjaúrval, greiðsluleiðir og hvort þarf app eða vafra.",
+        "emoji": "📱",
+        "colors": ("#0a1a28", "#14334f", "#1e4c76"),
+        "content": f'''<h1>Spilavíti fyrir farsíma á Íslandi 2026</h1>
+{{hero}}
+<p>Flestir íslenskir spilarar nota farsíma til að spila — ekki tölvu. <strong>En ekki öll spilavíti virka jafn vel á farsíma.</strong> Hér berum við saman bestu farsímaspilavítin á Íslandi og svörum algengum spurningum.</p>
+
+<h2>App eða vafri?</h2>
+<p>Langflest netspilavíti bjóða <strong>ekki sérstakt app í App Store eða Google Play</strong>. Apple og Google takmarka fjárhættuspila-öpp í sínum verslunum. Í staðinn nota spilavítin vefsíður sem eru hannaðar sérstaklega fyrir farsíma (responsive design).</p>
+<p>Góðu fréttirnar: nútíma farsímavefir eru nánast jafn hraðir og app. Þú opnar einfaldlega Safari eða Chrome, ferð á spilavítissíðuna og spilar.</p>
+
+<h3>Hvernig á að bæta spilavíti við heimaskjá</h3>
+<ol>
+<li>Opnaðu spilavítissíðuna í Safari (iPhone) eða Chrome (Android)</li>
+<li>Ýttu á Share-hnappinn (iPhone) eða þrjá punktana (Android)</li>
+<li>Veldu „Add to Home Screen" / „Bæta við heimaskjá"</li>
+<li>Nú birtist spilavítisikon á heimaskjánum — eins og venjulegt app</li>
+</ol>
+
+<h2>Bestu farsímaspilavítin á Íslandi</h2>
+<table class="info-table"><thead><tr><th>Spilavíti</th><th>Farsímaupplifun</th><th>Hraði</th><th>Leikir á farsíma</th><th>Sérstakt app?</th></tr></thead><tbody>
+<tr><td><a href="{URL_BASE}spilaviti/epicbet/">Epicbet</a></td><td>⭐⭐⭐⭐⭐</td><td>Mjög hratt</td><td>2.000+</td><td>Nei — vafri</td></tr>
+<tr><td><a href="{URL_BASE}spilaviti/slotoro/">Slotoro</a></td><td>⭐⭐⭐⭐</td><td>Hratt</td><td>8.000+</td><td>Nei — vafri</td></tr>
+<tr><td><a href="{URL_BASE}spilaviti/stake/">Stake</a></td><td>⭐⭐⭐⭐⭐</td><td>Mjög hratt</td><td>3.000+</td><td>Já (Android)</td></tr>
+<tr><td><a href="{URL_BASE}spilaviti/bitstarz/">BitStarz</a></td><td>⭐⭐⭐⭐</td><td>Hratt</td><td>3.500+</td><td>Nei — vafri</td></tr>
+<tr><td><a href="{URL_BASE}spilaviti/bc-game/">BC.Game</a></td><td>⭐⭐⭐⭐</td><td>Hratt</td><td>8.000+</td><td>Já (Android)</td></tr>
+<tr><td><a href="{URL_BASE}spilaviti/respin/">Respin</a></td><td>⭐⭐⭐⭐⭐</td><td>Mjög hratt</td><td>4.000+</td><td>Nei — vafri</td></tr>
+</tbody></table>
+
+<h2>Greiðslur á farsíma</h2>
+<p>Greiðslur á farsíma virka eins og á tölvu — en með einum stórum kosti: <strong>Apple Pay</strong>. Ef þú notar iPhone geturðu lagt inn beint með Apple Pay á sumum spilavítum — eins og <a href="{URL_BASE}spilaviti/epicbet/">Epicbet</a>.</p>
+<p>Aðrar greiðsluleiðir sem virka vel á farsíma:</p>
+<ul>
+<li><strong>Dulritunargjaldmiðlar</strong> — Sendu frá <a href="{URL_BASE}greidslur/trust-wallet-spilaviti/">Trust Wallet</a> eða <a href="{URL_BASE}greidslur/metamask-spilaviti/">MetaMask</a> appinu á símanum</li>
+<li><strong>PIQ</strong> — <a href="{URL_BASE}leidbeiningar/piq-greidslur-island/">PIQ greiðslur</a> virka vel á farsíma</li>
+<li><strong>E-wallets</strong> — Skrill og Neteller hafa sín eigin öpp</li>
+</ul>
+
+<h2>Hvað á að varast á farsíma</h2>
+<ul>
+<li><strong>Gagnaeyðsla</strong> — Lifandi spilavíti (video streaming) eyðir miklum gögnum. Notaðu Wi-Fi ef þú spilar lifandi borð</li>
+<li><strong>Rafhlöðunotkun</strong> — Spilakassar og lifandi leikir eru þungir á rafhlöðu. Hlaðning eða power bank er ráðlegt</li>
+<li><strong>Skjástærð</strong> — Sum borðspil (rúlletta, blackjack) virka betur á stærri skjá. Spilakassar virka vel á öllum stærðum</li>
+<li><strong>Nettengingar</strong> — Lifandi spilavíti krefst stöðugrar tengingar. Ef tenging rofnar mitt í leik er veðmálið þitt yfirleitt óbreytt (niðurstaða ákveðst á netþjóni)</li>
+</ul>
+
+<h2>Vinsælustu farsímaleikirnir á Íslandi</h2>
+<p>Þessir spilakassar eru sérstaklega vel hannaðir fyrir farsímaskjái:</p>
+<ol>
+<li><a href="{URL_BASE}spilakassar/gates-of-olympus/">Gates of Olympus</a> — Skýrt viðmót, snertistýring virkar vel</li>
+<li><a href="{URL_BASE}spilakassar/sweet-bonanza/">Sweet Bonanza</a> — Litríkur leikur sem lítur vel út á litlum skjá</li>
+<li><a href="{URL_BASE}spilakassar/big-bass-bonanza/">Big Bass Bonanza</a> — Einföld vélbúnaður, hraðvirk</li>
+<li><a href="{URL_BASE}spilakassar/book-of-dead/">Book of Dead</a> — Klassískur leikur sem virkar fullkomlega á farsíma</li>
+<li><a href="{URL_BASE}live/lightning-roulette/">Lightning Roulette</a> — Besta lifandi rúllettan á farsíma</li>
+</ol>
+
+<h2>Algengar spurningar</h2>
+<h3>Þarf ég sérstakt app til að spila?</h3>
+<p>Nei — langflest spilavíti virka beint í vafranum (Safari, Chrome). Stake og BC.Game bjóða Android app en það er valkvætt. Á iPhone er vafri eini kosturinn.</p>
+<h3>Er öruggt að spila á farsíma?</h3>
+<p>Já — jafn öruggt og á tölvu. Spilavítin nota SSL dulkóðun sem virkar eins á farsíma. Ráðlegging: notaðu lykilorðastjóra og virkjaðu tveggja þátta auðkenningu ef hún er í boði.</p>
+<h3>Get ég spilað lifandi spilavíti á farsíma?</h3>
+<p>Já — öll lifandi spilavíti frá Evolution og Pragmatic Play eru farsímavinveitt. Video streyming virkar vel á 4G/5G eða Wi-Fi.</p>
+<h3>Hvers vegna er leikurinn hægur á farsímanum mínum?</h3>
+<p>Algengasta orsökin er veik nettenging. Prófaðu Wi-Fi. Ef það lagast ekki gæti síminn verið of gamall — spilakassar krefjast ákveðins vélbúnaðar. iPhone 8 og nýrri / Android frá 2019 virka yfirleitt vel.</p>
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Spila á farsíma →</a></div>'''
+    },
 ]
 
 def extract_faqs(html_content):
