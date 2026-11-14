@@ -545,6 +545,10 @@ def page_template(title, desc, breadcrumbs, content, canonical="", og_img="", sc
 <title>{title + ' | Svipan' if len(title) <= 57 else title}</title>
 <meta name="description" content="{desc}">
 {f'<link rel="canonical" href="{canonical}">' if canonical else ''}
+{f'<link rel="alternate" hreflang="is" href="{canonical}">' if canonical else ''}
+<meta name="geo.region" content="IS">
+<meta name="geo.placename" content="Iceland">
+<meta property="og:locale" content="is_IS">
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="{URL_BASE}favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="{URL_BASE}favicon-32.png">
