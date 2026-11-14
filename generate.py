@@ -1756,3 +1756,6 @@ with open(os.path.join(BASE, 'robots.txt'), 'w') as f:
 
 print(f"\n✅ Generated {count} pages + sitemap.xml + robots.txt")
 print(f"URLs in sitemap: {len(sitemap_urls)}")
+
+import subprocess as _sp
+_sp.run([sys.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)), "interlink.py")], check=False)
