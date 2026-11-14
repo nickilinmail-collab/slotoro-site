@@ -2189,148 +2189,288 @@ seo_pages = [
     {
         "slug": "spilaviti-an-skraningar",
         "title": "Spilavíti án skráningar á Íslandi — spila strax 2026",
-        "desc": "Finndu netspilavíti sem leyfa þér að spila án langrar skráningar. Fljótleg innborgun og strax aðgangur að spilakössum.",
+        "desc": "Finndu netspilavíti sem leyfa þér að spila án langrar skráningar. Hraðskráning á 30 sek, dulritunarinnlagnir og engin KYC fyrr en við úttekt.",
         "emoji": "⚡",
         "colors": ("#0a1628", "#132d4f", "#1c4476"),
         "content": f'''<h1>Spilavíti án skráningar á Íslandi 2026</h1>
 {{hero}}
-<p>Margir íslenskir spilarar vilja <strong>spila án þess að fylla út löng skráningareyðublöð</strong>. Nokkur netspilavíti bjóða nú hraðskráningu eða jafnvel möguleikann að spila án hefðbundinnar skráningar.</p>
+<p>Hefðbundin netspilavíti krefjast langrar skráningar: nafn, heimilisfang, símanúmer, vegabréfsnúmer — og síðan bíða eftir staðfestingu. <strong>Margir íslenskir spilarar vilja einfaldlega spila án þess að eyða 10 mínútum í eyðublöð.</strong></p>
+<p>Góðu fréttirnar: nokkur netspilavíti bjóða nú hraðskráningu eða jafnvel möguleikann að spila án hefðbundinnar skráningar. Hér útskýrum við hvernig það virkar, hvað þarf að varast og hvaða spilavíti bjóða þetta.</p>
 
 <h2>Hvað þýðir „spilavíti án skráningar"?</h2>
-<p>Þetta eru spilavíti sem nota greiðsluaðferðina þína (t.d. bankaauðkenningu eða dulritunargjaldmiðil) til að staðfesta þig — í stað þess að þú þurfir að fylla út eyðublað, senda gögn og bíða eftir samþykki.</p>
+<p>Hugtakið nær yfir tvennt:</p>
+<ul>
+<li><strong>Alvöru skráningarlaus spilavíti (Pay N Play)</strong> — Þú greiðir beint með bankaauðkenningu og reikningurinn stofnast sjálfvirkt. Algengara í Finnlandi og Svíþjóð en á Íslandi.</li>
+<li><strong>Hraðskráning (Quick Registration)</strong> — Einungis netfang og lykilorð. Engin gögn þarf fyrr en við fyrstu úttekt. Þetta er algengara og virkar vel á Íslandi.</li>
+</ul>
+<p>Fyrir íslenska spilara er hraðskráning raunhæfasti kosturinn — sérstaklega ef þú notar <a href="{URL_BASE}greidslur/bitcoin/">dulritunargjaldmiðla</a> til innborgunar.</p>
 
-<h2>Hvernig virkar það?</h2>
+<h2>Hvernig virkar hraðskráning?</h2>
 <ol>
-<li>Veldu greiðsluaðferð (Bitcoin, USDT eða bankamillifærsla)</li>
-<li>Leggðu inn — reikningurinn stofnast sjálfvirkt</li>
-<li>Byrjaðu að spila strax</li>
+<li><strong>Skráðu netfang og lykilorð</strong> — tekur 20-30 sekúndur</li>
+<li><strong>Veldu greiðsluaðferð</strong> — Bitcoin, USDT, Ethereum eða e-wallet</li>
+<li><strong>Leggðu inn</strong> — reikningurinn er tilbúinn, þú getur spilað strax</li>
+<li><strong>KYC kemur seinna</strong> — þegar þú biður um fyrstu úttekt sendir þú inn gögn</li>
 </ol>
 
-<h2>Bestu spilavítin með hraðskráningu</h2>
-<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/stake/">Stake</a></strong> — Skráning á 30 sekúndum. Einungis netfang og lykilorð. Engin gögn fyrr en við úttekt.</p></div>
-<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/bc-game/">BC.Game</a></strong> — Skráðu þig með netfangi. Engin KYC fyrir dulritunarinnlagnir.</p></div>
-<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/bitstarz/">BitStarz</a></strong> — Hraðskráning og auðveld innborgun í Bitcoin.</p></div>
+<h2>Samanburður: hraðskráning vs hefðbundin skráning</h2>
+<table class="info-table"><thead><tr><th>Þáttur</th><th>Hraðskráning</th><th>Hefðbundin skráning</th></tr></thead><tbody>
+<tr><td>Tími til að byrja</td><td>30 sek — 2 mín</td><td>5-15 mínútur</td></tr>
+<tr><td>Upplýsingar krafist</td><td>Netfang + lykilorð</td><td>Nafn, heimilisfang, fæðingardagur, símanúmer</td></tr>
+<tr><td>KYC staðfesting</td><td>Við fyrstu úttekt</td><td>Strax eða innan 72 klst</td></tr>
+<tr><td>Dulritunarinnlagnir</td><td>Já — engin viðbótargögn</td><td>Já en oft með KYC kröfu</td></tr>
+<tr><td>Úttektarhraði</td><td>Eftir KYC: 0-24 klst</td><td>0-24 klst</td></tr>
+</tbody></table>
 
-<h2>Er þetta öruggt?</h2>
-<p>Já — ef spilavítið er með gilt leyfi (Curaçao, Malta eða Bretland). Hraðskráning þýðir ekki minni öryggi. Spilavítið biður þig um KYC staðfestingu þegar þú tekur út — ekki áður.</p>
+<h2>Bestu spilavítin með hraðskráningu á Íslandi</h2>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/stake/">Stake</a></strong> — Skráning á 30 sekúndum. Einungis netfang og lykilorð. Styður 8+ dulritunargjaldmiðla. 200% velkomstbónus. Engin gögn fyrr en við úttekt. <a href="{URL_BASE}spilaviti/stake/">Lesa umsögn →</a></p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/bc-game/">BC.Game</a></strong> — Netfangsskráning. 100+ dulritunargjaldmiðlar studdir. 300% allt að 1 BTC. Engin KYC fyrir dulritunarinnlagnir undir ákveðnu þaki. <a href="{URL_BASE}spilaviti/bc-game/">Lesa umsögn →</a></p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/bitstarz/">BitStarz</a></strong> — Hraðskráning og tafarlausar Bitcoin innborganir. 5 BTC + 200 FS. Margverðlaunað spilavíti síðan 2014. <a href="{URL_BASE}spilaviti/bitstarz/">Lesa umsögn →</a></p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/wildcoins/">WildCoins</a></strong> — Einföld skráning, styður BTC/ETH/LTC/USDT. 250% + 100 FS. Gott fyrir byrjendur. <a href="{URL_BASE}spilaviti/wildcoins/">Lesa umsögn →</a></p></div>
+
+<h2>Er hraðskráning jafn örugg og hefðbundin skráning?</h2>
+<p>Já — ef spilavítið er með gilt leyfi. Hraðskráning breytir ekki örygginu. Munurinn er aðeins <em>hvenær</em> gögnin eru send inn — ekki <em>hvort</em> þau eru send.</p>
+<p>Spilavíti með Curaçao, Malta (MGA) eða bretskt leyfi (UKGC) verða öll að staðfesta deili á þér áður en þau greiða út. Það tryggir öryggi jafnt í hraðskráningu og hefðbundinni.</p>
+<p>Athugaðu alltaf leyfið: <a href="{URL_BASE}leidbeiningar/hvernig-a-ad-stadfesta-spilavitaleyfi/">Hvernig á að staðfesta spilavítileyfi →</a></p>
+
+<h2>Ráðleggingar fyrir íslenska spilara</h2>
+<ul>
+<li>✅ Notaðu <strong>dulritunargjaldmiðla</strong> til innborgunar — þá þarftu enga viðbótargögn og forðast <a href="{URL_BASE}leidbeiningar/islenskir-bankar-spilaviti/">bankahöfnun</a></li>
+<li>✅ Skráðu raunverulegt netfang — þú þarft það til að endurstilla lykilorð og taka á móti úttektarstaðfestingu</li>
+<li>✅ Hafðu ljósmynd af vegabréfi tilbúna — þú þarft hana seinna við KYC</li>
+<li>✅ Lestu <a href="{URL_BASE}leidbeiningar/hvad-eru-vedskilyrdi/">bónusskilmála</a> áður en þú tekur á móti velkomstbónus</li>
+</ul>
 
 <h2>Algengar spurningar</h2>
 <h3>Get ég spilað alvöru peninga án þess að skrá mig?</h3>
-<p>Á flestum spilavítum þarftu lágmarks skráningu (netfang + lykilorð). Algjörlega skráningarlaus spilavíti eru sjaldgæf en til.</p>
-<h3>Hvenær þarf ég að senda inn gögn?</h3>
-<p>Yfirleitt þegar þú tekur út í fyrsta skipti eða nærð ákveðnu innborgunarþaki.</p>
+<p>Á flestum spilavítum þarftu lágmarks skráningu (netfang + lykilorð). Algjörlega skráningarlaus spilavíti (Pay N Play) eru sjaldgæf á Íslandi en algengari í Finnlandi. Hraðskráning er raunhæfasti valkosturinn.</p>
+<h3>Hvenær þarf ég að senda inn gögn (KYC)?</h3>
+<p>Yfirleitt þegar þú tekur út í fyrsta skipti eða nærð ákveðnu innborgunarþaki (t.d. €2.000). Sum spilavíti biðja um gögn fyrr ef þau gruna svik.</p>
+<h3>Hvaða gögn þarf ég að senda?</h3>
+<p>Yfirleitt: ljósmynd af vegabréfi eða ökuskírteini, sönnun á heimilisfangi (reikningur) og stundum selfie með skilríkjum.</p>
+<h3>Er hægt að forðast KYC algjörlega?</h3>
+<p>Sum dulritunarspilavíti hafa hærri þröskulda áður en KYC er krafist. En öll lögleg spilavíti þurfa að staðfesta deili á þér einhvern tíma — það er krafa leyfisins.</p>
 <div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Spila strax →</a></div>'''
     },
     {
         "slug": "okeypis-spilaviti-island",
         "title": "Ókeypis spilavíti á Íslandi — spila án áhættu 2026",
-        "desc": "Prófaðu spilakassa og borðleiki ókeypis á íslenskum netspilavítum. Engrar innborgunar krafist — spila í prufu.",
+        "desc": "Prófaðu spilakassa og borðleiki ókeypis á íslenskum netspilavítum. Demo-hamur, bónusar án innborgunar og frísnúningar.",
         "emoji": "🎮",
         "colors": ("#0d1a0a", "#1a3314", "#274d1e"),
         "content": f'''<h1>Ókeypis spilavíti á Íslandi — spila án áhættu 2026</h1>
 {{hero}}
-<p>Viltu prófa spilakassa eða borðleiki <strong>án þess að leggja inn peninga</strong>? Mörg netspilavíti bjóða ókeypis prufuútgáfur (demo mode) þar sem þú spilar með gervipeningum.</p>
+<p>Margir íslenskir spilarar vilja <strong>prófa spilavíti áður en þeir leggja inn peninga</strong>. Það er skynsamleg nálgun — og það eru margar leiðir til að gera það. Hér er heildaryfirlit yfir allar aðferðir til að spila ókeypis á Íslandi.</p>
 
-<h2>Hvernig virka ókeypis spilavítisleikir?</h2>
-<p>Flestir spilakassar hafa „Demo" eða „Prufa" hnapp. Þú spilar nákvæmlega sama leik og í alvöru — en með sýndarpeningum. Engin skráning þarf.</p>
+<h2>Þrjár leiðir til að spila ókeypis</h2>
+<h3>1. Demo-hamur (prufuhamur)</h3>
+<p>Langflestir spilakassar hafa „Demo" eða „Prufa" hnapp. Þú spilar nákvæmlega sama leik og í alvöru — sömu grafík, sömu bónusumferðir, sama RTP — en með <strong>sýndarpeningum</strong>. Engrar skráningar krafist á flestum spilavítum.</p>
+<p>Demo-hamur er besta leiðin til að kynnast leik áður en þú veðjar raunverulegum peningum. Þú getur prófað tugi spilakassa án nokkurrar áhættu.</p>
+
+<h3>2. Bónus án innborgunar (no deposit bonus)</h3>
+<p>Sum spilavíti bjóða nýjum spilurum frísnúninga eða inneign <strong>án þess að krefjast innborgunar</strong>. Þú skráir þig, færð bónusinn sjálfvirkt og getur spilað um alvöru peninga — án þess að hafa lagt inn krónu.</p>
+<p>Athugaðu: <a href="{URL_BASE}leidbeiningar/hvad-eru-vedskilyrdi/">veðskilyrði</a> eiga alltaf við. Dæmi: ef þú færð 20 frísnúninga með 40x veðskilyrðum þarftu að veðja vinninginn 40 sinnum áður en þú getur tekið út.</p>
+
+<h3>3. Frísnúningar með fyrstu innborgun</h3>
+<p>Þetta er ekki alveg „ókeypis" — þú leggur inn og færð frísnúninga ofan á. En frísnúningarnar sjálfar kosta ekkert og vinningar frá þeim eru raunverulegar.</p>
 
 <h2>Hvað get ég spilað ókeypis?</h2>
-<ul>
-<li>✅ <strong>Spilakassar</strong> — nánast allir (t.d. <a href="{URL_BASE}spilakassar/gates-of-olympus/">Gates of Olympus</a>, <a href="{URL_BASE}spilakassar/sweet-bonanza/">Sweet Bonanza</a>)</li>
-<li>✅ <strong>Borðleikir</strong> — blackjack og rúlletta með RNG (random number generator)</li>
-<li>❌ <strong>Lifandi spilavíti</strong> — ekki hægt ókeypis (raunverulegur spilastjóri)</li>
-</ul>
+<table class="info-table"><thead><tr><th>Leikjategund</th><th>Demo-hamur?</th><th>Bónus án innborgunar?</th><th>Dæmi</th></tr></thead><tbody>
+<tr><td>Spilakassar</td><td>✅ Já — nánast allir</td><td>✅ Frísnúningar algengast</td><td><a href="{URL_BASE}spilakassar/gates-of-olympus/">Gates of Olympus</a>, <a href="{URL_BASE}spilakassar/sweet-bonanza/">Sweet Bonanza</a></td></tr>
+<tr><td>Borðleikir (RNG)</td><td>✅ Já</td><td>❌ Sjaldgæft</td><td>Blackjack, rúlletta, baccarat</td></tr>
+<tr><td>Lifandi spilavíti</td><td>❌ Nei</td><td>❌ Mjög sjaldgæft</td><td><a href="{URL_BASE}live/lightning-roulette/">Lightning Roulette</a></td></tr>
+<tr><td>Crash-leikir</td><td>✅ Sumir</td><td>❌ Sjaldgæft</td><td>Aviator, Spaceman</td></tr>
+</tbody></table>
 
 <h2>Af hverju spila ókeypis fyrst?</h2>
-<ol>
-<li>Kynntu þér leikinn og bónuseiginleikana áður en þú leggur inn</li>
-<li>Prófaðu sveiflu (volatility) — er leikurinn of áhættusamur?</li>
-<li>Berðu saman spilakassa án þess að tapa peningum</li>
-</ol>
+<ul>
+<li><strong>Kynntu þér leikinn</strong> — Bónusumferðir, sérstakir eiginleikar og hvernig leikurinn virkar raunverulega</li>
+<li><strong>Prófaðu sveiflu</strong> — <a href="{URL_BASE}leidbeiningar/hvad-er-sveifla/">Há sveifla</a> þýðir sjaldgæfir en stórir vinningar. Lág sveifla = tíðir smávinningar. Uppgötvaðu hvað hentar þér</li>
+<li><strong>Berðu saman spilakassa</strong> — Prófaðu 5-10 mismunandi leiki áður en þú velur hvar þú vilt veðja</li>
+<li><strong>Prófaðu aðferðir</strong> — Á borðleikjum eins og <a href="{URL_BASE}leidbeiningar/blackjack-adferdir/">blackjack</a> geturðu æft aðferðir án áhættu</li>
+</ul>
 
-<h2>Bestu spilavítin með ókeypis leiki</h2>
-<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/slotoro/">Slotoro</a></strong> — Yfir 8.000 leikir, flestir í boði í prufuham.</p></div>
-<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/bitstarz/">BitStarz</a></strong> — Prufuaðgangur án skráningar á marga spilakassa.</p></div>
+<h2>Bestu spilavítin með ókeypis leiki á Íslandi</h2>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/slotoro/">Slotoro</a></strong> — Yfir 8.000 leikir frá 71 framleiðendum. Flestir í boði í demo-ham án skráningar. Velkomstpakki á 3 innborgunum. <a href="{URL_BASE}spilaviti/slotoro/">Lesa umsögn →</a></p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/bitstarz/">BitStarz</a></strong> — Prufuaðgangur á hundruð spilakassa án skráningar. 5 BTC + 200 FS. Demo-hamur opinn öllum. <a href="{URL_BASE}spilaviti/bitstarz/">Lesa umsögn →</a></p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/katsubet/">KatsuBet</a></strong> — Yfir 5.000 leikir með demo-aðgangi. 100% + 100 FS. <a href="{URL_BASE}spilaviti/katsubet/">Lesa umsögn →</a></p></div>
+
+<h2>Vinsælustu ókeypis spilakassarnir á Íslandi</h2>
+<p>Samkvæmt gögnum frá spilavítum eru þessir spilakassar vinsælastir í ókeypis prufuham hjá íslenskum spilurum:</p>
+<ol>
+<li><a href="{URL_BASE}spilakassar/gates-of-olympus/">Gates of Olympus</a> (Pragmatic Play) — RTP 96,5%, há sveifla</li>
+<li><a href="{URL_BASE}spilakassar/sweet-bonanza/">Sweet Bonanza</a> (Pragmatic Play) — RTP 96,48%, meðalsveifla</li>
+<li><a href="{URL_BASE}spilakassar/book-of-dead/">Book of Dead</a> (Play'n GO) — RTP 96,21%, há sveifla</li>
+<li><a href="{URL_BASE}spilakassar/starburst/">Starburst</a> (NetEnt) — RTP 96,09%, lág sveifla</li>
+<li><a href="{URL_BASE}spilakassar/big-bass-bonanza/">Big Bass Bonanza</a> (Pragmatic Play) — RTP 96,71%, há sveifla</li>
+</ol>
+<p>Sjá alla <a href="{URL_BASE}spilakassar/">98 spilakassaumsagnir →</a></p>
 
 <h2>Algengar spurningar</h2>
 <h3>Er hægt að vinna alvöru peninga í ókeypis ham?</h3>
-<p>Nei — í demo-ham eru vinningarnir sýndarpeningar. Til að vinna raunverulega þarftu að leggja inn.</p>
+<p>Nei — í demo-ham eru vinningarnir sýndarpeningar. Til að vinna raunverulega þarftu að leggja inn. Hins vegar ef þú færð <a href="{URL_BASE}leidbeiningar/frisnuningar-an-innborgunar/">bónus án innborgunar</a> (frísnúninga) eru vinningarnir raunverulegir — að uppfylltum veðskilyrðum.</p>
 <h3>Þarf ég að skrá mig til að spila ókeypis?</h3>
-<p>Á flestum spilavítum þarftu ekki skráningu fyrir demo-ham. Einfaldlega opnaðu leikinn og veldu „Prufa".</p>
+<p>Á flestum spilavítum þarftu ekki skráningu fyrir demo-ham. Einfaldlega opnaðu leikinn og veldu „Prufa" eða „Demo". Sum spilavíti krefjast þó skráningar — Slotoro og BitStarz gera það ekki.</p>
+<h3>Er demo-hamur eins og alvöru leikurinn?</h3>
+<p>Já — sömu grafík, sömu bónusumferðir, sama <a href="{URL_BASE}leidbeiningar/hvad-er-rtp/">RTP</a> og sama <a href="{URL_BASE}leidbeiningar/hvernig-rng-virkar/">RNG tækni</a>. Eini munurinn er að þú spilar með sýndarpeningum.</p>
+<h3>Hversu lengi get ég spilað í demo-ham?</h3>
+<p>Eins lengi og þú vilt. Sýndarpeningarnir fylla á sig aftur þegar þeir klárast — þú getur alltaf byrjað upp á nýtt.</p>
 <div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Prófa ókeypis →</a></div>'''
     },
     {
         "slug": "spilaviti-sem-tekur-vid-islenskum-kortum",
         "title": "Spilavíti sem tekur við íslenskum kortum — Visa og Mastercard 2026",
-        "desc": "Hvaða netspilavíti taka við Visa og Mastercard frá íslenskum bönkum? Uppfærður listi og ráð til að komast framhjá höfnunum.",
+        "desc": "Hvaða netspilavíti taka við Visa og Mastercard frá Arion, Landsbankinn og Íslandsbanka? Lausnir þegar bankinn hafnar greiðslu.",
         "emoji": "💳",
         "colors": ("#1a0a2e", "#2d1450", "#401e72"),
         "content": f'''<h1>Spilavíti sem tekur við íslenskum kortum 2026</h1>
 {{hero}}
-<p>Margir íslenskir spilarar spyrja: <strong>hvaða spilavíti tekur við Visa eða Mastercard frá íslenskum bönkum?</strong> Svarið er flókið — sumar greiðslur fara í gegn, aðrar ekki.</p>
+<p>Þetta er ein algengasta spurningin frá íslenskum spilurum: <strong>„hvers vegna virkar kortið mitt ekki á spilavítinu?"</strong> Svarið er flókið og breytist reglulega. Hér er allt sem þú þarft að vita.</p>
 
-<h2>Af hverju virka kortin stundum ekki?</h2>
-<p>Íslenskir bankar (Arion, Landsbankinn, Íslandsbanki) hafa innri stefnu sem getur lokað á greiðslur til spilavíta. Þetta er <strong>ekki lögbundið bann</strong> — heldur ákvörðun bankanna sjálfra.</p>
-<p>Niðurstaðan: sama kortið getur virkað á einu spilavíti en ekki öðru, og staðan breytist reglulega.</p>
+<h2>Af hverju virka íslensk kort stundum ekki?</h2>
+<p>Íslenskir bankar — Arion banki, Landsbankinn og Íslandsbanki — hafa <strong>innri stefnu</strong> sem getur lokað á kortagreiðslur til erlendra netspilavíta. Þetta er ekki byggt á lögum. <a href="{URL_BASE}leidbeiningar/log-um-fjarhaettuspil-a-islandi/">Engin lög á Íslandi banna einstaklingum</a> að spila á erlendum spilavítum.</p>
+<p>Bankarnir nota MCC-kóða (Merchant Category Code) til að greina greiðslur til spilavíta. Sumir kaupmenn nota annan MCC-kóða — þá fer greiðslan í gegn. Þetta er ástæðan fyrir því að sama kortið getur virkað á einu spilavíti en ekki öðru.</p>
+
+<h2>Staða hvers banka (nóvember 2026)</h2>
+<table class="info-table"><thead><tr><th>Banki</th><th>Visa</th><th>Mastercard</th><th>Apple Pay</th><th>Athugasemd</th></tr></thead><tbody>
+<tr><td>Arion banki</td><td>⚠️ Stundum</td><td>⚠️ Stundum</td><td>⚠️ Fer eftir spilavíti</td><td>Innri stefna getur lokað á greiðslur</td></tr>
+<tr><td>Landsbankinn</td><td>⚠️ Stundum</td><td>⚠️ Stundum</td><td>⚠️ Fer eftir spilavíti</td><td>Sama staða og Arion</td></tr>
+<tr><td>Íslandsbanki</td><td>⚠️ Stundum</td><td>⚠️ Stundum</td><td>⚠️ Fer eftir spilavíti</td><td>Nýleg breyting á reglum</td></tr>
+<tr><td>Revolut</td><td>✅ Já</td><td>✅ Já</td><td>✅ Já</td><td>Fer ekki gegnum íslenskt bankakerfi</td></tr>
+</tbody></table>
+<p><em>⚠️ = virkar stundum, fer eftir spilavíti og tímabili. Staðan getur breyst án fyrirvara.</em></p>
 
 <h2>Spilavíti sem líklegast taka við íslenskum kortum</h2>
-<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/tonybet/">TonyBet</a></strong> — Evrópulegt leyfi (Eistland). Góðar líkur á kortagreiðslum.</p></div>
-<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/20bet/">20Bet</a></strong> — Styður Visa og Mastercard. Lágmarksinnborgun €10.</p></div>
-<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/epicbet/">Epicbet</a></strong> — Íslensku viðmót og Apple Pay — getur virkað þar sem hefðbundin kort virka ekki.</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/tonybet/">TonyBet</a></strong> — Leyfi frá Eistlandi (EES-ríki). Evrópuleg greiðsluvinnsla sem eykur líkur á að kortagreiðsla fari í gegn. 150% + 100 FS. <a href="{URL_BASE}spilaviti/tonybet/">Lesa umsögn →</a></p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/20bet/">20Bet</a></strong> — Styður Visa, Mastercard og marga aðra valkosti. Lágmarksinnborgun €10. Curaçao leyfi. <a href="{URL_BASE}spilaviti/20bet/">Lesa umsögn →</a></p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/epicbet/">Epicbet</a></strong> — Íslensku viðmót og Apple Pay sem getur virkað þar sem hefðbundin kort virka ekki. 100% allt að €500. <a href="{URL_BASE}spilaviti/epicbet/">Lesa umsögn →</a></p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/slotoro/">Slotoro</a></strong> — Tekur við kortum, e-wallets og dulritunargjaldmiðlum. Lágmarksinnborgun €10. <a href="{URL_BASE}spilaviti/slotoro/">Lesa umsögn →</a></p></div>
 
-<h2>Hvað ef kortið virkar ekki?</h2>
-<p>Ef bankinn þinn hafnar greiðslunni hafa íslenskir spilarar þrjá aðra valkosti:</p>
-<ol>
-<li><strong>Dulritunargjaldmiðlar</strong> — Bankinn getur ekki lokað á Bitcoin/USDT. <a href="{URL_BASE}leidbeiningar/kaupa-bitcoin-island/">Leiðbeiningar →</a></li>
-<li><strong>Rafræn veski</strong> — <a href="{URL_BASE}greidslur/skrill-i-spilavitum/">Skrill</a> og <a href="{URL_BASE}greidslur/neteller-i-spilavitum/">Neteller</a> virka sem milliliður</li>
-<li><strong>PIQ greiðslur</strong> — <a href="{URL_BASE}leidbeiningar/piq-greidslur-island/">PIQ</a> er sérstaklega hannað fyrir Ísland</li>
-</ol>
+<h2>5 lausnir þegar bankinn hafnar greiðslunni</h2>
+<h3>1. Dulritunargjaldmiðlar (besta lausnin)</h3>
+<p><a href="{URL_BASE}greidslur/bitcoin/">Bitcoin</a>, <a href="{URL_BASE}greidslur/usdt/">USDT</a> og <a href="{URL_BASE}greidslur/ethereum/">Ethereum</a> fara beint á blokkkeðjunni — <strong>bankarnir geta ekki lokað á þessar greiðslur</strong>. Innlagnir á 1-10 mínútum, gjöld undir $1 á TRC-20 netinu.</p>
+<p><a href="{URL_BASE}leidbeiningar/kaupa-bitcoin-island/">Hvernig á að kaupa Bitcoin á Íslandi — skref fyrir skref →</a></p>
+
+<h3>2. Revolut eða Wise</h3>
+<p><a href="{URL_BASE}leidbeiningar/revolut-spilaviti-island/">Revolut</a> er oft besta lausnin fyrir þá sem vilja nota kort. Revolut-kort fer ekki í gegnum íslenskt bankakerfi og á þar af leiðandi ekki á hættu að verða hafnað. Opnaðu Revolut-reikning, millifærðu frá íslenska bankanum og notaðu Revolut-kortið á spilavítinu.</p>
+
+<h3>3. Rafræn veski (e-wallets)</h3>
+<p><a href="{URL_BASE}greidslur/skrill-i-spilavitum/">Skrill</a> og <a href="{URL_BASE}greidslur/neteller-i-spilavitum/">Neteller</a> virka sem milliliður. Þú leggur inn á Skrill frá bankanum og síðan frá Skrill á spilavítið. Bankinn sér einungis millifærslu á Skrill — ekki á spilavíti.</p>
+
+<h3>4. PIQ greiðslur</h3>
+<p><a href="{URL_BASE}leidbeiningar/piq-greidslur-island/">PIQ</a> er greiðsluþjónusta sérstaklega hönnuð fyrir Ísland og Noreg. <a href="{URL_BASE}spilaviti/epicbet/">Epicbet</a> og <a href="{URL_BASE}spilaviti/respin/">Respin</a> styðja PIQ. Innborgun tekur 1-5 mínútur.</p>
+
+<h3>5. Apple Pay / Google Pay</h3>
+<p>Sum spilavíti styðja <a href="{URL_BASE}greidslur/apple-pay-i-spilavitum/">Apple Pay</a> sem getur farið í gegn þar sem hefðbundin kortagreiðsla virkar ekki. Epicbet staðfestir Apple Pay stuðning fyrir íslenska spilara.</p>
+
+<h2>Samanburður á greiðsluleiðum</h2>
+<table class="info-table"><thead><tr><th>Greiðsluleið</th><th>Virkar alltaf?</th><th>Hraði</th><th>Gjöld</th><th>Lágmark</th></tr></thead><tbody>
+<tr><td>Visa/Mastercard (ís. banki)</td><td>⚠️ Stundum</td><td>Samstundis</td><td>0-3%</td><td>€10</td></tr>
+<tr><td>Revolut</td><td>✅ Já</td><td>Samstundis</td><td>0-1%</td><td>€10</td></tr>
+<tr><td>Bitcoin</td><td>✅ Já</td><td>10-30 mín</td><td>$1-5</td><td>€10</td></tr>
+<tr><td>USDT (TRC-20)</td><td>✅ Já</td><td>1-5 mín</td><td>$0.5-1</td><td>€10</td></tr>
+<tr><td>Skrill/Neteller</td><td>✅ Já</td><td>Samstundis</td><td>1-2.5%</td><td>€10</td></tr>
+<tr><td>PIQ</td><td>✅ Já (á studdum spilavítum)</td><td>1-5 mín</td><td>0%</td><td>€10</td></tr>
+<tr><td>Apple Pay</td><td>⚠️ Fer eftir spilavíti</td><td>Samstundis</td><td>0%</td><td>€10</td></tr>
+</tbody></table>
+<p>Sjá alla <a href="{URL_BASE}greidslur/">greiðsluleiðir →</a></p>
 
 <h2>Algengar spurningar</h2>
-<h3>Er hægt að nota Revolut til innborgunar?</h3>
-<p>Já — <a href="{URL_BASE}leidbeiningar/revolut-spilaviti-island/">Revolut</a> er oft betri kostur en íslenskt bankakort því það fer ekki í gegnum íslenskt bankakerfi.</p>
-<h3>Er Apple Pay valkostur?</h3>
-<p>Já á sumum spilavítum. <a href="{URL_BASE}leidbeiningar/apple-pay-spilaviti/">Epicbet styður Apple Pay</a> og íslenskir spilarar hafa staðfest að það virki.</p>
+<h3>Er hægt að nota Revolut til innborgunar á spilavíti?</h3>
+<p>Já — <a href="{URL_BASE}leidbeiningar/revolut-spilaviti-island/">Revolut</a> er ein best lausnin. Kortið fer ekki gegnum íslenskt bankakerfi og verður ekki hafnað af sömu ástæðum.</p>
+<h3>Er Apple Pay valkostur á Íslandi?</h3>
+<p>Já á sumum spilavítum. <a href="{URL_BASE}leidbeiningar/apple-pay-spilaviti/">Epicbet styður Apple Pay</a> og íslenskir spilarar hafa staðfest að það virki. Athugaðu hvort Apple Pay kortið þitt er tengt íslenskum banka — ef svo er getur verið að höfnun eigi enn við.</p>
+<h3>Hvers vegna virkaði kortið mitt í síðasta mánuði en ekki nú?</h3>
+<p>Bankarnir uppfæra MCC-lokun sína reglulega. Spilavíti geta líka skipt um greiðsluvinnslu. Staðan er í stöðugri breytingu — þess vegna er gott að hafa varaleiðir eins og dulritunargjaldmiðla.</p>
+<h3>Sér bankinn minn að ég spilaði á spilavíti?</h3>
+<p>Ef þú notar debetkort sér bankinn viðskiptin. Ef þú notar Skrill/Neteller sér bankinn einungis millifærslu til Skrill. Ef þú notar dulritunargjaldmiðla sér bankinn kaup á Bitcoin — ekki spilavítið sjálft.</p>
 <div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Finna spilavíti →</a></div>'''
     },
     {
         "slug": "spilaviti-med-islensku-vidmoti",
         "title": "Spilavíti með íslensku viðmóti — öll spilavíti á íslensku 2026",
-        "desc": "Listi yfir netspilavíti sem eru í boði á íslensku. Viðmót, þjónustuver og bónusskilmálar á þínu tungumáli.",
+        "desc": "Listi yfir netspilavíti á íslensku: viðmót, þjónustuver, bónusskilmálar og sjálfsútilokun á þínu tungumáli. Uppfært nóvember 2026.",
         "emoji": "🇮🇸",
-        "colors": ("#00205b", "#dc1e35", "#fff"),
+        "colors": ("#00205b", "#1a3a7a", "#dc1e35"),
         "content": f'''<h1>Spilavíti með íslensku viðmóti 2026</h1>
 {{hero}}
-<p>Ekki öll netspilavíti bjóða <strong>íslensku viðmót</strong>. Fyrir marga íslenska spilara er mikilvægt að geta lesið bónusskilmála, haft samband við þjónustuver og skilið allar reglur á eigin tungumáli.</p>
+<p>Flest netspilavíti eru á ensku. Fyrir íslenska spilara getur þetta verið vandamál — sérstaklega þegar kemur að bónusskilmálum, <a href="{URL_BASE}leidbeiningar/hvad-eru-vedskilyrdi/">veðskilyrðum</a> og <a href="{URL_BASE}leidbeiningar/sjalfsutilokun-spilavita/">sjálfsútilokunarvalkostum</a>. <strong>Að skilja allar reglur á eigin tungumáli er ekki aðeins þægilegt — það er öryggismál.</strong></p>
+
+<h2>Spilavíti á íslensku — samanburður</h2>
+<table class="info-table"><thead><tr><th>Spilavíti</th><th>Viðmót á íslensku?</th><th>Þjónustuver á íslensku?</th><th>Skilmálar á íslensku?</th><th>Velkomstbónus</th></tr></thead><tbody>
+<tr><td><a href="{URL_BASE}spilaviti/epicbet/">Epicbet</a></td><td>✅ Alveg</td><td>✅ Já</td><td>✅ Já</td><td>100% allt að €500</td></tr>
+<tr><td><a href="{URL_BASE}spilaviti/respin/">Respin</a></td><td>✅ Alveg</td><td>✅ Já</td><td>✅ Já</td><td>200% + 50 FS</td></tr>
+<tr><td><a href="{URL_BASE}spilaviti/slotoro/">Slotoro</a></td><td>⚠️ Að hluta</td><td>❌ Enska</td><td>❌ Enska</td><td>Velkomstpakki á 3 innborgunum</td></tr>
+<tr><td><a href="{URL_BASE}spilaviti/20bet/">20Bet</a></td><td>❌ Enska</td><td>❌ Enska</td><td>❌ Enska</td><td>100% allt að €120</td></tr>
+<tr><td><a href="{URL_BASE}spilaviti/bitstarz/">BitStarz</a></td><td>❌ Enska</td><td>❌ Enska</td><td>❌ Enska</td><td>5 BTC + 200 FS</td></tr>
+</tbody></table>
+<p><em>Uppfært nóvember 2026. Við prófum sjálf öll spilavíti áður en við metum tungumálastuðning.</em></p>
 
 <h2>Spilavíti sem eru alveg á íslensku</h2>
-<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/epicbet/">Epicbet</a></strong> — Fullkomið íslenskt viðmót. Skráning, bónusskilmálar og þjónustuver á íslensku.</p></div>
-<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/respin/">Respin Casino</a></strong> — Íslensku viðmót og PIQ greiðslur. Vinsælt hjá íslenskum spilurum.</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/epicbet/">Epicbet</a></strong> — Fullkomið íslenskt viðmót frá skráningu til úttektar. Skráning, innborgun, bónusskilmálar, leikir og þjónustuver — allt á íslensku. Styður einnig Apple Pay og <a href="{URL_BASE}leidbeiningar/piq-greidslur-island/">PIQ greiðslur</a> sem eru sérstaklega hannaðar fyrir Ísland. <a href="{URL_BASE}spilaviti/epicbet/">Lesa umsögn →</a></p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/respin/">Respin Casino</a></strong> — Íslensku viðmót og PIQ greiðslur. Veðlaus bónusar (0x veðskilyrði á sumum tilboðum). Vikuleg endurgreiðsla. Systursíða Epicbet — sama eigendur, jafn góð íslensk þjónusta. <a href="{URL_BASE}spilaviti/respin/">Lesa umsögn →</a></p></div>
 
-<h2>Spilavíti með að hluta til íslensku</h2>
-<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/slotoro/">Slotoro</a></strong> — Aðalsíðan á ensku en leikir og helstu síður á íslensku.</p></div>
+<h2>Spilavíti með íslensku að hluta til</h2>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/slotoro/">Slotoro</a></strong> — Leikir og aðalsíða hafa verið þýdd á íslensku. Hins vegar eru bónusskilmálar og þjónustuver á ensku. Gott úrval leikja (8.000+) og velkomstpakki á 3 innborgunum. <a href="{URL_BASE}spilaviti/slotoro/">Lesa umsögn →</a></p></div>
 
-<h2>Af hverju skiptir tungumálið máli?</h2>
+<h2>Af hverju skiptir tungumálið svona miklu máli?</h2>
+<h3>1. Bónusskilmálar og veðskilyrði</h3>
+<p><a href="{URL_BASE}leidbeiningar/hvad-eru-vedskilyrdi/">Veðskilyrði</a> geta verið flókin. Dæmi: „40x wagering requirement on bonus and deposit, max bet €5, game weighting applies." Ef þú skilur ekki þetta á ensku geturðu óvart tapað bónusnum. Á íslensku er allt skýrt.</p>
+
+<h3>2. Þjónustuver (chat og tölvupóstur)</h3>
+<p>Ef vandamál koma upp — greiðsla sem rann ekki í gegn, úttekt sem dregst — er miklu auðveldara að leysa vandamálið þegar þú getur tjáð þig á íslensku. Epicbet og Respin bjóða báðir þjónustuver á íslensku.</p>
+
+<h3>3. Ábyrg spilun og sjálfsútilokun</h3>
+<p>Upplýsingar um <a href="{URL_BASE}leidbeiningar/sjalfsutilokun-spilavita/">sjálfsútilokun</a>, takmörk á innborgunum og ábyrgðartól eru mikilvægari á tungumáli sem þú skilur fullkomlega. Þetta er öryggismál.</p>
+
+<h3>4. Laga- og persónuverndarskilmálar</h3>
+<p>Hvernig meðhöndlar spilavítið persónuupplýsingarnar þínar? Hvað gerist ef ágreiningur kemur upp? Þessar upplýsingar eru á íslensku hjá Epicbet og Respin.</p>
+
+<h2>Ráð fyrir þá sem velja enskt spilavíti</h2>
+<p>Ef þú velur spilavíti sem er ekki á íslensku (t.d. <a href="{URL_BASE}spilaviti/bitstarz/">BitStarz</a> eða <a href="{URL_BASE}spilaviti/stake/">Stake</a>) skaltu:</p>
 <ul>
-<li>✅ <strong>Bónusskilmálar</strong> — Veðskilyrði og reglur geta verið flókin. Á íslensku missirðu ekki af smáa letrinu.</li>
-<li>✅ <strong>Þjónustuver</strong> — Ef vandamál koma upp er auðveldara að útskýra á eigin tungumáli.</li>
-<li>✅ <strong>Ábyrgð</strong> — Upplýsingar um sjálfsútilokun og takmörk eru mikilvægari á tungumáli sem þú skilur.</li>
+<li>Lesa umsögn okkar á íslensku áður — við þýðum lykilatriði bónusskilmálanna</li>
+<li>Nota Google Translate á skilmálasíðuna ef þú ert í vafa</li>
+<li>Hafa samband við þjónustuver <em>áður en</em> þú leggur inn ef eitthvað er óljóst</li>
+<li>Setja takmörk á innborgunum strax í byrjun — þetta er auðvelt á öllum spilavítum, jafnvel á ensku</li>
 </ul>
 
 <h2>Algengar spurningar</h2>
-<h3>Bjóða öll spilavíti íslensku?</h3>
-<p>Nei — flest alþjóðleg spilavíti eru á ensku. Aðeins fá bjóða fullt íslenskt viðmót.</p>
+<h3>Bjóða öll netspilavíti íslensku?</h3>
+<p>Nei — langflest eru á ensku. Aðeins Epicbet og Respin bjóða fullkomið íslenskt viðmót. Slotoro er að hluta á íslensku. Alþjóðlegir risar eins og BitStarz, Stake og BC.Game eru alveg á ensku.</p>
 <h3>Get ég breytt tungumáli á spilavítinu?</h3>
-<p>Ef spilavítið styður íslensku er yfirleitt fánamerki eða tungumálaval neðst á síðunni.</p>
+<p>Ef spilavítið styður íslensku er yfirleitt fánamerki eða tungumálaval neðst á síðunni. Ef íslensku er ekki á listanum styður spilavítið hana ekki.</p>
+<h3>Er betra að velja spilavíti á íslensku?</h3>
+<p>Ef tungumál skiptir þig máli — já. Ef þú ert þægilegur á ensku er val þitt víðara og þú getur nýtt þér stærri bónusa og fleiri leiki. Úrval á íslensku spilavítum er minna en á alþjóðlegum spilavítum.</p>
+<h3>Hvernig veit ég hvort spilavítið er raunverulega á íslensku eða bara Google Translate?</h3>
+<p>Raunveruleg þýðing er slétt og eðlileg. Google Translate-þýðing hefur oft skringilegar setningar og vandamál með séríslensk orð (þ, ð, æ). Epicbet og Respin nota fagþýðingar — ekki sjálfvirka þýðingu.</p>
 <div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Sjá spilavíti á íslensku →</a></div>'''
     },
 ]
+
+def extract_faqs(html_content):
+    """Extract FAQ pairs from <h3>question</h3><p>answer</p> after 'Algengar spurningar' heading."""
+    faqs = []
+    faq_section = re.split(r'<h2>Algengar spurningar</h2>', html_content, maxsplit=1)
+    if len(faq_section) < 2:
+        return faqs
+    section = faq_section[1]
+    pairs = re.findall(r'<h3>(.*?)</h3>\s*<p>(.*?)</p>', section, re.S)
+    for q, a in pairs:
+        q_clean = re.sub(r'<[^>]+>', '', q).strip()
+        a_clean = re.sub(r'<[^>]+>', '', a).strip()
+        if q_clean and a_clean:
+            faqs.append((q_clean, a_clean))
+    return faqs
 
 for page in seo_pages:
     hero = make_hero(page["title"][:40], "Svipan leiðbeining", page["emoji"], *page["colors"])
     page_content = page["content"].replace("{hero}", hero)
     bc = [("{URL_BASE}", "Heim"), ("{URL_BASE}leidbeiningar/", "Leiðbeiningar"), ("", page["title"][:50])]
-    html = page_template(page["title"], page["desc"], bc, page_content)
+    # Extract FAQs and add schema
+    faqs = extract_faqs(page["content"])
+    schema = [faq_schema(faqs)] if faqs else None
+    html = page_template(page["title"], page["desc"], bc, page_content, schema_extra=schema)
     write_page(f'leidbeiningar/{page["slug"]}/index.html', html)
 
 print(f"  ✅ {len(seo_pages)} SEO target pages generated")
