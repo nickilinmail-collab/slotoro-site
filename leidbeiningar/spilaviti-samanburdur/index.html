@@ -16,6 +16,7 @@
 <meta name="geo.region" content="IS">
 <meta name="geo.placename" content="Iceland">
 <meta property="og:locale" content="is_IS">
+<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -404,5 +405,6 @@ var path=location.pathname;d.querySelectorAll('.dr-sub a').forEach(function(a){i
 var q=d.querySelector('.dr-search input'),empty=d.querySelector('.dr-empty');q.addEventListener('input',function(){var v=q.value.trim().toLowerCase(),any=false;d.querySelectorAll('.dr-group').forEach(function(g){var sub=g.querySelector('.dr-sub'),t=g.querySelector('.dr-toggle'),hit=false;sub.querySelectorAll('a').forEach(function(a){var m=!v||a.textContent.toLowerCase().indexOf(v)>-1;a.hidden=!m;if(m&&v)hit=true;});if(v){g.hidden=!hit;sub.hidden=!hit;t.setAttribute('aria-expanded',hit?'true':'false');if(hit)any=true;}else{g.hidden=false;sub.querySelectorAll('a').forEach(function(a){a.hidden=false;});sub.hidden=t.getAttribute('aria-expanded')!=='true';}});d.querySelectorAll('.dr-body > .dr-item').forEach(function(i){i.hidden=!!v;});empty.hidden=!v||any;});
 })();</script>
 <script>document.addEventListener('click',function(e){var a=e.target.closest('a[href*="gameslnk.cc"]');if(a){gtag('event','affiliate_click',{'link_url':a.href,'link_text':a.textContent.trim(),'page_path':location.pathname});}});</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Hvaða netspilavíti er best á Íslandi?","acceptedAnswer":{"@type":"Answer","text":"Samkvæmt umsögnum okkar er Slotoro besta netspilavítið á Íslandi 2026 með 98 spilakassa, hröðum útborgunum og dulritunargreiðslum. BitStarz og Stake eru einnig sterkir kostir."}},{"@type":"Question","name":"Er löglegt að spila á netspilavítum á Íslandi?","acceptedAnswer":{"@type":"Answer","text":"Á Íslandi er ekkert innlent leyfiskerfi fyrir netspilavíti. Þó er ekki beinlínis ólöglegt fyrir einstaklinga að spila á erlendum spilavítum sem starfa undir alþjóðlegum leyfum frá Malta, Curaçao eða Bretlandi."}},{"@type":"Question","name":"Hvaða greiðsluleiðir virka á Íslandi?","acceptedAnswer":{"@type":"Answer","text":"Dulritunargjaldmiðlar (Bitcoin, Ethereum) eru áreiðanlegasta greiðsluleiðin fyrir íslenska spilara vegna takmarkana bankanna. Visa og Mastercard virka einnig hjá mörgum spilavítum."}},{"@type":"Question","name":"Er hægt að spila í íslenskum krónum (ISK)?","acceptedAnswer":{"@type":"Answer","text":"Fá spilavíti styðja ISK beint. Flest nota EUR eða USD og bankinn sér um gjaldmiðlaskipti. Dulritunarspilavíti komast hjá þessu vandamáli."}}]}</script>
 </body>
 </html>
