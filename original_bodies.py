@@ -181,7 +181,7 @@ BODIES["spilaviti/spilaviti-med-hradri-utborgun"] = """
 
 # Further batches live in their own modules, one per section.
 for _mod in ("bodies_greidslur", "bodies_greidslur2", "bodies_live", "bodies_live2",
-             "bodies_leidbeiningar", "bodies_bonusar", "bodies_spilaviti2", "bodies_spilaviti3", "bodies_spilaviti4", "bodies_mixed9"):
+             "bodies_leidbeiningar", "bodies_bonusar", "bodies_spilaviti2", "bodies_spilaviti3", "bodies_spilaviti4", "bodies_mixed9", "bodies_leid10"):
     try:
         BODIES.update(__import__(_mod).BODIES)
     except ImportError:
