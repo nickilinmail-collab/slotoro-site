@@ -17,7 +17,7 @@
 <meta name="geo.region" content="IS">
 <meta name="geo.placename" content="Iceland">
 <meta property="og:locale" content="is_IS">
-<meta name="robots" content="noindex,follow">
+<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -303,22 +303,43 @@ background:linear-gradient(180deg,rgba(255,255,255,.5),rgba(255,255,255,0));}
 <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(24px,4vw,34px);font-weight:700;color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.7);line-height:1.2">Öryggi spilavíta</span>
 <span style="font-size:17px;color:#fff;opacity:.9;margin-top:8px;text-shadow:0 1px 8px rgba(0,0,0,.7)">Leiðbeining</span>
 </div></div>
-<p>Hvernig á að vernda persónuupplýsingarnar þínar þegar þú spilar á netspilavítum.</p>
-<h2>Ítarleg leiðbeining</h2>
-<p>Í þessari leiðbeiningu fjöllum við um allt sem þú þarft að vita um «Öryggi spilavíta». Upplýsingarnar eru uppfærðar fyrir íslenska leikmenn árið 2026.</p>
-<h3>Lykilatriði</h3>
-<ul>
-<li>Hvað þarf að vita áður en þú byrjar</li>
-<li>Skref-fyrir-skref leiðbeiningar</li>
-<li>Algeng mistök og hvernig á að forðast þau</li>
-<li>Ráðleggingar frá sérfræðingum Svipan</li>
-</ul>
-<h3>Gagnlegir tenglar</h3>
-<ul>
-<li><a href="/spilaviti/">Spilavíti umsagnir</a></li>
-<li><a href="/bonusar/">Bónusar</a></li>
-<li><a href="/greidslur/">Greiðslumátar</a></li>
-</ul>
+
+<p>Öryggi í netspilun hefur tvær víglínur og fólk ver yfirleitt bara aðra: síðuna sem þú velur — og reikninginn sem þú rekur. Tölfræðin er óþægileg en skýr: fleiri spilarar tapa fé á eigin lykilorðavenjum og veiðipóstum en á svikasíðum. Þessi leiðarvísir dekkar báðar línur, þína fyrst.</p>
+
+<h2>Reikningurinn þinn: fimm stillingar sem loka 95% af glufunum</h2>
+<ol>
+<li><strong>Einstakt lykilorð</strong> — endurnýtt lykilorð þýðir að leki hjá hvaða þjónustu sem er opnar spilareikninginn þinn; lykilorðastjóri gerir regluna áreynslulausa.</li>
+<li><strong>2FA með appi</strong> (ekki SMS — símanúmerahnupl er raunverulegt): virkjað strax við skráningu, eins og <a href="/spilaviti/hrod-skraning-spilaviti/">skráningarumfjöllunin</a> leggur til.</li>
+<li><strong>Skráningarnetfangið sé alvöru hólf með eigin 2FA</strong> — það er endurheimtulykill alls hins.</li>
+<li><strong>Innskráning aðeins af bókamerki</strong> — hlekkir í póstum og skilaboðum eru <a href="/leidbeiningar/hvernig-a-ad-fordast-spilavitasvindl/">veiðileiðin</a>, ekki þjónustuleið.</li>
+<li><strong>Útskráning á sameiginlegum tækjum</strong> og engin vistun greiðsluleiða þar sem fleiri hafa aðgang.</li>
+</ol>
+
+<h2>Síðan: tæknilögin sem eiga að vera til staðar</h2>
+<table>
+<tr><th>Lag</th><th>Hvað þú sérð</th><th>Hvað það ver</th></tr>
+<tr><td>Dulkóðun (TLS)</td><td>Lásinn í vafranum — lágmark, ekki gæðamerki</td><td>Gögn á leiðinni</td></tr>
+<tr><td>Leyfisskyld gagnavernd</td><td><a href="/leidbeiningar/hvernig-a-ad-stadfesta-spilavitaleyfi/">Sannreynt leyfi</a></td><td>Meðferð og geymslu skilríkjanna úr <a href="/leidbeiningar/hvad-er-kyc-stadfesting/">KYC</a></td></tr>
+<tr><td>Auðkenningarveitur</td><td>Skjöl send gegnum innskráð svæði, ekki tölvupóst</td><td>Skilríkin þín gegn lausum endum</td></tr>
+<tr><td>Vottaðir leikir</td><td>Framleiðendalén, RTP-gluggar</td><td>Sanngirni útkoma — <a href="/leidbeiningar/hvernig-rng-virkar/">RNG-keðjan</a></td></tr>
+</table>
+<p>Athugið hvað vantar í töfluna: „öryggisvottorð" borðar og skjaldarmerki á forsíðu — myndir eru ekki lag, sjá <a href="/leidbeiningar/einkenni-sanngjarns-spilavitis/">merkjafræðina</a>.</p>
+
+<h2>Peningahliðin: lágmarkaðu það sem getur tapast</h2>
+<p>Öryggisreglan sem engin stilling kemur í staðinn fyrir: <strong>innistæða á spilasíðu er áhætta í réttu hlutfalli við stærð og tíma</strong>. Reglulegar úttektir (<a href="/leidbeiningar/hvernig-a-ad-taka-ut-af-spilaviti/">ferlið</a>), rúllan geymd <a href="/greidslur/dulritunarveski/">þín megin</a> og greiðsluleiðir sem hólfa sig frá heimilisfjármálum (<a href="/greidslur/skrill-i-spilavitum/">veski</a> eða rafmynt frekar en aðalkortið) breyta versta tilviki úr stóráfalli í leiðindi. Vistað kort á tíu síðum er tíu afrit af sama lykli.</p>
+
+<h2>Net og tæki — stutta útgáfan</h2>
+<p>Leikir á kaffihúsaneti: allt í lagi, dulkóðunin heldur. Innlagnir, úttektir og KYC-skjöl: heimanetið eða 4G/5G, eins og <a href="/spilaviti/farsimaspilaviti/">símaumfjöllunin</a> rekur. Tækið uppfært, enginn „casino APK" utan verslana (<a href="/spilaviti/spilaviti-opp/">app-umfjöllunin</a> útskýrir hvers vegna), og vafraviðbætur sem lofa „bónus-sjálfvirkni" fá ekki aðgang — viðbót les allt sem þú slærð inn.</p>
+
+<h2>Algengar spurningar</h2>
+<h3>Hvað geri ég STRAX ef ég held að reikningurinn sé rændur?</h3>
+<p>Lykilorð + 2FA endurstillt af hreinu tæki, þjónustuverið beðið um frystingu og yfirferð síðustu færslna, netfangshólfið skoðað fyrir framsendingareglum (klassískt þjófafar) — og sömu lykilorðaskipti alls staðar sem endurnýting náði. Hraðinn ræður tjóninu.</p>
+<h3>Er fingrafara-/Face ID-innskráning örugg?</h3>
+<p>Já — lífkennin opna tækið þitt, lykillinn sjálfur fer aldrei til síðunnar. Veikleikinn er áfram endurheimtuleiðin: netfangið og 2FA-afritunarkóðarnir, geymdir eins og <a href="/greidslur/dulritunarveski/">frasarnir</a>.</p>
+<h3>VPN — eykur það öryggi?</h3>
+<p>Dulkóðunarlega óþarft (TLS er þegar til staðar) og skilmálalega hættulegt: staðsetningarfeluleikur brýtur reglur flestra síðna og frystir vinninga. Öryggi fæst í stillingunum að ofan, ekki í IP-tölunni.</p>
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="sponsored noopener" class="cta-btn">Spila á Slotoro →</a></div>
+
 <div class="share" aria-label="Deila">
 <span class="share-label">Deila:</span>
 <a class="s-fb" data-net="fb" href="#" target="_blank" rel="noopener" aria-label="Deila á Facebook"><svg viewBox="0 0 24 24"><path d="M14 8V6.5c0-.7.5-1 1-1h2V2h-3c-3 0-4 2-4 4.3V8H8v3.5h2V22h4V11.5h2.8L17 8h-3z"/></svg></a>
