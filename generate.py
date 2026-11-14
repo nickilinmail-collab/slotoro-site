@@ -905,6 +905,20 @@ def honest_cta(html):
         return m.group(1) + label + m.group(3)
     return re.sub(r'(<a href="' + re.escape(AFF) + r'"[^>]*class="(cta-btn|sidebar-cta|btn-signup)"[^>]*>)(?:.*?)(</a>)', fix, html)
 
+# --- Rewrite queue -------------------------------------------------------
+# Pages whose copy is still templated/near-duplicate. They stay on the site and
+# stay internally linked, but carry noindex and are kept out of the sitemap so
+# Google does not read the site as a doorway farm. Remove a dir from
+# rewrite_queue.json once its page has original copy, and it returns to the index.
+try:
+    with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "rewrite_queue.json"), encoding="utf-8") as _f:
+        REWRITE_QUEUE = set(_json.load(_f))
+except Exception:
+    REWRITE_QUEUE = set()
+
+def is_pending(path):
+    return path.endswith("index.html") and path[:-len("/index.html")] in REWRITE_QUEUE
+
 def write_page(path, html):
     global count
     html = honest_cta(html)
@@ -921,6 +935,12 @@ def write_page(path, html):
         if _dir == "":
             _hreflang += '\n<link rel="alternate" hreflang="en" href="https://svipan.is/en/">'
         html = html.replace("<!-- Hreflang -->", "<!-- Hreflang -->\n" + _hreflang, 1)
+    if is_pending(path):
+        if '<meta name="robots"' in html:
+            html = re.sub(r'<meta name="robots" content="[^"]*">',
+                          '<meta name="robots" content="noindex,follow">', html, count=1)
+        else:
+            html = html.replace("</title>", "</title>\n<meta name=\"robots\" content=\"noindex,follow\">", 1)
     full = os.path.join(BASE, path)
     os.makedirs(os.path.dirname(full), exist_ok=True)
     with open(full, 'w', encoding='utf-8') as f:
@@ -6285,6 +6305,9 @@ sitemap_urls.extend([
     'https://svipan.is/greidslur/',
     'https://svipan.is/leidbeiningar/',
 ])
+
+sitemap_urls = [u for u in sitemap_urls
+                if u.replace("https://svipan.is/", "").rstrip("/") not in REWRITE_QUEUE]
 
 sitemap_xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
 for url in sitemap_urls:
