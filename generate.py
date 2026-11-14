@@ -476,7 +476,7 @@ def get_footer():
       <div class="footer-cols">
         <div><div class="footer-col-title">SPILAVÍTI</div><a href="{URL_BASE}casino/">Umsagnir</a><a href="{URL_BASE}bonusy/">Bónusar</a><a href="{URL_BASE}casino/crypto-casino/">Dulritunargjaldmiðill</a></div>
         <div><div class="footer-col-title">LEIKIR</div><a href="{URL_BASE}slots/">Spilakassar</a><a href="{URL_BASE}live/">Í beinni</a></div>
-        <div><div class="footer-col-title">UPPLÝSINGAR</div><a href="{URL_BASE}o-nas/">Um okkur</a><a href="{URL_BASE}gajdy/">Leiðbeiningar</a><a href="{URL_BASE}platezhi/">Greiðslur</a><a href="{URL_BASE}konfidencialnost/">Persónuvernd</a><a href="#" data-cookie-settings>Vafrakökur</a></div>
+        <div><div class="footer-col-title">UPPLÝSINGAR</div><a href="{URL_BASE}o-nas/">Um okkur</a><a href="{URL_BASE}hofundur/valbjorn-gjukason/">Ritstjóri</a><a href="{URL_BASE}gajdy/">Leiðbeiningar</a><a href="{URL_BASE}platezhi/">Greiðslur</a><a href="{URL_BASE}konfidencialnost/">Persónuvernd</a><a href="#" data-cookie-settings>Vafrakökur</a></div>
       </div>
     </div>
     <div class="footer-help">Þarftu að tala við einhvern um spilavanda? Hjálparsíminn <a href="tel:1717">1717</a> hjá Rauða krossinum er ókeypis og opinn allan sólarhringinn. <a href="{URL_BASE}gajdy/otvetstvennaya-igra/">Ábyrg spilun →</a></div>
@@ -488,7 +488,7 @@ def get_footer():
 def page_template(title, desc, breadcrumbs, content, canonical="", og_img="", schema_extra=None, show_byline=True):
     # Byline + affiliate disclosure under the first H1
     if show_byline and '</h1>' in content:
-        byline = (f'<div class="byline">BF Casino ritstjórn · Uppfært nóvember 2026 · '
+        byline = (f'<div class="byline">Höfundur: <a href="{URL_BASE}hofundur/valbjorn-gjukason/" rel="author">Valbjörn Gjúkason</a> · Uppfært nóvember 2026 · '
                   f'<a href="{URL_BASE}kak-my-ocenivaem/">Hvernig við metum</a></div>'
                   f'<div class="disclosure">Þessi síða inniheldur samstarfstengla. Við gætum fengið þóknun ef þú skráir þig, '
                   f'en það hefur ekki áhrif á einkunnir okkar. 18+</div>')
@@ -501,10 +501,11 @@ def page_template(title, desc, breadcrumbs, content, canonical="", og_img="", sc
     crumbs = [{"@type":"ListItem","position":i+1,"name":n,**({"item":abs_url(u)} if u else {})} for i,(u,n) in enumerate(breadcrumbs)]
     graph = [
         {"@type":"WebSite","@id":site+"/#website","name":"BF Casino","url":site+"/","inLanguage":"is"},
-        {"@type":"Organization","@id":site+"/#org","name":"BF Casino ritstjórn","url":site+"/"},
+        {"@type":"Organization","@id":site+"/#org","name":"BF Casino","url":site+"/"},
+        {"@type":"Person","@id":site+"/#valbjorn","name":"Valbjörn Gjúkason","url":site+"/hofundur/valbjorn-gjukason/","jobTitle":"Ritstjóri","worksFor":{"@id":site+"/#org"}},
         {"@type":"Article","headline":title[:110],"description":desc,"inLanguage":"is",
          "datePublished":"2026-06-01","dateModified":"2026-11-14",
-         "author":{"@id":site+"/#org"},"publisher":{"@id":site+"/#org"}},
+         "author":{"@id":site+"/#valbjorn"},"publisher":{"@id":site+"/#org"}},
         {"@type":"BreadcrumbList","itemListElement":crumbs},
     ] + (schema_extra or [])
     schema_json = json.dumps({"@context":"https://schema.org","@graph":graph}, ensure_ascii=False).replace("</","<\\/")
@@ -949,7 +950,7 @@ for c in casinos:
     bc = [("{URL_BASE}", "Heim"), ("{URL_BASE}casino/", "Spilavíti"), ("", c["name"])]
     review = {"@type":"Review","itemReviewed":{"@type":"Organization","name":c["name"]},
               "reviewRating":{"@type":"Rating","ratingValue":c["rating"],"bestRating":10,"worstRating":0},
-              "author":{"@id":"https://bestiflokkurinn.is/#org"},"inLanguage":"is"}
+              "author":{"@id":"https://bestiflokkurinn.is/#valbjorn"},"inLanguage":"is"}
     html = page_template(f'{c["name"]} umsögn', c["desc"], bc, content, schema_extra=[review, faq_schema(casino_faq(c))])
     write_page(f'casino/{c["slug"]}/index.html', html)
 
@@ -1682,8 +1683,26 @@ write_page("gajdy/index.html", page_template("Guides", "Leiðbeiningar og kennsl
 
 
 # 10. SITEMAP
+# Author page
+_author = f'''<h1>Valbjörn Gjúkason</h1>
+<p><strong>Ritstjóri BF Casino.</strong> Valbjörn ber ábyrgð á öllum umsögnum, samanburði og leiðbeiningum á vefnum og fer yfir hverja síðu áður en hún birtist.</p>
+<h2>Hvað hann skoðar</h2>
+<ul>
+<li>Spilakassa: RTP, sveiflu, hámarksvinning og hvernig bónusinn virkar, borið saman við gögn framleiðenda og óháðra gagnagrunna.</li>
+<li>Spilavíti: leyfi, skilmála bónusa, veðskilyrði, greiðsluleiðir fyrir íslenska leikmenn og hvort hægt sé að nota íslenskar krónur.</li>
+<li>Leiðbeiningar: íslensk lög, skatta á vinninga og úrræði eins og Hjálparsíma Rauða krossins 1717.</li>
+</ul>
+<h2>Ritstjórnarstefna</h2>
+<p>Við birtum aðeins tölur sem við getum vísað í heimild fyrir. Þegar heimildir eru ósammála segjum við það og bendum á upplýsingaskjá leiksins í stað þess að giska. Síður eru merktar með dagsetningu síðustu uppfærslu.</p>
+<p>BF Casino fær þóknun frá Slotoro ef þú skráir þig í gegnum tengla okkar. Það hefur ekki áhrif á einkunnir, og við segjum skýrt frá því á hverri síðu. Lestu meira um <a href="{URL_BASE}kak-my-ocenivaem/">hvernig við metum spilavíti</a>.</p>
+<h2>Leiðrétting</h2>
+<p>Finnurðu villu í umsögn? Láttu okkur vita og við leiðréttum hana og uppfærum dagsetninguna.</p>'''
+write_page("hofundur/valbjorn-gjukason/index.html", page_template("Valbjörn Gjúkason — ritstjóri BF Casino", "Valbjörn Gjúkason er ritstjóri BF Casino og ber ábyrgð á umsögnum um spilakassa og spilavíti fyrir íslenska leikmenn.",
+    [("{URL_BASE}", "Heim"), ("", "Höfundur")], _author, show_byline=False,
+    schema_extra=[{"@type":"ProfilePage","mainEntity":{"@id":"https://bestiflokkurinn.is/#valbjorn"}}]))
+
 print("Generating sitemap.xml...")
-sitemap_urls = ['https://bestiflokkurinn.is/']
+sitemap_urls = ['https://bestiflokkurinn.is/', 'https://bestiflokkurinn.is/hofundur/valbjorn-gjukason/']
 for c in casinos:
     sitemap_urls.append(f'https://bestiflokkurinn.is/casino/{c["slug"]}/')
 for cat in casino_categories:
