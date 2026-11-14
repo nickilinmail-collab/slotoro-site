@@ -1006,7 +1006,7 @@ for s in slots_data:
 {faq_block(faqs)}'''
 
     bc = [("{URL_BASE}", "Heim"), ("{URL_BASE}spilakassar/", "Spilakassar"), ("", s["name"])]
-    html = page_template(f'{s["name"]} spilakassi — RTP, sveifla og bónus' if len(s["name"]) <= 19 else f'{s["name"]} — RTP og bónus', f'{s["name"]} frá {s["provider"]}: RTP {rtp_is(s["rtp"])}, {vol_is(s["volatility"]).lower()} sveifla, hámark {maxwin_is(s["maxwin"])}. Hvernig leikurinn virkar og fyrir hverja hann hentar.', bc, content, schema_extra=[faq_schema(faqs)])
+    html = page_template(f'{s["name"]} spilakassi — RTP, sveifla og bónus' if len(s["name"]) <= 19 else f'{s["name"]} — RTP og bónus', f'{s["name"]} frá {s["provider"]}: RTP {rtp_is(s["rtp"])}, {vol_is(s["volatility"]).lower()} sveifla, hámark {maxwin_is(s["maxwin"])}. Hvernig leikurinn virkar og fyrir hverja hann hentar.', bc, content, schema_extra=[faq_schema(faqs)], og_img=(f"https://svipan.is/img/slots/{s['slug']}.jpg" if os.path.exists(os.path.join(BASE, 'img/slots', s['slug'] + '.jpg')) else ''))
     write_page(f'spilakassar/{s["slug"]}/index.html', html)
 
 # 3b. Data-driven reviews for 98 popular lobby slots
@@ -1040,7 +1040,7 @@ for s in EXTRA_REVIEWS:
 {faq_block(faqs)}'''
     bc = [("{URL_BASE}", "Heim"), ("{URL_BASE}spilakassar/", "Spilakassar"), ("", s["name"])]
     desc = f'{s["name"]} frá {s["provider"]}: ' + (f'RTP {rtp_is(s["rtp"])}, ' if s["rtp"] else '') + (f'{vol_is(s["volatility"]).lower()} sveifla, ' if s["volatility"] else '') + f'hámark {maxwin_is(s["maxwin"])}. Hvernig leikurinn virkar.'
-    write_page(f'spilakassar/{s["slug"]}/index.html', page_template(f'{s["name"]} spilakassi — umsögn og RTP', desc, bc, content, schema_extra=[faq_schema(faqs)]))
+    write_page(f'spilakassar/{s["slug"]}/index.html', page_template(f'{s["name"]} spilakassi — umsögn og RTP', desc, bc, content, schema_extra=[faq_schema(faqs)], og_img=(f"https://svipan.is/img/slots/{s['slug']}.jpg" if os.path.exists(os.path.join(BASE, 'img/slots', s['slug'] + '.jpg')) else '')))
 
 # 4. LIVE КАЗИНО (50)
 print("Generating live casino pages...")
