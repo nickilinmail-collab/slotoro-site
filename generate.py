@@ -1566,8 +1566,13 @@ print("Generating index pages...")
 casino_cards = ""
 for c in casinos[:20]:
     ctype_label = "Crypto" if c["type"]=="crypto" else "Classic"
+    casino_img_path = f"img/casinos/{c['slug']}.jpg"
+    if os.path.exists(casino_img_path):
+        casino_thumb = f'<div class="game-card-thumb" style="position:relative;"><img src="{URL_BASE}{casino_img_path}" alt="{c["name"]}" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:14px 14px 0 0;"><span style="position:absolute;bottom:8px;right:10px;font-size:22px;font-weight:800;color:#fff;background:rgba(20,22,29,.75);padding:2px 10px;border-radius:8px;">{c["rating"]}</span></div>'
+    else:
+        casino_thumb = f'<div class="game-card-thumb" style="background:linear-gradient(135deg,{"#62081f,#a3173b" if c["type"]=="crypto" else "#262a35,#a31d2e"});display:flex;align-items:center;justify-content:center;"><span style="font-size:28px;font-weight:800;color:rgba(255,255,255,.88);">{c["rating"]}</span></div>'
     casino_cards += f'''<a href="{URL_BASE}spilaviti/{c["slug"]}/" class="game-card">
-<div class="game-card-thumb" style="background:linear-gradient(135deg,{'#62081f,#a3173b' if c['type']=='crypto' else '#262a35,#a31d2e'});display:flex;align-items:center;justify-content:center;"><span style="font-size:28px;font-weight:800;color:rgba(255,255,255,.88);">{c["rating"]}</span></div>
+{casino_thumb}
 <div class="game-card-info"><div class="game-card-name">{c["name"]}</div><div class="game-card-prov">{c["bonus"]} · {ctype_label}</div></div></a>\n'''
 
 casino_list = "\n".join([f'<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/{c["slug"]}/">{c["name"]}</a></strong> — {isk(c["bonus"])} (Einkunn: {c["rating"]}/10)</p></div>' for c in casinos[:50]])
