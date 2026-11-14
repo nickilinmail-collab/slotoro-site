@@ -116,7 +116,7 @@ a{text-decoration:none;color:inherit;}
 
 .timeline-section{max-width:900px;margin:0 auto;padding:0 40px 50px;position:relative;z-index:1;}
 .timeline-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:24px;}
-.tl-card{display:flex;flex-direction:column;color:inherit;background:rgba(26,29,37,.6);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px 24px 48px;transition:all .3s;position:relative;overflow:hidden;min-height:220px;}
+.tl-card{display:flex;flex-direction:column;color:inherit;background:rgba(26,29,37,.6);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px 24px 48px;transition:all .3s;position:relative;overflow:hidden;}
 .tl-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#d63641,#e04550);opacity:0;transition:opacity .3s;}
 .tl-card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.25);box-shadow:0 8px 32px rgba(204,36,57,.15);}
 .tl-card:hover::before{opacity:1;}
@@ -137,7 +137,7 @@ a{text-decoration:none;color:inherit;}
 .stat-icon.gold{background:linear-gradient(135deg,rgba(240,180,60,.15),rgba(240,180,60,.05));border:1px solid rgba(240,180,60,.12);}
 .stat-icon.pink{background:linear-gradient(135deg,rgba(255,100,150,.15),rgba(255,100,150,.05));border:1px solid rgba(255,100,150,.12);}
 .stat-num{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:#fff;white-space:nowrap;}
-.stat-label{font-size:16px;color:rgba(202,139,147,.88);margin-top:2px;}
+.stat-label{font-size:14px;color:rgba(202,139,147,.88);margin-top:2px;line-height:1.3;}
 
 /* ═══ TRANSITION CTA ═══ */
 .cta-section{max-width:900px;margin:0 auto;padding:30px 40px 60px;position:relative;z-index:1;text-align:center;}
@@ -460,7 +460,7 @@ document.addEventListener('click',function(e){if(!e.target.closest('.search-wrap
     <div class="stat"><div class="stat-icon purple">🎰</div><div><div class="stat-num">8 000+</div><div class="stat-label">Leikir hjá Slotoro</div></div></div>
     <div class="stat"><div class="stat-icon blue">📺</div><div><div class="stat-num">71</div><div class="stat-label">Framleiðendur hjá Slotoro</div></div></div>
     <div class="stat"><div class="stat-icon gold">⚡</div><div><div class="stat-num">€10</div><div class="stat-label">Lágmarksinnborgun hjá Slotoro</div></div></div>
-    <div class="stat"><div class="stat-icon pink">🛡️</div><div><div class="stat-num">1717</div><div class="stat-label">Hjálparsími við spilavanda</div></div></div>
+    <div class="stat"><div class="stat-icon pink">🛡️</div><div><div class="stat-num">1717</div><div class="stat-label">Hjálparsími spilavanda</div></div></div>
   </div>
 </div>
 
