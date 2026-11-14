@@ -1,3 +1,13 @@
+
+import re
+import unicodedata as _ud
+def _fold_slug(x):
+    x = x.replace("ð","d").replace("Ð","d").replace("þ","th").replace("Þ","th").replace("æ","ae").replace("Æ","ae").replace("&","og")
+    x = _ud.normalize("NFD", x)
+    x = "".join(c for c in x if _ud.category(c) != "Mn")
+    x = re.sub(r"[^a-z0-9-]","",x.lower().replace(" ","-"))
+    return re.sub(r"-{2,}","-",x).strip("-")
+
 #!/usr/bin/env python3
 """
 Svipan (svipan.is) site generator
@@ -119,6 +129,7 @@ more_slot_names = [
 
 for i, (name, provider, rtp, maxwin, theme, cdn) in enumerate(more_slot_names):
     slug = name.lower().replace("'", "").replace(" ", "-").replace(":", "").replace("!", "")
+    slug = _fold_slug(slug)
     slots_data.append({
         "slug": slug,
         "name": name,
@@ -146,33 +157,35 @@ verified_slots = [
 ]
 for name, provider, rtp, vol, maxwin, theme in verified_slots:
     slugv = name.lower().replace("'", "").replace(" ", "-")
+    slugv = _fold_slug(slugv)
     slots_data.append({"slug": slugv, "name": name, "provider": provider, "rtp": rtp, "volatility": vol, "maxwin": maxwin, "theme": theme})
 
 from slot_content import apply_fixes, SLOT_TEXT, VOL_WHO, vol_is, theme_is, maxwin_is, rtp_is, slot_faq
+SLOT_TEXT = { _fold_slug(k): v for k, v in SLOT_TEXT.items() }
 apply_fixes(slots_data)
 
 # Casino categories (50 pages) — all in Icelandic
 casino_categories = [
-    {"slug": "luchshie-online-casino", "title": "Bestu netspilavítin", "desc": "Hæst metnu netspilavítin fyrir íslenska leikmenn."},
-    {"slug": "crypto-casino", "title": "Dulritunargjaldmiðils spilavíti", "desc": "Spilavíti sem taka við Bitcoin, Ethereum og öðrum dulritunargjaldmiðlum."},
-    {"slug": "novye-casino", "title": "Ný spilavíti 2026", "desc": "Nýjustu netspilavítin sem opnuðu árið 2026."},
-    {"slug": "casino-s-bystrym-vyvodom", "title": "Hröð útborgun spilavíti", "desc": "Spilavíti þar sem útborganir eru afgreiddar á undir 24 klukkustundum."},
-    {"slug": "casino-bez-verifikacii", "title": "Spilavíti án KYC", "desc": "Spilavíti sem krefjast ekki persónuskilríkja."},
-    {"slug": "bitcoin-casino", "title": "Bitcoin spilavíti", "desc": "Bestu spilavítin fyrir Bitcoin innborganir og útborganir."},
-    {"slug": "ethereum-casino", "title": "Ethereum spilavíti", "desc": "Spilavíti sem taka við Ethereum innborgunum og útborgunum."},
-    {"slug": "usdt-casino", "title": "USDT spilavíti", "desc": "Spilavíti sem taka við USDT stablecoin."},
-    {"slug": "litecoin-casino", "title": "Litecoin spilavíti", "desc": "Spilavíti með Litecoin innborgunum."},
-    {"slug": "live-casino", "title": "Spilavíti í beinni", "desc": "Bestu spilavítin með lifandi spilastjórum."},
-    {"slug": "casino-s-bonusom", "title": "Spilavíti með bónus", "desc": "Spilavíti sem bjóða rausnarlega velkomstbónusa."},
-    {"slug": "casino-bez-depozita", "title": "Spilavíti án innborgunar", "desc": "Bónusar án innborgunarkröfu."},
-    {"slug": "casino-s-frispinami", "title": "Ókeypis snúningar spilavíti", "desc": "Spilavíti sem bjóða ókeypis snúninga við skráningu."},
-    {"slug": "mobilnoe-casino", "title": "Farsíma spilavíti", "desc": "Bestu spilavítin fyrir farsímaspilun á iPhone og Android."},
-    {"slug": "casino-s-niskim-depozitom", "title": "Lág innborgun spilavíti", "desc": "Spilavíti þar sem þú getur spilað frá €1."},
-    {"slug": "vip-casino", "title": "VIP spilavíti", "desc": "Spilavíti með bestu VIP og tryggðarkerfi."},
-    {"slug": "megaways-casino", "title": "Megaways spilavíti", "desc": "Spilavíti með stórt úrval Megaways spilakassa."},
-    {"slug": "jackpot-casino", "title": "Jackpot spilavíti", "desc": "Spilavíti með stigvaxandi jackpottum."},
-    {"slug": "casino-s-vysokim-rtp", "title": "Hátt RTP spilavíti", "desc": "Spilavíti sem bjóða spilakassa með RTP yfir 97%."},
-    {"slug": "casino-s-licenziej", "title": "Leyfisskyld spilavíti", "desc": "Staðfest og leyfisskyld netspilavíti."},
+    {"slug": "bestu-netspilaviti", "title": "Bestu netspilavítin", "desc": "Hæst metnu netspilavítin fyrir íslenska leikmenn."},
+    {"slug": "crypto-spilaviti", "title": "Dulritunargjaldmiðils spilavíti", "desc": "Spilavíti sem taka við Bitcoin, Ethereum og öðrum dulritunargjaldmiðlum."},
+    {"slug": "ny-spilaviti", "title": "Ný spilavíti 2026", "desc": "Nýjustu netspilavítin sem opnuðu árið 2026."},
+    {"slug": "spilaviti-med-hradri-utborgun", "title": "Hröð útborgun spilavíti", "desc": "Spilavíti þar sem útborganir eru afgreiddar á undir 24 klukkustundum."},
+    {"slug": "spilaviti-an-stadfestingar", "title": "Spilavíti án KYC", "desc": "Spilavíti sem krefjast ekki persónuskilríkja."},
+    {"slug": "bitcoin-spilaviti", "title": "Bitcoin spilavíti", "desc": "Bestu spilavítin fyrir Bitcoin innborganir og útborganir."},
+    {"slug": "ethereum-spilaviti", "title": "Ethereum spilavíti", "desc": "Spilavíti sem taka við Ethereum innborgunum og útborgunum."},
+    {"slug": "usdt-spilaviti", "title": "USDT spilavíti", "desc": "Spilavíti sem taka við USDT stablecoin."},
+    {"slug": "litecoin-spilaviti", "title": "Litecoin spilavíti", "desc": "Spilavíti með Litecoin innborgunum."},
+    {"slug": "live-spilaviti", "title": "Spilavíti í beinni", "desc": "Bestu spilavítin með lifandi spilastjórum."},
+    {"slug": "spilaviti-med-bonus", "title": "Spilavíti með bónus", "desc": "Spilavíti sem bjóða rausnarlega velkomstbónusa."},
+    {"slug": "spilaviti-an-innborgunar", "title": "Spilavíti án innborgunar", "desc": "Bónusar án innborgunarkröfu."},
+    {"slug": "spilaviti-med-frisnuningum", "title": "Ókeypis snúningar spilavíti", "desc": "Spilavíti sem bjóða ókeypis snúninga við skráningu."},
+    {"slug": "farsimaspilaviti", "title": "Farsíma spilavíti", "desc": "Bestu spilavítin fyrir farsímaspilun á iPhone og Android."},
+    {"slug": "spilaviti-med-lagri-innborgun", "title": "Lág innborgun spilavíti", "desc": "Spilavíti þar sem þú getur spilað frá €1."},
+    {"slug": "vip-spilaviti", "title": "VIP spilavíti", "desc": "Spilavíti með bestu VIP og tryggðarkerfi."},
+    {"slug": "megaways-spilaviti", "title": "Megaways spilavíti", "desc": "Spilavíti með stórt úrval Megaways spilakassa."},
+    {"slug": "jackpot-spilaviti", "title": "Jackpot spilavíti", "desc": "Spilavíti með stigvaxandi jackpottum."},
+    {"slug": "spilaviti-med-hau-rtp", "title": "Hátt RTP spilavíti", "desc": "Spilavíti sem bjóða spilakassa með RTP yfir 97%."},
+    {"slug": "spilaviti-med-leyfi", "title": "Leyfisskyld spilavíti", "desc": "Staðfest og leyfisskyld netspilavíti."},
 ]
 
 # 30 more categories — Icelandic titles
@@ -210,6 +223,7 @@ more_cats = [
 ]
 for title, desc in more_cats:
     slug = title.lower().replace("'", "").replace(" ", "-").replace("(", "").replace(")", "").replace("ú", "u").replace("á", "a").replace("ö", "o")
+    slug = _fold_slug(slug)
     casino_categories.append({"slug": slug, "title": title, "desc": desc})
 
 # Live casino (50 pages) — Icelandic descriptions
@@ -240,19 +254,20 @@ more_live = [
 ]
 for name in more_live:
     slug = name.lower().replace("'", "").replace(" ", "-")
+    slug = _fold_slug(slug)
     live_games.append({"slug": slug, "name": name, "desc": f"{name} — spilaðu með lifandi spilastjóra á bestu spilavítunum fyrir Ísland."})
 
 # Bónusar (80 pages) — all Icelandic
 bonus_pages = [
     {"slug": "velkomstbonus", "title": "Velkomstbónus", "desc": "Bestu velkomstbónusarnir á netspilavítum sem eru í boði fyrir íslenska leikmenn."},
-    {"slug": "frispiny-bez-depozita", "title": "Ókeypis snúningar án innborgunar", "desc": "Ókeypis snúningar án innborgunarkröfu — skráðu þig og sæktu."},
-    {"slug": "bezdepozitnye-bonusy", "title": "Bónusar án innborgunar", "desc": "Allir bónusar án innborgunar á spilavítum sem taka við íslenskum leikmönnum."},
-    {"slug": "keshbek", "title": "Endurgreiðslubónusar", "desc": "Spilavíti sem bjóða endurgreiðslu á nettótapi — fáðu hlutfall til baka vikulega."},
-    {"slug": "bonus-za-registraciyu", "title": "Skráningarbónus", "desc": "Fáðu bónus strax eftir skráningu — engin innborgun þarf."},
-    {"slug": "bonus-na-pervyj-depozit", "title": "Fyrsta innborgunarbónus", "desc": "Bestu bónusarnir á fyrstu innborgun hjá efstu spilavítum."},
-    {"slug": "bonus-na-vtoroj-depozit", "title": "Önnur innborgunarbónus", "desc": "Bónusar á annarri innborgun — endurnýjunartilboð við næstu áfyllingu."},
-    {"slug": "vejer", "title": "Hvað eru veðskilyrði", "desc": "Skilningur á veðskilyrðum — hvernig gegnumspilun virkar og hvað á að hafa í huga."},
-    {"slug": "bonus-kody", "title": "Bónuskóðar spilavíta", "desc": "Virk afsláttarkóðar og bónuskóðar fyrir netspilavíti árið 2026."},
+    {"slug": "frisnuningar-an-innborgunar-tilbod", "title": "Ókeypis snúningar án innborgunar", "desc": "Ókeypis snúningar án innborgunarkröfu — skráðu þig og sæktu."},
+    {"slug": "bonusar-an-innborgunar", "title": "Bónusar án innborgunar", "desc": "Allir bónusar án innborgunar á spilavítum sem taka við íslenskum leikmönnum."},
+    {"slug": "endurgreidsla", "title": "Endurgreiðslubónusar", "desc": "Spilavíti sem bjóða endurgreiðslu á nettótapi — fáðu hlutfall til baka vikulega."},
+    {"slug": "skraningarbonus", "title": "Skráningarbónus", "desc": "Fáðu bónus strax eftir skráningu — engin innborgun þarf."},
+    {"slug": "bonus-a-fyrstu-innborgun", "title": "Fyrsta innborgunarbónus", "desc": "Bestu bónusarnir á fyrstu innborgun hjá efstu spilavítum."},
+    {"slug": "bonus-a-adra-innborgun", "title": "Önnur innborgunarbónus", "desc": "Bónusar á annarri innborgun — endurnýjunartilboð við næstu áfyllingu."},
+    {"slug": "vedskilyrdi", "title": "Hvað eru veðskilyrði", "desc": "Skilningur á veðskilyrðum — hvernig gegnumspilun virkar og hvað á að hafa í huga."},
+    {"slug": "bonuskodar", "title": "Bónuskóðar spilavíta", "desc": "Virk afsláttarkóðar og bónuskóðar fyrir netspilavíti árið 2026."},
     {"slug": "reload-bonus", "title": "Endurnýjunarbónusar", "desc": "Endurnýjunarbónusar fyrir núverandi leikmenn — vikuleg og mánaðarleg innborgunartilboð."},
 ]
 # 70 more bonus pages per casino
@@ -275,16 +290,16 @@ payment_pages = [
     {"slug": "solana", "title": "Solana (SOL) í spilavítum", "desc": "Solana (SOL) fyrir ofurhraðar spilavítafærslur með nánast engum gjöldum."},
     {"slug": "bnb", "title": "BNB í spilavítum", "desc": "Notkun BNB (Binance Coin) fyrir innborganir og útborganir í spilavítum."},
     {"slug": "tron", "title": "TRON (TRX) í spilavítum", "desc": "TRON (TRX) greiðslur — afar lág gjöld fyrir spilavítafærslur."},
-    {"slug": "kak-kupit-bitcoin", "title": "Hvernig á að kaupa Bitcoin", "desc": "Skref-fyrir-skref leiðbeiningar um kaup á Bitcoin fyrir spilavítainnborganir á Íslandi."},
-    {"slug": "kak-kupit-ethereum", "title": "Hvernig á að kaupa Ethereum", "desc": "Hvar og hvernig á að kaupa Ethereum fyrir spilavítainnborganir."},
-    {"slug": "obhod-blokirovok-bankov", "title": "Framhjá bankalokunum", "desc": "Hvernig á að komast framhjá lokun íslenskra banka á spilavítagreiðslum með dulritunargjaldmiðlum."},
-    {"slug": "kripto-koshelki", "title": "Dulritunarveski", "desc": "Bestu dulritunarveskin fyrir spilavítainnborganir — MetaMask, Trust Wallet og fleira."},
-    {"slug": "metamask-casino", "title": "MetaMask fyrir spilavíti", "desc": "Notkun MetaMask veskis fyrir innborganir og útborganir á netspilavítum."},
-    {"slug": "trust-wallet-casino", "title": "Trust Wallet fyrir spilavíti", "desc": "Innborganir á spilavíti í gegnum Trust Wallet — fullkomin leiðbeining."},
-    {"slug": "binance-casino", "title": "Binance fyrir spilavíti", "desc": "Hvernig á að millifæra fjármuni frá Binance kauphöll á spilavítareikninginn þinn."},
-    {"slug": "coinbase-casino", "title": "Coinbase fyrir spilavíti", "desc": "Kaupa dulritunargjaldmiðil á Coinbase og leggja inn á netspilavíti."},
-    {"slug": "kraken-casino", "title": "Kraken fyrir spilavíti", "desc": "Notkun Kraken kauphallar fyrir dulritunarfærslur í spilavítum."},
-    {"slug": "vpn-casino", "title": "VPN fyrir spilavíti", "desc": "Þarftu VPN til að spila á netspilavítum frá Íslandi? Lagaleg samantekt."},
+    {"slug": "hvernig-a-ad-kaupa-bitcoin", "title": "Hvernig á að kaupa Bitcoin", "desc": "Skref-fyrir-skref leiðbeiningar um kaup á Bitcoin fyrir spilavítainnborganir á Íslandi."},
+    {"slug": "hvernig-a-ad-kaupa-ethereum", "title": "Hvernig á að kaupa Ethereum", "desc": "Hvar og hvernig á að kaupa Ethereum fyrir spilavítainnborganir."},
+    {"slug": "framhja-bankalokunum", "title": "Framhjá bankalokunum", "desc": "Hvernig á að komast framhjá lokun íslenskra banka á spilavítagreiðslum með dulritunargjaldmiðlum."},
+    {"slug": "dulritunarveski", "title": "Dulritunarveski", "desc": "Bestu dulritunarveskin fyrir spilavítainnborganir — MetaMask, Trust Wallet og fleira."},
+    {"slug": "metamask-spilaviti", "title": "MetaMask fyrir spilavíti", "desc": "Notkun MetaMask veskis fyrir innborganir og útborganir á netspilavítum."},
+    {"slug": "trust-wallet-spilaviti", "title": "Trust Wallet fyrir spilavíti", "desc": "Innborganir á spilavíti í gegnum Trust Wallet — fullkomin leiðbeining."},
+    {"slug": "binance-spilaviti", "title": "Binance fyrir spilavíti", "desc": "Hvernig á að millifæra fjármuni frá Binance kauphöll á spilavítareikninginn þinn."},
+    {"slug": "coinbase-spilaviti", "title": "Coinbase fyrir spilavíti", "desc": "Kaupa dulritunargjaldmiðil á Coinbase og leggja inn á netspilavíti."},
+    {"slug": "kraken-spilaviti", "title": "Kraken fyrir spilavíti", "desc": "Notkun Kraken kauphallar fyrir dulritunarfærslur í spilavítum."},
+    {"slug": "vpn-spilaviti", "title": "VPN fyrir spilavíti", "desc": "Þarftu VPN til að spila á netspilavítum frá Íslandi? Lagaleg samantekt."},
 ]
 # 30 more payment pages — Icelandic
 more_payments = [
@@ -321,30 +336,31 @@ more_payments = [
 ]
 for title, desc in more_payments:
     slug = title.lower().replace("€", "eur").replace(" ", "-").replace("(", "").replace(")", "").replace("á", "a").replace("ú", "u")
+    slug = _fold_slug(slug)
     payment_pages.append({"slug": slug, "title": title, "desc": desc})
 
 # Guides (60 pages) — all Icelandic
 guide_pages = [
-    {"slug": "kak-vybrat-casino", "title": "Hvernig á að velja netspilavíti", "desc": "Fullkomin leiðbeining um val á áreiðanlegu og öruggu netspilavíti."},
-    {"slug": "chto-takoe-rtp", "title": "Hvað er RTP", "desc": "Skilningur á RTP (Return to Player) — hvað það þýðir fyrir spilun þína."},
-    {"slug": "chto-takoe-volatilnost", "title": "Hvað er sveifla", "desc": "Munurinn á lágri, miðlungs og hárri sveiflu spilakassa útskýrður."},
-    {"slug": "kak-igrat-v-sloty", "title": "Hvernig á að spila spilakassa", "desc": "Skref-fyrir-skref leiðbeining fyrir byrjendur — hvernig spilakassar virka."},
-    {"slug": "strategii-blackjack", "title": "Blackjack aðferðir", "desc": "Grunn blackjack aðferð og aðferðakort — bættu líkurnar þínar."},
-    {"slug": "pravila-ruletki", "title": "Rúlettureglur", "desc": "Hvernig á að spila rúlettu — fullkomnar reglur, veðmál og aðferðir."},
-    {"slug": "pravila-bakkary", "title": "Baccarat reglur", "desc": "Hvernig á að spila baccarat — reglur, aðferðir og ráð."},
-    {"slug": "kak-vyigrat-v-casino", "title": "Hvernig á að vinna á spilavítum", "desc": "Ráðleggingar og aðferðir til að bæta líkur þínar á netspilavítum."},
-    {"slug": "otvetstvennaya-igra", "title": "Ábyrg spilun", "desc": "Hvernig á að spila á ábyrgan hátt — setja mörk og halda stjórn."},
-    {"slug": "zakon-ob-azartnyh-igrah-islandiya", "title": "Fjárhættuspilalagaíslandi", "desc": "Lagaleg staða netspilavíta á Íslandi — hvað leikmenn þurfa að vita."},
-    {"slug": "nalogi-na-vyigrysh", "title": "Skattar á spilavinninga", "desc": "Þarftu að borga skatta af fjárhættuspilvinningum á Íslandi?"},
-    {"slug": "bezopasnost-v-casino", "title": "Öryggi spilavíta", "desc": "Hvernig á að vernda persónuupplýsingarnar þínar þegar þú spilar á netspilavítum."},
-    {"slug": "glossarij-casino", "title": "Orðasafn spilavíta", "desc": "Orðasafn spilavíta — öll fjárhættuspilahugtök frá A til Ö útskýrð."},
-    {"slug": "provajdery-igr", "title": "Leikjabirgjar", "desc": "Yfirlit yfir stærstu spilakassabirgjana og þróunaraðila."},
-    {"slug": "megaways-sloty", "title": "Hvað eru Megaways spilakassar", "desc": "Hvernig Megaways vélbúnaðurinn virkar — allt að 117.649 leiðir til vinnings."},
-    {"slug": "bonus-buy-sloty", "title": "Bonus Buy spilakassar", "desc": "Hvernig Bonus Buy spilakassar virka — farðu beint í bónuslotuna."},
-    {"slug": "progressivnye-jackpoty", "title": "Stigvaxandi jackpottar", "desc": "Hvernig stigvaxandi jackpottar virka og hvernig á að vinna þá."},
-    {"slug": "turniry-v-casino", "title": "Spilavítamót", "desc": "Hvernig spilakassamót virka — kepptu um peningaverðlaun."},
-    {"slug": "vip-programmy", "title": "VIP kerfi", "desc": "Hvernig VIP og tryggðarkerfi virka á netspilavítum."},
-    {"slug": "casino-na-telefone", "title": "Farsíma spilavíti", "desc": "Bestu farsíma spilavítin og spilavíti öppin fyrir iPhone og Android."},
+    {"slug": "hvernig-a-ad-velja-spilaviti", "title": "Hvernig á að velja netspilavíti", "desc": "Fullkomin leiðbeining um val á áreiðanlegu og öruggu netspilavíti."},
+    {"slug": "hvad-er-rtp", "title": "Hvað er RTP", "desc": "Skilningur á RTP (Return to Player) — hvað það þýðir fyrir spilun þína."},
+    {"slug": "hvad-er-sveifla", "title": "Hvað er sveifla", "desc": "Munurinn á lágri, miðlungs og hárri sveiflu spilakassa útskýrður."},
+    {"slug": "hvernig-a-ad-spila-spilakassa", "title": "Hvernig á að spila spilakassa", "desc": "Skref-fyrir-skref leiðbeining fyrir byrjendur — hvernig spilakassar virka."},
+    {"slug": "blackjack-adferdir", "title": "Blackjack aðferðir", "desc": "Grunn blackjack aðferð og aðferðakort — bættu líkurnar þínar."},
+    {"slug": "rulettu-reglur", "title": "Rúlettureglur", "desc": "Hvernig á að spila rúlettu — fullkomnar reglur, veðmál og aðferðir."},
+    {"slug": "baccarat-reglur", "title": "Baccarat reglur", "desc": "Hvernig á að spila baccarat — reglur, aðferðir og ráð."},
+    {"slug": "hvernig-a-ad-vinna-i-spilaviti", "title": "Hvernig á að vinna á spilavítum", "desc": "Ráðleggingar og aðferðir til að bæta líkur þínar á netspilavítum."},
+    {"slug": "spila-af-abyrgd", "title": "Ábyrg spilun", "desc": "Hvernig á að spila á ábyrgan hátt — setja mörk og halda stjórn."},
+    {"slug": "log-um-fjarhaettuspil-a-islandi", "title": "Fjárhættuspilalagaíslandi", "desc": "Lagaleg staða netspilavíta á Íslandi — hvað leikmenn þurfa að vita."},
+    {"slug": "skattar-a-vinninga", "title": "Skattar á spilavinninga", "desc": "Þarftu að borga skatta af fjárhættuspilvinningum á Íslandi?"},
+    {"slug": "oryggi-i-netspilavitum", "title": "Öryggi spilavíta", "desc": "Hvernig á að vernda persónuupplýsingarnar þínar þegar þú spilar á netspilavítum."},
+    {"slug": "ordalisti-spilavita", "title": "Orðasafn spilavíta", "desc": "Orðasafn spilavíta — öll fjárhættuspilahugtök frá A til Ö útskýrð."},
+    {"slug": "leikjaframleidendur", "title": "Leikjabirgjar", "desc": "Yfirlit yfir stærstu spilakassabirgjana og þróunaraðila."},
+    {"slug": "megaways-spilakassar-leidarvisir", "title": "Hvað eru Megaways spilakassar", "desc": "Hvernig Megaways vélbúnaðurinn virkar — allt að 117.649 leiðir til vinnings."},
+    {"slug": "bonus-buy-spilakassar", "title": "Bonus Buy spilakassar", "desc": "Hvernig Bonus Buy spilakassar virka — farðu beint í bónuslotuna."},
+    {"slug": "stighaekkandi-pottar", "title": "Stigvaxandi jackpottar", "desc": "Hvernig stigvaxandi jackpottar virka og hvernig á að vinna þá."},
+    {"slug": "spilavitamot", "title": "Spilavítamót", "desc": "Hvernig spilakassamót virka — kepptu um peningaverðlaun."},
+    {"slug": "vip-kerfi", "title": "VIP kerfi", "desc": "Hvernig VIP og tryggðarkerfi virka á netspilavítum."},
+    {"slug": "spilaviti-i-simanum", "title": "Farsíma spilavíti", "desc": "Bestu farsíma spilavítin og spilavíti öppin fyrir iPhone og Android."},
 ]
 # 40 more guides — Icelandic
 more_guides = [
@@ -391,20 +407,21 @@ more_guides = [
 ]
 for title, desc in more_guides:
     slug = title.lower().replace("á", "a").replace("ð", "d").replace("í", "i").replace("ö", "o").replace("ú", "u").replace("þ", "th").replace("æ", "ae").replace(" ", "-").replace(",", "").replace(".", "").replace("—", "").replace("(", "").replace(")", "")
+    slug = _fold_slug(slug)
     guide_pages.append({"slug": slug, "title": title, "desc": desc})
 
 # About (10 pages)
 about_pages = [
-    {"slug": "o-nas", "title": "Um Svipan", "desc": "Hverjir við erum og hvers vegna við stofnuðum Svipan á svipan.is."},
-    {"slug": "kontakty", "title": "Hafa samband", "desc": "Hafðu samband við Svipan teymið."},
-    {"slug": "konfidencialnost", "title": "Persónuverndarstefna", "desc": "Hvernig við meðhöndlum gögnin þín — persónuverndarstefna okkar útskýrð."},
-    {"slug": "usloviya", "title": "Notkunarskilmálar", "desc": "Notkunarskilmálar vefsíðunnar svipan.is."},
-    {"slug": "otkaz-ot-otvetstvennosti", "title": "Fyrirvari", "desc": "Mikilvægur lagalegur fyrirvari um spilavítaumsagnir okkar."},
-    {"slug": "kak-my-ocenivaem", "title": "Hvernig við metum spilavíti", "desc": "Hvernig við metum og umsögnum netspilavíti — aðferðafræði okkar."},
-    {"slug": "redakcionnaya-politika", "title": "Ritstjórnarstefna", "desc": "Ritstjórnarstefna okkar — sjálfstæði, nákvæmni og gagnsæi."},
-    {"slug": "partnerstvo", "title": "Samstarf", "desc": "Samstarfstækifæri hjá Svipan."},
-    {"slug": "karta-sajta", "title": "Vefkort", "desc": "Fullkomið vefkort yfir allar síður á svipan.is."},
-    {"slug": "otvetstvennaya-igra-stranica", "title": "Ábyrg spilun", "desc": "Afstaða okkar til ábyrgrar spilunar og verndar leikmanna."},
+    {"slug": "um-okkur", "title": "Um Svipan", "desc": "Hverjir við erum og hvers vegna við stofnuðum Svipan á svipan.is."},
+    {"slug": "hafa-samband", "title": "Hafa samband", "desc": "Hafðu samband við Svipan teymið."},
+    {"slug": "personuvernd", "title": "Persónuverndarstefna", "desc": "Hvernig við meðhöndlum gögnin þín — persónuverndarstefna okkar útskýrð."},
+    {"slug": "skilmalar", "title": "Notkunarskilmálar", "desc": "Notkunarskilmálar vefsíðunnar svipan.is."},
+    {"slug": "fyrirvari", "title": "Fyrirvari", "desc": "Mikilvægur lagalegur fyrirvari um spilavítaumsagnir okkar."},
+    {"slug": "hvernig-vid-metum", "title": "Hvernig við metum spilavíti", "desc": "Hvernig við metum og umsögnum netspilavíti — aðferðafræði okkar."},
+    {"slug": "ritstjornarstefna", "title": "Ritstjórnarstefna", "desc": "Ritstjórnarstefna okkar — sjálfstæði, nákvæmni og gagnsæi."},
+    {"slug": "samstarf", "title": "Samstarf", "desc": "Samstarfstækifæri hjá Svipan."},
+    {"slug": "vefkort", "title": "Vefkort", "desc": "Fullkomið vefkort yfir allar síður á svipan.is."},
+    {"slug": "abyrg-spilun", "title": "Ábyrg spilun", "desc": "Afstaða okkar til ábyrgrar spilunar og verndar leikmanna."},
 ]
 
 
@@ -449,12 +466,12 @@ def get_nav():
   </a>
   <div class="nav-links" id="nav-links">
     <a href="{URL_BASE}">Heim</a>
-    <a href="{URL_BASE}entertainment/">Afþreying</a>
-    <a href="{URL_BASE}casino/">Spilavíti</a>
-    <a href="{URL_BASE}slots/">Spilakassar</a>
-    <a href="{URL_BASE}bonusy/">Bónusar</a>
+    <a href="{URL_BASE}afthreying/">Afþreying</a>
+    <a href="{URL_BASE}spilaviti/">Spilavíti</a>
+    <a href="{URL_BASE}spilakassar/">Spilakassar</a>
+    <a href="{URL_BASE}bonusar/">Bónusar</a>
     <a href="{URL_BASE}live/">Í beinni</a>
-    <a href="{URL_BASE}gajdy/">Leiðbeiningar</a>
+    <a href="{URL_BASE}leidbeiningar/">Leiðbeiningar</a>
   </div>
   <div class="nav-actions">
     <a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="btn-signup">Nýskráning</a><button class="nav-burger" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Opna valmynd"><span></span><span></span><span></span></button>
@@ -467,18 +484,17 @@ def get_footer():
     <div class="footer-top">
       <div class="footer-brand">
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
-          <div class="nav-mark" style="width:24px;height:24px;font-size:16px;border-radius:8px;"><svg class="bf-logo" viewBox="0 0 40 40" aria-hidden="true"><defs><radialGradient id="svg_r" cx="35%" cy="30%" r="80%"><stop offset="0%" stop-color="#e04550"/><stop offset="60%" stop-color="#c52b36"/><stop offset="100%" stop-color="#9c1f29"/></radialGradient></defs><circle cx="20" cy="20" r="19" fill="url(#svg_r)"/><g fill="#fff"><rect x="16.6" y="4.5" width="6.8" height="17" rx="1" transform="rotate(0 20 20)"/><rect x="16.6" y="4.5" width="6.8" height="17" rx="1" transform="rotate(72 20 20)"/><rect x="16.6" y="4.5" width="6.8" height="17" rx="1" transform="rotate(144 20 20)"/><rect x="16.6" y="4.5" width="6.8" height="17" rx="1" transform="rotate(216 20 20)"/><rect x="16.6" y="4.5" width="6.8" height="17" rx="1" transform="rotate(288 20 20)"/></g></svg></div>
-          <span style="font-family:Space Grotesk,sans-serif;font-size:16px;font-weight:700;color:#fff;">Svipan</span>
+          <span class="logo-word">SViPAN</span>
         </div>
         <div class="footer-desc">Svipan á svipan.is — óháð samanburðarvefur spilavíta. 18+ Spilaðu á ábyrgan hátt.</div>
       </div>
       <div class="footer-cols">
-        <div><div class="footer-col-title">SPILAVÍTI</div><a href="{URL_BASE}casino/">Umsagnir</a><a href="{URL_BASE}bonusy/">Bónusar</a><a href="{URL_BASE}casino/crypto-casino/">Dulritunargjaldmiðill</a></div>
-        <div><div class="footer-col-title">LEIKIR</div><a href="{URL_BASE}slots/">Spilakassar</a><a href="{URL_BASE}live/">Í beinni</a></div>
-        <div><div class="footer-col-title">UPPLÝSINGAR</div><a href="{URL_BASE}o-nas/">Um okkur</a><a href="{URL_BASE}hofundur/valbjorn-gjukason/">Ritstjóri</a><a href="{URL_BASE}gajdy/">Leiðbeiningar</a><a href="{URL_BASE}platezhi/">Greiðslur</a><a href="{URL_BASE}konfidencialnost/">Persónuvernd</a><a href="#" data-cookie-settings>Vafrakökur</a></div>
+        <div><div class="footer-col-title">SPILAVÍTI</div><a href="{URL_BASE}spilaviti/">Umsagnir</a><a href="{URL_BASE}bonusar/">Bónusar</a><a href="{URL_BASE}spilaviti/crypto-spilaviti/">Dulritunargjaldmiðill</a></div>
+        <div><div class="footer-col-title">LEIKIR</div><a href="{URL_BASE}spilakassar/">Spilakassar</a><a href="{URL_BASE}live/">Í beinni</a></div>
+        <div><div class="footer-col-title">UPPLÝSINGAR</div><a href="{URL_BASE}um-okkur/">Um okkur</a><a href="{URL_BASE}hofundur/valbjorn-gjukason/">Ritstjóri</a><a href="{URL_BASE}leidbeiningar/">Leiðbeiningar</a><a href="{URL_BASE}greidslur/">Greiðslur</a><a href="{URL_BASE}personuvernd/">Persónuvernd</a><a href="#" data-cookie-settings>Vafrakökur</a></div>
       </div>
     </div>
-    <div class="footer-help">Þarftu að tala við einhvern um spilavanda? Hjálparsíminn <a href="tel:1717">1717</a> hjá Rauða krossinum er ókeypis og opinn allan sólarhringinn. <a href="{URL_BASE}gajdy/otvetstvennaya-igra/">Ábyrg spilun →</a></div>
+    <div class="footer-help">Þarftu að tala við einhvern um spilavanda? Hjálparsíminn <a href="tel:1717">1717</a> hjá Rauða krossinum er ókeypis og opinn allan sólarhringinn. <a href="{URL_BASE}leidbeiningar/spila-af-abyrgd/">Ábyrg spilun →</a></div>
     <div class="footer-18">18+ | Fjárhættuspil geta verið ávanabindandi. Spilaðu á ábyrgan hátt. <a href="https://www.begambleaware.org" target="_blank" rel="noopener">BeGambleAware.org</a></div>
     <div class="footer-bottom"><span>© 2026 svipan.is</span><span>Svipan — óháð umsagnarvefur</span></div>
   </div>
@@ -488,7 +504,7 @@ def page_template(title, desc, breadcrumbs, content, canonical="", og_img="", sc
     # Byline + affiliate disclosure under the first H1
     if show_byline and '</h1>' in content:
         byline = (f'<div class="byline">Höfundur: <a href="{URL_BASE}hofundur/valbjorn-gjukason/" rel="author">Valbjörn Gjúkason</a> · Uppfært nóvember 2026 · '
-                  f'<a href="{URL_BASE}kak-my-ocenivaem/">Hvernig við metum</a></div>'
+                  f'<a href="{URL_BASE}hvernig-vid-metum/">Hvernig við metum</a></div>'
                   f'<div class="disclosure">Þessi síða inniheldur samstarfstengla. Við gætum fengið þóknun ef þú skráir þig, '
                   f'en það hefur ekki áhrif á einkunnir okkar. 18+</div>')
         content = content.replace('</h1>', '</h1>\n' + byline, 1)
@@ -788,31 +804,31 @@ background:linear-gradient(180deg,rgba(255,255,255,.5),rgba(255,255,255,0));}}
 <aside class="sidebar">
 <div class="sidebar-card">
 <h4>🏆 Topp spilavíti</h4>
-<a href="{URL_BASE}casino/slotoro/">Slotoro — ráðlagt (samstarfsaðili)</a>
-<a href="{URL_BASE}casino/bitstarz/">BitStarz — 5 BTC + 200 FS</a>
-<a href="{URL_BASE}casino/stake/">Stake — 200% + VIP</a>
-<a href="{URL_BASE}casino/bc-game/">BC.Game — 300% allt að 1 BTC</a>
-<a href="{URL_BASE}casino/katsubet/">KatsuBet — 100% + 100 FS</a>
-<a href="{URL_BASE}casino/winz/">Winz.io — 300 FS án veðskilyrða</a>
+<a href="{URL_BASE}spilaviti/slotoro/">Slotoro — ráðlagt (samstarfsaðili)</a>
+<a href="{URL_BASE}spilaviti/bitstarz/">BitStarz — 5 BTC + 200 FS</a>
+<a href="{URL_BASE}spilaviti/stake/">Stake — 200% + VIP</a>
+<a href="{URL_BASE}spilaviti/bc-game/">BC.Game — 300% allt að 1 BTC</a>
+<a href="{URL_BASE}spilaviti/katsubet/">KatsuBet — 100% + 100 FS</a>
+<a href="{URL_BASE}spilaviti/winz/">Winz.io — 300 FS án veðskilyrða</a>
 </div>
 <a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="sidebar-cta">Spila núna →</a>
 <div class="sidebar-card" style="margin-top:16px;">
 <h4>📖 Leiðbeiningar</h4>
-<a href="{URL_BASE}gajdy/kak-vybrat-casino/">Hvernig á að velja spilavíti</a>
-<a href="{URL_BASE}gajdy/chto-takoe-rtp/">Hvað er RTP?</a>
-<a href="{URL_BASE}gajdy/chto-takoe-volatilnost/">Hvað er sveifla?</a>
-<a href="{URL_BASE}gajdy/framhja-bankalokun/">Framhjá bankalokun</a>
-<a href="{URL_BASE}gajdy/kaupa-bitcoin-island/">Kaupa Bitcoin á Íslandi</a>
-<a href="{URL_BASE}gajdy/besta-crypto-spilaviti-island/">Besta crypto spilavítið</a>
-<a href="{URL_BASE}gajdy/spilaviti-samanburdur/">Spilavíti samanburður</a>
-<a href="{URL_BASE}gajdy/frisnuningar-an-innborgunar/">Frísnúningar án innborgunar</a>
+<a href="{URL_BASE}leidbeiningar/hvernig-a-ad-velja-spilaviti/">Hvernig á að velja spilavíti</a>
+<a href="{URL_BASE}leidbeiningar/hvad-er-rtp/">Hvað er RTP?</a>
+<a href="{URL_BASE}leidbeiningar/hvad-er-sveifla/">Hvað er sveifla?</a>
+<a href="{URL_BASE}leidbeiningar/framhja-bankalokun/">Framhjá bankalokun</a>
+<a href="{URL_BASE}leidbeiningar/kaupa-bitcoin-island/">Kaupa Bitcoin á Íslandi</a>
+<a href="{URL_BASE}leidbeiningar/besta-crypto-spilaviti-island/">Besta crypto spilavítið</a>
+<a href="{URL_BASE}leidbeiningar/spilaviti-samanburdur/">Spilavíti samanburður</a>
+<a href="{URL_BASE}leidbeiningar/frisnuningar-an-innborgunar/">Frísnúningar án innborgunar</a>
 </div>
 <div class="sidebar-card">
 <h4>🎰 Vinsælir spilakassar</h4>
-<a href="{URL_BASE}slots/gates-of-olympus/">Gates of Olympus</a>
-<a href="{URL_BASE}slots/sweet-bonanza/">Sweet Bonanza</a>
-<a href="{URL_BASE}slots/book-of-dead/">Book of Dead</a>
-<a href="{URL_BASE}slots/big-bass-splash/">Big Bass Splash</a>
+<a href="{URL_BASE}spilakassar/gates-of-olympus/">Gates of Olympus</a>
+<a href="{URL_BASE}spilakassar/sweet-bonanza/">Sweet Bonanza</a>
+<a href="{URL_BASE}spilakassar/book-of-dead/">Book of Dead</a>
+<a href="{URL_BASE}spilakassar/big-bass-splash/">Big Bass Splash</a>
 </div>
 </aside>
 </div>
@@ -821,12 +837,12 @@ background:linear-gradient(180deg,rgba(255,255,255,.5),rgba(255,255,255,0));}}
 <script>document.querySelectorAll('img[loading]').length||document.querySelectorAll('.slot-hero-img,.game-card-thumb img').forEach(function(i){{i.loading='lazy'}})</script>
 <script>(function(){{var u=encodeURIComponent(location.href),t=encodeURIComponent(document.title);var m={{fb:'https://www.facebook.com/sharer/sharer.php?u='+u,in:'https://www.linkedin.com/sharing/share-offsite/?url='+u,wa:'https://wa.me/?text='+t+'%20'+u}};document.querySelectorAll('.share a').forEach(function(a){{var n=a.dataset.net;if(m[n])a.href=m[n];else if(n==='copy')a.addEventListener('click',function(e){{e.preventDefault();try{{navigator.clipboard.writeText(location.href);a.setAttribute('aria-label','Tengill afritaður');a.style.filter='hue-rotate(-60deg) brightness(1.2)';setTimeout(function(){{a.style.filter='';}},1500);}}catch(_){{}}}});}});}})();</script>
 <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Vafrakökur" hidden>
-<div class="cookie-text"><strong>🍪 Vafrakökur</strong><span>Við notum nauðsynlegar vafrakökur til að vefurinn virki og til að muna val þitt. Ef þú samþykkir allar má nota kökur til að mæla umferð. Samstarfstenglar geta sett kökur hjá þriðja aðila þegar þú smellir á þá. <a href="{URL_BASE}konfidencialnost/">Persónuverndarstefna</a></span></div>
+<div class="cookie-text"><strong>🍪 Vafrakökur</strong><span>Við notum nauðsynlegar vafrakökur til að vefurinn virki og til að muna val þitt. Ef þú samþykkir allar má nota kökur til að mæla umferð. Samstarfstenglar geta sett kökur hjá þriðja aðila þegar þú smellir á þá. <a href="{URL_BASE}personuvernd/">Persónuverndarstefna</a></span></div>
 <div class="cookie-actions"><button type="button" class="btn-signup" data-consent="necessary">Aðeins nauðsynlegar</button><button type="button" class="btn-signup" data-consent="all">Samþykkja allar</button></div>
 </div>
 <script>(function(){{var b=document.getElementById('cookie-banner');if(!b)return;var v=null;try{{v=localStorage.getItem('bf_cookie_consent');}}catch(e){{}}if(!v)b.hidden=false;b.querySelectorAll('[data-consent]').forEach(function(btn){{btn.addEventListener('click',function(){{try{{localStorage.setItem('bf_cookie_consent',btn.getAttribute('data-consent'));}}catch(e){{}}b.hidden=true;}});}});document.querySelectorAll('[data-cookie-settings]').forEach(function(a){{a.addEventListener('click',function(e){{e.preventDefault();b.hidden=false;}});}});}})();</script>
 
-<div class="dr-overlay" data-dr-close hidden></div><aside class="dr" id="site-drawer" aria-label="Valmynd" aria-hidden="true" inert><div class="dr-head"><a href="{URL_BASE}" class="dr-brand"><span class="dr-mark"><svg class="bf-logo" viewBox="0 0 40 40" aria-hidden="true"><defs><radialGradient id="svg_r" cx="35%" cy="30%" r="80%"><stop offset="0%" stop-color="#e04550"/><stop offset="60%" stop-color="#c52b36"/><stop offset="100%" stop-color="#9c1f29"/></radialGradient></defs><circle cx="20" cy="20" r="19" fill="url(#svg_r)"/><g fill="#fff"><rect x="16.6" y="4.5" width="6.8" height="17" rx="1" transform="rotate(0 20 20)"/><rect x="16.6" y="4.5" width="6.8" height="17" rx="1" transform="rotate(72 20 20)"/><rect x="16.6" y="4.5" width="6.8" height="17" rx="1" transform="rotate(144 20 20)"/><rect x="16.6" y="4.5" width="6.8" height="17" rx="1" transform="rotate(216 20 20)"/><rect x="16.6" y="4.5" width="6.8" height="17" rx="1" transform="rotate(288 20 20)"/></g></svg></span><span class="dr-name">Svipan<b>.is</b></span></a><span class="dr-title">Valmynd</span><button class="dr-close" type="button" data-dr-close aria-label="Loka valmynd"><svg class="dr-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div><nav class="dr-body"><a class="dr-item" href="{URL_BASE}"><svg class="dr-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span>Heim</span></a><a class="dr-item" href="{URL_BASE}entertainment/"><svg class="dr-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.6 5.6 6 .6-4.5 4 1.3 6L12 16.8 6.6 19.2l1.3-6-4.5-4 6-.6z"/></svg><span>Afþreying</span></a><div class="dr-group"><button class="dr-item dr-toggle" type="button" aria-expanded="false" aria-controls="drg0"><svg class="dr-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="8" cy="8" r="1.3"/><circle cx="16" cy="8" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="8" cy="16" r="1.3"/><circle cx="16" cy="16" r="1.3"/></svg><span>Spilavíti</span><em class="dr-badge">7</em><svg class="dr-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="dr-sub" id="drg0" hidden><a href="{URL_BASE}casino/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Allar umsagnir</span></a><a href="{URL_BASE}gajdy/spilaviti-samanburdur/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Spilavíti samanburður</span></a><a href="{URL_BASE}gajdy/besta-crypto-spilaviti-island/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Besta crypto spilavítið</span></a><a href="{URL_BASE}casino/crypto-casino/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Crypto spilavíti</span></a><a href="{URL_BASE}casino/novye-casino/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Ný spilavíti 2026</span></a><a href="{URL_BASE}gajdy/spilaviti-islenskt-vidmot/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Íslenskt viðmót</span></a><a href="{URL_BASE}kak-my-ocenivaem/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Hvernig við metum</span></a></div></div><div class="dr-group"><button class="dr-item dr-toggle" type="button" aria-expanded="false" aria-controls="drg1"><svg class="dr-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 4v16M15 4v16"/></svg><span>Spilakassar</span><em class="dr-badge">6</em><svg class="dr-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="dr-sub" id="drg1" hidden><a href="{URL_BASE}slots/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Allir spilakassar</span></a><a href="{URL_BASE}slots/gates-of-olympus/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Gates of Olympus</span></a><a href="{URL_BASE}slots/sweet-bonanza/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Sweet Bonanza</span></a><a href="{URL_BASE}slots/book-of-dead/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Book of Dead</span></a><a href="{URL_BASE}slots/big-bass-splash/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Big Bass Splash</span></a><a href="{URL_BASE}gajdy/chto-takoe-rtp/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Hvað er RTP?</span></a></div></div><div class="dr-group"><button class="dr-item dr-toggle" type="button" aria-expanded="false" aria-controls="drg2"><svg class="dr-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/><circle cx="12" cy="11" r="2.5"/></svg><span>Í beinni</span><em class="dr-badge">5</em><svg class="dr-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="dr-sub" id="drg2" hidden><a href="{URL_BASE}live/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Allir lifandi leikir</span></a><a href="{URL_BASE}live/blackjack/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Blackjack</span></a><a href="{URL_BASE}live/roulette/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Rúletta</span></a><a href="{URL_BASE}live/crazy-time/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Crazy Time</span></a><a href="{URL_BASE}live/lightning-roulette/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Lightning Roulette</span></a></div></div><div class="dr-group"><button class="dr-item dr-toggle" type="button" aria-expanded="false" aria-controls="drg3"><svg class="dr-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="9" width="18" height="12" rx="2"/><path d="M3 13h18M12 9v12M12 9c-2-4-6-4-6-1s6 1 6 1 6 2 6-1-4-3-6 1"/></svg><span>Bónusar</span><em class="dr-badge">5</em><svg class="dr-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="dr-sub" id="drg3" hidden><a href="{URL_BASE}bonusy/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Allir bónusar</span></a><a href="{URL_BASE}bonusy/velkomstbonus/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Velkomstbónus</span></a><a href="{URL_BASE}gajdy/frisnuningar-an-innborgunar/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Frísnúningar án innborgunar</span></a><a href="{URL_BASE}bonusy/bezdepozitnye-bonusy/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Bónusar án innborgunar</span></a><a href="{URL_BASE}bonusy/vejer/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Hvað eru veðskilyrði?</span></a></div></div><div class="dr-group"><button class="dr-item dr-toggle" type="button" aria-expanded="false" aria-controls="drg4"><svg class="dr-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M2 10h20M6 15h4"/></svg><span>Greiðslur</span><em class="dr-badge">7</em><svg class="dr-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="dr-sub" id="drg4" hidden><a href="{URL_BASE}platezhi/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Allar greiðsluleiðir</span></a><a href="{URL_BASE}gajdy/framhja-bankalokun/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Framhjá bankalokun</span></a><a href="{URL_BASE}gajdy/kaupa-bitcoin-island/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Kaupa Bitcoin á Íslandi</span></a><a href="{URL_BASE}gajdy/islenskir-bankar-spilaviti/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Íslenskir bankar</span></a><a href="{URL_BASE}gajdy/piq-greidslur-island/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>PIQ greiðslur</span></a><a href="{URL_BASE}gajdy/spilaviti-isk-kronur/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Spilavíti sem taka við ISK</span></a><a href="{URL_BASE}platezhi/usdt/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>USDT</span></a></div></div><div class="dr-group"><button class="dr-item dr-toggle" type="button" aria-expanded="false" aria-controls="drg5"><svg class="dr-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h6a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H4zM20 4h-6a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h7z"/></svg><span>Leiðbeiningar</span><em class="dr-badge">5</em><svg class="dr-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="dr-sub" id="drg5" hidden><a href="{URL_BASE}gajdy/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Allar leiðbeiningar</span></a><a href="{URL_BASE}gajdy/zakon-ob-azartnyh-igrah-islandiya/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Lög á Íslandi</span></a><a href="{URL_BASE}gajdy/skattar-spilavinningar-island/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Skattar á vinninga</span></a><a href="{URL_BASE}gajdy/kak-vybrat-casino/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Hvernig á að velja spilavíti</span></a><a href="{URL_BASE}gajdy/otvetstvennaya-igra/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Ábyrg spilun</span></a></div></div><p class="dr-empty" hidden>Ekkert fannst</p></nav><div class="dr-foot"><label class="dr-search"><svg class="dr-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input type="search" placeholder="Leita á vefnum" aria-label="Leita í valmynd" autocomplete="off"></label><div class="dr-rg"><span class="dr-18">18+</span> Spilaðu á ábyrgan hátt · <a href="tel:1717">1717</a></div></div></aside><script>(function(){{var d=document.getElementById('site-drawer');if(!d)return;var o=document.querySelector('.dr-overlay'),b=document.querySelector('.nav-burger'),last=null;
+<div class="dr-overlay" data-dr-close hidden></div><aside class="dr" id="site-drawer" aria-label="Valmynd" aria-hidden="true" inert><div class="dr-head"><a href="{URL_BASE}" class="dr-brand"><span class="logo-word">SViPAN</span></a><span class="dr-title">Valmynd</span><button class="dr-close" type="button" data-dr-close aria-label="Loka valmynd"><svg class="dr-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div><nav class="dr-body"><a class="dr-item" href="{URL_BASE}"><svg class="dr-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span>Heim</span></a><a class="dr-item" href="{URL_BASE}afthreying/"><svg class="dr-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.6 5.6 6 .6-4.5 4 1.3 6L12 16.8 6.6 19.2l1.3-6-4.5-4 6-.6z"/></svg><span>Afþreying</span></a><div class="dr-group"><button class="dr-item dr-toggle" type="button" aria-expanded="false" aria-controls="drg0"><svg class="dr-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="8" cy="8" r="1.3"/><circle cx="16" cy="8" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="8" cy="16" r="1.3"/><circle cx="16" cy="16" r="1.3"/></svg><span>Spilavíti</span><em class="dr-badge">7</em><svg class="dr-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="dr-sub" id="drg0" hidden><a href="{URL_BASE}spilaviti/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Allar umsagnir</span></a><a href="{URL_BASE}leidbeiningar/spilaviti-samanburdur/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Spilavíti samanburður</span></a><a href="{URL_BASE}leidbeiningar/besta-crypto-spilaviti-island/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Besta crypto spilavítið</span></a><a href="{URL_BASE}spilaviti/crypto-spilaviti/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Crypto spilavíti</span></a><a href="{URL_BASE}spilaviti/ny-spilaviti/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Ný spilavíti 2026</span></a><a href="{URL_BASE}leidbeiningar/spilaviti-islenskt-vidmot/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Íslenskt viðmót</span></a><a href="{URL_BASE}hvernig-vid-metum/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Hvernig við metum</span></a></div></div><div class="dr-group"><button class="dr-item dr-toggle" type="button" aria-expanded="false" aria-controls="drg1"><svg class="dr-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 4v16M15 4v16"/></svg><span>Spilakassar</span><em class="dr-badge">6</em><svg class="dr-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="dr-sub" id="drg1" hidden><a href="{URL_BASE}spilakassar/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Allir spilakassar</span></a><a href="{URL_BASE}spilakassar/gates-of-olympus/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Gates of Olympus</span></a><a href="{URL_BASE}spilakassar/sweet-bonanza/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Sweet Bonanza</span></a><a href="{URL_BASE}spilakassar/book-of-dead/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Book of Dead</span></a><a href="{URL_BASE}spilakassar/big-bass-splash/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Big Bass Splash</span></a><a href="{URL_BASE}leidbeiningar/hvad-er-rtp/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Hvað er RTP?</span></a></div></div><div class="dr-group"><button class="dr-item dr-toggle" type="button" aria-expanded="false" aria-controls="drg2"><svg class="dr-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/><circle cx="12" cy="11" r="2.5"/></svg><span>Í beinni</span><em class="dr-badge">5</em><svg class="dr-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="dr-sub" id="drg2" hidden><a href="{URL_BASE}live/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Allir lifandi leikir</span></a><a href="{URL_BASE}live/blackjack/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Blackjack</span></a><a href="{URL_BASE}live/roulette/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Rúletta</span></a><a href="{URL_BASE}live/crazy-time/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Crazy Time</span></a><a href="{URL_BASE}live/lightning-roulette/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Lightning Roulette</span></a></div></div><div class="dr-group"><button class="dr-item dr-toggle" type="button" aria-expanded="false" aria-controls="drg3"><svg class="dr-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="9" width="18" height="12" rx="2"/><path d="M3 13h18M12 9v12M12 9c-2-4-6-4-6-1s6 1 6 1 6 2 6-1-4-3-6 1"/></svg><span>Bónusar</span><em class="dr-badge">5</em><svg class="dr-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="dr-sub" id="drg3" hidden><a href="{URL_BASE}bonusar/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Allir bónusar</span></a><a href="{URL_BASE}bonusar/velkomstbonus/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Velkomstbónus</span></a><a href="{URL_BASE}leidbeiningar/frisnuningar-an-innborgunar/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Frísnúningar án innborgunar</span></a><a href="{URL_BASE}bonusar/bonusar-an-innborgunar/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Bónusar án innborgunar</span></a><a href="{URL_BASE}bonusar/vedskilyrdi/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Hvað eru veðskilyrði?</span></a></div></div><div class="dr-group"><button class="dr-item dr-toggle" type="button" aria-expanded="false" aria-controls="drg4"><svg class="dr-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M2 10h20M6 15h4"/></svg><span>Greiðslur</span><em class="dr-badge">7</em><svg class="dr-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="dr-sub" id="drg4" hidden><a href="{URL_BASE}greidslur/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Allar greiðsluleiðir</span></a><a href="{URL_BASE}leidbeiningar/framhja-bankalokun/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Framhjá bankalokun</span></a><a href="{URL_BASE}leidbeiningar/kaupa-bitcoin-island/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Kaupa Bitcoin á Íslandi</span></a><a href="{URL_BASE}leidbeiningar/islenskir-bankar-spilaviti/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Íslenskir bankar</span></a><a href="{URL_BASE}leidbeiningar/piq-greidslur-island/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>PIQ greiðslur</span></a><a href="{URL_BASE}leidbeiningar/spilaviti-isk-kronur/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Spilavíti sem taka við ISK</span></a><a href="{URL_BASE}greidslur/usdt/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>USDT</span></a></div></div><div class="dr-group"><button class="dr-item dr-toggle" type="button" aria-expanded="false" aria-controls="drg5"><svg class="dr-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h6a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H4zM20 4h-6a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h7z"/></svg><span>Leiðbeiningar</span><em class="dr-badge">5</em><svg class="dr-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="dr-sub" id="drg5" hidden><a href="{URL_BASE}leidbeiningar/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Allar leiðbeiningar</span></a><a href="{URL_BASE}leidbeiningar/log-um-fjarhaettuspil-a-islandi/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Lög á Íslandi</span></a><a href="{URL_BASE}leidbeiningar/skattar-spilavinningar-island/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Skattar á vinninga</span></a><a href="{URL_BASE}leidbeiningar/hvernig-a-ad-velja-spilaviti/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Hvernig á að velja spilavíti</span></a><a href="{URL_BASE}leidbeiningar/spila-af-abyrgd/"><svg class="dr-fold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Ábyrg spilun</span></a></div></div><p class="dr-empty" hidden>Ekkert fannst</p></nav><div class="dr-foot"><label class="dr-search"><svg class="dr-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input type="search" placeholder="Leita á vefnum" aria-label="Leita í valmynd" autocomplete="off"></label><div class="dr-rg"><span class="dr-18">18+</span> Spilaðu á ábyrgan hátt · <a href="tel:1717">1717</a></div></div></aside><script>(function(){{var d=document.getElementById('site-drawer');if(!d)return;var o=document.querySelector('.dr-overlay'),b=document.querySelector('.nav-burger'),last=null;
 function open(){{last=document.activeElement;o.hidden=false;d.removeAttribute('inert');d.setAttribute('aria-hidden','false');requestAnimationFrame(function(){{o.classList.add('on');d.classList.add('on');}});document.body.classList.add('dr-lock');if(b)b.setAttribute('aria-expanded','true');setTimeout(function(){{d.querySelector('.dr-close').focus();}},50);}}
 function close(){{o.classList.remove('on');d.classList.remove('on');d.setAttribute('aria-hidden','true');d.setAttribute('inert','');document.body.classList.remove('dr-lock');if(b)b.setAttribute('aria-expanded','false');setTimeout(function(){{o.hidden=true;}},300);if(last&&last.focus)last.focus();}}
 if(b){{b.setAttribute('aria-controls','site-drawer');b.addEventListener('click',function(e){{e.stopImmediatePropagation();d.classList.contains('on')?close():open();}},true);}}
@@ -889,7 +905,7 @@ def partner_box(c):
         return f'<div class="cta-box"><a href="{AFF}" target="_blank" rel="sponsored noopener" class="cta-btn">Spila á Slotoro →</a></div>'
     return (f'<div class="info-box"><p><strong>Athugið:</strong> Svipan er ekki í samstarfi við {c["name"]}. '
             f'Viltu spila þar, farðu beint á vef {c["name"]}. Spilavítið sem við vinnum með er '
-            f'<a href="{URL_BASE}casino/slotoro/">Slotoro</a>.</p></div>'
+            f'<a href="{URL_BASE}spilaviti/slotoro/">Slotoro</a>.</p></div>'
             f'<div class="cta-box"><a href="{AFF}" target="_blank" rel="sponsored noopener" class="cta-btn">Spila á Slotoro →</a></div>')
 
 # 1. КАЗИНО ОБЗОРЫ (150)
@@ -921,12 +937,12 @@ for c in casinos:
 {partner_box(c)}
 {faq_block(casino_faq(c))}'''
 
-    bc = [("{URL_BASE}", "Heim"), ("{URL_BASE}casino/", "Spilavíti"), ("", c["name"])]
+    bc = [("{URL_BASE}", "Heim"), ("{URL_BASE}spilaviti/", "Spilavíti"), ("", c["name"])]
     review = {"@type":"Review","itemReviewed":{"@type":"Organization","name":c["name"]},
               "reviewRating":{"@type":"Rating","ratingValue":c["rating"],"bestRating":10,"worstRating":0},
               "author":{"@id":"https://svipan.is/#valbjorn"},"inLanguage":"is"}
     html = page_template(f'{c["name"]} umsögn', c["desc"], bc, content, schema_extra=[review, faq_schema(casino_faq(c))])
-    write_page(f'casino/{c["slug"]}/index.html', html)
+    write_page(f'spilaviti/{c["slug"]}/index.html', html)
 
 # 2. КАТЕГОРИИ КАЗИНО (50)
 print("Generating casino categories...")
@@ -934,7 +950,7 @@ for cat in casino_categories:
     top_casinos = casinos[:10]
     cards = ""
     for c in top_casinos:
-        cards += f'<div class="info-box"><p><strong>{c["name"]}</strong> — {c["bonus"]} (Einkunn: {c["rating"]}/10) <a href="{URL_BASE}casino/{c["slug"]}/">Umsögn →</a></p></div>\n'
+        cards += f'<div class="info-box"><p><strong>{c["name"]}</strong> — {c["bonus"]} (Einkunn: {c["rating"]}/10) <a href="{URL_BASE}spilaviti/{c["slug"]}/">Umsögn →</a></p></div>\n'
 
     hero = make_hero(cat["title"], "Spilavítaflokkur", "🏆", "#41070f", "#a3152c", "#e42c4a")
     content = f'''<h1>{cat["title"].replace(" 2026","")} á Íslandi 2026</h1>
@@ -946,9 +962,9 @@ for cat in casino_categories:
 <p>Teymi okkar metur hvert spilavíti út frá nokkrum forsendum: áreiðanleika leyfis, hraða útborgana, gæði leikja, bónustilboðum og aðgengi fyrir íslenska leikmenn.</p>
 <p>Við leggjum sérstaka áherslu á stuðning við dulritunargjaldmiðla þar sem íslenskir bankar loka oft á spilavíta-færslur.</p>'''
 
-    bc = [("{URL_BASE}", "Home"), ("{URL_BASE}casino/", "Casino"), ("", cat["title"])]
+    bc = [("{URL_BASE}", "Home"), ("{URL_BASE}spilaviti/", "Casino"), ("", cat["title"])]
     html = page_template(cat["title"], cat["desc"], bc, content)
-    write_page(f'casino/{cat["slug"]}/index.html', html)
+    write_page(f'spilaviti/{cat["slug"]}/index.html', html)
 
 # 3. СЛОТЫ (250)
 print("Generating slot reviews...")
@@ -974,13 +990,13 @@ for s in slots_data:
 <h3>RTP útskýrt</h3>
 <p>RTP {rtp_is(s["rtp"])} er fræðileg ávöxtun yfir milljónir spuna — ekki það sem þú færð til baka í einni lotu. Spilavíti geta valið lægri RTP útgáfu, svo athugaðu upplýsingaskjá leiksins.</p>
 <h3>Hvar á að spila {s["name"]}</h3>
-<p>{s["name"]} er í leikjasafni <a href="{URL_BASE}casino/slotoro/">Slotoro</a>, sem tekur við íslenskum leikmönnum og býður yfir 8.000 leiki. Prófaðu fyrst í kynningarham ef hann er í boði og settu þér mörk áður en þú spilar fyrir alvöru.</p>
+<p>{s["name"]} er í leikjasafni <a href="{URL_BASE}spilaviti/slotoro/">Slotoro</a>, sem tekur við íslenskum leikmönnum og býður yfir 8.000 leiki. Prófaðu fyrst í kynningarham ef hann er í boði og settu þér mörk áður en þú spilar fyrir alvöru.</p>
 <div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Spila {s["name"]} →</a></div>
 {faq_block(faqs)}'''
 
-    bc = [("{URL_BASE}", "Heim"), ("{URL_BASE}slots/", "Spilakassar"), ("", s["name"])]
+    bc = [("{URL_BASE}", "Heim"), ("{URL_BASE}spilakassar/", "Spilakassar"), ("", s["name"])]
     html = page_template(f'{s["name"]} spilakassi — RTP, sveifla og bónus', f'{s["name"]} frá {s["provider"]}: RTP {rtp_is(s["rtp"])}, {vol_is(s["volatility"]).lower()} sveifla, hámark {maxwin_is(s["maxwin"])}. Hvernig leikurinn virkar og fyrir hverja hann hentar.', bc, content, schema_extra=[faq_schema(faqs)])
-    write_page(f'slots/{s["slug"]}/index.html', html)
+    write_page(f'spilakassar/{s["slug"]}/index.html', html)
 
 # 3b. Data-driven reviews for 98 popular lobby slots
 import catalog as _catx, extra_reviews as _xr
@@ -988,7 +1004,7 @@ _xnames = {"x-"+e["slug"][2:]: e["name"] for e in _catx.build([x["name"] for x i
 EXTRA_REVIEWS = _xr.load(_xnames)
 _all_names = {x["name"]: x["slug"] for x in slots_data}
 _all_names.update({x["name"]: x["slug"] for x in EXTRA_REVIEWS})
-_slot_url = lambda nm: f"{URL_BASE}slots/{_all_names[nm]}/"
+_slot_url = lambda nm: f"{URL_BASE}spilakassar/{_all_names[nm]}/"
 for s in EXTRA_REVIEWS:
     p1, p2, who, rtp_txt = _xr.content(s, vol_is, maxwin_is, rtp_is, VOL_WHO, _slot_url, _all_names)
     faqs = _xr.faq(s, vol_is, maxwin_is, rtp_is)
@@ -1008,12 +1024,12 @@ for s in EXTRA_REVIEWS:
 <h3>RTP</h3>
 <p>{rtp_txt} RTP er fræðileg ávöxtun yfir milljónir spuna, ekki það sem þú færð í einni lotu.</p>
 <h3>Hvar á að spila {s["name"]}</h3>
-<p>{s["name"]} er meðal leikja frá {s["provider"]} í safni <a href="{URL_BASE}casino/slotoro/">Slotoro</a>. Settu þér mörk áður en þú spilar.</p>
+<p>{s["name"]} er meðal leikja frá {s["provider"]} í safni <a href="{URL_BASE}spilaviti/slotoro/">Slotoro</a>. Settu þér mörk áður en þú spilar.</p>
 <div class="cta-box"><a href="{AFF}" target="_blank" rel="sponsored noopener" class="cta-btn">Spila á Slotoro →</a></div>
 {faq_block(faqs)}'''
-    bc = [("{URL_BASE}", "Heim"), ("{URL_BASE}slots/", "Spilakassar"), ("", s["name"])]
+    bc = [("{URL_BASE}", "Heim"), ("{URL_BASE}spilakassar/", "Spilakassar"), ("", s["name"])]
     desc = f'{s["name"]} frá {s["provider"]}: ' + (f'RTP {rtp_is(s["rtp"])}, ' if s["rtp"] else '') + (f'{vol_is(s["volatility"]).lower()} sveifla, ' if s["volatility"] else '') + f'hámark {maxwin_is(s["maxwin"])}. Hvernig leikurinn virkar.'
-    write_page(f'slots/{s["slug"]}/index.html', page_template(f'{s["name"]} spilakassi — umsögn og RTP', desc, bc, content, schema_extra=[faq_schema(faqs)]))
+    write_page(f'spilakassar/{s["slug"]}/index.html', page_template(f'{s["name"]} spilakassi — umsögn og RTP', desc, bc, content, schema_extra=[faq_schema(faqs)]))
 
 # 4. LIVE КАЗИНО (50)
 print("Generating live casino pages...")
@@ -1026,9 +1042,9 @@ for g in live_games:
 <p>{g["name"]} með lifandi spilastjóra gefur þér upplifun af raunverulegu spilavíti heima hjá þér. Faglegir spilastjórar stjórna leiknum í rauntíma í gegnum HD myndvarp.</p>
 <h3>Bestu spilavítin fyrir {g["name"]}</h3>
 <ul>
-<li><a href="{URL_BASE}casino/bitstarz/">BitStarz</a> — besta úrval lifandi leikja</li>
-<li><a href="{URL_BASE}casino/stake/">Stake</a> — einkaréttarborð</li>
-<li><a href="{URL_BASE}casino/tonybet/">TonyBet</a> — breitt úrval af takmörkunum</li>
+<li><a href="{URL_BASE}spilaviti/bitstarz/">BitStarz</a> — besta úrval lifandi leikja</li>
+<li><a href="{URL_BASE}spilaviti/stake/">Stake</a> — einkaréttarborð</li>
+<li><a href="{URL_BASE}spilaviti/tonybet/">TonyBet</a> — breitt úrval af takmörkunum</li>
 </ul>
 <div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Spila {g["name"]} →</a></div>'''
 
@@ -1045,18 +1061,18 @@ for b in bonus_pages:
 <p>{b["desc"]}</p>
 <h2>Bestu tilboðin 2026</h2>
 <div class="info-box">
-<p><strong>BitStarz:</strong> 5 BTC + 200 free spins — <a href="{URL_BASE}casino/bitstarz/">Nánari upplýsingar →</a></p>
+<p><strong>BitStarz:</strong> 5 BTC + 200 free spins — <a href="{URL_BASE}spilaviti/bitstarz/">Nánari upplýsingar →</a></p>
 </div>
 <div class="info-box">
-<p><strong>BC.Game:</strong> 300% crypto bonus — <a href="{URL_BASE}casino/bc-game/">Nánari upplýsingar →</a></p>
+<p><strong>BC.Game:</strong> 300% crypto bonus — <a href="{URL_BASE}spilaviti/bc-game/">Nánari upplýsingar →</a></p>
 </div>
 <h2>Hvernig á að fá bónus</h2>
 <p>Til að virkja bónus, skráðu þig á spilavítið, leggðu inn og bónusinn verður sjálfkrafa inneignaður. Athugaðu veðskilyrði.</p>
 <div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Fá bónus →</a></div>'''
 
-    bc = [("{URL_BASE}", "Home"), ("{URL_BASE}bonusy/", "Bónusar"), ("", b["title"])]
+    bc = [("{URL_BASE}", "Home"), ("{URL_BASE}bonusar/", "Bónusar"), ("", b["title"])]
     html = page_template(b["title"], b["desc"], bc, content)
-    write_page(f'bonusy/{b["slug"]}/index.html', html)
+    write_page(f'bonusar/{b["slug"]}/index.html', html)
 
 # 6. ПЛАТЕЖИ (50)
 print("Generating payment pages...")
@@ -1076,14 +1092,14 @@ for p in payment_pages:
 </ol>
 <h3>Mælt með spilavítum</h3>
 <ul>
-<li><a href="{URL_BASE}casino/bitstarz/">BitStarz</a> — tafarlausar dulritunarútborganir</li>
-<li><a href="{URL_BASE}casino/stake/">Stake</a> — styður 20+ dulritunargjaldmiðla</li>
+<li><a href="{URL_BASE}spilaviti/bitstarz/">BitStarz</a> — tafarlausar dulritunarútborganir</li>
+<li><a href="{URL_BASE}spilaviti/stake/">Stake</a> — styður 20+ dulritunargjaldmiðla</li>
 </ul>
 <div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Veldu spilavíti →</a></div>'''
 
-    bc = [("{URL_BASE}", "Home"), ("{URL_BASE}platezhi/", "Payments"), ("", p["title"])]
+    bc = [("{URL_BASE}", "Home"), ("{URL_BASE}greidslur/", "Payments"), ("", p["title"])]
     html = page_template(p["title"], p["desc"], bc, content)
-    write_page(f'platezhi/{p["slug"]}/index.html', html)
+    write_page(f'greidslur/{p["slug"]}/index.html', html)
 
 # 7. ГАЙДЫ (60)
 print("Generating guides...")
@@ -1103,14 +1119,14 @@ for g in guide_pages:
 </ul>
 <h3>Gagnlegir tenglar</h3>
 <ul>
-<li><a href="{URL_BASE}casino/">Spilavíti umsagnir</a></li>
-<li><a href="{URL_BASE}bonusy/">Bónusar</a></li>
-<li><a href="{URL_BASE}platezhi/">Greiðslumátar</a></li>
+<li><a href="{URL_BASE}spilaviti/">Spilavíti umsagnir</a></li>
+<li><a href="{URL_BASE}bonusar/">Bónusar</a></li>
+<li><a href="{URL_BASE}greidslur/">Greiðslumátar</a></li>
 </ul>'''
 
-    bc = [("{URL_BASE}", "Home"), ("{URL_BASE}gajdy/", "Guides"), ("", g["title"])]
+    bc = [("{URL_BASE}", "Home"), ("{URL_BASE}leidbeiningar/", "Guides"), ("", g["title"])]
     html = page_template(g["title"], g["desc"], bc, content)
-    write_page(f'gajdy/{g["slug"]}/index.html', html)
+    write_page(f'leidbeiningar/{g["slug"]}/index.html', html)
 
 # 8. О НАС (10)
 print("Generating about pages...")
@@ -1118,7 +1134,7 @@ about_emojis = {"Um Svipan":"🏛️","Hafa samband":"📬","Persónuverndarstef
 for a in about_pages:
     emoji = about_emojis.get(a["title"], "ℹ️")
     hero = make_hero(a["title"], "Svipan", emoji, "#29070c", "#520e18", "#821e2b")
-    if a["slug"] == "konfidencialnost":
+    if a["slug"] == "personuvernd":
         content = f'''<h1>Persónuverndarstefna</h1>
 {hero}
 <p>Hér útskýrum við hvaða gögnum er safnað þegar þú notar svipan.is og hvernig vafrakökur eru notaðar.</p>
@@ -1133,9 +1149,9 @@ for a in about_pages:
 </div>
 <p><a href="#" data-cookie-settings>Breyta vali á vafrakökum →</a></p>
 <h2>Réttindi þín</h2>
-<p>Ísland er aðili að EES og GDPR gildir. Þú getur hvenær sem er breytt vali þínu eða eytt vafragögnum í stillingum vafrans. Spurningar? <a href="{URL_BASE}kontakty/">Hafðu samband</a>.</p>
+<p>Ísland er aðili að EES og GDPR gildir. Þú getur hvenær sem er breytt vali þínu eða eytt vafragögnum í stillingum vafrans. Spurningar? <a href="{URL_BASE}hafa-samband/">Hafðu samband</a>.</p>
 <p><em>Síðast uppfært: nóvember 2026.</em></p>'''
-    elif a["slug"] == "kak-my-ocenivaem":
+    elif a["slug"] == "hvernig-vid-metum":
         content = f'''<h1>Hvernig við metum spilavíti</h1>
 {hero}
 <p>Hvert spilavíti á Svipan fær einkunn frá 0 til 10. Einkunnin byggir á sex föstum viðmiðum með birtum vægi, svo þú getir séð nákvæmlega hvernig hún verður til.</p>
@@ -1158,7 +1174,7 @@ for a in about_pages:
 </ul>
 <h2>Uppfærslur</h2>
 <p>Við förum yfir bónusa og skilmála reglulega. Síðast yfirfarið: nóvember 2026. Upphæðir í ISK eru reiknaðar á genginu 1 EUR ≈ {EUR_ISK} kr. og eru aðeins til viðmiðunar.</p>
-<p>Ef þú finnur villu, <a href="{URL_BASE}kontakty/">hafðu samband</a>.</p>'''
+<p>Ef þú finnur villu, <a href="{URL_BASE}hafa-samband/">hafðu samband</a>.</p>'''
     else:
         content = f'''<h1>{a["title"]}</h1>
 {hero}
@@ -1200,7 +1216,7 @@ seo_pages = [
 
 <h2>Skref 3 — Sendu á spilavítið</h2>
 <ol>
-<li>Skráðu þig á spilavíti (t.d. <a href="{URL_BASE}casino/bitstarz/">BitStarz</a> eða <a href="{URL_BASE}casino/stake/">Stake</a>)</li>
+<li>Skráðu þig á spilavíti (t.d. <a href="{URL_BASE}spilaviti/bitstarz/">BitStarz</a> eða <a href="{URL_BASE}spilaviti/stake/">Stake</a>)</li>
 <li>Farðu í "Innborgun" og veldu Bitcoin eða USDT</li>
 <li>Afritaðu veskisáfangastaðinn (wallet address)</li>
 <li>Farðu aftur í kauphöllina og sendu fjármunina á þetta heimilisfang</li>
@@ -1208,13 +1224,13 @@ seo_pages = [
 </ol>
 
 <h2>Bestu spilavítin fyrir Bitcoin á Íslandi</h2>
-<div class="info-box"><p><strong><a href="{URL_BASE}casino/bitstarz/">BitStarz</a></strong> — 5 BTC + 200 FS | Tafarlausar BTC útborganir</p></div>
-<div class="info-box"><p><strong><a href="{URL_BASE}casino/stake/">Stake</a></strong> — 200% bónus | Styður 8+ dulritunargjaldmiðla</p></div>
-<div class="info-box"><p><strong><a href="{URL_BASE}casino/bc-game/">BC.Game</a></strong> — 300% allt að 1 BTC | 100+ dulritunargjaldmiðlar</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/bitstarz/">BitStarz</a></strong> — 5 BTC + 200 FS | Tafarlausar BTC útborganir</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/stake/">Stake</a></strong> — 200% bónus | Styður 8+ dulritunargjaldmiðla</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/bc-game/">BC.Game</a></strong> — 300% allt að 1 BTC | 100+ dulritunargjaldmiðlar</p></div>
 
 <h2>Algengar spurningar</h2>
 <h3>Er löglegt að kaupa Bitcoin á Íslandi?</h3>
-<p>Já. Engin lög á Íslandi banna kaup á dulritunargjaldmiðlum. <a href="{URL_BASE}gajdy/zakon-ob-azartnyh-igrah-islandiya/">Lestu lagaleiðbeininguna okkar →</a></p>
+<p>Já. Engin lög á Íslandi banna kaup á dulritunargjaldmiðlum. <a href="{URL_BASE}leidbeiningar/log-um-fjarhaettuspil-a-islandi/">Lestu lagaleiðbeininguna okkar →</a></p>
 <h3>Hversu langan tíma tekur innborgun?</h3>
 <p>Bitcoin: 10-30 mínútur. USDT (TRC-20): 1-5 mínútur. Ethereum: 2-10 mínútur.</p>
 <div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Spila með Bitcoin →</a></div>'''
@@ -1243,13 +1259,13 @@ seo_pages = [
 
 <h2>Lausnir sem virka</h2>
 <h3>1. Dulritunargjaldmiðlar (besta lausnin)</h3>
-<p>Bitcoin, USDT og Ethereum fara beint á blokkkeðjunni — <strong>bankarnir geta ekki lokað á þessar greiðslur</strong>. <a href="{URL_BASE}gajdy/kaupa-bitcoin-island/">Hvernig á að kaupa Bitcoin á Íslandi →</a></p>
+<p>Bitcoin, USDT og Ethereum fara beint á blokkkeðjunni — <strong>bankarnir geta ekki lokað á þessar greiðslur</strong>. <a href="{URL_BASE}leidbeiningar/kaupa-bitcoin-island/">Hvernig á að kaupa Bitcoin á Íslandi →</a></p>
 
 <h3>2. Rafræn veski (e-wallets)</h3>
 <p><strong>Skrill</strong> og <strong>Neteller</strong> virka sem milliliður — þú millifærir af bankareikningi á veskið, síðan frá veskinu á spilavítið.</p>
 
 <h3>3. PIQ greiðslur</h3>
-<p><a href="{URL_BASE}gajdy/piq-greidslur-island/">PIQ</a> er greiðsluþjónusta sem er sérstaklega hönnuð fyrir Ísland og Noreg. Epicbet og Respin styðja PIQ.</p>
+<p><a href="{URL_BASE}leidbeiningar/piq-greidslur-island/">PIQ</a> er greiðsluþjónusta sem er sérstaklega hönnuð fyrir Ísland og Noreg. Epicbet og Respin styðja PIQ.</p>
 
 <h3>4. Fyrirframgreidd kort</h3>
 <p><strong>Paysafecard</strong> og <strong>Neosurf</strong> eru fyrirframgreidd kort sem þú kaupir í verslun. Enginn banki kemur við sögu.</p>
@@ -1306,13 +1322,13 @@ seo_pages = [
 <p><strong>🥈 EUR reikningur</strong> — Flest spilavíti styðja EUR. Bankinn þinn skiptir ISK í EUR sjálfkrafa (lítil þóknun ~1-2%).</p>
 </div>
 <div class="info-box">
-<p><strong>🥉 PIQ greiðslur</strong> — Sérstaklega hannað fyrir Ísland. <a href="{URL_BASE}casino/epicbet/">Epicbet</a> og <a href="{URL_BASE}casino/respin/">Respin</a> styðja PIQ.</p>
+<p><strong>🥉 PIQ greiðslur</strong> — Sérstaklega hannað fyrir Ísland. <a href="{URL_BASE}spilaviti/epicbet/">Epicbet</a> og <a href="{URL_BASE}spilaviti/respin/">Respin</a> styðja PIQ.</p>
 </div>
 
 <h2>Bestu spilavítin fyrir íslenska spilara</h2>
-<div class="info-box"><p><strong><a href="{URL_BASE}casino/bitstarz/">BitStarz</a></strong> — Dulritunarspilavíti, engin gjaldmiðlaskiptagjöld</p></div>
-<div class="info-box"><p><strong><a href="{URL_BASE}casino/epicbet/">Epicbet</a></strong> — PIQ greiðslur, íslenskt viðmót</p></div>
-<div class="info-box"><p><strong><a href="{URL_BASE}casino/stake/">Stake</a></strong> — USDT innlagnir, engin gjöld</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/bitstarz/">BitStarz</a></strong> — Dulritunarspilavíti, engin gjaldmiðlaskiptagjöld</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/epicbet/">Epicbet</a></strong> — PIQ greiðslur, íslenskt viðmót</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/stake/">Stake</a></strong> — USDT innlagnir, engin gjöld</p></div>
 
 <div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Spila án gjaldmiðlaskiptagjalda →</a></div>'''
     },
@@ -1327,16 +1343,16 @@ seo_pages = [
 <p>Flest netspilavíti eru á ensku, en nokkur bjóða <strong>íslenskt viðmót</strong> og þjónustuver á íslensku:</p>
 
 <div class="info-box">
-<p><strong>✅ Epicbet</strong> — Fullt íslenskt viðmót, Apple Pay greiðslur, PIQ stuðningur. <a href="{URL_BASE}casino/epicbet/">Umsögn →</a></p>
+<p><strong>✅ Epicbet</strong> — Fullt íslenskt viðmót, Apple Pay greiðslur, PIQ stuðningur. <a href="{URL_BASE}spilaviti/epicbet/">Umsögn →</a></p>
 </div>
 <div class="info-box">
-<p><strong>✅ Respin</strong> — Íslenskt viðmót, PIQ greiðslur, 4000+ leikir. <a href="{URL_BASE}casino/respin/">Umsögn →</a></p>
+<p><strong>✅ Respin</strong> — Íslenskt viðmót, PIQ greiðslur, 4000+ leikir. <a href="{URL_BASE}spilaviti/respin/">Umsögn →</a></p>
 </div>
 <div class="info-box">
 <p><strong>✅ Betsson</strong> — Eitt af fáum stórum spilavítum með íslenskt viðmót.</p>
 </div>
 <div class="info-box">
-<p><strong>✅ TonyBet</strong> — Lifandi spilavíti á íslensku, leyfi í Eistlandi (innan EES). <a href="{URL_BASE}casino/tonybet/">Umsögn →</a></p>
+<p><strong>✅ TonyBet</strong> — Lifandi spilavíti á íslensku, leyfi í Eistlandi (innan EES). <a href="{URL_BASE}spilaviti/tonybet/">Umsögn →</a></p>
 </div>
 
 <h2>Af hverju skiptir tungumálið máli?</h2>
@@ -1367,8 +1383,8 @@ seo_pages = [
 </ol>
 
 <h2>Spilavíti sem styðja PIQ á Íslandi</h2>
-<div class="info-box"><p><strong><a href="{URL_BASE}casino/epicbet/">Epicbet</a></strong> — PIQ + Apple Pay + íslenskt viðmót</p></div>
-<div class="info-box"><p><strong><a href="{URL_BASE}casino/respin/">Respin</a></strong> — PIQ + íslenskt viðmót + 4000 leikir</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/epicbet/">Epicbet</a></strong> — PIQ + Apple Pay + íslenskt viðmót</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/respin/">Respin</a></strong> — PIQ + íslenskt viðmót + 4000 leikir</p></div>
 
 <h2>Kostir PIQ</h2>
 <ul>
@@ -1381,7 +1397,7 @@ seo_pages = [
 <li>⚠️ Ekki 100% tryggt — bankar geta enn hafnað</li>
 <li>⚠️ Aðeins fáein spilavíti styðja PIQ enn sem komið er</li>
 </ul>
-<p>Ef PIQ virkar ekki, er <a href="{URL_BASE}gajdy/kaupa-bitcoin-island/">dulritunargjaldmiðill besta lausnin →</a></p>'''
+<p>Ef PIQ virkar ekki, er <a href="{URL_BASE}leidbeiningar/kaupa-bitcoin-island/">dulritunargjaldmiðill besta lausnin →</a></p>'''
     },
     {
         "slug": "frisnuningar-an-innborgunar",
@@ -1400,7 +1416,7 @@ seo_pages = [
 <p><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="sponsored noopener">Sjá tilboð á Slotoro →</a></p>
 </div>
 <div class="info-box">
-<p><strong>Winz.io</strong> — þekkt fyrir bónusa án veðskilyrða. Við erum ekki í samstarfi við Winz.io; skoðaðu tilboðin beint á vef þeirra. <a href="{URL_BASE}casino/winz/">Umsögn okkar →</a></p>
+<p><strong>Winz.io</strong> — þekkt fyrir bónusa án veðskilyrða. Við erum ekki í samstarfi við Winz.io; skoðaðu tilboðin beint á vef þeirra. <a href="{URL_BASE}spilaviti/winz/">Umsögn okkar →</a></p>
 </div>
 
 <h2>Hvernig virka frísnúningar án innborgunar?</h2>
@@ -1412,7 +1428,7 @@ seo_pages = [
 </ol>
 
 <h2>Veðskilyrði — hvað þýðir 30x?</h2>
-<p>Ef þú vinnur €10 úr frísnúningum og veðskilyrði eru 30x, þarftu að veðja €300 áður en þú getur tekið út. <a href="{URL_BASE}bonusy/vejer/">Lestu meira um veðskilyrði →</a></p>
+<p>Ef þú vinnur €10 úr frísnúningum og veðskilyrði eru 30x, þarftu að veðja €300 áður en þú getur tekið út. <a href="{URL_BASE}bonusar/vedskilyrdi/">Lestu meira um veðskilyrði →</a></p>
 
 <div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Fá frísnúninga →</a></div>'''
     },
@@ -1429,15 +1445,15 @@ seo_pages = [
 <div class="info-box" style="overflow-x:auto;">
 <table style="width:100%;border-collapse:collapse;font-size:16px;color:var(--muted);">
 <tr style="border-bottom:1px solid var(--border);color:#fff;"><th style="padding:10px;text-align:left;">Spilavíti</th><th>Bónus</th><th>Leikir</th><th>Útborgun</th><th>Dulritun</th><th>Einkunn</th></tr>
-<tr style="border-bottom:1px solid var(--border);"><td style="padding:10px;"><a href="{URL_BASE}casino/bitstarz/" style="color:#e8505c;">BitStarz</a></td><td>5 BTC + 200 FS</td><td>3500+</td><td>&lt;10 mín</td><td>✅ BTC, ETH, LTC</td><td>9.8</td></tr>
-<tr style="border-bottom:1px solid var(--border);"><td style="padding:10px;"><a href="{URL_BASE}casino/stake/" style="color:#e8505c;">Stake</a></td><td>200% + VIP</td><td>5000+</td><td>&lt;10 mín</td><td>✅ 8+ mynt</td><td>9.6</td></tr>
-<tr style="border-bottom:1px solid var(--border);"><td style="padding:10px;"><a href="{URL_BASE}casino/bc-game/" style="color:#e8505c;">BC.Game</a></td><td>300% / 1 BTC</td><td>8000+</td><td>&lt;5 mín</td><td>✅ 100+ mynt</td><td>9.4</td></tr>
-<tr style="border-bottom:1px solid var(--border);"><td style="padding:10px;"><a href="{URL_BASE}casino/epicbet/" style="color:#e8505c;">Epicbet</a></td><td>100% / €500</td><td>2000+</td><td>1-3 dagar</td><td>🟡 BTC, ETH</td><td>9.0</td></tr>
-<tr><td style="padding:10px;"><a href="{URL_BASE}casino/katsubet/" style="color:#e8505c;">KatsuBet</a></td><td>100% + 100 FS</td><td>5000+</td><td>&lt;10 mín</td><td>✅ 6 mynt</td><td>8.6</td></tr>
+<tr style="border-bottom:1px solid var(--border);"><td style="padding:10px;"><a href="{URL_BASE}spilaviti/bitstarz/" style="color:#e8505c;">BitStarz</a></td><td>5 BTC + 200 FS</td><td>3500+</td><td>&lt;10 mín</td><td>✅ BTC, ETH, LTC</td><td>9.8</td></tr>
+<tr style="border-bottom:1px solid var(--border);"><td style="padding:10px;"><a href="{URL_BASE}spilaviti/stake/" style="color:#e8505c;">Stake</a></td><td>200% + VIP</td><td>5000+</td><td>&lt;10 mín</td><td>✅ 8+ mynt</td><td>9.6</td></tr>
+<tr style="border-bottom:1px solid var(--border);"><td style="padding:10px;"><a href="{URL_BASE}spilaviti/bc-game/" style="color:#e8505c;">BC.Game</a></td><td>300% / 1 BTC</td><td>8000+</td><td>&lt;5 mín</td><td>✅ 100+ mynt</td><td>9.4</td></tr>
+<tr style="border-bottom:1px solid var(--border);"><td style="padding:10px;"><a href="{URL_BASE}spilaviti/epicbet/" style="color:#e8505c;">Epicbet</a></td><td>100% / €500</td><td>2000+</td><td>1-3 dagar</td><td>🟡 BTC, ETH</td><td>9.0</td></tr>
+<tr><td style="padding:10px;"><a href="{URL_BASE}spilaviti/katsubet/" style="color:#e8505c;">KatsuBet</a></td><td>100% + 100 FS</td><td>5000+</td><td>&lt;10 mín</td><td>✅ 6 mynt</td><td>8.6</td></tr>
 </table>
 </div>
 
-<p style="font-size:16px;color:var(--muted2);">Útborgunartímar eru samkvæmt upplýsingum rekstraraðila, ekki mældir af okkur. <a href="{URL_BASE}kak-my-ocenivaem/">Aðferðafræði →</a></p>
+<p style="font-size:16px;color:var(--muted2);">Útborgunartímar eru samkvæmt upplýsingum rekstraraðila, ekki mældir af okkur. <a href="{URL_BASE}hvernig-vid-metum/">Aðferðafræði →</a></p>
 <h2>Hvernig við metum spilavíti</h2>
 <ul>
 <li><strong>Bónus:</strong> Velkomstbónus, veðskilyrði, frísnúningar</li>
@@ -1461,10 +1477,10 @@ seo_pages = [
 
 <h2>1. 💎 Dulritunargjaldmiðlar (USDT / Bitcoin)</h2>
 <p><strong>Áreiðanlegasta lausnin.</strong> Bankar geta ekki lokað á blockchain-færslur.</p>
-<p><a href="{URL_BASE}gajdy/kaupa-bitcoin-island/">📖 Skref-fyrir-skref: Hvernig á að kaupa Bitcoin á Íslandi →</a></p>
+<p><a href="{URL_BASE}leidbeiningar/kaupa-bitcoin-island/">📖 Skref-fyrir-skref: Hvernig á að kaupa Bitcoin á Íslandi →</a></p>
 
 <h2>2. 💳 PIQ greiðslur</h2>
-<p>Greiðsluþjónusta sérstaklega fyrir Ísland. <a href="{URL_BASE}gajdy/piq-greidslur-island/">Lestu PIQ leiðbeininguna →</a></p>
+<p>Greiðsluþjónusta sérstaklega fyrir Ísland. <a href="{URL_BASE}leidbeiningar/piq-greidslur-island/">Lestu PIQ leiðbeininguna →</a></p>
 
 <h2>3. 👛 Rafræn veski (Skrill, Neteller)</h2>
 <p>Millifærðu á veskið, síðan frá veskinu á spilavítið. Bankinn sér ekki spilavítagreiðslu.</p>
@@ -1496,24 +1512,24 @@ seo_pages = [
 
 <h2>Topp 5 crypto spilavíti á Íslandi</h2>
 <div class="info-box">
-<p><strong>🥇 <a href="{URL_BASE}casino/bitstarz/">BitStarz</a></strong> — Besta crypto spilavítið. 3500+ leikir, 5 BTC + 200 FS, útborganir á nokkrum mínútum samkvæmt rekstraraðila. Styður BTC, ETH, LTC, DOGE, USDT, BCH. Einkunn: 9.8/10</p>
+<p><strong>🥇 <a href="{URL_BASE}spilaviti/bitstarz/">BitStarz</a></strong> — Besta crypto spilavítið. 3500+ leikir, 5 BTC + 200 FS, útborganir á nokkrum mínútum samkvæmt rekstraraðila. Styður BTC, ETH, LTC, DOGE, USDT, BCH. Einkunn: 9.8/10</p>
 </div>
 <div class="info-box">
-<p><strong>🥈 <a href="{URL_BASE}casino/stake/">Stake</a></strong> — Vinsælasta crypto spilavítið í heimi. 200% VIP bónus, 5000+ leikir, 8+ dulritunargjaldmiðlar. Einkunn: 9.6/10</p>
+<p><strong>🥈 <a href="{URL_BASE}spilaviti/stake/">Stake</a></strong> — Vinsælasta crypto spilavítið í heimi. 200% VIP bónus, 5000+ leikir, 8+ dulritunargjaldmiðlar. Einkunn: 9.6/10</p>
 </div>
 <div class="info-box">
-<p><strong>🥉 <a href="{URL_BASE}casino/bc-game/">BC.Game</a></strong> — 100+ dulritunargjaldmiðlar, 8000+ leikir, 300% bónus. Mest fjölbreytt crypto stuðningur. Einkunn: 9.4/10</p>
+<p><strong>🥉 <a href="{URL_BASE}spilaviti/bc-game/">BC.Game</a></strong> — 100+ dulritunargjaldmiðlar, 8000+ leikir, 300% bónus. Mest fjölbreytt crypto stuðningur. Einkunn: 9.4/10</p>
 </div>
 <div class="info-box">
-<p><strong>4. <a href="{URL_BASE}casino/katsubet/">KatsuBet</a></strong> — 5000+ leikir, 6 dulritunargjaldmiðlar, 100% + 100 FS. Einkunn: 8.6/10</p>
+<p><strong>4. <a href="{URL_BASE}spilaviti/katsubet/">KatsuBet</a></strong> — 5000+ leikir, 6 dulritunargjaldmiðlar, 100% + 100 FS. Einkunn: 8.6/10</p>
 </div>
 <div class="info-box">
-<p><strong>5. <a href="{URL_BASE}casino/cloudbet/">Cloudbet</a></strong> — Premium crypto spilavíti, háar takmörkunar, 100% allt að 5 BTC. Einkunn: 8.4/10</p>
+<p><strong>5. <a href="{URL_BASE}spilaviti/cloudbet/">Cloudbet</a></strong> — Premium crypto spilavíti, háar takmörkunar, 100% allt að 5 BTC. Einkunn: 8.4/10</p>
 </div>
 
 <h2>Af hverju dulritunar spilavíti á Íslandi?</h2>
 <ul>
-<li>🔓 Komast framhjá <a href="{URL_BASE}gajdy/islenskir-bankar-spilaviti/">bankalokun íslenskra banka</a></li>
+<li>🔓 Komast framhjá <a href="{URL_BASE}leidbeiningar/islenskir-bankar-spilaviti/">bankalokun íslenskra banka</a></li>
 <li>⚡ Dulritunarútborganir oft á mínútum, samkvæmt rekstraraðilum (kort taka yfirleitt 1–5 daga)</li>
 <li>💰 Engin gjaldmiðlaskiptagjöld</li>
 <li>🛡️ Aukið næði — engar spilavítafærslur á bankayfirlitinu</li>
@@ -1526,9 +1542,9 @@ seo_pages = [
 for page in seo_pages:
     hero = make_hero(page["title"][:40], "Svipan leiðbeining", page["emoji"], *page["colors"])
     page_content = page["content"].replace("{hero}", hero)
-    bc = [("{URL_BASE}", "Heim"), ("{URL_BASE}gajdy/", "Leiðbeiningar"), ("", page["title"][:50])]
+    bc = [("{URL_BASE}", "Heim"), ("{URL_BASE}leidbeiningar/", "Leiðbeiningar"), ("", page["title"][:50])]
     html = page_template(page["title"], page["desc"], bc, page_content)
-    write_page(f'gajdy/{page["slug"]}/index.html', html)
+    write_page(f'leidbeiningar/{page["slug"]}/index.html', html)
 
 print(f"  ✅ {len(seo_pages)} SEO target pages generated")
 
@@ -1539,35 +1555,35 @@ print("Generating index pages...")
 casino_cards = ""
 for c in casinos[:20]:
     ctype_label = "Crypto" if c["type"]=="crypto" else "Classic"
-    casino_cards += f'''<a href="{URL_BASE}casino/{c["slug"]}/" class="game-card">
+    casino_cards += f'''<a href="{URL_BASE}spilaviti/{c["slug"]}/" class="game-card">
 <div class="game-card-thumb" style="background:linear-gradient(135deg,{'#62081f,#a3173b' if c['type']=='crypto' else '#262a35,#a31d2e'});display:flex;align-items:center;justify-content:center;"><span style="font-size:28px;font-weight:800;color:rgba(255,255,255,.88);">{c["rating"]}</span></div>
 <div class="game-card-info"><div class="game-card-name">{c["name"]}</div><div class="game-card-prov">{c["bonus"]} · {ctype_label}</div></div></a>\n'''
 
-casino_list = "\n".join([f'<div class="info-box"><p><strong><a href="{URL_BASE}casino/{c["slug"]}/">{c["name"]}</a></strong> — {isk(c["bonus"])} (Einkunn: {c["rating"]}/10)</p></div>' for c in casinos[:50]])
+casino_list = "\n".join([f'<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/{c["slug"]}/">{c["name"]}</a></strong> — {isk(c["bonus"])} (Einkunn: {c["rating"]}/10)</p></div>' for c in casinos[:50]])
 
 casino_content = f'''<h1>Bestu netspilavítin á Íslandi 2026</h1>
 <p>Svipan umsagnir um {len(casinos)} netspilavíti fyrir íslenska leikmenn. Berðu saman bónusa, greiðslumáta og leikjasöfn. Öll spilavíti styðja dulritunargjaldmiðla — auðveldasta leiðin til að spila frá Íslandi.</p>
 <div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Spila á Top Casino →</a></div>
 <h2>Besta spilavítið eftir þörfum</h2>
 <h3>Hæsti velkomstbónusinn</h3>
-<div class="info-box"><p><strong><a href="{URL_BASE}casino/bitstarz/">BitStarz</a></strong> — allt að 5 BTC + 200 frísnúningar. <a href="{URL_BASE}bonusy/velkomstbonus/">Allir velkomstbónusar →</a></p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/bitstarz/">BitStarz</a></strong> — allt að 5 BTC + 200 frísnúningar. <a href="{URL_BASE}bonusar/velkomstbonus/">Allir velkomstbónusar →</a></p></div>
 <h3>Stærsta leikjasafnið</h3>
-<div class="info-box"><p><strong><a href="{URL_BASE}casino/7bit/">7Bit Casino</a></strong> — yfir 7.000 leikir samkvæmt rekstraraðila. <a href="{URL_BASE}slots/">Spilakassar →</a></p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/7bit/">7Bit Casino</a></strong> — yfir 7.000 leikir samkvæmt rekstraraðila. <a href="{URL_BASE}spilakassar/">Spilakassar →</a></p></div>
 <h3>Bestu dulritunarútborganirnar</h3>
-<div class="info-box"><p><strong><a href="{URL_BASE}casino/bc-game/">BC.Game</a></strong> — yfir 100 dulritunargjaldmiðlar og sýnir ISK frá Íslandi. <a href="{URL_BASE}gajdy/besta-crypto-spilaviti-island/">Bestu crypto spilavítin →</a></p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/bc-game/">BC.Game</a></strong> — yfir 100 dulritunargjaldmiðlar og sýnir ISK frá Íslandi. <a href="{URL_BASE}leidbeiningar/besta-crypto-spilaviti-island/">Bestu crypto spilavítin →</a></p></div>
 <h3>Íslenskt viðmót</h3>
-<div class="info-box"><p><strong><a href="{URL_BASE}casino/respin/">Respin</a></strong> og <strong><a href="{URL_BASE}casino/epicbet/">Epicbet</a></strong> — viðmót á íslensku og PIQ greiðslur. <a href="{URL_BASE}gajdy/spilaviti-islenskt-vidmot/">Meira →</a></p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/respin/">Respin</a></strong> og <strong><a href="{URL_BASE}spilaviti/epicbet/">Epicbet</a></strong> — viðmót á íslensku og PIQ greiðslur. <a href="{URL_BASE}leidbeiningar/spilaviti-islenskt-vidmot/">Meira →</a></p></div>
 <h3>Bónus án veðskilyrða</h3>
-<div class="info-box"><p><strong><a href="{URL_BASE}casino/winz/">Winz.io</a></strong> — vinningar úr bónus án veðskilyrða. <a href="{URL_BASE}gajdy/frisnuningar-an-innborgunar/">Frísnúningar →</a></p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/winz/">Winz.io</a></strong> — vinningar úr bónus án veðskilyrða. <a href="{URL_BASE}leidbeiningar/frisnuningar-an-innborgunar/">Frísnúningar →</a></p></div>
 <h3>Lifandi spilavíti á íslensku</h3>
-<div class="info-box"><p><strong><a href="{URL_BASE}casino/tonybet/">TonyBet</a></strong> — Evolution borð og leyfi innan EES. <a href="{URL_BASE}live/">Lifandi leikir →</a></p></div>
-<p style="font-size:16px;color:var(--muted2);">Allur samanburður: <a href="{URL_BASE}gajdy/spilaviti-samanburdur/">Spilavíti samanburður</a> · <a href="{URL_BASE}kak-my-ocenivaem/">Hvernig við metum</a></p>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/tonybet/">TonyBet</a></strong> — Evolution borð og leyfi innan EES. <a href="{URL_BASE}live/">Lifandi leikir →</a></p></div>
+<p style="font-size:16px;color:var(--muted2);">Allur samanburður: <a href="{URL_BASE}leidbeiningar/spilaviti-samanburdur/">Spilavíti samanburður</a> · <a href="{URL_BASE}hvernig-vid-metum/">Hvernig við metum</a></p>
 <h2>Topp 20 spilavíti</h2>
 <div class="game-grid">{casino_cards}</div>
 <h2>Öll {len(casinos)} Spilavíti umsagnir</h2>
 {casino_list}'''
 
-write_page("casino/index.html", page_template("Bestu netspilavítin á Íslandi 2026", f"Berðu saman {len(casinos)} netspilavíti á Íslandi. Dulritunargreiðslur, hraðar útborganir, velkomstbónusar.",
+write_page("spilaviti/index.html", page_template("Bestu netspilavítin á Íslandi 2026", f"Berðu saman {len(casinos)} netspilavíti á Íslandi. Dulritunargreiðslur, hraðar útborganir, velkomstbónusar.",
     [("{URL_BASE}", "Home"), ("", "Casino")],
     casino_content))
 
@@ -1577,12 +1593,12 @@ _extra = _cat.build([x["name"] for x in slots_data], 500 - len(slots_data))
 _cards = []
 for x in slots_data:
     cats = ["review"] + _cat.category(x["name"])
-    _cards.append(f'<a class="lb-card" href="{URL_BASE}slots/{x["slug"]}/" data-n="{_h.escape(x["name"].lower())}" data-p="{_h.escape(x["provider"])}" data-c="{" ".join(cats)}"><img src="{URL_BASE}img/slots/{x["slug"]}.jpg" alt="{_h.escape(x["name"])}" loading="lazy" width="360" height="270"><span class="lb-tag">Umsögn</span><span class="lb-hover"><span class="lb-btn">Lesa umsögn</span></span><span class="lb-name">{_h.escape(x["name"])}<small>{_h.escape(x["provider"])}</small></span></a>')
+    _cards.append(f'<a class="lb-card" href="{URL_BASE}spilakassar/{x["slug"]}/" data-n="{_h.escape(x["name"].lower())}" data-p="{_h.escape(x["provider"])}" data-c="{" ".join(cats)}"><img src="{URL_BASE}img/slots/{x["slug"]}.jpg" alt="{_h.escape(x["name"])}" loading="lazy" width="360" height="270"><span class="lb-tag">Umsögn</span><span class="lb-hover"><span class="lb-btn">Lesa umsögn</span></span><span class="lb-name">{_h.escape(x["name"])}<small>{_h.escape(x["provider"])}</small></span></a>')
 for x in _extra:
     cats = _cat.category(x["name"])
     _rv = next((r for r in EXTRA_REVIEWS if r["key"] == x["slug"]), None)
     if _rv:
-        _cards.append(f'<a class="lb-card" href="{URL_BASE}slots/{_rv["slug"]}/" data-n="{_h.escape(x["name"].lower())}" data-p="{_h.escape(x["provider"])}" data-c="review {" ".join(cats)}"><img src="{URL_BASE}img/lobby/{x["slug"]}.jpg" alt="{_h.escape(x["name"])}" loading="lazy" width="360" height="270"><span class="lb-tag">Umsögn</span><span class="lb-hover"><span class="lb-btn">Lesa umsögn</span></span><span class="lb-name">{_h.escape(x["name"])}<small>{_h.escape(x["provider"])}</small></span></a>')
+        _cards.append(f'<a class="lb-card" href="{URL_BASE}spilakassar/{_rv["slug"]}/" data-n="{_h.escape(x["name"].lower())}" data-p="{_h.escape(x["provider"])}" data-c="review {" ".join(cats)}"><img src="{URL_BASE}img/lobby/{x["slug"]}.jpg" alt="{_h.escape(x["name"])}" loading="lazy" width="360" height="270"><span class="lb-tag">Umsögn</span><span class="lb-hover"><span class="lb-btn">Lesa umsögn</span></span><span class="lb-name">{_h.escape(x["name"])}<small>{_h.escape(x["provider"])}</small></span></a>')
         continue
     _cards.append(f'<a class="lb-card" href="{AFF}" target="_blank" rel="sponsored nofollow noopener" data-n="{_h.escape(x["name"].lower())}" data-p="{_h.escape(x["provider"])}" data-c="{" ".join(cats)}"><img src="{URL_BASE}img/lobby/{x["slug"]}.jpg" alt="{_h.escape(x["name"])}" loading="lazy" width="360" height="270"><span class="lb-hover"><span class="lb-btn">Spila á Slotoro</span></span><span class="lb-name">{_h.escape(x["name"])}<small>{_h.escape(x["provider"])}</small></span></a>')
 _provs = {}
@@ -1628,7 +1644,7 @@ q.addEventListener('input',function(){{limit=60;run()}});pv.addEventListener('ch
 document.querySelectorAll('.lb-tab').forEach(function(b){{b.addEventListener('click',function(){{document.querySelectorAll('.lb-tab').forEach(function(x){{x.classList.remove('on')}});b.classList.add('on');tab=b.dataset.t;limit=60;run()}})}});
 more.addEventListener('click',function(){{limit+=60;run()}});run()}})();</script>
 <style>.lb-card[hidden]{{display:none!important}}</style>"""
-write_page("slots/index.html", page_template("Spilakassar — 500 vinsælir leikir", f"Leitaðu í {len(_cards)} spilakössum frá {len(_provs)} framleiðendum: Pragmatic Play, Play'n GO, NetEnt, Hacksaw, NoLimit City og fleiri. Umsagnir um 80 vinsælustu.",
+write_page("spilakassar/index.html", page_template("Spilakassar — 500 vinsælir leikir", f"Leitaðu í {len(_cards)} spilakössum frá {len(_provs)} framleiðendum: Pragmatic Play, Play'n GO, NetEnt, Hacksaw, NoLimit City og fleiri. Umsagnir um 80 vinsælustu.",
     [("{URL_BASE}", "Heim"), ("", "Spilakassar")], lobby))
 
 # Live index
@@ -1638,20 +1654,20 @@ write_page("live/index.html", page_template("Live Casino", "Leikir með lifandi 
     f'<h1>Spilavíti í beinni — Leikir með lifandi spilastjórum</h1><p>{len(live_games)} leikir með faglegum spilastjórum.</p>{live_list}'))
 
 # Bonus index
-bonus_list = "\n".join([f'<div class="info-box"><p><strong><a href="{URL_BASE}bonusy/{b["slug"]}/">{b["title"]}</a></strong> — {b["desc"][:80]}</p></div>' for b in bonus_pages[:20]])
-write_page("bonusy/index.html", page_template("Casino Bónusar", "Allir bónusar og afsláttarkóðar",
+bonus_list = "\n".join([f'<div class="info-box"><p><strong><a href="{URL_BASE}bonusar/{b["slug"]}/">{b["title"]}</a></strong> — {b["desc"][:80]}</p></div>' for b in bonus_pages[:20]])
+write_page("bonusar/index.html", page_template("Casino Bónusar", "Allir bónusar og afsláttarkóðar",
     [("{URL_BASE}", "Home"), ("", "Bónusar")],
     f'<h1>Casino Bónusar 2026</h1><p>{len(bonus_pages)} virk bónustilboð.</p>{bonus_list}'))
 
 # Payment index
-pay_list = "\n".join([f'<div class="info-box"><p><strong><a href="{URL_BASE}platezhi/{p["slug"]}/">{p["title"]}</a></strong></p></div>' for p in payment_pages[:20]])
-write_page("platezhi/index.html", page_template("Greiðslumátar", "Dulritunargjaldmiðlar og aðrar greiðslur í spilavítum",
+pay_list = "\n".join([f'<div class="info-box"><p><strong><a href="{URL_BASE}greidslur/{p["slug"]}/">{p["title"]}</a></strong></p></div>' for p in payment_pages[:20]])
+write_page("greidslur/index.html", page_template("Greiðslumátar", "Dulritunargjaldmiðlar og aðrar greiðslur í spilavítum",
     [("{URL_BASE}", "Home"), ("", "Payments")],
     f'<h1>Casino Greiðslumátar</h1><p>Hvernig á að komast framhjá lokun banka og spila frá Íslandi.</p>{pay_list}'))
 
 # Guide index
-guide_list = "\n".join([f'<div class="info-box"><p><strong><a href="{URL_BASE}gajdy/{g["slug"]}/">{g["title"]}</a></strong> — {g["desc"][:80]}</p></div>' for g in seo_pages + guide_pages])
-write_page("gajdy/index.html", page_template("Guides", "Leiðbeiningar og kennsluefni fyrir leikmenn",
+guide_list = "\n".join([f'<div class="info-box"><p><strong><a href="{URL_BASE}leidbeiningar/{g["slug"]}/">{g["title"]}</a></strong> — {g["desc"][:80]}</p></div>' for g in seo_pages + guide_pages])
+write_page("leidbeiningar/index.html", page_template("Guides", "Leiðbeiningar og kennsluefni fyrir leikmenn",
     [("{URL_BASE}", "Home"), ("", "Guides")],
     f'<h1>Leiðbeiningar fyrir leikmenn</h1><p>{len(guide_pages)} leiðbeiningar fyrir byrjendur og reynda leikmenn.</p>{guide_list}'))
 
@@ -1668,7 +1684,7 @@ _author = f'''<h1>Valbjörn Gjúkason</h1>
 </ul>
 <h2>Ritstjórnarstefna</h2>
 <p>Við birtum aðeins tölur sem við getum vísað í heimild fyrir. Þegar heimildir eru ósammála segjum við það og bendum á upplýsingaskjá leiksins í stað þess að giska. Síður eru merktar með dagsetningu síðustu uppfærslu.</p>
-<p>Svipan fær þóknun frá Slotoro ef þú skráir þig í gegnum tengla okkar. Það hefur ekki áhrif á einkunnir, og við segjum skýrt frá því á hverri síðu. Lestu meira um <a href="{URL_BASE}kak-my-ocenivaem/">hvernig við metum spilavíti</a>.</p>
+<p>Svipan fær þóknun frá Slotoro ef þú skráir þig í gegnum tengla okkar. Það hefur ekki áhrif á einkunnir, og við segjum skýrt frá því á hverri síðu. Lestu meira um <a href="{URL_BASE}hvernig-vid-metum/">hvernig við metum spilavíti</a>.</p>
 <h2>Leiðrétting</h2>
 <p>Finnurðu villu í umsögn? Láttu okkur vita og við leiðréttum hana og uppfærum dagsetninguna.</p>'''
 write_page("hofundur/valbjorn-gjukason/index.html", page_template("Valbjörn Gjúkason — ritstjóri Svipan", "Valbjörn Gjúkason er blaðamaður sem fjallar um fjárhættuspil og ritstjóri Svipan. Hann ber ábyrgð á umsögnum um spilakassa og spilavíti fyrir íslenska leikmenn.",
@@ -1678,32 +1694,32 @@ write_page("hofundur/valbjorn-gjukason/index.html", page_template("Valbjörn Gj�
 print("Generating sitemap.xml...")
 sitemap_urls = ['https://svipan.is/', 'https://svipan.is/hofundur/valbjorn-gjukason/']
 for c in casinos:
-    sitemap_urls.append(f'https://svipan.is/casino/{c["slug"]}/')
+    sitemap_urls.append(f'https://svipan.is/spilaviti/{c["slug"]}/')
 for cat in casino_categories:
-    sitemap_urls.append(f'https://svipan.is/casino/{cat["slug"]}/')
+    sitemap_urls.append(f'https://svipan.is/spilaviti/{cat["slug"]}/')
 for s in slots_data:
-    sitemap_urls.append(f'https://svipan.is/slots/{s["slug"]}/')
+    sitemap_urls.append(f'https://svipan.is/spilakassar/{s["slug"]}/')
 for s in EXTRA_REVIEWS:
-    sitemap_urls.append(f'https://svipan.is/slots/{s["slug"]}/')
+    sitemap_urls.append(f'https://svipan.is/spilakassar/{s["slug"]}/')
 for g in live_games:
     sitemap_urls.append(f'https://svipan.is/live/{g["slug"]}/')
 for b in bonus_pages:
-    sitemap_urls.append(f'https://svipan.is/bonusy/{b["slug"]}/')
+    sitemap_urls.append(f'https://svipan.is/bonusar/{b["slug"]}/')
 for p in payment_pages:
-    sitemap_urls.append(f'https://svipan.is/platezhi/{p["slug"]}/')
+    sitemap_urls.append(f'https://svipan.is/greidslur/{p["slug"]}/')
 for g in guide_pages:
-    sitemap_urls.append(f'https://svipan.is/gajdy/{g["slug"]}/')
+    sitemap_urls.append(f'https://svipan.is/leidbeiningar/{g["slug"]}/')
 for sp in seo_pages:
-    sitemap_urls.append(f'https://svipan.is/gajdy/{sp["slug"]}/')
+    sitemap_urls.append(f'https://svipan.is/leidbeiningar/{sp["slug"]}/')
 for a in about_pages:
     sitemap_urls.append(f'https://svipan.is/{a["slug"]}/')
 sitemap_urls.extend([
-    'https://svipan.is/casino/',
-    'https://svipan.is/slots/',
+    'https://svipan.is/spilaviti/',
+    'https://svipan.is/spilakassar/',
     'https://svipan.is/live/',
-    'https://svipan.is/bonusy/',
-    'https://svipan.is/platezhi/',
-    'https://svipan.is/gajdy/',
+    'https://svipan.is/bonusar/',
+    'https://svipan.is/greidslur/',
+    'https://svipan.is/leidbeiningar/',
 ])
 
 sitemap_xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
