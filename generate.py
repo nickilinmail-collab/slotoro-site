@@ -3680,6 +3680,461 @@ seo_pages = [
 <p>Niðurstaðan er sú sama. Lifandi baccarat er raunverulegri upplifun (raunverulegur dílleri) en hægara. RNG er hraðara en minna spennandi.</p>
 <div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Spila baccarat →</a></div>'''
     },
+    {
+        "slug": "verde-casino-umsogn",
+        "title": "Verde Casino umsögn á íslensku — bónus og greiðslur 2026",
+        "desc": "Verde Casino umsögn fyrir íslenska spilara: velkomstbónus, leikjaúrval, greiðsluleiðir og hvort spilavítið tekur við frá Íslandi.",
+        "emoji": "🌿",
+        "colors": ('#0a1a0f', '#14331e', '#1e4d2d'),
+        "content": f'''<h1>Verde Casino umsögn á íslensku 2026</h1>
+{hero}
+<p>Verde Casino er eitt af þeim spilavítum sem íslenskir spilarar leita reglulega að. <strong>Hér förum við yfir hvað það býður, hvernig það ber sig saman við valkosti sem taka örugglega við frá Íslandi, og hvað þú þarft að varast.</strong></p>
+
+<h2>Verde Casino í hnotskurn</h2>
+<table class="info-table"><thead><tr><th>Þáttur</th><th>Upplýsingar</th></tr></thead><tbody>
+<tr><td>Stofnár</td><td>2022</td></tr>
+<tr><td>Eigandi</td><td>Brivio Limited (V.Partners)</td></tr>
+<tr><td>Leyfi</td><td>Curaçao</td></tr>
+<tr><td>Fjöldi leikja</td><td>4.000+</td></tr>
+<tr><td>Velkomstbónus</td><td>Allt að €1.500 + 220 FS</td></tr>
+<tr><td>Lágmarksinnborgun</td><td>€10</td></tr>
+<tr><td>Íslenskt viðmót</td><td>❌ Nei (enska, pólska, þýska o.fl.)</td></tr>
+<tr><td>Dulritunargjaldmiðlar</td><td>✅ BTC, ETH, LTC, USDT</td></tr>
+</tbody></table>
+
+<h2>Kostir og gallar</h2>
+<table class="info-table"><thead><tr><th>Kostir</th><th>Gallar</th></tr></thead><tbody>
+<tr><td>✅ Stór velkomstpakki yfir fjórar innborganir</td><td>❌ Ekkert íslenskt viðmót</td></tr>
+<tr><td>✅ Gott leikjaúrval (4.000+)</td><td>❌ 40x veðskilyrði</td></tr>
+<tr><td>✅ Lág lágmarksinnborgun (€10)</td><td>❌ Þjónustuver aðeins á ensku</td></tr>
+<tr><td>✅ Hluti af V.Partners — sömu eigendur og Slotoro</td><td>❌ Bónus rennur út á 5 dögum</td></tr>
+</tbody></table>
+
+<h2>Velkomstpakki Verde Casino</h2>
+<p>Verde dreifir velkomstbónusnum yfir fjórar innborganir — svipað og systursíðurnar:</p>
+<ol>
+<li>1. innborgun: 100% allt að €400 + 100 FS</li>
+<li>2. innborgun: 50% allt að €400 + 50 FS</li>
+<li>3. innborgun: 75% allt að €400 + 35 FS</li>
+<li>4. innborgun: 100% allt að €300 + 35 FS</li>
+</ol>
+<p>Veðskilyrði eru 40x bónusupphæð — það þýðir að €100 bónus krefst €4.000 í veltu áður en hægt er að taka út.
+Berðu þetta saman við <a href="{URL_BASE}leidbeiningar/spilaviti-an-vedskilyrda/">veðlaus spilavíti</a> þar sem vinningurinn er þinn strax.</p>
+
+<h2>Verde Casino vs Slotoro</h2>
+<table class="info-table"><thead><tr><th>Þáttur</th><th>Verde Casino</th><th>Slotoro</th></tr></thead><tbody>
+<tr><td>Leikir</td><td>4.000+</td><td>8.000+</td></tr>
+<tr><td>Framleiðendur</td><td>50+</td><td>71</td></tr>
+<tr><td>Lágmarksinnborgun</td><td>€10</td><td>€10</td></tr>
+<tr><td>Veðskilyrði</td><td>40x</td><td>40x</td></tr>
+<tr><td>Íþróttaveðmál</td><td>❌ Nei</td><td>✅ Já</td></tr>
+</tbody></table>
+
+<h2>Greiðsluleiðir frá Íslandi</h2>
+<p>Stærsta hindrunin fyrir íslenska spilara eru <a href="{URL_BASE}leidbeiningar/islenskir-bankar-spilaviti/">bankatakmarkanir</a>.
+Arion, Landsbankinn og Íslandsbanki geta hafnað kortagreiðslum til spilavíta. Lausnir:</p>
+<ul>
+<li><strong>Dulritunargjaldmiðlar</strong> — Bankinn kemur hvergi nærri. <a href="{URL_BASE}leidbeiningar/kaupa-bitcoin-island/">Hvernig á að kaupa Bitcoin á Íslandi →</a></li>
+<li><strong>Revolut</strong> — Fer ekki gegnum íslenskt bankakerfi. <a href="{URL_BASE}leidbeiningar/revolut-spilaviti-island-leidbeining/">Revolut leiðbeining →</a></li>
+<li><strong>Rafræn veski</strong> — <a href="{URL_BASE}greidslur/skrill-i-spilavitum/">Skrill</a> og <a href="{URL_BASE}greidslur/neteller-i-spilavitum/">Neteller</a></li>
+</ul>
+
+<h2>Valkostir sem taka örugglega við frá Íslandi</h2>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/slotoro/">Slotoro</a></strong> — 8.000+ leikir frá 71 framleiðendum, €10 lágmarksinnborgun, dulritunargjaldmiðlar studdir. Samstarfsaðili Svipan.</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/epicbet/">Epicbet</a></strong> — Fullkomið íslenskt viðmót, veðlausir bónusar og Apple Pay.</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/bitstarz/">BitStarz</a></strong> — Dulritunarspilavíti með úttektum undir 10 mínútum.</p></div>
+<p>Sjá allan <a href="{URL_BASE}spilaviti/">samanburð á spilavítum →</a></p>
+
+<h2>Algengar spurningar</h2>
+<h3>Tekur Verde Casino við íslenskum spilurum?</h3>
+<p>Já — Verde Casino lokar ekki á Ísland. Viðmótið er þó ekki á íslensku, svo þú þarft að lesa bónusskilmála á ensku.</p>
+<h3>Er Verde Casino öruggt?</h3>
+<p>Verde er með Curaçao leyfi og er rekið af Brivio Limited, sama fyrirtæki og stendur að baki Vulkan Vegas og Ice Casino. Rótgróinn rekstraraðili í bransanum.</p>
+<h3>Hvaða greiðsluleið virkar best frá Íslandi?</h3>
+<p>Dulritunargjaldmiðlar eða Revolut. Íslensk bankakort geta verið hafnað — sjá leiðbeiningar okkar um greiðslur.</p>
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Prófa Slotoro →</a></div>'''
+    },
+    {
+        "slug": "hitnspin-umsogn-a-islensku",
+        "title": "Hit'N'Spin umsögn á íslensku — bónus og leikir 2026",
+        "desc": "Hit'N'Spin umsögn fyrir íslenska spilara. Einkaréttarbrand V.Partners: bónus, leikjaúrval og greiðsluleiðir.",
+        "emoji": "🎯",
+        "colors": ('#28100a', '#451c14', '#62291e'),
+        "content": f'''<h1>Hit'N'Spin umsögn á íslensku 2026</h1>
+{hero}
+<p>Hit'N'Spin er eitt af þeim spilavítum sem íslenskir spilarar leita reglulega að. <strong>Hér förum við yfir hvað það býður, hvernig það ber sig saman við valkosti sem taka örugglega við frá Íslandi, og hvað þú þarft að varast.</strong></p>
+
+<h2>Hit'N'Spin í hnotskurn</h2>
+<table class="info-table"><thead><tr><th>Þáttur</th><th>Upplýsingar</th></tr></thead><tbody>
+<tr><td>Stofnár</td><td>2023</td></tr>
+<tr><td>Eigandi</td><td>V.Partners (einkaréttarbrand)</td></tr>
+<tr><td>Leyfi</td><td>Curaçao</td></tr>
+<tr><td>Fjöldi leikja</td><td>3.000+</td></tr>
+<tr><td>Velkomstbónus</td><td>Allt að €1.000 + 100 FS</td></tr>
+<tr><td>Lágmarksinnborgun</td><td>€20</td></tr>
+<tr><td>Íslenskt viðmót</td><td>❌ Nei</td></tr>
+<tr><td>Dulritunargjaldmiðlar</td><td>✅ BTC, ETH, LTC, USDT</td></tr>
+</tbody></table>
+
+<h2>Kostir og gallar</h2>
+<table class="info-table"><thead><tr><th>Kostir</th><th>Gallar</th></tr></thead><tbody>
+<tr><td>✅ Einkaréttarbrand — fáanlegt aðeins í gegnum V.Partners</td><td>❌ Ekkert íslenskt viðmót</td></tr>
+<tr><td>✅ Nýtt spilavíti með nútímalegu viðmóti</td><td>❌ €20 lágmarksinnborgun (hærra en flest)</td></tr>
+<tr><td>✅ Gott úrval af lifandi leikjum</td><td>❌ Nýtt — minni reynslusaga en eldri spilavíti</td></tr>
+<tr><td>✅ Dulritunargjaldmiðlar studdir</td><td>❌ 40x veðskilyrði</td></tr>
+</tbody></table>
+
+<h2>Hvað þýðir „einkaréttarbrand"?</h2>
+<p>Hit'N'Spin er eitt af þeim spilavítum sem eingöngu eru í boði í gegnum V.Partners samstarfsnetið — ásamt
+<a href="{URL_BASE}spilaviti/slotoro/">Slotoro</a> og Vulkan Spiele. Það þýðir að þú finnur það ekki á hverri
+samanburðarsíðu og samkeppnin um bónusa er minni.</p>
+
+<h2>Leikjaúrval</h2>
+<p>Hit'N'Spin býður yfir 3.000 leiki frá helstu framleiðendum: Pragmatic Play, Evolution, Play'n GO, NetEnt,
+Hacksaw Gaming og Nolimit City. Lifandi spilavítishlutinn er sterkur — Evolution borð eru í boði allan sólarhringinn.</p>
+
+<h2>Greiðsluleiðir frá Íslandi</h2>
+<p>Stærsta hindrunin fyrir íslenska spilara eru <a href="{URL_BASE}leidbeiningar/islenskir-bankar-spilaviti/">bankatakmarkanir</a>.
+Arion, Landsbankinn og Íslandsbanki geta hafnað kortagreiðslum til spilavíta. Lausnir:</p>
+<ul>
+<li><strong>Dulritunargjaldmiðlar</strong> — Bankinn kemur hvergi nærri. <a href="{URL_BASE}leidbeiningar/kaupa-bitcoin-island/">Hvernig á að kaupa Bitcoin á Íslandi →</a></li>
+<li><strong>Revolut</strong> — Fer ekki gegnum íslenskt bankakerfi. <a href="{URL_BASE}leidbeiningar/revolut-spilaviti-island-leidbeining/">Revolut leiðbeining →</a></li>
+<li><strong>Rafræn veski</strong> — <a href="{URL_BASE}greidslur/skrill-i-spilavitum/">Skrill</a> og <a href="{URL_BASE}greidslur/neteller-i-spilavitum/">Neteller</a></li>
+</ul>
+
+<h2>Valkostir sem taka örugglega við frá Íslandi</h2>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/slotoro/">Slotoro</a></strong> — 8.000+ leikir frá 71 framleiðendum, €10 lágmarksinnborgun, dulritunargjaldmiðlar studdir. Samstarfsaðili Svipan.</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/epicbet/">Epicbet</a></strong> — Fullkomið íslenskt viðmót, veðlausir bónusar og Apple Pay.</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/bitstarz/">BitStarz</a></strong> — Dulritunarspilavíti með úttektum undir 10 mínútum.</p></div>
+<p>Sjá allan <a href="{URL_BASE}spilaviti/">samanburð á spilavítum →</a></p>
+
+<h2>Algengar spurningar</h2>
+<h3>Er Hit'N'Spin nýtt spilavíti?</h3>
+<p>Já — Hit'N'Spin opnaði 2023 og er því tiltölulega nýtt. Það er rekið af V.Partners sem hefur starfað síðan 2016.</p>
+<h3>Get ég spilað Hit'N'Spin frá Íslandi?</h3>
+<p>Já. Notaðu dulritunargjaldmiðla eða Revolut til innborgunar þar sem íslensk bankakort geta verið hafnað.</p>
+<h3>Hvernig ber Hit'N'Spin sig saman við Slotoro?</h3>
+<p>Slotoro hefur fleiri leiki (8.000+ á móti 3.000+) og lægri lágmarksinnborgun (€10 á móti €20). Bæði eru V.Partners brand.</p>
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Prófa Slotoro →</a></div>'''
+    },
+    {
+        "slug": "betsson-a-islandi",
+        "title": "Betsson á Íslandi — umsögn, bónus og staða 2026",
+        "desc": "Betsson umsögn fyrir íslenska spilara. Norrænt spilavíti síðan 1963: leyfi, leikir, greiðslur og hvort það tekur við frá Íslandi.",
+        "emoji": "🟠",
+        "colors": ('#28140a', '#452414', '#62341e'),
+        "content": f'''<h1>Betsson á Íslandi 2026</h1>
+{hero}
+<p>Betsson er eitt af þeim spilavítum sem íslenskir spilarar leita reglulega að. <strong>Hér förum við yfir hvað það býður, hvernig það ber sig saman við valkosti sem taka örugglega við frá Íslandi, og hvað þú þarft að varast.</strong></p>
+
+<h2>Betsson í hnotskurn</h2>
+<table class="info-table"><thead><tr><th>Þáttur</th><th>Upplýsingar</th></tr></thead><tbody>
+<tr><td>Stofnár</td><td>1963 (á netinu síðan 2001)</td></tr>
+<tr><td>Eigandi</td><td>Betsson AB (skráð á Nasdaq Stokkhólmi)</td></tr>
+<tr><td>Leyfi</td><td>Malta (MGA) + fleiri</td></tr>
+<tr><td>Fjöldi leikja</td><td>2.000+</td></tr>
+<tr><td>Velkomstbónus</td><td>Fer eftir markaði</td></tr>
+<tr><td>Lágmarksinnborgun</td><td>€10</td></tr>
+<tr><td>Íslenskt viðmót</td><td>❌ Nei</td></tr>
+<tr><td>Dulritunargjaldmiðlar</td><td>❌ Nei</td></tr>
+</tbody></table>
+
+<h2>Kostir og gallar</h2>
+<table class="info-table"><thead><tr><th>Kostir</th><th>Gallar</th></tr></thead><tbody>
+<tr><td>✅ Eitt elsta og virtasta spilavíti Norðurlanda</td><td>❌ Tekur ekki alltaf við íslenskum spilurum — fer eftir markaðsstillingum</td></tr>
+<tr><td>✅ Skráð á hlutabréfamarkaði — mikið gegnsæi</td><td>❌ Engir dulritunargjaldmiðlar</td></tr>
+<tr><td>✅ MGA leyfi (hæsta traust)</td><td>❌ Ekkert íslenskt viðmót</td></tr>
+<tr><td>✅ Sterkur íþróttaveðmálahluti</td><td>❌ Strangar KYC kröfur</td></tr>
+</tbody></table>
+
+<h2>Tekur Betsson við íslenskum spilurum?</h2>
+<p>Betsson rekur sérstakar síður fyrir hvern markað og fylgir leyfisskilyrðum hvers lands. Vegna þess að Ísland hefur
+ekkert leyfiskerfi fyrir netspilavíti er aðgengi óstöðugt — stundum er hægt að skrá sig, stundum ekki, og þetta getur
+breyst án fyrirvara.</p>
+<p>Ef þú vilt spilavíti sem tekur örugglega við íslenskum spilurum skaltu skoða
+<a href="{URL_BASE}leidbeiningar/spilaviti-med-islensku-vidmoti/">spilavíti á íslensku</a> eða
+<a href="{URL_BASE}leidbeiningar/bestu-crypto-spilavitin-island/">dulritunarspilavíti</a>.</p>
+
+<h2>Af hverju er Betsson svona þekkt?</h2>
+<p>Betsson AB er skráð á Nasdaq Stokkhólmi og rekur yfir 20 vörumerki. Fyrirtækið hefur starfað síðan 1963 (upphaflega
+sem spilakassafyrirtæki) og fór á netið 2001. Þetta er eitt af fáum spilavítafyrirtækjum þar sem ársreikningar eru
+opinberir — mikið gegnsæi samanborið við Curaçao-rekin spilavíti.</p>
+
+<h2>Greiðsluleiðir frá Íslandi</h2>
+<p>Stærsta hindrunin fyrir íslenska spilara eru <a href="{URL_BASE}leidbeiningar/islenskir-bankar-spilaviti/">bankatakmarkanir</a>.
+Arion, Landsbankinn og Íslandsbanki geta hafnað kortagreiðslum til spilavíta. Lausnir:</p>
+<ul>
+<li><strong>Dulritunargjaldmiðlar</strong> — Bankinn kemur hvergi nærri. <a href="{URL_BASE}leidbeiningar/kaupa-bitcoin-island/">Hvernig á að kaupa Bitcoin á Íslandi →</a></li>
+<li><strong>Revolut</strong> — Fer ekki gegnum íslenskt bankakerfi. <a href="{URL_BASE}leidbeiningar/revolut-spilaviti-island-leidbeining/">Revolut leiðbeining →</a></li>
+<li><strong>Rafræn veski</strong> — <a href="{URL_BASE}greidslur/skrill-i-spilavitum/">Skrill</a> og <a href="{URL_BASE}greidslur/neteller-i-spilavitum/">Neteller</a></li>
+</ul>
+
+<h2>Valkostir sem taka örugglega við frá Íslandi</h2>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/slotoro/">Slotoro</a></strong> — 8.000+ leikir frá 71 framleiðendum, €10 lágmarksinnborgun, dulritunargjaldmiðlar studdir. Samstarfsaðili Svipan.</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/epicbet/">Epicbet</a></strong> — Fullkomið íslenskt viðmót, veðlausir bónusar og Apple Pay.</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/bitstarz/">BitStarz</a></strong> — Dulritunarspilavíti með úttektum undir 10 mínútum.</p></div>
+<p>Sjá allan <a href="{URL_BASE}spilaviti/">samanburð á spilavítum →</a></p>
+
+<h2>Algengar spurningar</h2>
+<h3>Get ég skráð mig á Betsson frá Íslandi?</h3>
+<p>Það fer eftir því hvaða markaðsútgáfu Betsson býður upp á hverju sinni. Aðgengi frá Íslandi er ekki tryggt og getur breyst.</p>
+<h3>Er Betsson öruggt?</h3>
+<p>Já — Betsson er með MGA leyfi og er skráð á hlutabréfamarkaði. Þetta er meðal áreiðanlegustu rekstraraðila í bransanum.</p>
+<h3>Tekur Betsson við Bitcoin?</h3>
+<p>Nei — Betsson styður ekki dulritunargjaldmiðla. Ef þú vilt spila með Bitcoin skaltu skoða lista okkar yfir dulritunarspilavíti.</p>
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Prófa Slotoro →</a></div>'''
+    },
+    {
+        "slug": "unibet-a-islandi",
+        "title": "Unibet á Íslandi — umsögn og staða 2026",
+        "desc": "Unibet umsögn fyrir íslenska spilara: leyfi, leikjaúrval, íþróttaveðmál og hvort síðan tekur við frá Íslandi.",
+        "emoji": "🟢",
+        "colors": ('#0a1f14', '#143a26', '#1e5538'),
+        "content": f'''<h1>Unibet á Íslandi 2026</h1>
+{hero}
+<p>Unibet er eitt af þeim spilavítum sem íslenskir spilarar leita reglulega að. <strong>Hér förum við yfir hvað það býður, hvernig það ber sig saman við valkosti sem taka örugglega við frá Íslandi, og hvað þú þarft að varast.</strong></p>
+
+<h2>Unibet í hnotskurn</h2>
+<table class="info-table"><thead><tr><th>Þáttur</th><th>Upplýsingar</th></tr></thead><tbody>
+<tr><td>Stofnár</td><td>1997</td></tr>
+<tr><td>Eigandi</td><td>Kindred Group (áður Unibet Group)</td></tr>
+<tr><td>Leyfi</td><td>Malta (MGA), UKGC, fleiri</td></tr>
+<tr><td>Fjöldi leikja</td><td>1.500+</td></tr>
+<tr><td>Velkomstbónus</td><td>Fer eftir markaði</td></tr>
+<tr><td>Lágmarksinnborgun</td><td>€10</td></tr>
+<tr><td>Íslenskt viðmót</td><td>❌ Nei</td></tr>
+<tr><td>Dulritunargjaldmiðlar</td><td>❌ Nei</td></tr>
+</tbody></table>
+
+<h2>Kostir og gallar</h2>
+<table class="info-table"><thead><tr><th>Kostir</th><th>Gallar</th></tr></thead><tbody>
+<tr><td>✅ Rótgróið síðan 1997</td><td>❌ Aðgengi frá Íslandi ekki tryggt</td></tr>
+<tr><td>✅ MGA og UKGC leyfi</td><td>❌ Engir dulritunargjaldmiðlar</td></tr>
+<tr><td>✅ Mjög sterkur íþróttaveðmálahluti</td><td>❌ Ekkert íslenskt viðmót</td></tr>
+<tr><td>✅ Hluti af Kindred Group — skráð fyrirtæki</td><td>❌ Minna leikjaúrval en crypto-spilavíti</td></tr>
+</tbody></table>
+
+<h2>Unibet og Kindred Group</h2>
+<p>Unibet er flaggskipsvörumerki Kindred Group, sem rekur einnig Maria Casino, 32Red og Otto Kasino.
+Kindred er skráð á Nasdaq Stokkhólmi og birtir meðal annars hlutfall tekna sem kemur frá spilurum
+með áhættusama spilahegðun — óvenjulegt gegnsæi í bransanum.</p>
+
+<h2>Styrkleiki: íþróttaveðmál</h2>
+<p>Unibet er fyrst og fremst þekkt fyrir íþróttaveðmál frekar en spilavítishlutann. Fótbolti, handbolti
+og körfubolti eru vel þjónustuð — sem á vel við íslenskan markað þar sem handbolti og fótbolti eru vinsælastir.</p>
+
+<h2>Greiðsluleiðir frá Íslandi</h2>
+<p>Stærsta hindrunin fyrir íslenska spilara eru <a href="{URL_BASE}leidbeiningar/islenskir-bankar-spilaviti/">bankatakmarkanir</a>.
+Arion, Landsbankinn og Íslandsbanki geta hafnað kortagreiðslum til spilavíta. Lausnir:</p>
+<ul>
+<li><strong>Dulritunargjaldmiðlar</strong> — Bankinn kemur hvergi nærri. <a href="{URL_BASE}leidbeiningar/kaupa-bitcoin-island/">Hvernig á að kaupa Bitcoin á Íslandi →</a></li>
+<li><strong>Revolut</strong> — Fer ekki gegnum íslenskt bankakerfi. <a href="{URL_BASE}leidbeiningar/revolut-spilaviti-island-leidbeining/">Revolut leiðbeining →</a></li>
+<li><strong>Rafræn veski</strong> — <a href="{URL_BASE}greidslur/skrill-i-spilavitum/">Skrill</a> og <a href="{URL_BASE}greidslur/neteller-i-spilavitum/">Neteller</a></li>
+</ul>
+
+<h2>Valkostir sem taka örugglega við frá Íslandi</h2>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/slotoro/">Slotoro</a></strong> — 8.000+ leikir frá 71 framleiðendum, €10 lágmarksinnborgun, dulritunargjaldmiðlar studdir. Samstarfsaðili Svipan.</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/epicbet/">Epicbet</a></strong> — Fullkomið íslenskt viðmót, veðlausir bónusar og Apple Pay.</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/bitstarz/">BitStarz</a></strong> — Dulritunarspilavíti með úttektum undir 10 mínútum.</p></div>
+<p>Sjá allan <a href="{URL_BASE}spilaviti/">samanburð á spilavítum →</a></p>
+
+<h2>Algengar spurningar</h2>
+<h3>Tekur Unibet við íslenskum spilurum?</h3>
+<p>Aðgengi er ekki tryggt og fer eftir markaðsstillingum Kindred Group hverju sinni.</p>
+<h3>Er Unibet betra fyrir íþróttir eða spilavíti?</h3>
+<p>Íþróttir. Unibet byggði orðspor sitt á veðmálum og spilavítishlutinn er minni en hjá sérhæfðum spilavítum.</p>
+<h3>Hvaða valkostir eru fyrir íslenska spilara?</h3>
+<p>Spilavíti með íslensku viðmóti eða dulritunarspilavíti sem taka örugglega við frá Íslandi — sjá samanburðarlista okkar.</p>
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Prófa Slotoro →</a></div>'''
+    },
+    {
+        "slug": "leovegas-a-islandi",
+        "title": "LeoVegas á Íslandi — umsögn og farsímaupplifun 2026",
+        "desc": "LeoVegas umsögn: farsímaspilavítið sem vann til verðlauna. Leyfi, leikir, greiðslur og staða gagnvart Íslandi.",
+        "emoji": "🦁",
+        "colors": ('#28200a', '#453814', '#62501e'),
+        "content": f'''<h1>LeoVegas á Íslandi 2026</h1>
+{hero}
+<p>LeoVegas er eitt af þeim spilavítum sem íslenskir spilarar leita reglulega að. <strong>Hér förum við yfir hvað það býður, hvernig það ber sig saman við valkosti sem taka örugglega við frá Íslandi, og hvað þú þarft að varast.</strong></p>
+
+<h2>LeoVegas í hnotskurn</h2>
+<table class="info-table"><thead><tr><th>Þáttur</th><th>Upplýsingar</th></tr></thead><tbody>
+<tr><td>Stofnár</td><td>2011</td></tr>
+<tr><td>Eigandi</td><td>MGM Resorts International (síðan 2022)</td></tr>
+<tr><td>Leyfi</td><td>Malta (MGA), UKGC, fleiri</td></tr>
+<tr><td>Fjöldi leikja</td><td>2.000+</td></tr>
+<tr><td>Velkomstbónus</td><td>Fer eftir markaði</td></tr>
+<tr><td>Lágmarksinnborgun</td><td>€10</td></tr>
+<tr><td>Íslenskt viðmót</td><td>❌ Nei</td></tr>
+<tr><td>Dulritunargjaldmiðlar</td><td>❌ Nei</td></tr>
+</tbody></table>
+
+<h2>Kostir og gallar</h2>
+<table class="info-table"><thead><tr><th>Kostir</th><th>Gallar</th></tr></thead><tbody>
+<tr><td>✅ Besta farsímaupplifun í bransanum — margverðlaunað</td><td>❌ Aðgengi frá Íslandi ekki tryggt</td></tr>
+<tr><td>✅ Í eigu MGM Resorts (Las Vegas risinn)</td><td>❌ Engir dulritunargjaldmiðlar</td></tr>
+<tr><td>✅ MGA og UKGC leyfi</td><td>❌ Ekkert íslenskt viðmót</td></tr>
+<tr><td>✅ Stór lifandi spilavítishluti</td><td>❌ Bónusskilmálar misjafnir eftir mörkuðum</td></tr>
+</tbody></table>
+
+<h2>„Konungur farsímaspilavíta"</h2>
+<p>LeoVegas byggði allt sitt viðmót fyrir farsíma fyrst — áður en það varð staðall í bransanum. Fyrirtækið hefur
+unnið fjölda verðlauna fyrir farsímaupplifun. Ef þú spilar aðallega í símanum er þetta viðmiðunarpunkturinn sem
+önnur spilavíti eru borin saman við.</p>
+<p>Sjá einnig: <a href="{URL_BASE}leidbeiningar/spilaviti-fyrir-farsima-island/">bestu farsímaspilavítin á Íslandi</a>.</p>
+
+<h2>MGM eignarhald</h2>
+<p>MGM Resorts International keypti LeoVegas árið 2022 fyrir um 600 milljónir evra. Það þýðir að bandaríski
+spilavítarisinn stendur að baki rekstrinum — sem eykur fjárhagslegan stöðugleika verulega.</p>
+
+<h2>Greiðsluleiðir frá Íslandi</h2>
+<p>Stærsta hindrunin fyrir íslenska spilara eru <a href="{URL_BASE}leidbeiningar/islenskir-bankar-spilaviti/">bankatakmarkanir</a>.
+Arion, Landsbankinn og Íslandsbanki geta hafnað kortagreiðslum til spilavíta. Lausnir:</p>
+<ul>
+<li><strong>Dulritunargjaldmiðlar</strong> — Bankinn kemur hvergi nærri. <a href="{URL_BASE}leidbeiningar/kaupa-bitcoin-island/">Hvernig á að kaupa Bitcoin á Íslandi →</a></li>
+<li><strong>Revolut</strong> — Fer ekki gegnum íslenskt bankakerfi. <a href="{URL_BASE}leidbeiningar/revolut-spilaviti-island-leidbeining/">Revolut leiðbeining →</a></li>
+<li><strong>Rafræn veski</strong> — <a href="{URL_BASE}greidslur/skrill-i-spilavitum/">Skrill</a> og <a href="{URL_BASE}greidslur/neteller-i-spilavitum/">Neteller</a></li>
+</ul>
+
+<h2>Valkostir sem taka örugglega við frá Íslandi</h2>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/slotoro/">Slotoro</a></strong> — 8.000+ leikir frá 71 framleiðendum, €10 lágmarksinnborgun, dulritunargjaldmiðlar studdir. Samstarfsaðili Svipan.</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/epicbet/">Epicbet</a></strong> — Fullkomið íslenskt viðmót, veðlausir bónusar og Apple Pay.</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/bitstarz/">BitStarz</a></strong> — Dulritunarspilavíti með úttektum undir 10 mínútum.</p></div>
+<p>Sjá allan <a href="{URL_BASE}spilaviti/">samanburð á spilavítum →</a></p>
+
+<h2>Algengar spurningar</h2>
+<h3>Er LeoVegas best fyrir farsíma?</h3>
+<p>LeoVegas er almennt talið meðal þeirra bestu í farsímaupplifun. Þó hafa önnur spilavíti náð því á síðustu árum.</p>
+<h3>Tekur LeoVegas við frá Íslandi?</h3>
+<p>Aðgengi er ekki tryggt. LeoVegas einbeitir sér að mörkuðum með leyfiskerfi eins og Svíþjóð, Danmörku og Bretlandi.</p>
+<h3>Hver á LeoVegas?</h3>
+<p>MGM Resorts International, bandaríski spilavíta- og hótelrisinn, keypti LeoVegas árið 2022.</p>
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Prófa Slotoro →</a></div>'''
+    },
+    {
+        "slug": "mr-green-a-islandi",
+        "title": "Mr Green á Íslandi — umsögn og ábyrg spilun 2026",
+        "desc": "Mr Green umsögn: sænskt spilavíti þekkt fyrir verkfæri í ábyrgri spilun. Leyfi, leikir og staða gagnvart Íslandi.",
+        "emoji": "🎩",
+        "colors": ('#0a2814', '#144524', '#1e6234'),
+        "content": f'''<h1>Mr Green á Íslandi 2026</h1>
+{hero}
+<p>Mr Green er eitt af þeim spilavítum sem íslenskir spilarar leita reglulega að. <strong>Hér förum við yfir hvað það býður, hvernig það ber sig saman við valkosti sem taka örugglega við frá Íslandi, og hvað þú þarft að varast.</strong></p>
+
+<h2>Mr Green í hnotskurn</h2>
+<table class="info-table"><thead><tr><th>Þáttur</th><th>Upplýsingar</th></tr></thead><tbody>
+<tr><td>Stofnár</td><td>2008</td></tr>
+<tr><td>Eigandi</td><td>William Hill / evoke plc</td></tr>
+<tr><td>Leyfi</td><td>Malta (MGA), UKGC, fleiri</td></tr>
+<tr><td>Fjöldi leikja</td><td>1.800+</td></tr>
+<tr><td>Velkomstbónus</td><td>Fer eftir markaði</td></tr>
+<tr><td>Lágmarksinnborgun</td><td>€10</td></tr>
+<tr><td>Íslenskt viðmót</td><td>❌ Nei</td></tr>
+<tr><td>Dulritunargjaldmiðlar</td><td>❌ Nei</td></tr>
+</tbody></table>
+
+<h2>Kostir og gallar</h2>
+<table class="info-table"><thead><tr><th>Kostir</th><th>Gallar</th></tr></thead><tbody>
+<tr><td>✅ Leiðandi í verkfærum fyrir ábyrga spilun (Green Gaming)</td><td>❌ Aðgengi frá Íslandi ekki tryggt</td></tr>
+<tr><td>✅ MGA og UKGC leyfi</td><td>❌ Engir dulritunargjaldmiðlar</td></tr>
+<tr><td>✅ Vandað viðmót og notendaupplifun</td><td>❌ Ekkert íslenskt viðmót</td></tr>
+<tr><td>✅ Hluti af evoke plc (áður William Hill)</td><td>❌ Minna leikjaúrval en crypto-spilavíti</td></tr>
+</tbody></table>
+
+<h2>Green Gaming — verkfæri gegn spilafikn</h2>
+<p>Mr Green þróaði „Green Gaming" kerfi sem greinir spilahegðun og varar spilara við ef mynstrið bendir til
+áhættusamrar hegðunar. Spilarar fá persónulegt áhættumat og tillögur um takmörk.</p>
+<p>Þetta er meðal þróaðustu verkfæra í bransanum. Ef þú vilt lesa meira um merki áhættusamrar spilunar,
+sjá <a href="{URL_BASE}leidbeiningar/merki-thess-ad-thu-sert-ordinn-hadur-spilavitum/">leiðbeiningar okkar</a>
+og <a href="{URL_BASE}leidbeiningar/sjalfsutilokun-spilavita/">sjálfsútilokun</a>.</p>
+
+<h2>Greiðsluleiðir frá Íslandi</h2>
+<p>Stærsta hindrunin fyrir íslenska spilara eru <a href="{URL_BASE}leidbeiningar/islenskir-bankar-spilaviti/">bankatakmarkanir</a>.
+Arion, Landsbankinn og Íslandsbanki geta hafnað kortagreiðslum til spilavíta. Lausnir:</p>
+<ul>
+<li><strong>Dulritunargjaldmiðlar</strong> — Bankinn kemur hvergi nærri. <a href="{URL_BASE}leidbeiningar/kaupa-bitcoin-island/">Hvernig á að kaupa Bitcoin á Íslandi →</a></li>
+<li><strong>Revolut</strong> — Fer ekki gegnum íslenskt bankakerfi. <a href="{URL_BASE}leidbeiningar/revolut-spilaviti-island-leidbeining/">Revolut leiðbeining →</a></li>
+<li><strong>Rafræn veski</strong> — <a href="{URL_BASE}greidslur/skrill-i-spilavitum/">Skrill</a> og <a href="{URL_BASE}greidslur/neteller-i-spilavitum/">Neteller</a></li>
+</ul>
+
+<h2>Valkostir sem taka örugglega við frá Íslandi</h2>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/slotoro/">Slotoro</a></strong> — 8.000+ leikir frá 71 framleiðendum, €10 lágmarksinnborgun, dulritunargjaldmiðlar studdir. Samstarfsaðili Svipan.</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/epicbet/">Epicbet</a></strong> — Fullkomið íslenskt viðmót, veðlausir bónusar og Apple Pay.</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/bitstarz/">BitStarz</a></strong> — Dulritunarspilavíti með úttektum undir 10 mínútum.</p></div>
+<p>Sjá allan <a href="{URL_BASE}spilaviti/">samanburð á spilavítum →</a></p>
+
+<h2>Algengar spurningar</h2>
+<h3>Hvað er Green Gaming?</h3>
+<p>Verkfæri Mr Green sem greinir spilahegðun og gefur spilurum persónulegt áhættumat ásamt tillögum um takmörk.</p>
+<h3>Tekur Mr Green við íslenskum spilurum?</h3>
+<p>Aðgengi er ekki tryggt og fer eftir markaðsstillingum. Mr Green einbeitir sér að mörkuðum með leyfiskerfi.</p>
+<h3>Hver á Mr Green?</h3>
+<p>Mr Green var keypt af William Hill árið 2019 og tilheyrir nú evoke plc samsteypunni.</p>
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Prófa Slotoro →</a></div>'''
+    },
+    {
+        "slug": "casumo-a-islandi",
+        "title": "Casumo á Íslandi — umsögn og staða 2026",
+        "desc": "Casumo umsögn: spilavítið með ævintýraþema og Reel Races. Leyfi, leikjaúrval og hvort það tekur við frá Íslandi.",
+        "emoji": "🟣",
+        "colors": ('#1a0a28', '#2d1445', '#401e62'),
+        "content": f'''<h1>Casumo á Íslandi 2026</h1>
+{hero}
+<p>Casumo er eitt af þeim spilavítum sem íslenskir spilarar leita reglulega að. <strong>Hér förum við yfir hvað það býður, hvernig það ber sig saman við valkosti sem taka örugglega við frá Íslandi, og hvað þú þarft að varast.</strong></p>
+
+<h2>Casumo í hnotskurn</h2>
+<table class="info-table"><thead><tr><th>Þáttur</th><th>Upplýsingar</th></tr></thead><tbody>
+<tr><td>Stofnár</td><td>2012</td></tr>
+<tr><td>Eigandi</td><td>Casumo Services Limited</td></tr>
+<tr><td>Leyfi</td><td>Malta (MGA), UKGC, fleiri</td></tr>
+<tr><td>Fjöldi leikja</td><td>2.500+</td></tr>
+<tr><td>Velkomstbónus</td><td>Fer eftir markaði</td></tr>
+<tr><td>Lágmarksinnborgun</td><td>€10</td></tr>
+<tr><td>Íslenskt viðmót</td><td>❌ Nei</td></tr>
+<tr><td>Dulritunargjaldmiðlar</td><td>❌ Nei</td></tr>
+</tbody></table>
+
+<h2>Kostir og gallar</h2>
+<table class="info-table"><thead><tr><th>Kostir</th><th>Gallar</th></tr></thead><tbody>
+<tr><td>✅ Einstakt ævintýraþema með stigum og verðlaunum</td><td>❌ Aðgengi frá Íslandi ekki tryggt</td></tr>
+<tr><td>✅ Reel Races — spilakassamót allan daginn</td><td>❌ Engir dulritunargjaldmiðlar</td></tr>
+<tr><td>✅ MGA og UKGC leyfi</td><td>❌ Ekkert íslenskt viðmót</td></tr>
+<tr><td>✅ Hröð skráning og einfalt viðmót</td><td>❌ Bónustilboð misjöfn eftir mörkuðum</td></tr>
+</tbody></table>
+
+<h2>Reel Races — spilakassamót</h2>
+<p>Casumo er þekktast fyrir „Reel Races" — stuttar keppnir (oft 20-60 mínútur) þar sem spilarar keppa um
+verðlaunasjóð með því að safna stigum í spilakössum. Þetta gerir venjulega spilun samkeppnishæfari.</p>
+<p>Sambærileg mót eru í boði á <a href="{URL_BASE}spilaviti/motaspilaviti/">mótaspilavítum</a> sem taka við íslenskum spilurum.</p>
+
+<h2>Ævintýraþemað</h2>
+<p>Í stað hefðbundins VIP-kerfis notar Casumo stigakerfi þar sem þú „ferðast" í gegnum ævintýri og vinnur
+verðlaun eftir því sem þú spilar. Þetta er gamification-nálgun sem mörg nýrri spilavíti hafa hermt eftir.</p>
+
+<h2>Greiðsluleiðir frá Íslandi</h2>
+<p>Stærsta hindrunin fyrir íslenska spilara eru <a href="{URL_BASE}leidbeiningar/islenskir-bankar-spilaviti/">bankatakmarkanir</a>.
+Arion, Landsbankinn og Íslandsbanki geta hafnað kortagreiðslum til spilavíta. Lausnir:</p>
+<ul>
+<li><strong>Dulritunargjaldmiðlar</strong> — Bankinn kemur hvergi nærri. <a href="{URL_BASE}leidbeiningar/kaupa-bitcoin-island/">Hvernig á að kaupa Bitcoin á Íslandi →</a></li>
+<li><strong>Revolut</strong> — Fer ekki gegnum íslenskt bankakerfi. <a href="{URL_BASE}leidbeiningar/revolut-spilaviti-island-leidbeining/">Revolut leiðbeining →</a></li>
+<li><strong>Rafræn veski</strong> — <a href="{URL_BASE}greidslur/skrill-i-spilavitum/">Skrill</a> og <a href="{URL_BASE}greidslur/neteller-i-spilavitum/">Neteller</a></li>
+</ul>
+
+<h2>Valkostir sem taka örugglega við frá Íslandi</h2>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/slotoro/">Slotoro</a></strong> — 8.000+ leikir frá 71 framleiðendum, €10 lágmarksinnborgun, dulritunargjaldmiðlar studdir. Samstarfsaðili Svipan.</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/epicbet/">Epicbet</a></strong> — Fullkomið íslenskt viðmót, veðlausir bónusar og Apple Pay.</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/bitstarz/">BitStarz</a></strong> — Dulritunarspilavíti með úttektum undir 10 mínútum.</p></div>
+<p>Sjá allan <a href="{URL_BASE}spilaviti/">samanburð á spilavítum →</a></p>
+
+<h2>Algengar spurningar</h2>
+<h3>Hvað eru Reel Races?</h3>
+<p>Stuttar spilakassakeppnir hjá Casumo þar sem spilarar keppa um verðlaunasjóð með því að safna stigum.</p>
+<h3>Tekur Casumo við frá Íslandi?</h3>
+<p>Aðgengi er ekki tryggt. Casumo einbeitir sér að mörkuðum með leyfiskerfi eins og Bretlandi og Svíþjóð.</p>
+<h3>Er Casumo með VIP kerfi?</h3>
+<p>Casumo notar ævintýra- og stigakerfi í stað hefðbundins VIP-kerfis.</p>
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Prófa Slotoro →</a></div>'''
+    },
 ]
 
 def extract_faqs(html_content):
