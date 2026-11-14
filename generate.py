@@ -502,7 +502,7 @@ def page_template(title, desc, breadcrumbs, content, canonical="", og_img="", sc
     graph = [
         {"@type":"WebSite","@id":site+"/#website","name":"BF Casino","url":site+"/","inLanguage":"is"},
         {"@type":"Organization","@id":site+"/#org","name":"BF Casino","url":site+"/"},
-        {"@type":"Person","@id":site+"/#valbjorn","name":"Valbjörn Gjúkason","url":site+"/hofundur/valbjorn-gjukason/","jobTitle":"Ritstjóri","worksFor":{"@id":site+"/#org"}},
+        {"@type":"Person","@id":site+"/#valbjorn","name":"Valbjörn Gjúkason","url":site+"/hofundur/valbjorn-gjukason/","jobTitle":"Blaðamaður og ritstjóri","knowsAbout":["Fjárhættuspil","Netspilavíti","Spilakassar"],"worksFor":{"@id":site+"/#org"}},
         {"@type":"Article","headline":title[:110],"description":desc,"inLanguage":"is",
          "datePublished":"2026-06-01","dateModified":"2026-11-14",
          "author":{"@id":site+"/#valbjorn"},"publisher":{"@id":site+"/#org"}},
@@ -1685,7 +1685,7 @@ write_page("gajdy/index.html", page_template("Guides", "Leiðbeiningar og kennsl
 # 10. SITEMAP
 # Author page
 _author = f'''<h1>Valbjörn Gjúkason</h1>
-<p><strong>Ritstjóri BF Casino.</strong> Valbjörn ber ábyrgð á öllum umsögnum, samanburði og leiðbeiningum á vefnum og fer yfir hverja síðu áður en hún birtist.</p>
+<p><strong>Blaðamaður og ritstjóri BF Casino.</strong> Valbjörn er blaðamaður sem fjallar um fjárhættuspil og netspilavíti. Hjá BF Casino ber hann ábyrgð á öllum umsögnum, samanburði og leiðbeiningum á vefnum og fer yfir hverja síðu áður en hún birtist.</p>
 <h2>Hvað hann skoðar</h2>
 <ul>
 <li>Spilakassa: RTP, sveiflu, hámarksvinning og hvernig bónusinn virkar, borið saman við gögn framleiðenda og óháðra gagnagrunna.</li>
@@ -1697,7 +1697,7 @@ _author = f'''<h1>Valbjörn Gjúkason</h1>
 <p>BF Casino fær þóknun frá Slotoro ef þú skráir þig í gegnum tengla okkar. Það hefur ekki áhrif á einkunnir, og við segjum skýrt frá því á hverri síðu. Lestu meira um <a href="{URL_BASE}kak-my-ocenivaem/">hvernig við metum spilavíti</a>.</p>
 <h2>Leiðrétting</h2>
 <p>Finnurðu villu í umsögn? Láttu okkur vita og við leiðréttum hana og uppfærum dagsetninguna.</p>'''
-write_page("hofundur/valbjorn-gjukason/index.html", page_template("Valbjörn Gjúkason — ritstjóri BF Casino", "Valbjörn Gjúkason er ritstjóri BF Casino og ber ábyrgð á umsögnum um spilakassa og spilavíti fyrir íslenska leikmenn.",
+write_page("hofundur/valbjorn-gjukason/index.html", page_template("Valbjörn Gjúkason — ritstjóri BF Casino", "Valbjörn Gjúkason er blaðamaður sem fjallar um fjárhættuspil og ritstjóri BF Casino. Hann ber ábyrgð á umsögnum um spilakassa og spilavíti fyrir íslenska leikmenn.",
     [("{URL_BASE}", "Heim"), ("", "Höfundur")], _author, show_byline=False,
     schema_extra=[{"@type":"ProfilePage","mainEntity":{"@id":"https://bestiflokkurinn.is/#valbjorn"}}]))
 
