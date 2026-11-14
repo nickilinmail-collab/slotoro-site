@@ -210,10 +210,13 @@
   <url><loc>https://svipan.is/live/blackjack/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://svipan.is/live/roulette/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://svipan.is/live/baccarat/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://svipan.is/live/poker/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://svipan.is/live/dream-catcher/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://svipan.is/live/monopoly-live/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://svipan.is/live/crazy-time/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://svipan.is/live/lightning-roulette/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://svipan.is/live/mega-ball/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://svipan.is/live/gonzo-treasure-hunt/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://svipan.is/bonusar/velkomstbonus/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://svipan.is/bonusar/frisnuningar-an-innborgunar-tilbod/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://svipan.is/bonusar/bonusar-an-innborgunar/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
@@ -261,6 +264,7 @@
   <url><loc>https://svipan.is/greidslur/skrill-i-spilavitum/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://svipan.is/greidslur/neteller-i-spilavitum/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://svipan.is/greidslur/paysafecard-i-spilavitum/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://svipan.is/leidbeiningar/hvad-er-rtp/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://svipan.is/leidbeiningar/kaupa-bitcoin-island/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://svipan.is/leidbeiningar/islenskir-bankar-spilaviti/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://svipan.is/leidbeiningar/skattar-spilavinningar-island/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
