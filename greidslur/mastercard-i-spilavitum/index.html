@@ -17,7 +17,7 @@
 <meta name="geo.region" content="IS">
 <meta name="geo.placename" content="Iceland">
 <meta property="og:locale" content="is_IS">
-<meta name="robots" content="noindex,follow">
+<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -303,22 +303,35 @@ background:linear-gradient(180deg,rgba(255,255,255,.5),rgba(255,255,255,0));}
 <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(24px,4vw,34px);font-weight:700;color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.7);line-height:1.2">Mastercard í spilavítum</span>
 <span style="font-size:17px;color:#fff;opacity:.9;margin-top:8px;text-shadow:0 1px 8px rgba(0,0,0,.7)">Greiðslumáti</span>
 </div></div>
-<p>Mastercard innborganir og útborganir á netspilavítum.</p>
-<h2>Hvernig það virkar</h2>
-<p>Íslenskir bankar loka á greiðslur til netspilavíta. Dulritunargjaldmiðlar eru besta leiðin til að komast framhjá þessum takmörkunum. Færslur eru hraðar, nafnlausar og gjaldfrjálsar.</p>
-<h3>Skref-fyrir-skref leiðbeiningar</h3>
+
+<p>Mastercard og Visa eru oft nefnd í sömu andrá, en á spilavítum hegða kerfin sér ekki eins. Mastercard hefur í gegnum tíðina verið strangara gagnvart netspilun — og fyrir íslenska leikmenn bætist sá munur ofan á afstöðu bankans sem gaf kortið út.</p>
+
+<h2>Munurinn á Mastercard og Visa í þessum geira</h2>
+<p>Bæði kerfi merkja fjárhættuspilafærslur með sama MCC-kóða, 7995. Munurinn liggur í tvennu. Annars vegar hafnar Mastercard-kerfið sjálft netspilunarfærslum frá sumum löndum án tillits til bankans. Hins vegar er endurgreiðsla vinninga inn á kort — sem Visa styður víða gegnum OCT-færslur — þrengri hjá Mastercard, svo úttekt á Mastercard er sjaldgæfari í boði hjá erlendum síðum. Niðurstaðan fyrir íslenskan leikmann: Mastercard er fyrst og fremst innlagnarleið, og ekki alltaf sú.</p>
+
+<h2>Prófun í réttri röð</h2>
 <ol>
-<li>Búðu til veski (MetaMask, Trust Wallet eða Binance)</li>
-<li>Keyptu dulritunargjaldmiðil á kauphöll</li>
-<li>Sendu fjármuni til spilavítisins</li>
-<li>Spilaðu og dragðu vinninga aftur í veskið þitt</li>
+<li>Athugaðu í netbanka hvort kortið þitt leyfi erlenda netverslun og hvort hægt sé að stilla söluaðilaflokka.</li>
+<li>Veldu spilavíti sem sýnir Mastercard-merkið í innlagnarglugga — ekki bara á forsíðu.</li>
+<li>Prófaðu lága upphæð fyrst og hafðu símann við höndina fyrir sannvottun bankans.</li>
+<li>Gangi innlögnin: spurðu þjónustuna strax hvort úttekt á sama kort sé möguleg. Ef ekki, settu upp úttektarleið — rafmynt eða millifærslu — áður en þú spilar.</li>
 </ol>
-<h3>Mælt með spilavítum</h3>
-<ul>
-<li><a href="/spilaviti/bitstarz/">BitStarz</a> — tafarlausar dulritunarútborganir</li>
-<li><a href="/spilaviti/stake/">Stake</a> — styður 20+ dulritunargjaldmiðla</li>
-</ul>
+
+<h2>Debetkort: aukaatriði sem skiptir máli</h2>
+<p>Íslensk debetkort eru flest Mastercard eða Maestro. Debetfærsla tekur peninginn beint af reikningnum, og þegar spilavítafærsla festist í biðstöðu — sem gerist við hafnanir — getur upphæðin verið frátekin dögum saman þó færslan gangi aldrei í gegn. Kreditkort einangrar þig frá þessu; biðstaða á kreditheimild snertir ekki launareikninginn þinn.</p>
+
+<h2>Þegar kortaleiðin lokast</h2>
+<p>Sama lausn og við <a href="/greidslur/visa-i-spilavitum/">Visa-hindrunum</a>: færslur sem fara ekki gegnum kortakerfið. <a href="/greidslur/bitcoin/">Bitcoin</a> og <a href="/greidslur/ethereum/">Ethereum</a> eru opin öllum; kaup á rafmynt hjá kauphöll er venjuleg fjárfestingarfærsla sem bankar hafna ekki. Yfirlit allra leiða er á <a href="/greidslur/">greiðslusíðunni</a>.</p>
+
+<h2>Algengar spurningar</h2>
+<h3>Virkar fyrirframgreitt Mastercard-gjafakort?</h3>
+<p>Nær aldrei. Fyrirframgreidd kort án nafns standast ekki auðkenniskröfur spilavítanna og eru að auki oft lokuð fyrir erlendum færslum. Spilavítið þarf að geta tengt greiðsluleið við skráðan eiganda reikningsins.</p>
+<h3>Af hverju sé ég „pending" færslu sem spilavítið segist ekki hafa fengið?</h3>
+<p>Höfnunarferlið gengur í tveimur skrefum: heimildin var tekin frá en uppgjörið gekk til baka. Fráteknar upphæðir losna sjálfkrafa, oftast innan 5–10 virkra daga. Spilavítið fékk aldrei peninginn — biðstaðan er milli kortakerfisins og bankans þíns.</p>
+<h3>Telur kortainnlögn öðruvísi í bónusveltu en rafmynt?</h3>
+<p>Hjá flestum síðum nei, en sumir bónusar eru bundnir við tilteknar greiðsluleiðir — rafræn veski eru stundum undanskilin velkomstbónus. Skilmálar hvers bónuss gilda; sjá <a href="/bonusar/">bónusyfirlitið</a>.</p>
 <div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="sponsored noopener" class="cta-btn">Spila á Slotoro →</a></div>
+
 <div class="share" aria-label="Deila">
 <span class="share-label">Deila:</span>
 <a class="s-fb" data-net="fb" href="#" target="_blank" rel="noopener" aria-label="Deila á Facebook"><svg viewBox="0 0 24 24"><path d="M14 8V6.5c0-.7.5-1 1-1h2V2h-3c-3 0-4 2-4 4.3V8H8v3.5h2V22h4V11.5h2.8L17 8h-3z"/></svg></a>

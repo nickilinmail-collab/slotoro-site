@@ -915,6 +915,12 @@ try:
         REWRITE_QUEUE = set(_json.load(_f))
 except Exception:
     REWRITE_QUEUE = set()
+try:
+    from original_bodies import BODIES as _BODIES
+except Exception:
+    _BODIES = {}
+# A page with hand-written original copy leaves the queue automatically.
+REWRITE_QUEUE -= set(_BODIES)
 
 def is_pending(path):
     return path.endswith("index.html") and path[:-len("/index.html")] in REWRITE_QUEUE
@@ -1028,6 +1034,9 @@ for cat in casino_categories:
 <p>Teymi okkar metur hvert spilavíti út frá nokkrum forsendum: áreiðanleika leyfis, hraða útborgana, gæði leikja, bónustilboðum og aðgengi fyrir íslenska leikmenn.</p>
 <p>Við leggjum sérstaka áherslu á stuðning við dulritunargjaldmiðla þar sem íslenskir bankar loka oft á spilavíta-færslur.</p>'''
 
+    _k = f'spilaviti/{cat["slug"]}'
+    if _k in _BODIES:
+        content = f'<h1>{cat["title"].replace(" 2026","")} á Íslandi 2026</h1>\n{hero}\n' + _BODIES[_k].replace("{URL_BASE}", URL_BASE)
     bc = [("{URL_BASE}", "Home"), ("{URL_BASE}spilaviti/", "Casino"), ("", cat["title"])]
     html = page_template(cat["title"], cat["desc"], bc, content)
     write_page(f'spilaviti/{cat["slug"]}/index.html', html)
@@ -1114,6 +1123,9 @@ for g in live_games:
 </ul>
 <div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Spila {g["name"]} →</a></div>'''
 
+    _k = f'live/{g["slug"]}'
+    if _k in _BODIES:
+        content = f'<h1>{g["name"]} — Spilavíti í beinni</h1>\n{hero_img}\n' + _BODIES[_k].replace("{URL_BASE}", URL_BASE)
     bc = [("{URL_BASE}", "Home"), ("{URL_BASE}live/", "Live Casino"), ("", g["name"])]
     html = page_template(f'{g["name"]} Live', g["desc"], bc, content)
     write_page(f'live/{g["slug"]}/index.html', html)
@@ -1136,6 +1148,9 @@ for b in bonus_pages:
 <p>Til að virkja bónus, skráðu þig á spilavítið, leggðu inn og bónusinn verður sjálfkrafa inneignaður. Athugaðu veðskilyrði.</p>
 <div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Fá bónus →</a></div>'''
 
+    _k = f'bonusar/{b["slug"]}'
+    if _k in _BODIES:
+        content = f'<h1>{b["title"]}</h1>\n{hero}\n' + _BODIES[_k].replace("{URL_BASE}", URL_BASE)
     bc = [("{URL_BASE}", "Home"), ("{URL_BASE}bonusar/", "Bónusar"), ("", b["title"])]
     html = page_template(b["title"], b["desc"], bc, content)
     write_page(f'bonusar/{b["slug"]}/index.html', html)
@@ -1163,6 +1178,9 @@ for p in payment_pages:
 </ul>
 <div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Veldu spilavíti →</a></div>'''
 
+    _k = f'greidslur/{p["slug"]}'
+    if _k in _BODIES:
+        content = f'<h1>{p["title"]}</h1>\n{hero}\n' + _BODIES[_k].replace("{URL_BASE}", URL_BASE)
     bc = [("{URL_BASE}", "Home"), ("{URL_BASE}greidslur/", "Payments"), ("", p["title"])]
     html = page_template(p["title"], p["desc"], bc, content)
     write_page(f'greidslur/{p["slug"]}/index.html', html)
@@ -1190,6 +1208,9 @@ for g in guide_pages:
 <li><a href="{URL_BASE}greidslur/">Greiðslumátar</a></li>
 </ul>'''
 
+    _k = f'leidbeiningar/{g["slug"]}'
+    if _k in _BODIES:
+        content = f'<h1>{g["title"]}</h1>\n{hero}\n' + _BODIES[_k].replace("{URL_BASE}", URL_BASE)
     bc = [("{URL_BASE}", "Home"), ("{URL_BASE}leidbeiningar/", "Guides"), ("", g["title"])]
     html = page_template(g["title"], g["desc"], bc, content)
     write_page(f'leidbeiningar/{g["slug"]}/index.html', html)

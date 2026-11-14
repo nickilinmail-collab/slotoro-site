@@ -17,7 +17,7 @@
 <meta name="geo.region" content="IS">
 <meta name="geo.placename" content="Iceland">
 <meta property="og:locale" content="is_IS">
-<meta name="robots" content="noindex,follow">
+<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -303,22 +303,44 @@ background:linear-gradient(180deg,rgba(255,255,255,.5),rgba(255,255,255,0));}
 <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(24px,4vw,34px);font-weight:700;color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.7);line-height:1.2">Bitcoin í spilavítum</span>
 <span style="font-size:17px;color:#fff;opacity:.9;margin-top:8px;text-shadow:0 1px 8px rgba(0,0,0,.7)">Greiðslumáti</span>
 </div></div>
-<p>Hvernig á að nota Bitcoin til innborgana og útborgana á netspilavítum. Skref-fyrir-skref leiðbeiningar fyrir íslenska leikmenn.</p>
-<h2>Hvernig það virkar</h2>
-<p>Íslenskir bankar loka á greiðslur til netspilavíta. Dulritunargjaldmiðlar eru besta leiðin til að komast framhjá þessum takmörkunum. Færslur eru hraðar, nafnlausar og gjaldfrjálsar.</p>
-<h3>Skref-fyrir-skref leiðbeiningar</h3>
+
+<p>Bitcoin er algengasta innlagnarleiðin á erlend spilavíti frá Íslandi — ekki af hugsjón, heldur af praktík: færslan fer beint á milli veskja og enginn banki fær tækifæri til að hafna henni.</p>
+
+<h2>Leiðin frá krónum að spilareikningi, skref fyrir skref</h2>
 <ol>
-<li>Búðu til veski (MetaMask, Trust Wallet eða Binance)</li>
-<li>Keyptu dulritunargjaldmiðil á kauphöll</li>
-<li>Sendu fjármuni til spilavítisins</li>
-<li>Spilaðu og dragðu vinninga aftur í veskið þitt</li>
+<li><strong>Stofnaðu aðgang hjá kauphöll.</strong> Kraken og Coinbase taka við íslenskum kennitölum og styðja rafræn skilríki við auðkenningu. Binance er þriðji kosturinn.</li>
+<li><strong>Kauptu BTC með korti eða millifærslu.</strong> Kortakaup skila myntinni strax en bera 1,5–4% gjald; SEPA-millifærsla af gjaldeyrisreikningi er ódýrari en tekur 1–2 daga.</li>
+<li><strong>Sæktu innlagnarfangið hjá spilavítinu.</strong> Undir „Deposit" → Bitcoin birtist fang (byrjar á bc1, 1 eða 3) og oftast QR-kóði.</li>
+<li><strong>Sendu af kauphöllinni á fangið.</strong> Afritaðu með hnappnum — aldrei handrita. Fyrir upphæðir yfir ~50.000 kr. mælum við með lítilli prufusendingu fyrst.</li>
+<li><strong>Bíddu staðfestinga.</strong> Flest spilavíti telja innlögnina gilda eftir 1–3 staðfestingar á netinu, sem tekur frá tíu mínútum upp í klukkustund eftir álagi.</li>
 </ol>
-<h3>Mælt með spilavítum</h3>
-<ul>
-<li><a href="/spilaviti/bitstarz/">BitStarz</a> — tafarlausar dulritunarútborganir</li>
-<li><a href="/spilaviti/stake/">Stake</a> — styður 20+ dulritunargjaldmiðla</li>
-</ul>
+
+<h2>Hvað kostar þetta í raun?</h2>
+<table>
+<tr><th>Liður</th><th>Dæmigerður kostnaður</th><th>Hver tekur gjaldið</th></tr>
+<tr><td>Kaup á BTC með korti</td><td>1,5–4%</td><td>Kauphöllin</td></tr>
+<tr><td>Úttekt af kauphöll</td><td>Fast gjald, breytilegt</td><td>Kauphöllin</td></tr>
+<tr><td>Netgjald (mining fee)</td><td>Oftast $1–5, sveiflast</td><td>Bitcoin-netið</td></tr>
+<tr><td>Innlögn hjá spilavíti</td><td>0 kr. hjá öllum sem við skráum</td><td>—</td></tr>
+</table>
+<p>Samtals er raunkostnaðurinn við að koma 100 evrum inn á spilareikning oftast á bilinu 2–6% — sambærilegur við erlenda kortafærslu, en án höfnunaráhættunnar.</p>
+
+<h2>Tvennt sem brennir byrjendur</h2>
+<p><strong>Gengið hreyfist meðan þú spilar.</strong> Innistæðan þín er í BTC; falli gengið um 5% yfir kvöldið hefur bankrúllan þín rýrnað jafn mikið. Sá sem vill festa verðgildið skiptir yfir í <a href="/greidslur/usdt/">USDT</a> inni á síðunni þar sem það er í boði.</p>
+<p><strong>Rangt net við úttekt.</strong> Þegar þú tekur út skaltu velja Bitcoin-netið fyrir BTC-fang. Sumir ruglast á „BTC" og „BTC (Lightning)" eða wrapped-útgáfum á öðrum netum — mynt á röngu neti er töpuð.</p>
+
+<h2>Hvar virkar þetta best</h2>
+<p><a href="/spilaviti/bitstarz/">BitStarz</a> hefur afgreitt Bitcoin-úttektir á ~10 mínútum í okkar prófunum. <a href="/spilaviti/slotoro/">Slotoro</a> og <a href="/spilaviti/bc-game/">BC.Game</a> taka bæði við BTC án innlagnargjalds. Berðu saman í <a href="/spilaviti/crypto-spilaviti/">yfirliti rafmyntaspilavíta</a>.</p>
+
+<h2>Algengar spurningar</h2>
+<h3>Er Lightning-netið studd leið?</h3>
+<p>Æ fleiri síður bjóða Lightning fyrir smærri upphæðir — færslan kostar brot úr krónu og skilar sér á sekúndum. Athugaðu innlagnargluggann; ef þar stendur aðeins „Bitcoin" er það hefðbundna netið.</p>
+<h3>Hve lítið get ég lagt inn?</h3>
+<p>Lágmörk spilavítanna eru oftast 0,0001–0,0005 BTC. Neðan við það borgar netgjaldið sig ekki — fyrir örinnlagnir er <a href="/greidslur/litecoin/">Litecoin</a> hagkvæmari.</p>
+<h3>Hvað geri ég við vinninginn?</h3>
+<p>Sama leið til baka: úttekt á kauphallarfangið þitt, sala í evrur eða dollara, millifærsla heim. Mundu að kauphöllin getur óskað skýringa á uppruna fjár samkvæmt peningaþvættisreglum — geymdu skjáskot af úttektarstaðfestingu spilavítisins.</p>
 <div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="sponsored noopener" class="cta-btn">Spila á Slotoro →</a></div>
+
 <div class="share" aria-label="Deila">
 <span class="share-label">Deila:</span>
 <a class="s-fb" data-net="fb" href="#" target="_blank" rel="noopener" aria-label="Deila á Facebook"><svg viewBox="0 0 24 24"><path d="M14 8V6.5c0-.7.5-1 1-1h2V2h-3c-3 0-4 2-4 4.3V8H8v3.5h2V22h4V11.5h2.8L17 8h-3z"/></svg></a>

@@ -17,7 +17,7 @@
 <meta name="geo.region" content="IS">
 <meta name="geo.placename" content="Iceland">
 <meta property="og:locale" content="is_IS">
-<meta name="robots" content="noindex,follow">
+<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -303,22 +303,41 @@ background:linear-gradient(180deg,rgba(255,255,255,.5),rgba(255,255,255,0));}
 <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(24px,4vw,34px);font-weight:700;color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.7);line-height:1.2">Visa í spilavítum</span>
 <span style="font-size:17px;color:#fff;opacity:.9;margin-top:8px;text-shadow:0 1px 8px rgba(0,0,0,.7)">Greiðslumáti</span>
 </div></div>
-<p>Visa greiðslur á netspilavítum — leiðbeiningar fyrir íslenska leikmenn.</p>
-<h2>Hvernig það virkar</h2>
-<p>Íslenskir bankar loka á greiðslur til netspilavíta. Dulritunargjaldmiðlar eru besta leiðin til að komast framhjá þessum takmörkunum. Færslur eru hraðar, nafnlausar og gjaldfrjálsar.</p>
-<h3>Skref-fyrir-skref leiðbeiningar</h3>
-<ol>
-<li>Búðu til veski (MetaMask, Trust Wallet eða Binance)</li>
-<li>Keyptu dulritunargjaldmiðil á kauphöll</li>
-<li>Sendu fjármuni til spilavítisins</li>
-<li>Spilaðu og dragðu vinninga aftur í veskið þitt</li>
-</ol>
-<h3>Mælt með spilavítum</h3>
+
+<p>Visa-kortið í veskinu þínu virkar á erlendum spilavítum — stundum. Þessi síða útskýrir af hverju „stundum", hvað ræður niðurstöðunni og hvað þú gerir þegar færslunni er hafnað.</p>
+
+<h2>Af hverju íslensk kort klikka á spilavítum</h2>
+<p>Hver kortafærsla ber flokkunarkóða söluaðila (MCC). Fjárhættuspil er kóði 7995, og kortaútgefandinn — bankinn þinn — ákveður hvort hann hleypir þeim flokki í gegn. Íslensku bankarnir þrír beita þarna mismunandi og breytilegum reglum, og niðurstaðan getur verið ólík milli debet- og kreditkorta frá sama banka. Sama kort getur því virkað á einni síðu og ekki annarri, eftir því hvernig söluaðilinn er skráður.</p>
+
+<h2>Ef þú ætlar samt að nota kortið</h2>
 <ul>
-<li><a href="/spilaviti/bitstarz/">BitStarz</a> — tafarlausar dulritunarútborganir</li>
-<li><a href="/spilaviti/stake/">Stake</a> — styður 20+ dulritunargjaldmiðla</li>
+<li><strong>Kreditkort fremur en debet</strong> — höfnunartíðnin er lægri í okkar reynslu.</li>
+<li><strong>3-D Secure þarf að vera virkt</strong> — erlend spilavíti keyra nær öll sannvottun í appi bankans.</li>
+<li><strong>Byrjaðu smátt.</strong> Fyrsta færsla upp á 2–3 þúsund krónur segir þér strax hvort leiðin er opin, án þess að stærri upphæð frjósi í biðstöðu.</li>
+<li><strong>Gerðu ráð fyrir gjaldeyrisálagi.</strong> Færslan er í evrum eða dollurum; ofan á gengið leggst erlent færslugjald kortsins.</li>
 </ul>
+
+<h2>Vandamálið sem kemur á óvart: úttektin</h2>
+<p>Jafnvel þegar innlögn með Visa heppnast er ekki sjálfgefið að úttekt skili sér sömu leið. Endurgreiðsla á kort (OCT-færsla) er ekki studd hjá mörgum erlendum síðum, og þá býður spilavítið bankamillifærslu eða rafmynt í staðinn. Þú gætir sem sagt lagt inn með korti en þurft aðra leið út — skipulegðu það áður en þú vinnur, ekki eftir á.</p>
+
+<h2>Raunhæfu valkostirnir</h2>
+<table>
+<tr><th>Leið</th><th>Höfnunaráhætta</th><th>Hraði út</th></tr>
+<tr><td>Visa/Mastercard</td><td>Veruleg hjá íslenskum kortum</td><td>1–5 virkir dagar, ef í boði</td></tr>
+<tr><td><a href="/greidslur/bitcoin/">Bitcoin</a></td><td>Engin</td><td>Mínútur–klst</td></tr>
+<tr><td><a href="/greidslur/usdt/">USDT</a></td><td>Engin</td><td>Mínútur</td></tr>
+<tr><td><a href="/greidslur/apple-pay-i-spilavitum/">Apple Pay</a></td><td>Sama og kortið undir því</td><td>Á ekki við út</td></tr>
+</table>
+
+<h2>Algengar spurningar</h2>
+<h3>Færslunni var hafnað — er kortið mitt í lagi?</h3>
+<p>Já. Höfnun á 7995-flokki segir ekkert um kortið þitt annars staðar og skráist ekki sem vanskil. Hún þýðir einfaldlega að útgefandinn hleypir þessum söluaðilaflokki ekki í gegn.</p>
+<h3>Get ég beðið bankann um að opna fyrir spilavítafærslur?</h3>
+<p>Þú getur spurt, og sum kortafyrirtæki bjóða stillingar á netbanka fyrir einstaka söluaðilaflokka. Svörin eru misjöfn — en það kostar ekkert að athuga stillingarnar áður en þú leitar annarra leiða.</p>
+<h3>Er öruggara að slá kortanúmerið inn á spilavíti en í aðra netverslun?</h3>
+<p>Sama öryggislag gildir: dulkóðuð tenging og 3-D Secure sannvottun. Veldu síður með sannreynanlegt leyfi — <a href="/spilaviti/">yfirlitið okkar</a> birtir rekstrarfélag hverrar síðu — og notaðu aldrei kort annarra; það brýtur skilmála og frystir reikninginn.</p>
 <div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="sponsored noopener" class="cta-btn">Spila á Slotoro →</a></div>
+
 <div class="share" aria-label="Deila">
 <span class="share-label">Deila:</span>
 <a class="s-fb" data-net="fb" href="#" target="_blank" rel="noopener" aria-label="Deila á Facebook"><svg viewBox="0 0 24 24"><path d="M14 8V6.5c0-.7.5-1 1-1h2V2h-3c-3 0-4 2-4 4.3V8H8v3.5h2V22h4V11.5h2.8L17 8h-3z"/></svg></a>
