@@ -152,3 +152,108 @@ BODIES["live/crazy-time"] = """
 <p>Já — borðið er opið áhorfendum og spjallið líka. Að horfa á tuttugu snúninga áður en þú leggur fyrsta veðmálið er reyndar ódýrasta kennslustundin sem leikurinn býður.</p>
 <div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="sponsored noopener" class="cta-btn">Opna Crazy Time →</a></div>
 """
+
+BODIES["live/monopoly-live"] = """
+<p>Monopoly Live tók borðspilið sem allir þekkja og breytti því í veðmálahjól með þrívíddarbónus: þegar hjólið stoppar á „2 ROLLS" eða „4 ROLLS" stígur sjálfur Hr. Monopoly fram og gengur um teiknað borð þar sem hver reitur ber vinning. Útkoman er einn vinsælasti live-leikur Evolution — og sá sem flestir spila vitlaust.</p>
+
+<h2>Uppbygging hjólsins</h2>
+<table>
+<tr><th>Reitur</th><th>Fjöldi (af 54)</th><th>Útborgun</th></tr>
+<tr><td>1</td><td>22</td><td>1:1</td></tr>
+<tr><td>2</td><td>15</td><td>2:1</td></tr>
+<tr><td>5</td><td>7</td><td>5:1</td></tr>
+<tr><td>10</td><td>4</td><td>10:1</td></tr>
+<tr><td>Chance</td><td>2</td><td>Peningagjöf eða margfaldari</td></tr>
+<tr><td>2 Rolls</td><td>3</td><td>Bónusborðið</td></tr>
+<tr><td>4 Rolls</td><td>1</td><td>Bónusborðið, tveir teningar auka</td></tr>
+</table>
+<p>RTP er hæst á 1-reitnum (96,23%) og lægst á tíunni (~96,0%) — óvenju jafnt fyrir leik af þessari gerð. Chance-spjaldið gefur ýmist beinharðan vinning eða margfaldara á næsta snúning.</p>
+
+<h2>Bónusinn — og reglan sem byrjendur reka sig á</h2>
+<p><strong>Þú ferð aðeins inn í bónusinn ef þú veðjaðir á Rolls-reitinn sem hjólið stoppaði á.</strong> Áhorfandinn sem „geymdi sér" bónusveðmálið horfir á aðra ganga um borðið. Í bónusnum kastar teningapar sér sjálfkrafa, Hr. Monopoly gengur reitina og safnar: húsum og hótelum fylgja margfaldarar sem leggjast ofan á, tvennur gefa aukaköst. Stóru tölurnar úr auglýsingum leiksins — hundruð- og þúsundfaldarar — gerast þegar hótel hafa hlaðist á borðið áður en göngunni lýkur.</p>
+
+<h2>Hvernig reyndir spilarar leggja upp</h2>
+<p>Algengasta uppleggið er að hafa alltaf eitthvað á báðum Rolls-reitunum — þeir eru 4 af 54 reitum samanlagt og án þeirra ertu aðeins að spila talnahjól. Talnaveðmálin virka þá sem „brú" sem heldur innistæðunni gangandi milli bónusa. Það breytir ekki ávöxtuninni (taflan ræður), en tryggir að stóra augnablik leiksins gerist með þig innanborðs.</p>
+
+<h2>Hvar er spilað</h2>
+<p>Monopoly Live er eitt borð á heimsvísu, rekið af Evolution allan sólarhringinn, og aðgengilegt m.a. hjá <a href="{URL_BASE}spilaviti/slotoro/">Slotoro</a> og <a href="{URL_BASE}spilaviti/bitstarz/">BitStarz</a> frá €0,10. Skyldir þættir — <a href="{URL_BASE}live/crazy-time/">Crazy Time</a> og <a href="{URL_BASE}live/dream-catcher/">Dream Catcher</a> — nota sama hjólagrunn með öðrum bónusum.</p>
+
+<h2>Algengar spurningar</h2>
+<h3>Hvað gerir „Chance" nákvæmlega?</h3>
+<p>Hr. Monopoly dregur spjald: ýmist beingreiðslu á öll virk veðmál eða margfaldara sem festist á næsta snúning hjólsins. Margfaldaraspjaldið er ástæða þess að stundum sérðu „10 × 8" borga 80:1 á venjulegum talnareit.</p>
+<h3>Er bónusútkoman fyrirfram ákveðin?</h3>
+<p>Teningarnir í bónusnum eru líkamlegir og kastað í vél fyrir framan myndavélina; borðuppsetningin (hús/hótel) er slembin fyrir hvern bónus. Eftirlit leyfisveitenda Evolution nær yfir hvort tveggja.</p>
+<h3>Monopoly Live eða Crazy Time — hvor er „betri"?</h3>
+<p>Ávöxtunarlega eru þeir áþekkir á talnareitunum. Crazy Time er sveiflumeiri með fjóra ólíka bónusa og hærri hámörk; Monopoly rólegri með einn bónus sem kemur oftar. Spurningin er hvora skemmtun þú kaupir — stærðfræðin sker ekki úr.</p>
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="sponsored noopener" class="cta-btn">Setjast að borðinu →</a></div>
+"""
+
+BODIES["live/lightning-roulette"] = """
+<p>Lightning Roulette er venjuleg evrópsk rúletta með einni breytingu sem umturnar upplifuninni: fyrir hvern snúning slær „elding" á 1–5 tilviljanakennd númer og hleður þau margfaldara frá 50× upp í 500×. Verðið fyrir þessa möguleika er falið annars staðar í útborgunartöflunni — og það er einmitt það sem þessi síða reiknar upp á borðið.</p>
+
+<h2>Hvað breyttist frá venjulegu rúlettunni</h2>
+<table>
+<tr><th></th><th>Evrópsk rúletta</th><th>Lightning Roulette</th></tr>
+<tr><td>Stakt númer, venjulegt</td><td>35:1</td><td><strong>29:1</strong></td></tr>
+<tr><td>Stakt númer með eldingu</td><td>—</td><td>50× til 500×</td></tr>
+<tr><td>Jöfn veðmál (rautt/svart o.fl.)</td><td>1:1</td><td>1:1 (óbreytt)</td></tr>
+<tr><td>RTP á stökum númerum</td><td>97,30%</td><td>97,10%</td></tr>
+<tr><td>RTP á jöfnum veðmálum</td><td>97,30%</td><td>97,30%</td></tr>
+</table>
+<p>Lesningin úr töflunni: <strong>eldingarnar eru fjármagnaðar með lækkun stakra númera úr 35:1 í 29:1.</strong> Jöfnu veðmálin eru ósnert — rautt/svart á þessu borði er nákvæmlega sama veðmál og á venjulegu evrópsku borði, bara með flottari sviðsmynd.</p>
+
+<h2>Hvað þýðir það fyrir veðmálavalið?</h2>
+<p>Tvær samkvæmar leiðir eru til að spila þetta borð. Sú fyrri: eingöngu jöfn veðmál — þá ertu í venjulegri rúlettu með ljósasýningu í kaupbæti. Sú seinni: stök númer, meðvitaður um að þú hefur skipt hluta af jöfnu ávöxtuninni fyrir sjaldgæfa 50–500× smelli; sveiflan er margföld á við venjulegt borð. Ósamkvæma leiðin er að spila stök númer og vænta 35:1-taktsins — útborganirnar 29:1 naga innistæðuna hraðar en tilfinningin segir.</p>
+
+<h2>Hvernig eldingin velur</h2>
+<p>Margfaldaranúmerin og stærðir þeirra eru dregin af slembikerfi fyrir hvern snúning, óháð veðmálum borðsins — kerfið sér ekki hvar spilararnir liggja. Hjólið sjálft er líkamlegt og kúlan alvöru; aðeins verðlaunalagið er stafrænt. Leikurinn vann „Game of the Year" EGR-verðlaunin 2018 og gat af sér heila fjölskyldu: Lightning Blackjack, Lightning Baccarat og XXXtreme-útgáfuna með margfaldara upp í 2.000×.</p>
+
+<h2>Hvar og fyrir hve mikið</h2>
+<p>Borðið er hjá öllum Evolution-síðum, þar á meðal <a href="{URL_BASE}spilaviti/slotoro/">Slotoro</a> og <a href="{URL_BASE}spilaviti/bitstarz/">BitStarz</a>, frá €0,20 á númer. Grunnreglur og útgáfusamanburður rúlettunnar eru í <a href="{URL_BASE}live/roulette/">rúlettu-umfjölluninni</a>.</p>
+
+<h2>Algengar spurningar</h2>
+<h3>Fæ ég margfaldarann á split- eða corner-veðmál?</h3>
+<p>Nei — eldingarmargfaldarinn greiðist aðeins á bein (straight-up) veðmál á númerið. Split, corner og línur borga sínar venjulegu, lækkuðu tölur. Þetta stendur í borðreglunum en kemur mörgum á óvart við fyrsta stóra smell.</p>
+<h3>Koma 500× eldingarnar í alvöru?</h3>
+<p>Já, en sjaldan — stærstu margfaldararnir eru settir á fá númer og flestar eldingar eru 50–100×. Að veðja á öll fimm eldingarnúmerin eftir á er ekki hægt: eldingin slær eftir að veðmálaglugginn lokast.</p>
+<h3>Er XXXtreme-útgáfan betri því hámarkið er hærra?</h3>
+<p>Hún gengur lengra í sömu skiptum: enn fleiri eldingar og allt að 2.000×, gegn því að venjuleg stök númer lækka í 24:1 og RTP niður fyrir venjulegu útgáfuna. Meiri rússíbani, lakari grunnur — valið er smekksatriði, ekki stærðfræði.</p>
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="sponsored noopener" class="cta-btn">Prófa eldingarnar →</a></div>
+"""
+
+BODIES["live/dream-catcher"] = """
+<p>Dream Catcher er einfaldasti live-leikur sem til er: eitt stórt hjól, sex mögulegar tölur, kynnir sem spinnur. Ekkert borð, engar hendur, engin strategía að læra. Þetta var fyrsti „game show" leikur Evolution (2017) og opnaði flokkinn sem <a href="{URL_BASE}live/crazy-time/">Crazy Time</a> fullkomnaði síðar — en einfaldleikinn heldur honum enn á dagskrá.</p>
+
+<h2>Hjólið í tölum</h2>
+<table>
+<tr><th>Reitur</th><th>Fjöldi (af 54)</th><th>Útborgun</th><th>RTP</th></tr>
+<tr><td>1</td><td>23</td><td>1:1</td><td>96,58%</td></tr>
+<tr><td>2</td><td>15</td><td>2:1</td><td>95,96%</td></tr>
+<tr><td>5</td><td>7</td><td>5:1</td><td>95,91%</td></tr>
+<tr><td>10</td><td>4</td><td>10:1</td><td>96,15%</td></tr>
+<tr><td>20</td><td>2</td><td>20:1</td><td>95,47%</td></tr>
+<tr><td>40</td><td>1</td><td>40:1</td><td>94,87%</td></tr>
+<tr><td>2× / 7× margfaldarar</td><td>2</td><td>Endurspinn með margfaldara</td><td>—</td></tr>
+</table>
+
+<h2>Margfaldarareitirnir — eina flækjan</h2>
+<p>Stoppi hjólið á 2× eða 7× vinnst ekkert strax: öll veðmál standa, hjólið spinnur aftur og næsta niðurstaða margfaldast. Lendi margfaldari aftur, margfaldast margfaldararnir saman — 7× ofan á 7× ofan á 40 gefur 1.960:1, og það hefur gerst í beinni. Þetta er allur „galdur" leiksins: langur hali af litlum líkum á stórum tölum, hengdur á annars einfalt hjól.</p>
+
+<h2>Fyrir hvern er þetta hjól?</h2>
+<p>Dream Catcher er innganga í live-heiminn: engin spilareglubók, veðmálið er bara „á hvaða tölu stoppar hjólið". Hann hentar þeim sem finnst <a href="{URL_BASE}live/blackjack/">blackjack</a> krefjast of mikillar athygli og <a href="{URL_BASE}live/crazy-time/">Crazy Time</a> of hávaðasamur. Reyndari spilarar nota hann gjarnan sem léttmeti milli borða — og það er heiðarlegasta lýsingin á honum: popcorn-leikur með 95–96% skilum.</p>
+
+<h2>Veðmálaupplegg án sjálfsblekkingar</h2>
+<p>Töflulesturinn segir það sem segja þarf: 1-reiturinn ber hæstu ávöxtunina og lægstu sveifluna, 40-reiturinn öfugt. Að dekka margar tölur samtímis lækkar bara ávöxtunina í átt að vegnu meðaltali — hjólið er hannað þannig að engin samsetning „vinnur á" það. Veldu sveiflustigið sem skemmtir þér, settu <a href="{URL_BASE}abyrg-spilun/">mörk fyrirfram</a> og njóttu sýningarinnar.</p>
+
+<h2>Hvar hjólið snýst</h2>
+<p>Allar Evolution-síður bera Dream Catcher; hjá <a href="{URL_BASE}spilaviti/slotoro/">Slotoro</a> og <a href="{URL_BASE}spilaviti/bitstarz/">BitStarz</a> er lágmarkið €0,10. Yfirlit allra þátta af þessari gerð er í <a href="{URL_BASE}live/">live-safninu</a>.</p>
+
+<h2>Algengar spurningar</h2>
+<h3>Hver er munurinn á Dream Catcher og Money Wheel annarra framleiðanda?</h3>
+<p>Grunnhugmyndin er sú sama (Big Six hjól úr spilavítum Vegas); útfærslur annarra framleiðenda hafa aðrar talnadreifingar og oft lakara RTP. Tölurnar á þessari síðu gilda um Evolution-útgáfuna sérstaklega.</p>
+<h3>Telur leikurinn í bónusveltu?</h3>
+<p>Game show leikir lenda misjafnlega í bónusskilmálum — sumar síður telja þá 100%, aðrar 10% eða núll eins og borðleiki. <a href="{URL_BASE}bonusar/vedskilyrdi/">Veðskilyrðaumfjöllunin</a> útskýrir hvar þetta stendur í skilmálunum.</p>
+<h3>Hvers vegna sé ég stundum tvo kynna á vakt?</h3>
+<p>Borðið gengur allan sólarhringinn og kynnarnir skiptast á um hálftíma-klukkutíma fresti — sami leikur, nýtt andlit. Spjallið flyst óbreytt á milli.</p>
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="sponsored noopener" class="cta-btn">Snúa hjólinu →</a></div>
+"""

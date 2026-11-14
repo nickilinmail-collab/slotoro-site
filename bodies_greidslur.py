@@ -174,3 +174,109 @@ BODIES["greidslur/apple-pay-i-spilavitum"] = """
 <p>Sama grundvallartækni — tóknun í stað kortanúmers — og sama niðurstaða gagnvart bankahöfnunum. Android-notendur fá sambærilegt öryggi með Google Pay þar sem síður bjóða það.</p>
 <div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="sponsored noopener" class="cta-btn">Opna Slotoro í símanum →</a></div>
 """
+
+BODIES["greidslur/usdt"] = """
+<p>USDT — Tether — er dollar á blockchain: einn USDT er hannaður til að standa alltaf í einum bandaríkjadal. Fyrir spilara þýðir það rafmyntahraðann án rússíbanans; innistæðan þín er jafn verðmæt á morgun og í kvöld, nokkuð sem hvorki <a href="{URL_BASE}greidslur/bitcoin/">Bitcoin</a> né <a href="{URL_BASE}greidslur/ethereum/">Ethereum</a> lofar.</p>
+
+<h2>Eitt tákn, mörg net — og þar liggja mistökin</h2>
+<p>USDT er gefið út á mörgum netum samtímis. Sama myntin, ósamrýmanlegar leiðir:</p>
+<table>
+<tr><th>Net</th><th>Merking í innlagnarglugga</th><th>Dæmigert gjald</th><th>Tími</th></tr>
+<tr><td>TRON</td><td>TRC-20</td><td>~$1–3</td><td>~1 mín</td></tr>
+<tr><td>Ethereum</td><td>ERC-20</td><td>Fylgir gas-verði, oft $2–15</td><td>1–3 mín</td></tr>
+<tr><td>Solana</td><td>SPL</td><td>Undir $0,01</td><td>Sekúndur</td></tr>
+</table>
+<p>Reglan sem kemur í veg fyrir tap: <strong>netið sem þú velur hjá kauphöllinni verður að vera nákvæmlega það sama og spilavítið sýnir.</strong> TRC-20 sent á ERC-20 fang er horfið. Þegar bæði bjóða TRON er það sjálfgefna valið — ódýrast af stóru netunum og hratt.</p>
+
+<h2>Hvers vegna spilarar skipta yfir í USDT</h2>
+<p>Dæmigerð saga: leikmaður leggur inn í Bitcoin, vinnur, og á meðan úttektin bíður helgar fellur gengið um 6%. Vinningurinn rýrnaði án þess að einn snúningur tapaðist. Með USDT er talan sem þú sérð talan sem þú færð. Þú gefur eftir möguleikann á að gengið hækki þér í hag — það er skiptin: fyrirsjáanleiki gegn happdrættisvinningi ofan á happdrættið.</p>
+
+<h2>Hvað með traustið á Tether sjálfu?</h2>
+<p>Gagnrýnin spurning sem á heima í hverri heiðarlegri umfjöllun: USDT heldur dollaragenginu af því að útgefandinn Tether lofar innlausn og birtir eignasafn sitt ársfjórðungslega. Fyrir spilara sem geymir mynt í klukkustundir eða daga milli innlagnar og úttektar er áhættan hverfandi; sem langtímasparnaðarform er stablecoin annað og stærra samtal. Notaðu það sem greiðsluleið, ekki sem bankabók.</p>
+
+<h2>Síðurnar þar sem USDT virkar best</h2>
+<p><a href="{URL_BASE}spilaviti/bc-game/">BC.Game</a> og <a href="{URL_BASE}spilaviti/stake/">Stake</a> taka bæði TRC-20 og fleiri net og leyfa skipti yfir í aðrar myntir inni á reikningi. <a href="{URL_BASE}spilaviti/slotoro/">Slotoro</a> styður USDT inn og út. Fleiri kostir í <a href="{URL_BASE}spilaviti/crypto-spilaviti/">rafmyntayfirlitinu</a>.</p>
+
+<h2>Algengar spurningar</h2>
+<h3>Hvar kaupi ég USDT?</h3>
+<p>Sömu kauphallir og fyrir aðrar myntir — Kraken, Coinbase, Binance. Oft er ódýrast að kaupa fyrst og skipta svo í USDT innan kauphallarinnar frekar en að kaupa USDT beint með korti.</p>
+<h3>Hvað er USDC og skiptir munurinn máli?</h3>
+<p>USDC er sambærilegur dollarapeningur frá öðrum útgefanda (Circle). Spilavíti styðja USDT mun víðar; sé USDC í boði er hann jafngildur í notkun. Veldu þann sem síðan þín styður á ódýru neti.</p>
+<h3>Ber ég gengisáhættu gagnvart krónunni?</h3>
+<p>Já, þá sömu og með hverja dollaraeign: ISK/USD hreyfist. USDT fjarlægir rafmyntasveifluna, ekki gjaldmiðlasveifluna. Fyrir spilatímabil dagsins eða vikunnar er sú hreyfing þó smávægileg.</p>
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="sponsored noopener" class="cta-btn">Leggja inn með USDT →</a></div>
+"""
+
+BODIES["greidslur/litecoin"] = """
+<p>Litecoin var búinn til 2011 sem „silfrið við gull Bitcoins" — sami grunnkóði, stilltur fyrir hraða og lágan kostnað. Á spilavítum er hann enn í dag praktískasta myntin fyrir lágar og miðlungs upphæðir: blokkir á 2,5 mínútna fresti og færslugjöld sem mælast í sentum.</p>
+
+<h2>Tölurnar sem skipta spilara máli</h2>
+<table>
+<tr><th></th><th>Litecoin</th><th>Bitcoin til samanburðar</th></tr>
+<tr><td>Blokkartími</td><td>2,5 mín</td><td>10 mín</td></tr>
+<tr><td>Dæmigert færslugjald</td><td>Undir $0,10</td><td>$1–5, sveiflast</td></tr>
+<tr><td>Innlögn orðin virk (3 staðf.)</td><td>~8 mín</td><td>30–60 mín</td></tr>
+<tr><td>Stuðningur spilavíta</td><td>Nær allar rafmyntasíður</td><td>Allar</td></tr>
+</table>
+<p>Fyrir 5–50 þúsund króna innlagnir er samhengið einfalt: Bitcoin-gjaldið getur étið prósent af upphæðinni, Litecoin-gjaldið sést varla. Þess vegna bentum við á LTC fyrir örinnlagnir í <a href="{URL_BASE}greidslur/bitcoin/">Bitcoin-umfjölluninni</a>.</p>
+
+<h2>Leiðin í gegn</h2>
+<ol>
+<li>Kauptu LTC hjá Kraken, Coinbase eða Binance — myntin er á öllum stóru kauphöllunum.</li>
+<li>Veldu Litecoin í innlagnarglugga spilavítisins; fangið byrjar á L, M eða ltc1.</li>
+<li>Sendu. Eftir ~þrjár blokkir — innan tíu mínútna — er innistæðan spilahæf.</li>
+<li>Úttekt: sama leið heim á kauphallarfangið þitt, sala, millifærsla í krónur.</li>
+</ol>
+
+<h2>Veiki bletturinn: gengissveiflan</h2>
+<p>LTC er fullgild sveiflumynt — hún hreyfist með markaðnum og oft skarpar en Bitcoin. Hraðinn og ódýrleikinn gera hana að góðri <em>flutningsleið</em>, ekki að góðum stað til að geyma bankrúlluna vikum saman. Sá sem vill festa verðgildi milli spilakvölda skiptir í <a href="{URL_BASE}greidslur/usdt/">USDT</a> inni á síðunni.</p>
+
+<h2>Hvar LTC nýtur sín</h2>
+<p><a href="{URL_BASE}spilaviti/bitstarz/">BitStarz</a> hefur stutt Litecoin frá upphafi og úttektir okkar í LTC hafa skilað sér á undir kortéri. <a href="{URL_BASE}spilaviti/slotoro/">Slotoro</a> og <a href="{URL_BASE}spilaviti/bc-game/">BC.Game</a> taka báðir við myntinni gjaldfrjálst. Samanburður á öllum rafmyntaleiðum er í <a href="{URL_BASE}spilaviti/crypto-spilaviti/">yfirlitinu</a>.</p>
+
+<h2>Algengar spurningar</h2>
+<h3>Af hverju ekki bara alltaf Litecoin, fyrst hann er ódýrastur?</h3>
+<p>Fyrir innlagnir er það gild stefna. Á móti vegur að bónusar eru stundum bundnir tilteknum myntum, hámörk geta verið lægri en á BTC, og fyrir stórar upphæðir kjósa sumir dýpt og lausafjárstöðu Bitcoin-markaðarins. Fyrir dæmigerðan leikmann er LTC samt oftast rétta verkfærið.</p>
+<h3>Styður MWEB-einkalífsuppfærslan innlagnir?</h3>
+<p>Spilavíti taka almennt ekki við sendingum af MWEB-hluta netsins — sendu af venjulegu fangi. Kauphallir nota venjuleg föng sjálfgefið, svo þetta snertir aðeins þá sem reka eigin veski með MWEB virkt.</p>
+<h3>Er Litecoin að deyja út fyrir Solana og nýrri netum?</h3>
+<p>Nýrri net eru hraðari á pappír, en LTC hefur þrettán ára órofna keyrslu, skráningu á öllum kauphöllum og breiðasta spilavítastuðning á eftir BTC/ETH. Fyrir þetta notkunartilvik — flytja verðmæti inn og út af spilasíðu — er útbreiðslan verðmætari en tækninýjungin.</p>
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="sponsored noopener" class="cta-btn">Hröð innlögn með LTC →</a></div>
+"""
+
+BODIES["greidslur/hvernig-a-ad-kaupa-bitcoin"] = """
+<p>Þessi leiðarvísir fer með þig frá núlli — ekkert veski, engin kauphöll — að fyrstu Bitcoin-eigninni þinni, á þeirri leið sem virkar fyrir íslenska kennitölu árið 2026. Tíminn sem þetta tekur í alvöru: um 30 mínútur plús biðtími auðkenningar.</p>
+
+<h2>Skref 1: Veldu kauphöll sem tekur við Íslendingum</h2>
+<p>Þrjár alþjóðlegar kauphallir afgreiða íslenska viðskiptavini vandræðalaust: <strong>Kraken</strong> (elst, sterk í evrum), <strong>Coinbase</strong> (einfaldasta viðmótið, hærri gjöld) og <strong>Binance</strong> (stærst, flóknari). Byrjandi velur á milli Kraken og Coinbase; munurinn sem skiptir máli er gjaldið — sjá töfluna neðar.</p>
+
+<h2>Skref 2: Auðkenndu þig</h2>
+<p>Allar löglegar kauphallir krefjast KYC: mynd af vegabréfi eða ökuskírteini og sjálfsmynd. Íslensk skilríki eru studd alls staðar. Afgreiðslan tekur frá nokkrum mínútum upp í sólarhring. Virkjaðu um leið tveggja þátta auðkenningu (2FA) með appi — SMS-kóðar teljast ekki örugg vörn á reikningi með peninga.</p>
+
+<h2>Skref 3: Settu inn fé og kauptu</h2>
+<table>
+<tr><th>Leið inn á kauphöll</th><th>Kostnaður</th><th>Hraði</th></tr>
+<tr><td>Kortakaup beint</td><td>1,5–4%</td><td>Samstundis</td></tr>
+<tr><td>SEPA-millifærsla í evrum</td><td>Lítið sem ekkert</td><td>1–2 virkir dagar</td></tr>
+</table>
+<p>Kortakaup henta þegar tíminn skiptir máli; SEPA af gjaldeyrisreikningi borgar sig fyrir upphæðir sem munar um. Kauptu svo BTC á markaðsverði — „market order" dugar; limit-pælingar eru fyrir síðar.</p>
+
+<h2>Skref 4: Sendu þangað sem þú ætlar að nota myntina</h2>
+<p>Á spilavíti: opnaðu innlagnarglugga síðunnar, afritaðu fangið og taktu út af kauphöllinni beint á það — ferlið í smáatriðum er í <a href="{URL_BASE}greidslur/bitcoin/">Bitcoin-greiðsluumfjölluninni</a>. Til geymslu: eigið veski (hug- eða vélbúnaðar) þar sem þú einn átt lyklana. Fyrir upphæðir sem svíður að tapa er eigið veski rétta geymslan — kauphöll er verslun, ekki bankahólf.</p>
+
+<h2>Gjaldafallgryfjurnar þrjár</h2>
+<ul>
+<li><strong>Álagið á kortakaupum</strong> — borið saman við millifærslu geturðu verið að greiða 4% fyrir óþolinmæðina.</li>
+<li><strong>Spread-ið hjá „einfalda" viðmótinu</strong> — sumar kauphallir fela gjaldið í lakara gengi. „Advanced/Pro" viðmót sömu kauphallar sýnir raunverðið.</li>
+<li><strong>Úttektargjald kauphallarinnar</strong> — fast BTC-gjald sem étur hlutfallslega mikið af smáupphæðum. Safnaðu frekar í eina sendingu en fimm smáar.</li>
+</ul>
+
+<h2>Algengar spurningar</h2>
+<h3>Get ég keypt fyrir krónur beint?</h3>
+<p>Stóru kauphallirnar verðleggja í evrum og dollurum; kortið þitt sér um ISK-skiptin (með gengisálagi bankans). Innlendir milliliðir bjóða ISK-kaup en á hærra verði — fyrir flesta er evruleiðin hagstæðust.</p>
+<h3>Hvað er minnsta upphæð sem vit er í?</h3>
+<p>Bitcoin er deilanlegur í hundraðmilljónustu parta; þú getur keypt fyrir 2.000 kr. En föst gjöld — úttekt af kauphöll, netgjald — gera kaup undir ~10.000 kr. hlutfallslega dýr. Fyrir smærri spilainnlagnir er <a href="{URL_BASE}greidslur/litecoin/">Litecoin</a> skynsamari.</p>
+<h3>Þarf ég að telja þetta fram?</h3>
+<p>Rafmyntaeign og söluhagnaður falla undir íslensk skattalög. Kaupin sjálf eru ekki skattatburður; sala með hagnaði er það. Haltu utan um kaupverð og dagsetningar frá fyrsta degi — það er miklu einfaldara en að endurgera söguna eftir á. Sjá einnig <a href="{URL_BASE}leidbeiningar/skattur-a-vinninga/">umfjöllun um skatta á vinninga</a>.</p>
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="sponsored noopener" class="cta-btn">Nota BTC á Slotoro →</a></div>
+"""

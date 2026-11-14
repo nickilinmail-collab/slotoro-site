@@ -210,7 +210,10 @@
   <url><loc>https://svipan.is/live/blackjack/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://svipan.is/live/roulette/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://svipan.is/live/baccarat/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://svipan.is/live/dream-catcher/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://svipan.is/live/monopoly-live/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://svipan.is/live/crazy-time/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://svipan.is/live/lightning-roulette/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://svipan.is/bonusar/velkomstbonus/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://svipan.is/bonusar/frisnuningar-an-innborgunar-tilbod/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://svipan.is/bonusar/bonusar-an-innborgunar/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
@@ -244,6 +247,9 @@
   <url><loc>https://svipan.is/bonusar/bonus-betpanda/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://svipan.is/greidslur/bitcoin/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://svipan.is/greidslur/ethereum/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://svipan.is/greidslur/usdt/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://svipan.is/greidslur/litecoin/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://svipan.is/greidslur/hvernig-a-ad-kaupa-bitcoin/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://svipan.is/greidslur/visa-i-spilavitum/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://svipan.is/greidslur/mastercard-i-spilavitum/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://svipan.is/greidslur/apple-pay-i-spilavitum/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
