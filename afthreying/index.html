@@ -80,9 +80,9 @@ a{text-decoration:none;color:inherit;}
 .hero-right{flex:0 0 420px;position:relative;z-index:1;}
 
 /* 3D CAROUSEL */
-.carousel{perspective:800px;height:300px;position:relative;overflow:hidden;border-radius:18px;}
-.carousel-track{display:flex;gap:14px;animation:slideCarousel 20s linear infinite;position:absolute;left:0;}
-@keyframes slideCarousel{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+.carousel{height:300px;position:relative;overflow:hidden;border-radius:18px;}
+.carousel-track{display:flex;gap:14px;animation:slideCarousel 25s linear infinite;position:absolute;left:0;will-change:transform;-webkit-backface-visibility:hidden;backface-visibility:hidden;}
+@keyframes slideCarousel{0%{transform:translate3d(0,0,0);}100%{transform:translate3d(-50%,0,0);}}
 .c-card{flex-shrink:0;width:180px;height:260px;border-radius:16px;overflow:hidden;border:1px solid var(--border);background:var(--card);backdrop-filter:blur(8px);transition:all .35s;position:relative;transform-style:preserve-3d;}
 .c-card:hover{transform:scale(1.08) translateZ(30px);border-color:rgba(255,140,155,.3);box-shadow:0 12px 40px rgba(204,36,57,.25);z-index:10;}
 .c-card::before{content:'';position:absolute;top:0;left:0;right:0;height:50%;background:linear-gradient(180deg,rgba(255,255,255,.04),transparent);pointer-events:none;z-index:2;border-radius:16px 16px 0 0;}
