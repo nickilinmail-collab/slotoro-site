@@ -57,6 +57,8 @@ GUIDE_PAY=["islenskir-bankar-spilaviti","framhja-bankalokun","kaupa-bitcoin-isla
 GUIDE_CAS=["hvernig-a-ad-velja-spilaviti","hvernig-a-ad-stadfesta-spilavitaleyfi","einkenni-sanngjarns-spilavitis","spilaviti-samanburdur"]
 GUIDE_BON=["hvad-eru-vedskilyrdi","hvernig-a-ad-hamarka-bonusinn","samanburdur-a-bonusum-spilavita","frisnuningar-an-innborgunar"]
 GUIDE_LIVE=["hvad-er-evolution-gaming","hvad-er-pragmatic-play"]
+# New SEO pages — link these from relevant sections
+SEO_HUBS=["spilavitin-a-netinu-a-islandi","bestu-spilavitin-a-netinu","spilaviti-island-2026","ny-spilaviti-2026","netspilaviti-island"]
 
 def related(sec, slug):
     out=[]
@@ -73,7 +75,10 @@ def related(sec, slug):
         out+=rot(slug,[("spilaviti",s2,t) for s2,t in reg[sec].items()],3)
         if f"bonus-{slug}" in reg["bonusar"]:
             out.append(("bonusar",f"bonus-{slug}",reg["bonusar"][f"bonus-{slug}"]))
-        out+=rot(slug,[("leidbeiningar",x,g[x]) for x in GUIDE_CAS if x in g],2)
+        out+=rot(slug,[("leidbeiningar",x,g[x]) for x in GUIDE_CAS if x in g],1)
+        # Link to SEO hub pages from casino reviews
+        seo_picks=rot(slug,[("leidbeiningar",x,g[x]) for x in SEO_HUBS if x in g],1)
+        out+=seo_picks
     elif sec=="bonusar":
         out+=rot(slug,[("bonusar",s2,t) for s2,t in reg[sec].items()],3)
         brand=slug[len("bonus-"):] if slug.startswith("bonus-") else None
@@ -88,8 +93,12 @@ def related(sec, slug):
         out+=rot(slug,[("leidbeiningar",x,g[x]) for x in GUIDE_LIVE if x in g],1)
         out.append(("spilaviti","live-spilaviti",reg["spilaviti"].get("live-spilaviti","Live spilavíti")))
     elif sec=="leidbeiningar":
-        out+=rot(slug,[("leidbeiningar",s2,t) for s2,t in reg[sec].items()],4)
+        out+=rot(slug,[("leidbeiningar",s2,t) for s2,t in reg[sec].items()],3)
         out+=rot(slug,[("spilaviti",s2,t) for s2,t in list(reg["spilaviti"].items())[:40]],2)
+        # Cross-link to SEO hub pages
+        if slug not in SEO_HUBS:
+            seo_picks=rot(slug,[("leidbeiningar",x,g[x]) for x in SEO_HUBS if x in g and x!=slug],1)
+            out+=seo_picks
     # dedupe, drop self, cap 6
     seen=set(); res=[]
     for sec2,s2,t in out:

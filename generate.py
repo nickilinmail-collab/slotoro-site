@@ -522,12 +522,25 @@ def page_template(title, desc, breadcrumbs, content, canonical="", og_img="", sc
         return site + (u if u.startswith("/") else "/" + u)
     crumbs = [{"@type":"ListItem","position":i+1,"name":n,**({"item":abs_url(u)} if u else {})} for i,(u,n) in enumerate(breadcrumbs)]
     graph = [
-        {"@type":"WebSite","@id":site+"/#website","name":"Svipan","url":site+"/","inLanguage":"is"},
-        {"@type":"Organization","@id":site+"/#org","name":"Svipan","url":site+"/","sameAs":["https://www.facebook.com/svipanfrettir/"]},
+        {"@type":"WebSite","@id":site+"/#website","name":"Svipan","url":site+"/","inLanguage":"is",
+         "description":"Óháður íslenski leiðarvísirinn um netspilavíti, spilakassa og greiðsluleiðir.",
+         "potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":site+"/?s={search_term_string}"},"query-input":"required name=search_term_string"}},
+        {"@type":"Organization","@id":site+"/#org","name":"Svipan","url":site+"/",
+         "logo":{"@type":"ImageObject","url":site+"/favicon.svg","width":40,"height":40},
+         "description":"Svipan er óháður íslenski leiðarvísirinn um netspilavíti. Við metum og berum saman yfir 150 spilavíti fyrir íslenska spilara.",
+         "foundingDate":"2010","contactPoint":{"@type":"ContactPoint","contactType":"customer support","url":site+"/hafa-samband/","availableLanguage":["is","en"]},
+         "sameAs":["https://www.facebook.com/svipanfrettir/"]},
+        {"@type":"SiteNavigationElement","name":"Spilavíti","url":site+"/spilaviti/"},
+        {"@type":"SiteNavigationElement","name":"Spilakassar","url":site+"/spilakassar/"},
+        {"@type":"SiteNavigationElement","name":"Bónusar","url":site+"/bonusar/"},
+        {"@type":"SiteNavigationElement","name":"Greiðslur","url":site+"/greidslur/"},
+        {"@type":"SiteNavigationElement","name":"Leiðbeiningar","url":site+"/leidbeiningar/"},
+        {"@type":"SiteNavigationElement","name":"Lifandi spilavíti","url":site+"/live/"},
         {"@type":"Person","@id":site+"/#valbjorn","name":"Valbjörn Gjúkason","url":site+"/hofundur/valbjorn-gjukason/","jobTitle":"Blaðamaður og ritstjóri","knowsAbout":["Fjárhættuspil","Netspilavíti","Spilakassar"],"worksFor":{"@id":site+"/#org"}},
         {"@type":"Article","headline":title[:110],"description":desc,"inLanguage":"is",
          "datePublished":"2026-06-01","dateModified":"2026-11-14",
-         "author":{"@id":site+"/#valbjorn"},"publisher":{"@id":site+"/#org"}},
+         "author":{"@id":site+"/#valbjorn"},"publisher":{"@id":site+"/#org"},
+         "mainEntityOfPage":{"@type":"WebPage","@id":canonical if canonical else site+"/"}},
         {"@type":"BreadcrumbList","itemListElement":crumbs},
     ] + (schema_extra or [])
     schema_json = json.dumps({"@context":"https://schema.org","@graph":graph}, ensure_ascii=False).replace("</","<\\/")
