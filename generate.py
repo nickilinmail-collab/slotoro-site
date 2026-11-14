@@ -191,7 +191,7 @@ casino_categories = [
 # 30 more categories — Icelandic titles
 more_cats = [
     ("Curaçao spilavíti", "Spilavíti með Curaçao leyfi fyrir íslenska leikmenn."),
-    ("Malta MGA spilavíti", "Spilavíti með Malta MGA leyfi."),
+    ("Malta MGA spilavíti", "Öll spilavíti í yfirliti okkar sem starfa með Malta MGA leyfi — ströngustu eftirlitsstofnun Evrópu."),
     ("Endurgreiðslu spilavíti", "Spilavíti sem bjóða endurgreiðslu á nettótapi."),
     ("Mótaspilavíti", "Spilavíti með spilakassamótum og verðlaunum."),
     ("Háröllu spilavíti", "Spilavíti fyrir leikmenn sem veðja hátt."),
@@ -266,7 +266,7 @@ bonus_pages = [
     {"slug": "skraningarbonus", "title": "Skráningarbónus", "desc": "Fáðu bónus strax eftir skráningu — engin innborgun þarf."},
     {"slug": "bonus-a-fyrstu-innborgun", "title": "Fyrsta innborgunarbónus", "desc": "Bestu bónusarnir á fyrstu innborgun hjá efstu spilavítum."},
     {"slug": "bonus-a-adra-innborgun", "title": "Önnur innborgunarbónus", "desc": "Bónusar á annarri innborgun — endurnýjunartilboð við næstu áfyllingu."},
-    {"slug": "vedskilyrdi", "title": "Hvað eru veðskilyrði", "desc": "Skilningur á veðskilyrðum — hvernig gegnumspilun virkar og hvað á að hafa í huga."},
+    {"slug": "vedskilyrdi", "title": "Veðskilyrði bónusa — gegnumspilun útskýrð", "desc": "Skilningur á veðskilyrðum — hvernig gegnumspilun virkar og hvað á að hafa í huga."},
     {"slug": "bonuskodar", "title": "Bónuskóðar spilavíta", "desc": "Virk afsláttarkóðar og bónuskóðar fyrir netspilavíti árið 2026."},
     {"slug": "reload-bonus", "title": "Endurnýjunarbónusar", "desc": "Endurnýjunarbónusar fyrir núverandi leikmenn — vikuleg og mánaðarleg innborgunartilboð."},
 ]
@@ -328,7 +328,7 @@ more_payments = [
     ("Polygon í spilavítum", "Polygon (MATIC) greiðslur á spilavítum."),
     ("Arbitrum í spilavítum", "Arbitrum greiðslur á spilavítum."),
     ("Optimism í spilavítum", "Optimism greiðslur á spilavítum."),
-    ("Lágmarksinnborgun €1", "Spilavíti þar sem þú getur spilað frá €1."),
+    ("Lágmarksinnborgun €1", "Greiðsluleiðir og spilavíti sem taka við innborgunum frá aðeins €1 — minnsta mögulega áhætta."),
     ("Lágmarksinnborgun €5", "Spilavíti þar sem þú getur spilað frá €5."),
     ("Lágmarksinnborgun €10", "Spilavíti þar sem þú getur spilað frá €10."),
     ("Kortaútborganir", "Hvernig á að taka út vinninga á greiðslukort."),
@@ -349,7 +349,7 @@ guide_pages = [
     {"slug": "rulettu-reglur", "title": "Rúlettureglur", "desc": "Hvernig á að spila rúlettu — fullkomnar reglur, veðmál og aðferðir."},
     {"slug": "baccarat-reglur", "title": "Baccarat reglur", "desc": "Hvernig á að spila baccarat — reglur, aðferðir og ráð."},
     {"slug": "hvernig-a-ad-vinna-i-spilaviti", "title": "Hvernig á að vinna á spilavítum", "desc": "Ráðleggingar og aðferðir til að bæta líkur þínar á netspilavítum."},
-    {"slug": "spila-af-abyrgd", "title": "Ábyrg spilun", "desc": "Hvernig á að spila á ábyrgan hátt — setja mörk og halda stjórn."},
+    {"slug": "spila-af-abyrgd", "title": "Spilaðu af ábyrgð — hagnýt ráð", "desc": "Hvernig á að spila á ábyrgan hátt — setja mörk og halda stjórn."},
     {"slug": "log-um-fjarhaettuspil-a-islandi", "title": "Fjárhættuspilalagaíslandi", "desc": "Lagaleg staða netspilavíta á Íslandi — hvað leikmenn þurfa að vita."},
     {"slug": "skattar-a-vinninga", "title": "Skattar á spilavinninga", "desc": "Þarftu að borga skatta af fjárhættuspilvinningum á Íslandi?"},
     {"slug": "oryggi-i-netspilavitum", "title": "Öryggi spilavíta", "desc": "Hvernig á að vernda persónuupplýsingarnar þínar þegar þú spilar á netspilavítum."},
@@ -360,7 +360,7 @@ guide_pages = [
     {"slug": "stighaekkandi-pottar", "title": "Stigvaxandi jackpottar", "desc": "Hvernig stigvaxandi jackpottar virka og hvernig á að vinna þá."},
     {"slug": "spilavitamot", "title": "Spilavítamót", "desc": "Hvernig spilakassamót virka — kepptu um peningaverðlaun."},
     {"slug": "vip-kerfi", "title": "VIP kerfi", "desc": "Hvernig VIP og tryggðarkerfi virka á netspilavítum."},
-    {"slug": "spilaviti-i-simanum", "title": "Farsíma spilavíti", "desc": "Bestu farsíma spilavítin og spilavíti öppin fyrir iPhone og Android."},
+    {"slug": "spilaviti-i-simanum", "title": "Spilavíti í símanum — leiðarvísir", "desc": "Bestu farsíma spilavítin og spilavíti öppin fyrir iPhone og Android."},
 ]
 # 40 more guides — Icelandic
 more_guides = [
@@ -501,6 +501,13 @@ def get_footer():
 </footer>'''
 
 def page_template(title, desc, breadcrumbs, content, canonical="", og_img="", schema_extra=None, show_byline=True):
+    # SEO normalization
+    desc = desc.strip()
+    if len(desc) < 60:
+        desc = (desc.rstrip(".") + ". ") + "Óháður leiðarvísir fyrir íslenska spilara á Svipan."
+    if len(desc) > 165:
+        cut = desc[:160].rsplit(" ", 1)[0].rstrip(",.;:")
+        desc = cut + "…"
     # Byline + affiliate disclosure under the first H1
     if show_byline and '</h1>' in content:
         byline = (f'<div class="byline">Höfundur: <a href="{URL_BASE}hofundur/valbjorn-gjukason/" rel="author">Valbjörn Gjúkason</a> · Uppfært nóvember 2026 · '
@@ -532,7 +539,7 @@ def page_template(title, desc, breadcrumbs, content, canonical="", og_img="", sc
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{title} | Svipan</title>
+<title>{title + ' | Svipan' if len(title) <= 57 else title}</title>
 <meta name="description" content="{desc}">
 {f'<link rel="canonical" href="{canonical}">' if canonical else ''}
 <!-- Favicon -->
@@ -540,7 +547,7 @@ def page_template(title, desc, breadcrumbs, content, canonical="", og_img="", sc
 <link rel="icon" type="image/png" sizes="32x32" href="{URL_BASE}favicon-32.png">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="{title} | Svipan">
+<meta property="og:title" content="{title + ' | Svipan' if len(title) <= 57 else title}">
 <meta property="og:description" content="{desc}">
 <meta property="og:image" content="{og_image}">
 <meta property="og:locale" content="is_IS">
@@ -875,6 +882,10 @@ def honest_cta(html):
 def write_page(path, html):
     global count
     html = honest_cta(html)
+    if '<link rel="canonical"' not in html and path.endswith("index.html"):
+        _dir = path[:-len("index.html")]
+        _canon = "https://svipan.is/" + _dir
+        html = html.replace("</title>", "</title>\n<link rel=\"canonical\" href=\"" + _canon + "\">", 1)
     full = os.path.join(BASE, path)
     os.makedirs(os.path.dirname(full), exist_ok=True)
     with open(full, 'w', encoding='utf-8') as f:
@@ -995,7 +1006,7 @@ for s in slots_data:
 {faq_block(faqs)}'''
 
     bc = [("{URL_BASE}", "Heim"), ("{URL_BASE}spilakassar/", "Spilakassar"), ("", s["name"])]
-    html = page_template(f'{s["name"]} spilakassi — RTP, sveifla og bónus', f'{s["name"]} frá {s["provider"]}: RTP {rtp_is(s["rtp"])}, {vol_is(s["volatility"]).lower()} sveifla, hámark {maxwin_is(s["maxwin"])}. Hvernig leikurinn virkar og fyrir hverja hann hentar.', bc, content, schema_extra=[faq_schema(faqs)])
+    html = page_template(f'{s["name"]} spilakassi — RTP, sveifla og bónus' if len(s["name"]) <= 19 else f'{s["name"]} — RTP og bónus', f'{s["name"]} frá {s["provider"]}: RTP {rtp_is(s["rtp"])}, {vol_is(s["volatility"]).lower()} sveifla, hámark {maxwin_is(s["maxwin"])}. Hvernig leikurinn virkar og fyrir hverja hann hentar.', bc, content, schema_extra=[faq_schema(faqs)])
     write_page(f'spilakassar/{s["slug"]}/index.html', html)
 
 # 3b. Data-driven reviews for 98 popular lobby slots
@@ -1692,7 +1703,16 @@ write_page("hofundur/valbjorn-gjukason/index.html", page_template("Valbjörn Gj�
     schema_extra=[{"@type":"ProfilePage","mainEntity":{"@id":"https://svipan.is/#valbjorn"}}]))
 
 print("Generating sitemap.xml...")
-sitemap_urls = ['https://svipan.is/', 'https://svipan.is/hofundur/valbjorn-gjukason/']
+
+# 404 page for GitHub Pages / static hosting
+_content404 = """<h1>404 — Síðan fannst ekki</h1>
+<p>Því miður er þessi síða ekki til. Kannski hefur slóðin breyst eða síðan verið fjarlægð.</p>
+<div class=\"info-box\"><p>Prófaðu að byrja á <a href=\"{URL_BASE}\">forsíðunni</a>, skoða <a href=\"{URL_BASE}spilaviti/\">spilavítaumsagnir</a> eða <a href=\"{URL_BASE}spilakassar/\">spilakassa</a>.</p></div>"""
+_html404 = page_template("Síðan fannst ekki (404)", "Þessi síða er ekki til á svipan.is — finndu það sem þú leitar að á forsíðunni.", [("{URL_BASE}", "Heim"), ("", "404")], _content404.replace("{URL_BASE}", URL_BASE), show_byline=False)
+_html404 = _html404.replace("</title>", "</title>\n<meta name=\"robots\" content=\"noindex\">", 1)
+write_page("404.html", _html404)
+
+sitemap_urls = ['https://svipan.is/', 'https://svipan.is/afthreying/', 'https://svipan.is/hofundur/valbjorn-gjukason/']
 for c in casinos:
     sitemap_urls.append(f'https://svipan.is/spilaviti/{c["slug"]}/')
 for cat in casino_categories:

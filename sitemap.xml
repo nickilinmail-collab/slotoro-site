@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://svipan.is/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://svipan.is/afthreying/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://svipan.is/hofundur/valbjorn-gjukason/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://svipan.is/spilaviti/slotoro/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://svipan.is/spilaviti/bitstarz/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
