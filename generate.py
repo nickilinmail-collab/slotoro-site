@@ -20,24 +20,24 @@ casinos = [
     {"slug": "slotoro", "name": "Slotoro", "rating": 9.0, "bonus": "Velkomstpakki á 3 fyrstu innborgunum", "type": "classic", "partner": True, "desc": "Spilavíti og veðmálasíða sem opnaði 2025. Yfir 8.000 leikir frá 71 framleiðanda, lágmarksinnborgun €10 og velkomstpakki sem skiptist á fyrstu þrjár innborganirnar (40x veðskilyrði). Tekur við kortum, rafrænum veskjum og dulritunargjaldmiðlum. BF Casino er í samstarfi við Slotoro."},
     {"slug": "bitstarz", "name": "BitStarz", "rating": 9.8, "bonus": "5 BTC + 200 FS", "type": "crypto", "desc": "Margverðlaunað dulritunarspilavíti með yfir 3.500 leikjum frá Pragmatic Play, Evolution og Play'n GO. Tekur við BTC, ETH, LTC, DOGE og fleiri myntum. Rekstraraðilinn segir útborganir í dulritunargjaldmiðlum afgreiddar á nokkrum mínútum. Curaçao leyfi."},
     {"slug": "stake", "name": "Stake", "rating": 9.6, "bonus": "200% + VIP", "type": "crypto", "desc": "Eitt vinsælasta dulritunarspilavíti heims með VIP kerfi, eigin Stake leikjum og íþróttaveðmálum. Styður 8 dulritunargjaldmiðla og birtir húsforskot á eigin leikjum."},
-    {"slug": "bc-game", "name": "BC.Game", "rating": 9.4, "bonus": "300% up to 1 BTC", "type": "crypto", "desc": "Spilavíti með eigin crash, dice og limbo leikjum. Styður yfir 100 dulritunargjaldmiðla, þar á meðal BTC, ETH, SOL og DOGE. Daglegir bónusar og verkefnakerfi. Curaçao leyfi."},
+    {"slug": "bc-game", "name": "BC.Game", "rating": 9.4, "bonus": "300% allt að 1 BTC", "type": "crypto", "desc": "Spilavíti með eigin crash, dice og limbo leikjum. Styður yfir 100 dulritunargjaldmiðla, þar á meðal BTC, ETH, SOL og DOGE. Daglegir bónusar og verkefnakerfi. Curaçao leyfi."},
     {"slug": "tonybet", "name": "TonyBet", "rating": 9.2, "bonus": "150% + 100 FS", "type": "classic", "desc": "Rótgróið spilavíti og veðmálasíða með sterkum lifandi spilavítishluta frá Evolution. Tekur við Visa, Mastercard, Skrill og dulritunargjaldmiðlum. Leyfi í Eistlandi (innan EES)."},
-    {"slug": "epicbet", "name": "Epicbet", "rating": 9.0, "bonus": "100% up to €500", "type": "classic", "desc": "Nútímalegt spilavíti með skýru viðmóti, íslensku tungumáli og Apple Pay. Yfir 2.000 spilakassar frá NetEnt, Microgaming og Pragmatic Play."},
+    {"slug": "epicbet", "name": "Epicbet", "rating": 9.0, "bonus": "100% allt að €500", "type": "classic", "desc": "Nútímalegt spilavíti með skýru viðmóti, íslensku tungumáli og Apple Pay. Yfir 2.000 spilakassar frá NetEnt, Microgaming og Pragmatic Play."},
     {"slug": "respin", "name": "Respin Casino", "rating": 8.9, "bonus": "200% + 50 FS", "type": "classic", "desc": "Spilavíti með yfir 4.000 spilakössum, íslensku viðmóti og PIQ greiðslum. Vikuleg endurgreiðsla og endurnýjunartilboð fyrir núverandi leikmenn."},
-    {"slug": "vegazone", "name": "VegaZone", "rating": 8.8, "bonus": "150% up to €300", "type": "classic", "desc": "Spilavíti með spilakassamótum, reglulegum tilboðum og tryggðarkerfi. Gott úrval lifandi borða og stuðningur við rafræn veski."},
+    {"slug": "vegazone", "name": "VegaZone", "rating": 8.8, "bonus": "150% allt að €300", "type": "classic", "desc": "Spilavíti með spilakassamótum, reglulegum tilboðum og tryggðarkerfi. Gott úrval lifandi borða og stuðningur við rafræn veski."},
     {"slug": "wildcoins", "name": "WildCoins", "rating": 8.7, "bonus": "250% + 100 FS", "type": "crypto", "desc": "Dulritunarspilavíti með háum hlutfallsbónusum. Styður Bitcoin, Ethereum, Litecoin og USDT."},
     {"slug": "katsubet", "name": "KatsuBet", "rating": 8.6, "bonus": "100% + 100 FS", "type": "crypto", "desc": "Japanskt þema og yfir 5.000 leikir frá 40+ framleiðendum. Tekur við BTC, ETH, LTC, DOGE, USDT og BCH. Vikuleg mót og fjögurra þrepa VIP kerfi."},
     {"slug": "winz", "name": "Winz.io", "rating": 8.5, "bonus": "300 FS no wager", "type": "crypto", "desc": "Spilavíti með bónusum án veðskilyrða — það sem þú vinnur geturðu tekið út. Styður 6 dulritunargjaldmiðla og yfir 5.000 leiki. Curaçao leyfi."},
     {"slug": "7bit", "name": "7Bit Casino", "rating": 8.5, "bonus": "200% + 100 FS", "type": "crypto", "desc": "Dulritunarspilavíti í retró stíl, starfrækt síðan 2014. Yfir 7.000 leikir, vikuleg endurgreiðsla og mánudagsbónusar."},
     {"slug": "mbitcasino", "name": "mBit Casino", "rating": 8.4, "bonus": "175% + 300 FS", "type": "crypto", "desc": "Eitt elsta dulritunarspilavítið, starfrækt síðan 2014. Tekur við Bitcoin, Ethereum, Litecoin, Dogecoin og Tether. Yfir 3.000 leikir."},
-    {"slug": "cloudbet", "name": "Cloudbet", "rating": 8.4, "bonus": "100% up to 5 BTC", "type": "crypto", "desc": "Dulritunarspilavíti og veðmálasíða með háum borðmörkum fyrir stórspilara. Styður BTC, ETH, USDT og fleiri."},
+    {"slug": "cloudbet", "name": "Cloudbet", "rating": 8.4, "bonus": "100% allt að 5 BTC", "type": "crypto", "desc": "Dulritunarspilavíti og veðmálasíða með háum borðmörkum fyrir stórspilara. Styður BTC, ETH, USDT og fleiri."},
     {"slug": "casinonic", "name": "Casinonic", "rating": 8.3, "bonus": "100% + 100 FS", "type": "classic", "desc": "Byrjendavænt spilavíti með einfaldri skráningu. Yfir 2.000 spilakassar, lifandi borð og vikuleg endurgreiðsla."},
     {"slug": "national-casino", "name": "National Casino", "rating": 8.3, "bonus": "100% + 100 FS", "type": "classic", "desc": "Spilavíti með gott úrval lifandi leikja frá Evolution og Pragmatic Play Live og nokkrar útborgunarleiðir."},
-    {"slug": "20bet", "name": "20Bet", "rating": 8.2, "bonus": "100% up to €120", "type": "classic", "desc": "Spilavíti, lifandi spilavíti og veðmálasíða á einum stað. Yfir 6.000 leikir frá 70+ framleiðendum. Curaçao leyfi."},
+    {"slug": "20bet", "name": "20Bet", "rating": 8.2, "bonus": "100% allt að €120", "type": "classic", "desc": "Spilavíti, lifandi spilavíti og veðmálasíða á einum stað. Yfir 6.000 leikir frá 70+ framleiðendum. Curaçao leyfi."},
     {"slug": "rocketplay", "name": "RocketSpila", "rating": 8.2, "bonus": "150% + 100 FS", "type": "crypto", "desc": "Spilavíti með geimþema og yfir 3.500 leikjum. Vikulegir endurnýjunarbónusar og fjögurra þrepa VIP kerfi."},
     {"slug": "hellspin", "name": "HellSpin", "rating": 8.1, "bonus": "150% + 50 FS", "type": "crypto", "desc": "Spilavíti með tíðum tilboðum og dökku viðmóti. Styður BTC, ETH, LTC og USDT. Yfir 3.000 leikir."},
     {"slug": "neospin", "name": "NeoSpin", "rating": 8.1, "bonus": "100% + 100 FS", "type": "crypto", "desc": "Nútímalegt spilavíti með yfir 5.000 leikjum og stuðningi við Bitcoin, Ethereum og Tether. Dagleg endurgreiðsla og vikuleg mót."},
-    {"slug": "betpanda", "name": "BetPanda", "rating": 8.0, "bonus": "100% up to 1 BTC", "type": "crypto", "desc": "Dulritunarspilavíti með tiltölulega lágum veðskilyrðum (venjulega 30x). Styður BTC, ETH og USDT."},
+    {"slug": "betpanda", "name": "BetPanda", "rating": 8.0, "bonus": "100% allt að 1 BTC", "type": "crypto", "desc": "Dulritunarspilavíti með tiltölulega lágum veðskilyrðum (venjulega 30x). Styður BTC, ETH og USDT."},
 ]
 
 # Real slots only
@@ -421,12 +421,21 @@ def isk(text):
 # HERO CARD GENERATOR
 # ============================================================
 
+import json as _json, zlib as _zlib
+_REAL = [k for k in _json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "tools", "real_images.json")))]
 def make_hero(title, subtitle, emoji, grad1="#1a0840", grad2="#3020a0", grad3="#6040c0"):
-    """Generate a themed gradient hero card with emoji, title and subtitle."""
-    return f'''<div class="slot-hero"><div class="slot-hero-bg" style="background:linear-gradient(135deg,{grad1},{grad2},{grad3});display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;text-align:center;">
-<span style="font-size:48px;margin-bottom:12px;filter:drop-shadow(0 4px 12px rgba(0,0,0,.3));">{emoji}</span>
-<span style="font-family:\'Space Grotesk\',sans-serif;font-size:22px;font-weight:700;color:rgba(255,255,255,.9);text-shadow:0 2px 12px rgba(0,0,0,.4);line-height:1.2;">{title}</span>
-<span style="font-size:16px;color:rgba(255,255,255,.88);margin-top:8px;">{subtitle}</span>
+    """Hero: collage of real game artwork with title overlay."""
+    pool = _REAL
+    start = _zlib.crc32(title.encode()) % max(1, len(pool))
+    picks = [pool[(start + i*37) % len(pool)] for i in range(6)]
+    tiles = "".join(f'<img src="{URL_BASE}img/{k}.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">' for k in picks)
+    return f'''<div class="slot-hero" style="position:relative;overflow:hidden;aspect-ratio:16/9;border-radius:18px">
+<div style="position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:4px">{tiles}</div>
+<div style="position:absolute;inset:0;background:linear-gradient(135deg,{grad1}e6,{grad2}b3 55%,{grad3}99)"></div>
+<div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;text-align:center">
+<span style="font-size:52px;margin-bottom:10px;filter:drop-shadow(0 4px 12px rgba(0,0,0,.5))">{emoji}</span>
+<span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(24px,4vw,34px);font-weight:700;color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.7);line-height:1.2">{title}</span>
+<span style="font-size:17px;color:#fff;opacity:.9;margin-top:8px;text-shadow:0 1px 8px rgba(0,0,0,.7)">{subtitle}</span>
 </div></div>'''
 
 # ============================================================
@@ -953,7 +962,7 @@ for cat in casino_categories:
         cards += f'<div class="info-box"><p><strong>{c["name"]}</strong> — {c["bonus"]} (Einkunn: {c["rating"]}/10) <a href="{URL_BASE}casino/{c["slug"]}/">Umsögn →</a></p></div>\n'
 
     hero = make_hero(cat["title"], "Spilavítaflokkur", "🏆", "#180840", "#3018a0", "#5030e0")
-    content = f'''<h1>{cat["title"]} á Íslandi 2026</h1>
+    content = f'''<h1>{cat["title"].replace(" 2026","")} á Íslandi 2026</h1>
 {hero}
 <p>{cat["desc"]}</p>
 <h2>Topp 10 spilavíti í flokki</h2>
@@ -1560,10 +1569,10 @@ _extra = _cat.build([x["name"] for x in slots_data], 500 - len(slots_data))
 _cards = []
 for x in slots_data:
     cats = ["review"] + _cat.category(x["name"])
-    _cards.append(f'<a class="lb-card" href="{URL_BASE}slots/{x["slug"]}/" data-n="{_h.escape(x["name"].lower())}" data-p="{_h.escape(x["provider"])}" data-c="{" ".join(cats)}"><img src="{URL_BASE}img/slots/{x["slug"]}.jpg" alt="{_h.escape(x["name"])}" loading="lazy" width="300" height="400"><span class="lb-tag">Umsögn</span><span class="lb-hover"><span class="lb-btn">Lesa umsögn</span></span><span class="lb-name">{_h.escape(x["name"])}<small>{_h.escape(x["provider"])}</small></span></a>')
+    _cards.append(f'<a class="lb-card" href="{URL_BASE}slots/{x["slug"]}/" data-n="{_h.escape(x["name"].lower())}" data-p="{_h.escape(x["provider"])}" data-c="{" ".join(cats)}"><img src="{URL_BASE}img/slots/{x["slug"]}.jpg" alt="{_h.escape(x["name"])}" loading="lazy" width="360" height="270"><span class="lb-tag">Umsögn</span><span class="lb-hover"><span class="lb-btn">Lesa umsögn</span></span><span class="lb-name">{_h.escape(x["name"])}<small>{_h.escape(x["provider"])}</small></span></a>')
 for x in _extra:
     cats = _cat.category(x["name"])
-    _cards.append(f'<a class="lb-card" href="{AFF}" target="_blank" rel="sponsored nofollow noopener" data-n="{_h.escape(x["name"].lower())}" data-p="{_h.escape(x["provider"])}" data-c="{" ".join(cats)}"><img src="{URL_BASE}img/lobby/{x["slug"]}.jpg" alt="{_h.escape(x["name"])}" loading="lazy" width="300" height="400"><span class="lb-hover"><span class="lb-btn">Spila á Slotoro</span></span><span class="lb-name">{_h.escape(x["name"])}<small>{_h.escape(x["provider"])}</small></span></a>')
+    _cards.append(f'<a class="lb-card" href="{AFF}" target="_blank" rel="sponsored nofollow noopener" data-n="{_h.escape(x["name"].lower())}" data-p="{_h.escape(x["provider"])}" data-c="{" ".join(cats)}"><img src="{URL_BASE}img/lobby/{x["slug"]}.jpg" alt="{_h.escape(x["name"])}" loading="lazy" width="360" height="270"><span class="lb-hover"><span class="lb-btn">Spila á Slotoro</span></span><span class="lb-name">{_h.escape(x["name"])}<small>{_h.escape(x["provider"])}</small></span></a>')
 _provs = {}
 for x in slots_data + _extra:
     _provs[x["provider"]] = _provs.get(x["provider"], 0) + 1
@@ -1579,8 +1588,8 @@ lobby = f"""<style>
 .lb-tab{{flex:0 0 auto;padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.05);color:#e9e2ff;font-size:16px;cursor:pointer;white-space:nowrap}}
 .lb-tab.on{{background:linear-gradient(135deg,#7b2ff7,#ff5fa2);border-color:transparent;color:#fff;font-weight:600}}
 .lb-count{{font-size:16px;opacity:.75;margin:0 0 10px}}
-.lb-grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}}
-.lb-card{{position:relative;display:block;aspect-ratio:3/4;border-radius:16px;overflow:hidden;background:#1a1030;text-decoration:none;color:#fff;box-shadow:0 6px 18px rgba(0,0,0,.35);transition:transform .15s}}
+.lb-grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px}}
+.lb-card{{position:relative;display:block;aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:#1a1030;text-decoration:none;color:#fff;box-shadow:0 6px 18px rgba(0,0,0,.35);transition:transform .15s}}
 .lb-card:hover,.lb-card:focus-visible{{transform:translateY(-3px)}}
 .lb-card img{{width:100%;height:100%;object-fit:cover;display:block}}
 .lb-tag{{position:absolute;top:8px;left:8px;background:#7b2ff7;color:#fff;font-size:16px;font-weight:700;padding:4px 9px;border-radius:8px}}
@@ -1591,7 +1600,7 @@ lobby = f"""<style>
 .lb-btn{{padding:10px 18px;border-radius:999px;background:linear-gradient(135deg,#ff8a3d,#ff3d9a);font-weight:700;font-size:16px}}
 .lb-more{{display:block;margin:22px auto 6px}}
 .lb-empty{{text-align:center;opacity:.8;padding:30px 0}}
-@media(max-width:520px){{.lb-grid{{grid-template-columns:repeat(3,1fr);gap:8px}}.lb-name{{font-size:16px;padding:20px 6px 6px}}.lb-name small{{display:none}}.lb-tag{{font-size:16px;padding:3px 6px}}}}
+@media(max-width:520px){{.lb-grid{{grid-template-columns:repeat(2,1fr);gap:10px}}.lb-name{{font-size:16px;padding:20px 6px 6px}}.lb-name small{{display:none}}.lb-tag{{font-size:16px;padding:3px 6px}}}}
 </style>
 <div class="lb-head"><h1>Spilakassar — {len(_cards)} leikir</h1>
 <p class="lb-sub">Vinsælustu spilakassarnir frá {len(_provs)} framleiðendum. Leikir merktir „Umsögn“ eru með ítarlega umsögn hjá okkur; aðrir opnast hjá Slotoro.</p></div>
