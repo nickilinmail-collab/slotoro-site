@@ -148,6 +148,9 @@ for name, provider, rtp, vol, maxwin, theme in verified_slots:
     slugv = name.lower().replace("'", "").replace(" ", "-")
     slots_data.append({"slug": slugv, "name": name, "provider": provider, "rtp": rtp, "volatility": vol, "maxwin": maxwin, "theme": theme})
 
+from slot_content import apply_fixes, SLOT_TEXT, VOL_WHO, vol_is, theme_is, maxwin_is, rtp_is, slot_faq
+apply_fixes(slots_data)
+
 # Casino categories (50 pages) — all in Icelandic
 casino_categories = [
     {"slug": "luchshie-online-casino", "title": "Bestu netspilavítin", "desc": "Hæst metnu netspilavítin fyrir íslenska leikmenn."},
@@ -582,6 +585,7 @@ body::after{{content:'';position:fixed;bottom:-200px;left:-10%;width:600px;heigh
 .slot-hero:hover{{border-color:rgba(180,140,255,.3);box-shadow:0 8px 36px rgba(100,40,200,.2);}}
 .slot-hero-bg{{width:100%;height:100%;}}
 .slot-hero-img{{width:100%;height:100%;object-fit:cover;display:block;}}
+.faq-list{{margin:8px 0 24px;}}.faq-d{{border-bottom:1px solid rgba(255,255,255,.12);padding:14px 0;}}.faq-d summary{{cursor:pointer;font-weight:600;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:12px;}}.faq-d summary::-webkit-details-marker{{display:none;}}.faq-d summary::after{{content:"+";color:#ff8a3d;font-size:20px;line-height:1;}}.faq-d[open] summary::after{{content:"−";}}.faq-d p{{margin:10px 0 0;opacity:.9;}}
 /* Info cards */
 .info-box{{background:var(--card);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:16px;padding:20px 24px;margin:16px 0;transition:all .3s;position:relative;overflow:hidden;}}
 .info-box::before{{content:'';position:absolute;top:0;left:0;right:0;height:50%;background:linear-gradient(180deg,rgba(255,255,255,.02),transparent);pointer-events:none;border-radius:16px 16px 0 0;}}
@@ -877,6 +881,25 @@ def write_page(path, html):
         f.write(html)
     count += 1
 
+import html as _html
+def faq_block(faqs, title="Algengar spurningar"):
+    items = "".join(f'<details class="faq-d"><summary>{_html.escape(q)}</summary><p>{_html.escape(a)}</p></details>' for q, a in faqs)
+    return f'<h2>{title}</h2><div class="faq-list">{items}</div>'
+
+def faq_schema(faqs):
+    return {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faqs]}
+
+def casino_faq(c):
+    n = c["name"]
+    pay = ("Bitcoin, Ethereum, USDT og aðra dulritunargjaldmiðla" if c["type"] == "crypto" else "kort, rafræn veski og dulritunargjaldmiðla")
+    return [
+        (f"Er {n} með íslenskt leyfi?", f"Nei. {n} starfar undir erlendu leyfi. Á Íslandi hafa aðeins innlendir aðilar eins og Íslensk getspá og Happdrætti Háskólans leyfi til fjárhættuspila, svo erlend spilavíti falla ekki undir íslenskt eftirlit."),
+        (f"Hver er velkomstbónusinn hjá {n}?", f"Samkvæmt rekstraraðila: {isk(c['bonus'])}. Skilmálar og veðskilyrði geta breyst — lestu þá alltaf á vef spilavítisins áður en þú samþykkir bónus."),
+        (f"Hvaða greiðslumáta býður {n}?", f"{n} tekur við {pay}. Flest erlend spilavíti nota evrur, svo gengismunur getur bæst við íslenskar krónur."),
+        (f"Er BF Casino í samstarfi við {n}?", ("Já. Við fáum þóknun ef þú skráir þig í gegnum tengla okkar, sem hefur ekki áhrif á einkunnina." if c.get("partner") else f"Nei. Við fáum enga þóknun frá {n}. Eina spilavítið sem við vinnum með er Slotoro.")),
+        ("Hvar fæ ég hjálp ef spilamennskan fer úr böndunum?", "Hjálparsími Rauða krossins 1717 er opinn allan sólarhringinn og er ókeypis og trúnaðarmál. Settu þér alltaf tíma- og upphæðarmörk áður en þú spilar."),
+    ]
+
 def partner_box(c):
     if c.get("partner"):
         return f'<div class="cta-box"><a href="{AFF}" target="_blank" rel="sponsored noopener" class="cta-btn">Spila á Slotoro →</a></div>'
@@ -900,24 +923,25 @@ for c in casinos:
 <h3>Bónusar og tilboð</h3>
 <p>Nýir leikmenn fá velkomstbónus upp á {isk(c["bonus"])} samkvæmt rekstraraðila. Til að virkja bónusinn, skráðu þig og leggðu inn fyrstu innborgun þína.</p>
 <h3>Greiðslumátar</h3>
-<p>{"Tekur við Bitcoin, Ethereum, USDT, Litecoin og öðrum dulritunargjaldmiðlum." if c["type"]=="crypto" else "Tekur við Visa, Mastercard, dulritunargjaldmiðlum og rafrænum veskjum."} Þetta er sérstaklega mikilvægt fyrir íslenska leikmenn þar sem innlendir bankar loka oft á spilavíta-færslur.</p>
+<p>{"Tekur við Bitcoin, Ethereum, USDT, Litecoin og öðrum dulritunargjaldmiðlum." if c["type"]=="crypto" else "Tekur við Visa, Mastercard, dulritunargjaldmiðlum og rafrænum veskjum."} Athugaðu að íslenskir bankar geta hafnað færslum til erlendra spilavíta.</p>
 <h3>Leikir</h3>
 <p>{"Yfir 8.000 leikir frá 71 framleiðanda, þar á meðal Pragmatic Play, Evolution og NetEnt." if c.get("partner") else c["name"] + " býður leiki frá þekktum framleiðendum. Athugaðu leikjasafnið á vef spilavítisins."}</p>
 <h2>Kostir og gallar</h2>
 <ul>
 <li>✅ {c["bonus"]}</li>
 <li>✅ {"Hraðar dulritunarútborganir (skv. rekstraraðila)" if c["type"]=="crypto" else "Nokkrar útborgunarleiðir"}</li>
-<li>✅ {"Dulritunargreiðslur án lokunar" if c["type"]=="crypto" else "Fjölbreytt úrval greiðslumáta"}</li>
+<li>✅ {"Dulritunargreiðslur í boði" if c["type"]=="crypto" else "Fjölbreytt úrval greiðslumáta"}</li>
 <li>✅ Stórt safn leikja</li>
 <li>⚠️ Athugaðu hvort ISK sé í boði — flest erlend spilavíti nota EUR</li>
 </ul>
-{partner_box(c)}'''
+{partner_box(c)}
+{faq_block(casino_faq(c))}'''
 
     bc = [("{URL_BASE}", "Heim"), ("{URL_BASE}casino/", "Spilavíti"), ("", c["name"])]
     review = {"@type":"Review","itemReviewed":{"@type":"Organization","name":c["name"]},
               "reviewRating":{"@type":"Rating","ratingValue":c["rating"],"bestRating":10,"worstRating":0},
               "author":{"@id":"https://bestiflokkurinn.is/#org"},"inLanguage":"is"}
-    html = page_template(f'{c["name"]} umsögn', c["desc"], bc, content, schema_extra=[review])
+    html = page_template(f'{c["name"]} umsögn', c["desc"], bc, content, schema_extra=[review, faq_schema(casino_faq(c))])
     write_page(f'casino/{c["slug"]}/index.html', html)
 
 # 2. КАТЕГОРИИ КАЗИНО (50)
@@ -945,26 +969,33 @@ for cat in casino_categories:
 # 3. СЛОТЫ (250)
 print("Generating slot reviews...")
 for s in slots_data:
-    cdn_img = f'<div class="slot-hero"><img src="{URL_BASE}img/slots/{s["slug"]}.jpg" alt="{s["name"]}" class="slot-hero-img" loading="lazy"></div>'
-    content = f'''<h1>{s["name"]} — Spilakassaumsögn</h1>
+    cdn_img = f'<div class="slot-hero"><img src="{URL_BASE}img/slots/{s["slug"]}.jpg" alt="{s["name"]} spilakassi frá {s["provider"]}" class="slot-hero-img" loading="lazy"></div>'
+    how, bonus, who = SLOT_TEXT[s["slug"]]
+    faqs = slot_faq(s)
+    content = f'''<h1>{s["name"]} — umsögn um spilakassann</h1>
 {cdn_img}
 <div class="info-box">
-<p><strong>Birgi:</strong> {s["provider"]}</p>
-<p><strong>RTP:</strong> {s["rtp"]}%</p>
-<p><strong>Sveifla:</strong> {s["volatility"]}</p>
-<p><strong>Hámarksvinninga:</strong> {s["maxwin"]}</p>
-<p><strong>Þema:</strong> {s["theme"]}</p>
+<p><strong>Framleiðandi:</strong> {s["provider"]}</p>
+<p><strong>RTP:</strong> {rtp_is(s["rtp"])}</p>
+<p><strong>Sveifla:</strong> {vol_is(s["volatility"])}</p>
+<p><strong>Hámarksvinningur:</strong> {maxwin_is(s["maxwin"])}</p>
+<p><strong>Þema:</strong> {theme_is(s["theme"])}</p>
 </div>
-<h2>Um {s["name"]}</h2>
-<p>{s["name"]} frá {s["provider"]} er einn vinsælasti spilakassinn í «{s["theme"]}» flokknum. Spilakassinn býður upp á {s["volatility"].lower()} sveiflur og hámarksvinninga upp á {s["maxwin"]}.</p>
-<h3>RTP og sveifla</h3>
-<p>RTP (Return to Player) á {s["name"]} er {s["rtp"]}%. Þetta þýðir að spilakassinn skilar fræðilega {s["rtp"]}% af öllum veðmálum til leikmanna til lengri tíma.</p>
+<h2>Hvernig {s["name"]} virkar</h2>
+<p>{how}</p>
+<h2>Bónus og sérstakir eiginleikar</h2>
+<p>{bonus}</p>
+<h2>Fyrir hverja hentar {s["name"]}?</h2>
+<p>{who} {VOL_WHO.get(s["volatility"], "")}</p>
+<h3>RTP útskýrt</h3>
+<p>RTP {rtp_is(s["rtp"])} er fræðileg ávöxtun yfir milljónir spuna — ekki það sem þú færð til baka í einni lotu. Spilavíti geta valið lægri RTP útgáfu, svo athugaðu upplýsingaskjá leiksins.</p>
 <h3>Hvar á að spila {s["name"]}</h3>
-<p>{s["name"]} frá {s["provider"]} er í leikjasafni <a href="{URL_BASE}casino/slotoro/">Slotoro</a>, sem tekur við íslenskum leikmönnum og býður yfir 8.000 leiki. Athugaðu að spilavíti geta keyrt mismunandi RTP útgáfur — RTP talan í leiknum sjálfum gildir.</p>
-<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Spila {s["name"]} →</a></div>'''
+<p>{s["name"]} er í leikjasafni <a href="{URL_BASE}casino/slotoro/">Slotoro</a>, sem tekur við íslenskum leikmönnum og býður yfir 8.000 leiki. Prófaðu fyrst í kynningarham ef hann er í boði og settu þér mörk áður en þú spilar fyrir alvöru.</p>
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Spila {s["name"]} →</a></div>
+{faq_block(faqs)}'''
 
-    bc = [("{URL_BASE}", "Home"), ("{URL_BASE}slots/", "Slots"), ("", s["name"])]
-    html = page_template(f'{s["name"]} spilakassi', f'{s["name"]} frá {s["provider"]} — RTP {s["rtp"]}%, sveifla {s["volatility"]}, hámark {s["maxwin"]}', bc, content)
+    bc = [("{URL_BASE}", "Heim"), ("{URL_BASE}slots/", "Spilakassar"), ("", s["name"])]
+    html = page_template(f'{s["name"]} spilakassi — RTP, sveifla og bónus', f'{s["name"]} frá {s["provider"]}: RTP {rtp_is(s["rtp"])}, {vol_is(s["volatility"]).lower()} sveifla, hámark {maxwin_is(s["maxwin"])}. Hvernig leikurinn virkar og fyrir hverja hann hentar.', bc, content, schema_extra=[faq_schema(faqs)])
     write_page(f'slots/{s["slug"]}/index.html', html)
 
 # 4. LIVE КАЗИНО (50)
@@ -1524,7 +1555,7 @@ write_page("casino/index.html", page_template("Bestu netspilavítin á Íslandi 
     casino_content))
 
 # Slots index
-slots_list = "\n".join([f'<div class="info-box"><p><strong><a href="{URL_BASE}slots/{s["slug"]}/">{s["name"]}</a></strong> — {s["provider"]} | RTP {s["rtp"]}% | {s["maxwin"]}</p></div>' for s in slots_data[:30]])
+slots_list = "\n".join([f'<div class="info-box"><p><strong><a href="{URL_BASE}slots/{s["slug"]}/">{s["name"]}</a></strong> — {s["provider"]} | RTP {rtp_is(s["rtp"])} | {vol_is(s["volatility"])} sveifla | hámark {maxwin_is(s["maxwin"])}</p></div>' for s in slots_data[:30]])
 write_page("slots/index.html", page_template("Allir spilakassar", "Umsagnir um vinsæla spilakassa",
     [("{URL_BASE}", "Home"), ("", "Slots")],
     f'<h1>Vinsælir spilakassar 2026</h1><p>Umsagnir um {len(slots_data)} spilakassa frá fremstu birgjum.</p>{slots_list}'))
