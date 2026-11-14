@@ -496,7 +496,7 @@ def get_footer():
     </div>
     <div class="footer-help">Þarftu að tala við einhvern um spilavanda? Hjálparsíminn <a href="tel:1717">1717</a> hjá Rauða krossinum er ókeypis og opinn allan sólarhringinn. <a href="{URL_BASE}leidbeiningar/spila-af-abyrgd/">Ábyrg spilun →</a></div>
     <div class="footer-18">18+ | Fjárhættuspil geta verið ávanabindandi. Spilaðu á ábyrgan hátt. <a href="https://www.begambleaware.org" target="_blank" rel="noopener">BeGambleAware.org</a></div>
-    <div class="footer-bottom"><span>© 2026 svipan.is</span><span>Svipan — óháð umsagnarvefur</span></div>
+    <div class="footer-bottom"><span>© 2026 svipan.is</span><span><a href="https://www.facebook.com/svipanfrettir/" target="_blank" rel="noopener" style="color:var(--muted2);text-decoration:none;">Facebook</a> · Svipan — óháð umsagnarvefur</span></div>
   </div>
 </footer>'''
 
@@ -523,7 +523,7 @@ def page_template(title, desc, breadcrumbs, content, canonical="", og_img="", sc
     crumbs = [{"@type":"ListItem","position":i+1,"name":n,**({"item":abs_url(u)} if u else {})} for i,(u,n) in enumerate(breadcrumbs)]
     graph = [
         {"@type":"WebSite","@id":site+"/#website","name":"Svipan","url":site+"/","inLanguage":"is"},
-        {"@type":"Organization","@id":site+"/#org","name":"Svipan","url":site+"/"},
+        {"@type":"Organization","@id":site+"/#org","name":"Svipan","url":site+"/","sameAs":["https://www.facebook.com/svipanfrettir/"]},
         {"@type":"Person","@id":site+"/#valbjorn","name":"Valbjörn Gjúkason","url":site+"/hofundur/valbjorn-gjukason/","jobTitle":"Blaðamaður og ritstjóri","knowsAbout":["Fjárhættuspil","Netspilavíti","Spilakassar"],"worksFor":{"@id":site+"/#org"}},
         {"@type":"Article","headline":title[:110],"description":desc,"inLanguage":"is",
          "datePublished":"2026-06-01","dateModified":"2026-11-14",
@@ -1556,6 +1556,433 @@ seo_pages = [
 </ul>
 
 <div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Spila á BitStarz →</a></div>'''
+    },
+    {
+        "slug": "okeypis-spilavitisleikir",
+        "title": "Ókeypis spilavítisleikir á Íslandi — spilaðu án áhættu",
+        "desc": "Spilaðu ókeypis spilakassa, rúllettu og blackjack án þess að leggja inn peninga. Prófaðu leiki áður en þú spilar um raunverulega peninga.",
+        "emoji": "🎮",
+        "colors": ("#0a0c14", "#1a2040", "#2a3570"),
+        "content": f'''<h1>Ókeypis spilavítisleikir á Íslandi 2026</h1>
+{{hero}}
+<p>Viltu prófa spilavítisleiki <strong>án áhættu</strong>? Margir leikjaframleiðendur bjóða upp á ókeypis prufuútgáfur (demo mode) sem leyfa þér að spila spilakassa, rúllettu og blackjack án þess að nota raunverulega peninga.</p>
+
+<h2>Hvernig virka ókeypis leikir?</h2>
+<ul>
+<li>Þú færð sýndarpeninga til að spila með</li>
+<li>Leikirnir virka nákvæmlega eins og raunpeningaútgáfurnar (sama RTP, sömu eiginleikar)</li>
+<li>Þú getur prófað hundruð spilakassa áður en þú ákveður hvar þú vilt spila</li>
+<li>Engrar skráningar er þörf hjá flestum veitendum</li>
+</ul>
+
+<h2>Bestu ókeypis spilakassarnir til að prófa</h2>
+<div class="info-box"><p><strong>Book of Dead</strong> (Play'n GO) — klassískur bókaslotur með háum vinningum. <a href="{URL_BASE}spilakassar/book-of-dead/">Umsögn →</a></p></div>
+<div class="info-box"><p><strong>Big Bass Bonanza</strong> (Pragmatic Play) — vinsæll meðal byrjenda. <a href="{URL_BASE}spilakassar/big-bass-bonanza/">Umsögn →</a></p></div>
+<div class="info-box"><p><strong>Bonanza Megaways</strong> (Big Time Gaming) — allt að 117.649 vinningsleiðir. <a href="{URL_BASE}spilakassar/bonanza-megaways/">Umsögn →</a></p></div>
+
+<h2>Af hverju er gott að spila ókeypis fyrst?</h2>
+<ol>
+<li>Kynntu þér leikjareglur og eiginleika áður en þú veðjar raunverulega peninga</li>
+<li>Finndu hvaða spilakassar henta þínum spilastíl</li>
+<li>Prófaðu mismunandi veðaðferðir án áhættu</li>
+<li>Hafðu gaman án fjárhagslegrar áhættu</li>
+</ol>
+
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Prófa leiki á Slotoro →</a></div>'''
+    },
+    {
+        "slug": "ny-spilaviti-island",
+        "title": "Ný spilavíti á Íslandi 2026 — nýjustu síðurnar",
+        "desc": "Listi yfir nýjustu netspilavítin sem taka við íslenskum spilurum. Nýir bónusar, nýir leikir og ný tækifæri.",
+        "emoji": "🆕",
+        "colors": ("#140a0c", "#401a22", "#702a3a"),
+        "content": f'''<h1>Ný spilavíti á Íslandi 2026</h1>
+{{hero}}
+<p>Nýtt spilavíti þýðir oft <strong>betri bónusa</strong>, nútímalegt viðmót og nýjustu leikina. Hér eru nýjustu spilavítin sem íslenskir leikmenn geta skráð sig á.</p>
+
+<h2>Af hverju velja nýtt spilavíti?</h2>
+<ul>
+<li><strong>Stærri velkomstbónusar</strong> — ný spilavíti bjóða oft rausnarlegri tilboð til að laða að spilara</li>
+<li><strong>Nýjustu leikirnir</strong> — aðgang að nýjustu spilakössunum og lifandi borðum</li>
+<li><strong>Betri dulritunarstuðningur</strong> — nýrri spilavíti styðja oft fleiri dulritunargjaldmiðla</li>
+<li><strong>Hraðari útborganir</strong> — nútímaleg greiðslukerfi</li>
+</ul>
+
+<h2>Nýjustu spilavítin</h2>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/epicbet/">Epicbet</a></strong> — nýtt spilavíti með íslensku viðmóti, PIQ greiðslum og Evolution lifandi borðum. Einkunn: 8.9/10</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/respin/">Respin</a></strong> — íslensku viðmót, hröð úttekt og 100% velkomstbónus. Einkunn: 8.7/10</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/neospin/">Neospin</a></strong> — 7000+ leikir, Bitcoin og Ethereum. Einkunn: 8.4/10</p></div>
+
+<h2>Hvað á að athuga áður en þú skráir þig</h2>
+<ol>
+<li>Er spilavítið með gilt leyfi (MGA, Curaçao)?</li>
+<li>Hvaða greiðslumátar eru í boði? Styður það dulritunargjaldmiðla?</li>
+<li>Hverjir eru skilmálar bónussins (veðskilyrði)?</li>
+<li>Er þjónustuver aðgengilegt 24/7?</li>
+</ol>
+
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Prófa nýjasta spilavítið →</a></div>'''
+    },
+    {
+        "slug": "hrod-utborgun-spilaviti",
+        "title": "Hröð útborgun spilavíti á Íslandi — úttekt á mínútum",
+        "desc": "Netspilavíti með hraðustu útborgunum fyrir íslenska spilara. Bitcoin úttektir á 10 mínútum.",
+        "emoji": "⚡",
+        "colors": ("#140e08", "#403020", "#705030"),
+        "content": f'''<h1>Hröð útborgun spilavíti — Ísland 2026</h1>
+{{hero}}
+<p>Enginn vill bíða í marga daga eftir vinningum sínum. Hér eru spilavítin sem bjóða <strong>hraðustu útborganirnar</strong> fyrir íslenska spilara.</p>
+
+<h2>Hraðasti útborgunarleið</h2>
+<div class="info-box">
+<p><strong>🥇 Bitcoin/USDT</strong> — undir 10 mínútur hjá flestum spilavítum</p>
+<p><strong>🥈 Rafveski (Skrill/Neteller)</strong> — 1-24 klukkustundir</p>
+<p><strong>🥉 Bankamillifærsla</strong> — 1-3 virkir dagar</p>
+</div>
+
+<h2>Bestu spilavítin fyrir hraðar útborganir</h2>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/bitstarz/">BitStarz</a></strong> — Bitcoin úttekt á undir 10 mínútum. Einkunn: 9.8/10</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/stake/">Stake</a></strong> — Tafarlaus dulritunarúttekt. Einkunn: 9.6/10</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/bc-game/">BC.Game</a></strong> — 100+ dulritunargjaldmiðlar, hröð vinnsla. Einkunn: 9.4/10</p></div>
+
+<h2>Ráð til að fá hraðari útborgun</h2>
+<ul>
+<li>Ljúktu <a href="{URL_BASE}leidbeiningar/hvad-er-kyc-stadfesting/">KYC staðfestingu</a> áður en þú biður um úttekt</li>
+<li>Notaðu dulritunargjaldmiðla — þeir eru alltaf hraðastir</li>
+<li>Athugaðu lágmarksúttektarupphæð áður en þú spilar</li>
+<li>Forðastu bónusa með háum veðskilyrðum ef hröð úttekt skiptir máli</li>
+</ul>
+
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Spila á BitStarz →</a></div>'''
+    },
+    {
+        "slug": "lagmarks-innborgun-spilaviti",
+        "title": "Lágmarksinnborgun spilavíti á Íslandi — frá €1",
+        "desc": "Spilavíti með lágri lágmarksinnborgun fyrir íslenska spilara. Spilaðu frá €1, €5 eða €10.",
+        "emoji": "💰",
+        "colors": ("#0c1408", "#204018", "#307028"),
+        "content": f'''<h1>Lágmarksinnborgun spilavíti — Ísland 2026</h1>
+{{hero}}
+<p>Ekki allir vilja leggja háar upphæðir inn. Hér eru bestu spilavítin með <strong>lágri lágmarksinnborgun</strong> sem samþykkja íslenska spilara.</p>
+
+<h2>Spilavíti eftir lágmarksinnborgun</h2>
+<div class="info-box">
+<p><strong>€1 lágmark:</strong> BitStarz (með dulritun), BC.Game</p>
+<p><strong>€5 lágmark:</strong> 7Bit Casino, KatsuBet</p>
+<p><strong>€10 lágmark:</strong> Stake, TonyBet, Epicbet, mBit Casino</p>
+<p><strong>€20 lágmark:</strong> 20Bet, National Casino, Cloudbet</p>
+</div>
+
+<h2>Ráð fyrir lága innborgun</h2>
+<ul>
+<li>Notaðu dulritunargjaldmiðla — lægri lágmarksinnborgun og engin gjöld</li>
+<li>Athugaðu hvort bónusinn virki á lágar innlagnir (sumir krefjast €20+)</li>
+<li>Veldu spilakassa með lágri lágmarksveðjun (€0.10 eða lægra)</li>
+</ul>
+
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Byrja að spila →</a></div>'''
+    },
+    {
+        "slug": "okeypis-snuningar-spilaviti",
+        "title": "Ókeypis snúningar spilavíti — bestu frísnúningatilboðin á Íslandi",
+        "desc": "Spilavíti með ókeypis snúningum fyrir íslenska spilara. Frísnúningar í velkomstbónus og vikuleg tilboð.",
+        "emoji": "🎰",
+        "colors": ("#14080c", "#401828", "#702840"),
+        "content": f'''<h1>Ókeypis snúningar spilavíti — Ísland 2026</h1>
+{{hero}}
+<p>Ókeypis snúningar (free spins) eru vinsælasta tegundin af spilavítisbónus. Hér eru <strong>bestu frísnúningatilboðin</strong> fyrir íslenska spilara.</p>
+
+<h2>Bestu frísnúningatilboðin</h2>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/bitstarz/">BitStarz</a></strong> — 200 frísnúningar + allt að 5 BTC. 40x veðskilyrði.</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/7bit/">7Bit Casino</a></strong> — 100 frísnúningar á fyrstu innborgun. 40x veðskilyrði.</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/hellspin/">Hellspin</a></strong> — 150 frísnúningar + 100% bónus.</p></div>
+
+<h2>Tegundir frísnúninga</h2>
+<ul>
+<li><strong>Velkomst frísnúningar</strong> — hluti af velkomstpakka við skráningu</li>
+<li><strong>Frísnúningar án innborgunar</strong> — <a href="{URL_BASE}leidbeiningar/frisnuningar-an-innborgunar/">engin innborgun þarf</a></li>
+<li><strong>Vikulegar frísnúningar</strong> — endurtekin tilboð fyrir virka spilara</li>
+<li><strong>Frísnúningar í leikjum</strong> — scatter-tákn virkja þær í spilakassa</li>
+</ul>
+
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Fá frísnúninga →</a></div>'''
+    },
+    {
+        "slug": "ruletta-a-netinu-island",
+        "title": "Rúlletta á netinu á Íslandi — bestu rúllettuborðin",
+        "desc": "Spilaðu rúllettu á netinu frá Íslandi. Evrópsk, amerísk og lifandi rúlletta hjá bestu spilavítunum.",
+        "emoji": "🎡",
+        "colors": ("#0c0814", "#201840", "#302870"),
+        "content": f'''<h1>Rúlletta á netinu — Ísland 2026</h1>
+{{hero}}
+<p>Rúlletta er einn vinsælasti spilavítisleikurinn í heiminum. Hér er leiðarvísir um <strong>bestu rúllettuborðin</strong> á netinu fyrir íslenska spilara.</p>
+
+<h2>Tegundir rúllettu</h2>
+<ul>
+<li><strong>Evrópsk rúlletta</strong> — 37 reitir (0-36), 2.7% forskot hússins. Besti kosturinn.</li>
+<li><strong>Amerísk rúlletta</strong> — 38 reitir (0, 00, 1-36), 5.26% forskot — forðastu þessa.</li>
+<li><strong>Frönsk rúlletta</strong> — eins og evrópsk en með La Partage reglu (1.35% forskot á jöfnum veðmálum).</li>
+<li><strong>Lifandi rúlletta</strong> — raunverulegir spilastjórar í beinni. <a href="{URL_BASE}live/">Sjá lifandi leiki →</a></li>
+</ul>
+
+<h2>Bestu spilavítin fyrir rúllettu</h2>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/stake/">Stake</a></strong> — fjölbreytt úrval rúllettu í beinni frá Evolution.</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/bitstarz/">BitStarz</a></strong> — evrópsk rúlletta, Lightning Roulette og fleira.</p></div>
+
+<h2>Ráð fyrir rúllettu</h2>
+<ul>
+<li>Veldu alltaf <strong>evrópska rúllettu</strong> fram yfir ameríska</li>
+<li>Jöfn veðmál (rautt/svart, oddatölur/sléttir) hafa besta líkurnar</li>
+<li>Settu þér tapmörk áður en þú byrjar</li>
+</ul>
+
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Spila rúllettu →</a></div>'''
+    },
+    {
+        "slug": "spilaviti-an-kyc",
+        "title": "Spilavíti án KYC — spila án auðkenningar á Íslandi",
+        "desc": "Netspilavíti sem krefjast ekki KYC staðfestingar. Spilaðu nafnlaust með dulritunargjaldmiðlum.",
+        "emoji": "🕵️",
+        "colors": ("#08140c", "#184028", "#287040"),
+        "content": f'''<h1>Spilavíti án KYC á Íslandi 2026</h1>
+{{hero}}
+<p>Margir íslenskir spilarar vilja spila <strong>án þess að senda inn persónuskilríki</strong>. Nokkur dulritunarspilavíti leyfa þetta — hér er listi.</p>
+
+<h2>Hvað þýðir "án KYC"?</h2>
+<p>KYC (Know Your Customer) er auðkenningarferli þar sem spilavíti biður um vegabréf, reikninga eða önnur skilríki. Spilavíti án KYC leyfa þér að skrá þig og spila <strong>eingöngu með dulritunargjaldmiðlum</strong> án þess að senda inn skjöl.</p>
+
+<h2>Spilavíti án KYC</h2>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/stake/">Stake</a></strong> — engin KYC krafist fyrir dulritunarspilara (nema háar upphæðir).</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/bc-game/">BC.Game</a></strong> — skráðu þig með tölvupósti, leggðu inn dulritun og spilaðu strax.</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/cloudbet/">Cloudbet</a></strong> — dulritun eingöngu, lágmarks KYC.</p></div>
+
+<h2>Kostir og gallar</h2>
+<ul>
+<li>✅ Aukin friðhelgi — engin persónuskjöl</li>
+<li>✅ Hraðari skráning — spilaðu á mínútum</li>
+<li>✅ Engin bankalokun — dulritun fer framhjá bankatakmörkunum</li>
+<li>⚠️ Takmarkaðir greiðslumátar — eingöngu dulritun</li>
+<li>⚠️ Minni neytendavernd ef eitthvað fer úrskeiðis</li>
+</ul>
+
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Spila nafnlaust →</a></div>'''
+    },
+    {
+        "slug": "revolut-spilaviti-island",
+        "title": "Revolut spilavíti á Íslandi — leggðu inn með Revolut",
+        "desc": "Hvernig á að nota Revolut til að leggja inn og taka út af netspilavítum á Íslandi. Skref fyrir skref.",
+        "emoji": "💳",
+        "colors": ("#0a0a14", "#1a1a40", "#2828a0"),
+        "content": f'''<h1>Revolut spilavíti á Íslandi 2026</h1>
+{{hero}}
+<p><strong>Revolut</strong> er ein vinsælasta greiðsluappið á Íslandi og virkar vel til að leggja inn á netspilavíti — sérstaklega þegar íslenskir bankar loka á spilavítagreiðslur.</p>
+
+<h2>Hvernig virkar Revolut með spilavítum?</h2>
+<ol>
+<li>Opnaðu Revolut appið og fylltu á reikninginn (bankamillifærsla eða kort)</li>
+<li>Notaðu Revolut Visa/Mastercard kortið til að leggja inn á spilavítið</li>
+<li>Greiðslan fer í gegn sem erlend kortafærsla — ekki bein spilavítagreiðsla</li>
+<li>Úttektir fara beint til baka á Revolut reikninginn þinn</li>
+</ol>
+
+<h2>Af hverju Revolut?</h2>
+<ul>
+<li>✅ Fer framhjá bankalokunum — íslenskir bankar sjá ekki "spilavíti"</li>
+<li>✅ Tafarlausar innlagnir</li>
+<li>✅ Gjaldeyrisskipti á góðu gengi (ISK → EUR)</li>
+<li>✅ Sýndarkort til aukins öryggis</li>
+</ul>
+
+<h2>Spilavíti sem taka við Revolut</h2>
+<div class="info-box"><p>Flest spilavíti sem taka við <strong>Visa/Mastercard</strong> samþykkja Revolut kort — þar á meðal <a href="{URL_BASE}spilaviti/tonybet/">TonyBet</a>, <a href="{URL_BASE}spilaviti/20bet/">20Bet</a> og <a href="{URL_BASE}spilaviti/epicbet/">Epicbet</a>.</p></div>
+
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Leggja inn núna →</a></div>'''
+    },
+    {
+        "slug": "spilaviti-app-island",
+        "title": "Spilavíti app á Íslandi — bestu spilavítaöppin í farsíma",
+        "desc": "Bestu spilavítaöppin fyrir iPhone og Android á Íslandi. Spilaðu spilakassa og lifandi leiki í símanum.",
+        "emoji": "📱",
+        "colors": ("#140c08", "#402818", "#704828"),
+        "content": f'''<h1>Spilavíti app á Íslandi 2026</h1>
+{{hero}}
+<p>Spilaðu þín uppáhalds spilavítisleiki <strong>hvar sem þú ert</strong> á Íslandi. Flest netspilavíti bjóða upp á fullkomin farsímaupplifun.</p>
+
+<h2>Bestu spilavítin í farsíma</h2>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/stake/">Stake</a></strong> — sérhönnuð farsímaapp (Android). iOS í gegnum vafra.</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/bitstarz/">BitStarz</a></strong> — bráðfínt farsímaviðmót, engrar niðurhals þörf.</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/bc-game/">BC.Game</a></strong> — Progressive Web App (PWA) — settu á heimaskjá eins og app.</p></div>
+
+<h2>App eða vafri?</h2>
+<ul>
+<li><strong>Vafri (Safari/Chrome):</strong> Engrar niðurhals þörf, virkar á öllum tækjum. Flest spilavíti eru fullkomlega aðlöguð.</li>
+<li><strong>App:</strong> Hraðari hleðsla, push-tilkynningar um tilboð. Ekki á App Store/Google Play (spilavítaapps eru bönnuð þar).</li>
+<li><strong>PWA:</strong> Besti millileiðin — settu vefsíðuna á heimaskjáinn og hún virkar eins og app.</li>
+</ul>
+
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Spila í símanum →</a></div>'''
+    },
+    {
+        "slug": "ethereum-spilaviti",
+        "title": "Ethereum spilavíti á Íslandi — spilaðu með ETH",
+        "desc": "Bestu Ethereum spilavítin fyrir íslenska spilara. Leggðu inn ETH og fáið hraða útborgun.",
+        "emoji": "⟠",
+        "colors": ("#0c0e14", "#182040", "#283870"),
+        "content": f'''<h1>Ethereum spilavíti á Íslandi 2026</h1>
+{{hero}}
+<p><strong>Ethereum (ETH)</strong> er annar vinsælasti dulritunargjaldmiðillinn á eftir Bitcoin og frábær kostur til að leggja inn á netspilavíti frá Íslandi.</p>
+
+<h2>Af hverju velja Ethereum?</h2>
+<ul>
+<li>Hraðari en Bitcoin — færslur á 1-5 mínútum</li>
+<li>Lægri gjöld en Bitcoin (sérstaklega á Layer 2)</li>
+<li>Stutt af næstum öllum dulritunarspilavítum</li>
+<li>Auðvelt að kaupa á Coinbase eða Binance</li>
+</ul>
+
+<h2>Bestu ETH spilavítin</h2>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/stake/">Stake</a></strong> — stuðningur við ETH og ERC-20 tóka. Tafarlaus innlögn.</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/bc-game/">BC.Game</a></strong> — ETH auk 100+ annarra dulritunargjaldmiðla.</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/cloudbet/">Cloudbet</a></strong> — ETH innlagnir, hröð útborgun.</p></div>
+
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Spila með ETH →</a></div>'''
+    },
+    {
+        "slug": "pottaspilakassar-island",
+        "title": "Pottaspilakassar á Íslandi — stighækkandi pottar",
+        "desc": "Bestu stighækkandi pottaspilakassarnir á Íslandi. Mega Moolah, Mega Fortune og fleiri milljónapottar.",
+        "emoji": "💎",
+        "colors": ("#14080e", "#401828", "#702848"),
+        "content": f'''<h1>Pottaspilakassar á Íslandi 2026</h1>
+{{hero}}
+<p>Dreymir þig um <strong>milljónavinning</strong>? Pottaspilakassar (progressive jackpots) safna hluta hvers veðmáls í stóran pott sem einn heppinn spilari vinnur.</p>
+
+<h2>Vinsælustu pottaspilakassarnir</h2>
+<div class="info-box"><p><strong>Mega Moolah</strong> (Microgaming) — met-vinningur yfir €20 milljónir. Uppáhalds pottaslotur heims.</p></div>
+<div class="info-box"><p><strong>Mega Fortune</strong> (NetEnt) — lúxus-þema, þrjú pottahjól. <a href="{URL_BASE}leidbeiningar/stighaekkandi-pottar/">Leiðarvísir →</a></p></div>
+<div class="info-box"><p><strong>Hall of Gods</strong> (NetEnt) — norrænna goða-þema, stórir pottar.</p></div>
+<div class="info-box"><p><strong>Gates of Olympus</strong> (Pragmatic Play) — vinsæll pottaslotur með 5000x hámarki.</p></div>
+
+<h2>Ráð um pottaspilakassa</h2>
+<ul>
+<li>Pottaspilakassar hafa yfirleitt <strong>lægra RTP</strong> en venjulegir spilakassar (hluti fer í pottinn)</li>
+<li>Spilaðu á hámarksveðmáli ef þú vilt eiga rétt á stóra pottinum</li>
+<li>Þetta eru leikir til skemmtunar — líkurnar á stóra pottinum eru mjög litlar</li>
+</ul>
+
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Prófa pottaspilakassa →</a></div>'''
+    },
+    {
+        "slug": "crazy-time-island",
+        "title": "Crazy Time á Íslandi — hvar á að spila og hvernig virkar",
+        "desc": "Crazy Time frá Evolution Gaming — vinsælasti lifandi leikjaþátturinn. Hvar á að spila og hvernig virkar leikurinn.",
+        "emoji": "🎪",
+        "colors": ("#14100a", "#403018", "#705028"),
+        "content": f'''<h1>Crazy Time á Íslandi 2026</h1>
+{{hero}}
+<p><strong>Crazy Time</strong> frá Evolution Gaming er vinsælasti lifandi leikjaþátturinn í heimi. Þetta er eins og sjónvarpsþáttur þar sem þú getur unnið stóra vinni!</p>
+
+<h2>Hvernig virkar Crazy Time?</h2>
+<ol>
+<li>Leikjastjóri snýr stóru hjólinu</li>
+<li>Hjólið hefur tölur (1, 2, 5, 10) og 4 bónusleiki</li>
+<li>Veðjaðu á tölu eða bónusleik áður en hjólið snýst</li>
+<li>Ef hjólið stoppar á þínu veðmáli vinnur þú!</li>
+</ol>
+
+<h2>Bónusleikirnir fjórir</h2>
+<ul>
+<li><strong>Coin Flip</strong> — einföld mynt sem snýst, rautt eða blátt</li>
+<li><strong>Cash Hunt</strong> — 108 tákn á skjánum, veldu eitt</li>
+<li><strong>Pachinko</strong> — bolti fellur niður og margfaldari ákvarðast</li>
+<li><strong>Crazy Time</strong> — stóra hjólið með gríðarlegum margfaldara (allt að 25.000x!)</li>
+</ul>
+
+<h2>Hvar á að spila Crazy Time?</h2>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/bitstarz/">BitStarz</a></strong> og <strong><a href="{URL_BASE}spilaviti/stake/">Stake</a></strong> bjóða báðir Crazy Time frá Evolution.</p></div>
+
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Spila Crazy Time →</a></div>'''
+    },
+    {
+        "slug": "apple-pay-spilaviti",
+        "title": "Apple Pay spilavíti á Íslandi — leggðu inn með Apple Pay",
+        "desc": "Netspilavíti sem styðja Apple Pay greiðslur á Íslandi. Leggðu inn á nokkrum sekúndum.",
+        "emoji": "🍎",
+        "colors": ("#0e0e0e", "#2a2a2a", "#4a4a4a"),
+        "content": f'''<h1>Apple Pay spilavíti á Íslandi 2026</h1>
+{{hero}}
+<p><strong>Apple Pay</strong> er ein auðveldasta leiðin til að leggja inn á netspilavíti — snertu bara Face ID eða Touch ID og greiðslan er framkvæmd.</p>
+
+<h2>Kostir Apple Pay á spilavítum</h2>
+<ul>
+<li>✅ Tafarlaus innlögn — greiðsla á nokkrum sekúndum</li>
+<li>✅ Öruggt — kortanúmerið þitt er aldrei deilt</li>
+<li>✅ Face ID/Touch ID — engin þörf á að slá inn kortnúmer</li>
+<li>✅ Virkar á iPhone, iPad, Mac og Apple Watch</li>
+</ul>
+
+<h2>Spilavíti sem styðja Apple Pay</h2>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/epicbet/">Epicbet</a></strong> — Apple Pay stuðningur, íslensku viðmót.</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/tonybet/">TonyBet</a></strong> — Apple Pay + Evolution lifandi borð.</p></div>
+
+<h2>Athugaðu</h2>
+<p>Ekki öll spilavíti styðja Apple Pay — athugaðu greiðslusíðuna áður en þú skráir þig. Ef Apple Pay virkar ekki, eru <a href="{URL_BASE}leidbeiningar/revolut-spilaviti-island/">Revolut</a> og <a href="{URL_BASE}leidbeiningar/besta-crypto-spilaviti-island/">dulritunargjaldmiðlar</a> góðir valkostir.</p>
+
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Leggja inn með Apple Pay →</a></div>'''
+    },
+    {
+        "slug": "spilaviti-endurgreidsla",
+        "title": "Endurgreiðsla (cashback) spilavíti á Íslandi",
+        "desc": "Bestu netspilavítin með endurgreiðslu (cashback) fyrir íslenska spilara. Fáðu hluta tapsins til baka.",
+        "emoji": "🔄",
+        "colors": ("#0e0a14", "#281840", "#422870"),
+        "content": f'''<h1>Endurgreiðsla (cashback) spilavíti — Ísland 2026</h1>
+{{hero}}
+<p><strong>Cashback bónusar</strong> skila hluta tapsins til baka — oft 5-20% vikulega. Þetta er ein hagkvæmasta tegundin af bónus fyrir reglulega spilara.</p>
+
+<h2>Hvernig virkar cashback?</h2>
+<p>Ef þú tapar €100 á viku og spilavítið býður 15% cashback, þá færðu €15 til baka. Yfirleitt er cashback án veðskilyrða — þú getur tekið peningana beint út.</p>
+
+<h2>Bestu cashback spilavítin</h2>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/stake/">Stake</a></strong> — VIP cashback sem hækkar með tíma. Allt að 15%.</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/cloudbet/">Cloudbet</a></strong> — vikuleg endurgreiðsla á lifandi leikjum.</p></div>
+<div class="info-box"><p><strong><a href="{URL_BASE}spilaviti/bc-game/">BC.Game</a></strong> — dagleg endurgreiðsla í gegnum VIP kerfið.</p></div>
+
+<h2>Cashback vs velkomstbónus</h2>
+<ul>
+<li><strong>Velkomstbónus:</strong> Einu sinni, háar upphæðir, há veðskilyrði (30-50x)</li>
+<li><strong>Cashback:</strong> Endurtekið, lægri upphæðir, yfirleitt engin veðskilyrði</li>
+<li>Fyrir langtímaspilara er cashback oft betri kosturinn</li>
+</ul>
+
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Fá cashback →</a></div>'''
+    },
+    {
+        "slug": "vpn-spilaviti-island",
+        "title": "VPN og spilavíti á Íslandi — virkar það?",
+        "desc": "Er hægt að nota VPN til að spila á netspilavítum frá Íslandi? Hvað þarf að vita um VPN og spilavíti.",
+        "emoji": "🔒",
+        "colors": ("#080c14", "#182840", "#284870"),
+        "content": f'''<h1>VPN og spilavíti á Íslandi 2026</h1>
+{{hero}}
+<p>Margir íslenskir spilarar velta því fyrir sér hvort <strong>VPN</strong> geti hjálpað við að nálgast spilavíti eða fara framhjá takmörkunum.</p>
+
+<h2>Þarftu VPN til að spila á netspilavítum?</h2>
+<p>Í flestum tilfellum <strong>nei</strong>. Spilavítin sem við mælum með taka öll við íslenskum spilurum beint — engin VPN þörf. Dulritunargjaldmiðlar leysa vandamálið með bankagreiðslum.</p>
+
+<h2>Hvenær er VPN gagnlegt?</h2>
+<ul>
+<li><strong>Friðhelgi</strong> — VPN felur IP-töluna þína og dulkóðar umferð</li>
+<li><strong>Opinbert WiFi</strong> — VPN verndar þig á óöruggum netum (veitingastaðir, flugvellir)</li>
+<li><strong>Ferðalög</strong> — ef þú ert á ferðalagi í landi þar sem spilavíti eru bönnuð</li>
+</ul>
+
+<h2>Viðvörun</h2>
+<div class="info-box"><p>⚠️ <strong>Flest spilavíti banna VPN notkun</strong> í skilmálum sínum. Ef spilavítið uppgötvar VPN getur það lokað reikningnum þínum og haldið vinningum. Notaðu VPN eingöngu til verndar — ekki til að komast framhjá landfræðilegum takmörkunum.</p></div>
+
+<p>Betri lausn: Notaðu <a href="{URL_BASE}leidbeiningar/besta-crypto-spilaviti-island/">dulritunarspilavíti</a> sem taka beint við íslenskum spilurum.</p>
+
+<div class="cta-box"><a href="https://gameslnk.cc/go/2e7c17f7302f426b36e7e5242aaa9b3e365b64d1eb0a0b0b/" target="_blank" rel="noopener" class="cta-btn">Spila án VPN →</a></div>'''
     },
 ]
 
